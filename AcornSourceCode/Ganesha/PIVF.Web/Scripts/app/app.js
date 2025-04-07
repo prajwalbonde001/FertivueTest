@@ -2349,6 +2349,8 @@ PIVF.directive('multiValidation', function () {
                             if ((key >= 55 && key <= 57) || (key >= 103 && key <= 105)) {
                                 return true;
                             }
+
+
                             else {
                                 event.preventDefault();
                             }
