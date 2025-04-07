@@ -2633,9 +2633,6 @@ PIVF.directive('validNumberwithdecimal', function () {
 
 
 
-
-
-
 //Fix Header
 PIVF.directive('stRatio', function () {
     return {
@@ -2648,6 +2645,30 @@ PIVF.directive('stRatio', function () {
     };
 });
 
+
+////Fix Header
+//PIVF.directive('stRatio', function () {
+//    return {
+//        link: function (scope, element, attr) {
+//            var ratio = +(attr.stRatio);
+
+//            element.css('width', ratio + '%');
+
+//        }
+//    };
+//});
+
+////Fix Header
+//PIVF.directive('stRatio', function () {
+//    return {
+//        link: function (scope, element, attr) {
+//            var ratio = +(attr.stRatio);
+
+//            element.css('width', ratio + '%');
+
+//        }
+//    };
+//});
 
 
 
