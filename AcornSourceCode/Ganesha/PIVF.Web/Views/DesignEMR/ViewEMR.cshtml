@@ -1,0 +1,549 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/strap.min.css" rel="stylesheet" />
+<link href="~/Content/angular-ui-tree.min.css" rel="stylesheet" />
+<link href="~/Content/angular-ui-tree-theme.css" rel="stylesheet" />
+<link href="~/Content/addon.css" rel="stylesheet" />
+<link href="~/Content/schema-form-file.css" rel="stylesheet" />
+
+@*<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+</style>*@
+
+<div class="EmrpopUp" ng-controller="DesignEMRCltr" ng-init="PageSetup()">
+
+    <script type="text/ng-template" id="nodes_renderer.html">
+
+        <div ui-tree-handle class="tree-node tree-node-content">
+            <a class="btn btn-primary btn_treeCollapse btn-xs" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)">
+                <i class="fa"
+                   ng-class="{
+                          'fa fa-angle-right': collapsed,
+                          'fa fa-angle-down': !collapsed
+                        }" aria-hidden="true">
+
+                </i>
+                @*<span class="glyphicon"
+                          ng-class="{
+                          'glyphicon-chevron-right': collapsed,
+                          'glyphicon-chevron-down': !collapsed
+                        }">
+                    </span>*@
+            </a>
+            {{node.title}}
+            <a class="pull-right btn btn_treeRemove btn-xs" ng-hide="node.id==1 || node.id==11" data-nodrag ng-click="remove(node)">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+            <a class="pull-right btn_treeAdd btn btn-xs" ng-hide="node.depth > 1" data-nodrag ng-click="newSubItem(this)" style="margin-right: 8px;">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+            <a class="pull-right btn btn_treeLink btn-xs" ng-hide="node.id==1 || node.id==11" data-nodrag ng-click="setRelation(node)" style="margin-right: 8px;" data-backdrop="static" data-keyboard="false">
+                <i class="fa fa-link" aria-hidden="true"></i>
+            </a>
+            <a class="pull-right btn btn_treeEdit btn-xs" data-nodrag ng-click="nClick(node)" style="margin-right: 8px;">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </a>
+        </div>
+        <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+            <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+            </li>
+        </ol>
+
+    </script>
+
+    <script type="text/ng-template" id="setRelation.html">
+        <div class="modal-header p-10">
+            <h4 class="modal-title" id="modal-title">Set Field Relations</h4>
+        </div>
+        <div class="modal-body" id="modal-relation">
+            <div class="table-responsive">
+                <table class="table table-bordered" ng-if="$ctrl.node.ssection.length > 0">
+                    <thead>
+                        <tr>
+                            <th>Source Section</th>
+                            <th>Source Field</th>
+                            <th>Relation</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            @*<th></th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{$ctrl.node.ssection[0].name}}</td>
+                            <td>{{$ctrl.node.sitem[0].name}}</td>
+                            <td>{{$ctrl.node.schoice[0].name}}</td>
+                            <td ng-if="$ctrl.node.sitem[0].type == 'Decimal'">{{$ctrl.node.rvalue}}</td>
+                            <td ng-if="$ctrl.node.sitem[0].type == 'List'">{{$ctrl.node.sfield[0].name}}</td>
+                            <td ng-if="$ctrl.node.sitem[0].type == 'Boolean'">{{$ctrl.node.btype}}</td>
+                            @*<td>
+                                <a class="btn btn-primary btn-xs" data-nodrag ng-click="$ctrl.editRelation()" style="margin-right: 8px;">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                                <a class="btn btn-danger btn-xs" ng-hide="node.id==1 || node.id==11" data-nodrag ng-click="$ctrl.deleteRelation()">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </a>
+                            </td>*@
+                            <td width="">
+                                <span type="button" class="btn_edit" data-nodrag ng-click="$ctrl.editRelation()" ></span>
+                            </td>
+                            <td width=""><span class="btn_delete" data-toggle="modal" data-target=".reason-modal" ng-hide="node.id==1 || node.id==11" data-nodrag ng-click="$ctrl.deleteRelation()"></span></td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div ng-show="$ctrl.isEdit">
+                <div class="row form-horizontal">
+                    <div class="col-md-6">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Source Section</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div isteven-multi-select
+                                     input-model="$ctrl.sourceSections"
+                                     output-model="$ctrl.selSource"
+                                     button-label="icon name"
+                                     item-label="icon name maker"
+                                     tick-property="ticked"
+                                     selection-mode="single">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Source Item</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div isteven-multi-select
+                                     input-model="$ctrl.selSource[0].nodes"
+                                     output-model="$ctrl.selItem"
+                                     button-label="icon name"
+                                     item-label="icon name maker"
+                                     tick-property="ticked"
+                                     selection-mode="single">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" ng-show="$ctrl.selItem[0].type == 'Decimal'">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Relation Type</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div isteven-multi-select
+                                     input-model="$ctrl.numChoices"
+                                     output-model="$ctrl.selChoice"
+                                     button-label="icon name"
+                                     item-label="icon name maker"
+                                     tick-property="ticked"
+                                     selection-mode="single">
+                                </div>
+                                <input type="number" name="title" ng-model="$ctrl.rvalue" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" ng-show="$ctrl.selItem[0].type == 'List'">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Relation Type</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div isteven-multi-select
+                                     input-model="$ctrl.dropdownChoices"
+                                     output-model="$ctrl.selChoice"
+                                     button-label="icon name"
+                                     item-label="icon name maker"
+                                     tick-property="ticked"
+                                     selection-mode="single">
+                                </div>
+                                <div isteven-multi-select
+                                     input-model="$ctrl.selItem[0].sfields"
+                                     output-model="$ctrl.sfield"
+                                     button-label="icon name"
+                                     item-label="icon name maker"
+                                     tick-property="ticked"
+                                     selection-mode="single">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" ng-show="$ctrl.selItem[0].type == 'Boolean'">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Relation Type</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div isteven-multi-select
+                                     input-model="$ctrl.dropdownChoices"
+                                     output-model="$ctrl.selChoice"
+                                     button-label="icon name"
+                                     item-label="icon name maker"
+                                     tick-property="ticked"
+                                     selection-mode="single">
+                                </div>
+                                <label>
+                                    <input type="radio" ng-model="$ctrl.btype" value=1> Yes
+                                    <input type="radio" ng-model="$ctrl.btype" value=0> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer p-5">
+            <button ng-show="$ctrl.isEdit" class="btn btn-primary" type="button" ng-click="$ctrl.add()">Save</button>
+            <button class="btn btn-default" type="button" ng-click="$ctrl.cancel()">Cancel</button>@*btn-warning*@
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="myModalContent.html">
+        <style>
+            .select {
+                border: 1px solid red;
+            }
+        </style>
+        <div class="modal-header p-10">
+            <h4 ng-if="$ctrl.node.depth == 0" class="modal-title" id="modal-title">Form Details</h4>
+            <h4 ng-if="$ctrl.node.depth == 1" class="modal-title" id="modal-title">Section Details</h4>
+            @*<h3 ng-if="$ctrl.node.depth == 2" class="modal-title" id="modal-title">Field Details</h3>*@
+            <h4 ng-if="$ctrl.node.depth == 2" class="modal-title" id="modal-title">{{$ctrl.node.title}}</h4>
+
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="row form-horizontal" ng-if="$ctrl.node.depth == 0">
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Element Name</label>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <input type="text" class="form-control" name="title" ng-model="$ctrl.node.title" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Gender</label>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            @*COMMNTED by rohini*@
+                            @*<label class="radio-inline" ng-repeat="item in $ctrl.tmplOptions">
+                                    <input type="radio" name="optradio"><input type="radio" ng-model="$ctrl.node.appliesTo" value="{{item}}">{{item}}
+                                </label>*@
+                            <select class="form-control " ng-model="$ctrl.node.appliesTo" ng-options="item.ID as item.Description for item in $ctrl.tmplOptions" ng-change="$ctrl.FillForm($ctrl.node.appliesTo)" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Form</label>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            @*commented for want single selection by rohini*@
+                            @*<div isteven-multi-select
+                                     input-model="$ctrl.tmplType"
+                                     output-model="$ctrl.seltmplType"
+                                     button-label="icon Description"
+                                     item-label="icon Description maker"
+                                     tick-property="ticked">
+                                </div>*@
+                            <select class="form-control " ng-model="$ctrl.node.templateType" ng-options="item.ID as item.Description for item in $ctrl.tmplType" ng-disabled="$ctrl.IsDisableForm" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-horizontal" ng-if="$ctrl.node.depth == 1">
+                <div class="col-md-12">
+                    @*<label>
+                            Section Name: <input type="text" name="title" ng-model="$ctrl.node.title" required>
+                        </label>*@
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Section Name</label>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <input type="text" class="form-control" name="title" ng-model="$ctrl.node.title" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal" ng-if="$ctrl.node.depth == 2">
+                <form ng-model="$ctrl.frmItemDetails" name="$ctrl.frmItemDetails" novalidate>
+                    @*<div class="col-md-12">
+                            <label>
+                                Title: <input type="text" class="form-control" name="title" ng-model="$ctrl.node.title" required>
+                            </label><div class="col-md-6 col-lg-6 ">
+                        </div>*@
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 ">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Title</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input type="text" class="form-control" name="title" ng-model="$ctrl.node.title" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6" ng-hide="true">
+                            @*by rohini to shoud be unique no need to entr from user*@
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Name</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input type="text" class="form-control" name="name" ng-model="$ctrl.node.name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6" ng-hide="$ctrl.node.fieldType == 'Header' || $ctrl.node.fieldType == 'Boolean' || $ctrl.node.fieldType == 'File Upload'">
+                            <div class="form-group ">
+                                <div class="col-sm-12 col-md-12 col-lg-12 m-t-25 m-b-10">
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" ng-model="$ctrl.node.isReq">Mandatory</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group ">
+                                @*<div class="col-sm-12 col-md-offset-4 col-md-8 col-lg-offset-3 col-lg-8">
+                                        <div isteven-multi-select
+                                             input-model="$ctrl.fieldType"
+                                             output-model="$ctrl.node.fieldType"
+                                             button-label="icon Description"
+                                             item-label="icon Description maker"
+                                             tick-property="ticked"
+                                             selection-mode="single">
+                                        </div>
+                                    </div>*@
+
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Field Type</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <select  size="5" class="form-control select" ng-model="$ctrl.node.fieldType" ng-options="item.Description as item.Description for item in $ctrl.fieldType" name="fieldType" id="fieldType" ng-class="select" />
+                                </div>@*size="3"*@
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="row" ng-if="$ctrl.node.fieldType === 'Date' || $ctrl.node.fieldType === 'Time Picker'">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Fields/Row</label>
+                               <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=1>1</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=2>2</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=3>3</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=4>4</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                    <div class="row" ng-if="$ctrl.node.fieldType === 'Text'">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Fields/Row</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=1>1</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=2>2</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=3>3</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=4>4</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group ">
+                                <div class="col-sm-12 col-md-12 col-lg-12 m-t-25">
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.fieldAttr.isSingle" value=1>Single Line</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.fieldAttr.isSingle" value=0>Multi Line</label>
+                                    @*<label>
+                                            <input type="radio" ng-model="$ctrl.node.fieldAttr.isSingle" value=1> Single Line
+                                            <input type="radio" ng-model="$ctrl.node.fieldAttr.isSingle" value=0> Multi Line
+                                        </label>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12">
+                            <input class="form-control" ng-show="$ctrl.node.fieldAttr.isSingle==1" ng-model="$ctrl.node.fieldAttr.dtext" required>
+                            <textarea class="form-control" ng-show="$ctrl.node.fieldAttr.isSingle==0" ng-model="$ctrl.node.fieldAttr.dtext" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row" ng-if="$ctrl.node.fieldType === 'Boolean'">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Fields/Row</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=1>1</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=2>2</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=3>3</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=4>4</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group ">
+                                <div class="col-sm-12 col-md-12 col-lg-12 m-t-28">
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.fieldAttr.isRadio" value=0>Checkbox</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.fieldAttr.isRadio" value=1>Yes/No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Default</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.fieldAttr.dbool" value=1>True</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.fieldAttr.dbool" value=0>False</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" ng-if="$ctrl.node.fieldType === 'List'">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Fields/Row</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=1>1</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=2>2</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=3>3</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=4>4</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group ">
+                                <div class="col-sm-12 col-md-12 col-lg-12 m-t-28">
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.fieldAttr.ismulti" value=0>Single Selection</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.fieldAttr.ismulti" value=1>Multiple Selection</label>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="col-md-12" style="padding:0">
+                                <label>
+                                    <input type="radio" ng-model="$ctrl.node.fieldAttr.ismulti" value=0> Single Select
+                                    <input type="radio" ng-model="$ctrl.node.fieldAttr.ismulti" value=1> Multi Select
+                                </label>
+                            </div>*@
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group ">
+                                <div class="col-md-12 col-lg-12">
+                                    <textarea class="form-control" ng-model="$ctrl.node.fieldAttr.sfields" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12" ng-show="$ctrl.node.fieldAttr.ismulti === '0'">
+                            <div class="form-group ">
+                                <div class="col-md-6 col-lg-6 m-b-5">
+                                    <button class="btn btn-default btn_form" type="button" ng-click="$ctrl.setdefault()">Set Default</button>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div isteven-multi-select
+                                         input-model="$ctrl.sdfields"
+                                         output-model="$ctrl.sdfield"
+                                         button-label="icon name"
+                                         item-label="icon name maker"
+                                         tick-property="ticked"
+                                         selection-mode="single">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" ng-if="$ctrl.node.fieldType === 'Decimal'">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Fields/Row</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=1>1</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=2>2</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=3>3</label>
+                                    <label class="radio-inline"><input type="radio" ng-model="$ctrl.node.row" value=4>4</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Unit</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="form-control" ng-model="$ctrl.node.fieldAttr.unit" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12 ">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Default Value</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input type="text" class="form-control" name="name" ng-model="$ctrl.node.fieldAttr.ddecimal" required>
+                                </div>
+                            </div>
+                        </div><div class="clearfix"></div>
+                        <div class="col-md-6 col-lg-6 ">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Minimum Value</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input type="text" class="form-control" name="name" ng-model="$ctrl.node.fieldAttr.mind" ng-required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 ">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" id="" for="">Maximum Value</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input type="text" class="form-control" name="name" ng-model="$ctrl.node.fieldAttr.maxd" ng-required="true">
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="col-md-12" style="padding:0; margin-bottom:10px">
+                                Minimum Value: <input ng-model="$ctrl.node.fieldAttr.mind" required>
+                            </div>*@
+                        @*<div class="col-md-12" style="padding:0; margin-bottom:10px">
+                                Maximum Value: <input ng-model="$ctrl.node.fieldAttr.maxd" required>
+                            </div>*@
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer  p-5">
+            <div class="text-right">
+                <button class="btn btn-primary btn_save" id="" type="button" ng-click="$ctrl.ok()">Save</button>
+                <button class="btn btn-primary btn_cancle" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+            </div>
+        </div>
+    </script>
+    @*<div class="row">
+            <div class="col-sm-12">
+                <button ng-click="expandAll()">Expand all</button>
+                <button ng-click="collapseAll()">Collapse all</button>
+                <button ng-click="showJson()">Show Form JSON</button>
+                <button ng-click="formwithmodel()">Get Form with Model</button>
+            </div>
+    </div>*@
+    <div class="row m-t-20">
+        <div class="col-sm-4 p-r-0">
+            <div class="Emrform_Collapse">
+                <div data-ui-tree="treeOptions" id="tree-root">
+                    <ol ui-tree-nodes ng-model="data">
+                        <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row form-horizontal m-t-15">
+                <div class="col-lg-12 text-right">
+                    @*<label>Activate</label>
+                        <input type="checkbox" ng-model="DesignEMRVO.Status" name="chkStatus">*@
+                    <button class="btn btn-primary" type="button" id="btnSave" value="" ng-click="ModifyTemplate()">Save</button>
+                    <button class="btn btn-default" ng-click="BackToIndex()" type="button" id="" value="">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8" >
+            <div class="Emrform_Content">
+                    @*form display*@
+                    @*<form sf-schema="schema" sf-form="form" sf-model="model" ng-submit="submitForm(form,model)"></form>*@
+                <div id="designForm" class="">
+                    <form sf-schema="schema" name="myForm" sf-form="form" sf-model="model" ng-submit="submitForm(myForm)"></form>
+                </div>                   
+                    @*<button ng-click="SaveTemplate()" ng-show="IsSave">Save</button>
+                    <button ng-click="ModifyTemplate()" ng-show="IsModify">Modify</button>*@
+            </div>
+        </div>
+        @*<div>
+                <h3>schema</h3>
+                {{prettyModel}}
+        </div>*@
+    </div>
+</div>

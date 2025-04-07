@@ -1,0 +1,171 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/strap.min.css" rel="stylesheet" />
+<link href="~/Content/angular-ui-tree.min.css" rel="stylesheet" />
+<link href="~/Content/angular-ui-tree-theme.css" rel="stylesheet" />
+<link href="~/Content/addon.css" rel="stylesheet" />
+<link href="~/Content/schema-form-file.css" rel="stylesheet" />
+
+<style>
+    .errorMsg {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<section class="list_form m-t-35" style="position: relative;
+        z-index: 11;">
+    <form ng-controller="NewRegistrationController" name="patientAdditionalInformation" id="patientAdditionalInformation" ng-init="isView=true;formLoad();">
+
+
+        <div>
+
+
+            <H1 class="title_PR-view Capitalize personalCharacteristicsHeader">@PIVF.LanguageResource.Resources.lblPatientInformation</H1>
+            <div class="personalCharacteristicsWrapper">
+
+                <img ng-if="patient.GenderID==2" ng-src="../images/Female_default.jpg" style="width: 6.5%;
+    float: left;
+
+    margin-right: 20px;
+    border-radius: 50%;
+
+    border-width: 3px !important;
+    border: 2px solid #a09595; ">
+
+
+                <img ng-if="patient.GenderID==1" ng-src="../images/Male_default.jpg" style="width: 6.5%;
+    float: left;
+
+    margin-right: 20px;
+    border-radius: 50%;
+
+    border-width: 3px !important;
+    border: 2px solid #a09595;">
+
+                <h5>@PIVF.LanguageResource.Resources.lblvName :: {{patient.FirstName + ' ' + patient.LastName}} </h5>
+                <h5>@PIVF.LanguageResource.Resources.lblDOB ( @PIVF.LanguageResource.Resources.lblvAGE ) :: {{patient.DateOfBirth|date : "dd-MMM-yyyy"}} ({{patient.Age}} @PIVF.LanguageResource.Resources.yearslbl) </h5>
+                <h5>@PIVF.LanguageResource.Resources.lblMRNO :: {{patient.MRNo}}</h5>
+                <h5>@PIVF.LanguageResource.Resources.lblClinicName :: {{patient.Camp}}</h5>
+
+
+            </div>
+        </div>
+
+
+    </form>
+</section>
+<section class="list_form m-t-35" style="position: relative;
+        z-index: 11;">
+
+    <h1 class="title_PR-view Capitalize personalCharacteristicsHeader">@PIVF.LanguageResource.Resources.lblAdditionalInformation</h1>
+</section>
+ <section class="list_form m-t-35" style="position: relative;
+        z-index: 11;">
+        <div ng-controller="NewRegistrationController" class="page_EMRTemplate" ng-init="GetTemplateByFormID1(FormID);">
+
+
+
+            @*<form name="frmSemenPrep" novalidate autocomplete="off">
+
+
+                    <div class="list_pageLeft" >
+                        <h5 class="subTitle">Table of Contents</h5>
+                        <div class="table-responsive fixed_header">
+                            <table class="table table-hover table-striped" style="height:450px;min-width: 435px;">
+
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="3">&nbsp;</th>
+                                        <th st-ratio="35">S.No.<div ></div></th>
+                                        <th st-ratio="24" ng-click="SortData1('UpdatedDateTime')">Date<div ng-class="sortClass1"></div></th>
+                                        <th st-ratio="34">Doctor Name<div></div></th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr ng-repeat="item in TemplateDetailList|orderBy:SortColumn1:reverseSort1">
+                                        <td st-ratio="3" class="cycle_actions">
+                                            <div class="dropdown">
+                                                <a href="" class="dropdown-toggle" id="cycleAction_1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                    <span class="glyphicon glyphicon-cog"></span>
+                                                </a>
+
+                                                <ul class="dropdown-menu" aria-labelledby="cycleAction_1">
+                                                    <li><a ng-click="PrintSemenAnalysis(item)">Print</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td st-ratio="35"> <a class="txt_bold" ng-click="RedirectToSelf(item.ID,item.UnitID)">{{item.SNO}}</a></td>
+
+                                        <td st-ratio="24" ng-if="item.UpdatedDateTime == null">{{item.AddedDateTime | date:'dd-MMM-yyyy'}}</td>
+                                        <td st-ratio="24" ng-if="item.UpdatedDateTime != null ">{{item.UpdatedDateTime | date:'dd-MMM-yyyy'}}</td>
+                                        <td st-ratio="34">Dr. {{patient.ExtDocFirstName}}{{patient.ExtDocLastName}}</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>*@
+
+
+            <section class="list_form m-t-35">
+                <div class="Emrform_Content" id="printSection1">
+
+                    <form sf-schema="schema" name="myForm" sf-form="form" sf-model="model" ng-submit="submitForm(myForm)"></form>
+
+                </div>
+            </section><div class="clear"></div>
+            <label class="col-sm-12 col-md-8 col-lg-8 control-label noteLabel ng-binding ng-scope" id="" for="">
+                <span>@PIVF.LanguageResource.Resources.lblLastUpdatedBy :: </span>{{lastupdetedBy}}
+                <span>@PIVF.LanguageResource.Resources.lblvOn</span> {{lastupdatedOn}}
+            </label>
+
+            <div class="row form-horizontal m-t-10">
+                <div class="col-lg-12 text-right">
+                    <button class="btn btn-primary" type="button" id="" value="" ng-click="ShowUploadedImages()">@PIVF.LanguageResource.Resources.lblvShowUploadedFiles</button>
+                    <button class="btn btn-primary" type="button" id="" value="" ng-click="SaveUpdateEMRTemplate()">{{btnSaveUpdatetext}}</button>
+
+                    <button class="btn btn-default clear" type="button" id="" value="" ng-click="Clear()">@PIVF.LanguageResource.Resources.btnClear</button>
+                    <a href="#/PatientList" class="ng-binding btn btn-default" type="button" style="color:black; text-decoration:none;">
+                        @PIVF.LanguageResource.Resources.btnCancel
+                    </a>
+                </div>
+            </div>
+
+            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+        </div>
+</section>
+        <script type="text/ng-template" id="modelID">
+            <table class="table table-hover table-striped table-hover selectPatient_item" id="">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+
+                        <th>@PIVF.LanguageResource.Resources.lblTemplateName</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="Item in TemplateList">
+
+                        <td>
+                            <div class="inputChkbx inputNone">
+                                <input type="checkbox" name="" ng-click="SelectPatient(Item)" id="{{$index}}">
+                                <label for="{{$index}}"><span class="checkbox"></span></label>
+                            </div>
+                        </td>
+
+                        <td>{{Item.TempName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </script>
+
+
+
+
+

@@ -1,0 +1,376 @@
+﻿
+@{    Layout = null;
+
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+<style>
+    #content {
+        padding: 2%;
+    }
+
+    .header {
+        text-align: center;
+    }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+    .report-info {
+        text-align: center;
+        margin: 20px;
+        font-size: 14px;
+    }
+
+    .custom-table-container {
+        max-height: 518px;
+        overflow-y: auto;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .unique-table-class {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+    }
+
+        .unique-table-class th,
+        .unique-table-class td {
+            border: 1px solid gray;
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+            white-space: nowrap; /* Prevent word breaking */
+        }
+
+        .unique-table-class th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            white-space: nowrap; /* Prevent word breaking */
+        }
+
+    .reportHeading {
+        color: purple;
+        text-decoration: underline;
+        margin: 10px;
+    }
+
+    .reportHeadingBox {
+        border-bottom: 1px solid gray;
+        font-family: none;
+    }
+
+    .no-table-styles {
+        max-height: none !important;
+        overflow-y: visible !important;
+        overflow-x: visible !important;
+        border: none !important;
+    }
+</style>
+
+
+
+
+<div ng-controller="PatientAdvanceRefundCtr">
+    <!-- End Grid -->
+    <div class="form_Content form-horizontal" style="min-height: 650px; height: calc(100vh - 180px);">
+        <div class="row" ng-init="LoadDataInit();">
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblClinic</label>@*Clinic :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <select class="form-control" id="ddlBankList" name="ddlBankList" ng-model="PatientData.ClinicID"
+                                ng-options="item.ID as item.Description for item in clinicList" ng-disabled="true"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblFromDate</label>@*From Date :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="" ng-model="PatientData.FromDate" placeholder="@PIVF.LanguageResource.Resources.lblVisitFrom" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup4.opened" datepicker-options="FromToDateOptions" alt-input-formats="altInputFormats">
+                            <span class="input-group-addon" id="" ng-click="open4()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblToDate</label>@*To Date :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="" ng-model="PatientData.ToDate" placeholder="@PIVF.LanguageResource.Resources.lblVisitTo" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup5.opened" datepicker-options="FromToDateOptions" alt-input-formats="altInputFormats">
+                            <span class="input-group-addon" id="" ng-click="open5()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblFirstName</label>@*First Name :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control Capitalize" id="" ng-model="PatientData.FirstName" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblMiddleName</label>@*Middle Name :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control Capitalize" id="" ng-model="PatientData.MiddleName" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblLastName</label>@*Last Name :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control Capitalize" id="" ng-model="PatientData.LastName" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblMRN</label>@*MRN :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control" id="" ng-model="PatientData.MRNO" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblReceiptNo</label>@*Bill No ::Modified by swatih for localization 30/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control" id="" ng-model="PatientData.ReceiptNo" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-12" style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                <!-- Search Button -->
+                <button id="SearchAd"
+                        type="button"
+                        class="btn btn-primary"
+                        style="position: relative; top: -60px; margin-right: 41%;"
+                        ng-click="SearchData(PatientData)">
+                    @PIVF.LanguageResource.Resources.btnSearch
+                </button>
+
+                <!-- New Bill Button -->
+                <button id="newBillButton"
+                        type="button"
+                        ng-click="goToRefundPage()"
+                        class="btn"
+                        style="color: orange; background: none; border: none; position: relative; bottom: -60px; margin-left: 20px; cursor: pointer;">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblcNewAdvanceRefund
+                </button>
+            </div>
+        </div>
+
+        <section class="col-md-12 col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcListofRefunds</h5></section>
+        <div class="col-md-2 col-lg-2">
+            <div class="find_title">
+                <p class="">
+                    <span>@PIVF.LanguageResource.Resources.lblcRefundCounts</span>
+                    <span ng-model="$scope.TotalItems" class="total_count">{{TotalItems}}</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="find_title">
+            <p class="">
+                <span>Category wise balance amount:</span>
+                <span class="total_count">Patient advance  5000</span>
+            </p>
+        </div> -->
+        @*<div class="col-md-10 col-lg-10">
+                <b>Category wise balance amount : </b>
+                <label class="control-label"> Patient advance  5000</label>
+            </div>*@
+
+        <div class="col-md-12">
+            <div class="table-responsive fixed_header" id="AdvanceTable">
+                <table class="table table-hover table-striped" style="min-width: 2500px;">
+                    <thead>
+                        <tr>
+                            <th st-ratio="10">@PIVF.LanguageResource.Resources.lblClinic</th>
+                            <th st-ratio="10">@PIVF.LanguageResource.Resources.lblDate</th>
+                            <th st-ratio="11">@PIVF.LanguageResource.Resources.lblPatientName</th>
+                            <th st-ratio="11">@PIVF.LanguageResource.Resources.lblcReceiptNo</th>
+                            @*<th st-ratio="10">Advance Against</th>*@
+                            <th st-ratio="10">@PIVF.LanguageResource.Resources.lblcTotalAdvanceAmount</th>
+                            <th st-ratio="10">@PIVF.LanguageResource.Resources.lblcUsedAdvanceAmount</th>
+                            <th st-ratio="10">@PIVF.LanguageResource.Resources.lblcRefundAmount</th>
+                            @*<th st-ratio="10">Balance Advance Amount</th>*@
+                            <th st-ratio="10">@PIVF.LanguageResource.Resources.lblRemarks</th>
+                            <th st-ratio="6"></th>
+                        </tr>
+                    </thead>
+                    <tbody style="height: calc(100vh - 590px);">
+                        <tr ng-repeat="item in RefundList track by item.RefundID">
+                            <td st-ratio="10">{{item.UnitName}}</td>
+                            <td st-ratio="10">{{item.Date | date : "dd-MMM-yyyy"}}</td>
+                            <td st-ratio="11">{{item.PatientName}}</td>
+                            <td st-ratio="11">{{item.ReceiptNo}}</td>
+                            @*<td st-ratio="10">{{item.AdvanceAgainst}}</td>*@
+                            <td st-ratio="10">{{item.TotalAdvanceAmount | number:2}}</td>
+                            <td st-ratio="10">{{item.TotalAdvanceUsed | number:2}}</td>
+                            <td st-ratio="10">{{item.Amount | number:2}}</td>
+                            @*<td st-ratio="10">{{(item.TotalAdvanceAmount - item.TotalAdvanceUsed - item.Amount) | number:2}}</td>*@
+                            <td st-ratio="10">{{item.Remarks || '-'}}</td>
+                            <td st-ratio="6" style="text-align: center;">
+                                <a class="link p-r-5" ng-click="downloadReport(item)">@PIVF.LanguageResource.Resources.lblcReceipt</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text-left m-l-10">
+                    <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                    <!-- Button group row -->
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="customReport" ng-hide="true" ng-if="reportData.length">
+        <div id="content" style="font-family: Arial, sans-serif; padding: 5px;">
+            <!-- Outer Border -->
+            <div>
+                <!-- Header Section -->
+                <div ng-if="reportData[0].IsUnitWithPrint" class="header" style="text-align: center; margin-bottom: 5px; border-bottom: 1px solid black;">
+                    <div style="text-align: right;">
+                        <h1 style="font-size: 14px; font-weight: bold; margin: 0; color: black;">{{ reportData[0].UnitName }}</h1>
+                        <p style="margin: 0; font-size: 9px; color: black;">{{ reportData[0].Address }}</p>
+                        <p style="margin: 0; font-size: 9px; color: black;">@PIVF.LanguageResource.Resources.lblcContactNos {{ reportData[0].ContactNo }}</p>
+                        <p style="margin: 0; font-size: 9px; color: black;">@PIVF.LanguageResource.Resources.lblcEmails {{ reportData[0].Email }}</p>
+                    </div>
+                </div>
+
+                <!-- Report Title -->
+                <div style="text-align: center; margin-top: 5px; margin-bottom: 5px; border-bottom: 1px solid black; padding-bottom: 2px;">
+                    <h2 style="font-size: 12px; font-weight: bold; margin: 0;">@PIVF.LanguageResource.Resources.lblcAdvanceRefundReceipt</h2>
+                </div>
+
+                <!-- Patient Information -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px solid black; padding-bottom: 5px;">
+                    <!-- Left Column -->
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 0px; margin-right: 5px;">
+                        <div style="display: flex; text-align: left; font-size: 9px;">
+                            <strong style="flex-basis: 45%;">@PIVF.LanguageResource.Resources.lblPatientName</strong>
+                            <span style="flex-basis: 55%; color: black;">: {{ reportData[0].PatientName }}</span>
+                        </div>
+                        <div style="display: flex; text-align: left; font-size: 9px;">
+                            <strong style="flex-basis: 45%;">@PIVF.LanguageResource.Resources.lblcGenderAge</strong>
+                            <span style="flex-basis: 55%; color: black;">: {{ reportData[0].Gender }} / {{ reportData[0].Age }} @PIVF.LanguageResource.Resources.yearslbl</span>
+                        </div>
+                        <div style="display: flex; text-align: left; font-size: 9px;">
+                            <strong style="flex-basis: 45%;">@PIVF.LanguageResource.Resources.lblcPatientContactNo</strong>
+                            <span style="flex-basis: 55%; color: black;">: {{ reportData[0].PatientContactNo }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 0px; margin-left: 5px;">
+                        <div style="display: flex; text-align: left; font-size: 9px;">
+                            <strong style="flex-basis: 45%;">@PIVF.LanguageResource.Resources.lblcRefundReceiptNo</strong>
+                            <span style="flex-basis: 55%; color: black;">: {{ reportData[0].RefundReceiptNo }}</span>
+                        </div>
+                        <div style="display: flex; text-align: left; font-size: 9px;">
+                            <strong style="flex-basis: 45%;">@PIVF.LanguageResource.Resources.lblcReceiptDateTime</strong>
+                            <span style="flex-basis: 55%; color: black;">: {{ reportData[0].RefundDate | date:'dd-MM-yyyy hh:mm a' }}</span>
+                        </div>
+                        <div style="display: flex; text-align: left; font-size: 9px;">
+                            <strong style="flex-basis: 45%;">@PIVF.LanguageResource.Resources.lblcMRNo</strong>
+                            <span style="flex-basis: 55%; color: black;">: {{ reportData[0].MRNo }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transaction Summary -->
+                <div style="margin-bottom: 5px;">
+                    <h2 style="font-size: 10px; font-weight: bold; margin-bottom: 3px;">@PIVF.LanguageResource.Resources.lblcTransactionSummarys</h2>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left; border-bottom: 1px solid black; padding: 2px; font-size: 9px;">@PIVF.LanguageResource.Resources.lblSr_No</th>
+                                <th style="text-align: left; border-bottom: 1px solid black; padding: 2px; font-size: 9px;">@PIVF.LanguageResource.Resources.lblPaymentMode</th>
+                                <th style="text-align: left; border-bottom: 1px solid black; padding: 2px; font-size: 9px;">@PIVF.LanguageResource.Resources.lblPaidAmount</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="data in reportData track by $index">
+                            <tr>
+                                <td style="padding: 2px; border-bottom: 1px solid black; font-size: 9px;">{{ $index + 1 }}</td>
+                                <td style="padding: 2px; border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black; font-size: 9px; color: black;">{{ data.PaymentMode }}</td>
+                                <td style="padding: 2px; border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black; font-size: 9px; color: black;">{{ data.PaidAmount | number:2 }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Refund Details -->
+                <div style="margin-bottom: 5px; font-size: 9px; color: black;">
+                    <p style="margin: 0;"><strong>@PIVF.LanguageResource.Resources.lblcRefundAmountRs</strong> {{ reportData.Total | number:2 }}</p>
+                    <p style="margin: 0;"><strong>@PIVF.LanguageResource.Resources.lblcRefundAmountinWords</strong> @PIVF.LanguageResource.Resources.lblcRupees {{ reportData.PaidAmountInWords }} only</p>
+                    <p style="margin: 0;"><strong>@PIVF.LanguageResource.Resources.lblcRemarkss</strong> {{ reportData[0].Remarks || '-' }}</p>
+                    <p style="margin: 0;"><strong>@PIVF.LanguageResource.Resources.lblcIssuedBy</strong> {{ reportData[0].IssuedBy }}</p>
+                    <p style="margin: 0;"><strong>@PIVF.LanguageResource.Resources.lblcPrintDatetimes</strong> {{ reportData[0].PrintDateTime }}</p>
+                </div>
+
+                <!-- Cashier Signature -->
+                <div style="text-align: right; margin-top: 10px;">
+                    <p style="margin: 0; font-size: 9px;">.......................................................</p>
+                    <p style="margin: 0; margin-top: 3px; margin-right: 30px; font-size: 9px; color: black; text-align: right;"><strong>@PIVF.LanguageResource.Resources.lblcCashierSignature</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Save Cancle Buttons -->
+@*===========================================================================================================================*@
+@*<div class="modal" id="PaymentDtls" tabindex="-1" role="dialog"  type="text/ng-template" ng-controller="PatientAdvanceCtr">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><b>Payment Details Aparna Thakur- </b> VFC200/5691 Advance Amount:5000</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn_save" type="button" id="" value="Add">OK</button>
+                    <button class="btn btn-primary btn_cancle" type="button" id="" value="Cancel" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+@*============================================================================================================================*@
+
+
+

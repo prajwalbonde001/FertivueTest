@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94E81D48-74B2-42EB-B389-F25C8C23F9C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIVF.Entities</RootNamespace>
+    <AssemblyName>PIVF.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.402.26\lib\net45\AWSSDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.S3.3.7.415.25\lib\net45\AWSSDK.S3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PIVF.Web\Reference dll\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PIVF.Web\Reference dll\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.1.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\PIVF.Web\Reference dll\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\PIVF.Web\Reference dll\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mapping\Clinic\CityMap.cs" />
+    <Compile Include="Mapping\Clinic\CountryMap.cs" />
+    <Compile Include="Mapping\Clinic\DepartmentMap.cs" />
+    <Compile Include="Mapping\Clinic\DesignationMap.cs" />
+    <Compile Include="Mapping\Clinic\Gender.cs" />
+    <Compile Include="Mapping\Clinic\StateMap.cs" />
+    <Compile Include="Models\ARTMgmt\Cryo-Preservation\EmbryoThowingVO.cs" />
+    <Compile Include="Models\ARTMgmt\Cryo-Preservation\FreezeEmbryoVO.cs" />
+    <Compile Include="Models\ARTMgmt\Cryo-Preservation\IVF_VitrificationDetailsVO.cs" />
+    <Compile Include="Models\ARTMgmt\Cryo-Preservation\IVF_VitrificationVO.cs" />
+    <Compile Include="Models\ARTMgmt\Cryo-Preservation\OocyteThawingVO.cs" />
+    <Compile Include="Models\ARTMgmt\Embrology\DayFiveVO.cs" />
+    <Compile Include="Models\ARTMgmt\Embrology\DayFourVO.cs" />
+    <Compile Include="Models\ARTMgmt\Embrology\DayOneVO.cs" />
+    <Compile Include="Models\ARTMgmt\Embrology\DaySevenVO.cs" />
+    <Compile Include="Models\ARTMgmt\Embrology\DaySixVO.cs" />
+    <Compile Include="Models\ARTMgmt\Embrology\DayThreeVO.cs" />
+    <Compile Include="Models\ARTMgmt\Embrology\DayTwoVO.cs" />
+    <Compile Include="Models\ARTMgmt\Embrology\DayZeroVO.cs" />
+    <Compile Include="Models\ARTMgmt\Embrology\EmbrologyVO.cs" />
+    <Compile Include="Models\ARTMgmt\EmbryoTransfer\EmbryoTransferVO.CS" />
+    <Compile Include="Models\ARTMgmt\IUI\DonorListVO.cs" />
+    <Compile Include="Models\ARTMgmt\IUI\IUIVO.cs" />
+    <Compile Include="Models\ARTMgmt\MediaConsumption\MediaConsumptionVO.cs" />
+    <Compile Include="Models\ARTMgmt\MediaConsumption\MediaItemVO.cs" />
+    <Compile Include="Models\ARTMgmt\OPU\OPUVO.cs" />
+    <Compile Include="Models\ARTMgmt\Outcome\OutcomeVO.cs" />
+    <Compile Include="Models\ARTMgmt\ReportUpload\ReportUploadVO.cs" />
+    <Compile Include="Models\ARTMgmt\SemenDetails\SemenDetailsVO.cs" />
+    <Compile Include="Models\ARTMgmt\StimulationChart\StimulationChartVO.cs" />
+    <Compile Include="Models\Authentication\Client.cs" />
+    <Compile Include="Models\Authentication\RefreshToken.cs" />
+    <Compile Include="Models\Authentication\UserModel.cs" />
+    <Compile Include="Models\Billing\BillVO.cs" />
+    <Compile Include="Models\Billing\ChargeDetailsVO.cs" />
+    <Compile Include="Models\Billing\ChargeVO.cs" />
+    <Compile Include="Models\Billing\PatientAdvanceRefundVO.cs" />
+    <Compile Include="Models\Billing\PatientAdvanceVO.cs" />
+    <Compile Include="Models\Billing\PatientBillListVO.cs" />
+    <Compile Include="Models\Billing\PaymentDetailsVO.cs" />
+    <Compile Include="Models\Billing\PaymentModeValidationVO.cs" />
+    <Compile Include="Models\Billing\PaymentVO.cs" />
+    <Compile Include="Models\Clinic\Appointments.cs" />
+    <Compile Include="Models\Clinic\DoctorAppointments.cs" />
+    <Compile Include="Models\Clinic\Schedule.cs" />
+    <Compile Include="Models\Consent\ConsentAction\ConsentDetailsVO.cs" />
+    <Compile Include="Models\Consent\ConsentMaster\ConsentLinkDetailsVO.cs" />
+    <Compile Include="Models\Consent\ConsentMaster\ConsentMasterVO.cs" />
+    <Compile Include="Models\CounterSale\clsItemSalesVO.cs" />
+    <Compile Include="Models\CounterSale\CounterSaleVO.cs" />
+    <Compile Include="Models\Dashboard\DashboardVO.cs" />
+    <Compile Include="Models\Dashboard\FemalePatientDashBoardVO.cs" />
+    <Compile Include="Models\Dashboard\MalePatientDashBoardVO.cs" />
+    <Compile Include="Models\Donor\DonerDetailsVO.cs" />
+    <Compile Include="Models\Donor\DonorVO.cs" />
+    <Compile Include="Models\EMR\DesignEMR\DesignEMRVO.cs" />
+    <Compile Include="Models\EMR\Diagnosis\DiagnosisDetailsVO.cs" />
+    <Compile Include="Models\EMR\Diagnosis\DiagnosisVO.cs" />
+    <Compile Include="Models\EMR\Diagnosis\OtherDiagnosisVO.cs" />
+    <Compile Include="Models\EMR\FemaleHistory\CorpusLeteumScan.cs" />
+    <Compile Include="Models\EMR\FemaleHistory\DICOMStudies.cs" />
+    <Compile Include="Models\EMR\FemaleHistory\FemaleComplaints.cs" />
+    <Compile Include="Models\EMR\FemaleHistory\FemaleHistroy.cs" />
+    <Compile Include="Models\EMR\FemaleHistory\FollicularScan.cs" />
+    <Compile Include="Models\EMR\Investigation\InvestigationVo.cs" />
+    <Compile Include="Models\EMR\LandingPage\EMRLandingPageVO.cs" />
+    <Compile Include="Models\EMR\MaleHistory\MaleComplaints.cs" />
+    <Compile Include="Models\EMR\MaleHistory\MaleHistory.cs" />
+    <Compile Include="Models\EMR\MaleHistory\SemenExamination.cs" />
+    <Compile Include="Models\EMR\MaleHistory\SemenFreez.cs" />
+    <Compile Include="Models\EMR\MaleHistory\SemenPreparation.cs" />
+    <Compile Include="Models\EMR\MaleHistory\SemenThawing.cs" />
+    <Compile Include="Models\EMR\MaleHistory\SurgicalSpermRetrival.cs" />
+    <Compile Include="Models\EMR\Prescription\DrugVO.cs" />
+    <Compile Include="Models\EMR\Prescription\FrequencyVO.cs" />
+    <Compile Include="Models\EMR\Prescription\PrescriptionVO.cs" />
+    <Compile Include="Models\EMR\Prescription\TemplateForPrescriptionVO.cs" />
+    <Compile Include="Models\EMR\Vitals\VitalsVO.cs" />
+    <Compile Include="Models\FertivueDashboard\FertivueDashboard.cs" />
+    <Compile Include="Models\FinancialKPIs\FinancialKPIsVO.cs" />
+    <Compile Include="Models\Inventory\ItemStockVO.cs" />
+    <Compile Include="Models\IPD\IPDVO.cs" />
+    <Compile Include="Models\KPI\KPI.cs" />
+    <Compile Include="Models\Lab\clsPathOrderBookingDetailVO.cs" />
+    <Compile Include="Models\Lab\clsPathOrderBookingVO.cs" />
+    <Compile Include="Models\Lab\clsPathoTestParameterVO.cs" />
+    <Compile Include="Models\Lab\clsPathPatientReportVO.cs" />
+    <Compile Include="Models\Lab\NewLabEnteryVO.cs" />
+    <Compile Include="Models\LinkPartner\LinkPartner.cs" />
+    <Compile Include="Models\Master\Billing\Company.cs" />
+    <Compile Include="Models\Master\Billing\TariffMaster.cs" />
+    <Compile Include="Models\Master\Clinic\Cabin.cs" />
+    <Compile Include="Models\Master\Clinic\City.cs" />
+    <Compile Include="Models\Master\Clinic\Classification.cs" />
+    <Compile Include="Models\Master\Clinic\ClinicMaster.cs" />
+    <Compile Include="Models\Master\Clinic\Country.cs" />
+    <Compile Include="Models\Master\Clinic\Department.cs" />
+    <Compile Include="Models\Master\Clinic\Designation.cs" />
+    <Compile Include="Models\Master\Clinic\Doctor.cs" />
+    <Compile Include="Models\Master\Clinic\Specialization.cs.cs" />
+    <Compile Include="Models\Master\Clinic\Staff.cs" />
+    <Compile Include="Models\Master\Clinic\State.cs" />
+    <Compile Include="Models\Master\Clinic\SubSpecialization.cs" />
+    <Compile Include="Models\Master\Configuration\Menu.cs" />
+    <Compile Include="Models\Master\Configuration\PatientListVo.cs" />
+    <Compile Include="Models\Master\Configuration\Unit.cs" />
+    <Compile Include="Models\Master\Configuration\User.cs" />
+    <Compile Include="Models\Master\Configuration\UserRole.cs" />
+    <Compile Include="Models\Master\Inventory\clsConversions.cs" />
+    <Compile Include="Models\Master\Inventory\clsConversionsVO.cs" />
+    <Compile Include="Models\Master\Inventory\ItemMasterVO.cs" />
+    <Compile Include="Models\Master\Inventory\StoreMaster.cs" />
+    <Compile Include="Models\Master\IVF\CommonEntity.cs" />
+    <Compile Include="Models\Master\IVF\DoctorList.cs" />
+    <Compile Include="Models\Master\IVF\ServiceMasterVO.cs" />
+    <Compile Include="Models\Master\PatientRelation\PatRelation.cs" />
+    <Compile Include="Models\Master\Patient\CategoryL1Master.cs" />
+    <Compile Include="Models\Master\Patient\CategoryL2Master.cs" />
+    <Compile Include="Models\Master\Patient\PatientRegistration.cs" />
+    <Compile Include="Models\Master\Patient\VisitType.cs" />
+    <Compile Include="Models\MaterialConsumption\clsMaterialConsumptionVO .cs" />
+    <Compile Include="Models\NewART\ARTCycleVO.cs" />
+    <Compile Include="Models\NewART\NewART.cs" />
+    <Compile Include="Models\NewRegistration\NewRegistrationVO.cs" />
+    <Compile Include="Models\PatientDashboard\PatientDashboardClass.cs" />
+    <Compile Include="Models\Patient\clsCoupleVO.cs" />
+    <Compile Include="Models\Patient\clsPatientImagesVO.cs" />
+    <Compile Include="Models\Patient\clsPatientVO.cs" />
+    <Compile Include="Models\Patient\DonorDetailsVO.cs" />
+    <Compile Include="Models\Patient\FemalePatientVO.cs" />
+    <Compile Include="Models\Patient\MalePatientVO.cs" />
+    <Compile Include="Models\Patient\PatientPersonalCharacteristicsVO.cs" />
+    <Compile Include="Models\Patient\PatientVisit.cs" />
+    <Compile Include="Models\Patient\RegistrationVO.cs" />
+    <Compile Include="Models\Patient\VisitVO.cs" />
+    <Compile Include="Models\PIVFContext.cs" />
+    <Compile Include="Models\QualityControl\QualityControlVO.cs" />
+    <Compile Include="Models\QueueMgt\QueueVO.cs" />
+    <Compile Include="Models\Tickets.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">
+      <Project>{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}</Project>
+      <Name>Repository.Pattern.Ef6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Repository.Pattern\Repository.Pattern.csproj">
+      <Project>{6E682A14-C872-4813-B620-76E108DEA683}</Project>
+      <Name>Repository.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIVF.LanguageResource\PIVF.LanguageResource.csproj">
+      <Project>{f8c698ea-b1b2-49c5-8395-681df868384a}</Project>
+      <Name>PIVF.LanguageResource</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.S3.3.7.415.25\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.S3.3.7.415.25\analyzers\dotnet\cs\SharedAnalysisCode.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

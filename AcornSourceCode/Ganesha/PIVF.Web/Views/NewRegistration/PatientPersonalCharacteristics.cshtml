@@ -1,0 +1,97 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .errorMsg {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<form ng-controller="NewRegistrationController" name="frmPersonalCharacteristics" id="frmPersonalCharacteristics" ng-init="isView=true;formLoad();">
+    
+    <div>
+        <h1 class="title_PR-view Capitalize personalCharacteristicsHeader">@PIVF.LanguageResource.Resources.lblPatientInformation</h1>
+        <div class="personalCharacteristicsWrapper">
+            <h5>@PIVF.LanguageResource.Resources.lblvName :: {{patient.FirstName + ' ' + patient.LastName}} </h5>
+            <h5>@PIVF.LanguageResource.Resources.lblDOB ( @PIVF.LanguageResource.Resources.lblvAGE ) :: {{patient.DateOfBirth|date : "dd-MMM-yyyy"}} ({{patient.Age}} @PIVF.LanguageResource.Resources.yearslbl) </h5>
+            <h5>@PIVF.LanguageResource.Resources.lblMRNO :: {{patient.MRNo}}</h5>
+        </div> 
+    </div>
+    <div ng-init="FillDropDowns()">
+        <div class="row m-0">
+            <div class="col-md-12 personalCharacteristicsHeader">
+                @PIVF.LanguageResource.Resources.lblvPersonalCharacteristics
+            </div>
+        </div>
+
+       
+        <div class="row personalCharacteristicsWrapper m-0 p-l-0 p-r-0">
+            <div class="col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label class="control-label" for="">
+                       @PIVF.LanguageResource.Resources.lblEyeColor
+                    </label>
+                    <select id=""
+                            ng-model="frmPersonalCharacteristics.EyeColorID"
+                            ng-keypress="$event.which==13?FillDonorList():0"
+                            class="form-control"
+                            ng-options="item.ID as item.Description for item in EyeColorList"></select>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label class="control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblHairColor
+                    </label>
+                    <select id=""
+                            ng-model="frmPersonalCharacteristics.HairColorID"
+                            ng-keypress="$event.which==13?FillDonorList():0"
+                            class="form-control"
+                            ng-options="item.ID as item.Description for item in HairColorList"></select>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label class="control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSkinColor
+                    </label>
+                    <select id=""
+                            ng-model="frmPersonalCharacteristics.SkinColorID"
+                            ng-keypress="$event.which==13?FillDonorList():0"
+                            class="form-control"
+                            ng-options="item.ID as item.Description for item in SkinColorList"></select>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label class="control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblvBuilt
+                    </label>
+                    <select id=""
+                            ng-model="frmPersonalCharacteristics.BuiltID"
+                            class="form-control"
+                            ng-keypress="$event.which==13?FillDonorList():0"
+                            ng-options="item.ID as item.Description for item in BuiltList"></select>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label class="control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblRemarks
+                    </label>
+                    <textarea type="text" class="form-control" id="txtRemarks" name="txtRemarks" placeholder="" ng-model="frmPersonalCharacteristics.Remarks" maxlength="250" tabindex="28"></textarea>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+           
+        <div class="row form-horizontal m-t-10">
+            <div class="col-lg-12 text-right">
+                <button class="btn btn-primary" type="button" id="btnSave" value="" ng-click="SavePersonalCharacteristics()">@PIVF.LanguageResource.Resources.btnSave</button>
+                <button class="btn btn-default" type="button" id="" value="" ng-click="CancelPatientPersonalCharacteristicsView()">@PIVF.LanguageResource.Resources.btnCancel</button>
+            </div>
+        </div>
+       </div>
+</form>

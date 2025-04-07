@@ -1,0 +1,1188 @@
+﻿
+@{
+    Layout = null;
+}
+<style>
+    .box_Individual {
+        width: 100% !important;
+    }
+
+    .croparea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width: 350px;
+        height: 350px;
+    }
+</style>
+
+
+<form name="NewfrmRegistration" ng-controller="NewRegistrationController" ng-init="formLoad()"  nonvalidate> 
+    <div id="page_patientRegistration" class="page_patientRegistration">
+        <div class="row form-horizontal">
+            <div class="col-md-6 col-lg-6">
+                <div class="form-group">
+                    <label class="col-md-3 col-sm-3 col-lg-3 control-label p-r-0">
+                        <span class="text-Red">* </span> @PIVF.LanguageResource.Resources.lblRegistrationType :  @*Registration Type :*@
+                    </label><div class="visible-md clear"></div>
+                    <div class="col-md-5 col-sm-8 col-lg-5 p-l-0">
+                        <select id="txtRegistrationType"
+                                name="txtRegistrationType"
+                                ng-model="patient.RegistrationType"
+                                class="form-control"
+                                tabindex="1"
+                                ng-options="item.ID as item.Description for item in RegistrationTypeList"
+                                ng-change="genderSelectOnRegType(patient)"
+                                ng-class="{select:patient.RegistrationType== 0 && NewfrmRegistration.txtRegistrationType.$dirty}">
+                                </select> @*ng-change="chageRegType(patient)"*@
+                        @*<select id="PatientDOB"
+                                ng-model="patient.gender"
+                                class="form-control"
+                                ng-options="item.ID as item.Description for item in GenderList"></select>*@
+
+                        @*<select class="form-control">
+                            <option>Individual</option>
+                            <option>Donor</option>
+                            <option>Surrogate</option>
+                        </select>*@
+
+                        @*<label class="radio-inline control-label p-t-0">
+                            <input type="radio" ng-model="RegType" name="rdbRegiType" id="rdbRegType1" ng-value="1" ng-change="" tabindex="1"> @PIVF.LanguageResource.Resources.lblCouple  @* Couple* @
+                        </label>
+                        <label class="radio-inline control-label p-t-0">
+                            <input type="radio" ng-model="RegType" name="rdbRegiType" id="rdbRegType2" ng-value="2" ng-change="" tabindex="2">@PIVF.LanguageResource.Resources.lblIndividual  @* Individual* @
+                        </label>
+                        <label class="radio-inline control-label p-t-0">
+                            <input type="radio" ng-model="RegType" name="rdbRegiType" id="rdbRegType3" ng-value="3" ng-change="" tabindex="3">@PIVF.LanguageResource.Resources.lblDonor @* Donor* @
+                        </label>
+                        <label class="radio-inline control-label p-t-0">
+                            <input type="radio" ng-model="RegType" name="rdbRegType" id="rdbRegType4" ng-value="4" ng-change="" tabindex="4">@PIVF.LanguageResource.Resources.lblSurrogate @ *Surrogate* @
+                        </label>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="form-group">
+                    @*desc-mb-15*@
+                    <label class="checkbox-inline control-label" ng-hide="true">
+                        <input type="checkbox" id="" ng-model="patient.IsSpecialReg" tabindex="2">@PIVF.LanguageResource.Resources.lblSpecialRegistration @*Special Registration*@
+                    </label>
+                    <label class="checkbox-inline control-label">
+                        <input type="checkbox" id="" ng-model="patient.IsReferredPatient" ng-click="" tabindex="3">@* @PIVF.LanguageResource.Resources.lblReferralPatient *@ @PIVF.LanguageResource.Resources.lblReferralPatient    @*Referral Patient ::Modified by swatih for localization 31/7/2020*@  @*ng-change="!Patient.IsReferredPatient?(NewInfo=true):0"   commented by Nayan Kamble and ng-click added*@
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row form_Content m-b-15">
+            <h5 class="col-lg-12 subTitle">@PIVF.LanguageResource.Resources.lblPatientReferralInformation </h5>@*Patient Referral Information ::Modified by swatih for localization 31/7/2020*@
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblSourceofReference </label>@*Source of Reference ::Modified by swatih for localization 31/7/2020*@
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select id="txtSourceOfReferenceID" 
+                                name="txtSourceOfReferenceID" 
+                                ng-model="patient.SourceOfReferenceID"
+                                class="form-control"
+                                tabindex="4"  
+                                ng-options="i.ID as i.Description for i in SourceOfrefList" 
+                                ng-change="getDoctorList(patient.SourceOfReferenceID)" 
+                                ng-class="{select:patient.SourceOfReferenceID== 0 && NewfrmRegistration.txtSourceOfReferenceID.$dirty}">
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label">@*<span class="text-Red">*</span>*@  @PIVF.LanguageResource.Resources.lblCamp</label>@*Camp ::Modified by swatih for localization 31/7/2020*@
+
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" name="ddlCamp" ng-model="patient.CampID" ng-options="i.ID as i.Description for i in CampList" tabindex="5"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblDoctor</label>@*Doctor ::Modified by swatih for localization 31/7/2020*@
+
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select id="ddlDoc" 
+                                name="ddlDoc" 
+                                class="form-control"
+                                ng-model="patient.ReferredDoctorID" 
+                                ng-options="i.ID as i.Description for i in DocList" tabindex="6"
+                                ng-class="{select:patient.ReferredDoctorID== 0 && NewfrmRegistration.ddlDoc.$dirty}">
+                        </select>
+                        @*<select class="form-control" id="" ng-model="patient.DocID" ng-options="item.ID as item.Description for item in DocList"></select>*@
+                        @*<select class="form-control" name="ddlDoc" ng-model="Patient.ReferredDoctorID" ng-options="i.ID as i.Description for i in DocList" tabindex=""></select>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label">@*<span class="text-Red">*</span>*@ @PIVF.LanguageResource.Resources.lblRefferalRemark</label>@*Refferal Remark::Modified by swatih for localization 31/7/2020*@
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <textarea type="" class="form-control" ng-model="patient.ReferralRemark"  maxlength="100" tabindex="7"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-b-15">
+            <div class="col-lg-6 form-horizontal" ng-class="patient.RegistrationType==11 || patient.RegistrationType==14 || patient.RegistrationType==15 || patient.RegistrationType==16 || patient.RegistrationType==8 || patient.RegistrationType==9 || patient.RegistrationType==10 ?'box_Individual':''">           
+                <div class="row form_Content">
+                    <div class="col-lg-12">
+                        <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblPatientInformation</h5>@*Patient Information ::Modified by swatih for localization 31/7/2020*@
+                    </div>
+                    <div class="col-md-4 col-lg-4 text-center">
+                        <div class="patient_pic" style="margin-top: 15px;width: 120px;height: 120px;">
+                            <button type="button" class="glyphicon glyphicon-trash imgEdit" style="top:10px;right:-8px;"
+                                    title="@PIVF.LanguageResource.Resources.lblvDeleteProfileImage" data-toggle="modal" data-target="#modPhotoDelete"
+                                    ng-disabled="(patient.strPhoto)==null" ng-click="fromGallery=false;fromWebCam=false;
+                                        addFor ='patient';isAttach=false"></button>
+                            <button type="button" class="glyphicon glyphicon-pencil imgEdit" title="@PIVF.LanguageResource.Resources.lblvEditProfileImage" data-toggle="modal"
+                                    data-target="#modPhoto" ng-click="fromGallery=false;fromWebCam=false;isAttach=false;addForPatient=true;addForPartner=false">
+                                @*addFor ='patient';*@
+                            </button>
+                            <img src="{{patient.strPhoto}}" class="profile" alt="">
+                        </div>
+                    </div>@*<div class="clear"></div>*@
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblFirstName@*First Name*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':NewfrmRegistration.txtFirstName.$invalid && NewfrmRegistration.txtFirstName.$dirty }">
+                                <input type="text" class="form-control Capitalize" name="txtFirstName" ng-model="patient.FirstName" maxlength="50" multi-validation="AlphaArrowBkSpDelSp" ng-required="true" tabindex="8" @*onkeypress='return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)'*@ ng-copy="$event.preventDefault()" drop-disable ng-paste="$event.preventDefault()">  @*Commented on 10Mar2021 for Victory client request*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblMiddleName@*Middle Name*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control Capitalize" name="txtMiddleName" ng-model="patient.MiddleName" maxlength="50" tabindex="9" multi-validation="AlphaArrowBkSpDelSp" onkeypress='return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)' ng-copy="$event.preventDefault()" drop-disable ng-paste="$event.preventDefault()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span> @PIVF.LanguageResource.Resources.lblLastName @*Last Name*@</label>   @*Commented on 10Mar2021 for Victory client request*@
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':NewfrmRegistration.txtLastName.$invalid && NewfrmRegistration.txtLastName.$dirty }">
+                                @*Commented on 10Mar2021 for Victory client request*@
+                                <input type="text" class="form-control Capitalize" name="txtLastName"
+                                       ng-model="patient.LastName" maxlength="50"
+                                       multi-validation="AlphaArrowBkSpDelSp"
+                                       ng-blur="partner.LastName=patient.LastName"
+                                       @*ng-required="true"*@ tabindex="10" @*Commented on 10Mar2021 for Victory client request*@
+                                       onkeypress='return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)' ng-copy="$event.preventDefault()" drop-disable ng-paste="$event.preventDefault()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4" ng-show="patient.GenderID==2">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"> @PIVF.LanguageResource.Resources.lblFamilyName @*Last Name*@</label>   @*Commented on 10Mar2021 for Victory client request*@
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':NewfrmRegistration.txtLastName.$invalid && NewfrmRegistration.txtLastName.$dirty }">
+                                @*Commented on 10Mar2021 for Victory client request*@
+                                <input type="text" class="form-control Capitalize" name="txtFamilyName"
+                                       ng-model="patient.FamilyName" maxlength="50"
+                                       multi-validation="AlphaArrowBkSpDelSp"
+                                       @*ng-required="true"*@ tabindex="10" @*Commented on 10Mar2021 for Victory client request*@
+                                       onkeypress='return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)' ng-copy="$event.preventDefault()" drop-disable ng-paste="$event.preventDefault()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span> @PIVF.LanguageResource.Resources.lblGender @*Gender*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                @* ng-init="patient.GenderID=2"*@
+                                <select id="txtGender"
+                                        name="txtGender"
+                                        ng-model="patient.GenderID"
+                                        class="form-control"
+                                        tabindex="11"
+                                        @*ng-disabled="genderflag"*@ 
+                                         @* line no 202 nEdit by dhanashri sharma 22/12/2022*@
+                                        ng-class="{select:patient.GenderID == 0 && NewfrmRegistration.txtGender.$dirty}"
+                                        ng-options="item.ID as item.Description for item in GenderList"></select>
+
+                                @*<select class="form-control" name="ddlBloodGrp"
+                            ng-model="patient.BloodGroupID"
+                            ng-options="i.ID as i.Description for i in BloodGrpList"
+                            tabindex="">
+                    </select>*@
+                                @*<label class="radio-inline" id="lblPatMaleGdr">
+                        <input type="radio" ng-model="patient.GenderID" name="rdbGender" id="radioPatientGender1" ng-value="1" tabindex="14">@PIVF.LanguageResource.Resources.lblMale
+                    </label>
+                    <label class="radio-inline" id="lblPatFemaleGdr">
+                        <input type="radio" ng-model="patient.GenderID" name="rdbGender" id="radioPatientGender2" ng-value="2" tabindex="15">@PIVF.LanguageResource.Resources.lblFemale
+                    </label>
+                    <label class="radio-inline" id="lblPatTransGdr">
+                        <input type="radio" ng-model="patient.GenderID" name="rdbGender" id="radioPatientGender3" ng-value="3" tabindex="16">@PIVF.LanguageResource.Resources.lblTransgender
+                    </label>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblDOB @*Date Of Birth*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                @*<ng-combo-date-picker ng-model="patient.DateOfBirth" name="patientDOB" ng-required="Patient.Age==undefined" ng-min-model="min" ng-order="ymd" ng-max-model="max" ng-year-order="desc" ng-placeholder="Year,Month,Date" tabindex="17"></ng-combo-date-picker>
+                    <button class="btn_view p-l-5" wz-next type="button" id="" ng-click="clearDob('patient')" title="Reset"><span class="glyphicon glyphicon-refresh"></span></button>*@
+                                <div class="input-group date">
+                                    <input type="text" class="form-control" id="txtDate" name="txtDate" placeholder="yyyy-mm-dd" ng-model="patient.DateOfBirth"
+                                           multi-validation="NumericArrowBkSpDelSpDCFSlash" aria-describedby="" uib-datepicker-popup="{{format}}"
+                                           show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions1" onkeydown="return false"
+                                           alt-input-formats="altInputFormats" tabindex="12" />
+                                    @*ng-readonly="true">*@
+                                    <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblAge @*Age*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':NewfrmRegistration.txtAge.$invalid && NewfrmRegistration.txtAge.$dirty }">
+                                <input id="txtAge" name="txtAge" type="text" ng-model="patient.Age" class="form-control input-sm alignRight" multi-validation="NumericArrowBkSpDelSpDCFSlash" ng-required="true" maxlength="2" tabindex="13">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblMobNo @*Mobile No.*@</label>
+                            <div class="col-md-3 col-sm-3 p-r-0" ng-class="{'Invalid':NewfrmRegistration.txtMobCountryCode.$invalid && NewfrmRegistration.txtMobCountryCode.$dirty}">
+                                <input type="text" class="form-control alignRight" name="txtMobCountryCode" ng-model="country" uib-typeahead="i as (i.CountryCode+'('+i.CountryName+')') for i in CountryList | filter:$viewValue | limitTo:8" typeahead-on-select="SelectedCountry(country,1)" ng-required="true" maxlength="7" tabindex="13" multi-validation="NumericArrowBkSpDelSpDCFSlash">
+                            </div>
+                            <div class="col-md-9 col-sm-9 p-l-4" ng-class="{'Invalid':NewfrmRegistration.txtMobNo.$invalid && NewfrmRegistration.txtMobNo.$dirty}">
+                                <input id="txtMobNo" name="txtMobNo" type="text" class="form-control alignRight" ng-model="patient.MobileNo" ng-required="true" maxlength="10" tabindex="14" multi-validation="NumericArrowBkSpDelSpDCFSlash">  @*y+ multi-validation="MobNoStartWith"*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblIdentityProof @*Identity Proof*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':NewfrmRegistration.txtIdProofNo.$invalid && NewfrmRegistration.txtIdProofNo.$dirty}">
+                                <select class="form-control"
+                                        id="ddlIDProofType"
+                                        name="ddlIDProofType"
+                                        ng-model="patient.IdentityID"
+                                        ng-options="i.ID as i.Description for i in IdPrppfTypeList"
+                                        ng-change="validateIDProof(patient.IdentityID)"
+                                        tabindex="15"
+                                        ng-class="{select:patient.IdentityID== 0 && NewfrmRegistration.ddlIDProofType.$dirty}"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblIdProffNo @*ID Proof No.*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':NewfrmRegistration.txtIdProofNo.$invalid && NewfrmRegistration.txtIdProofNo.$dirty }">
+                                <input type="text" class="form-control alignRight" id="txtIdProofNo" name="txtIdProofNo"
+                                       ng-model="patient.IdentityNumber"
+                                       ng-change="patient.IdentityNumber=patient.IdentityNumber.toUpperCase();" tabindex="16"
+                                       ng-required="true" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblAttachIDProof @*Attach Id Proof*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12 img-attach">
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modAttachment" ng-click="fromGallery=false;fromWebCam=false;isAttach=true;addForPatient=true;addForPartner=false" tabindex="17">@PIVF.LanguageResource.Resources.btnLink @*Link*@</button> @*addFor ='patient';*@
+                                <button class="btn_view p-l-5" ng-click="content=patient.strAttachment;FileName=patient.attFileName;From='IdProof';extn=patient.attFileName.split('.').pop().toLowerCase();"><span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#modViewPhoto"></span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+            <div class="col-lg-6 form-horizontal" ng-hide="patient.RegistrationType==11 || patient.RegistrationType==14 || patient.RegistrationType==15 || patient.RegistrationType==16 ||  patient.RegistrationType==8 ||  patient.RegistrationType==9 || patient.RegistrationType==10">
+                <div class="row form_Content">
+                    <div class="col-lg-12">
+                        <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblPartnerInformation</h5>@*Partner Information ::Modified by swatih for localization 31/7/2020*@
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                            <div class="patient_pic"  style="margin-top: 15px;width: 120px;height: 120px;">
+                                <button type="button" class="glyphicon glyphicon-trash imgEdit" style="top:10px;right:-8px;" 
+                                        title="@PIVF.LanguageResource.Resources.lblvDeleteProfileImage" data-toggle="modal" data-target="#modPhotoDelete" 
+                                        ng-disabled="(partner.strPhoto)==null" ng-click="fromGallery=false;fromWebCam=false;addFor ='partner';
+                                        isAttach=false"></button>
+                                <button type="button" class="glyphicon glyphicon-pencil imgEdit" title="@PIVF.LanguageResource.Resources.lblvEditProfileImage" data-toggle="modal" 
+                                        data-target="#modPhoto" ng-click="fromGallery=false;fromWebCam=false;isAttach=false;addForPartner=true;addForPatient=false">  @*addFor ='partner';*@
+                                </button>
+                                <img src="{{partner.strPhoto}}" class="profile" alt="" tabindex="18">
+                            </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblFirstName @*First Name*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12"  ng-class="{'Invalid':NewfrmRegistration.txtPartnrFirstName.$invalid && NewfrmRegistration.txtPartnrFirstName.$dirty }">
+                                <input type="text" class="form-control Capitalize" name="txtPartnrFirstName" ng-model="partner.FirstName" maxlength="50" multi-validation="AlphaArrowBkSpDelSp" ng-required="true" tabindex="19" @* onkeypress='return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)' *@ ng-copy="$event.preventDefault()" drop-disable ng-paste="$event.preventDefault()"> @*Commented on 10Mar2021 for Victory client request*@
+                            </div>                     
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblMiddleName @*Middle Name*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control Capitalize" name="txtpartnrMiddleName" ng-model="partner.MiddleName" maxlength="50" tabindex="20" multi-validation="AlphaArrowBkSpDelSp" onkeypress='return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)' ng-copy="$event.preventDefault()" drop-disable ng-paste="$event.preventDefault()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"> <span class="text-Red">* </span> @PIVF.LanguageResource.Resources.lblLastName @*Last Name*@</label>       @*Commented on 10Mar2021 for Victory client request*@
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':NewfrmRegistration.txtpartnrLastName.$invalid && NewfrmRegistration.txtpartnrLastName.$dirty }">    @*Commented on 10Mar2021 for Victory client request*@
+                                <input type="text" class="form-control Capitalize" name="txtpartnrLastName" ng-blur="patient.LastName=partner.LastName" ng-model="partner.LastName" maxlength="50" multi-validation="AlphaArrowBkSpDelSp" @*ng-required="true"*@ tabindex="21"  onkeypress='return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)' ng-copy="$event.preventDefault()" drop-disable ng-paste="$event.preventDefault()">    @*Commented on 10Mar2021 for Victory client request*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label" id="lblPartnrMaleGdr"><span class="text-Red">* </span> @PIVF.LanguageResource.Resources.lblGender @*Gender*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12"> @* ng-init="partner.GenderID=1"*@
+                                <select id="txtPartGender"
+                                        name="txtPartGender"
+                                        ng-model="partner.GenderID"
+                                        ng-disabled="genderflag"
+                                        class="form-control"
+                                        tabindex="22"           
+                                        ng-class="{select:partner.GenderID == 0 && NewfrmRegistration.txtPartGender.$dirty}"
+                                        ng-options="item.ID as item.Description for item in GenderList"></select>         
+                                @*<label class="radio-inline" id="lblPartnrMaleGdr">
+                                    <input type="radio" ng-model="partner.GenderID" name="inlineRadioOptions" id="radioPartnerGender1" ng-value="1" tabindex="26">Male
+                                </label>
+                                <label class="radio-inline" id="lblPartnrFemaleGdr">
+                                    <input type="radio" ng-model="partner.GenderID" name="inlineRadioOptions" id="radioPartnerGender2" ng-value="2" tabindex="27">Female
+                                </label>
+                                <label class="radio-inline" id="lblPartnrTransGdr">
+                                    <input type="radio" ng-model="partner.GenderID" name="inlineRadioOptions" id="radioPartnerGender3" ng-value="3" tabindex="28">Transgender
+                                </label>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblDOB</label>@*Date of Birth ::Modified by swatih for localization 31/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':!NewfrmRegistration.partnrDOB.$valid && NewfrmRegistration.partnrDOB.$dirty}">
+                                @*<ng-combo-date-picker ng-model="partner.DateOfBirth" name="partnrDOB" ng-min-model="min" ng-order="ymd" ng-max-model="max" ng-year-order="desc" ng-placeholder="Year,Month,Date" tabindex="29"></ng-combo-date-picker>           @ *Partner.Age==undefined &&  (RegType!=2 || RegType!=3 || RegType!=4)* @
+                                <button class="btn_view p-l-5" wz-next type="button" id="" ng-click="clearDob('partner')" title="Reset"><span class="glyphicon glyphicon-refresh"></span></button>*@
+                                <div class="input-group date">
+                                    <input type="text" class="form-control" id="txtPartDate" name="txtPartDate" placeholder="yyyy-mm-dd" 
+                                           ng-model="partner.DateOfBirth" multi-validation="NumericArrowBkSpDelSpDCFSlash" aria-describedby="" onkeydown="return false"
+                                           uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" 
+                                           datepicker-options="dateOptions2" alt-input-formats="altInputFormats" tabindex="23"> @*ng-readonly="true"*@
+                                    <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblAge @*Age*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':NewfrmRegistration.txtpartnrAge.$invalid && NewfrmRegistration.txtpartnrAge.$dirty }">
+                                <input id="txtpartnrAge" name="txtpartnrAge" type="text" class="form-control Capitalize"  ng-model="partner.Age" multi-validation="NumericArrowBkSpDelSpDCFSlash" ng-required="true" maxlength="2" tabindex="24">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblMobNo @*Mobile No.*@</label>
+                            <div class="col-md-3 col-sm-3 p-r-0" ng-class="{'Invalid':NewfrmRegistration.txtpartnrMobConCode.$invalid && NewfrmRegistration.txtpartnrMobConCode.$dirty}">
+                                <input type="text" class="form-control alignRight" name="txtpartnrMobConCode" ng-model="partnrcountry" uib-typeahead="i as (i.CountryCode+'('+i.CountryName+')') for i in CountryList | filter:$viewValue | limitTo:8" maxlength="7" tabindex="25" ng-required="true" multi-validation="NumericArrowBkSpDelSpDCFSlash" typeahead-on-select="SelectedSpouseCountry(partnrcountry,1)"> @*ng-required="RegType == 1"*@
+                            </div>
+                            <div class="col-md-9 col-sm-9 p-l-4" ng-class="{'Invalid':NewfrmRegistration.txtpartnrMobNo.$invalid && NewfrmRegistration.txtpartnrMobNo.$dirty}">
+                                <input id="txtpartnrMobNo" name="txtpartnrMobNo" type="text" class="form-control alignRight" tabindex="25" ng-model="partner.MobileNo" maxlength="10" ng-required="true" multi-validation="NumericArrowBkSpDelSpDCFSlash"> @*ng-required="RegType == 1"*@  @*y+ multi-validation="MobNoStartWith"*@ 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblIdentityProof @*Identity Proof*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" id="ddlPartnrIdProofType" name="ddlPartnrIdProofType" 
+                                        ng-model="partner.IdentityID" 
+                                        ng-options="i.ID as i.Description for i in IdPrppfTypeList" 
+                                        ng-change="validateIDProofMale(partner.IdentityID)" tabindex="26"
+                                        ng-class="{select:partner.IdentityID== 0 && NewfrmRegistration.ddlPartnrIdProofType.$dirty}"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblIdProffNo @*ID Proof No.*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':NewfrmRegistration.txtPartnrIdNO.$invalid && NewfrmRegistration.txtPartnrIdNO.$dirty }">
+                                <input type="text" class="form-control" id="txtPartnrIdNO" name="txtPartnrIdNO" 
+                                       ng-model="partner.IdentityNumber" @*multi-validation="{{Multivalidation}}"*@
+                                       ng-change="partner.IdentityNumber=partner.IdentityNumber.toUpperCase();" tabindex="27"
+                                       ng-required="true"> @*ng-required="RegType == 1"*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblAttachIDProof @*Attach Id Proof*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12 img-attach">
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modAttachment" ng-click="fromGallery=false;fromWebCam=false;isAttach=true;addForPatient=false;addForPartner=true" tabindex="28">@PIVF.LanguageResource.Resources.btnLink</button> @*addFor = 'partner';*@
+                                <button class="btn_view p-l-5" tabindex="29" ng-click="content=partner.strAttachment;FileName=partner.attFileName;From='IdProof';extn=partner.attFileName.split('.').pop().toLowerCase();"><span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#modViewPhoto"></span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 form-horizontal" ng-class="patient.RegistrationType==11 || patient.RegistrationType==14 || patient.RegistrationType==15 || patient.RegistrationType==16 || patient.RegistrationType==8 || patient.RegistrationType==9 || patient.RegistrationType==10 ?'box_Individual':''">
+                <div class="row form_Content">
+                    <div class="col-lg-12">
+                        <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblAdditionalInformation</h5>@*Patient Additional Information :: Modified by SwatiH for localization on 10/7/2020*@
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblEmailId</label>@*Email ID :: Modified by swatih for localization 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'select':frmRegistration.txtEmail.$dirty && isEmailValid}">
+                                <input type="text" ng-required="true" validate-email class="form-control" name="txtEmail" ng-model="patient.Email" ng-keyup="ValidateEmail(patient.Email,'patient')"  tabindex="30" ng-pattern="/^[^\s]+[^\s]+\.[^\s]{2,}$/" required>
+                                <span style="color:red" ng-show="NewfrmRegistration.txtEmail.$dirty&&NewfrmRegistration.txtEmail.$error.pattern">@PIVF.LanguageResource.Resources.lblPleaseEnterValidEmail</span>@*Please Enter Valid Email ::Modified by swatih for localization 31/7/2020*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblMarryStatus @*Marital Status*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPartnrMarryStatus" ng-model="patient.MaritalStatusID" ng-blur="partner.MaritalStatusID=patient.MaritalStatusID" ng-options="i.ID as i.Description for i in MarryStatusList" tabindex="31">
+                                    <option name ="Select"  value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblBloodGroup @*Blood Group*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlBloodGrp" ng-model="patient.BloodGroupID" ng-options="i.ID as i.Description for i in BloodGrpList" tabindex="32"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblNationality @*Nationality*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlNationality" ng-change="patient.RegistrationType!=11?partner.NationalityID=patient.NationalityID:0" ng-model="patient.NationalityID" ng-options="i.ID as i.Description for i in NationalityList" tabindex="33"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblEthnicity @*Ethnicity*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlEthnicity" ng-change="patient.RegistrationType!=11?partner.EthnicityID=patient.EthnicityID:0" ng-model="patient.EthnicityID" ng-options="i.ID as i.Description for i in EthnicityList" tabindex="34"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblReligion @*Religion*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlReligion" ng-change="patient.RegistrationType!=11?partner.ReligionID=patient.ReligionID:0" ng-model="patient.ReligionID" ng-options="i.ID as i.Description for i in ReligionList" tabindex="35"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblEducation</label>@*Education :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlEducation" ng-model="patient.EducationID" ng-options="i.ID as i.Description for i in EducationList" tabindex="36"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblOccupation @*Occupation*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlOccupation" ng-model="patient.OccupationId" ng-options="i.ID as i.Description for i in OccupationList" tabindex="37"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblMarriedSince @*Married Since*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control Capitalize" name="txtMarriedSince" ng-model="patient.MarriedSince"  tabindex="38" maxlength="2" multi-validation="NumericArrowBkSpDelSpDCFSlash">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblExistingChildren @*Existing Childeren*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control Capitalize" name="txtExistingChilderen" ng-model="patient.ExistingChildren"  tabindex="39">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblFamily @*Family*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-init="patient.FamilyType=2">
+                                <label class="radio-inline control-label">
+                                    <input type="radio" name="rdbFamily" ng-model="patient.FamilyType" id="rdbFamily1" ng-value="1" tabindex="40">@PIVF.LanguageResource.Resources.lblJoint @*Joint*@
+                                </label>
+
+                                <label class="radio-inline control-label">
+                                    <input type="radio" name="rdbFamily" ng-model="patient.FamilyType" id="rdbFamily2" ng-value="2" tabindex="41">@PIVF.LanguageResource.Resources.lblNuclear @*Nuclear*@
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblAddress</label>@*Address :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <label class="checkbox-inline control-label">
+                                    <input type="checkbox" id="chkPermanent" ng-model="patient.objAddress.IsPermenant" ng-change="onePermantAddress()" tabindex="42">@PIVF.LanguageResource.Resources.lblPermanentAddress @*Permanent*@
+                                </label>
+                                <label class="checkbox-inline control-label" ng-init="patient.objAddress.IsCommunication=true">@**@
+                                    <input type="checkbox" id="chkCommunication" ng-model="patient.objAddress.IsCommunication" tabindex="43">@PIVF.LanguageResource.Resources.lblCommunication @*Communication*@
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAddress1</label>@*Address Line 1 :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                @*<input class="form-control Capitalize" ng-model="patient.objAddress.AddressLine1" maxlength="100" multi-validation="" tabindex="44"/>*@   @*Commented on 10Mar2021 for Victory client request*@
+                                <input class="form-control Capitalize" ng-model="patient.objAddress.AddressLine1" maxlength="100" multi-validation="" tabindex="44" ng-blur="partner.objAddress.AddressLine1=patient.objAddress.AddressLine1" />  @*Modified on 10Mar2021 for Victory client request*@
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAddress2</label>@*Address Line 2 :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                @*<input class="form-control Capitalize" ng-model="patient.objAddress.AddressLine2" maxlength="100" multi-validation="" tabindex="45"/>*@@*Commented on 10Mar2021 for Victory client request*@
+                                <input class="form-control Capitalize" ng-model="patient.objAddress.AddressLine2" maxlength="100" multi-validation="" tabindex="45" ng-blur="partner.objAddress.AddressLine2=patient.objAddress.AddressLine2" />    @*Modified on 10Mar2021 for Victory client request*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblStreet @*Street*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control Capitalize" name="" ng-model="patient.objAddress.Street" tabindex="46">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblLandmark @*Landmark*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control Capitalize" name="" ng-model="patient.objAddress.Landmark" tabindex="47">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblCountry @*Country*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlCountry" ng-model="patient.objAddress.CountryID" ng-options="i.CountryID as i.CountryName for i in CountryList" ng-change="GetStateList(patient.objAddress.CountryID,'patient');patient.RegistrationType!=11?partner.objAddress.CountryID=patient.objAddress.CountryID:0" tabindex="48"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblState @*State*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlState" ng-model="patient.objAddress.StateID" ng-options="i.StateID as i.StateName for i in StateList" ng-change="GetCityList(patient.objAddress.StateID,'patient');patient.RegistrationType!=11?partner.objAddress.StateID=patient.objAddress.StateID:0" tabindex="49"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblCity @*City*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlCity" ng-model="patient.objAddress.CityID" ng-options="i.CityID as i.CityName for i in CityList" ng-change=";patient.RegistrationType!=11?partner.objAddress.CityID=patient.objAddress.CityID:0" tabindex="50"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblArea @*Area*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control Capitalize" ng-blur="patient.RegistrationType!=11?partner.objAddress.Area=patient.objAddress.Area:0" ng-model="patient.objAddress.Area" maxlength="100" multi-validation="AlphaArrowBkSpDelSpDCFSlash" tabindex="51">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group">
+                            @*<label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblPincode </label>*@  @*Pincode*@    @*Commented on 10Mar2021 for Victory client request*@
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblPostcode @*Pincode*@</label>          @*Modified on 10Mar2021 for Victory client request*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control" ng-blur="patient.RegistrationType!=11?partner.objAddress.pincode=patient.objAddress.pincode:0" ng-model="patient.objAddress.pincode" maxlength="10" multi-validation="AlphaNumericArrowBkSpDelSpDCFSlash" tabindex="52">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblLandlineNo @*Landline No*@</label>
+                            <div class="col-md-3 col-sm-3 p-r-0">
+                                <input type="text" class="form-control alignRight" ng-blur="patient.RegistrationType!=11?partner.objAddress.LandLineNoCode=patient.objAddress.LandLineNoCode:0" ng-model="patient.objAddress.LandLineNoCode" multi-validation="STDCodeStartWith" maxlength="6" tabindex="53"> @*multi-validation="STDCodeStartWith"*@
+                            </div>
+                            <div class="col-md-9 col-sm-9 p-l-4">
+                                <input type="text" class="form-control alignRight" ng-blur="patient.RegistrationType!=11?partner.objAddress.LandLineNo=patient.objAddress.LandLineNo:0" ng-model="patient.objAddress.LandLineNo" multi-validation="NumericArrowBkSpDelSpDCFSlash" maxlength="7" tabindex="54">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <button type="button" class="btnAdddess p-l-0" data-toggle="modal" ng-click="addFor='patient';showAddPopUp()"  tabindex="55">
+                            @PIVF.LanguageResource.Resources.lblAddAnotherAddress   @*Add another address*@
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 form-horizontal" ng-hide="patient.RegistrationType==11 || patient.RegistrationType==14 ||  patient.RegistrationType==15 ||  patient.RegistrationType==16 ||  patient.RegistrationType==8 ||  patient.RegistrationType==9 || patient.RegistrationType==10">
+                <div class="row form_Content">
+                    <div class="col-lg-12">
+                        <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblPartnerAdditionalInformation </h5>@*Partner Additional Information :: Modified by swatih for localization on 10/7/2020*@
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblEmailId</label>@*Email ID :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'select':frmRegistration.txtPartnrEmail.$dirty && isPartnrEmailValid}">
+                                <input type="text" validate-email class="form-control" name="txtPartnrEmail" ng-model="partner.Email" ng-keyup="ValidateEmail(partner.Email,'partnr')" tabindex="56" ng-pattern="/^[^\s]+[^\s]+\.[^\s]{2,}$/" required>
+                                <span style="color:red" ng-show="NewfrmRegistration.txtPartnrEmail.$dirty&&NewfrmRegistration.txtPartnrEmail.$error.pattern">@PIVF.LanguageResource.Resources.lblValidEmail</span>@*Please Enter Valid Email ::Modified by swatih for localization on 10/7/2020*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblMarryStatus</label>@*Marital Status :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPartnrMarryStatus" ng-model="partner.MaritalStatusID" ng-blur="patient.MaritalStatusID=partner.MaritalStatusID" ng-options="i.ID as i.Description for i in MarryStatusList" tabindex="57"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblBloodGroup</label>@*Blood Group :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPartnrBloodGrp" ng-model="partner.BloodGroupID" ng-options="i.ID as i.Description for i in BloodGrpList" tabindex="58"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblNationality</label>@*Nationality :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPartnerNationality" ng-model="partner.NationalityID" ng-options="i.ID as i.Description for i in NationalityList" tabindex="59"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblEthnicity</label>@*Ethnicity :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPartnrEthnicity" ng-model="partner.EthnicityID" ng-options="i.ID as i.Description for i in EthnicityList" tabindex="60"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblReligion</label>@*Religion :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPartnrReligion" ng-model="partner.ReligionID" ng-options="i.ID as i.Description for i in ReligionList" tabindex="61"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblEducation</label>@*Education :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPartnrEducation" ng-model="partner.EducationID" ng-options="i.ID as i.Description for i in EducationList" tabindex="62"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 m-b-70">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblOccupation</label>@*Occupation :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPartnrOccupation" ng-model="partner.OccupationId" ng-options="i.ID as i.Description for i in OccupationList" tabindex="63"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 m-t-70">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblAddress</label>@*Address :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <label class="checkbox-inline control-label"> @*ng-init="partner.objAddress.IsPermenant=true"*@
+                                    <input type="checkbox" id="chkPartnrPermanent" ng-model="partner.objAddress.IsPermenant" ng-change="onePermantAddress()" tabindex="64">@PIVF.LanguageResource.Resources.lblPermanentAddress @*Permanent*@
+                                </label>
+
+                                <label class="checkbox-inline control-label" ng-init="partner.objAddress.IsCommunication=true"> @**@
+                                    <input type="checkbox" id="chkPartnrCommunication" ng-model="partner.objAddress.IsCommunication" ng-checked="true" tabindex="65">@PIVF.LanguageResource.Resources.lblCommunication @*Communication*@
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAddress1</label>@*Address Line 1 :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input class="form-control Capitalize" id="" ng-model="partner.objAddress.AddressLine1" maxlength="100" multi-validation="AlphaNumericArrowBkSpDelSpDCFSlash" tabindex="66"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAddress2</label>@*Address Line 2 :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input class="form-control Capitalize" ng-model="partner.objAddress.AddressLine2" maxlength="100" multi-validation="" tabindex="67">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblStreet @*Street*@</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control Capitalize" name="txtStreet" tabindex="68" ng-model="partner.objAddress.Street">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-labl">@PIVF.LanguageResource.Resources.lblLandmark</label>@*Landmark :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control Capitalize" tabindex="69" name="" ng-model="partner.objAddress.Landmark">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblCountry</label>@*Country :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPartnrCountry" ng-model="partner.objAddress.CountryID" ng-options="i.CountryID as i.CountryName for i in CountryList" ng-change="GetStateList(partner.objAddress.CountryID,'partner')" tabindex="70"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblState</label>@*State :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPartnerState" ng-model="partner.objAddress.StateID" ng-options="i.StateID as i.StateName for i in partnrStateList" ng-change="GetCityList(partner.objAddress.StateID,'partner')" tabindex="71"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblCity</label>@*City :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPartnrCity" ng-model="partner.objAddress.CityID" ng-options="i.CityID as i.CityName for i in partnrCityList" tabindex="72"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblArea</label>@*Area :: Modified by swatih for localization on 10/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control Capitalize" name="txtArea" ng-model="partner.objAddress.Area" tabindex="73">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            @*<label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblPincode</label>*@ 
+                            @*Pincode :: Modified by swatih for localization on 10/7/2020*@  @*Commented on 10Mar2021 for Victory client request*@
+
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblPostcode</label>
+                            @*Modified on 10Mar2021 for Victory client request*@
+
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control" name="txtPincode" ng-model="partner.objAddress.Pincode" tabindex="74" maxlength="10" multi-validation="AlphaNumericArrowBkSpDelSpDCFSlash">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblLandlineNo @*Landline No*@</label>
+                            <div class="col-md-3 col-sm-3 p-r-0">
+                                <input type="text" class="form-control alignRight" ng-model="partner.objAddress.LandlineCode" maxlength="7" tabindex="75" multi-validation="STDCodeStartWith">
+                            </div>
+                            <div class="col-md-9 col-sm-9 p-l-4">
+                                <input type="text" class="form-control alignRight" ng-model="partner.objAddress.LandlineNo" maxlength="7" tabindex="76" multi-validation="NumericArrowBkSpDelSpDCFSlash">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <button type="button" class="btnAdddess p-l-0" data-toggle="modal"  ng-click="addFor='partner';showAddPopUpPartner()" tabindex="77">
+                            @PIVF.LanguageResource.Resources.lblAddAnotherAddress   @*Add another address*@
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12  col-lg-12 text-right mt15" style="margin-bottom : 30px;">
+                <button class="btn btn-primary" type="button" id="btnSave" ng-click="saveUpdate(false)" tabindex="78">@PIVF.LanguageResource.Resources.btnSave @*Save*@</button> @*ng-hide="IsNonRegPatientRedirect"*@ 
+                @*<button class="btn btn-primary" type="button" id="btnSavecheckin" ng-click="saveUpdate(true)" tabindex="97">@PIVF.LanguageResource.Resources.btnSavecheckin @*Save - check-in*@ @*</button>*@    @* Temprary commented by sujata*@
+                <button class="btn btn-default" type="button" id="" value="Cancel" tabindex="79" ng-click="cancelView()">@PIVF.LanguageResource.Resources.btnCancel @*Cancel*@</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Add1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblAddressInformation</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-horizontal">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group ">
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <label class="checkbox-inline control-label" ng-init="objAddress.IsPermenant=true">
+                                        <input type="checkbox" id="chkOthrPermanent" ng-model="objAddress.IsPermenant" ng-change="onePermantAddress()">@PIVF.LanguageResource.Resources.lblPermanentAddress @*Permanent*@
+                                    </label>
+                                    <label class="checkbox-inline control-label">
+                                        <input type="checkbox" id="chkOthrCommunication" ng-model="objAddress.IsCommunication">@PIVF.LanguageResource.Resources.lblCommunication @*Communication*@
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAddressLine1</label>@*Address Line 1 :: Modified by swatih for localization 0n 10/7/2020*@
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <input class="form-control Capitalize" id="" ng-model="objAddress.AddressLine1" maxlength="100" multi-validation="AlphaNumericArrowBkSpDelSpDCFSlash"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for=""> @PIVF.LanguageResource.Resources.lblAddressLine2</label>@*Address Line 2 :: Modified by swatih for localization on 10/7/2020*@
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <input class="form-control Capitalize" id="" ng-model="objAddress.AddressLine2" maxlength="100" multi-validation="AlphaNumericArrowBkSpDelSpDCFSlash"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblStreet @*Street*@</label>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <input type="text" class="form-control Capitalize" ng-model="objAddress.Street" maxlength="100" multi-validation="AlphaNumericArrowBkSpDelSpDCFSlash">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblLandmark @*Landmark*@</label>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <input type="text" class="form-control Capitalize" ng-model="objAddress.Landmark" maxlength="100" multi-validation="AlphaNumericArrowBkSpDelSpDCFSlash">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblCountry @*Country*@</label>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <select class="form-control" name="ddlOthrCountry" ng-model="objAddress.CountryID" ng-options="i.CountryID as i.CountryName for i in CountryList" ng-change="GetStateList(objAddress.CountryID,'other')"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblState @*State*@</label>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <select class="form-control" name="ddlOthrState" ng-model="objAddress.StateID" ng-options="i.StateID as i.StateName for i in otherStateList" ng-change="GetCityList(objAddress.StateID,'other')"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblCity @*City*@</label>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <select class="form-control" name="ddlOthrCity" ng-model="objAddress.CityID" ng-options="i.CityID as i.CityName for i in otherCityList"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblArea @*Area*@</label>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <input type="text" class="form-control Capitalize" ng-model="objAddress.Area" maxlength="100" multi-validation="AlphaNumericArrowBkSpDelSpDCFSlash">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblPincode @*Pincode*@</label>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <input type="text" class="form-control" ng-model="objAddress.Pincode" maxlength="10" multi-validation="AlphaNumericArrowBkSpDelSpDCFSlash">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblLandlineNo @*Landline No*@</label>
+                                <div class="col-md-3 col-sm-3 p-r-0">
+                                    <input type="text" class="form-control alignRight" ng-model="objAddress.LandLineNoCode" multi-validation="STDCodeStartWith" maxlength="6">
+                                </div>
+                                <div class="col-md-9 col-sm-9 p-l-4">
+                                    <input type="text" class="form-control alignRight" ng-model="objAddress.LandLineNo" multi-validation="NumericArrowBkSpDelSpDCFSlash" maxlength="7">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="addOtherAddress(objAddress)">@PIVF.LanguageResource.Resources.btnSave @*Save*@</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@PIVF.LanguageResource.Resources.btnCancel @*Cancel*@</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Delete Model-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modPhotoDelete" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblDeletePhoto </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h4 class="ModalHeading">@PIVF.LanguageResource.Resources.lblDoYouWantToDeletePhoto</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="RemovePhoto()">@PIVF.LanguageResource.Resources.btnYes @*Yes*@</button>
+                    <button type="button" class="btn btn-default" ng-click="closeDeletePhoto()">@PIVF.LanguageResource.Resources.btnNo @*No*@</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Delete Model-->
+    @*Photo for patient*@
+    <div class="modal fade" tabindex="-1" role="dialog" id="modPhoto" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">@PIVF.LanguageResource.Resources.btnUploadPhoto </h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="text-center option-btn">
+                                    <button class="btn btn-success gallary-btn " type="button" id="" ng-click="fromGallery=true;fromWebCam=false"><span class="glyphicon glyphicon-picture"></span>@PIVF.LanguageResource.Resources.btnChooseFromGallary</button>
+                                    <button class="btn btn-warning Camera-btn" type="button" id="" ng-click="fromWebCam=true;fromGallery=false"><span class=""><i class="fa fa-camera"></i></span>@PIVF.LanguageResource.Resources.btnChooseFromCamera</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="GallaryWrapper" ng-show="fromGallery">
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                            <h4 class="ModalHeading">@PIVF.LanguageResource.Resources.lblImgFromGallery</h4>
+                                        </div>
+                                        <div class="col-sm-offset-3 col-sm-6 croparea">
+                                            <ui-cropper image="myImage" live-view="blockingObject" result-image="myCroppedImage" result-image-format="image/jpeg">
+                                            </ui-cropper>
+                                        </div>
+                                        <div class="col-sm-offset-3 col-sm-6">
+                                            <div class="form-group text-center" style="padding-left: 60px;">
+                                                <div class="fileUpload btn btn-primary">
+                                                    <span><span class="glyphicon glyphicon-paperclip"></span>@PIVF.LanguageResource.Resources.lblUploadImage</span>
+                                                    <input type="file" id="fileInput" name="fileInput" class="upload" onchange="angular.element(this).scope().handleFileSelect(this)" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="PhotoCaptureWrapper" ng-show="fromWebCam">
+                                    <div class="row" ng-init="webcamError=false">
+                                        <div class="col-sm-12 text-center">
+                                            <h4 class="ModalHeading">@PIVF.LanguageResource.Resources.lblCaptImg </h4>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-offset-3 col-sm-6" ng-show="webcamError" style="color:red">
+                                                <span>@PIVF.LanguageResource.Resources.msgWebCamError @*Webcam could not be started. Did you give access to it?*@</span>
+                                            </div>
+                                            <webcam class="col-sm-offset-3 col-sm-6 cropArea customCropArea GallaryWrapper" channel="channel"
+                                                    on-streaming="onSuccess()"
+                                                    on-error="onError(err)"
+                                                    on-stream="onStream(stream)">
+                                            </webcam>
+                                            <canvas ng-hide="true" id="snapshot" width="300" height="300"></canvas>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-offset-3 col-sm-6">
+                                                <div class="form-group text-center">
+                                                    <button type="button" class="btn btn-primary  m-t-10" ng-click="makeSnapshot();addFor = 'partner'"><span><i class="fa fa-camera-retro"></i></span>@PIVF.LanguageResource.Resources.btnCapture</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-offset-3 col-sm-6 croparea  m-b-10">
+                                                <ui-cropper image="myImage" live-view="blockingObject" result-image="myCroppedImage" result-image-format="image/jpeg">
+                                                </ui-cropper>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="captureImage()">@PIVF.LanguageResource.Resources.btnSave @*Save*@</button>
+                    <button type="button" class="btn btn-default" ng-click="closePhotoCapture()">@PIVF.LanguageResource.Resources.btnClose @*Close*@</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Attachment*@
+    <div class="modal fade" tabindex="-1" role="dialog" id="modAttachment" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">@PIVF.LanguageResource.Resources.btnAttachedIDproof</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="text-center option-btn">
+                                    <button class="btn btn-success gallary-btn " type="button" id="" ng-click="fromGallery=true;fromWebCam=false;myImage = null;myCroppedImage=null">
+                                        <span class="glyphicon glyphicon-picture"></span>@PIVF.LanguageResource.Resources.btnChooseFromGallary
+                                    </button>
+                                    <button class="btn btn-warning Camera-btn" type="button" id="" ng-click="fromWebCam=true;fromGallery=false;myImage = null;myCroppedImage=null">
+                                        <span class=""><i class="fa fa-camera"></i></span>@PIVF.LanguageResource.Resources.btnChooseFromCamera
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            @*<div class="GallaryWrapper" ng-show="fromGallery">
+                                    <input type="file" id="fileInput" name="fileInput" class="upload" onchange="angular.element(this).scope().handleFileSelect(this)" />
+                                </div>*@
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <div class="form-group text-center GallaryWrapper" ng-show="fromGallery">
+                                    <div class="fileUpload btn btn-primary">
+                                        <span><span class="glyphicon glyphicon-paperclip"></span>@PIVF.LanguageResource.Resources.lblFileUpload @*File Upload*@</span>
+                                        <input type="file" id="fileInput" name="fileInput" class="upload" onchange="angular.element(this).scope().handleFileSelect(this)" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="PhotoCaptureWrapper" ng-show="fromWebCam">
+                                    <div class="row" ng-init="webcamError=false">
+                                        <div class="col-sm-12 text-center">
+                                            <h4 class="ModalHeading">@PIVF.LanguageResource.Resources.lblCaptImg </h4>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-offset-3 col-sm-6" ng-show="webcamError" style="color:red">
+                                                <span>@PIVF.LanguageResource.Resources.msgWebCamError @*Webcam could not be started. Did you give access to it?*@</span>
+                                            </div>
+                                            <webcam class="col-sm-offset-3 col-sm-6 cropArea customCropArea  GallaryWrapper" channel="channel"
+                                                    on-streaming="onSuccess()"
+                                                    on-error="onError(err)"
+                                                    on-stream="onStream(stream)">
+                                            </webcam>
+                                            <canvas ng-hide="true" id="snapshot" width="300" height="300"></canvas>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-offset-3 col-sm-6">
+                                                <div class="form-group text-center">
+                                                    <button type="button" class="btn btn-primary  m-t-10" ng-click="makeSnapshot();addFor = 'partner'"><span><i class="fa fa-camera-retro"></i></span>@PIVF.LanguageResource.Resources.btnCapture</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-offset-3 col-sm-6 croparea  m-b-10">
+                                                <ui-cropper image="myImage" live-view="blockingObject" result-image="myCroppedImage" result-image-format="image/jpeg" area-type="rectangle" change-on-fly="false">
+                                                </ui-cropper>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="captureImage()">@PIVF.LanguageResource.Resources.btnSave @*Save*@</button>
+                    <button type="button" class="btn btn-default" ng-click="closeAttachCapture()">@PIVF.LanguageResource.Resources.btnClose @*Close*@</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--View Attachment-->
+    <div class="modal fade edit-modal" id="modViewPhoto" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" id="btnClosePop" class="close" data-dismiss="modal" aria-label="Close" ng-click="content=null;FileName=null;extn=null"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        {{FileName}}
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-horizontal">
+                        <div ng-show="From=='Photo'">
+                            <div class="text-center" ng-if="['png', 'jpeg', 'jpg'].indexOf(extn)>-1">
+                                <img ng-src="{{Image}}" style="width: 61%; height: 61%;" />
+                            </div>
+                        </div>
+                        <div ng-show="From=='IdProof'">
+                            <div class="wrapper" ng-if="['pdf'].indexOf(extn)>-1">
+                                <object ng-show="content" data="{{content}}" type="application/pdf" style="width: 100%; height: 400px;"></object>
+                            </div>
+                            <div class="text-center" ng-if="['png', 'jpeg', 'jpg'].indexOf(extn)>-1">
+                                <img ng-src="{{content}}" style="width: 61%; height: 61%;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="modal-body">
+                        <div class="row form-horizontal">
+                            <div class="text-center" ng-if="['png', 'jpeg', 'jpg'].indexOf(extn)>-1">
+                                <img ng-src="{{Image}}" style="width: 61%; height: 61%;" />
+                            </div>
+                            <div class="wrapper" ng-if="['pdf'].indexOf(extn)>-1">
+                                <object ng-show="content" data="{{content}}" type="application/pdf" style="width: 100%; height: 400px;"></object>
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="modal-footer">
+                    <div class="row form-horizontal">
+                        <div class="col-lg-12 text-right">
+                            @*<button class="btn btn-primary btn_cancle" type="button" id="" value="Add" ng-show="extn == 'image'" ng-click="SaveReport()">Download</button>
+                                <button class="btn btn-primary btn_cancle" type="button" id="" value="Add" ng-show="extn == 'image'">Print</button>*@
+                            <button class="btn btn-primary btn_cancle" type="button" id="" data-dismiss="modal" aria-label="Close" ng-click="content=null;FileName=null;extn=null">@PIVF.LanguageResource.Resources.btnClose @*Close*@</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/View Attachment-->
+</form>

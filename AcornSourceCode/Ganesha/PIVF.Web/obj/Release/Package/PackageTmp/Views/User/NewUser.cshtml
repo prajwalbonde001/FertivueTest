@@ -1,0 +1,322 @@
+﻿@{
+    Layout = null;
+}
+<form name="frmUser" ng-cloak>
+        @*<section class="PageTitleContaiver">
+            <h2 class="PageTitleH2">@PIVF.LanguageResource.Resources.lblUserDetail</h2>
+        </section>
+        <hr>*@
+    <div class="form_Content p-t-10" ng-init="GetRoleList();GetUnitList()">
+        <!-- Form Content Start -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row form-horizontal">
+                    <div class="col-md-4 col-lg-4 ">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblUserType</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select class="form-control" ng-required="true" name="ddlUsrType" ng-disabled="IsDisable" id="" ng-model="User.UserTypeId" ng-options="item.ID as item.Type for item in UserTypeList" ng-change="GetNameList()" ng-class="{select:User.UserTypeId== 0 && frmUser.ddlUsrType.$dirty}" tabindex="1"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblUserName</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12" ng-class="{'Invalid':frmUser.txtUsrName.$invalid && frmUser.txtUsrName.$dirty }">
+                                <input type="text" id="txtfullName" name="txtUsrName" ng-readonly="IsDisable" ng-required="true" placeholder="" ng-model="selected" uib-typeahead="i as (i.Description) for i in NameList | filter:$viewValue | limitTo:8" typeahead-on-select="SelectedUser(selected)" class="form-control Capitalize" tabindex="2">
+                            </div>
+                        </div>
+                    </div>
+                    <!--  Column 3 End -->
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblLoginName</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12" ng-class="{'Invalid':frmUser.txtLoginName.$invalid && frmUser.txtLoginName.$dirty }">
+                                <input type="text" name="txtLoginName" class="form-control" ng-model="User.LoginName" ng-required="true" placeholder="" tabindex="3" ng-blur="LoginNameExists(User.LoginName)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-hide="IsDisable">
+                    <!--  Column 3 End -->
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12  control-label" for=""><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblPassword</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12 " ng-class="{'Invalid':frmUser.txtPwd.$invalid && frmUser.txtPwd.$dirty }">
+                                <div class="input-group passwordWrap">
+                                    <input type="password" name="txtPwd" class="form-control" ng-model="User.Password" id="txtPwd" placeholder="" ng-required="!IsDisable" tabindex="4" autocomplete="off">
+                                    <div class="input-group-addon" ng-click="ShowPwd()"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                                    @*<span class="input-group-addon" id="" ng-click="ShowPwd()"><i class="fa fa-eye" aria-hidden="true"></i></span>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12  control-label" for=""><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblConfirmPassword</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12 " ng-class="{'Invalid':frmUser.txtCnfPwd.$invalid && frmUser.txtCnfPwd.$dirty }">
+                                <input type="password" name="txtCnfPwd" class="form-control" ng-model="User.ConfPassword" id="" placeholder="" ng-required="!IsDisable" tabindex="5" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblClinicUsrRole</h5>
+            </div>
+            <!-- Column 1 Start -->
+            <div class="col-md-4 col-lg-4 form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12  control-label" for=""><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblClinic</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <select class="form-control" ng-class="{select:User.Unit.UnitID== 0 && frmUser.ddlClinic.$dirty}" name="ddlClinic" id="MSID" ng-model="User.Unit" ng-options="item.UnitName for item in UnitList" tabindex="6"></select>  @*ng-required="true" ng-class="{select:User.Unit.UnitID== 0 && frmUser.ddlClinic.$touched}"*@
+                    </div>
+                </div>
+            </div>
+            <!-- Column 1 End -->
+            <!-- Column 2 Start -->
+            <div class="col-md-4 col-lg-4 form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblUserRole</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <select class="form-control" ng-class="{select:User.Role.RoleId== 0 && frmUser.ddlRole.$dirty}" name="ddlRole" id="MSID" ng-model="User.Role" ng-options="item.Description for item in RoleList" tabindex="7"></select>   @*ng-required="true" ng-class="{select:User.Role.RoleId== 0 && frmUser.ddlRole.$touched}"*@
+                    </div>
+                </div>
+            </div>
+            <!-- Column 2 End -->
+            <div class="col-md-4 col-lg-4 form-horizontal">
+                <button id="btnAddRole" type="button" class="btn btn-txt-link m-t-30 m-b-0" ng-disabled="(User.Unit.UnitID== 0 || User.Role.RoleId== 0)?true:false" ng-click="AddUnitRole()" tabindex="8">@PIVF.LanguageResource.Resources.btnAdd</button>                    
+            </div>
+            <!--  Column 3 Start -->
+            <div class="col-sm-12" ng-hide="selectedRoles.length == 0">
+                    <div class="table-responsive" style="max-height:125px; overflow:auto;">
+                        <table class="table table-hover table-bordered" style="min-width:940px;">
+                            <thead>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblClinic</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblUserRole</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in SelUnitRoleList">
+                                    <td class="text-center">
+                                        <button id="" type="button" title="View" class="btn btn_view" data-toggle="modal" data-target="#ViewNewPatient" data-keyboard="false" data-backdrop="static" ng-click="GetMenuList($index)" tabindex="9"><span class="glyphicon glyphicon-eye-open"></span></button>
+                                        @*<button id="" type="button" class="btn btn-icon btn-secondary view-btn" data-toggle="modal" data-target="#ViewNewPatient" ng-click="GetMenuList($index)" tabindex="9"><i class="fa fa-eye" aria-hidden="true"></i></button>*@
+                                    </td>
+                                    @*<td><button id="" type="button" class="btn btn-danger remove-btn btn-icon" ng-click="RemoveUnitRole($index)" tabindex="10"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>*@
+                                    <td class="text-center">
+                                        <span class="btn_delete" ng-click="RemoveUnitRole($index,item)" title="Delete" tabindex="10"></span>     @*item added by Nayan Kamble on 29/11/2019*@
+                                    </td>
+                                    <td>{{item.UnitName}}</td>
+                                    <td>{{item.Role}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+            <div class="col-sm-12">
+                <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblPasswordConfiguration</h5>
+                @*<div class="SubSectionTitleDiv">
+                    <h3 class="title"></h3>
+                </div>*@
+            </div>
+            <div class="col-md-4 col-lg-3 form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12  control-label" for=""><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblMinimumPasswordLength</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 " ng-class="{'Invalid':frmUser.txtminpwdlength.$invalid && frmUser.txtminpwdlength.$dirty }">
+                        <input type="text" name="txtminpwdlength" class="form-control alignRight" ng-required="true" ng-model="User.MinPwdLength" id="" multi-validation="NotZero" maxlength="2" tabindex="11">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12  control-label" for=""><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblMaximumPasswordLength</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 " ng-class="{'Invalid':frmUser.txtmaxpwdlength.$invalid && frmUser.txtmaxpwdlength.$dirty }">
+                        <input type="text" name="txtmaxpwdlength" ng-required="true" class="form-control alignRight" ng-model="User.MaxPwdLength" id="" multi-validation="NotZero" maxlength="2" tabindex="12">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblMinimumPasswordAge (@PIVF.LanguageResource.Resources.lblDays)</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 " ng-class="{'Invalid':frmUser.txtminpwdage.$invalid && frmUser.txtminpwdage.$dirty }">
+                        <input type="text" name="txtminpwdage" ng-required="true" class="form-control alignRight" ng-model="User.MinPwdAge" id="" placeholder="" multi-validation="NotZero" maxlength="2" tabindex="13">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label tab-p-lr" for=""><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblMaximumPasswordAge (@PIVF.LanguageResource.Resources.lblDays)</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 " ng-class="{'Invalid':frmUser.txtminpwdage.$invalid && frmUser.txtmaxpwdage.$dirty }">
+                        <input type="text" class="form-control alignRight" name="txtmaxpwdage" ng-required="true" ng-model="User.MaxPwdAge" id="" placeholder="" multi-validation="NotZero" maxlength="3" tabindex="14">
+                    </div>
+                    @*<label class="col-lg-2 col-md-1 col-sm-2 control-label txt-l-p-0">@PIVF.LanguageResource.Resources.lblDays</label>*@
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12  control-label" for=""><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblAccountLockThreshold</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 " ng-class="{'Invalid':frmUser.txtLockThrsh.$invalid && frmUser.txtLockThrsh.$dirty }">
+                        <input type="text" name="txtLockThrsh" class="form-control alignRight" ng-required="true" ng-model="User.LockThreshold" id="" placeholder="" multi-validation="NumericArrowBkSpDelSpDCFSlash" maxlength="1" tabindex="15">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12  control-label " for=""><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblAccountLockDuration (@PIVF.LanguageResource.Resources.lblMin.)</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 " ng-class="{'Invalid':frmUser.txtlockdurn.$invalid && frmUser.txtlockdurn.$dirty }">
+                        <input type="text" name="txtlockdurn" ng-required="true" class="form-control alignRight" ng-model="User.LockDuration" id="" placeholder="" multi-validation="NumericArrowBkSpDelSpDCFSlash" maxlength="2" tabindex="16">
+                    </div>
+                    @*<label class="col-lg-2 col-md-2 col-sm-2 control-label txt-l-p-0">(@PIVF.LanguageResource.Resources.lblMin.)</label>*@
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12  control-label " for="">@PIVF.LanguageResource.Resources.lblNoofPasswordToRemember</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 ">
+                        <input type="text" class="form-control alignRight" ng-model="User.NoOfPwdRember" id="" placeholder="" multi-validation="NumericArrowBkSpDelSpDCFSlash" maxlength="1" tabindex="17">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3  form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label">
+                        <input type="checkbox" ng-model="User.IsExpirationInterval" ng-change="EnableDisableExpIntrvl(User.IsExpirationInterval)" tabindex="18"> @PIVF.LanguageResource.Resources.lblExpirationInterval (@PIVF.LanguageResource.Resources.lblDays)
+                    </label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 " ng-init="EnDsblExp=true">
+                        <input class="form-control alignRight" ng-model="User.ExpirationInterval" type="text" id="" ng-readonly="EnDsblExp" placeholder="" multi-validation="NumericArrowBkSpDelSpDCFSlash" maxlength="3" tabindex="19">
+                    </div>
+                    @*<label class="col-lg-2 col-md-1 col-sm-2 control-label txt-l-p-0">@PIVF.LanguageResource.Resources.lblDays</label>*@
+                </div>
+            </div>
+        </div>
+        <div class="row form-horizontal">            
+            <label class="col-md-3 col-lg-3 control-label">
+                <input type="checkbox" ng-model="User.AtleastOneDigit" tabindex="20"> @PIVF.LanguageResource.Resources.lblAtleastoneDigit
+            </label>
+            
+            <label class="col-md-3 col-lg-3 control-label tab-pl-0 p-r-0">
+                <input type="checkbox" ng-model="User.AtleastOneUpperCase" tabindex="21"> @PIVF.LanguageResource.Resources.lblAtleastoneUppercaseCharacter
+            </label>
+            
+            <label class="col-md-3 col-lg-3 control-label">
+                <input type="checkbox" ng-model="User.AtleastOneLowerCase" tabindex="22"> @PIVF.LanguageResource.Resources.lblAtleastoneLowerCharacter
+            </label>
+            
+            <label class="col-md-3 col-lg-3 control-label">
+                <input type="checkbox" ng-model="User.AtleastOneSpecialChar" tabindex="23"> @PIVF.LanguageResource.Resources.lblAtleastoneSpecialCharacter
+            </label>
+        </div>               
+   
+        <div class="row ">
+            <div class="col-sm-12 text-right m-t-10">
+                <!--ng-disabled="frmUser.$invalid || User.UserTypeId==0 || selectedRoles.length == 0"-->
+                <button class="btn btn-primary" type="button" id="btnText" ng-click="SaveUpdateUser(User)" tabindex="24">{{btnText}}</button>
+                <button class="btn btn-default hide_collapse_button" type="button" id="" ng-click="Cancel()" tabindex="25">@PIVF.LanguageResource.Resources.btnCancel</button>
+            </div>
+        </div>
+     </div>
+    
+        <div class="clearfix"></div>
+        <!-- Page Content End -->
+    <!-- Modal Start-->
+    <div class="modal fade" id="ViewNewPatient" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblViewRoleMenu</h4>
+                </div>
+                @*<div class="FormContainerTitle">
+                        <span class="glyphicon glyphicon-remove-circle close" type="button" data-dismiss="modal"></span>
+                        <h3 class="FormTitle">@PIVF.LanguageResource.Resources.lblViewRoleMenu</h3>
+                    </div>*@
+                <div class="modal-body User-Role-Collapse form-horizontal">
+                    <!-- User Role Master Popup Content Start -->
+                    <div class="row ">
+                        <div class="col-md-12 UserRoleCollapseWrap form-horizontal">
+                            <div class="row">
+                                <!-- Column 1 First Main Collapse Start -->
+                                <div class="col-md-12">
+                                    <div class="panel-group User-Role-Collapse" id="accordion" role="tablist" aria-multiselectable="true">
+                                        <!-- Administration Collapse Start -->
+                                        <div class="panel panel-default" ng-repeat="item in MenuList">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h3 class="title"><a role="button" id="headingSeven" class="collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#{{item.Id}}" aria-expanded="false" aria-controls="{{item.Id}}"><span class="CollapseTabArrowIcon"></span> {{item.Title}}</a></h3>
+                                            </div>
+                                            <div id="{{item.Id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                                                <div class="panel-body">
+                                                    <div class="PanelSubContentWrapper">
+                                                        <div class="panel-heading panel-subheading">
+                                                            <div class="form-group">
+                                                                <label class="col-sm-offset-6 col-sm-1 control-label">@PIVF.LanguageResource.Resources.lblAll</label>
+                                                                <label class="col-sm-1 control-label">@PIVF.LanguageResource.Resources.lblAdd</label>
+                                                                <label class="col-sm-1 control-label">@PIVF.LanguageResource.Resources.btnEdit</label>
+                                                                <label class="col-sm-1 control-label">@PIVF.LanguageResource.Resources.lblView</label>
+                                                                <label class="col-sm-1 control-label">@PIVF.LanguageResource.Resources.lblPrint</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub Patient Configuration Start -->
+                                                        <div class="form-group sub-collapse-form-group">
+                                                            <!-- Sub accordion Start -->
+                                                            <div class="panel-group User-Role-Collapse subCollapse" id="accordion1" role="tablist" aria-multiselectable="true">
+                                                                <div class="panel panel-default" ng-repeat="i in item.lstMenu">
+                                                                    <div class="panel-heading panel-sub-mini-heading" role="tab" id="">
+
+                                                                        <label class="col-sm-6 p-l-10">
+                                                                            <h3 class="Subtitle"><a role="button" id="headingOne1" class="collapsed" data-toggle="collapse" data-parent="#accordion1" data-target="#{{i.Id}}" aria-expanded="true" aria-controls="{{i.Id}}"><span ng-class="{'CollapseTabArrowIcon SubCollapseTabArrowIcon':item.lstInnerMenu.length>0}"></span>{{i.Title}}</a></h3>
+                                                                        </label>
+                                                                        <label class="col-sm-1 control-label r-p-5"><input type="checkbox" ng-model="i.IsAll" ng-disabled="true"></label>
+                                                                        <label class="col-sm-1 control-label p-r-10 r-p-3"><input type="checkbox" ng-model="i.IsCreate" ng-disabled="true"></label>
+                                                                        <label class="col-sm-1 control-label p-r-8 r-r-0"><input type="checkbox" ng-model="i.IsUpdate" ng-disabled="true"></label>
+                                                                        <label class="col-sm-1 control-label p-r-6 r-r-0"><input type="checkbox" ng-model="i.IsRead" ng-disabled="true"></label>
+                                                                        <label class="col-sm-1 control-label p-r-4 r-l-34 m-b-16"><input type="checkbox" ng-model="i.IsPrint" ng-disabled="true"></label>
+
+                                                                    </div>
+                                                                    <div id="{{i.Id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                                        <div class="panel-body" ng-repeat="j in item.lstInnerMenu">
+                                                                            <div class="PanelSubContentWrapper1" ng-if="i.MenuId==j.ParentId">
+                                                                                <div class="labelWrap">
+                                                                                    <div class="form-group m-b-5">
+                                                                                        <label class="col-sm-6 control-label p-l-45">{{j.Title}}</label>
+                                                                                        <label class="col-sm-1 control-label"><input type="checkbox" ng-disabled="true" ng-model="j.IsAll"></label>
+                                                                                        <label class="col-sm-1 control-label"><input type="checkbox" ng-disabled="true" ng-model="j.IsCreate"></label>
+                                                                                        <label class="col-sm-1 control-label"><input type="checkbox" ng-disabled="true" ng-model="j.IsUpdate"></label>
+                                                                                        <label class="col-sm-1 control-label"><input type="checkbox" ng-disabled="true" ng-model="j.IsRead"></label>
+                                                                                        <label class="col-sm-1 control-label"><input type="checkbox" ng-disabled="true" ng-model="j.IsPrint"></label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Sub accordion End -->
+                                                        </div>
+                                                        <!-- Sub Patient Configuration End -->
+                                                    </div>
+                                                    @*<div class="find_btn m-t-0 text-center ">
+                                                            <button class="btn btn-primary btn_shadow" type="button" id="" ng-click="CheckAlreadyExists(Role)" ng-disabled="frmAddRole.$invalid">@PIVF.LanguageResource.Resources.btnSave</button>
+                                                        </div>*@
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Administration Collapse End -->
+                                    </div>
+                                </div>
+                                <!-- Column 1 First Main Collapse End /////////////////////-->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- User Role Master Popup Content End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+</form>

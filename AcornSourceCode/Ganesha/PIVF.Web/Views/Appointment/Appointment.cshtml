@@ -1,0 +1,220 @@
+﻿@{
+    Layout = null;
+
+}
+
+<link href="~/Scripts/AngularPackages/slick/slick-carousel/slick-theme.css" rel="stylesheet" />
+
+
+
+<style>
+    .calendarCustomBg {
+        background: transparent !important;
+    }
+
+    .customCalaendarInputBox {
+        border: 1px solid #E2E3E5;
+        padding: 20px;
+        border-radius: 20px;
+        background: #FFFFFD;
+        margin-bottom: 25px;
+    }
+
+    .FormContentContainerForCalendar {
+        background: transparent !important;
+    }
+</style>
+
+
+
+
+
+
+<div class="whiteBgColor calendarCustomBg" id="">
+
+    @*<div class="form_Content"    >*@
+    <div style="position: relative;
+    padding: 12px;">
+        <div class="row" ng-app="PIVF" ng-controller="AppointmentController as vm" ng-init="vm.init()">
+            <div class="col-md-12">
+
+                <div class="FormContainerBlue">
+
+                    <div class="FormContentContainer form-horizontal FormContentContainerForCalendar">
+                        <div class="row">
+                            <div class="customCalaendarInputBox col-md-12">
+                                <div class="col-md-3 col-lg-3">
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvSelectCenter</label>
+                                        <div class="col-md-12 col-lg-12">
+                                            <select id="UnitID"
+                                                    name="UnitID"
+                                                    ng-model="UnitID"
+                                                    class="form-control"
+                                                    ng-keydown="$event.which==13?vm.PatientAppointmentOnChangeParam():0"
+                                                    ng-change="vm.GetDepartmentByUnitID(UnitID)"
+                                                    ng-options="item.UnitID as item.UnitName for item in CityAndClinicNameList"></select>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="col-md-3 col-lg-3">
+
+                                    <div class="form-group">
+                                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.msgSelDepartment</label>
+                                        <div class="col-md-12 col-lg-12">
+                                            <select id="DeptID"
+                                                    name="DeptID"
+                                                    ng-model="DeptID"
+                                                    class="form-control"
+                                                    ng-keydown="$event.which==13?vm.PatientAppointmentOnChangeParam():0"
+                                                    ng-change="vm.GetDoctorListByDeptID(DeptID)"
+                                                    ng-options="item.ID as item.Description for item in DepartmentList"></select>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-md-3 col-lg-3">
+                                    @*<select class="form-control" ng-keydown="$event.which==13?vm.PatientAppointmentOnChangeParam():0" id="DocCatID" ng-model="DOCID">
+                                            <option value=""> Select @PIVF.LanguageResource.Resources.lblDoctor </option>
+                                            <option ng-repeat="t in DoctorCategoryList" value="{{t.ID}}">{{t.DoctorName}}</option>
+                                        </select>*@
+
+                                    <div class="form-group">
+                                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.msgSelDoctor</label>
+                                        <div class="col-md-12 col-lg-12">
+                                            <select id="DocCatID"
+                                                    name="DocCatID"
+                                                    ng-model="DOCID"
+                                                    class="form-control Capitalize"
+                                                    ng-keydown="$event.which==13?vm.PatientAppointmentOnChangeParam():0"
+                                                    ng-options="item.ID as item.DoctorName for item in DoctorCategoryList"></select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+                                <div class="col-md-2 col-lg-2">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvSelectDate</label>
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <div class="input-group date">
+
+                                                <input type="text" class="form-control" id="date" name="date" placeholder="dd-Mmm-yyyy" ng-required="true" ng-model="vm.date" aria-describedby="" uib-datepicker-popup="{{format}}"
+                                                       show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="1">
+                                                <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-lg-1 p-l-0">
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-12 col-lg-12 control-label" for=""></label>
+                                        <div class="col-md-12 col-lg-12">
+                                            <button id="" type="button" class="btn btn-primary orangeBg" ng-click="NormalSearch(Appointment)" style="margin-top:21px;">@PIVF.LanguageResource.Resources.btnSearch</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="calendarHeader">
+                                    <div class="row">
+                                        <div class="col-md-2 text-left">
+                                        </div>
+                                        <div class="col-md-12 text-center calendarHeaderRight">
+                                            <span class="pageTitle">@PIVF.LanguageResource.Resources.lblvDoctorList</span>
+                                            <div class="dateRow">
+                                                <a class="{{disableLink}}" mwl-date-modifier date="vm.viewDate" decrement="vm.calendarView" ng-click="vm.onTimeDecrement()">
+                                                    <span class="glyphicon glyphicon-chevron-left datem-right" read-only></span>
+                                                </a>
+                                                <span class="">{{vm.changedViewDate | date}}</span>
+                                                <a mwl-date-modifier date="vm.viewDate" increment="vm.calendarView" ng-click="vm.onTimeIncrement()">
+                                                    <span class="glyphicon glyphicon-chevron-right datem-left"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 text-right">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row p-5" ng-if="dataLoaded">
+                            @*<strong ng-show="vm.lastDateClicked">You selected on this day: from {{ vm.firstDateClicked | date:'medium' }} to {{ vm.lastDateClicked | date:'medium' }}</strong>*@
+
+                            <slick slides-to-show={{vm.nslides}} slides-to-scroll=1 init-onload=true data="AppointmentDetails">
+                                <div class="col-md-{{vm.btmd}}" ng-repeat="doctor in vm.doctors" id="doctor{{$index}}" style="padding: 24px;border-radius: 24px;box-shadow: 0px 0px 8px 0px #00000014; background: #FFFFFF;">
+                                    <div class="slideWrap">
+                                        <div class="slideTop slideDyna{{$index}}" style="display: flex; align-items: center; gap: 25px;">
+                                            <div class="CalendarProfileImgWrap">
+                                                <img ng-if="doctor.DoctorPhoto !=''" ng-src="{{doctor.DoctorPhoto}}" class="profile">
+                                                <img ng-if="doctor.DoctorPhoto =='' && doctor.GenderId==1" ng-src="../images/Male_default.jpg" class="profile">
+                                                <img ng-if="doctor.DoctorPhoto =='' && doctor.GenderId==2" ng-src="../images/Female_default.jpg" class="profile">
+                                            </div>
+
+                                            <div class="slideTopInfo">
+                                                <span class="customCalendarDrName Capitalize">{{doctor.FirstName}} {{doctor.LastName}}</span>
+                                                <div style="display: flex;gap: 15px;flex-wrap: wrap;">
+                                                    <span class="customCalendarDrInfo ">{{doctor.Specialization}}</span>
+                                                    <span class="customCalendarDrInfo "> <span class="calendarOption">|</span>{{doctor.SubSpecialization}}</span>
+                                                    <span class="customCalendarDrInfo "> <span class="calendarOption">|</span>{{doctor.Department}} <span style="margin:10px">|</span> {{doctor.UnitName}}</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="clear"></div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="slideContent Capitalize">
+                                        <mwl-calendar events=doctor.events
+                                                      view="vm.calendarView"
+                                                      view-title="vm.calendarTitle"
+                                                      view-date="vm.viewDate"
+                                                      on-event-click="vm.eventClicked(calendarEvent)"
+                                                      on-event-times-changed="vm.eventTimesChanged(calendarEvent, calendarNewEventStart, calendarNewEventEnd, doctor.FirstName, doctor.MiddleName, doctor.LastName, doctor.DepartmentId, doctor.StartTime, doctor.EndTime, doctor.events, doctor.Index); calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+                                                      cell-is-open="vm.cellIsOpen"
+                                                      day-view-start="08:00"
+                                                      day-view-end="23:59"
+                                                      day-view-split="15"
+                                                      cell-modifier="vm.cellModifier(doctor.events,calendarCell, doctor.StartTime , doctor.EndTime)"
+                                                      cell-auto-open-disabled="true"
+                                                      on-timespan-click="vm.timespanClicked(calendarDate, calendarCell)"
+                                                      on-date-range-select="vm.rangeSelected(doctor.events, calendarRangeStartDate, calendarRangeEndDate, doctor.FirstName, doctor.MiddleName, doctor.LastName, doctor.DepartmentId, doctor.Department, doctor.UnitName, doctor.StartTime, doctor.EndTime, AvailablePatientNameList); calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd">
+                                        </mwl-calendar>
+                                    </div>
+                                </div>
+                            </slick>
+
+
+                        </div>
+                        <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+                    </div> <!-- End FormContentContainer -->
+                </div><!-- Blue Wrapper End -->
+            </div>
+            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+        </div>
+    </div>
+
+</div>
+
+

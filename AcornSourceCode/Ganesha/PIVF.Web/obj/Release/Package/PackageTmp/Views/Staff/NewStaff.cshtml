@@ -1,0 +1,545 @@
+﻿<!-- page-wrapper Start -->
+<!-- Page Content Start -->
+@{
+    Layout = null;
+}
+<style>
+    .cropArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width: 300px;
+        height: 250px;
+    }
+
+    .warning {
+        border: 1px solid red;
+    }
+</style>
+
+
+<section ng-controller="StaffController" ng-init="LoadData()">
+    <!-- Fixed Link Start -->
+    <form name="frmNewStaff" autocomplete="off" role="form" novalidate>
+        <!--<section class="PageTitleContaiver">
+                <h2 class="PageTitleH2">@PIVF.LanguageResource.Resources.lblStaffDetail</h2>
+            </section>-->
+        <!-- Form Content Start -->
+        <div class="form_Content form-horizontal" style="height: calc(100vh - 180px); display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+    padding-bottom: 0px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblStaffInfo</h5>
+                </div>
+                <!--<div class="col-sm-12">
+                    <div class="SectionTitleDiv">
+                        <h3 class="title">@PIVF.LanguageResource.Resources.lblStaffInfo</h3>
+                    </div>
+                </div>-->
+                <!-- Column 1 Start -->
+                <div class="col-md-3 col-lg-3">
+                    <div class="patient_pic staff_uploadImg">
+                        <button type="button" class="glyphicon glyphicon-pencil imgEdit" title="@PIVF.LanguageResource.Resources.tbtnEditProfileImage" style="display:inline-block;right:-10px;" data-toggle="modal" ng-click="UploadImageStaff();"></button> @*data-target="#modPhoto"*@
+                        <img ng-src="{{Staff.PhotoString}}" class="profile" alt="">
+                    </div>
+                </div>
+                <!-- Column 1 End -->
+                <!-- Column 2 Start    -->
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="company_code"><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblFirstName</label>
+                        <div class="col-md-12 col-lg-12" ng-class="{'Invalid':frmNewStaff.FirstName.$invalid && frmNewStaff.FirstName.$dirty }">
+                            <input class="form-control Capitalize" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterFirstName" type="text" name="FirstName" placeholder="" ng-model="Staff.FirstName" replace="[^a-zA-Z]" with="" maxlength="20" ng-required="true" tabindex="1" autofocus>
+                            <!--<span class="help-block" ng-if="frmNewStaff.FirstName.$error.required && frmNewStaff.FirstName.$dirty">@PIVF.LanguageResource.Resources.msgEntFirstName</span>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="company_code">@PIVF.LanguageResource.Resources.lblMiddleName</label>
+                        <div class="col-md-12 col-lg-12">
+                            <input class="form-control Capitalize" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterMiddlName" ng-model="Staff.MiddleName" name="txtMiddleName" id="txtMiddleName" maxlength="20" tabindex="2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="company_code"><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblLastName</label>
+                        <div class="col-md-12 col-lg-12" ng-class="{'Invalid':frmNewStaff.txtLN.$invalid && frmNewStaff.txtLN.$dirty }">
+                            <input class="form-control Capitalize" type="text" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterLastName" ng-model="Staff.LastName" name="txtLN" placeholder="" replace="[^a-zA-Z]" with="" maxlength="20" ng-required="true" tabindex="3">
+                            @*<span class="help-block" ng-if="frmNewStaff.txtLN.$error.required && frmNewStaff.txtLN.$dirty">@PIVF.Gemino.LanguageResource.Resources.msgEntLastName</span>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblGender</label>
+                        <div class="col-md-12 col-lg-12">
+                            @*ng-class="{'Invalid':frmNewStaff.ddlGender.$invalid && frmNewStaff.ddlGender.$dirty }"*@
+                            <select class="form-control" name="ddlGender" title="@PIVF.LanguageResource.Resources.tlblPleaseSelectGender" ng-class="{select:Staff.GenderId== 0 && frmNewStaff.ddlGender.$dirty}" ng-model="Staff.GenderId" ng-options="item.GenderId as item.GenderDescription for item in GenderList" ng-required="true" tabindex="4"></select>
+                            @* <span class="help-block" ng-if="frmNewStaff.ddlGender.$error.required || Staff.GenderId== 0 && frmNewStaff.ddlGender.$dirty ">@PIVF.Gemino.LanguageResource.Resources.msgSelGender</span>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblDOB</label>
+                        <div class="col-md-12 col-lg-12" ng-class="{'Invalid':StaffDOBError==true}">
+                            <div class="input-group date">
+                                <input type="text" class="form-control" title="@PIVF.LanguageResource.Resources.tlblPleaseSelectDOB" id="StaffDOB" name="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.tlblyyyymmdd" ng-model="Staff.DOB" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats" ng-change="CalculateAge(Staff.DOB)" ng-keyup="CalculateAge(Staff.DOB,$event)" tabindex="5">
+                                <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                            @*<span ng-show="StaffDOBError" style="color:red"> @PIVF.Gemino.LanguageResource.Resources.msgSelValidDateDOB </span>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 m-b-1">
+                    <div class="form-group" ng-class="{'Invalid':frmNewStaff.txtYr.$invalid && frmNewStaff.txtYr.$dirty}">
+                        <label class="col-md-12 col-lg-12 control-label" for="textinput"><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblAge</label>
+                        @*<div class="input-group">*@
+                        <div class="col-sm-3 col-xs-12 p-r-0">
+                            <input id="textinput" ng-model="Staff.AgeYr" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAge" name="txtYr" multi-validation="NumericArrowBkSpDelSpDCFSlash" type="text" maxlength="3" class="form-control input-sm alignRight" ng-required="true" tabindex="6">
+                            @*<span class="help-block" ng-if="Staff.AgeYr<18">You entered age less than 18 yrs.</span>*@
+                        </div>
+                        <label class="col-sm-1 col-xs-12 p-l-0 p-r-0 fontSize control-label" id="text-center" for="textinput">@PIVF.LanguageResource.Resources.lblYr</label>@*Yr :: Modified by swatih for localization 28/7/2020*@
+                        <div class="col-sm-2 col-xs-12 p-l-0 p-r-0">
+                            <input id="textinput" ng-model="Staff.AgeMnth" name="txtMnth" multi-validation="NumericArrowBkSpDelSpDCFSlash" type="text" class="form-control input-sm alignRight" readonly tabindex="7">
+                        </div>
+                        <label class="col-sm-2 col-xs-12 p-l-0 p-r-0 fontSize control-label" id="text-center" for="textinput">@PIVF.LanguageResource.Resources.lblMnth</label>@*Mnth :: Modified by swatih for localization 28/7/2020*@
+                        <div class="col-sm-2 col-xs-12 p-l-0 p-r-0">
+                            <input id="textinput" ng-model="Staff.AgeDay" name="txtDay" multi-validation="NumericArrowBkSpDelSpDCFSlash" type="text" class="form-control input-sm alignRight" readonly tabindex="8">
+                        </div>
+                        <label class="col-sm-2 col-xs-12 p-l-0 fontSize control-label" id="text-center" for="textinput">@PIVF.LanguageResource.Resources.lblDay</label>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblMarryStatus</label>
+                        <div class="col-md-12 col-lg-12">
+                            <select class="form-control" id="MSID" title="@PIVF.LanguageResource.Resources.tlblPleaseSelectMaritalStatusId" ng-model="Staff.MaritalStatusId" ng-options="item.MaritalStatusId as item.MSDescription for item in MaritalStatusList" tabindex="9"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblMobNo</label>
+                        <div class="col-md-3 col-lg-3 p-r-0" ng-class="{'Invalid':frmNewStaff.MobCountryCode.$invalid && frmNewStaff.MobCountryCode.$dirty}">
+                            @*<input type="text" autocomplete="off" class="form-control alignRight" name="MobCountryCode" placeholder="xxx" replace="[^a-zA-Z0-9]" with="" ng-model="selectedCountry1" uib-typeahead="i as (i.CountryName) for i in CountryList1 | filter:$viewValue | limitTo:20" typeahead-min-length="1" typeahead-on-select="SelectedCountry1(selectedCountry1)" ng-change="GetCountryCode1()" ng-required="true" tabindex="10">*@ @*//Commented and modified by AniketK on 11Nov2019*@
+                            <input type="text" autocomplete="off" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterCountryCode" class="form-control alignRight" name="MobCountryCode" placeholder="xxx" replace="[^0-9]" with="" ng-model="selectedCountry1" uib-typeahead="i as (i.CountryName) for i in CountryList1 | filter:$viewValue | limitTo:20" typeahead-min-length="1" typeahead-on-select="SelectedCountry1(selectedCountry1)" ng-change="GetCountryCode1()" ng-required="true" tabindex="10">
+                            @* <span class="help-block" ng-if="frmNewStaff.MobCountryCode.$error.required && frmNewStaff.MobCountryCode.$dirty">@PIVF.Gemino.LanguageResource.Resources.msgSelCountryCode</span>*@
+                        </div>   @*uib-tooltip="Mobile No. must start with 7/8/9 & contain 10 digits" tooltip-enable="result==false && Staff.Mobno!='undefined'"*@
+                        <div class="col-md-9 col-lg-9 p-l-4" ng-class="{'Invalid':frmNewStaff.txtMobNo.$invalid && frmNewStaff.txtMobNo.$dirty}">
+                            <input type="text" class="form-control alignRight" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterMobileNumber" name="txtMobNo" ng-model="Staff.Mobno" ng-keyup="ValidateMobNumber(Staff.Mobno)" placeholder="xxx xxx xxxx" ng-required="true" multi-validation="NumericArrowBkSpDelSpDCFSlash" ng-pattern="/^\d{1,15}$/" maxlength="15" tabindex="11">   @*uib-tooltip="Mobile No. must start with 7/8/9 & contain 10 digits" tooltip-enable="result==false && Staff.Mobno!='undefined'" multi-validation="MobNoStartWith" ng-keyup="ValidateMobNumber(Staff.Mobno)"*@
+                            @*<span class="help-block" ng-if="frmNewStaff.txtMobNo.$error.required && frmNewStaff.txtMobNo.$dirty">@PIVF.Gemino.LanguageResource.Resources.msgEntMobNo</span>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAltMob</label>
+                        <div class="col-md-3 col-lg-3 p-r-0">
+                            @*<input type="text" class="form-control alignRight" id="CountryCode" ng-model="selectedCountry2" placeholder="xxx" replace="[^a-zA-Z0-9]" with="" uib-typeahead="i as (i.CountryName) for i in CountryList2 | filter:$viewValue | limitTo:20" typeahead-min-length="1" typeahead-on-select="SelectedCountry2(selectedCountry2)" ng-change="GetCountryCode2()" tabindex="12">*@ @*//Commented and modified by AniketK on 11Nov2019*@
+                            <input class="form-control alignRight" id="CountryCode" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAltCountryCode" ng-model="selectedCountry2" placeholder="xxx" multi-validation="NumericArrowBkSpDelSpDCFSlash" uib-typeahead="i as (i.CountryName) for i in CountryList2 | filter:$viewValue | limitTo:20" typeahead-min-length="1" typeahead-on-select="SelectedCountry2(selectedCountry2)" ng-change="GetCountryCode2()" tabindex="12">
+                        </div>     @*uib-tooltip="Mobile No. must start with 7/8/9 & contain 10 digits" tooltip-enable="Altresult==false"*@
+                        <div class="col-md-9 col-lg-9 p-l-4" ng-class="{'Invalid':frmNewStaff.txtAltMob.$invalid && Altresult==false}">
+                            <input type="text" class="form-control alignRight" id="" name="txtAltMob" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAlternateMobileNumber" ng-keyup="ValidateAltMobNumber(Staff.AltMobno)" ng-model="Staff.AltMobno" multi-validation="NumericArrowBkSpDelSpDCFSlash" ng-pattern="/^\d{1,15}$/" maxlength="15" placeholder="xxx xxx xxxx" tabindex="13">   @*uib-tooltip="Mobile No. must start with 7/8/9 & contain 10 digits" tooltip-enable="Altresult==false" ng-keyup="ValidateAltMobNumber(Staff.AltMobno)" multi-validation="MobNoStartWith"*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblEmailId</label>
+                        <div class="col-md-12 col-lg-12">
+                            <input type="text" ng-class="{'select':frmNewStaff.txtEmail.$touched && result1==false}" name="txtEmail" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterEmailID" ng-model="Staff.EmailId" class="form-control" id="" placeholder="xxx@xxx.xxx" ng-keyup="ValidateEmail(Staff.EmailId)" tabindex="14">
+                            @* <span class="help-block" ng-if="frmNewStaff.txtEmail.$dirty && !result">@PIVF.Gemino.LanguageResource.Resources.msgEntValidEmail</span>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblDesignation</label>
+                        <div class="col-md-12 col-lg-12">
+                            @*ng-class="{'select':frmNewStaff.ddlDeg.$invalid || Staff.DegID== 0}"   ng-class="{select:Staff.DegID== 0}"*@
+                            <select class="form-control" title="@PIVF.LanguageResource.Resources.tlblPleaseSelectDesignation" ng-class="{select:Staff.DegID== 0 && frmNewStaff.ddlDeg.$dirty}" name="ddlDeg" ng-model="Staff.DegID" ng-options="item.DegID as item.Description for item in DegList" tabindex="15"></select>
+                            @* <span class="help-block" ng-if="frmNewStaff.ddlDeg.$error.required || Staff.DegID== 0 && frmNewStaff.ddlDeg.$dirty ">@PIVF.Gemino.LanguageResource.Resources.msgSelDesignation</span>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblDepartment</label>
+                        <div class="col-md-12 col-lg-12">
+                            @*ng-class="{'Invalid':frmNewStaff.ddlDept.$invalid && frmNewStaff.ddlDept.$dirty}"*@
+                            <select class="form-control" title="@PIVF.LanguageResource.Resources.tlblPleaseSelectDepartment" name="ddlDept" ng-class="{select:Staff.DeptID== 0 && frmNewStaff.ddlDept.$dirty}" ng-model="Staff.DeptID" ng-options="item.ID as item.Description for item in DepartmentList" tabindex="16"></select>
+                            @* <span class="help-block" ng-if="frmNewStaff.ddlDept.$error.required || Staff.DeptID== 0 && frmNewStaff.ddlDept.$dirty ">@PIVF.Gemino.LanguageResource.Resources.msgSelDept</span>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="company_code">@PIVF.LanguageResource.Resources.lblQualification</label>
+                        <div class="col-md-10 col-sm-11 col-lg-11 p-r-0">
+                            <textarea class="form-control Capitalize" ng-model="Staff.Qualification" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterQualification" maxlength="500" tabindex="17"></textarea> @*replace="[^a-zA-Z0-9\.\/\,\s]"*@
+                        </div>
+                        <label class="col-md-2 col-sm-1 col-lg-1 lastLabel control-label">{{500-Staff.Qualification.length}}</label>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="company_code">@PIVF.LanguageResource.Resources.lblExperience</label>
+                        <div class="col-md-10 col-sm-11 col-lg-11 p-r-0">
+                            <textarea class="form-control" ng-model="Staff.Experience" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterExperience" maxlength="500" tabindex="18"></textarea>
+                        </div>
+                        <label class="col-md-2 col-sm-1 col-lg-1 lastLabel">{{500-Staff.Experience.length}}</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Personal Info Start -->
+            <!-- Address Line Start -->
+            <div class="row DetailSectionContainer">
+                <div class="col-sm-12">
+                    <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblContactDetails</h5>
+                </div>
+                @*<div class="col-sm-12">
+                        <div class="SectionTitleDiv">
+                            <h3 class="title">@PIVF.Gemino.LanguageResource.Resources.lblContactDetails</h3>
+                        </div>
+                    </div>*@
+                <!-- Address 1 start -->
+                <div class="col-sm-12">
+                    <h5 class="ContactDetailsTitle">@PIVF.LanguageResource.Resources.lblAddress1</h5>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <!-- Column 1 Start -->
+                        <div class="col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAddressLine1</label>
+                                <div class="col-md-12 col-lg-12">
+                                    @*<textarea ng-model="Staff.AddressLine1" class="form-control Capitalize" id="" placeholder="" replace="[^a-zA-Z0-9\s]" with="" maxlength="100" tabindex="19"></textarea>*@
+                                    <textarea class="form-control Capitalize" ng-model="Staff.AddressLine1" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAddressLine1" maxlength="100" tabindex="44"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAddressLine2</label>     @*allow-pattern="(\d|[a-z\.\-\/\b\s])"*@
+                                <div class="col-md-12 col-lg-12">
+                                    <textarea class="form-control Capitalize" ng-model="Staff.AddressLine2" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAddressLine2" maxlength="100" tabindex="20"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-lg-3 m-b-15">
+                            <div class="form-group ">
+                                @**@
+                                    <
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblStreet</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <input class="form-control Capitalize" ng-model="Staff.Street" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterStreet" maxlength="100" tabindex="21">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3 m-b-15">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblLandmark</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <input ng-model="Staff.LandMark" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterLandMark" class="form-control Capitalize" maxlength="100" tabindex="22">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblCountry</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <select class="form-control" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterCountryID" ng-model="Staff.CountryID" ng-options="item.CountryID as item.CountryName for item in CountryCodeList" ng-change="GetStateList1('',Staff.CountryID);" tabindex="23"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblState</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <select id="" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterStateID" ng-model="Staff.StateID" class="form-control"
+                                                ng-change="GetCityList1('',Staff.StateID)"
+                                                ng-options="item.StateID as item.StateName for item in StateList1" tabindex="24"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblCity</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <select id="" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterCityID" ng-model="Staff.CityID" class="form-control Capitalize"
+                                                ng-options="item.CityID as item.CityName for item in CityList1" tabindex="25"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblArea</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <input ng-model="Staff.Area" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterArea" class="form-control Capitalize" tabindex="26">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblPincode</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <input ng-model="Staff.Pincode" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterPincode" multi-validation="NumericArrowBkSpDelSpDCFSlash" class="form-control Capitalize" tabindex="27" maxlength="6">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblLandlineNo.</label>
+                                    <div class="col-md-3 col-sm-3 p-r-0">
+                                        <input type="text" ng-model="Staff.StdCode" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterStdCode" limit-to="7" multi-validation="NumericArrowBkSpDelSpDCFSlash" class="form-control alignRight" maxlength="7" placeholder="xxx" tabindex="28">
+                                    </div>
+                                    <div class="col-md-9 col-sm-9 p-l-4">
+                                        <input type="text" ng-model="Staff.LandLineNo" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterLandLineNo" multi-validation="NumericArrowBkSpDelSpDCFSlash" class="form-control alignRight" placeholder="xxx xxx xxxx" maxlength="8" tabindex="29">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column 1 End -->
+                            <!-- Column 2 Start -->
+                            <!-- Column 2 End -->
+                            <!-- Column 3 Start -->
+                            <!-- Column 3 End -->
+                        </div>
+                    </div>
+                    <!-- Address 1 End -->
+                    <!-- Address 2 start -->
+                    <div class="col-sm-12">
+                        <h5 class="ContactDetailsTitle">@PIVF.LanguageResource.Resources.lblAddress2</h5>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <!-- Column 1 Start -->
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAddressLine1</label>   @*ng-keydown="Valiadtion($event)"*@
+                                    <div class="col-md-12 col-lg-12">
+                                        <textarea ng-model="Staff.AltAddressLine1" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAltAddressLine1" class="form-control Capitalize" maxlength="100" tabindex="30"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAddressLine2</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <textarea ng-model="Staff.AltAddressLine2" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAltAddressLine2" class="form-control Capitalize" maxlength="100" tabindex="31"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3 m-b-15">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblStreet</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <input class="form-control Capitalize" ng-model="Staff.AltStreet" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAltStreet" maxlength="100" tabindex="32">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3 m-b-15">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblLandmark</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <input ng-model="Staff.AltLandMark" class="form-control Capitalize" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAltLandMark" maxlength="100" tabindex="33">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblCountry</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <select class="form-control" title="@PIVF.LanguageResource.Resources.tlblPleaseSelectAltCountryID" ng-model="Staff.AltCountryID" ng-options="item.CountryID as item.CountryName for item in CountryCodeList" ng-change="GetStateList2('',Staff.AltCountryID);" tabindex="34"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblState</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <select id="" title="@PIVF.LanguageResource.Resources.tlblPleaseSelectAltStateID" ng-model="Staff.AltStateID" class="form-control"
+                                                ng-change="GetCityList2('',Staff.AltStateID)"
+                                                ng-options="item.StateID as item.StateName for item in StateList2" tabindex="35"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblCity</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <select id="" title="@PIVF.LanguageResource.Resources.tlblPleaseSelectAltCityID" ng-model="Staff.AltCityID" class="form-control"
+                                                ng-options="item.CityID as item.CityName for item in CityList2" tabindex="36"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblArea</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <input ng-model="Staff.AltArea" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAltArea" class="form-control Capitalize" tabindex="37">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblPincode</label>
+                                    <div class="col-md-12 col-lg-12">
+                                        <input ng-model="Staff.AltPincode" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAltPincode" class="form-control alignRight" multi-validation="NumericArrowBkSpDelSpDCFSlash" tabindex="38" maxlength="6">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group MobileContainer">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblLandlineNo.</label>
+                                    <div class="col-md-3 col-lg-3 p-r-0">
+                                        <input ng-model="Staff.AltStdCode" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAltStdCode" limit-to="7" class="form-control alignRight" multi-validation="NumericArrowBkSpDelSpDCFSlash" maxlength="7" placeholder="xxx" tabindex="39">
+                                    </div>
+                                    <div class="col-md-9 col-lg-9 p-l-4">
+                                        <input ng-model="Staff.AltLandLineNo" title="@PIVF.LanguageResource.Resources.tlblPleaseEnterAltLandLineNo" class="form-control alignRight" multi-validation="NumericArrowBkSpDelSpDCFSlash" placeholder="xxx xxx xxxx" maxlength="8" tabindex="40">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column 1 End -->
+                            <!-- Column 2 Start -->
+                            <!-- Column 2 End -->
+                            <!-- Column 3 Start -->
+                            <!-- Column 3 End -->
+                        </div>
+                    </div>
+                    <!-- Address 2 End -->
+                </div>
+                <!-- Address Line End -->
+                <!-- Personal Inf End -- -->
+
+
+                <div class="row" style="position: sticky;
+    bottom: 0px;
+    z-index: 1;
+    background: #FFFFFF;
+    padding: 10px;
+    border-top: 1px solid #E2E3E5;
+">
+                    <div class="col-md-12 col-lg-12 text-right m-t-10">
+                        <!--ng-disabled="frmNewStaff.$invalid || Staff.GenderId== 0 || Staff.DegID== 0 || Staff.DeptID== 0 ||frmNewStaff.txtMobNo.$error.pattern || frmNewStaff.txtAltMob.$error.pattern"-->
+                        <button class="btn btn-primary" type="button" id="" ng-click="SaveStaff(Staff)" tabindex="41">{{btnText}}</button>
+                        @*<button class="btn btn-primary btn_shadow hide_collapse_button" type="button" id="btnClear" ng-click="Clear()" tabindex="42"><span class="glyphicon glyphicon-remove"></span>@PIVF.Gemino.LanguageResource.Resources.btnClear</button>*@<button class="btn btn-primary btn_shadow hide_collapse_button" type="button" id="btnClear" ng-click="Clear()" tabindex="42"><span class="glyphicon glyphicon-remove"></span></button>
+                        <button class="btn btn-default  hide_collapse_button" type="button" id="btnBack" ng-click="BackToStaffList()" tabindex="43">@PIVF.LanguageResource.Resources.btnCancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <script type="text/ng-template" id="tmpDocPhoto">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" ng-click="ClosePopUp();" aria-label="@PIVF.LanguageResource.Resources.btnClose"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblImageUploadType</h4>
+                    </div>
+                    <div class="modal-body" ng-init="init();">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                @*ng-click="UploadImageDoctor();"*@
+                                <div class="text-center option-btn">
+                                    <button class="btn btn-success gallary-btn " type="button" id="" ng-click="HideShowDiv1(ShowGallery);"><span class="glyphicon glyphicon-picture"></span>@PIVF.LanguageResource.Resources.btnChooseFromGallary</button>
+                                    <button class="btn btn-warning Camera-btn" type="button" id="" ng-click="HideShowDiv2(ShowCapture);"><span class=""><i class="fa fa-camera"></i></span>@PIVF.LanguageResource.Resources.btnChooseFromCamera</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="GallaryWrapper" ng-show="ShowGallery">
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                            <h4 class="ModalHeading">@PIVF.LanguageResource.Resources.lblImgFromGallery</h4>
+                                        </div>
+                                        <div class="col-sm-offset-3 col-sm-6 cropArea ">
+                                            <ui-cropper image="myImage" live-view="blockingObject" result-image="myCroppedImage" result-image-format="image/jpeg">
+                                            </ui-cropper>
+                                        </div>
+                                        <div class="col-sm-offset-3 col-sm-6">
+                                            <div class="form-group text-center">
+                                                <div class="fileUpload btn btn-primary">
+                                                    <span><span class="glyphicon glyphicon-paperclip"></span>@PIVF.LanguageResource.Resources.lblUploadImage</span>
+                                                    <input type="file" id="fileInput" name="fileInput" class="upload" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="PhotoCaptureWrapper" ng-show="ShowCapture">
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                            <h4 class="ModalHeading">@PIVF.LanguageResource.Resources.lblCaptImg </h4>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-offset-3 col-sm-6" ng-show="webcamError" style="color:red">
+                                                <span>@PIVF.LanguageResource.Resources.lblWebCamNotStarted  @*Webcam could not be started. Did you give access to it?*@</span>
+                                            </div>
+                                            <webcam class="col-sm-offset-3 col-sm-6 cropArea customCropArea" channel="channel"
+                                                    on-streaming="onSuccess()"
+                                                    on-error="onError(err)"
+                                                    on-stream="onStream(stream)">
+                                            </webcam>
+                                            <canvas ng-hide="true" id="snapshot" width="300" height="300"></canvas>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-offset-3 col-sm-6">
+                                                <div class="form-group text-center">
+                                                    <button type="button" class="btn btn-primary  m-t-10" ng-click="makeSnapshot()"><span><i class="fa fa-camera-retro"></i></span>@PIVF.LanguageResource.Resources.btnCapture</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-offset-3 col-sm-6 cropArea  m-b-10">
+                                                <ui-cropper image="myImage" live-view="blockingObject" result-image="myCroppedImage" result-image-format="image/jpeg">
+                                                </ui-cropper>
+                                            </div>
+                                        </div>
+                                        @*<div class="col-sm-offset-3 col-sm-6">
+                                                <div class="form-group text-center">
+                                                    <button type="button" class="btn btn-primary"><span><i class="fa fa-camera-retro"></i></span>@PIVF.Gemino.LanguageResource.Resources.btnCapture</button>
+                                                </div>
+                                            </div>*@<div class="col-sm-offset-3 col-sm-6">
+                                            <div class="form-group text-center">
+                                                <button type="button" class="btn btn-primary"><span><i class="fa fa-camera-retro"></i></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                <!-- page-wrapper Start -->
+                            <!-- Page Content Start -->
+                            @{
+                                Layout = null;
+                            }
+                            <style>
+                                .cropArea {
+                                    background: #E4E4E4;
+                                    overflow: hidden;
+                                    width: 300px;
+                                    height: 250px;
+                                }
+
+                                .warning {
+                                    border: 1px solid red;
+                                }
+                            </style>
+                            <!-- page-wrapper End -->
+                        </div>
+                    </div>
+                    <div class="modal-footer text-right">
+                        <button class="btn btn-primary" type="button" id="" ng-click="CancelOk(myCroppedImage)">@PIVF.LanguageResource.Resources.btnSave</button>
+                        <button class="btn btn-default" type="button" id="" ng-click="ClosePopUp();">@PIVF.LanguageResource.Resources.btnCancel</button>
+                    </div>
+                </div>
+            </script>
+        </form>
+    </section>
+    <div class="clearfix"></div>
+
+    <!-- Page Content End -->
+    <!-- page-wrapper End -->

@@ -1,0 +1,38 @@
+﻿@{ 
+    Layout = null;
+}
+
+<div ng-controller="ARTCycleNavigationCtr" style="position: relative;
+        z-index: 11;">
+    <div class="row form-horizontal">
+        <div class="col-md-2 ">
+            <button class="btn btn-primary" type="button" id="" value="" ng-click="Navigate('CycleOverview')">Overview</button>
+        </div>
+        <div class="col-md-2 ">
+            <button class="btn btn-primary" ng-click="Navigate('StimulationChart')" type="button" id="" value="">Stimulation Chart</button>
+        </div>
+        <div class="col-md-2 ">
+            <button class="btn btn-primary" ng-click="Navigate('SemenDetails')" type="button" id="" value="">Semen Details</button>
+        </div>
+        <div class="col-md-2 ">
+            <button class="btn btn-primary" ng-click="Navigate('IUI')" type="button" id="" value="">IUI</button>
+        </div>
+        <div class="col-md-2 ">
+            <button class="btn btn-primary" ng-click="Navigate('OPU')" type="button" id="" value="">OPU</button>
+        </div>
+        <div class="col-md-2 ">
+            @*<button class="btn btn-primary" type="button" id="" value="">Embryos</button>*@
+            <a href="#/Embrology" class="btn btn-primary">Embryos</a>
+        </div>
+        <div class="col-md-2 ">
+            @*<button class="btn btn-primary" type="button" id="" value="">Embryo Transfer</button>*@
+            <a href="#/EmbryoTransfer" class="btn btn-primary">Embryo Transfer</a>
+        </div>
+        <div class="col-md-2 ">
+            <button class="btn btn-primary" ng-click="Navigate('CryoVitrification')" type="button" id="" value="">Cryo Preservation</button>
+        </div>
+        <div class="col-md-2 ">
+            <button class="btn btn-primary" type="button" id="" value="">Outcome</button>
+        </div>
+    </div>
+</div>

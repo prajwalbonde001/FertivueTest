@@ -1,0 +1,406 @@
+﻿
+@{
+    Layout = null;
+
+
+}
+<style>
+    .is-invalid {
+        border: 1px solid red;
+        /*background-color: #ffe6e6;*/
+    }
+
+    .custom-xl-modal .modal-dialog {
+        width: 70%; /* Set the initial width to 95% */
+        max-width: none; /* Remove the max-width restriction */
+    }
+</style>
+<div ng-controller="ConsumptionCtrl">
+    <div class="form_Content form-horizontal" style="min-height: 195px;">
+        <div class="row" ng-init="LoadPatientBillList()">
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblStore</label>@*Clinic :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <select class="form-control" id="ddlBankList" name="ddlBankList" ng-model="PatientBill.StoreID"
+                                ng-options="item.ID as item.Description for item in storelist"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblFromDate</label>@*From Date :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="" ng-model="PatientBill.FromDate" placeholder="@PIVF.LanguageResource.Resources.lblVisitFrom" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup4.opened" datepicker-options="FromToDateOptions" alt-input-formats="altInputFormats">
+                            <span class="input-group-addon" id="" ng-click="open4()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblToDate</label>@*To Date :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="" ng-model="PatientBill.ToDate" placeholder="@PIVF.LanguageResource.Resources.lblVisitTo" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup5.opened" datepicker-options="FromToDateOptions" alt-input-formats="altInputFormats">
+                            <span class="input-group-addon" id="" ng-click="open5()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblFirstName</label>@*First Name :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control Capitalize" id="" ng-model="PatientBill.FirstName" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblMiddleName</label>@*Middle Name :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control Capitalize" id="" ng-model="PatientBill.MiddleName" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblLastName</label>@*Last Name :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control Capitalize" id="" ng-model="PatientBill.LastName" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblMRN</label>@*MRN :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control" id="" ng-model="PatientBill.MRNO" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblConsumptionNo.</label>@*Bill No ::Modified by swatih for localization 30/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control" id="" ng-model="PatientBill.BillNO" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2" ng-hide="true">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblBillStatus</label>@*Bill Status ::Modified by swatih for localization 30/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <select class="form-control" ng-init="PatientBill.BillStatus='0'" ng-model="PatientBill.BillStatus">
+                            <option value="0" selected="selected">@PIVF.LanguageResource.Resources.Alllbl</option>@*--All-- ::Modified by swatih for localization 30/7/2020*@
+                            <option value="1" selected="selected">@PIVF.LanguageResource.Resources.lblSettled</option>@*Settled ::Modified by swatih for localization 30/7/2020*@
+                            <option value="2" selected="selected">@PIVF.LanguageResource.Resources.lblUnsettled</option>@*Unsettled ::Modified by swatih for localization 30/7/2020*@
+                            <option value="3" selected="selected">@PIVF.LanguageResource.Resources.lblUnfreezed</option>@*Unfreezed ::Modified by swatih for localization 30/7/2020*@
+
+
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2" ng-hide="true">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblBillType</label>@*Bill Type ::Modified by swatih for localization 30/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <select class="form-control" ng-init="PatientBill.BillType='0'" ng-model="PatientBill.BillType">
+                            <option value="0" selected="selected">@PIVF.LanguageResource.Resources.Alllbl</option>@*--All-- ::Modified by swatih for localization 30/7/2020*@
+                            <option value="2" selected="selected">@PIVF.LanguageResource.Resources.lblClinicalBill</option>@*Clinical Bill ::Modified by swatih for localization 30/7/2020*@
+                            <option value="3" selected="selected">@PIVF.LanguageResource.Resources.lblPharmacyBill</option>@*Pharmacy Bill ::Modified by swatih for localization 30/7/2020*@
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2" ng-hide="true">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblPrintFormat</label>@*Print Format ::Modified by swatih for localization 30/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <select class="form-control" ng-init="PatientBill.BillFormat='0'" ng-model="PatientBill.BillFormat">
+                            <option value="0" selected="selected">@PIVF.LanguageResource.Resources.lblSelect</option>@*Select ::Modified by swatih for localization 30/7/2020*@
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @*<div class="col-md-12 col-lg-12 text-right">
+                <button id="SearchAd" type="button" class="btn btn-primary" ng-click="SearchData(PatientBill)">@PIVF.LanguageResource.Resources.btnSearch</button>@*Search ::Modified by swatih for localization 30/7/2020*@
+            @*</div>*@
+
+            @*Button added by Trupti Musale on 06-12-2024*@
+            @*<div class="col-md-3 col-lg-3" style="margin-top: 30px;">
+                    <button id="newBillButton" type="button" ng-click="goToBillingPage()" class="btn" style="color: orange; background: none; border: none;">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Bill
+                    </button>
+                </div>*@
+
+            <div class="col-md-12 col-lg-12" style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                <!-- Search Button -->
+                <button id="SearchAd"
+                        type="button"
+                        class="btn btn-primary"
+                        style="position: relative; top: -60px; margin-right: 45%;"
+                        ng-click="SearchData(PatientBill)">
+                    @PIVF.LanguageResource.Resources.btnSearch
+                </button>
+
+                <!-- New Bill Button -->
+                <button id="newBillButton"
+                        type="button"
+                        ng-click="goToBillingPage()"
+                        class="btn"
+                        style="color: orange; background: none; border: none; margin-left: 20px;">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.tbtnNewConsumption
+                </button>
+            </div>
+
+
+
+        </div>
+
+
+        @*<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+            </div>*@
+        <div class="form_Content p-t-10">
+            <div class="row">
+                <div class="find_title">
+                    <div class="col-md-6">
+                        <span class="count_title">@PIVF.LanguageResource.Resources.Total_Count :</span>
+                        <span class="total_count">{{TotalItems}}</span>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="table-responsive fixed_header" id="tableToExport">
+                        <table class="table table-hover table-striped" style="min-width:1500px;height:340px;">
+                            <thead>
+                                <tr>
+                                    <th st-ratio="3">&nbsp;</th>
+                                    <th st-ratio="3">@PIVF.LanguageResource.Resources.lblSelect</th>
+                                    <th st-ratio="8">@PIVF.LanguageResource.Resources.lblDate</th>@*Date ::Modified by swatih for localization 30/7/2020*@
+                                    <th st-ratio="11">@PIVF.LanguageResource.Resources.lblConsumptionNo.</th>@*BillNo ::Modified by swatih for localization 30/7/2020*@
+                                    <th st-ratio="10">@PIVF.LanguageResource.Resources.lblMRNO.</th>@*MRNO. ::Modified by swatih for localization 30/7/2020*@
+                                    <th st-ratio="10">@PIVF.LanguageResource.Resources.lblStore</th>@*OPDNo ::Modified by swatih for localization 30/7/2020*@
+                                    <th st-ratio="10">@PIVF.LanguageResource.Resources.lblTotalAmount</th>@*TotalAmount ::Modified by swatih for localization 30/7/2020*@
+                                    @*<th st-ratio="10">Conssesion</th>*@
+                                    <th st-ratio="10">@PIVF.LanguageResource.Resources.lblRemark</th>@*TotalConssesion ::Modified by swatih for localization 30/7/2020*@
+                                    <th st-ratio="10">@PIVF.LanguageResource.Resources.lblPatientName</th>@*NetAmount ::Modified by swatih for localization 30/7/2020*@
+                                    <th st-ratio="10">@PIVF.LanguageResource.Resources.lblConsumptionItemDetails</th>@*ItemDetails ::Modified by tejas for item details list popup 15/01/2024*@
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="i in BillList track by $index">
+                                    @*PatientBillList*@
+                                    <td st-ratio="3">
+                                        <a class="link" href="" ng-show="i.IsFreezed" ng-click="PrintBill($index)">@PIVF.LanguageResource.Resources.lblPrint</a> @*Print ::Modified by swatih for localization 30/7/2020*@
+                                    </td>
+                                    <td st-ratio="3">
+                                        <input type="checkbox"
+                                               ng-checked="selectedBill === i"
+                                               ng-disabled="!(i.IsFreezed && i.BalanceAmountSelf === 0)"
+                                               ng-click="selectBill(i)" />
+                                    </td>
+                                    <td st-ratio="8">{{i.ConsumptionDate | date:'dd-MMM-yyyy'}}</td>
+                                    <td st-ratio="11">{{i.ConsumptionNo}}</td>
+                                    <td st-ratio="10">{{i.MRNo}}</td>
+                                    <td st-ratio="10">{{i.StoreName}}</td>
+                                    <td st-ratio="10">{{i.TotalAmount}}</td>
+                                    @*<td st-ratio="10">{{i.}}Conssesion</td>*@
+                                    <td st-ratio="10">{{i.Remark}}</td>
+                                    <td st-ratio="10" class="Capitalize">{{i.PatientName}}</td>
+                                    <td st-ratio="10">
+                                        <a ng-click="openCancelModal(i)" style="cursor: pointer; font-weight: bold; color: #3366cc; text-decoration: underline;">Details</a>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-left">
+            <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+            <!-- Button group row -->
+        </div>
+    </div>
+    @* </div> *@
+    @*<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>*@
+
+    @* <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>*@
+
+    <!-- Settle Bill model -->
+    <div class="modal fade favorite-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="Settle_Bill">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="@PIVF.LanguageResource.Resources.btnClose" ng-click="Cancel()"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblPaymentDetails : {{PaymentData.PatientName}} - {{PaymentData.MRNO}}</h4>@*Payment Details ::Modified by swatih for localization 30/7/2020*@
+                </div>
+                <div class="modal-body" ng-init="templateType='New'">
+                    <div class="row">
+
+
+                        <div class="col-sm-12">
+                            <div class="table-responsive" id="">
+                                <table class="table table-hover table-striped table-bordered" style="">
+                                    <tbody>
+                                        <tr>
+                                            <td class="control-label">@PIVF.LanguageResource.Resources.lblTotalAmount</td>@*Total Amout ::Modified by swatih for localization 30/7/2020*@
+                                            <td class="text-right">{{PaymentData.TotalBillAmount}}</td>   @*ng-model="BillDetails.TotalBillAmount"*@
+                                            <td class="control-label">@PIVF.LanguageResource.Resources.lblNetAmount</td>
+                                            <td class="text-right">{{PaymentData.NetBillAmount}}</td>    @*ng-model="BillDetails.NetBillAmount"*@
+                                        </tr>
+                                        <tr>
+                                            <td class="control-label">@PIVF.LanguageResource.Resources.lblPaidAmount</td>@*Paid Amount ::Modified by swatih for localization 30/7/2020*@
+                                            <td class="text-right">{{PaymentData.PaidAmount}}</td>   @*ng-model="BillDetails.TotalConcessionAmount"*@
+                                            <td class="control-label">@PIVF.LanguageResource.Resources.lblBalanceAmount</td>@*Balance Amount ::Modified by swatih for localization 30/7/2020*@
+                                            <td class="text-right">{{PaymentData.BalanceAmountSelf}}</td>   @*ng-model="BillDetails.PaidAmount"*@
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-12 text-right">
+                            <button class="btn btn-link link p-r-0" type="button" id="btnAddFamilyHistoryRow" value="" ng-disabled="IsDisableRow" ng-click="AddPaymentRow()">@PIVF.LanguageResource.Resources.btnAddRows</button>@*Add Rows ::Modified by swatih for localization 30/7/2020*@
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="table-responsive fixed_header table-bordered" id="">
+                                <table class="table table-hover table-striped" style="max-height:300px;min-height:200px;">
+                                    <thead>
+                                        <tr>
+                                            <th st-ratio="19">@PIVF.LanguageResource.Resources.lblPaymentMode</th>@*Payment Mode ::Modified by swatih for localization 30/7/2020*@
+                                            <th st-ratio="12">@PIVF.LanguageResource.Resources.lblAmount</th>@*Amount ::Modified by swatih for localization 30/7/2020*@
+                                            <th st-ratio="23">@PIVF.LanguageResource.Resources.lblReferenceNo</th>@*Reference No ::Modified by swatih for localization 30/7/2020*@
+                                            <th st-ratio="22">@PIVF.LanguageResource.Resources.lblBankName</th>@*Bank Name ::Modified by swatih for localization 30/7/2020*@
+                                            <th st-ratio="12">@PIVF.LanguageResource.Resources.lblDate</th>@*Date ::Modified by swatih for localization 30/7/2020*@
+                                            <th st-ratio="12">&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="i in BillDetails.OtherSrvPaymentModeList track by $index ">
+                                            @*track by $index*@
+                                            <td st-ratio="19">
+                                                <select class="form-control" id="ddlModeOfPayment" name="ddlModeOfPayment" ng-class="{select:i.IsPaymentModeID == true}" ng-model="i.PaymentModeID" ng-change="ChangeModeOfPayment($index)" ng-options="item.ID as item.Description for item in ModeOfPaymentList"></select>
+                                            </td>
+                                            <td st-ratio="12"><input class="form-control text-right" ng-class="{select:i.IsAmountNotFill == true}" ng-disabled="i.DisableAmount" ng-model="i.PaidAmount" replace="[^0-9.]" with="" /> </td>  @*ng-change="CalBalanceAmt(i.PaidAmount)" *@
+                                            <td st-ratio="23"><input class="form-control text-right" ng-class="{select:i.IsNumberNotFill == true    }" id="txtRefNo" name="txtRefNo" ng-model="i.Number" ng-disabled="i.CashMode" replace="[^0-9.]" with="" ng-change="EnableUpdateBtn()" /></td>
+                                            <td st-ratio="22">
+                                                <select class="form-control" ng-class="{select:i.IsBankIDNotFill == true}" id="ddlBankList" name="ddlBankList" ng-model="i.BankID" ng-disabled="i.CashMode" ng-options="item.ID as item.Description for item in BankList" ng-change=""></select>
+                                            </td>
+                                            <td st-ratio="22">
+                                                <div class="input-group date">
+                                                    @*<input type="text" class="form-control" ng-model="i.Date" ng-disabled="i.CashMode" id="" placeholder="dd-Mmm-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" datepicker-options="dateOptionsDOB" show-button-bar="false" is-open="popup1.opened" alt-input-formats="altInputFormats">
+                                                        <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>*@
+
+
+                                                    <input type="text" class="form-control" ng-class="{select:i.IsDateIDNotFill == true}" ng-model="i.Date" ng-disabled="i.CashMode" id="" placeholder="@PIVF.LanguageResource.Resources.tlblddMmmyyyy" aria-describedby="" uib-datepicker-popup="{{format}}" datepicker-options="dateOptionsDOB" show-button-bar="false" is-open="i.dtpickropened" alt-input-formats="altInputFormats">
+                                                    <span class="input-group-addon" id="" ng-click="openLabDtPickr($event,i)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="btn_delete" title="@PIVF.LanguageResource.Resources.lblDelete" data-toggle="modal" ng-click="DeletePayment($index)"></span>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="row">
+                            <div class="col-sm-12 text-right m-t-20">
+                                @*<label class="control-label"><input type="checkbox" ng-disabled="disableFeeeze" value="1" ng-click="FreezeBill(BillDetails.IsFreeze)" ng-model="BillDetails.IsFreeze"> Freeze</label>* @
+                                <button class="btn btn-default" type="button" id="" ng-disabled="" ng-click="SaveBill(BillDetails)">Update Payment</button>    @*,false* @
+                                <button class="btn btn-primary" type="button" id="" ng-click="redirect(2)">Pay Later</button>
+                            </div>
+                        </div> *@
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="consumptionitemmodalpopup">
+
+        <div ng-init="loadData()" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@PIVF.LanguageResource.Resources.lblConsumptionItemDetails</h5>
+                <button type="button" class="close" aria-label="@PIVF.LanguageResource.Resources.btnClose" ng-click="$dismiss('close')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="col-md-12">
+                <div class="table-responsive fixed_header" id="tableToExport">
+                    <table class="table table-hover table-striped" style="min-width:1500px;height:340px;">
+                        <thead>
+                            <tr>
+                                <th st-ratio="8">@PIVF.LanguageResource.Resources.lblItemName</th>@*Date ::Modified by swatih for localization 30/7/2020*@
+                                <th st-ratio="11">@PIVF.LanguageResource.Resources.lblBatchCode.</th>@*BillNo ::Modified by swatih for localization 30/7/2020*@
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblExpiryDate</th>@*MRNO. ::Modified by swatih for localization 30/7/2020*@
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblUsedQty</th>@*OPDNo ::Modified by swatih for localization 30/7/2020*@
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblUOM</th>@*TotalAmount ::Modified by swatih for localization 30/7/2020*@
+                                @*<th st-ratio="10">Conssesion</th>*@
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblCostMRP</th>@*TotalConssesion ::Modified by swatih for localization 30/7/2020*@
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblMRPPrice</th>@*TotalConssesion ::Modified by swatih for localization 30/7/2020*@
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblAmount</th>@*TotalConssesion ::Modified by swatih for localization 30/7/2020*@
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblRemark</th>@*TotalConssesion ::Modified by swatih for localization 30/7/2020*@
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="i in GetMaterialConsumptionItemList track by $index">
+                                @*PatientBillList*@
+
+                                <td st-ratio="8">{{i.ItemName}}</td>
+                                <td st-ratio="11">{{i.BatchCode}}</td>
+                                <td st-ratio="10">{{i.ExpiryDate | date:'dd-MMM-yyyy'}}</td>
+                                <td st-ratio="10">{{i.UsedQty}}</td>
+                                <td st-ratio="10">{{i.StockUOM}}</td>
+                                <td st-ratio="10">{{i.MRP}}</td>
+                                <td st-ratio="10">{{i.BaseMRP}}</td>
+                                <td st-ratio="10">{{i.Amount}}</td>
+
+                                @*<td st-ratio="10">{{i.}}Conssesion</td>*@
+
+                                <td st-ratio="10">{{i.Remark}}</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" ng-click="cancel()">
+                    @PIVF.LanguageResource.Resources.btnClose
+                </button>
+
+            </div>
+        </div>
+    </script>
+</div>

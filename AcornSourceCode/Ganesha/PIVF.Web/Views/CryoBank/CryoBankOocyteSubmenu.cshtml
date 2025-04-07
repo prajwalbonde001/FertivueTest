@@ -1,0 +1,878 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+</style>
+
+<div ng-controller="CryoBankOocyteCtr" ng-init="LoadData()">
+    <form name="frmOocyteBank" ng-submit="NormalSearch(CryoBankOocyte.UnitID,CryoBankOocyte.NameCodeMRNo)" novalidate autocomplete="off">
+        <!-- search container -->
+        <div class="row" style="position: relative;
+        z-index: 11;">
+            <div class="col-lg-12">
+                <div class="searchContainer" ng-init="IsSinglePatient?show=false:show=true">
+                    <div class="customSearchTab">
+                        <a href="" class="searchTab1" ng-class="{active:show}" ng-show="IsSinglePatient==false" ng-click="show=true;CryoBankOocyte.NameCodeMRNo=''"><i class="fa fa-search" aria-hidden="true"></i>@PIVF.LanguageResource.Resources.btnSearch</a>
+                        <a class="searchTab2" role="button" ng-class="{active:!show}" data-toggle="collapse" aria-expanded="true" ng-click="show=false" aria-controls="AdvanceSearchBox">
+                            <i class="fa fa-search" aria-hidden="true"></i> <span class="CollapseTitleTxt">@PIVF.LanguageResource.Resources.lblAdvanceSearch</span>
+                        </a>
+                    </div>
+
+                    <!-- default search -->
+                    <div class="MainSearchBoxContainer" ng-show="show">
+                        <div class="BlackSearchBoxSection">
+                            <div class="SearchInputGroupContainer m-0">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4" ng-hide="true">
+                                        <div class="InputBoxDiv">
+                                            <select class="form-control" ng-disabled="true" id="ddlUnitList" name="ddlUnitList" ng-model="CryoBankOocyte.UnitID" ng-options="item.ID as item.Description for item in UnitIDList" tabindex="35"></select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4" ng-hide="IsSinglePatient">
+                                        <div class="InputBoxDiv">
+                                            <input type="text" class="form-control" id="" ng-model="CryoBankOocyte.NameCodeMRNo" placeholder="@PIVF.LanguageResource.Resources.lblvNameMRNo">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="InputBoxDiv">
+                                            <button class="btn btn-primary m-b-0" type="button" ng-click="NormalSearch(CryoBankOocyte.UnitID,CryoBankOocyte.NameCodeMRNo)" id="" value="">@PIVF.LanguageResource.Resources.btnSearch</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- /default search -->
+                    <!-- advance search -->
+                    <div class="MainSearchBoxContainer" ng-show="show==false">
+                        <div class="BlackSearchBoxSection">
+                            <div class="SearchInputGroupContainer m-0">
+                                <div class="row">
+                                    <div class="col-md-2 col-lg-2 ">
+                                        <div class="InputBoxDiv">
+                                            <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="CryoBankOocyte.TankId" ng-options="item.ID as item.Description for item in TankList" tabindex="35"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 ">
+                                        <div class="InputBoxDiv">
+                                            <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="CryoBankOocyte.CanisterID" ng-options="item.ID as item.Description for item in ListCanister" tabindex="35"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 ">
+                                        <div class="InputBoxDiv">
+                                            <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="CryoBankOocyte.ColorCodeID" ng-options="item.ID as item.Description for item in ListGobletColor" tabindex="35"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 " ng-hide="true">
+                                        <div class="InputBoxDiv">
+                                            <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="CryoBankOocyte.GobletSizeId" ng-options="item.ID as item.Description for item in ListGobletSize" tabindex="35"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 ">
+                                        <div class="InputBoxDiv">
+                                            @*<select class="form-control " id="ddlGobletSize" ng-init="CryoBankOocyte.StatusID='Status'" name="ddlGobletSize" ng-model="CryoBankOocyte.StatusID" tabindex="35">*@  @*Commented on 22ndMar2021 for Victory client request : to show near expiry days*@
+                                            <select class="form-control " id="ddlGobletSize" ng-init="CryoBankOocyte.StatusID='Status'" name="ddlGobletSize" ng-model="CryoBankOocyte.StatusID" tabindex="35" ng-change="ShowNearExpiryDays(CryoBankOocyte.StatusID)">
+                                                @*Modified on 22ndMar2021 for Victory client request : to show near expiry days*@
+                                                <option value="Status" selected="selected">@PIVF.LanguageResource.Resources.lblStatus</option>
+                                                <option value="Freeze" selected="selected">@PIVF.LanguageResource.Resources.lblFreeze</option>
+                                                <option value="Refreezed" selected="selected">@PIVF.LanguageResource.Resources.lblvRefreezed</option>
+                                                <option value="Expired" selected="selected">@PIVF.LanguageResource.Resources.lblvExpired</option>
+                                                <option value="NearingExpiry" selected="selected">@PIVF.LanguageResource.Resources.lblvNearingExpiry</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div @*class="InputBoxDiv"*@ class="col-md-2 col-lg-2 " ng-show="ShowNearExpiryControl">
+                                        @*Added on 22ndMar2021 for Victory client request :: to search near expiry oocytes with duration*@
+                                        <input type="text" id="" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="CryoBankOocyte.NearExpiryDays" placeholder="@PIVF.LanguageResource.Resources.lblvNearExpiryDays">
+                                    </div>
+
+                                    <div class="col-md-2 col-lg-2 ">
+                                        <div class="InputBoxDiv">
+                                            @*<button class="btn btn-primary m-b-0" type="button" ng-click="AdvanceSearch(CryoBankOocyte.UnitID,CryoBankOocyte.TankId,CryoBankOocyte.CanisterID,CryoBankOocyte.ColorCodeID,CryoBankOocyte.GobletSizeId,CryoBankOocyte.NameCodeMRNo,CryoBankOocyte.StatusID)" id="" value="">Search</button>*@   @*Added on 22ndMar2021 for Victory client request :: to search near expiry oocytes with duration*@
+                                            <button class="btn btn-primary m-b-0" type="button" ng-click="AdvanceSearch(CryoBankOocyte.UnitID,CryoBankOocyte.TankId,CryoBankOocyte.CanisterID,CryoBankOocyte.ColorCodeID,CryoBankOocyte.GobletSizeId,CryoBankOocyte.NameCodeMRNo,CryoBankOocyte.StatusID,CryoBankOocyte.NearExpiryDays)" id="" value="">@PIVF.LanguageResource.Resources.btnSearch</button>@*Added on 22ndMar2021 for Victory client request :: to search near expiry oocytes with duration*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- /advance search -->
+                </div>
+            </div>
+
+        </div>
+        <!-- /search container -->
+        <div class="form_Content" style="min-height:350px; position: relative;
+        z-index: 11;">
+            @*m-h-390*@
+            <div class="row">
+                @*<div class="col-lg-12"><h5 class="subTitle">Cryobank Oocyte</h5></div>*@
+                @*<div class="col-sm-6">
+                        <span class="count_title">Total Count :</span>
+                        <span class="total_count">{{TotalItems}}</span>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button class="btn-link"><span class="glyphicon glyphicon-print"></span></button>
+                    </div>*@
+                <div class="col-sm-6  p-t-5">
+                    <span class="count_title">@PIVF.LanguageResource.Resources.lblTotalCount :</span>
+                    <span class="total_count">{{TotalItems}}</span>
+                </div>
+                @*<div class="col-sm-6 text-right">
+                        <button type="submit" title="Print" class="btn-link"><span class="glyphicon glyphicon-print"></span></button>
+                    </div>*@<div class="clearfix"></div>
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <!-- Patient List Content Container Start-->
+                    <div id="PatientListContDiv" class="ConsoleContentContainer">
+                        <div class="table-responsive fixed_header">
+                            <table id="PatientListTble " class="table table-striped table-hover PatientListGrid" style="min-width: 3000px; ">
+                                @*max-height:350px; min-height:350px;*@
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="3" ng-show="!RenewExpiryDatePatient.IsShowDiscard">@PIVF.LanguageResource.Resources.lblvSelect</th>
+                                        <th st-ratio="4" ng-click="SortData('EmbNumber')">@PIVF.LanguageResource.Resources.lblvOocyteNo .<div ng-class="sortClass"></div> </th>
+                                        <th st-ratio="9" ng-hide="IsSinglePatient" ng-click="SortData('MRNo')">@PIVF.LanguageResource.Resources.lblMRN<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="8" ng-hide="IsSinglePatient" ng-click="SortData('PatientName')">@PIVF.LanguageResource.Resources.lblPatientName<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="9" ng-click="SortData('CycleCode')">@PIVF.LanguageResource.Resources.lblARTCycle<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="6" ng-click="SortData('VitrificationNo')">@PIVF.LanguageResource.Resources.lblvFreezingNo<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="7" ng-click="SortData('TankDescription')">@PIVF.LanguageResource.Resources.lblvFreezingDateTime <div ng-class="sortClass"></div></th>
+                                        <th st-ratio="7" ng-click="SortData('ExpiryDate')">@PIVF.LanguageResource.Resources.lblvExpiryDateTime <div ng-class="sortClass"></div></th>
+                                        <th st-ratio="4" ng-click="SortData('TankDescription')">@PIVF.LanguageResource.Resources.lblvTank<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="4" ng-click="SortData('CanistorDescription')">@PIVF.LanguageResource.Resources.lblCanister<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="5" ng-click="SortData('GlobletColorDescription')">@PIVF.LanguageResource.Resources.lblvGobletColor<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="5" ng-click="SortData('GlobletColorDescription')" ng-if="0">@PIVF.LanguageResource.Resources.lblvGobletSize<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="5" ng-click="SortData('GlobletSizeDescription')">@PIVF.LanguageResource.Resources.lblvCryolock<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="5" ng-click="SortData('MediaUsed')">@PIVF.LanguageResource.Resources.lblvMediaUsed<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="5" ng-click="SortData('LotNo')">@PIVF.LanguageResource.Resources.lblvLotNo<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="7" ng-click="SortData('MediaExpiryDate')">@PIVF.LanguageResource.Resources.lblvMediaExpiryDate<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="5" ng-click="SortData('CryolockID')">@PIVF.LanguageResource.Resources.lblvMaturity<div ng-class="sortClass"></div></th>
+                                        <th st-ratio="3">@PIVF.LanguageResource.Resources.lblHistory</th>
+                                        <th st-ratio="4" ng-click="SortData('FormNo')">@PIVF.LanguageResource.Resources.lblStatus<div ng-class="sortClass"></div></th>
+                                    </tr>
+                                </thead>
+                                <tbody style="height: calc(100vh - 490px);">
+                                    <tr ng-repeat="item in VitriDetails.ListVitriDetails |orderBy:SortColumn:reverseSort" ng-class="{trRed :item.ExpiryDate < TodayDate,trGreen :item.ExpiryDate >TodayDate && item.ExpiryDate <=DateAfter15Days }">
+                                        @*,'trGreen' : item.ExpiryDate > TodayDate && item.ExpiryDate <= DateAfter15Days*@
+                                        <td st-ratio="3" ng-show="!RenewExpiryDatePatient.IsShowDiscard"><input type="checkbox" ng-click="AddSelectedPatient(item)" ng-model="item.selected"></td>
+                                        <td st-ratio="4">{{item.EmbNumber}}</td>
+                                        <td st-ratio="9" ng-hide="IsSinglePatient">{{item.MRNo}}</td>
+                                        <td st-ratio="8" ng-hide="IsSinglePatient">{{item.PatientName}}</td>
+                                        <td st-ratio="9">{{item.CycleCode}}</td>
+                                        <td st-ratio="6">{{item.VitrificationNo}}</td>
+                                        <td st-ratio="7">{{item.VitriDate | date :  "dd-MMM-yyyy"}}</br>{{item.VitriTime | date : "HH:mm"}}</td>
+                                        <td st-ratio="7">{{item.ExpiryDate | date :  "dd-MMM-yyyy"}}</br>{{item.ExpiryTime | date : "HH:mm"}}</td>
+                                        <td st-ratio="4">{{item.TankDescription}}</td>
+                                        <td st-ratio="4">{{item.CanistorDescription}}</td>
+                                        <td st-ratio="5">{{item.GlobletColorDescription}}</td>
+                                        <td st-ratio="5" ng-if="0">{{item.GlobletSizeDescription}}</td>
+                                        <td st-ratio="5">{{item.CryoLockDescription}}</td>
+                                        <td st-ratio="5">{{item.MediaUsed}}</td>
+                                        <td st-ratio="5">{{item.LotNo}}</td>
+                                        <td st-ratio="7">{{item.MediaExpiryDate| date :  "dd-MMM-yyyy"}}</td>
+                                        <td st-ratio="5">{{item.MaturityDesc}}</td>
+                                        <td st-ratio="3"><button class="btn btn_history" type="button" id="" value="" data-toggle="modal" data-target="#historymodal" ng-click="RedirectToHistory(item)"></button></td>
+                                        <td st-ratio="4">{{item.CustomStatus}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="row" style="position: relative;
+        z-index: 11;">
+                            <div class="col-md-12 col-lg-12">
+                                <label class="checkbox-inline p-l-25">
+                                    <input type="checkbox" id="chkSelectAll" ng-model="SelectAllChecked" ng-click="SelectAllItemsCheckBox($event)" value="option1"> @PIVF.LanguageResource.Resources.lblvSelectAll  @*Added on 22ndMar2021 for Victory client request :: to select all oocytes*@
+                                </label>
+                                <label class="checkbox-inline p-l-25">
+                                    <input type="checkbox" id="" ng-model="RenewExpiryDatePatient.IsShowDiscard" ng-change="ShowDiscardChange(RenewExpiryDatePatient.IsShowDiscard,CryoBankOocyte.StatusID)" value="option1"> @PIVF.LanguageResource.Resources.lblvShowDiscardedDFR
+                                </label>
+                                <label class="checkbox-inline p-l-25">
+                                    <span class="trcolorGreen glyphicon glyphicon-stop "></span> @PIVF.LanguageResource.Resources.lblvNearingExpiry
+                                </label>
+                                <label class="checkbox-inline p-l-25">
+                                    <span class="trcolorRed glyphicon glyphicon-stop "></span>@PIVF.LanguageResource.Resources.lblvExpired
+                                </label>
+                            </div>
+                            <div class="col-md-6 col-lg-4 m-t-10">
+                                <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm m-t-0" boundary-links="true"
+                                                num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                            </div>
+                            <div class="col-md-6 col-lg-8 text-right m-t-10">
+                                <label>
+                                    @*<input type="checkbox" ng-model="ExportToExcel"> Export To Excel*@
+                                    <input type="checkbox" name="rdpdf" value="true" ng-model="pdf"> @PIVF.LanguageResource.Resources.lblvExportToExcel
+                                </label>
+                                <button class="btn btn-primary" type="button" id="" ng-click="PrintOocyteBankSummary()" value="" data-toggle="modal" data-target="#Print" data-backdrop="static" data-keyboard="false">@PIVF.LanguageResource.Resources.btnPrint</button>
+                                <button class="btn btn-primary" type="button" id="" ng-click="" value="" ng-hide="IsSinglePatient" data-toggle="modal" data-target="#New" data-backdrop="static" data-keyboard="false">@PIVF.LanguageResource.Resources.lblNew</button>
+                                <button class="btn btn-primary" type="button" ng-show="!RenewExpiryDatePatient.IsShowDiscard" ng-click="RedirectToRenewDateModel()" value="" data-toggle="modal" data-target="{{Redirect}}" data-backdrop="static" data-keyboard="false">@PIVF.LanguageResource.Resources.lblvRenew</button>
+                                <button class="btn btn-default" type="button" ng-show="!RenewExpiryDatePatient.IsShowDiscard" ng-click="UpdateDiscardSpermBank()" value="" data-toggle="modal" data-target="{{RedirectToDiscard}}" data-backdrop="static" data-keyboard="false">@PIVF.LanguageResource.Resources.lblvDiscard</button>
+                                <button class="btn btn-default" type="button" ng-show="!RenewExpiryDatePatient.IsShowDiscard" ng-click="donateOocyte()" data-toggle="modal" data-target="#" data-backdrop="static" data-keyboard="false">@PIVF.LanguageResource.Resources.lblvTransport</button>  @*data-toggle="modal"  data-target="#donate"*@
+                                <button class="btn btn-default" type="button" ng-show="!RenewExpiryDatePatient.IsShowDiscard" data-toggle="modal" data-target="#DFR" data-backdrop="static" data-keyboard="false">@PIVF.LanguageResource.Resources.lblvDFR</button>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!--  Patient List Content Container End -->
+        </div>
+
+
+        <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+        <!-- History Modal Start -->
+        <div class="modal fade" id="historymodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblHistory</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Previous Treatment History Start -->
+                        <div class="row">
+                            <!-- <section class="col-lg-12"><h5 class="subTitle">Grid Title</h5></section> -->
+                            <div class="col-md-12 col-lg-12">
+                                <div style="max-height:400px; min-height:300px;" class="table-responsive">
+                                    <table class="table table-hover table-striped table-bordered normalLabel" id="" style="min-width:1000px">
+                                        <thead>
+                                            <tr>
+                                                <th>@PIVF.LanguageResource.Resources.lblvTransactionType</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblDate</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblTime</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblvExpDate</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblvExpTime</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblvFreezingNo</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblvTank</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblCanister</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblvGobletColor</th>
+                                                <th ng-hide="true">@PIVF.LanguageResource.Resources.lblvGobletSize</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblvCryolock</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblvMediaUsed</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblvLotNo</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblvMediaExpiryDate</th>
+                                                @*<th>Volume</th>*@
+                                                <th>@PIVF.LanguageResource.Resources.lblvEmbryologist</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblvWitness</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblvClinician</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblCycleCode</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="" ng-repeat="item in lstOocyteHistory.ListVitriDetails">
+                                                <td>{{item.CustomStatus}}</td>
+                                                <td>{{item.VitriDate |date :  "dd-MMM-yyyy"}}</td>
+                                                <td>{{item.VitriTime | date :  "HH:mm"}}</td>
+                                                <td>{{item.ExpiryDate |date :  "dd-MMM-yyyy"}}</td>
+                                                <td>{{item.ExpiryTime | date :  "HH:mm"}}</td>
+                                                <td>{{item.FreezingNo}}</td>
+                                                <td>{{item.TankDescription}}</td>
+                                                <td>{{item.CanistorDescription}}</td>
+                                                <td>{{item.GlobletColorDescription}}</td>
+                                                <td ng-hide="true">{{item.GlobletSizeDescription}}</td>
+                                                <td>{{item.CryoLockDescription}}</td>
+                                                <td>{{item.MediaUsed}}</td>
+                                                <td>{{item.LotNo}}</td>
+                                                <td>{{item.MediaExpiryDate | date :  "dd-MMM-yyyy"}}</td>
+                                                @*<td>{{item.}}</td>*@
+                                                <td>{{item.DoctorName}}</td>
+                                                <td>{{item.WitnessName}}</td>
+                                                <td>{{item.Clinician}}</td>
+                                                <td>{{item.CycleCode}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Previous Treatment History End -->
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Add</button> -->
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- History Modal End -->
+        <!-- Sperm Freezing Renewal model -->
+        <div class="modal fade" id="renew" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog w-35" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblvOocyteRenewal</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Preliminary Details Start -->
+                        <div class="row form-horizontal">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="form-group ">
+                                    <label class="col-sm-6 col-md-5 col-lg-4 control-label" for="">{{RenewExpiryDatePatient.MRNo}}</label>
+                                    <label class="col-sm-6 col-md-7 col-lg-8 control-label" for="">{{RenewExpiryDatePatient.PatientName}}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="form-group ">
+                                    <label class="col-sm-4 col-md-5 col-lg-4 control-label" for="">@PIVF.LanguageResource.Resources.lblvVitrificationno :</label>
+                                    <div class="col-sm-8 col-md-7 col-lg-8" for="">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-6 control-label" for="">{{AddSelectedPatientList[0].VitrificationNo}}</label>
+                                            <label class="col-sm-12 col-md-12 col-lg-6 control-label " for="">{{AddSelectedPatientList[1].VitrificationNo}}</label>
+                                            <label class="col-sm-12 col-md-12 col-lg-6 control-label" for="">{{AddSelectedPatientList[2].VitrificationNo}}</label>
+                                            <label class="col-sm-12 col-md-12 col-lg-6 control-label " for="">{{AddSelectedPatientList[3].VitrificationNo}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvRenewalDate</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12" for="">
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control" id="RenewalDate" name="RenewalDate" placeholder="dd-Mmm-yyyy" ng-required="true" ng-model="RenewExpiryDatePatient.RenewalDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="3">
+                                            <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvRenewalTime</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div uib-timepicker id="RenewalTime" class="timeCss" name="RenewalTime" ng-model="RenewExpiryDatePatient.RenewalTime" hour-step="1" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false" tabindex="2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblExpiryDate</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12" for="">
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control" id="ExpiryDate" name="ExpiryDate" placeholder="dd-Mmm-yyyy" ng-required="true" ng-model="RenewExpiryDatePatient.ExpiryDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="3">
+                                            <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvExpiryTime</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div uib-timepicker id="ExpiryTime" class="timeCss" name="ExpiryTime" ng-model="RenewExpiryDatePatient.ExpiryTime" hour-step="1" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false" tabindex="2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Preliminary Details End -->
+                    <div class="modal-footer">
+                        <div class="row form-horizontal">
+                            <div class="col-md-12 col-lg-12 text-right">
+                                <button class="btn btn-primary" ng-click="UpdateSemenFreezExpiryDates(RenewExpiryDatePatient.ExpiryDate,RenewExpiryDatePatient.ExpiryTime)" type="button" id="" value="">@PIVF.LanguageResource.Resources.btnSave</button>
+                                <button class="btn btn-default" type="button" data-dismiss="modal" ng-click="Cancel()">@PIVF.LanguageResource.Resources.btnCancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Sperm Freezing Renewal model -->
+        <!-- Thaw Donate Start -->
+        <div class="modal fade" id="DFR" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblvDFR</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Previous Treatment History Start -->
+                        <div class="row">
+                            <!-- <section class="col-lg-12"><h5 class="subTitle">Grid Title</h5></section> -->
+                            <div class="col-md-12 col-lg-12">
+                                <h5><b>@PIVF.LanguageResource.Resources.lblvAreyousureyouwanttoDonatetheselectedsamples</b></h5>
+                            </div>
+                        </div>
+                        <!-- Previous Treatment History End -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" ng-click="DFR()" data-dismiss="modal">@PIVF.LanguageResource.Resources.btnYes </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">@PIVF.LanguageResource.Resources.lblvNo </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- Thaw Donate End -->
+        <!-- DFR model -->
+        <div class="modal fade" id="donate" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog w-35" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblvDonate</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Preliminary Details Start -->
+                        <div class="row form-horizontal">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="form-group ">
+                                    <label class="col-sm-6 col-md-6 col-lg-4 control-label" for="">{{AddSelectedPatientList[0].MRNo}}</label>
+                                    <label class="col-sm-6 col-md-6 col-lg-8 control-label" for="">{{AddSelectedPatientList[0].PatientName}}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvFreezingNo : {{AddSelectedPatientList[0].VitrificationNo}}</label>
+                                    <div class="col-md-10 col-lg-10 m-t-12 m-b-5" id="search_patient">
+                                        <input type="text" class="form-control" id="txtfullName" placeholder="@PIVF.LanguageResource.Resources.lblSearchPatient" name="txtUsrName" ng-model="model" uib-typeahead="i as (i.PatientName) for i in getMatchingPatient($viewValue) | limitTo : 8" typeahead-on-select="onSelect(model)" typeahead-input-formatter="a" autofocus>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="form-group ">
+                                    <label class="col-sm-6 col-md-6 col-lg-4 control-label" for="">{{SelectedPatient.MRNo}}</label>
+                                    <label class="col-sm-6 col-md-6 col-lg-8 control-label" for="">{{SelectedPatient.PatientName}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Preliminary Details End -->
+                    <div class="modal-footer">
+                        <div class="row form-horizontal">
+                            <div class="col-md-12 col-lg-12 text-right">
+                                <button class="btn btn-primary" type="button" ng-click="SaveDonateOocyte()">@PIVF.LanguageResource.Resources.btnSave</button>
+                                <button class="btn btn-default" type="button" data-dismiss="modal">@PIVF.LanguageResource.Resources.btnCancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /DFR model
+        <!-- Discard Modal Start -->
+        <div class="modal fade" id="discardBank" ng-init="RenewExpiryDatePatient.DoneBy =0;RenewExpiryDatePatient.EmbryologistID =0;RenewExpiryDatePatient.WitnessID=0;RenewExpiryDatePatient.ReasonID =0;FillReasonList();GetEmbryologyDoctorsList()" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog w-35" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblvOocyteDiscard</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Preliminary Details Start -->
+                        <div class="row form-horizontal">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="form-group ">
+                                    <label class="col-sm-6 col-md-5 col-lg-4 control-label" for="">{{RenewExpiryDatePatient.MRNo}}</label>
+                                    <label class="col-sm-6 col-md-7 col-lg-8 control-label" for="">{{RenewExpiryDatePatient.PatientName}}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="form-group ">
+                                    <label class="col-sm-4 col-md-5 col-lg-4 control-label" for="">@PIVF.LanguageResource.Resources.lblvVitrificationno :</label>
+                                    <div class="col-sm-8 col-md-7 col-lg-8" for="">
+                                        <div class="form-group">
+                                            <label class="col-sm-12 col-md-12 col-lg-6 control-label" for="">{{AddSelectedPatientList[0].CryoNo}}</label>
+                                            <label class="col-sm-12 col-md-12 col-lg-6 control-label" for="">{{AddSelectedPatientList[1].CryoNo}}</label>
+                                            <label class="col-sm-12 col-md-12 col-lg-6 control-label" for="">{{AddSelectedPatientList[2].CryoNo}}</label>
+                                            <label class="col-sm-12 col-md-12 col-lg-6 control-label" for="">{{AddSelectedPatientList[3].CryoNo}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvDiscardDate </label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12" for="">
+                                        <div class="input-group date" ng-class="{'select':frmOocyteBank.RenewalDate.$invalid && frmOocyteBank.DiscardDate.$dirty }">
+                                            <input type="text" class="form-control" id="DiscardDate" name="DiscardDate" placeholder="dd-Mmm-yyyy" ng-required="true" ng-model="RenewExpiryDatePatient.DiscardDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateDiscardOptions" alt-input-formats="altInputFormats" tabindex="3">
+                                            <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvRenewalTime</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div uib-timepicker id="DiscardTime" class="timeCss" name="DiscardTime" ng-model="RenewExpiryDatePatient.DiscardTime" hour-step="1" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false"
+                                             show-seconds="false" tabindex="2" ng-class="{'has-error':frmOocyteBank.DiscardTime.$invalid && frmOocyteBank.DiscardTime.$dirty}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <section class="col-lg-12"><h5 class="underline"></h5></section> -->
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""> <span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblvReason</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control " id="ddlReason" name="ddlReason" ng-required="true" ng-class="{select:frmOocyteBank.ddlReason.$dirty && RenewExpiryDatePatient.ReasonID==0}" ng-model="RenewExpiryDatePatient.ReasonID" ng-options="item.ID as item.Description for item in ReasonList" tabindex="31"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""> <span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblvEmbryologyby </label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control " id="ddlDoneby" name="ddlDoneby" ng-class="{select:frmOocyteBank.ddlDoneby.$dirty && RenewExpiryDatePatient.DoneBy==0}" ng-model="RenewExpiryDatePatient.DoneBy" ng-options="item.ID as item.Description for item in ListDoctor" tabindex="40"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""> <span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblvClinicianby</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control " id="ddlClinicianby" name="ddlClinicianby" ng-class="{select:frmOocyteBank.ddlClinicianby.$dirty && RenewExpiryDatePatient.EmbryologistID==0}" ng-model="RenewExpiryDatePatient.EmbryologistID" ng-options="item.ID as item.Description for item in ListDoctor" tabindex="41"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""> <span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblvWitnessedby</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control " id="ddlWitnessedby" name="ddlWitnessedby" ng-class="{select:frmOocyteBank.ddlWitnessedby.$dirty && RenewExpiryDatePatient.WitnessID==0}" ng-model="RenewExpiryDatePatient.WitnessID" ng-options="item.ID as item.Description for item in ListDoctor" tabindex="41"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Preliminary Details End -->
+                    <div class="modal-footer">
+                        <div class="row form-horizontal">
+                            <div class="col-md-12 col-lg-12 text-right">
+                                <button class="btn btn-primary" ng-click="UpdateDiscardOocyteBank(RenewExpiryDatePatient)" type="button" id="" value=""> @PIVF.LanguageResource.Resources.btnSave</button>
+                                <button class="btn btn-default" type="button" data-dismiss="modal" ng-click="Cancel()"> @PIVF.LanguageResource.Resources.btnCancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Discard Modal End -->
+        <!-- DFR model -->
+        <div class="modal fade" id="Transport" tabindex="-1" role="dialog" ng-init="FillBankClinicList()" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog w-35" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblvTransport</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Preliminary Details Start -->
+                        <div class="row form-horizontal">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="form-group ">
+                                    <label class="col-sm-6 col-md-6 col-lg-4 control-label" for="">{{AddSelectedPatientList[0].MRNo}}</label>
+                                    <label class="col-sm-6 col-md-6 col-lg-8 control-label" for="">{{AddSelectedPatientList[0].PatientName}}</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvTransportDate </label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12" for="">
+                                        <div class="input-group date" ng-class="{'select':frmOocyteBank.TransportDate.$invalid && frmOocyteBank.TransportDate.$dirty }">
+                                            <input type="text" class="form-control" id="TransportDate" name="TransportDate" placeholder="dd-Mmm-yyyy" ng-required="true" ng-model="RenewExpiryDatePatient.TransportDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateDiscardOptions" alt-input-formats="altInputFormats" tabindex="3">
+                                            <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvTransportTime </label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div uib-timepicker id="TransportTime" class="timeCss" name="TransportTime" ng-model="RenewExpiryDatePatient.TransportTime" hour-step="1" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false"
+                                             show-seconds="false" tabindex="2" ng-class="{'has-error':frmOocyteBank.TransportTime.$invalid && frmOocyteBank.DiscardTime.$dirty}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""> <span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblvTransportedTo </label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control " id="ddlTransportedTo" name="ddlTransportedTo" ng-change="CheckConsentIsOther(RenewExpiryDatePatient.TransportID)" ng-class="{select:frmOocyteBank.ddlTransportedTo.$dirty && RenewExpiryDatePatient.TransportID==0}" ng-model="RenewExpiryDatePatient.TransportID" ng-options="item.ID as item.Description for item in BankClinicList" tabindex="41"></select>
+                                    </div>
+                                    <div class="InputBoxDiv">
+                                        <input type="text" class="form-control" id="txtTransportDescription" name="txtTransportDescription" ng-class="{select:frmOocyteBank.ddlReason.$dirty && (RenewExpiryDatePatient.TransportDescription==null && RenewExpiryDatePatient.TransportID==3) }" ng-hide="IsDisableConsentTextBox" ng-model="RenewExpiryDatePatient.TransportDescription">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""> <span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblConsent </label>
+                                    <label class="col-sm-12 col-md-6 col-lg-6  p-r-0">
+                                        <input type="checkbox" id="" ng-model="RenewExpiryDatePatient.IsConsent" ng-change="CheckConsentButton(RenewExpiryDatePatient.IsConsent)" value="true"> @PIVF.LanguageResource.Resources.lblBrowse
+                                    </label>
+                                    <div class="col-sm-12 col-md-6 col-lg-6 p-l-0">
+                                        <label id="" class="UserImageUploadContainer img-attach m-b-0">
+                                            <span class="btn btn-primary fileinput-button" ng-hide="!IsDisableButton">
+                                                @PIVF.LanguageResource.Resources.lblAttach
+                                                <input type="file" id="fileInput" name="fileInput" class="upload" onchange="angular.element(this).scope().handleFileSelect(this)" />
+                                            </span>
+                                        </label>
+                                        <span>{{filename}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Preliminary Details End -->
+                    <div class="modal-footer">
+                        <div class="row form-horizontal">
+                            <div class="col-lg-12 text-right">
+                                <button class="btn btn-primary" type="button" ng-click="SaveTransportDetails(RenewExpiryDatePatient,AddSelectedPatientList)">@PIVF.LanguageResource.Resources.btnSave</button>
+                                <button class="btn btn-default" type="button" data-dismiss="modal">@PIVF.LanguageResource.Resources.btnCancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /DFR model -->
+        <!-- New Modal Start -->
+        <div class="modal fade" id="New" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="Close()"><span aria-hidden="true">&times;</span></button>
+                        <h4 ng-if="CoupleDetails.FemalePatient.FemalePatientName!=null" class="modal-title">{{CoupleDetails.FemalePatient.FemalePatientName+' '+CoupleDetails.FemalePatient.FemalePatientMRNO+'  /  '+CoupleDetails.MalePatient.MalePatientName+' '+CoupleDetails.MalePatient.MaleMRNO}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 m-b-5 form-horizontal">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="txtfullName" ng-blur="model=''" placeholder="@PIVF.LanguageResource.Resources.lblSearchPatient" name="txtUsrName" ng-model="model" uib-typeahead="i as (i.PatientName) for i in getMatchingPatient($viewValue) | limitTo : 8" typeahead-on-select="onSelect(model)" typeahead-input-formatter="a" autofocus>
+                                        <span class="input-group-addon glyphicon glyphicon-search btn" type="button"></span>
+                                    </div>
+                                </div>
+                            </div><div class="clearfix"></div>
+                            <div class="col-md-4 col-lg-4 form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvVitrificationDate</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" ng-model="NewCryoBankOocyte.VitriDate" ng-change="ExpiryDateChange()" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                                            <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-lg-2 form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvVitrificationTime </label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div class="input-group date">
+                                            <div uib-timepicker id="Date" class="timeCss" name="TransportTime" ng-model="NewCryoBankOocyte.VitriTime" hour-step="1" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false"
+                                                 show-seconds="false" tabindex="2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4 form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblExpiryDate</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" ng-model="NewCryoBankOocyte.ExpiryDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                                            <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-lg-2 form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvExpiryTime</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div class="input-group date">
+                                            <div uib-timepicker id="Date" class="timeCss" name="TransportTime" ng-model="NewCryoBankOocyte.ExpiryTime" hour-step="1" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false"
+                                                 show-seconds="false" tabindex="2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4 form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblvNoofSamplesReceived</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <input type="text" class="form-control" id="txtNoOfSample" name="txtNoOfSample" maxlength="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-class="{select:frmOocyteBank.txtNoOfSample.$dirty && (NewCryoBankOocyte.NoOfSample==null ||NewCryoBankOocyte.NoOfSample==0)}" ng-change="AddRows(NewCryoBankOocyte.NoOfSample)" ng-model="NewCryoBankOocyte.NoOfSample" placeholder="@PIVF.LanguageResource.Resources.lblvNoofSamplesReceived">
+                                    </div>
+                                </div>
+                            </div>
+                            <section class="col-md-12 col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblvOocyteVitrification</h5></section>
+                            <div class="col-md-12 col-lg-12">
+                                <div class="table-responsive table-bordered fixed_header">
+                                    <table class="table table-hover table-striped" id="" style="min-width:1620px; height:215px;">
+                                        <thead>
+                                            <tr>
+                                                <th st-ratio="5">@PIVF.LanguageResource.Resources.lblvOocyteNo</th>
+                                                <th st-ratio="8">@PIVF.LanguageResource.Resources.lblvFreezingNo</th>
+                                                <th st-ratio="9">@PIVF.LanguageResource.Resources.lblvMaturity</th>
+                                                <th st-ratio="7">@PIVF.LanguageResource.Resources.lblvTank</th>
+                                                <th st-ratio="8">@PIVF.LanguageResource.Resources.lblCanister</th>
+                                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblvGobletColor</th>
+                                                <th st-ratio="0" ng-hide="true">@PIVF.LanguageResource.Resources.lblvGobletSize</th>
+                                                <th st-ratio="7">@PIVF.LanguageResource.Resources.lblvCryolock</th>
+                                                <th st-ratio="8">@PIVF.LanguageResource.Resources.lblvMediaUsed</th>
+                                                <th st-ratio="6">@PIVF.LanguageResource.Resources.lblvLotNo</th>
+                                                <th st-ratio="12">@PIVF.LanguageResource.Resources.lblvMediaExpiryDate</th>
+                                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblvEmbryologist </th>
+                                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblvWEmbryologist</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="" ng-repeat="Item in  NewCryoBankOocyte.lstBankVitrification track by $index">
+                                                <td st-ratio="5" class="text-center" ng-model="Item.IsFET" ng-init="Item.IsFET=1">{{$index+1}}</td>
+                                                <td st-ratio="8">
+                                                    <input type="text" id="FreezingNo" name="FreezingNo" class="form-control" ng-model="Item.FreezingNo" maxlength="50" ng-class="{select:frmOocyteBank.FreezingNo.$invalid && frmOocyteBank.FreezingNo.$dirty }" ng-required="true" ng-blur="CheckDuplicateFreezingNo($index,Item.FreezingNo)">  @**@
+
+                                                </td>
+                                                <td st-ratio="9" class="text-center">
+                                                    <select class="form-control" id="ddleMaturityList" name="ddleMaturityList" ng-class="{select:frmOocyteBank.ddleMaturityList.$dirty && Item.OocyteMaturityID==0}" ng-model="Item.OocyteMaturityID" ng-options="item.ID as item.Description for item in MaturityList" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="7" class="text-center">
+                                                    <select class="form-control" id="ddlTankList" name="ddlTankList" ng-class="{select:frmOocyteBank.ddlTankList.$dirty && Item.TankId==0}" ng-model="Item.TankId" ng-options="item.ID as item.Description for item in TankList" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="8" class="text-center">
+                                                    <select class="form-control" id="ddlCanisterList" name="ddlCanisterList" ng-class="{select:frmOocyteBank.ddlCanisterList.$dirty && Item.CanisterID==0}" ng-model="Item.CanisterID" ng-options="item.ID as item.Description for item in ListCanister" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="10" class="text-center">
+                                                    <select class="form-control" id="ddlGobletColorList" name="ddlGobletColorList" ng-class="{select:frmOocyteBank.ddlGobletColorList.$dirty && Item.ColorCodeID==0}" ng-model="Item.ColorCodeID" ng-options="item.ID as item.Description for item in ListGobletColor" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="0" class="text-center" ng-hide="true">
+                                                    <select class="form-control" id="ddlGobletSizeList" name="ddlGobletSizeList" ng-class="{select:frmOocyteBank.ddlGobletSizeList.$dirty && Item.GobletSizeId==0}" ng-model="Item.GobletSizeId" ng-options="item.ID as item.Description for item in ListGobletSize" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="7" class="text-center">
+                                                    <select class="form-control" id="ddlCryoLocksList" name="ddlCryoLocksList" ng-class="{select:frmOocyteBank.ddlCryoLocksList.$dirty && Item.CryoLockID==0}" ng-model="Item.CryoLockID" ng-options="item.ID as item.Description for item in ListCryoLocks" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="8" class="text-center">
+                                                    <select class="form-control" id="ddlListMediaUsed" name="ddlListMediaUsed" ng-class="{select:frmOocyteBank.ddlListMediaUsed.$dirty && Item.MediaID==0}" ng-model="Item.MediaID" ng-options="item.ID as item.Description for item in ListMediaUsed" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="6">
+                                                    <input type="text" class="form-control" ng-model="Item.LotNo" maxlength="50">
+                                                </td>
+                                                <td st-ratio="12">
+                                                    <div class="input-group date" ng-class="{invalid:frmOocyteBank.MediaExpiryDate.$invalid && frmOocyteBank.MediaExpiryDate.$dirty}">
+                                                        <input id="MediaExpiryDate" name="MediaExpiryDate" type="text" class="form-control"
+                                                               min-date="minDate" max-date="maxDate"
+                                                               placeholder="dd-Mmm-yyyy" ng-model="Item.MediaExpiryDate"
+                                                               aria-describedby="" uib-datepicker-popup="{{format}}"
+                                                               show-button-bar="false" datepicker-options="MediaExpdateOptions"
+                                                               alt-input-formats="altInputFormats" is-open="Item.opened3"
+                                                               ng-class="{invalid:frmOocyteBank.MediaExpiryDate.$invalid && frmOocyteBank.MediaExpiryDate.$dirty}" ng-required="true">
+                                                        <span class="input-group-addon" id="" ng-click="open3($event,Item)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                    </div>
+                                                </td>
+
+                                                <td st-ratio="10" class="text-center">
+                                                    <select class="form-control " id="ddlDoneby" name="ddlDoneby" ng-class="{select:frmOocyteBank.ddlDoneby.$dirty && Item.EmbryologistID==0}" ng-model="Item.EmbryologistID" ng-options="item.ID as item.Description for item in ListDoctor" tabindex="40"></select>
+                                                </td>
+                                                <td st-ratio="10" class="text-center">
+                                                    <select class="form-control " id="ddlWitness" name="ddlWitness" ng-class="{select:frmOocyteBank.ddlWitness.$dirty && Item.Witness==0}" ng-model="Item.Witness" ng-options="item.ID as item.Description for item in ListDoctor" tabindex="40"></select>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+
+                                        @*<tbody>
+                                                <tr class="" ng-repeat="Item in  NewCryoBankOocyte.lstBankVitrification track by $index">
+                                                    <td st-ratio="8" class="text-center">23</td>
+                                                    <td st-ratio="10" class="text-center">
+                                                        <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="NewCryoBankOocyte.OocyteMaturityID" ng-options="item.ID as item.Description for item in MaturityList" tabindex="35"></select>
+                                                    </td>
+                                                    <td st-ratio="10" class="text-center">
+                                                        <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="NewCryoBankOocyte.TankId" ng-options="item.ID as item.Description for item in TankList" tabindex="35"></select>
+                                                    </td>
+                                                    <td st-ratio="10" class="text-center">
+                                                        <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="NewCryoBankOocyte.CanisterID" ng-options="item.ID as item.Description for item in ListCanister" tabindex="35"></select>
+                                                    </td>
+                                                    <td st-ratio="10" class="text-center">
+                                                        <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="NewCryoBankOocyte.ColorCodeID" ng-options="item.ID as item.Description for item in ListGobletColor" tabindex="35"></select>
+                                                    </td>
+                                                    <td st-ratio="10" class="text-center" ng-hide="true">
+                                                        <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="NewCryoBankOocyte.GobletSizeId" ng-options="item.ID as item.Description for item in ListGobletSize" tabindex="35"></select>
+                                                    </td>
+                                                    <td st-ratio="10" class="text-center">
+                                                        <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="CryoBankOocyte.CryoLockID" ng-options="item.ID as item.Description for item in ListCryoLocks" tabindex="35"></select>
+                                                    </td>
+                                                    <td st-ratio="16" class="text-center">
+                                                        <select class="form-control " id="ddlDoneby" name="ddlDoneby" ng-class="{select:frmOocyteBank.ddlDoneby.$dirty && NewCryoBankOocyte.EmbryologistID==0}" ng-model="NewCryoBankOocyte.EmbryologistID" ng-options="item.ID as item.Description for item in ListDoctor" tabindex="40"></select>
+                                                    </td>
+                                                    <td st-ratio="16" class="text-center">
+                                                        <select class="form-control " id="ddlDoneby" name="ddlDoneby" ng-class="{select:frmOocyteBank.ddlDoneby.$dirty && NewCryoBankOocyte.Witness==0}" ng-model="NewCryoBankOocyte.Witness" ng-options="item.ID as item.Description for item in ListDoctor" tabindex="40"></select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>*@
+                                        <tbody>
+                                            <tr class="" ng-repeat="Item in  NewCryoBankOocyte.lstBankVitrification track by $index">
+                                                <td st-ratio="8" class="text-center"></td>
+                                                <td st-ratio="10" class="text-center">
+                                                    <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="NewCryoBankOocyte.OocyteMaturityID" ng-options="item.ID as item.Description for item in MaturityList" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="10" class="text-center">
+                                                    <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="NewCryoBankOocyte.TankId" ng-options="item.ID as item.Description for item in TankList" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="10" class="text-center">
+                                                    <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="NewCryoBankOocyte.CanisterID" ng-options="item.ID as item.Description for item in ListCanister" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="10" class="text-center">
+                                                    <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="NewCryoBankOocyte.ColorCodeID" ng-options="item.ID as item.Description for item in ListGobletColor" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="10" class="text-center" ng-hide="true">
+                                                    <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="NewCryoBankOocyte.GobletSizeId" ng-options="item.ID as item.Description for item in ListGobletSize" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="10" class="text-center">
+                                                    <select class="form-control" id="ddlUnitList" name="ddlUnitList" ng-model="CryoBankOocyte.CryoLockID" ng-options="item.ID as item.Description for item in ListCryoLocks" tabindex="35"></select>
+                                                </td>
+                                                <td st-ratio="16" class="text-center">
+                                                    <select class="form-control " id="ddlDoneby" name="ddlDoneby" ng-class="{select:frmOocyteBank.ddlDoneby.$dirty && NewCryoBankOocyte.EmbryologistID==0}" ng-model="NewCryoBankOocyte.EmbryologistID" ng-options="item.ID as item.Description for item in ListDoctor" tabindex="40"></select>
+                                                </td>
+                                                <td st-ratio="16" class="text-center">
+                                                    <select class="form-control " id="ddlDoneby" name="ddlDoneby" ng-class="{select:frmOocyteBank.ddlDoneby.$dirty && NewCryoBankOocyte.Witness==0}" ng-model="NewCryoBankOocyte.Witness" ng-options="item.ID as item.Description for item in ListDoctor" tabindex="40"></select>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" ng-click="SaveVitrification(NewCryoBankOocyte.lstBankVitrification,NewCryoBankOocyte)">@PIVF.LanguageResource.Resources.btnSave</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="Close()">@PIVF.LanguageResource.Resources.btnCancel</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- New Modal End -->
+    </form>
+</div>
+@*<script>
+        $(document).ready(function () {
+            var divHeight = $('.table').height();
+            $('.table-responsive.fixed_header').css('height', divHeight + 10 + 'px');
+        });
+    </script>*@
+<script>
+        //$(document).ready(function () {
+        //    var divHeight = $('.table').height();
+        //    $('.table-responsive.fixed_header').css('height', divHeight + 10 + 'px');
+        //});
+</script>

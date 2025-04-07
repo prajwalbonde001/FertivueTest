@@ -1,0 +1,122 @@
+﻿@{
+    Layout = null;
+}
+
+<form name="frmClinic" ng-controller="ClinicController" role="form" novalidate>
+    <section id="" ng-init="IsFromLandingPg=true;loadPage()">
+        <!-- search -->
+        <div class="searchContainer">
+            <div class="customSearchTab">
+                <a href="" class="searchTab1 active r-0"><i class="fa fa-search" aria-hidden="true"></i>@PIVF.LanguageResource.Resources.lblSearch @* @PIVF.Gemino.LanguageResource.Resources.btnSearch *@</a> @*Search ::Modified by swatih for localization 27/7/2020*@
+            </div>
+
+
+            <div class="MainSearchBoxContainer">
+                <div class="BlackSearchBoxSection">
+                    <div class="SearchInputGroupContainer">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4">
+                                <div class="InputBoxDiv">
+                                    <input type="text" ng-model="Code" class="form-control" id="txtcode" placeholder="@PIVF.LanguageResource.Resources.lblCode" ng-keydown="$event.which==13?GetClinicListForLandingPage(1):0">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4">
+                                <div class="InputBoxDiv">
+                                    <input type="text" ng-model="Name" class="form-control" id="txtDescription" placeholder="@PIVF.LanguageResource.Resources.lblClinicName" ng-keydown="$event.which==13?GetClinicListForLandingPage(1):0">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4">
+                                <button id="btnSearch" type="button" class="btn btn-primary" ng-click="GetClinicListForLandingPage(1)">@PIVF.LanguageResource.Resources.btnSearch @* @PIVF.Gemino.LanguageResource.Resources.btnSearch *@</button>@*Search ::Modified by swatih for localization 27/7/2020*@
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="SearchBtnContainer">
+                        <div class="InputBoxDiv">
+
+                            </div>
+                        </div>*@
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /search -->
+        <div class="form_Content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row find_title">
+                        <div class="col-sm-6">
+                            <span>@PIVF.LanguageResource.Resources.Total_Count : @* @PIVF.Gemino.LanguageResource.Resources.Total_Count : *@</span> @*Total Count::Modified  by swatih for localization 27/7/2020*@
+                            <span class="total_count">{{TotalItems}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="table-responsive fixed_header">
+                        <table class="table table-striped GridTable" style="min-height:360px;">
+                            @*max-height:360px;*@
+                            <thead>
+                                <tr>
+                                    <th st-ratio="3">&nbsp;</th>
+                                    <th st-ratio="27">@PIVF.LanguageResource.Resources.lblClinicCode @* @PIVF.Gemino.LanguageResource.Resources.lblClinicCode *@ </th>@*Clinic Code:: MOdified by swatih for localization 27/7/2020*@
+                                    <th st-ratio="60">@PIVF.LanguageResource.Resources.lblClinicName @* @PIVF.Gemino.LanguageResource.Resources.lblClinicName *@ </th>@*Clinic Name:: MOdified by swatih for localization 27/7/2020*@
+                                    <th st-ratio="10" class="text-center">@PIVF.LanguageResource.Resources.lblActive @* @PIVF.Gemino.LanguageResource.Resources.Active *@</th>@*Active:: MOdified by swatih for localization 27/7/2020*@
+                                </tr>
+                            </thead>
+                            <tbody style="min-height: 320px; height: calc(100vh - 430px);">
+                                <tr ng-repeat="item in ClinicList">
+                                    <td st-ratio="3">
+                                        <div class="dropdown">
+                                            <a href="" class="dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span class="glyphicon glyphicon-cog"></span>
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="cycleAction_1">
+                                                <li><a href="" ng-click="editClinic(item)">@PIVF.LanguageResource.Resources.lblView_Edit @* @PIVF.Gemino.LanguageResource.Resources.lblViewOrEdit *@ </a></li>@*View / Edit ::Modified by swatih for localization 27/7/2020*@
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td st-ratio="27">{{item.Code}}</td>
+                                    <td st-ratio="60" class="Capitalize">{{item.Description}}</td>
+                                    <td st-ratio="10" align="center" style="cursor: pointer;">
+                                        <span type="button" ng-model="item.Status" ng-class="{ActiveIcon:item.Active==true,DeActiveIcon:item.Active==false}" ng-click="showReasonModal(item)" data-backdrop="static" data-keyboard="false"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+
+                    <!-- pagination -->
+                    <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" @*"@PIVF.Gemino.LanguageResource.Resources.lblFirst" *@ previous-text="@PIVF.LanguageResource.Resources.lblPrevious" @* "@PIVF.Gemino.LanguageResource.Resources.lblPrevious" *@ next-text="@PIVF.LanguageResource.Resources.lblNext" @* "@PIVF.Gemino.LanguageResource.Resources.lblNext" *@ last-text="@PIVF.LanguageResource.Resources.lblLast" @* "@PIVF.Gemino.LanguageResource.Resources.lblLast" *@></uib-pagination>
+                    <!-- /pagination -->
+                </div>
+            </div>
+        </div>
+
+        <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+        <!-- reason model -->
+        <div class="modal fade reason-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="reasonModel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="ReasonCancel()"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblReasonForChange @* @PIVF.Gemino.LanguageResource.Resources.lblReason  *@ </h4>
+                    </div>@*Reason for Change ::Modified by swatih for localization 27/7/2020*@
+                    <div class="modal-body" ng-class="{'Invalid':frmInv.txtReason.$invalid && frmTariffList.txtReason.$dirty}">
+                        <textarea class="form-control" id="txtReason" name="txtReason" ng-required="true" maxlength="100" rows="2" ng-model="Reason"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="page_actions">
+                            <button class="btn btn-primary" type="button" id="" value="" ng-click="Reason?ActivateDeactivateClinic(Reason):ValidMsg()">@PIVF.LanguageResource.Resources.btnSave @* @PIVF.Gemino.LanguageResource.Resources.btnSave *@  </button>@*Save :: MOdified by swatih for localization 27/7/2020*@
+                            <button class="btn btn-default" type="button" id="" value="" data-dismiss="modal" ng-click="ReasonCancel()">@PIVF.LanguageResource.Resources.btnCancel @* @PIVF.Gemino.LanguageResource.Resources.btnCancel *@ </button>@*Cancel :: MOdified by swatih for localization 27/7/2020*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /reason model -->
+    </section>
+</form>
+
+

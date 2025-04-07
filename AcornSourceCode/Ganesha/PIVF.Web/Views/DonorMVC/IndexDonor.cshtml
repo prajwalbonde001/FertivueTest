@@ -1,0 +1,195 @@
+﻿
+@{    Layout = null; }
+<div ng-controller="DonorCtr" ng-init="PageSetup()">
+    <form name="frmDonorIndex" novalidate>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="searchContainer">
+                    <div class="customSearchTab">
+                        <a href="" class="searchTab1" ng-class="{active:show}" role="button" ng-click="ClearSearch();show = true">
+                            <i class="fa fa-search" aria-hidden="true"></i>@PIVF.LanguageResource.Resources.btnSearch
+                        </a>
+                        <a href="" class="searchTab2" ng-class="{active:!show}" role="button" data-toggle="collapse" ng-click="ClearData1();show = false" aria-expanded="true" aria-controls="AdvanceSearchBox">
+                            <i class="fa fa-search" aria-hidden="true"></i> <span class="CollapseTitleTxt">@PIVF.LanguageResource.Resources.lblAdvanceSearch</span>
+                        </a>
+                    </div>
+                    <!-- Main Search Box Start -->
+                    <div class="MainSearchBoxContainer" ng-show="show">
+                        <div class="BlackSearchBoxSection" ng-init="LoadData()">
+                            <div class="SearchInputGroupContainer">
+                                <div class="row form-horizontal">
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                <select id=""
+                                                        class="form-control"
+                                                        ng-model="SearchDonor.AgencyID"
+                                                        ng-options="item.ID as item.Description for item in AgencyList" ng-change="FillDonorList()"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="form-group ">
+                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                <input type="text" class="form-control" id="" placeholder="@PIVF.LanguageResource.Resources.lblDonorCode" ng-model="SearchDonor.DonorCode" ng-keypress="$event.which==13?FillDonorList():0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 text-left">
+                                        <div class="form-group">
+                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                <button class="btn btn-primary m-b-0" type="button" id="" value="" ng-click="FillDonorList()">@PIVF.LanguageResource.Resources.btnSearch</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- Main Search Box End-->
+                    <!-- Advance Search Box Start -->
+                    <div class="MainSearchBoxContainer" ng-hide="show">
+                        <div class="BlackSearchBoxSection">
+                            <div class="SearchInputGroupContainer">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="form-group ">
+                                            <select id=""
+                                                    ng-model="SearchDonor.BloodGroupID"
+                                                    ng-keypress="$event.which==13?FillDonorList():0"
+                                                    class="form-control"
+                                                    ng-options="item.ID as item.Description for item in BloodGroupList"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <select id=""
+                                                    ng-model="SearchDonor.EyeColorID"
+                                                    ng-keypress="$event.which==13?FillDonorList():0"
+                                                    class="form-control"
+                                                    ng-options="item.ID as item.Description for item in EyeColorList"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <select id=""
+                                                    ng-model="SearchDonor.HairColorID"
+                                                    ng-keypress="$event.which==13?FillDonorList():0"
+                                                    class="form-control"
+                                                    ng-options="item.ID as item.Description for item in HairColorList"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <select id=""
+                                                    ng-model="SearchDonor.SkinColorID"
+                                                    ng-keypress="$event.which==13?FillDonorList():0"
+                                                    class="form-control"
+                                                    ng-options="item.ID as item.Description for item in SkinColorList"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <select id=""
+                                                    ng-model="SearchDonor.HeightID"
+                                                    ng-keypress="$event.which==13?FillDonorList():0"
+                                                    class="form-control"
+                                                    ng-options="item.ID as item.Description for item in HeightList"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <select id=""
+                                                    ng-model="SearchDonor.BuiltID"
+                                                    class="form-control"
+                                                    ng-keypress="$event.which==13?FillDonorList():0"
+                                                    ng-options="item.ID as item.Description for item in BuiltList"></select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="SearchBtnContainer AdvSearchBtnContainer">
+                                <div class="InputBoxDiv">
+                                    <button class="btn btn-primary" type="button" id="" value="" ng-click="FillDonorList()">@PIVF.LanguageResource.Resources.btnSearch</button>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- Advance Search Box End-->
+                </div>
+            </div>
+        </div>
+        <div class="form_Content p-t-10">
+            @*<div class="col-lg-12">
+                    <div class="clear"></div>
+                </div>*@
+            <div class="row find_title">
+                <div class="col-md-6">
+                    <span class="count_title">@PIVF.LanguageResource.Resources.lblTotalCount</span>
+                    <span class="total_count">{{TotalItems}}</span>
+                </div>
+                <div class="col-md-6 text-right">
+                    <button type="submit" title="Print" class="btn btn_Form_Print" ng-hide="true"><span class="glyphicon glyphicon-print"></span></button>      @*ng-hide="true" Added by Nayan Kamble*@
+                    <button class="btn btn_Form_Print float-right" title="@PIVF.LanguageResource.Resources.btnNew" type="button" id="btnDonor" value="" ng-click="AddDonor()"> <span class="glyphicon glyphicon-plus"></span></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Patient List Content Container Start-->
+                    <div id="PatientListContDiv" class="ConsoleContentContainer donor_content">
+                        <div class="table-responsive fixed_header">
+                            <table id="PatientListTble" class="table table-striped table-hover" style="min-width:1000px;min-height:300px;">
+                                @*PatientListGrid*@  @*max-height:400px;*@
+                                @*fixed_headers - by suresh_12072017*@
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="5">@PIVF.LanguageResource.Resources.lblEdit</th>
+                                        <th st-ratio="9" class="text-center">@PIVF.LanguageResource.Resources.tlblNewSample</th>
+                                        <th st-ratio="13" ng-click="SortData1('DonorCode')">@PIVF.LanguageResource.Resources.lblDonorCode<div ng-class="sortClass1"></div></th>
+                                        <th st-ratio="16" ng-click="SortData1('RegiDate')">@PIVF.LanguageResource.Resources.lblRegistrationDate<div ng-class="sortClass1"></div></th>
+                                        <th st-ratio="10" ng-click="SortData1('EyeColor')">@PIVF.LanguageResource.Resources.lblEyeColor<div ng-class="sortClass1"></div></th>
+                                        <th st-ratio="10" ng-click="SortData1('HairColor')">@PIVF.LanguageResource.Resources.lblHairColor<div ng-class="sortClass1"></div></th>
+                                        <th st-ratio="10" ng-click="SortData1('SkinColor')">@PIVF.LanguageResource.Resources.lblSkinColor<div ng-class="sortClass1"></div></th>
+                                        <th st-ratio="10" ng-click="SortData1('BloodGroup')">@PIVF.LanguageResource.Resources.lblBloodGroup<div ng-class="sortClass1"></div></th>
+                                        <th st-ratio="17" ng-click="SortData1('Agency')">@PIVF.LanguageResource.Resources.tlblAgencyName<div ng-class="sortClass1"></div></th>
+                                    </tr>
+                                </thead>
+                                <tbody style="height: calc(100vh - 445px);">
+                                    <tr class="parent_row" ng-repeat="Item in DonorList |orderBy:SortColumn1:reverseSort1">
+                                        <td st-ratio="5">
+                                            <button id="" type="button" title="@PIVF.LanguageResource.Resources.lblEdit" class="btn btn_edit" ng-click="EditDonor(Item)"></button>
+                                        </td>
+                                        <td st-ratio="9" class="text-center">
+                                            <button id="" type="button" title="@PIVF.LanguageResource.Resources.tbtnNewSample" class="btn btn_view" ng-click="NewSample(Item)"><span class="glyphicon glyphicon-eye-open"></span></button>
+                                        </td>
+                                        <td st-ratio="13">{{Item.DonorCode}}</td>
+                                        <td st-ratio="16">{{Item.RegiDate | date:dd-MMM-yyyy}}</td>
+                                        <td st-ratio="10">{{Item.EyeColor}}</td>
+                                        <td st-ratio="10">{{Item.HairColor}}</td>
+                                        <td st-ratio="10">{{Item.SkinColor}}</td>
+                                        <td st-ratio="10">{{Item.BloodGroup}}</td>
+                                        <td st-ratio="17">{{Item.Agency}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+                    <!--  Patient List Content Container End -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 m-b-10">
+                    <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="5" class="pagination-sm pull-left" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                </div>
+            </div>
+            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+        </div>
+
+    </form>
+</div>

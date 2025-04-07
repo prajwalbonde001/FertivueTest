@@ -1,0 +1,198 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="row" ng-controller="WardCtr" ng-init="initForm();GetBedClassList(); GetUserList(); GetIPDClassList();GetDepartmentList()"  style="background:white; padding:50px;">
+    <h3>New Admission</h3>
+
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Search Patient -->
+            <div ng-init="fillClinicListNew();">
+                <div class="form-group">
+                    <label>Search Patient:</label>
+                    <input type="text"
+                           class="form-control"
+                           id="txtfullName"
+                           autocomplete="off"
+                           ng-blur="model=''"
+                           placeholder="@PIVF.LanguageResource.Resources.SearchCheckedPatient"
+                           name="txtUsrName"
+                           ng-model="searchText"
+                           ng-change="fetchCheckedInPatients(searchText)"
+                           uib-typeahead="patient as (patient.FirstName + ' ' + patient.LastName + ' (' + patient.ContactNo1 + ' | ' + patient.MRNo + ')') for patient in patientList | filter:$viewValue | limitTo:8"
+                           typeahead-on-select="onSelectPatient($item)"
+                           autofocus>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:20px">
+        <div class="col-sm-6">
+            <div class="PatientInfoWrapper m-b-5">
+                <div class="BlueWrap" style="min-height:80px;">
+                    <div class="ProfileImgWrap">
+                        <img ng-if="PatientDetail.PatientGender=='Female'" ng-src="../images/Female_default.jpg" style="width:50%">
+                        <img ng-if="PatientDetail.PatientGender=='Male'" ng-src="../images/Male_default.jpg" style="width:50%">
+                    </div>
+                    <div class="ProfileInfoWrap">
+                        <p class="m-b-0">
+                            <span class="Capitalize PatientName">{{PatientDetail.PatientName}}</span>
+                            <span class="MRN-Green">
+                                <span>{{PatientDetail.PatientMRNo}}</span>
+                            </span>
+                            <span class="patient-gander p-l-5">{{PatientDetail.PatientGender}} / </span>
+                            <span class="patient-gander">{{PatientDetail.PatientAge}} @PIVF.LanguageResource.Resources.lblYears</span>
+                            <span class="patient-gander iconInfoLine">
+                                <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                <span class="LinkName">{{PatientDetail.PatientMobileNo}}</span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6" ng-hide="hideWhenIndividual">
+            <div class="PatientInfoWrapper m-b-5">
+                <div class="BlueWrap" style="min-height:80px;">
+                    <div class="ProfileImgWrap">
+                        <img ng-if="PatientDetail.PartnerGender=='Female'" ng-src="../images/Female_default.jpg" style="width:50%">
+                        <img ng-if="PatientDetail.PartnerGender=='Male'" ng-src="../images/Male_default.jpg" style="width:50%">
+                    </div>
+                    <div class="ProfileInfoWrap">
+                        <p class="m-b-0">
+                            <span class="Capitalize PatientName">{{PatientDetail.PartnerName}}</span>
+                            <span class="MRN-Green">
+                                <span>{{PatientDetail.PartnerMRNo}}</span>
+                            </span>
+                            <span class="patient-gander p-l-5">{{PatientDetail.PartnerGender}} / </span>
+                            <span class="patient-gander">{{PatientDetail.PartnerAge}} @PIVF.LanguageResource.Resources.lblYears</span>
+                            <span class="patient-gander iconInfoLine">
+                                <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                <span class="LinkName">{{PatientDetail.PartnerMobileNo}}</span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="row" style="background:white; margin-top:20px; padding:20px;">
+    <div class="col-md-12">
+        <!-- Row 1: Clinic, Department, Admission Date -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Clinic:</label>
+                    <select class="form-control" ng-model="newUser.Clinic" ng-options="clinic for clinic in clinics">
+                        <option value="">Select Clinic</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Department:</label>
+                    <select class="form-control"
+                            ng-model="newUser.DepartmentID"
+                            ng-options="item.ID as item.Description for item in DepartmentList"
+                            ng-change="GetDoctorList(newUser.DepartmentID)">
+                    </select>
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Admission Date:</label>
+                    <input type="date" class="form-control" ng-model="newUser.Date">
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Admission Time, Reason for Admission, Admitting Doctor -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Admission Time:</label>
+                    <input type="time" class="form-control" ng-model="newUser.Time">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Reason For Admission:</label>
+                    <select class="form-control" ng-model="newUser.AdmissionType" ng-options="reason for reason in admissionReasons">
+                        <option value="">Select Reason</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Admitting Doctor:</label>
+                    <select class="form-control"
+                            ng-model="newUser.DoctorID"
+                            ng-options="item.ID as item.DoctorName for item in DoctorList">
+                        <option value="">-- Select Doctor --</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3: Ward, Class, Bed -->
+        <div class="row">
+            <!-- Ward Selection -->
+            <div class="col-md-4">
+                <label for="ward">Select Ward:</label>
+                <select class="form-control"
+                        ng-model="newUser.WardID"
+                        ng-options="wardItem.ID as wardItem.Description for wardItem in BillingList track by wardItem.ID"
+                        ng-change="GetBedClass(newUser.ClassID, newUser.WardID)">
+                    <option value="">-- Select Ward --</option>
+                </select>
+            </div>
+
+            <!-- Class Selection -->
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="class">Select Class:</label>
+                    <select class="form-control"
+                            ng-model="newUser.ClassID"
+                            ng-options="classItem.ID as classItem.Description for classItem in IPDClassList"
+                            ng-change="GetBedClass(newUser.ClassID, newUser.WardID)">
+                        <option value="">-- Select Class --</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Bed Selection -->
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Bed:</label>
+                    <select class="form-control"
+                            ng-model="newUser.BedID"
+                            ng-options="bed.BedID as bed.Description for bed in IPDBedListById">
+                        <option value="">Select Bed</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 4: Admission Remarks -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Admission Remarks:</label>
+                    <textarea class="form-control" ng-model="newUser.Remark" rows="3" placeholder="Enter Admission Remarks"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="row" style="margin-top:10px; display:flex; justify-content:flex-end; column-gap:15px;">
+            <button class="btn btn-success" ng-click="AdmitPatient()">Admit Patient</button>
+            <button class="btn btn-secondary" onclick="window.location.href='#AdmissionList'">Cancel</button>
+        </div>
+    </div>
+</div>
+ </div>

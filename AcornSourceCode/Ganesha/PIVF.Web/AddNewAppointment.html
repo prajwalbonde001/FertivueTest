@@ -1,0 +1,191 @@
+﻿<style>
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+</style>
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">-->
+<script src="Scripts/app/controllers/Master/Appointment/AppointmentController.js"></script>
+
+<!-- add sc -->
+<div ng-app="PIVF" ng-controller="AppointmentController" id="addNewAppointment" ng-init="getResourceNameValue()">
+    <div class="modal-content">
+        <div class="modal-header">
+            <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+            <h4 class="modal-title" id="gridSystemModalLabel">{{lblNewAppointment}}</h4>
+        </div>
+        <div class="modal-body ">
+            <div class="table-responsive m-b-10">
+                <table class="table">
+                    <tr>
+                        <td class="txt_bold">{{lblClinicName}}</td>
+                        <td class="txt_bold">{{lblDepartment}}</td>
+                        <td class="txt_bold">{{lblDoctorName}}</td>
+                    </tr>
+                    <tr class="AppointTdData">
+                        <td><span> {{vm.selectedUnitName }}</span></td>
+                        <td><span> {{vm.selectedDepartmentId}}  </span></td>
+                        <td><span Capitalize"> {{vm.selectedDoctorFullName}} </span></td>
+                    </tr>
+                    <tr>
+                        <td class="txt_bold">{{lblAppointmentDate}}</td>
+                        <td class="txt_bold">{{lblcAppointmentTime}}</td>
+                    </tr>
+                    <tr class="">
+                        <td><span> {{vm.changedViewDate}} </span></td>
+                        <td><span> {{vm.selectedTime}} </span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row form-horizontal" style="padding: 15px;">
+                <div class="col-md-4 col-lg-4 col-sm-4">
+                    <label class="radio-inline radioColor">
+                        <input type="radio" name="NewPatient" ng-model="IsNewPatient" id="" ng-change="ChangePatient(IsNewPatient)" ng-click="PatientSearchText=''" value="1"> {{lblNew}}
+                    </label>
+                    <label class="radio-inline radioColor">
+                        <input type="radio" name="NewPatient" ng-model="IsNewPatient" id="" ng-change="ChangePatient(IsNewPatient)" value="2"> {{lblExisting}}
+                    </label>
+                </div>
+                <div class="col-md-8 col-lg-8 col-sm-8 m-t-5 customAutoComplateForAppointment">
+                    <!--<input type="text" class="form-control Capitalize" ng-hide="IsNewPatient ==1" placeholder="Name / MRNo." ng-class="PatientSearchError == true ? 'invalid' : 'valid' " id="PatientSearch" ng-model="PatientSearchText" uib-typeahead="i.PatientFullName as i.PatientFullName for i in autoSearchList | filter:$viewValue | limitTo:20" typeahead-on-select="FillSelectedItems($item)" ng-change="GetSearchItemData(PatientSearchText)">-->
+                    <input type="text" class="form-control Capitalize" ng-hide="IsNewPatient ==1" placeholder="{{lblcNameMRNos}}" ng-class="PatientSearchError == true ? 'invalid' : 'valid' " id="PatientSearch" ng-model="PatientSearchText" typeahead-min-length="3" uib-typeahead="i as (i.PatientData) for i in PatientList | filter:$viewValue | limitTo:150" typeahead-on-select="FillSelectedItems($item)" ng-change="GetSearchItemData(PatientSearchText)">
+                </div><div class="clearfix"></div>
+                <div ng-hide="IsHideNewPatientDiv ==true">
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label" ng-hide="IsHideForExitsPatient">{{lblPrefix}}</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPrefixType" ng-hide="IsHideForExitsPatient" ng-model="RegisteredPatient.PrefixID" ng-class="" ng-options="item.ID as item.Description for item in PrefixTypeList" ng-change="changePrefixType(RegisteredPatient.PrefixID)"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="" ng-hide="IsHideForExitsPatient"><span class="text-Red">*</span>{{lblFirstName}}</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <input type="text" name="dataTxtFirstName" ng-hide="IsHideForExitsPatient" class="form-control Capitalize" ng-class="PatientFirstNameError == true ? 'invalid' : 'valid' " id="" placeholder="" ng-model="RegisteredPatient.FirstName" capitalize-first maxlength="20" replace="[^a-zA-Z]" with="" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12  control-label" for="" ng-hide="IsHideForExitsPatient"><span class="text-Red">*</span>{{lblLastName}}</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <input type="text" name="LastName" class="form-control Capitalize" ng-hide="IsHideForExitsPatient" ng-class="PatientLastNameError == true ? 'invalid' : 'valid' " id="" placeholder="" ng-model="RegisteredPatient.LastName" capitalize-first maxlength="20" replace="[^a-zA-Z]" with="" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="" ng-hide="IsHideForExitsPatient"><span class="text-Red">*</span>{{lblGender}}</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select class="form-control" name="ddlGenderType" ng-hide="IsHideForExitsPatient" ng-model="PatientRegistration.PatientGenderId" ng-options="item.ID as item.Description for item in GenderTypeList"></select>
+                                <!--<label class="radio-inline">
+                                    <input type="radio" name="GenderMale" id="" ng-model="PatientRegistration.PatientGenderId" value="2"> Female
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="GenderMale" id="" ng-model="PatientRegistration.PatientGenderId" value="1"> Male
+                                </label>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label" ng-hide="IsHideForExitsPatient"><span class="text-Red">*</span> {{lblDOB}}</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="PatientDOBError == true ? 'invalid' : 'valid' ">
+                                <!---->
+                                <div class="input-group date">
+                                    <input type="text" class="form-control" id="DOB" ng-hide="IsHideForExitsPatient" name="patientDOB" placeholder="dd-Mon-yyyy" ng-model="PatientRegistration.DOB" ria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats">  <!---->  <!--ng-change="CalculateAge(PatientRegistration.DOB,$event)" ng-keyup="CalculateAge(PatientRegistration.DOB,$event)" tabindex="9"--> <!---->
+                                    <span class="input-group-addon" ng-hide="IsHideForExitsPatient" ng-click="open1()">
+                                        <i class="fa fa-calendar" ng-hide="IsHideForExitsPatient" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <!--<ng-combo-date-picker ng-model="PatientRegistration.DOB" ng-min-model="min" ng-order="ymd" ng-max-model="max" ng-year-order="desc" ng-placeholder="Year,Month,Date"></ng-combo-date-picker>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group MobileContainer">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="" ng-hide="IsHideForExitsPatient"><span class="text-Red">*</span>{{lblMobNo}}</label>
+                            <div class="col-sm-2 col-md-3 col-lg-3 col-xs-3 p-r-0">
+                                <input type="text" class="form-control alignRight" ng-hide="IsHideForExitsPatient" ng-class="PatientMobileCountryCodeError == true ? 'invalid' : 'valid' " id="PatientMobileCountryCode" placeholder="xxx" ng-model="PatientselectedCountry" uib-typeahead="i.CountryCode as i.CountryName for i in CountryList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedCountry($item)" replace="[^a-zA-Z0-9]" with=""> <!--ng-change="GetPatientCountryCode(PatientselectedCountry)"-->
+                            </div>
+                            <div class="col-sm-10 col-md-9 col-lg-9 col-xs-9 p-l-4">
+                                <input type="text" class="form-control alignRight" ng-hide="IsHideForExitsPatient" multi-validation="NumericArrowBkSpDelSpDCFSlash" ng-pattern="/^\d{1,15}$/" maxlength="10" ng-class="PatientMobileNumberError == true ? 'invalid' : 'valid' " id="" placeholder="xxx xxx xxxx" aria-describedby="basic-addon2" phone-input ng-model="PatientRegistration.PatientMobileNumber" uib-typeahead="i as (i.FullName) for i in PatientExistList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedPatientMainMobieNumber(PatientRegistration.PatientMobileNumber)" replace="[^0-9]" with="" ng-change="HideErrorMessage('PatientMobileNumber',PatientRegistration.PatientMobileNumber);">  <!--mobile-no="14" maxlength="14"-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> {{lblAppointmentReason}} </label>
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <select class="form-control" id="PatientVisitId" ng-class="PatientVisitIdError == true ? 'invalid' : 'valid' " ng-init="PatientRegistration.PatientVisitId = PatientVisitList[0].VTID" ng-model="PatientRegistration.PatientVisitId" ng-options="item.VTID as item.Description for item in PatientVisitList" ng-change="HideErrorMessage('PatientVisitId',PatientRegistration.PatientVisitId);"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblRemark}}</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <textarea type="text" class="form-control" id="" placeholder="" maxlength="50" ng-model="Remarks"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--ng-show="IsNewPatient ==2"-->
+                <div class="table-responsive ">
+                    <table class="table GridTable">
+                        <tr>
+                            <td class="txt_bold">{{lblPatientName}}</td>
+                            <td class="txt_bold">{{lblcMRNos}}</td>
+                            <td class="txt_bold">{{lblcAgeGenders}}</td>
+                        </tr>
+                        <tr class="parent_row">
+                            <td><span class="dataTxt Capitalize"> {{RegisteredPatient.FirstName+' '+RegisteredPatient.LastName}}</span></td>
+                            <td><span class="dataTxt"> {{selectedMRNo}}  </span></td>
+                            <td><span class="dataTxt"> {{ PatientRegistration.Age}} {{PatientRegistration.PatientGenderDescription}} </span></td>
+
+                        </tr>
+                        <tr class="parent_row">
+                            <td>
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblMobNo}}</label>
+                                <span class="dataTxt" style="margin-top: 5px; display: inline-block;"> {{PatientRegistration.PatientselectedCountryID}}{{PatientRegistration.PatientMobileNumber}} </span>
+                            </td>
+                            <td width="235">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> {{lblAppointmentReason}} </label>
+                                <select class="form-control" id="PatientVisitId" ng-class="PatientVisitIdError == true ? 'invalid' : 'valid' " ng-init="PatientRegistration.PatientVisitId = PatientVisitList[0].VTID" ng-model="PatientRegistration.PatientVisitId" ng-options="item.VTID as item.Description for item in PatientVisitList" ng-change="HideErrorMessage('PatientVisitId',PatientRegistration.PatientVisitId);"></select>
+                            </td>
+
+                            <td width="210">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblRemark}}</label>
+                                <textarea type="text" class="form-control" id="" placeholder="{{lblRemark}}"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-md-8 text-left">
+                    <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                        {{message}}
+                    </div>
+                    <div class="text-Red">
+                        {{lblcPleasefillmandatoryfields}}
+                    </div>
+                </div>
+                <div class="col-md-4 text-right">
+                    <button class="btn btn-primary modal-save" type="button" id="" data-ng-click="addNewAppointment(PatientSearchText,RegisteredPatient.FirstName,RegisteredPatient.LastName,PatientRegistration.PatientGenderId,PatientselectedCountry,PatientRegistration.PatientMobileNumber,PatientRegistration.PatientVisitId,Remarks,selectedMRNo,PatientRegistration.PatientGenderIdError,PatientRegistration.DOB,IsNewPatient,vm.selectedUnitName)">{{btnSave}}</button>
+                    <button class="btn btn-default" type="button" id="" ng-click="CancelClicked()">{{btnCancel}}</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

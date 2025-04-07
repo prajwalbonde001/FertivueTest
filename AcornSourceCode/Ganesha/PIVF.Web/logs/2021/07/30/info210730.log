@@ -1,0 +1,16 @@
+2021-07-30 10:57:03.2630|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:palash,UnitID:2
+2021-07-30 10:57:03.2630|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:palash,UnitID:2
+2021-07-30 10:57:03.6110|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:palash,UnitID:2
+2021-07-30 10:57:03.6110|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:palash,UnitID:2
+2021-07-30 10:57:04.0806|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:palash,UnitID:2
+2021-07-30 10:57:04.0806|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:palash,UnitID:2
+2021-07-30 10:57:04.6112|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:palash,UnitID:2
+2021-07-30 10:57:04.6112|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:palash,UnitID:2
+2021-07-30 10:57:05.1242|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:palash,UnitID:2
+2021-07-30 10:57:05.1242|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:palash,UnitID:2
+2021-07-30 10:57:05.3280|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:palash,UnitID:2
+2021-07-30 10:57:05.3280|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:palash,UnitID:2
+2021-07-30 10:57:05.4429|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:palash,UnitID:2
+2021-07-30 10:57:05.4429|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:palash,UnitID:2
+2021-07-30 10:57:05.4751|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:palash,UnitID:2
+2021-07-30 10:57:05.4751|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:palash,UnitID:2

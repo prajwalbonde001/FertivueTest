@@ -1,0 +1,274 @@
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.AssemblyReference.cache
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.cache
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+C:\Users\User\Downloads\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csprojResolveAssemblyReference.cache
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csprojResolveAssemblyReference.cache
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csprojResolveAssemblyReference.cache
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csprojResolveAssemblyReference.cache
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csprojResolveAssemblyReference.cache
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+D:\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csprojResolveAssemblyReference.cache
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csprojResolveAssemblyReference.cache
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csprojResolveAssemblyReference.cache
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\Newtonsoft.Json.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\Newtonsoft.Json.xml
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\Newtonsoft.Json.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\Newtonsoft.Json.xml
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources_es.resources
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.Core.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.S3.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.Core.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.Core.xml
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.S3.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.S3.xml
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csprojResolveAssemblyReference.cache
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.pdb
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.Core.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.S3.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\Newtonsoft.Json.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.Core.pdb
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.Core.xml
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.S3.pdb
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\AWSSDK.S3.xml
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\bin\Debug\Newtonsoft.Json.xml
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.resources
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources_es.resources
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.de.resources
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.hi.resources
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.Resources.mr.resources
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.csproj.GenerateResource.Cache
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\de\PIVF.LanguageResource.resources.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\hi\PIVF.LanguageResource.resources.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\mr\PIVF.LanguageResource.resources.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\PIVF.LanguageResource\obj\Debug\PIVF.LanguageResource.pdb

@@ -1,0 +1,298 @@
+﻿@{
+    Layout = null;
+}
+<form name="frmOPU" novalidate ng-controller="OPUCtr">
+    <!-- cycles links -->
+    <div class="cycleLinks" style="position: relative;
+        z-index: 14;">
+        <ul>
+            <li ng-click="Navigate('CycleOverview')">@PIVF.LanguageResource.Resources.lblSOverview</li>
+            <li ng-click="Navigate('StimulationChart')">@PIVF.LanguageResource.Resources.lblStimulationChart</li>
+            <li ng-click="Navigate('SemenDetails')" ng-show="configData.SemenDetail">@PIVF.LanguageResource.Resources.lblSSemenDetails</li>
+            <li ng-click="Navigate('IUI')" ng-show="configData.IUI">@PIVF.LanguageResource.Resources.lblSIUI</li>
+            <li class="active" ng-click="Navigate('OPU')" ng-show="configData.OPU">@PIVF.LanguageResource.Resources.lblSOpu</li>
+            <li ng-click="Navigate('Embrology')" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSEmbryology</li>
+            <li ng-click="Navigate('PGT');" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSPgt</li>
+
+            <li class="subMenucryo" ng-show="configData.CryoPreservation">
+                <span class="menu-title">
+                    @PIVF.LanguageResource.Resources.lblCryobank
+                    <span class="arrow"></span> <!-- Arrow added -->
+                </span>
+                <ul>
+                    <li ng-click="Navigate('OocyteVitrification')" ng-show="configData.OocyteVitrification">@PIVF.LanguageResource.Resources.lblSOocyteVitrification</li>
+                    <li ng-click="Navigate('OocyteThowing')" ng-show="configData.OocyteThawing">@PIVF.LanguageResource.Resources.lblSOocyteThawing</li>
+                    <li ng-click="Navigate('EmbryoVitrification')" ng-show="configData.EmbryoVitrification">@PIVF.LanguageResource.Resources.lblSEmbryoVitrification</li>
+                    <li ng-click="Navigate('EmbryoThowing')" ng-show="configData.EmbryoThawing">@PIVF.LanguageResource.Resources.lblSEmbryoThawing</li>
+                </ul>
+            </li>
+            <li ng-click="Navigate('EmbryoTransfer')" ng-show="configData.EmbryoTransfer">@PIVF.LanguageResource.Resources.lblSEmbryoTransfer</li>
+            <li ng-click="Navigate('Outcome')" ng-show="configData.Outcome">@PIVF.LanguageResource.Resources.lblOutcome</li>
+        </ul>
+        @*<div class="print_li"><button class="btn-link" ng-click="PrintOPU()"><span class="glyphicon glyphicon-print"></span></button></div>*@
+
+    </div>
+
+    <!-- /cycles links -->
+    @*<div class="div60"></div>*@
+    <div class="form_Content" id="" ng-init="LoadData()" style="position: relative;
+        z-index: 11;">
+        <div class="row form-horizontal">
+            <div class="col-md-12 col-lg-12 text-right">
+                <span style="color:red;font-weight:bold;font-size:medium;"><span ng-if="Message.length>0" class="text-Red">*</span>{{Message}}</span>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold" for="">@PIVF.LanguageResource.Resources.lblMedicalHistory</label>
+                    <label class="control-label col-sm-12 normalLabel" for="">
+                        {{MedicalHistory}}
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold" for="">@PIVF.LanguageResource.Resources.lblSCycleWarning</label>
+                    <label class="control-label col-sm-12 normalLabel" for="">
+                        {{CycleWarning}}
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold" for="">@PIVF.LanguageResource.Resources.lblSTrigger</label>
+                    <label class="control-label col-sm-12 normalLabel" for="">
+                        {{OPU.TriggerDate |date:'dd-MMM-yyyy'}}  <span ng-if="OPU.TriggerDate!=null && OPU.TriggerTime!=null">|</span>{{OPU.TriggerTime|date:'HH:mm'}} <span ng-if="Dose!=''">|</span>{{Dose}}
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <div class="col-md-7 col-sm-6 col-lg-6">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                @PIVF.LanguageResource.Resources.lblSStartDate
+                            </label>
+                            <div class="col-md-12 col-sm-12 col-lg-12 p-r-0">
+                                <div class="input-group date" ng-class="{'Invalid':frmOPU.dtStartDate.$invalid && frmOPU.dtStartDate.$dirty }">
+                                    <input type="text" class="form-control" id="dtStartDate" name="dtStartDate" ng-model="OPU.StartDate" ng-change="ChangeTimeAsDate(1)" ng-required="true" placeholder="dd-MMM-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptionsStartDate" alt-input-formats="altInputFormats" ng-disabled="OPU.IsFinalize">
+                                    <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-lg-6">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblSTime</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':OPU.StartTime=='undefine' || OPU.StartTime=='' }">
+                                <div uib-timepicker ng-model="OPU.StartTime" class="timeCss" hour-step="1" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false" tabindex="2" ng-disabled="OPU.IsFinalize"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    @*<div class="col-md-7 col-sm-6 col-lg-6">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                    End Date
+                                </label>
+                                <div class="col-md-12 col-sm-12 col-lg-12 p-r-0">
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control" id="" ng-model="OPU.EndDate" ng-change="ChangeTimeAsDate(2)" placeholder="dd-MMM-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats">
+                                        <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="col-md-5 col-sm-6 col-lg-6">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""> @PIVF.LanguageResource.Resources.lblEndTime</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div uib-timepicker ng-model="OPU.EndTime" class="timeCss" hour-step="1" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false" tabindex="2" ng-disabled="OPU.IsFinalize"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSClinician
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlClinician" name="ddlClinician" ng-model="OPU.ClinicianID" ng-class="{select:OPU.ClinicianID== 0 && frmOPU.ddlClinician.$dirty}" ng-options="item.ID as item.Description for item in ClinicistList" ng-disabled="OPU.IsFinalize"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblSEmbryologist</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlEmbList" name="ddlEmbList" ng-model="OPU.EmbryologistID" ng-class="{select:OPU.EmbryologistID== 0 && frmOPU.ddlEmbList.$dirty}" ng-options="item.ID as item.Description for item in EmbryologistAndrologist" ng-disabled="OPU.IsFinalize"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSWitnessembryologist
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlWitEmbList" name="ddlWitEmbList" ng-model="OPU.WitEmbryologistID" ng-options="item.ID as item.Description for item in EmbryologistAndrologist" ng-disabled="OPU.IsFinalize"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSAnesthesist
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlAnesthetistList" name="ddlAnesthetistList" ng-model="OPU.AnesthetistID" ng-class="{select:OPU.AnesthetistID== 0 && frmOPU.ddlAnesthetistList.$dirty}" ng-options="item.ID as item.Description for item in ClinicistList" ng-disabled="OPU.IsFinalize"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblStypeofanesthesia
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlAnesthetiaTypeList" name="ddlAnesthetiaTypeList" ng-model="OPU.AnesthetiaTypeID" ng-options="item.ID as item.Description for item in AnesthetiaTypeList" ng-disabled="OPU.IsFinalize"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 m-b-20">
+                <div class="form-group m-t-20">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label">
+                        <input type="checkbox" ng-model="OPU.IsPreAnesthesiaChecked" ng-disabled="OPU.IsFinalize"> @PIVF.LanguageResource.Resources.lblSpac
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSnoofneedles
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" ng-model="OPU.NeedlesUsed" ng-init="i=[0,1,2,3,4];init();" ng-options="x for x in i" ng-disabled="OPU.IsFinalize"></select>
+                    </div>
+                </div>
+            </div>@*<div class="clearfix"></div>*@
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblStypeofneedle
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlNeedleTypeList" name="ddlNeedleTypeList" ng-model="OPU.TypeOfNeedleID" ng-options="item.ID as item.Description for item in NeedleTypeList" ng-disabled="OPU.IsFinalize"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="form-group m-t-29">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlNeedleSubTypeList" name="ddlNeedleSubTypeList" ng-model="OPU.NeedleSubTypeID" ng-options="item.ID as item.Description for item in NeedleSubTypeList" ng-disabled="OPU.IsFinalize"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSlevelofdifficulty
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlLvlOfDiffList" name="ddlLvlOfDiffList" ng-model="OPU.LevelOfDifficultyID" ng-options="item.ID as item.Description for item in DifficultyLevelList" ng-disabled="OPU.IsFinalize"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblProcedurefindings
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" id="" ng-model="OPU.ProcedureFindings" maxlength="200" ng-disabled="OPU.IsFinalize">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblRemarks
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" id="" ng-model="OPU.Remark" maxlength="200" ng-disabled="OPU.IsFinalize" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSoptimumfollicles
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-lg-6">
+                        <input type="text" class="form-control text-right" id="" ng-model="OPU.OptimumFolicleLeftOvry" multi-validation="NotZero" maxlength="2" placeholder="@PIVF.LanguageResource.Resources.lblLeftOvary" ng-disabled="OPU.IsFinalize">
+                        <label class="control-label small_label" for="">@PIVF.LanguageResource.Resources.lblLeftOvary</label>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6">
+                        <input type="text" class="form-control text-right" id="" ng-model="OPU.OptimumFolicleRightOvry" multi-validation="NotZero" maxlength="2" placeholder="@PIVF.LanguageResource.Resources.lblRightOvary" ng-disabled="OPU.IsFinalize">
+                        <label class="control-label small_label" for="">@PIVF.LanguageResource.Resources.lblRightOvary</label>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6">
+                        <input type="text" class="form-control text-right" id="" ng-model="OPU.OocytesRetrieved" multi-validation="NotZero" maxlength="2" placeholder="@PIVF.LanguageResource.Resources.lblSoocytesretreived" ng-disabled="OPU.IsFinalize">
+                        <label class="control-label small_label" for="">@PIVF.LanguageResource.Resources.lblSoocytesretreived</label>
+                    </div>
+                </div>
+            </div><div class="clearfix"></div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label colorRed">
+                        <input type="checkbox" ng-model="OPU.IsCycleCancel" ng-init="OPU.IsCycleCancel=false" ng-click="CycleCancel()" ng-disabled="OPU.IsFinalize"> @PIVF.LanguageResource.Resources.lblScancelcycle
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" id="" maxlength="500" ng-readonly="OPU.IsCycleCancel==false" ng-model="OPU.Reason" paceholder="Reason" maxlength="200" ng-disabled="OPU.IsFinalize" />
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label">
+                        @PIVF.LanguageResource.Resources.lblSCancelledreason
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlCancelReasonList" ng-disabled="!OPU.IsCycleCancel" name="ddlCancelReasonList" ng-model="OPU.CancelReasonID" ng-options="item.ID as item.Description for item in CancelReasonList"></select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 ">
+                <div class="form-group m-t-20">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label">
+                        <input type="checkbox" ng-model="OPU.CloseCycleCancellation" ng-disabled="OPU.IsFinalize"> @PIVF.LanguageResource.Resources.lblSClosecyclecancellation
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save Cancle Buttons -->
+    <div class="row form-horizontal text-right m-t-10" style="position: relative;
+        z-index: 11;">
+        @*<div class="col-md-9 col-lg-10 text-right">
+                <span style="color:red;font-weight:bold;font-size:medium;"><span ng-if="Message.length>0" class="text-Red">*</span>{{Message}}</span>
+            </div>*@
+        <div class="col-md-12 col-lg-12">
+            <label class="checkbox-inline p-t-0"><input type="checkbox" id="inlineCheckbox1" ng-model="OPU.IsFinalize" value="option1" ng-disabled="OPU.IsFinalize"> @PIVF.LanguageResource.Resources.lblFinalize</label>
+            <button class="btn btn-primary" type="button" id="btnSaveOPU" value="" ng-disabled="btnSaveDisabled" ng-click="SaveUpdateOPU(OPU)">@PIVF.LanguageResource.Resources.btnSave</button> @*btnSaveDisabled==true*@
+            @*<button class="btn btn-primary" type="button" id="" value="" ng-click="Cancel()">Cancel</button>*@
+        </div>
+    </div>
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+</form>

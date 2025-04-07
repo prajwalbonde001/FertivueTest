@@ -1,0 +1,226 @@
+﻿@{
+    Layout = null;
+}
+
+<section ng-controller="StaffController" ng-init="GetGenderList(true);GetMarryStatusList(true);GetDesignationList(true);GetDepartmentList();GetStaffList('',0,'',0)" ng-cloak>
+
+    <div class="searchContainer" ng-init="show=true">
+        <div class="customSearchTab">
+            <a href="" class="searchTab1" ng-class="{active:show}" ng-click="show=true"><i class="fa fa-search" aria-hidden="true"></i>@PIVF.LanguageResource.Resources.btnSearch</a>
+            <a class="searchTab2" ng-class="{active:!show}" role="button" data-toggle="collapse" ng-click="show=false" aria-expanded="true" aria-controls="AdvanceSearchBox">
+                <i class="fa fa-search" aria-hidden="true"></i> <span class="CollapseTitleTxt">@PIVF.LanguageResource.Resources.lblAdvanceSearch</span>
+            </a>
+
+        </div>
+        <!-- Main Search Box Start -->
+
+        <div class="MainSearchBoxContainer" ng-show="show">
+            <div class="BlackSearchBoxSection">
+                <div class="SearchInputGroupContainer">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="InputBoxDiv">
+                                <input class="form-control Capitalize" type="text" ng-keypress="($event.which === 13)?GetStaffList(SL.Name,SL.DeptID,SL.MobNo,SL.EID,0,'','','',0,0):0;ClearAdvanceSearch()" ng-model="SL.Name" id="company_code" multi-validation="AlphaArrowBkSpDelSpDCFSlash" placeholder="@PIVF.LanguageResource.Resources.lblFirstName / @PIVF.LanguageResource.Resources.lblLastName" tabindex="1" />
+                            </div>
+                        </div>
+                        @*<div class="col-sm-3">
+                                <div class="InputBoxDiv">   ng-keypress="($event.which === 13)?GetStaffList(SL.Name,SL.DeptID,SL.MobNo,SL.EID,0,'','','',0,0):0"
+                                    <input class="form-control " type="text" ng-model="SL.LastName" id="" placeholder="Last Name">
+                                </div>
+                            </div>*@
+                        @*<div class="col-sm-3">
+                                <div class="InputBoxDiv">
+                                    <select class="form-control" id="MSID" ng-model="SL.DegID" ng-options="item.DegID as item.Description for item in DegList"></select>
+                                </div>
+                            </div>*@
+                        <div class="col-sm-3">
+                            <div class="InputBoxDiv">
+                                <select class="form-control" id="MSID" ng-model="SL.DeptID" ng-change="GetStaffList(SL.Name,SL.DeptID,SL.MobNo,SL.EID,0,'','','',0,0);ClearAdvanceSearch()" ng-options="item.ID as item.Description for item in DepartmentList" tabindex="2"></select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="InputBoxDiv">
+                                <input class="form-control alignRight" type="text" ng-model="SL.MobNo" ng-keypress="($event.which === 13)?GetStaffList(SL.Name,SL.DeptID,SL.MobNo,SL.EID,0,'','','',0,0):0;ClearAdvanceSearch()" id="" multi-validation="NumericArrowBkSpDelSpDCFSlash" placeholder="@PIVF.LanguageResource.Resources.lblMobNo / @PIVF.LanguageResource.Resources.lblAltMob" tabindex="3">
+                            </div>
+                        </div>
+                        <div class="col-sm-3" ng-hide="true">
+                            @*ng-hide=true //added by AniketK on 08Nov2019*@
+                            <div class="InputBoxDiv">
+                                <input class="form-control alignRight" type="text" ng-model="SL.EID" id="" ng-keypress="($event.which === 13)?GetStaffList(SL.Name,SL.DeptID,SL.MobNo,SL.EID,0,'','','',0,0):0;ClearAdvanceSearch()" placeholder="@PIVF.LanguageResource.Resources.lblEmpNo" tabindex="4">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <button id="" type="button" class="btn btn-primary" ng-keypress="($event.which === 13)?GetStaffList(SL.Name,SL.DeptID,SL.MobNo,SL.EID,0,'','','',0,0):0;ClearAdvanceSearch()" ng-click="GetStaffList(SL.Name,SL.DeptID,SL.MobNo,SL.EID,0,'','','',0,0);ClearAdvanceSearch()" tabindex="5"> @PIVF.LanguageResource.Resources.btnSearch</button>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="SearchBtnContainer">
+                        <div class="InputBoxDiv">
+                            <!- -ng-disabled="!(SL.Name || SL.DeptID!=0 || SL.MobNo || SL.EID) ? true :false"- ->
+
+                        </div>
+                    </div>*@
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- Main Search Box End-->
+        <!-- Advance Search Box Start -->
+        <div class="MainSearchBoxContainer" ng-show="show==false">
+            <div class="BlackSearchBoxSection">
+                <div class="SearchInputGroupContainer">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="InputBoxDiv">
+                                <select class="form-control" id="MSID" ng-model="SL.DegID" ng-change="GetStaffList('',0,'',0,SL.DegID,SL.Qua,SL.Exp,SL.EmailID,SL.MID,SL.GId);ClearSearch()" ng-options="item.DegID as item.Description for item in DegList" tabindex="6"></select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="InputBoxDiv">
+                                <input class="form-control Capitalize" type="text" ng-model="SL.Qua" ng-keypress="($event.which === 13)?GetStaffList('',0,'',0,SL.DegID,SL.Qua,SL.Exp,SL.EmailID,SL.MID,SL.GId):0;ClearSearch()" id="company_code" allow-pattern="([a-z\.\,\/\b\s])" placeholder="@PIVF.LanguageResource.Resources.lblQualification" tabindex="7">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="InputBoxDiv">
+                                <input class="form-control Capitalize" ng-model="SL.Exp" type="text" ng-keypress="($event.which === 13)?GetStaffList('',0,'',0,SL.DegID,SL.Qua,SL.Exp,SL.EmailID,SL.MID,SL.GId):0 ; ClearSearch()" id="" allow-pattern="([a-z\d\.\,\/\b\s])" placeholder="@PIVF.LanguageResource.Resources.lblExperience" tabindex="8">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="InputBoxDiv">
+                                <input class="form-control Capitalize" ng-class="{'select':frmNewStaff.txtEmail.$touched && result==false}" ng-keyup="ValidateEmail(SL.EmailID)" ng-keypress="($event.which === 13)?GetStaffList('',0,'',0,SL.DegID,SL.Qua,SL.Exp,SL.EmailID,SL.MID,SL.GId):0 ;ClearSearch()" type="text" ng-model="SL.EmailID" id="" placeholder="@PIVF.LanguageResource.Resources.lblEmailId" tabindex="9">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="InputBoxDiv">
+                                <select class="form-control" id="MSID" ng-model="SL.MID" ng-change="GetStaffList('',0,'',0,SL.DegID,SL.Qua,SL.Exp,SL.EmailID,SL.MID,SL.GId);ClearSearch()" ng-options="item.MaritalStatusId as item.MSDescription for item in MaritalStatusList" tabindex="10"></select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="InputBoxDiv">
+                                <select class="form-control" id="MSID" ng-model="SL.GId" ng-change="GetStaffList('',0,'',0,SL.DegID,SL.Qua,SL.Exp,SL.EmailID,SL.MID,SL.GId);ClearSearch()" ng-options="item.GenderId as item.GenderDescription for item in GenderList" tabindex="11"></select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="SearchBtnContainer AdvSearchBtnContainer">
+                    <div class="InputBoxDiv">
+                        @*ng-disabled="!(result || SL.Qua || SL.DegID!=0 || SL.MID !=0 || SL.Exp || SL.GId !=0) ? true :false"*@
+                        <button id="" type="button" class="btn btn-primary " ng-click="GetStaffList('',0,'',0,SL.DegID,SL.Qua,SL.Exp,SL.EmailID,SL.MID,SL.GId);ClearSearch()" ng-keypress="($event.which === 13)?GetStaffList('',0,'',0,SL.DegID,SL.Qua,SL.Exp,SL.EmailID,SL.MID,SL.GId):0;ClearSearch()" tabindex="12">@PIVF.LanguageResource.Resources.btnSearch</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Advance Search Box End-->
+        </div>
+    </div>
+    <section class="form_Content m-t-10">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6 find_title">
+                        <span>@PIVF.LanguageResource.Resources.Total_Count :</span>
+                        <span class="total_count">{{TotalRecords}}</span>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button class="btn btn-link" title="@PIVF.LanguageResource.Resources.btnPrint" ng-click="exportToExcel('#tableToExport')" ng-hide="true"> <span class="glyphicon glyphicon-print"></span></button>
+                        <button class="btn-link p-r-0" title="@PIVF.LanguageResource.Resources.btnNew" type="button" id="" value="Add" ng-click="NewStaffPge()"><span class="glyphicon glyphicon-plus"></span></button>
+                        @*<button class="btn btn-primary" type="button" id="" value="Add" ng-click="NewStaffPge()">@PIVF.Gemino.LanguageResource.Resources.btnNew </button>*@
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="table-responsive fixed_header" id="tableToExport" style="min-height:320px;">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>@PIVF.LanguageResource.Resources.lblName</th>
+                                <th>@PIVF.LanguageResource.Resources.lblGender</th>
+                                <th>@PIVF.LanguageResource.Resources.lblDesignation</th>
+                                <th>@PIVF.LanguageResource.Resources.lblDepartment</th>
+                                <th>@PIVF.LanguageResource.Resources.lblClinic</th>
+                                <th class="text-center">@PIVF.LanguageResource.Resources.Active</th>
+                            </tr>
+                        </thead>
+                        <tbody style="height: calc(100vh - 440px);">
+                            <tr ng-repeat="item in StaffList">
+                                <td align="center"><button type="button" label="@PIVF.LanguageResource.Resources.btnEdit" class="btn btn_edit" ng-click="OnEditStaffPage(item)"></button></td>
+                                <td class="Capitalize">{{item.FirstName}} {{item.LastName}}</td>
+                                <td>{{item.Gender}}</td>
+                                <td>{{item.Designation}}</td>
+                                <td>{{item.Department}}</td>
+                                <td>{{item.Clinic}}</td>
+                                <td align="center" style="cursor: pointer;">
+                                    <span type="button" ng-model="item.Status" ng-class="{ActiveIcon:item.Status==true,DeActiveIcon:item.Status==false}" ng-click="ActivateDeactivateStaff(item)"></span>
+                                </td>
+                                @*<td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>*@
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                    </div>
+                </div>
+            </div>
+
+            @* <div class="col-sm-12">
+                                <div class="row">
+                                   <div class="col-md-6 col-sm-6 page">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination pagination-sm pull-left">
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                        <span class="sr-only">Previous</span>
+                                                    </a>
+                                                </li>
+                                                <li class="active"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                        <span class="sr-only">Next</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 find_btn">
+                            <div class="pull-right">
+                                <button class="btn btn-primary btn_shadow" type="button" id=""><span class="glyphicon glyphicon-edit"></span>Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+            <!-- Button group row -->
+        </div>
+    </section>
+
+</section>
+<script type="text/ng-template" id="modReason">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" ng-click="ReasonCancel();" aria-label="@PIVF.LanguageResource.Resources.btnClose"><span aria-hidden="true">&times;</span></button>
+        <h5 class="modal-title">@PIVF.LanguageResource.Resources.lblReason</h5>
+    </div>
+    <div class="modal-body">
+        <div class="row form-horizontal">
+            @*<label class="col-md-12 col-lg-12 control-label" for="company_code">@PIVF.Gemino.LanguageResource.Resources.lblReason</label>*@
+            <div class="col-md-12 col-lg-12">
+                <textarea class="form-control Capitalize" type="text" name="Reason"
+                          ng-model="Reason" maxlength="100" ng-required="true" tabindex="1"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer text-right">
+        <!--ng-disabled="!(Reason)"-->
+        <button class="btn btn-primary" type="button" id="" ng-click="SaveReason(Reason)">@PIVF.LanguageResource.Resources.btnSave</button> @*ng-click="Reason?ReasonOk(Reason):0"*@  @*ng-click="Reason?ReasonOk(Reason):SaveReason(Reason)"*@
+        <button class="btn btn-default " type="button" id="" ng-click="ReasonCancel();">@PIVF.LanguageResource.Resources.btnCancel</button>
+    </div>
+</script>

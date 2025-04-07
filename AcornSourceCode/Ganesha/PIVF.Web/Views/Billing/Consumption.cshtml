@@ -1,0 +1,404 @@
+﻿
+@{
+    Layout = null;
+
+
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<style>
+    .is-invalid {
+        border: 1px solid red;
+        /*background-color: #ffe6e6;*/
+    }
+
+    .custom-xl-modal .modal-dialog {
+        width: 70%; /* Set the initial width to 95% */
+        max-width: none; /* Remove the max-width restriction */
+    }
+
+    .radio-search-container {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Space between radio buttons and search box */
+    }
+
+    .radio-group {
+        display: flex;
+        gap: 43px; /* Space between individual radio buttons */
+    }
+
+    .search-box input {
+        width: 300px;
+    }
+
+    .table-responsive {
+        margin: 20px 0; /* Add some margin around the table */
+        border: 1px solid #ddd; /* Add a border for better definition */
+        border-radius: 8px; /* Slightly rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    }
+
+    table {
+        background-color: #fff; /* White background for table */
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    thead th {
+        background-color: #f5f5f5; /* Light grey header */
+        color: #333; /* Darker text for contrast */
+        font-weight: bold;
+        text-align: left;
+        padding: 12px; /* Add padding for readability */
+        border-bottom: 2px solid #ddd;
+    }
+
+    tbody td {
+        padding: 12px; /* Add consistent padding */
+        border-bottom: 1px solid #eee; /* Subtle divider */
+        vertical-align: middle; /* Center align content vertically */
+    }
+
+    .form-control {
+        height: 36px; /* Consistent input height */
+        font-size: 14px; /* Readable font size */
+    }
+
+    .btn-sm {
+        padding: 6px 8px; /* Compact button size */
+        font-size: 14px;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: #fff;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker on hover */
+        }
+
+    .trash-icon {
+        font-size: 16px; /* Appropriate icon size */
+        color: #dc3545; /* Match danger button color */
+        cursor: pointer;
+    }
+
+        .trash-icon:hover {
+            color: #c82333; /* Slightly darker on hover */
+        }
+
+    #SearchAd1:hover {
+        background: transparent !important;
+        color: grey !important;
+        border: none !important;
+    }
+</style>
+<div ng-controller="ConsumptionCtrl">
+    <div class="form_Content form-horizontal" style="min-height: 195px;">
+        <div class="row" ng-init="LoadPatientBillList()">
+            <div class="form-group radio-search-container">
+                <!-- Radio Buttons -->
+                <div class="radio-group">
+                    <div class="radio" style="padding-left:60px">
+                        <label>
+                            <input type="radio" name="clinicOption" ng-model="PatientBill.SelectedOption" value=1 />
+                            @PIVF.LanguageResource.Resources.lblStore
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="clinicOption" ng-model="PatientBill.SelectedOption" value=2 />
+                            @PIVF.LanguageResource.Resources.lblPatient
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Search Box -->
+                <div class="form-group searchpatient">
+                    <input type="text"
+                           class="form-control"
+                           id="txtfullName"
+                           autocomplete="off"
+                           ng-blur="model=''"
+                           placeholder="@PIVF.LanguageResource.Resources.SearchCheckedPatient"
+                           name="txtUsrName"
+                           ng-model="searchText"
+                           ng-change="fetchCheckedInPatients(searchText)"
+                           uib-typeahead="patient as (patient.FirstName + ' ' + patient.LastName + ' ' + '(' + patient.ContactNo1 + ' | ' + patient.MRNo + ')') for patient in patientList | filter:$viewValue | limitTo:8"
+                           typeahead-on-select="onSelectPatient($item)"
+                           style="margin-top: 15px;margin-left: 75px;"
+                           autofocus>
+                </div>
+            </div>
+
+            <div class="row" ng-show="PatientDetail.PatientMRNo">
+                <div class="col-sm-6">
+                    <div class="PatientInfoWrapper m-b-5">
+                        <div class="BlueWrap" style="min-height:80px;">
+                            <div class="ProfileImgWrap">
+                                @* <img src="../images/Female_default.jpg" class="profile">*@
+                                @*<img src="../images/Male_default.jpg" class="profile">*@
+                                <img ng-if="PatientDetail.PatientGender=='Female' " ng-src="../images/Female_default.jpg" style="width:100%">
+                                <img ng-if="PatientDetail.PatientGender=='Male' " ng-src="../images/Male_default.jpg" style="width:100%">
+                            </div>
+                            <div class="ProfileInfoWrap">
+                                <p class="m-b-0">
+                                    <span class="Capitalize PatientName"> {{PatientDetail.PatientName}}</span>
+                                    <span class="MRN-Green">
+                                        <span> {{PatientDetail.PatientMRNo}}</span>
+                                    </span>
+
+                                    <span class="patient-gander p-l-5"> {{PatientDetail.PatientGender}}  / </span>
+                                    <span class="patient-gander">{{PatientDetail.PatientAge}} @PIVF.LanguageResource.Resources.lblYears</span> @*Years ::Modified by swatih for localization 22/7/2020*@
+                                    <span class="patient-gander iconInfoLine">
+                                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                        <span class="LinkName">{{PatientDetail.PatientMobileNo}}</span>
+                                    </span>
+
+                                    <ul class="profile-data">
+                                        <li style="width:100%;" ng-show="PatientDetail.PatientAddress">
+                                            <span class="patient-gander p-l-0">@PIVF.LanguageResource.Resources.lblAddress : {{PatientDetail.PatientAddress}}</span>@*Address ::Modified by swatih for localization 22/7/2020*@
+                                        </li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" ng-hide="hideWhenIndividual">
+                    <div class="PatientInfoWrapper m-b-5">
+                        <div class="BlueWrap" style="min-height:80px;">
+                            <div class="ProfileImgWrap">
+                                @*<img src="../images/Female_default.jpg" class="profile">*@
+                                @*<img src="../images/Male_default.jpg" class="profile">*@
+                                <img ng-if="PatientDetail.PartnerGender=='Female' " ng-src="../images/Female_default.jpg" style="width:100%">
+                                <img ng-if="PatientDetail.PartnerGender=='Male' " ng-src="../images/Male_default.jpg" style="width:100%">
+                            </div>
+                            <div class="ProfileInfoWrap">
+                                <p class="m-b-0">
+                                    <span class="Capitalize PatientName"> {{PatientDetail.PartnerName}}  </span>
+                                    <span class="MRN-Green">
+                                        <span> {{PatientDetail.PartnerMRNo}}</span>
+                                    </span>
+                                    <span class="patient-gander p-l-5"> {{PatientDetail.PartnerGender}} / </span>
+                                    <span class="patient-gander">{{PatientDetail.PartnerAge}} @PIVF.LanguageResource.Resources.lblYears </span> @*Years ::Modified by swatih for localization 22/7/2020*@
+                                    <span class="patient-gander iconInfoLine">
+                                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                        <span class="LinkName">{{PatientDetail.PartnerMobileNo }}</span>
+                                    </span>
+                                    <ul class="profile-data">
+                                        <li style="width:100%;" ng-show="PatientDetail.PartnerAddress">
+                                            <span class="patient-gander p-l-0">@PIVF.LanguageResource.Resources.lblAddress : {{PatientDetail.PartnerAddress}}</span>@*Address ::Modified by swatih for localization 20/7/2020*@
+                                        </li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" style="display: ruby;
+    margin-top: 20px;
+    padding: 14px;
+    justify-content: center;
+    /* position: relative; */
+">
+                <div class="col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="">
+                            @PIVF.LanguageResource.Resources.lblStore
+                        </label>
+                        <div class="col-md-12 col-lg-12">
+                            <select class="form-control"
+                                    id="ddlBankList"
+                                    name="ddlBankList"
+                                    ng-model="PatientBill.StoreID"
+                                    ng-options="item.ID as item.Description for item in storelist | filter: { Description: '!null' }">
+                                <option value="" disabled>@PIVF.LanguageResource.Resources.tlblSelectStore</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblItemName</label>@*First Name :: Modified by swatih for localization 29/7/2020*@
+                        <div class="col-md-12 col-lg-12">
+                            <input type="text" class="form-control Capitalize"
+                                   ng-change="fetchitemname(Search)"
+                                   uib-typeahead="patient as (patient.ItemName + ' | ' + patient.ItemCode ) for patient in itemname | limitTo:8" typeahead-on-select="onSelectItem($item)"
+                                   autofocus
+                                   id="txtfullName" autocomplete="off" ng-model="Search" placeholder="@PIVF.LanguageResource.Resources.lblItemName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="">
+                            @PIVF.LanguageResource.Resources.lblBatch (@PIVF.LanguageResource.Resources.lblBatchCode | @PIVF.LanguageResource.Resources.lblExpiryDate | @PIVF.LanguageResource.Resources.lblAvailableQty | @PIVF.LanguageResource.Resources.lblUOM)
+                        </label>
+                        <div class="col-md-12 col-lg-12">
+                            <select class="form-control Capitalize"
+                                    id="ddlBatch"
+                                    ng-model="SelectedBatch"
+                                    ng-options="batch as (batch.BatchCode + ' | ' + (batch.ExpiryDate | date:'yyyy-MMM-dd') + ' | ' + batch.AvailableQuantity + ' ' + batch.UOM) for batch in BatchCode track by batch.BatchCode"
+                                    ng-change="onSelectbatch(SelectedBatch)">
+                                <option value="" disabled>@PIVF.LanguageResource.Resources.tlblSelectBatch</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblQtyInput</label>@*Last Name :: Modified by swatih for localization 29/7/2020*@
+                        <div class="col-md-12 col-lg-12">
+                            <input type="text" class="form-control Capitalize" id="" ng-model="PatientBill.Quantity" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblUOM</label>@*Clinic :: Modified by swatih for localization 29/7/2020*@
+                        <div class="col-md-12 col-lg-12">
+                            <select class="form-control" id="ddlBankList" name="ddlBankList" ng-model="PatientBill.UOM"
+                                    ng-options="item.ID as item.Description for item in UnitofMeasure">
+                                <option value="" disabled>@PIVF.LanguageResource.Resources.tlblSelectBatch</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12" style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                    <!-- Search Button -->
+                    <button id="SearchAd"
+                            type="button"
+                            class="btn btn-primary"
+                            style="position: relative; top: -68px; margin-right:8%"
+                            ng-click="addItem()">
+                        @PIVF.LanguageResource.Resources.btnAdd
+                    </button>
+                </div>
+
+                <div class="col-md-12 col-lg-12">
+                    <!-- Reset Icon Button -->
+                    <button id="SearchAd1"
+                            type="button"
+                            class="btn btn-primary"
+                            style="position: relative;top: -104px;margin-left: 93%;/* left: 0; */display: flex;align-items: center;background: transparent;color: grey; border:none"
+                            ng-click="resetFields()">
+                        <i class="fa fa-sync-alt" aria-hidden="true" style="margin-right: 5px;"></i>
+
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="table-responsive fixed_header" id="tableToExport">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>@PIVF.LanguageResource.Resources.lblItemName</th>
+                                <th>@PIVF.LanguageResource.Resources.lblBatch</th>
+                                <th>@PIVF.LanguageResource.Resources.lblQtyInput</th>
+                                <th>@PIVF.LanguageResource.Resources.lblTUOM</th>
+                                <th>@PIVF.LanguageResource.Resources.lbBUOM</th>
+                                <th>@PIVF.LanguageResource.Resources.lblConversionFactor</th>
+                                <th>@PIVF.LanguageResource.Resources.lblCostPrice</th>
+                                <th>@PIVF.LanguageResource.Resources.lblTotalAmount</th>
+                                <th>@PIVF.LanguageResource.Resources.lblMRP</th>
+                                <th>@PIVF.LanguageResource.Resources.lblTotalMRP</th>
+                                <th>@PIVF.LanguageResource.Resources.lblRemark</th>
+                                <th>@PIVF.LanguageResource.Resources.lblActions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in BillList.ConsumptionItemDetailsList track by $index">
+                                <td>{{item.ItemName}}</td>
+                                <td>
+                                    <select class="form-control"
+                                            ng-model="item.SelectedBatch"
+                                            ng-options="batch as (batch.BatchCode + ' | ' + (batch.ExpiryDate | date:'yyyy-MMM-dd') + ' | ' + batch.AvailableQuantity + ' ' + batch.UOM) for batch in item.BatchList track by batch.BatchCode">
+                                        <option value="" disabled>@PIVF.LanguageResource.Resources.tlblSelectBatch</option>
+                                        <option ng-repeat="batch in item.BatchList"
+                                                value="{{batch.BatchCode}}"
+                                                ng-disabled="SelectedBatches.includes(batch.BatchID)">
+                                            {{batch.BatchCode + ' | ' + (batch.ExpiryDate | date:'yyyy-MMM-dd') + ' | ' + batch.AvailableQuantity + ' ' + batch.UOM}}
+                                        </option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="number" ng-keypress="restrictSpecialCharacters($event)" class="form-control"
+                                           ng-change="validateQuantity(item)" ng-model="item.Quantity" min="0" />
+                                </td>
+                                <td>
+                                    <select class="form-control" ng-model="item.BaseUOM"
+                                            ng-options="uom.ID as uom.Description for uom in item.BaseUomlist"
+                                            ng-change="updateConversionFactorByIndex(item, $index)">
+                                        <option value="" disabled>@PIVF.LanguageResource.Resources.tlblSelectBaseUOM</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-control" ng-model="item.StockUOM"
+                                            ng-options="uom.ID as uom.Description for uom in item.StockUomlist" ng-disabled="true">
+                                        <option value="" disabled>@PIVF.LanguageResource.Resources.tlblSelectStockUOM</option>
+                                    </select>
+                                </td>
+                                <td>{{item.ConversionFactor | number:2}}</td>
+                                <td>{{item.CostPrice | number:2}}</td>
+                                <td>{{item.Amount | number:2}}</td>
+                                <td>{{item.MRP | number:2}}</td>
+                                <td>{{item.TotalMRP | number:2}}</td>
+                                <td><input type="text" class="form-control" ng-model="item.Remark" /></td>
+                                <td>
+                                    <i class="fa fa-trash trash-icon" ng-click="removeItem($index)"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+
+                <!-- Total Cost Price, Total MRP, and Remark Section -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" ng-model="BillList.TotalAmount" ng-disabled="true" placeholder="@PIVF.LanguageResource.Resources.tlblTotalCostPrice" />
+                    </div>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" ng-model="BillList.TotalMRPAmount" ng-disabled="true" placeholder="@PIVF.LanguageResource.Resources.lblTotalMRP" />
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" ng-model="BillList.Remark" placeholder="@PIVF.LanguageResource.Resources.lblRemarks" />
+                    </div>
+                </div>
+
+                <!-- Total Item Count -->
+                <div class="mt-3">
+                    <a ng-model="BillList.TotalItems"> <strong>@PIVF.LanguageResource.Resources.tlblTotalItems: </strong>{{BillList.ConsumptionItemDetailsList.length}} </a>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+        @* </div> *@
+        @*<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>*@
+
+        @* <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>*@
+    </div>
+    <div class="row form-horizontal m-t-20">
+        <div class="col-lg-12 text-right">
+            <button class="btn btn-primary" type="button" id="" value="" ng-disabled="!BillList.ConsumptionItemDetailsList || !BillList.ConsumptionItemDetailsList.length" ng-click="confirmAndSave()">@PIVF.LanguageResource.Resources.btnSave</button>
+            <button class="btn btn-default" type="button" id="" value="" ng-click="Cancel()">@PIVF.LanguageResource.Resources.btnCancel</button>
+        </div>
+    </div>
+</div>

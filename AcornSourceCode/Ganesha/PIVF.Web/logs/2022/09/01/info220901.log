@@ -1,0 +1,852 @@
+2022-09-01 08:58:47.7204|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:47.7204|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:49.0317|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:49.0317|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:51.0042|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:51.0042|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:51.0297|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:51.0297|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:51.9481|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:51.9481|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:52.3044|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:52.3044|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:53.4233|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:53.4233|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:53.9279|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 08:58:53.9279|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 09:00:21.0544|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 09:00:21.0544|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 09:13:41.8823|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 09:13:41.8823|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 09:13:43.7084|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:13:43.7084|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:34.2979|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:34.2979|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:34.7617|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:34.7617|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:35.2963|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:35.2963|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:35.4593|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:35.4593|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:36.0879|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:36.0879|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:36.4947|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:36.4947|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:36.6706|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:36.6706|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:37.5291|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:15:37.5291|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:16:04.1320|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 09:16:04.1320|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 09:16:38.7412|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 09:16:38.7412|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 09:16:39.4231|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:16:39.4231|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:25.6848|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:25.6848|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:26.1360|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:26.1360|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:26.4808|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:26.4808|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:27.1185|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:27.1185|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:27.1734|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:27.1734|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:27.5004|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:27.5004|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:28.0051|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:28.0051|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:28.4862|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:28.4862|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:49.6973|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 09:29:49.6973|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 09:30:14.5463|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 09:30:14.5463|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 09:30:15.4574|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:30:15.4574|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:52.3358|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:52.3358|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:53.3694|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:53.3694|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:54.0081|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:54.0081|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:54.1632|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:54.1632|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:54.3665|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:54.3665|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:55.6218|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:55.6218|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:56.1315|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 09:40:56.1315|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 09:42:07.2656|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 09:42:07.2656|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 09:42:11.0394|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 09:42:11.0394|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 09:42:12.2477|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:42:12.2477|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:41.0751|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:41.0751|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:42.0755|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:42.0755|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:43.1239|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:43.1239|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:44.6464|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:44.6464|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:48.8109|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:48.8109|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:49.3346|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:49.3346|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:50.3418|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:50.3418|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:50.8585|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:44:50.8585|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 09:45:02.3946|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 09:45:02.3946|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 09:45:20.9019|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 09:45:20.9019|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 09:45:25.3924|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 09:45:25.3924|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:45.4130|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:45.4130|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:45.4429|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:45.4429|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:46.0844|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:46.0844|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:46.4414|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:46.4414|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:46.9750|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:46.9750|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:47.4854|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:47.4854|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:49.2102|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:49.2102|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:49.2326|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:49.2326|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:59.0809|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 10:35:59.0809|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 10:36:02.6256|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 10:36:02.6256|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 10:36:02.8228|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:36:02.8228|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:54.2508|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:54.2508|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:54.5396|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:54.5396|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:54.9746|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:54.9746|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:58.3192|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:58.3192|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:58.7774|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:58.7774|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:59.4849|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:59.4849|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:59.5475|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 10:37:59.5475|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 10:38:00.2874|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:38:00.2874|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:38:05.8491|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 10:38:05.8491|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 10:38:09.0438|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 10:38:09.0438|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 10:38:09.3492|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:38:09.3492|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:40:57.8492|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 10:40:57.8492|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 10:40:59.8689|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:40:59.8689|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:00.1410|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:00.1410|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:00.1665|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:00.1665|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:02.3069|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:02.3069|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:03.0844|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:03.0844|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:03.2065|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:03.2065|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:03.8713|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:03.8713|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:53.2322|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:53.2322|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:56.7581|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:56.7581|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:57.8430|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 10:41:57.8430|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:07.3022|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:07.3022|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:07.5720|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:07.5720|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:07.7604|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:07.7604|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:07.8068|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:07.8068|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:10.7874|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:10.7874|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:11.2758|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:11.2758|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:12.3184|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:12.3184|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:12.8629|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:12.8629|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:20.6892|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:20.6892|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:24.3418|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:24.3418|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:24.7006|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:22:24.7006|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:24.9255|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:24.9255|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:25.4192|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:25.4192|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:26.6154|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:26.6154|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:26.6513|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:26.6513|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:27.1241|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:27.1241|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:28.1366|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:28.1366|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:28.1879|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:28.1879|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:29.1540|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:29.1540|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:33.0959|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:33.0959|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:39.8757|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:39.8757|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:40.0836|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:23:40.0836|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:02.2542|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:02.2542|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:02.5320|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:02.5320|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:02.5540|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:02.5540|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:02.7668|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:02.7668|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:03.0102|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:03.0102|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:04.0587|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:04.0587|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:05.0597|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:05.0597|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:05.5735|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 12:50:05.5735|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:15.9286|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:15.9286|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:16.4410|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:16.4410|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:16.8156|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:16.8156|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:17.0980|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:17.0980|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:17.7916|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:17.7916|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:18.4652|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:18.4652|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:19.1088|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:19.1088|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:19.6136|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:19.6136|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:33.0248|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 12:51:33.0248|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 12:52:15.0686|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:52:15.0686|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:52:17.4561|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 12:52:17.4561|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:41.2748|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:41.2748|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:41.4569|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:41.4569|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:42.1569|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:42.1569|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:42.7379|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:42.7379|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:42.9866|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:42.9866|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:43.2388|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:43.2388|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:44.2591|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:44.2591|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:44.7722|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:44.7722|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:48.4333|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:48.4333|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:55.8696|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:55.8696|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:56.5352|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 12:56:56.5352|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 12:57:16.6367|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 12:57:16.6367|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 12:59:42.9565|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 12:59:42.9565|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 12:59:44.4616|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 12:59:44.4616|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:45.8784|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:45.8784|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:53.1957|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:53.1957|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:53.8560|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:53.8560|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:53.9634|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:53.9634|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:54.2254|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:54.2254|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:54.9237|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:54.9237|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:55.5988|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:55.5988|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:55.6259|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:09:55.6259|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:02.0645|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:02.0645|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:06.7553|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:06.7553|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:07.3449|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:07.3449|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:39.5026|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:39.5026|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:50.8055|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:50.8055|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:50.8635|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 13:10:50.8635|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:38.8960|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:38.8960|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:39.0345|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:39.0345|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:39.1777|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:39.1777|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:39.8646|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:39.8646|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:42.5749|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:42.5749|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:43.5914|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:43.5914|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:44.1678|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:44.1678|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:44.6344|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:44.6344|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:53.3350|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 13:16:53.3350|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 13:17:08.6674|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 13:17:08.6674|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:05:27.1047|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:05:27.1047|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:05:49.6896|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:05:49.6896|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:05:54.4844|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:05:54.4844|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:05:55.1276|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:05:55.1276|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:05:55.4108|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:05:55.4108|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:08:11.0712|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:08:11.0712|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:08:18.4878|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:08:18.4878|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:08:44.4144|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:08:44.4144|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:08:45.1124|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:08:45.1124|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:28:10.4260|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:28:10.4260|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:21.2238|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:21.2238|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:21.4524|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:21.4524|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:21.6879|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:21.6879|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:22.0158|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:22.0158|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:22.4123|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:22.4123|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:22.5851|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:22.5851|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:24.2919|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:24.2919|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:47.8291|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:29:47.8291|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:30:05.4293|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:30:05.4293|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:30:06.2580|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:30:06.2580|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:33:57.2887|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:33:57.2887|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:26.3016|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:26.3016|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:26.7031|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:26.7031|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:26.9049|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:26.9049|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:26.9369|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:26.9369|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:26.9768|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:26.9768|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:27.3327|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:27.3327|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:27.4417|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:27.4417|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:27.9484|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 14:37:27.9484|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:18.1585|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:18.1585|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:18.1995|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:18.1995|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:18.5453|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:18.5453|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:18.5643|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:18.5643|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:18.5873|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:18.5873|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:19.0720|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:19.0720|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:19.2199|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:19.2199|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:19.7216|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:19.7216|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:25.6364|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:25.6364|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:44.5310|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:44.5310|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:46.7201|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:46.7201|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:48.7560|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:38:48.7560|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.1161|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.1161|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.1951|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.1951|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.4630|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.4630|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.6234|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.6234|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.6505|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.6505|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.9593|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:22.9593|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:23.4763|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:23.4763|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:24.2125|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:24.2125|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:28.3992|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:28.3992|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:32.0953|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:32.0953|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:32.3412|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:32.3412|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:33.8782|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:40:33.8782|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:41:10.8141|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:41:10.8141|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:41:13.1678|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:41:13.1678|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:41:13.4206|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:41:13.4206|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:41:17.4791|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:41:17.4791|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:41:35.7630|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:41:35.7630|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:42:21.2443|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:42:21.2443|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:42:23.9748|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:42:23.9748|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:42:25.0692|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:42:25.0692|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:42:36.3951|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:42:36.3951|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:43:33.4336|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:43:33.4336|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:43:33.7144|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:43:33.7144|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:43:35.7613|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:43:35.7613|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:44:22.6532|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenFreezController|Controller Name:SemenFreez,Action:GET,Method:GetMaxID,User:multiplyadmin,UnitID:2
+2022-09-01 14:44:22.6532|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenFreezController|Controller Name:SemenFreez,Action:GET,Method:GetMaxID,User:multiplyadmin,UnitID:2
+2022-09-01 14:44:39.0326|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:44:39.0326|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 14:44:42.4285|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:44:42.4285|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:44:42.4955|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:44:42.4955|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 14:44:43.1631|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:44:43.1631|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:39.2836|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:39.2836|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:39.3845|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:39.3845|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:39.5514|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:39.5514|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:40.0651|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:40.0651|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:40.2660|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:40.2660|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:40.7897|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:40.7897|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:41.3055|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:41.3055|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:41.8252|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 14:50:41.8252|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 15:48:51.6024|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 15:48:51.6024|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 15:48:58.7004|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 15:48:58.7004|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 15:48:59.7208|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 15:48:59.7208|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 15:49:00.2561|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 15:49:00.2561|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 15:49:11.1505|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 15:49:11.1505|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:33.5979|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:33.5979|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:34.1206|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:34.1206|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:34.2875|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:34.2875|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:34.3244|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:34.3244|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:35.1510|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:35.1510|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:35.2029|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:35.2029|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:35.8042|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:35.8042|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:36.2300|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:36.2300|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:42.5675|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:42.5675|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:45.9722|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:45.9722|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:46.2690|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:46.2690|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:46.3869|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:46.3869|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:53.0549|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:53.0549|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:55.4214|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:55.4214|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:57.9756|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:57.9756|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:58.2435|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:58.2435|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:58.3844|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:05:58.3844|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:06:03.9402|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:06:03.9402|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:06:06.6344|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:06:06.6344|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:06:06.8396|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:06:06.8396|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:06:06.9473|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:06:06.9473|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:46.9063|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:46.9063|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:51.0487|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:51.0487|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:53.5680|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:53.5680|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:53.8688|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetSponsers,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:53.8688|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetSponsers,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:54.7423|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:54.7423|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:56.1895|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:GetBankInformation,User:multiplyadmin,UnitID:2
+2022-09-01 16:07:56.1895|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:GetBankInformation,User:multiplyadmin,UnitID:2
+2022-09-01 16:08:14.6216|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:08:14.6216|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:08:14.6465|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:GetBankInformation,User:multiplyadmin,UnitID:2
+2022-09-01 16:08:14.6465|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:GetBankInformation,User:multiplyadmin,UnitID:2
+2022-09-01 16:08:15.1272|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetSponsers,User:multiplyadmin,UnitID:2
+2022-09-01 16:08:15.1272|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetSponsers,User:multiplyadmin,UnitID:2
+2022-09-01 16:08:17.2711|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:08:17.2711|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:44.7151|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:44.7151|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:46.2685|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:46.2685|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:47.7171|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:47.7171|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:48.2351|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:48.2351|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:49.7663|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:49.7663|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:50.2322|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:50.2322|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:50.7022|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:50.7022|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:51.3557|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:51.3557|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:59.7016|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:12:59.7016|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:39.8225|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:39.8225|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:41.2926|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:41.2926|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:41.9662|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:41.9662|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:44.3006|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:44.3006|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:47.2803|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:47.2803|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:47.5941|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:47.5941|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:48.0669|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:18:48.0669|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:22:58.0040|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 16:22:58.0040|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 16:22:59.4565|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 16:22:59.4565|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 16:22:59.7558|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:22:59.7558|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:00.4617|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:00.4617|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:00.5747|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:00.5747|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:01.5603|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:01.5603|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:02.6284|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:02.6284|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:03.8024|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:03.8024|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:42.9754|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:42.9754|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:46.6437|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:46.6437|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:47.0295|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:47.0295|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:47.6821|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:47.6821|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:50.3942|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:50.3942|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:54.3209|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:54.3209|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:54.5360|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:54.5360|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:55.7223|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:23:55.7223|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:24:00.8922|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:24:00.8922|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 16:27:20.6114|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:27:20.6114|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 16:27:21.8417|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:27:21.8417|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:27:27.7369|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:27:27.7369|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:48.8349|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:48.8349|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:49.0856|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:49.0856|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:49.8447|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:49.8447|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:50.1156|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:50.1156|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:51.0172|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:51.0172|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:51.5631|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:51.5631|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:53.1042|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:53.1042|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:54.1343|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:42:54.1343|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:23.6781|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:23.6781|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:24.1121|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:24.1121|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:24.2172|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:24.2172|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:25.0822|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:25.0822|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:25.2571|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:25.2571|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:26.1466|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:26.1466|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:27.0640|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:27.0640|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:27.2559|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 16:43:27.2559|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:51.4304|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:51.4304|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:52.5373|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:52.5373|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:52.5683|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:52.5683|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:52.6323|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:52.6323|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:54.2261|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:54.2261|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:55.1472|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:55.1472|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:55.3516|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:55.3516|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:56.6534|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 17:08:56.6534|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 17:09:04.3068|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:09:04.3068|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:09:09.0626|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:09:09.0626|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:09:11.1831|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:09:11.1831|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:09:11.3441|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:09:11.3441|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:12.1552|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:12.1552|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:13.5460|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:13.5460|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:14.5244|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:14.5244|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:15.9204|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:15.9204|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:17.2559|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:17.2559|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:17.5839|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:17.5839|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:18.1501|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:18.1501|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:18.6025|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:18.6025|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:21.2700|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:21.2700|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:24.9183|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:24.9183|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:27.1361|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:27.1361|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:27.3589|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:14:27.3589|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:15:06.8493|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:15:06.8493|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:15:28.5991|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:15:28.5991|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:15:59.0980|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 322
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2022-09-01 17:16:15.6731|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:16:15.6731|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:16:21.1441|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:16:21.1441|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:16:28.8020|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:16:28.8020|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:16:47.9544|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:16:47.9544|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:17:18.1895|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 322
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2022-09-01 17:17:39.1989|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:17:39.1989|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:17:43.4942|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:17:43.4942|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:17:59.9692|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:17:59.9692|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:18:21.7050|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:18:21.7050|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:18:26.3793|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:18:26.3793|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:18:56.5871|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 322
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2022-09-01 17:18:58.2211|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:18:58.2211|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:18:58.6709|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:18:58.6709|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:19:20.0321|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:19:20.0321|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:19:50.2329|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 322
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2022-09-01 17:20:07.6967|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:20:07.6967|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:20:16.6867|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:20:16.6867|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:21:37.8860|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:21:37.8860|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiplyadmin,UnitID:2
+2022-09-01 17:22:14.5044|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:22:14.5044|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:GetPatientPersonalCharacteristics,User:multiplyadmin,UnitID:2
+2022-09-01 17:22:15.0399|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:22:15.0399|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-01 17:22:17.0487|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:22:17.0487|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:multiplyadmin,UnitID:2
+2022-09-01 17:22:47.2230|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 322
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182

@@ -1,0 +1,1359 @@
+﻿@{
+    Layout = null;
+}
+
+
+<style>
+    .SearchInputGroupContainerImp {
+        margin: 5px 205px 0 0 !important;
+    }
+
+    .SearchBtnContainerImp {
+        width: 165px !important;
+    }
+
+
+
+    .customMArgin {
+        margin-bottom: 10px;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<div ng-controller="AppointmentListCtrl" ng-init="LoadData();show=true">
+    <!-- Form Content Start -->
+    <!-- searchContainer -->
+    <div class="searchContainer">
+        <div class="customSearchTab">
+            <a href="" class="searchTab1" ng-class="{active:show}" ng-click="show=true;ClearAdvSearch;NormalSearch(Appointment)"><i class="fa fa-search" aria-hidden="true"></i>@PIVF.LanguageResource.Resources.btnSearch</a>
+            <a class="searchTab2" ng-class="{active:!show}" role="button" data-toggle="collapse" ng-click="show=false;AdvanceSearch(Appointment)" aria-expanded="true" aria-controls="AdvanceSearchBox">
+                <i class="fa fa-search" aria-hidden="true"></i> <span class="CollapseTitleTxt">@PIVF.LanguageResource.Resources.lblAdvanceSearch </span>
+            </a>
+        </div>
+
+        <!-- Default Search box start -->
+        <div class="MainSearchBoxContainer" ng-show="show">
+            <div class="BlackSearchBoxSection">
+                <div style="display:flex; gap : 20px;">
+                    @*class="SearchInputGroupContainer SearchInputGroupContainerImp"*@
+                    <div class="row" style="flex : 1">
+                        <div class="col-sm-3">
+                            <div class="InputBoxDiv">
+                                <div class="input-group date" ng-class="StartDateError == true ? 'invalid' : 'valid' ">
+                                    <input name="ScheduleStartDate" type="text" class="form-control" ng-change="HideErrorMessage('StartDate',Schedule.StartDate);" id="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.lblAppointmentDate " ng-model="Appointment.AppointmentDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="appointmentdateOption" ng-required="true" alt-input-formats="altInputFormats">
+                                    <span class="input-group-addon" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="InputBoxDiv">
+                                <select class="form-control" id="DeptID" ng-model="Appointment.DeptID" ng-change="GetDoctorListByDeptID(Appointment.DeptID)">
+                                    <option value="">@PIVF.LanguageResource.Resources.msgSelDepartment  </option>
+                                    <option ng-repeat="t in DepartmentList" value="{{t.DeptID}}">{{t.Description}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="InputBoxDiv">
+                                @*<select class="form-control" id="" ng-model="Appointment.DOCID">
+                                        <option value=""> @PIVF.LanguageResource.Resources.lblDoctor </option>
+                                        <option ng-repeat="t in DoctorCategoryList" value="{{t.ID}}" class="Capitalize">{{t.Description}}</option>
+
+                                        <option ng-repeat="t in DocList" value="{{t.ID}}">{{t.Description}}</option>
+                                    </select>*@
+                                <select class="form-control" id="" ng-model="Appointment.DOCID"
+                                        ng-options="item.ID as item.DoctorName for item in DocList">
+                                    <option value="">@PIVF.LanguageResource.Resources.msgSelDoctor</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="InputBoxDiv">
+                                <input class="form-control Capitalize" ng-model="Appointment.Name" type="text" id="" placeholder="@PIVF.LanguageResource.Resources.lblName_MRN_MobileNo">@*Name/MRN/Mobile No :: Modified by SwatiH for Localization on 10/7/2020*@
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        @*class="SearchBtnContainer SearchBtnContainerImp"*@
+                        <div class="InputBoxDiv">
+                            <button id="" type="button" class="btn btn-primary" ng-click="NormalSearch(Appointment) " aria-hidden="true">@PIVF.LanguageResource.Resources.btnSearch</button>
+                            <button id="" type="button" class="btn btn-primary" ng-click="openAppointmentPopup()">@PIVF.LanguageResource.Resources.lblvAddNew</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- Default Search box end -->
+        <!-- Advanced Search box start -->
+        <div class="MainSearchBoxContainer" ng-show="show==false">
+            <div class="BlackSearchBoxSection">
+                <div style="display:flex; gap : 20px;">
+                    @*class="SearchInputGroupContainer SearchInputGroupContainerImp"*@
+                    <div class="row" style="flex : 1">
+                        <div class="col-sm-3">
+                            <div class="InputBoxDiv">
+                                <div class="input-group date">
+                                    <input type="text" name="ScheduleEndDate" class="form-control" id="StaffDOB" title="@PIVF.LanguageResource.Resources.lblFromDate" placeholder="@PIVF.LanguageResource.Resources.lblFromDate" ng-model="Appointment.FromDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="startdateOption" ng-required="true" alt-input-formats="altInputFormats">
+                                    <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="InputBoxDiv">
+                                <div class="input-group date">
+                                    <input type="text" name="ScheduleEndDate" class="form-control" id="StaffDOB" title="@PIVF.LanguageResource.Resources.lblToDate" placeholder="@PIVF.LanguageResource.Resources.lblToDate" ng-model="Appointment.ToDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup3.opened" datepicker-options="enddateOption" ng-required="true" alt-input-formats="altInputFormats">
+                                    <span class="input-group-addon" id="" ng-click="open3()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="InputBoxDiv">
+                                <select class="form-control" id="DeptID" ng-model="Appointment.AppTypeId">
+                                    <option value="">@PIVF.LanguageResource.Resources.lblAppointmentType</option>
+                                    <option ng-repeat="t in AppointmentTypeList" value="{{t.ID}}">{{t.Description}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="InputBoxDiv">
+                                <select class="form-control" id="AppTypeId" ng-model="Appointment.AppStatusID">
+                                    <option value="">@PIVF.LanguageResource.Resources.lblStatus</option>
+                                    <option ng-repeat="t in AppointmentStatusList" value="{{t.ID}}">{{t.Description}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div>
+                        @*class="SearchBtnContainer SearchBtnContainerImp"*@
+                        <div class="InputBoxDiv">
+                            <button id="" type="button" class="btn btn-primary" ng-click="AdvanceSearch(Appointment)">@PIVF.LanguageResource.Resources.btnSearch</button>
+                            <button id="" type="button" class="btn btn-primary" ng-click="openAppointmentPopup()">@PIVF.LanguageResource.Resources.lblvAddNew</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /searchContainer -->
+    <section class="form_Content m-t-10" @*style="height:450px;"*@>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="row find_title">
+                    <div class="col-md-6">
+                        <span>@PIVF.LanguageResource.Resources.lblTotalCount :</span>
+                        <span class="total_count ng-binding">{{AppointmentsTotalItems}}</span>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        @*<button class="btn btn-link" title="Print"><span class="glyphicon glyphicon-print"></span></button>*@
+                        <button class="btn btn-link" title="@PIVF.LanguageResource.Resources.btnPrint" data-target="#appointmodal" data-toggle="modal"><span class="glyphicon glyphicon-print"></span></button>
+                        @*Begin:: Added by AniketK on 21July2020*@
+                        <div class="modal" id="appointmodal" tabindex="-1">
+                            <div class="modal-dialog modal-xs">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">@PIVF.LanguageResource.Resources.btnPrint</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="row">
+                                                <label class="col-lg-3">
+                                                    <input type="radio" name="rdpdf" value="pdf" ng-model="PDF" data-dismiss="modal" ng-click="PrintAppointment(Appointment,PDF)">
+                                                    @PIVF.LanguageResource.Resources.lblvPDF
+                                                </label>
+                                                <label class="col-lg-3">
+                                                    <input type="radio" name="rdpdf" value="exel" ng-model="PDF" data-dismiss="modal" ng-click="PrintAppointment(Appointment,PDF)">
+                                                    @PIVF.LanguageResource.Resources.lblvEXCEL
+                                                </label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary" data-dismiss="modal">@PIVF.LanguageResource.Resources.btnClose</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*End:: Added by AniketK on 21July2020*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="table-responsive fixed_header">
+                    <!-- max-height:360px; overflow:auto; -->
+                    <table class="table table-striped table-hover" style="min-width: 1100px;height: calc(100vh - 410px);">
+                        @*min-height:395px;max-height:395px;*@
+                        <thead>
+                            <tr>
+                                <th st-ratio="5">&nbsp;@PIVF.LanguageResource.Resources.lblActions</th>
+                                <th st-ratio="6" class="text-center">@PIVF.LanguageResource.Resources.lblInfo</th>
+                                <th st-ratio="8">@PIVF.LanguageResource.Resources.lblDate / @PIVF.LanguageResource.Resources.lblTime</th>
+                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblPatientName / @PIVF.LanguageResource.Resources.lblMRNO</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblMobNo</th>
+                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblDoctor / @PIVF.LanguageResource.Resources.lblDepartment</th>
+                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblAppointmentReason</th>
+                                <th st-ratio="11">@PIVF.LanguageResource.Resources.lblType / @PIVF.LanguageResource.Resources.lblStatus</th>
+                                @*<th></th>*@
+                            </tr>
+                        </thead>
+                        <tbody style="height: calc(100vh - 460px);">
+                            @*height:315px;*@
+                            <tr ng-repeat="item in AppointmentDetails | orderBy: 'AppointmentDate' :true">
+                                <td st-ratio="5" class="cycle_actions">
+                                    <div class="dropdown">
+                                        <a href="" class="dropdown-toggle" id="cycleAction_1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-cog"></span>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="cycleAction_1">
+                                            <li><a class="cursorPointer" ng-click="RedirectToCheckedInPage(item)" ng-if="item.IsCheckIn">@PIVF.LanguageResource.Resources.lblvCheckin</a></li> @*ng-hide = "item.IsTurnedUp"*@
+                                            @*<li><a href="" data-toggle="modal" ng-click="RedirectToNewAppointment(item)" ng-show="item.CheckIsLapased" data-target="{{RedirectTo}}">Reschedule Appointment</a></li>*@  @*ng-hide="CheckIsLapased(item)"*@
+                                            <li><a href="" data-toggle="modal" ng-click="RedirectToCancel(item)" data-target="{{RedirectTo}}">@PIVF.LanguageResource.Resources.lblCancelAppointment</a></li>
+                                            @*<li><a href="" ng-click="PrintSummary(item.ID,item.UnitID,item.ArtTypeID, item.ArtSubTypeID)" >EMR</a></li>*@
+                                        </ul>
+                                    </div>
+                                </td>
+                                @*<td class="showRowButton w-5">
+                                        <div class="arrowWrap"> <span class="collapse-arrow collapsed" data-toggle="collapse" data-target="{{'#'+($index+1)}}"></span> </div>
+                                    </td>*@
+                                <td st-ratio="6" class="text-center"><button type="button" class="btn_info" role="button" ng-click="GetSelectedPatientInfo(item)" data-toggle="modal" data-target="#addIfo" aria-expanded="false" aria-controls=""></button></td>
+                                <td st-ratio="8">{{item.AppointmentDate | date:'dd-MMM-yyyy'}}<br /><b>{{item.FromTime| date: 'HH:mm'}} - {{item.ToTime| date: 'HH:mm'}}</b></td>
+                                <td st-ratio="20" class="Capitalize">{{item.PatientName}}<br /><b>{{item.MRNo}}</b></td>
+                                <td st-ratio="10">{{item.MobileNo}}</td>
+                                <td st-ratio="20" class="Capitalize">{{item.DoctorName}}<br /><b>{{item.Department}}</b></td>
+                                <td st-ratio="20">{{item.AppReason}}</td>
+                                <td st-ratio="11">{{item.AppStatus}}<br /><b>{{item.AppTypeDescription}}</b></td>
+                            </tr>
+                            @*<tr class="AppointmentDetailTR " id="{{$index+1}}">
+                                    <td colspan="12">
+                                        <div class="ButtonsContainer text-left">
+                                            <button id="" type="button" class="btn btn-icon btn-secondary" ng-click="RedirectToCheckedInPage(item)" title="Check-In">
+                                                <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+                                            </button>
+                                            <button id="" type="button" class="btn btn-icon btn-secondary" title="Reschedule Appointment" data-toggle="modal" ng-click="RedirectToNewAppointment(item)" data-target="{{RedirectTo}}">
+                                                <i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
+                                            </button>
+                                            <button id="" type="button" class="btn btn-icon btn-secondary" title="Cancel Appointment" data-toggle="modal" ng-click="RedirectToCancel(item)" data-target="{{RedirectTo}}">
+                                                <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
+                                            </button>
+                                            <button id="" type="button" class="btn btn-icon btn-secondary" title="EMR">
+                                                <i class="glyphicon glyphicon-globe" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>*@
+                        </tbody>
+                    </table>
+                </div>
+                @*<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>*@
+            </div>
+            @*<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>*@
+        </div>
+        <!-- pagination -->
+        <div class="row">
+            <div class="col-md-12 col-sm-12 page">
+                <b><ul class="pagination pagination-sm pull-left" uib-pagination total-items="AppointmentsTotalItems" ng-model="CurrentPage" ng-change="pageChange()" max-size="maxSize" boundary-link-numbers="true" num-pages="scheduleNumPages" items-per-page="10" rotate="false"> </ul> </b>
+            </div>
+        </div>
+    </section>
+
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+
+
+    <!-- /pagination -->
+    <!-- end container -->
+    <!-- modal - Additional Information -->
+    <div class="modal fade" id="addIfo" tabindex="-1" role="dialog" aria-labelledby="addIfoLabel" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="addIfoLabel">@PIVF.LanguageResource.Resources.lblAdditionalInformation</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4 col-sm-5 ">
+                            @*<div class="patientPic"><img ng-src="{{PatientPhoto || '/images/Default_user.png'}}" class="img-responsive" alt=""></div>*@
+
+                            <div class="popupRoundimg ProfileImgWrap">
+                                <img ng-if="PatientPhoto !=null" ng-src="{{PatientPhoto}}" class="profile">
+                                <img ng-if="PatientPhoto ==null && GenderID==1" ng-src="../images/Male_default.jpg" class="profile">
+                                <img ng-if="PatientPhoto ==null && GenderID==2" ng-src="../images/Female_default.jpg" class="profile">
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-lg-8 col-sm-7">
+                            <table class="tblAppointment">
+                                <tr>
+                                    <td><b>@PIVF.LanguageResource.Resources.lblPatientName</b></td>
+                                    <td>:</td>
+                                    <td class="Capitalize">{{SelectedPatientName}}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>@PIVF.LanguageResource.Resources.lblMobileNo</b></td>
+                                    <td>:</td>
+                                    <td>{{PatientMobileNumber}}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>{{CreatedFieldTxt}}</b></td>
+                                    <td>:</td>
+                                    <td>{{AppointmentBy}}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>@PIVF.LanguageResource.Resources.lblCreatedon</b></td>
+                                    <td>:</td>
+                                    <td>{{AddedDateTime| date: 'dd-MMM-yyyy'}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /modal - Additional Information -->
+    <!-- modal - New Patient Appointment Start-->
+    <div class="modal fade" id="newAppointment" tabindex="-1" role="dialog" aria-labelledby="newAppointmentLabel">
+
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="addIfoLabel">@PIVF.LanguageResource.Resources.lblRescheduleAppointment</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-horizontal">
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblFirstName </label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <input type="text" name="LastName" class="form-control" ng-class="PatientLastNameError == true ? 'invalid' : 'valid' " id="" placeholder="" ng-model="NewAppointment.FirstName" capitalize-first maxlength="20" replace="[^a-zA-Z]" with="" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblLastName</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <input type="text" name="LastName" class="form-control" ng-class="PatientLastNameError == true ? 'invalid' : 'valid' " id="" placeholder="" ng-model="NewAppointment.LastName" capitalize-first maxlength="20" replace="[^a-zA-Z]" with="" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblDOB</label>
+                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                        <ng-combo-date-picker ng-model="NewAppointment.DOB" ng-min-model="min" ng-order="ymd" ng-max-model="max" ng-year-order="desc" ng-placeholder="Year,Month,Date"></ng-combo-date-picker>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group MobileContainer">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblMobNo.</label>
+                                    <!--<input class="form-control alignRight" id="" type="text" ng-model="PatientMobileNumber" placeholder="" ng-disabled="true">-->
+                                    <div class="col-sm-2 col-md-3 col-lg-3 col-xs-3 p-r-0">
+                                        <!--<input type="text" class="form-control alignRight" placeholder="xxx">-->
+                                        <input type="text" class="form-control alignRight" ng-class="PatientMobileCountryCodeError == true ? 'invalid' : 'valid' " id="PatientMobileCountryCode" placeholder="xxx" ng-model="NewAppointment.MobileCountryID" uib-typeahead="i.CountryCode as i.CountryName for i in CountryList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedCountry($item)" ng-change="GetPatientCountryCode(PatientselectedCountry)" replace="[^a-zA-Z0-9]" with="">
+                                    </div>
+                                    <div class="col-sm-10 col-md-9 col-lg-9 col-xs-9 p-l-4">
+                                        <input type="text" class="form-control alignRight" ng-class="PatientMobileNumberError == true ? 'invalid' : 'valid' " id="" placeholder="xxx xxx xxxx" aria-describedby="basic-addon2" phone-input ng-model="NewAppointment.MobileNo" uib-typeahead="i as (i.FullName) for i in PatientExistList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedPatientMainMobieNumber(Appointment.PatientMobileNumber)" mobile-no="12" maxlength="12" replace="[^0-9]" with="" ng-change="HideErrorMessage('PatientMobileNumber',PatientRegistration.PatientMobileNumber);">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblDate</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div class="input-group date" ng-class="StartDateError == true ? 'invalid' : 'valid' ">
+                                            <input name="ScheduleStartDate" type="text" class="form-control" ng-change="GetNewAppointmentSlot(NewAppointment);onRescheduleTimeSet(NewAppointment.AppointmentNonRegDate,NewAppointment);HideErrorMessage('StartDate',Schedule.StartDate);" id="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.lblFromDate" ng-model="NewAppointment.AppointmentNonRegDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup4.opened" datepicker-options="newAppointmentModaldateOption" ng-required="true" alt-input-formats="altInputFormats">
+                                            <span class="input-group-addon" ng-click="open4();"> <i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblClinic</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control" ng-model="NewAppointment.UnitID" ng-options="item.UnitID as item.UnitName for item in CityAndClinicNameList | orderBy:'item.UnitID'" ng-change="GetDepartmentByUnitIDModel(NewAppointment.UnitID);NewAppointment.DeptID=0;NewAppointment.DOCID=0;doctorsAvailableSlotsList=[];"></select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblDepartment</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control" ng-model="NewAppointment.DeptID" ng-options="item.DeptID as item.Description for item in DepartmentListModel | orderBy:'item.ID'" ng-change="GetDoctorListByDeptIDOnModel(NewAppointment.DeptID) ;NewAppointment.DOCID=0;doctorsAvailableSlotsList=[]"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblDoctor</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control" ng-model="NewAppointment.DOCID" ng-options="item.ID as item.DoctorName for item in DoctorCategoryListModel | orderBy:'item.ID'" ng-change="GetDoctorName(NewAppointment.DOCID,true)"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group MobileContainer">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblAppointmentReason </label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                        <select class="form-control" id="PatientVisitId" ng-class="PatientVisitIdError == true ? 'invalid' : 'valid' " ng-model="NewAppointment.AppReasonID" ng-options="item.VTID as item.Description for item in PatientVisitList" @*ng-init="NewAppointment.VisitID = PatientVisitList[0].VTID"*@
+                                                ng-change="HideErrorMessage('PatientVisitId',PatientRegistration.PatientVisitId);"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblGender</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12 m-b-7">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="" ng-checked="NewAppointment.GenderID==1" value="1"> @PIVF.LanguageResource.Resources.lblMale
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="" ng-checked="NewAppointment.GenderID==2" value="2"> @PIVF.LanguageResource.Resources.lblFemale
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <span class="txt_bold">{{selectedTime}} </span>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                        <div class="scheduleBox">
+                                            <span ng-repeat="doctorAvailableSlots in doctorsAvailableSlotsList | orderBy: 'StartTime'" ng-click="AppointmentClick(doctorAvailableSlots.StartTime,doctorAvailableSlots.EndTime,doctorAvailableSlots.SelectedAvailableSlot , doctorAvailableSlots.CountOfAvailableSlotButton)">
+                                                <button ng-class="active == doctorAvailableSlots.CountOfAvailableSlotButton ? 'scheduleTime setTime' : 'scheduleTime outTime'" ng-model="btnAppointment">{{doctorAvailableSlots.SelectedAvailableSlot}}</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <button class="btn btn-primary m-t-15 m-b-0" ng-click="LoadAppointmentTimeSlot(false)"> @PIVF.LanguageResource.Resources.lblGetTimeSlot</button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <!-- /Reschedule appointment -->
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-8 text-left">
+                            <span class="text-Red">@PIVF.LanguageResource.Resources.msgPleaseFillMandatoryFields (*)</span>
+                        </div>
+                        <div class="col-md-4 text-right">
+                            <button class="btn btn btn-primary" type="button" id="" data-ng-click="rescheduleAppointment(NewAppointment.DOCID,NewAppointment.DeptID)">{{btnSave}}</button>
+                            <button class="btn btn-default " type="button" id="" data-dismiss="modal">{{btnCancel}}</button>
+                        </div>
+                        <div class="col-md-12 text-right" data-ng-hide="rescheduleMessageAcknoledgement == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'" required>
+                            {{rescheduleMessageAcknoledgement}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- /modal - New Patient Appointment End-->
+    <!-- modal - New Patient Appointment Start-->
+    <div class="modal fade" id="newAppointment1" tabindex="-1" role="dialog" aria-labelledby="newAppointmentLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="addIfoLabel">@PIVF.LanguageResource.Resources.lblNewAppointment  @*New Appointment*@</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-horizontal p-lr-20 m-t-10">
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblFirstName  @*First Name*@ </label>
+                                <div class="col-sm-9 col-md-9 col-lg-7">
+                                    <input type="text" name="FirstName" class="form-control" ng-class="PatientFirstNameError == true ? 'invalid' : 'valid' " id="" placeholder="" ng-model="NewAppointment.FirstName" capitalize-first maxlength="20" replace="[^a-zA-Z]" with="" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblLastName  @*Last Name*@</label>
+                                <div class="col-sm-9 col-md-9 col-lg-7">
+                                    <input type="text" name="LastName" class="form-control" ng-class="PatientLastNameError == true ? 'invalid' : 'valid' " id="" placeholder="" ng-model="NewAppointment.LastName" capitalize-first maxlength="20" replace="[^a-zA-Z]" with="" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblGender  @*Gender*@ </label>
+                                <div class="col-sm-9 col-md-9 col-lg-7">
+                                    <select class="form-control" id="GenderID" ng-class="PatientGenderIdError == true ? 'invalid' : 'valid' " ng-init="NewAppointment.GenderID = PatientGenderList[0].GenderId" ng-model="NewAppointment.GenderID" ng-options="item.GenderId as item.GenderDescription for item in PatientGenderList"
+                                            ng-change="HideErrorMessage('PatientGenderId',Appointment.PatientGenderId);"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblMobileNo  @*Mobile No.*@</label>
+                                <div class="col-sm-2 col-md-3 col-lg-3 col-xs-3">
+                                    <input type="text" class="form-control alignRight" ng-class="PatientMobileCountryCodeError == true ? 'invalid' : 'valid' " id="PatientMobileCountryCode" placeholder="xxx" ng-model="NewAppointment.MobileCountryID" uib-typeahead="i.CountryCode as i.CountryName for i in CountryList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedCountry($item)" ng-change="GetPatientCountryCode(PatientselectedCountry)" replace="[^a-zA-Z0-9]" with="">
+                                </div>
+                                <div class="col-sm-7 col-md-6 col-lg-4 col-xs-9">
+                                    <input type="text" class="form-control alignRight" ng-class="PatientMobileNumberError == true ? 'invalid' : 'valid' " id="" placeholder="xxx xxx xxxx" aria-describedby="basic-addon2" phone-input ng-model="NewAppointment.MobileNo" uib-typeahead="i as (i.FullName) for i in PatientExistList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedPatientMainMobieNumber(Appointment.PatientMobileNumber)" mobile-no="12" maxlength="12" replace="[^0-9]" with="" ng-change="HideErrorMessage('PatientMobileNumber',PatientRegistration.PatientMobileNumber);">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for="">@PIVF.LanguageResource.Resources.lblAppointmentDate  @*Appointment Date*@</label>
+                                <div class="col-sm-9 col-md-9 col-lg-7">
+                                    <div class="input-group date" ng-class="StartDateError == true ? 'invalid' : 'valid' ">
+                                        <input name="ScheduleStartDate" type="text" class="form-control" ng-change="GetNewAppointmentSlot(NewAppointment);onRescheduleTimeSet(NewAppointment.AppointmentNonRegDate,NewAppointment);HideErrorMessage('StartDate',Schedule.StartDate);" id="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.lblFromDate" ng-model="NewAppointment.AppointmentNonRegDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup4.opened" datepicker-options="newAppointmentModaldateOption" ng-required="true" alt-input-formats="altInputFormats">
+                                        <span class="input-group-addon" ng-click="open4();"> <i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 m-b-3">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for="">@PIVF.LanguageResource.Resources.lblClinic</label>
+                                <div class="col-sm-9 col-md-9 col-lg-7">
+                                    <select class="form-control" ng-model="NewAppointment.UnitID" ng-options="item.UnitID as item.UnitName for item in CityAndClinicNameList | orderBy:'UnitID'" ng-change="GetDepartmentbyUnitID(item.UnitID)"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 ">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for="">@PIVF.LanguageResource.Resources.lblDepartment</label>
+                                <div class="col-sm-9 col-md-9 col-lg-7">
+                                    <select class="form-control" ng-model="NewAppointment.DeptID" ng-options="item.DeptID as item.Description for item in DepartmentList | orderBy:'DeptID'" ng-change="GetDoctorByDeptClinic(NewAppointment.UnitID,NewAppointment.DeptID)"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for="">@PIVF.LanguageResource.Resources.lblDoctor</label>
+                                <div class="col-sm-9 col-md-9 col-lg-7">
+                                    <select class="form-control" ng-model="NewAppointment.DOCID" ng-options="item.DOCID as item.DoctorName for item in DoctorCategoryList | orderBy:'DOCID'"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for="">@PIVF.LanguageResource.Resources.lblAppointmentReason  @*Appointment Reason*@</label>
+                                <div class="col-sm-9 col-md-9 col-lg-7">
+                                    <select class="form-control" id="PatientVisitId" ng-class="PatientVisitIdError == true ? 'invalid' : 'valid' " ng-init="NewAppointment.VisitID = PatientVisitList[0].VTID" ng-model="NewAppointment.VisitID" ng-options="item.VTID as item.Description for item in PatientVisitList"
+                                            ng-change="HideErrorMessage('PatientVisitId',PatientRegistration.PatientVisitId);"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for="">@PIVF.LanguageResource.Resources.lblRemark  @*Remark*@</label>
+                                <div class="col-sm-9 col-md-9 col-lg-7">
+                                    <textarea class="form-control" ng-model="NewAppointment.Remark" id="" placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 ">
+                            <div class="form-group m-b-30">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblMRNO .  @*MR NO.*@</label>
+                                <div class="col-sm-9 col-md-9 col-lg-7 control-label text-left">
+                                    {{NewAppointment.MRNo}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 m-b-10">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblDate  @*Date*@</label>
+                                <div class="col-sm-9 col-md-9 col-lg-7 control-label text-left">
+                                    {{selectedDate}}
+                                    @*<input type="time" class="form-control" id="" placeholder="">*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblTime  @*Time*@</label>
+                                <div class="col-sm-9 col-md-9 col-lg-7 control-label text-left">
+                                    {{selectedTime}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="clearfix"></div> -->
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                    <div class="scheduleBox" ng-if="doctorsAvailableSlotsList.length>=1? true:false">
+                                        <span ng-repeat="doctorAvailableSlots in doctorsAvailableSlotsList | orderBy: 'StartTime'" ng-click="AppointmentClick(doctorAvailableSlots.StartTime,doctorAvailableSlots.EndTime,doctorAvailableSlots.SelectedAvailableSlot , doctorAvailableSlots.CountOfAvailableSlotButton)">
+                                            <button ng-model="btnAppointment">{{doctorAvailableSlots.SelectedAvailableSlot}}</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-right">
+                                <button class="btn btn-primary" type="button" ng-click="rescheduleAppointment()" id="">@PIVF.LanguageResource.Resources.btnSave  @*Save*@</button>
+                                <button class="btn btn-default" type="button" id="" data-dismiss="modal" aria-label="Cancel">@PIVF.LanguageResource.Resources.btnCancel  @*Cancel*@</button>
+                            </div>
+
+                            <div ng-hide="rescheduleMessageAcknoledgement == ''" ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'" required>
+                                {{rescheduleMessageAcknoledgement}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /modal - New Patient Appointment End-->
+    <!-- modal - Reschedule Appointment -->
+    <div class="modal fade" id="rescheduleAppointment" tabindex="-1" role="dialog" aria-labelledby="rescheduleAppointmentLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="addIfoLabel">@PIVF.LanguageResource.Resources.lblRescheduleAppointment  @*Reschedule Appointment*@</h4>
+                </div>
+                <div class="modal-body form-horizontal p-t-5">
+                    <div class="table-responsive ">
+                        <table class="table GridTable borderNone">
+                            <tr>
+                                <td class="txt_bold borderNone">@PIVF.LanguageResource.Resources.lblPatientName @*Patient Name*@</td>
+                                <td class="txt_bold borderNone">@PIVF.LanguageResource.Resources.lblMRNumber @*MR Number*@</td>
+                                <td class="txt_bold borderNone">@PIVF.LanguageResource.Resources.lblGender @*Gender*@</td>
+                                <td class="txt_bold borderNone">@PIVF.LanguageResource.Resources.lblTime @*Time*@</td>
+                            </tr>
+                            <tr class="AppointTdData">
+                                <td class="borderNone"><span> {{NewAppointment.PatientName}}</span></td>
+                                <td class="borderNone" width="240"><span> {{NewAppointment.MRNo}} </span></td>
+                                <td class="borderNone" width="205"><span> {{Age}}  {{NewAppointment.GenderDescription}} </span></td>
+                                <td class="borderNone" width="205"><span>@* @PIVF.LanguageResource.Resources.lblTime : Time*@:{{selectedTime}} </span></td>
+                            </tr>
+                            <tr class="AppointTdData">
+                                <td class="borderNone"><span class="txt_bold" style="margin-top: 5px; display: inline-block;">@PIVF.LanguageResource.Resources.lblMobileNo  @*Mobile Number*@ </span></td>
+                            </tr>
+                            <tr class="AppointTdData">
+                                <td class="borderNone"><span class="" style="margin-top: 5px; display: inline-block;"> {{PatientMobileConId}} {{NewAppointment.MobileNo}} </span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row form-horizontal m-t-10">
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblDate  @*Date*@</label>
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <div class="input-group date" ng-class="StartDateError == true ? 'invalid' : 'valid' ">
+                                                <input name="ScheduleStartDate" type="text" class="form-control" id="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.lblFromDate " ng-model="NewAppointment.AppointmentRegDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup5.opened" datepicker-options="newAppointmentNonRegModaldateOption" ng-required="true" alt-input-formats="altInputFormats">
+                                                <span class="input-group-addon" ng-click="open5();"> <i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblClinic</label>
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <select class="form-control" ng-model="NewAppointment.UnitID" ng-options="item.UnitID as item.UnitName for item in CityAndClinicNameList | orderBy:'item.UnitID'" ng-change="GetDepartmentByUnitIDModel(NewAppointment.UnitID);NewAppointment.DeptID=0;NewAppointment.DOCID=0;doctorsAvailableSlotsList=[];"></select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblDepartment</label>
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <select class="form-control" ng-model="NewAppointment.DeptID" ng-options="item.DeptID as item.Description for item in DepartmentListModel | orderBy:'item.ID'" ng-change="GetDoctorListByDeptIDOnModel(NewAppointment.DeptID) ;NewAppointment.DOCID=0;doctorsAvailableSlotsList=[]"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblDoctor</label>
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <select class="form-control" ng-model="NewAppointment.DOCID" ng-options="item.ID as item.DoctorName for item in DoctorCategoryListModel | orderBy:'item.ID'" ng-change="GetDoctorName(NewAppointment.DOCID,true)"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblAppointmentReason  @*Appointment Reason*@</label>
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <select class="form-control" id="PatientVisitId" ng-class="PatientVisitIdError == true ? 'invalid' : 'valid' " ng-model="NewAppointment.AppReasonID" ng-options="item.VTID as item.Description for item in PatientVisitList" @*ng-init="NewAppointment.VisitID = PatientVisitList[0].VTID"*@
+                                                    ng-change="HideErrorMessage('PatientVisitId',PatientRegistration.PatientVisitId);"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblRemark  @*Remark*@</label>
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <textarea class="form-control" ng-model="NewAppointment.Remark" id="" placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <button class="btn btn-primary m-t-15 m-b-0" ng-click="LoadAppointmentTimeSlot(true)" ng-disabled="!IsShowLoadButton">@PIVF.LanguageResource.Resources.lblGetTimeSlot  @*Get Time Slot*@</button>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                    <div class="scheduleBox">
+                                        <span ng-repeat="doctorAvailableSlots in doctorsAvailableSlotsList | orderBy: 'StartTime'" ng-click="AppointmentClick(doctorAvailableSlots.StartTime,doctorAvailableSlots.EndTime,doctorAvailableSlots.SelectedAvailableSlot , doctorAvailableSlots.CountOfAvailableSlotButton)">
+                                            <button ng-class="active[doctorAvailableSlots.CountOfAvailableSlotButton] == doctorAvailableSlots.CountOfAvailableSlotButton ? 'scheduleTime setTime' : 'scheduleTime outTime'" ng-model="btnAppointment">{{doctorAvailableSlots.SelectedAvailableSlot}}</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Reschedule appointment -->
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-8 col-lg-8 col-sm-12">
+                            <span class="text-Red">@PIVF.LanguageResource.Resources.msgPleaseFillMandatoryFields (*)</span>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            <button class="btn btn btn-primary" type="button" id="" data-ng-click="rescheduleAppointment(NewAppointment.DOCID,NewAppointment.DeptID)">{{btnSave}}</button>
+                            <button class="btn btn-default " type="button" id="" data-dismiss="modal">{{btnCancel}}</button>
+                        </div>
+                        <div class="col-sm-12 text-right" data-ng-hide="rescheduleMessageAcknoledgement == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'" required>
+                            {{rescheduleMessageAcknoledgement}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal - Reschedule Appointment -->
+    <!-- modal - Reschedule Appointment -->
+    <div class="modal fade" id="rescheduleAppointment1" tabindex="-1" role="dialog" aria-labelledby="rescheduleAppointmentLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="addIfoLabel">@PIVF.LanguageResource.Resources.lblRescheduleAppointment  @*Reschedule Appointment*@</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive dataRow">
+                        <table class="table GridTable">
+                            <tr class="parent_row">
+                                <td>
+                                    <h5 class="dataTtl">@PIVF.LanguageResource.Resources.lblName  @*Name*@</h5>
+                                </td>
+                                <td><span class="dataTxt">:{{' '+NewAppointment.PatientName}}</span></td>
+                            </tr>
+                            <tr class="parent_row">
+                                <td>
+                                    <h5 class="dataTtl">@PIVF.LanguageResource.Resources.lblAgeGender/@PIVF.LanguageResource.Resources.lblAge  @*Gender/Age*@</h5>
+                                </td>
+                                <td><span class="dataTxt">: {{' '+NewAppointment.GenderDescription}}/35</span></td>
+                                <td>
+                                    <h5 class="dataTtl">@PIVF.LanguageResource.Resources.lblMobileNo  @*Mobile No.*@</h5>
+                                </td>
+                                <td><span class="dataTxt">: {{' '+NewAppointment.MobileNo}}</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row form-horizontal p-lr-20 m-t-10">
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                            <div class="form-group">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblAppointmentDate  @*Appointment Date*@</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <div class="input-group date" ng-class="StartDateError == true ? 'invalid' : 'valid' ">
+                                        <input name="ScheduleStartDate" type="text" class="form-control" ng-change="GetNewAppointmentSlot(NewAppointment);onRescheduleTimeSet(NewAppointment.AppointmentRegDate,NewAppointment);HideErrorMessage('StartDate',Schedule.StartDate);" id="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.lblFromDate" ng-model="NewAppointment.AppointmentRegDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup5.opened" datepicker-options="newAppointmentNonRegModaldateOption" ng-required="true" alt-input-formats="altInputFormats">
+                                        <span class="input-group-addon" ng-click="open5();"> <i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 m-b-3">
+                            <div class="form-group">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblClinic</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <select class="form-control" ng-model="NewAppointment.UnitID" ng-options="item.UnitID as item.UnitName for item in CityAndClinicNameList | orderBy:'UnitID'" ng-disabled="true"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblDepartment</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <select class="form-control" ng-model="NewAppointment.DeptID" ng-options="item.DeptID as item.Description for item in DepartmentList | orderBy:'DeptID'" ng-disabled="true"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblDoctor</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <select class="form-control" ng-model="NewAppointment.DOCID" ng-options="item.DOCID as item.DoctorName for item in DoctorCategoryList | orderBy:'DOCID'" ng-disabled="true"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAppointmentReason  @*Appointment Reason*@</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <select class="form-control" id="PatientVisitId" ng-class="PatientVisitIdError == true ? 'invalid' : 'valid' " ng-init="NewAppointment.VisitID = PatientVisitList[0].VTID" ng-model="NewAppointment.VisitID" ng-options="item.VTID as item.Description for item in PatientVisitList"
+                                            ng-change="HideErrorMessage('PatientVisitId',PatientRegistration.PatientVisitId);"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblRemark  @*Remark*@</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <textarea class="form-control" ng-model="NewAppointment.Remark" id="" placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="col-md-6 col-lg-6 m-b-10">
+                            <div class="form-group">
+                            <label class="col-sm-3 col-md-3 col-lg-5 control-label" for=""><span class="text-Red">*</span>Date</label>
+                            <div class="col-sm-9 col-md-9 col-lg-7 control-label text-left">
+                            {{selectedDate}}
+
+                            </div>
+                            </div>
+                            </div>*@
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 col-md-3 col-lg-5 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblTime  @*Time*@</label>
+                                <div class="col-sm-9 col-md-9 col-lg-7 control-label text-left">
+                                    {{selectedTime}}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- <div class="clearfix"></div> -->
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                <div class="scheduleBox" ng-if="doctorsAvailableSlotsList.length>=1? true:false">
+                                    <span ng-repeat="doctorAvailableSlots in doctorsAvailableSlotsList | orderBy: 'StartTime'" ng-click="AppointmentClick(doctorAvailableSlots.StartTime,doctorAvailableSlots.EndTime,doctorAvailableSlots.SelectedAvailableSlot , doctorAvailableSlots.CountOfAvailableSlotButton)">
+                                        <button ng-class="active[doctorAvailableSlots.CountOfAvailableSlotButton] == doctorAvailableSlots.CountOfAvailableSlotButton ? 'scheduleTime setTime' : 'scheduleTime outTime'" ng-model="btnAppointment">{{doctorAvailableSlots.SelectedAvailableSlot}}</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="text-right">
+                                <button class="btn btn-primary" type="button" ng-click="rescheduleAppointment()" id="">@PIVF.LanguageResource.Resources.btnSave  @*Save*@</button>
+                                <button class="btn btn-default" type="button" id="" data-dismiss="modal" aria-label="Cancel">@PIVF.LanguageResource.Resources.btnCancel  @*Cancel*@</button>
+                            </div>
+                            <div ng-hide="rescheduleMessageAcknoledgement == ''" ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'" required>
+                                {{rescheduleMessageAcknoledgement}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal - Reschedule Appointment -->
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="cancelAppointment" ng-init="initializeDeleteVariables()">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="">@PIVF.LanguageResource.Resources.lblCancelAppointment  @*Cancel Appointment*@</h4>
+                </div>
+                <div class="modal-body form-horizontal p-t-5">
+                    <div class="table-responsive ">
+                        <table class="table ">
+                            <tr class="parent_row">
+                                <td><span class="txt_bold">{{ NewAppointment.PatientName+'    ' }}</span> <span class="txt_bold"> {{NewAppointment.MRNo}} </span></td>
+                            </tr>
+                            <tr class="parent_row">
+                                <td width="250"><textarea type="text" class="form-control" id="" ng-model="ReasonForCancellation" placeholder="@PIVF.LanguageResource.Resources.lblReasonForCancellation"></textarea></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <button class="btn btn btn-default modal-save" type="button" id="" data-ng-click="deleteAppointment(ReasonForCancellation)">{{btnSave}}</button>
+                            <button class="btn btn-primary btn_shadow" type="button" id="" data-dismiss="modal">{{btnCancel}}</button>
+                        </div>
+                        <div class="col-sm-12" data-ng-hide="deleteMessageAcknoledgement == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'" required>
+                            {{deleteMessageAcknoledgement}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    @*<div class="modal fade" id="cancelAppointment" tabindex="-1" role="dialog" aria-labelledby="cancelAppointmentLabel">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addIfoLabel">Cancel Appointment</h4>
+        </div>
+        <div class="modal-body">
+        <div class="container-fluid dataRow">
+        <div class="table-responsive ">
+        <table class="table GridTable">
+        <tr class="parent_row">
+        <td>
+        <h5 class="dataTtl">Clinic</h5>
+        </td>
+        <td><span class="dataTxt">: {{NewAppointment.ApptUnit}}</span></td>
+        <td>
+        <h5 class="dataTtl">Department</h5>
+        </td>
+        <td><span class="dataTxt">: {{ NewAppointment.Department}}</span></td>
+        </tr>
+        <tr class="parent_row">
+        <td>
+        <h5 class="dataTtl">Doctor</h5>
+        </td>
+        <td><span class="dataTxt">: {{NewAppointment.DoctorName}}</span></td>
+
+        <td ng-if="RedirectTo == '#rescheduleAppointment'? true:false">
+        <h5 class="dataTtl">MR No</h5>
+        </td>
+        <td ng-if="RedirectTo == '#rescheduleAppointment'? true:false"><span class="dataTxt">: {{NewAppointment.MRNo}}</span></td>
+        </tr>
+        <tr class="parent_row">
+        <td>
+        <h5 class="dataTtl">Date</h5>
+        </td>
+        <td><span class="dataTxt">: {{selectedDate}}</span></td>
+        <td>
+        <h5 class="dataTtl">Time</h5>
+        </td>
+        <td><span class="dataTxt">: {{selectedTime}}</span></td>
+        </tr>
+        </table>
+        </div>
+        </div>
+
+        <div class="row form-horizontal p-lr-20 m-t-10">
+        <div ng-if="RedirectTo != '#rescheduleAppointment'? true:false">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">First name</label>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+        <input class="form-control" id="" ng-model="NewAppointment.FirstName" type="text" placeholder="Disabled input here..." disabled>
+        </div>
+        </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Last Name</label>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+        <input class="form-control" id="" type="text" ng-model="NewAppointment.LastName" placeholder="Disabled input here..." disabled>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" ng-if="RedirectTo == '#rescheduleAppointment'? true:false">
+        <div class="form-group">
+        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Patient name</label>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+        <input class="form-control" id="" type="text" ng-model="NewAppointment.PatientName" placeholder="Disabled input here..." disabled>
+        </div>
+        </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Gender</label>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+        <input class="form-control" id="" ng-model="NewAppointment.GenderDescription" type="text" placeholder="Disabled input here..." disabled>
+        </div>
+        </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group MobileContainer">
+        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Mobile no</label>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+        <input class="form-control" id="" type="text" ng-model="NewAppointment.MobileNo" placeholder="Disabled input here..." disabled>
+        </div>
+        </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group MobileContainer">
+        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Appointment Reason</label>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+        <input class="form-control" id="" type="text" ng-model="NewAppointment.AppointmentReason" placeholder="" disabled>
+        </div>
+        </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Reason for Cancellation</label>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+        <textarea type="text" class="form-control" id="" ng-model="NewAppointment.ReasonForCancellation" placeholder=""></textarea>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="clearfix"></div>
+        </div>
+        <div class="modal-footer">
+        <div class="row">
+        <div class="col-md-12">
+        <div class="text-right">
+        <button class="btn btn-primary" type="button" ng-click="deleteAppointment(NewAppointment.ReasonForCancellation)" id="">Save</button>
+        <button class="btn btn-default" type="button" id="" data-dismiss="modal" aria-label="Cancel">Cancel</button>
+        </div>
+        <div data-ng-hide="deleteMessageAcknoledgement == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'" required>
+        {{deleteMessageAcknoledgement}}
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>*@
+    <!-- /modal - Reschedule Appointment -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/ng-template" id="addNewAppointmentPopUp">
+
+    <div class="modal-content" ng-init="getResourceNameValue()">
+        <div class="modal-header">
+            <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+            <h4 class="modal-title" id="gridSystemModalLabel">{{lblNewAppointment}}</h4>
+        </div>
+        <div class="modal-body ">
+
+            <div class="row">
+                <div class="col-md-4  customMArgin">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" id="lblClinic"><span class="text-Red">* </span> @PIVF.LanguageResource.Resources.lblClinic</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select class="form-control"
+                                    ng-model="SelectedUnit"
+                                    ng-change="onChangeClinic(SelectedUnit)"
+                                    ng-options="unit as unit.UnitName for unit in ClinicListForAppointment"
+                                    ng-disabled="true">
+                                <option value="">@PIVF.LanguageResource.Resources.msgSelClinic</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-4  customMArgin">
+
+                    <div class="form-group ">
+                        <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblAppointmentDate</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+
+                            <div class="input-group date">
+                                <input type="text" class="form-control" id="DOA" name="DOA" placeholder="dd-Mon-yyyy" ng-model="newAppointmentDetailsFromList.DOA" ng-change="onDOAchange()" ria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup3.opened" datepicker-options="dateOptionsDOA" alt-input-formats="altInputFormats">
+                                <span class="input-group-addon" ng-click="open3()">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="col-md-4  customMArgin">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" id="lblDepartment"><span class="text-Red">* </span> @PIVF.LanguageResource.Resources.lblDepartment</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select class="form-control"
+                                    ng-model="SelectedDepartment"
+                                    ng-change="onChangeDepartment(SelectedDepartment)"
+                                    ng-options="Department as Department.Description for Department in DepartmentListForAppointment">
+                                <option value="">@PIVF.LanguageResource.Resources.msgSelDepartment</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4  customMArgin">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" id="lblDoctor"><span class="text-Red">* </span> @PIVF.LanguageResource.Resources.lblDoctor</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select class="form-control"
+                                    ng-model="SelectedDoctor"
+                                    ng-change="onChangeDoctor(SelectedDoctor)"
+                                    ng-options="Doctor as Doctor.DoctorName for Doctor in DoctorListForAppointment">
+                                <option value="">@PIVF.LanguageResource.Resources.msgSelDoctor</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4  customMArgin">
+
+                    <div class="form-group ">
+                        <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span> @PIVF.LanguageResource.Resources.lblFromTime</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <input type="time" class="form-control Capitalize" name="txtFromTime" ng-model="newAppointmentDetailsFromList.fromTime">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4  customMArgin">
+
+                    <div class="form-group ">
+                        <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">* </span> @PIVF.LanguageResource.Resources.lbToTime</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <input type="time" class="form-control Capitalize" name="txtToTime" ng-model="newAppointmentDetailsFromList.toTime">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="text-align: center;">
+                    <p class="text-danger" ng-show="timeValidationError">{{ timeValidationError }}</p>
+                </div>
+
+            </div>
+
+            <div class="row form-horizontal">
+                <div class="col-md-4 col-lg-4 col-sm-4">
+                    <label class="radio-inline radioColor">
+                        <input type="radio" name="NewPatient" ng-model="IsNewPatient" id="" ng-change="ChangePatient(IsNewPatient)" ng-click="PatientSearchText=''" value="1"> @PIVF.LanguageResource.Resources.lblNew
+                    </label>
+                    <label class="radio-inline radioColor">
+                        <input type="radio" name="NewPatient" ng-model="IsNewPatient" id="" ng-change="ChangePatient(IsNewPatient)" value="2">@PIVF.LanguageResource.Resources.lblExisting
+                    </label>
+                </div>
+                <div class="col-md-8 col-lg-8 col-sm-8 m-t-5 customAutoComplateForAppointment" style="margin-bottom:10px">
+                    <!--<input type="text" class="form-control Capitalize" ng-hide="IsNewPatient ==1" placeholder="Name / MRNo." ng-class="PatientSearchError == true ? 'invalid' : 'valid' " id="PatientSearch" ng-model="PatientSearchText" uib-typeahead="i.PatientFullName as i.PatientFullName for i in autoSearchList | filter:$viewValue | limitTo:20" typeahead-on-select="FillSelectedItems($item)" ng-change="GetSearchItemData(PatientSearchText)">-->
+                    <input type="text" class="form-control Capitalize" ng-hide="IsNewPatient ==1" placeholder="@PIVF.LanguageResource.Resources.lblvNameMRNo" ng-class="PatientSearchError == true ? 'invalid' : 'valid' " id="PatientSearch" ng-model="PatientSearchText" typeahead-min-length="3" uib-typeahead="i as (i.PatientData) for i in PatientList | filter:$viewValue | limitTo:150" typeahead-on-select="FillSelectedItems($item)" ng-change="GetSearchItemData(PatientSearchText)">
+                </div><div class="clearfix"></div>
+                <div ng-hide="IsHideNewPatientDiv ==true">
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label" ng-hide="IsHideForExitsPatient">@PIVF.LanguageResource.Resources.lblPrefix</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlPrefixType" ng-hide="IsHideForExitsPatient" ng-model="RegisteredPatient.PrefixID" ng-class="" ng-options="item.ID as item.Description for item in PrefixTypeList" ng-change="changePrefixType(RegisteredPatient.PrefixID)"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="" ng-hide="IsHideForExitsPatient"><span class="text-Red">*</span>{{lblFirst}} @PIVF.LanguageResource.Resources.lblvName</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <input type="text" name="dataTxtFirstName" ng-hide="IsHideForExitsPatient" class="form-control Capitalize" ng-class="PatientFirstNameError == true ? 'invalid' : 'valid' " id="" placeholder="" ng-model="RegisteredPatient.FirstName" capitalize-first maxlength="20" replace="[^a-zA-Z]" with="" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12  control-label" for="" ng-hide="IsHideForExitsPatient"><span class="text-Red">*</span>{{lblLastName}}</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <input type="text" name="LastName" class="form-control Capitalize" ng-hide="IsHideForExitsPatient" ng-class="PatientLastNameError == true ? 'invalid' : 'valid' " id="" placeholder="" ng-model="RegisteredPatient.LastName" capitalize-first maxlength="20" replace="[^a-zA-Z]" with="" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="" ng-hide="IsHideForExitsPatient"><span class="text-Red">*</span>{{lblGender}}</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select class="form-control" name="ddlGenderType" ng-hide="IsHideForExitsPatient" ng-model="PatientRegistration.PatientGenderId" ng-options="item.ID as item.Description for item in GenderTypeList"></select>
+                                <!--<label class="radio-inline">
+                                    <input type="radio" name="GenderMale" id="" ng-model="PatientRegistration.PatientGenderId" value="2"> Female
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="GenderMale" id="" ng-model="PatientRegistration.PatientGenderId" value="1"> Male
+                                </label>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-sm-12 col-lg-12 control-label" ng-hide="IsHideForExitsPatient"><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblDOB</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="PatientDOBError == true ? 'invalid' : 'valid' ">
+                                <!---->
+                                <div class="input-group date">
+                                    <input type="text" class="form-control" id="DOB" ng-hide="IsHideForExitsPatient" name="patientDOB" placeholder="dd-MMM-yyyy" ng-model="PatientRegistration.DOB" ria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats">  <!---->  <!--ng-change="CalculateAge(PatientRegistration.DOB,$event)" ng-keyup="CalculateAge(PatientRegistration.DOB,$event)" tabindex="9"--> <!---->
+                                    <span class="input-group-addon" ng-hide="IsHideForExitsPatient" ng-click="open2()">
+                                        <i class="fa fa-calendar" ng-hide="IsHideForExitsPatient" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <!--<ng-combo-date-picker ng-model="PatientRegistration.DOB" ng-min-model="min" ng-order="ymd" ng-max-model="max" ng-year-order="desc" ng-placeholder="Year,Month,Date"></ng-combo-date-picker>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group MobileContainer">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="" ng-hide="IsHideForExitsPatient"><span class="text-Red">*</span>{{lblMobNo}}</label>
+                            <div class="col-sm-2 col-md-3 col-lg-3 col-xs-3 p-r-0">
+                                <input type="text" class="form-control alignRight" ng-hide="IsHideForExitsPatient" ng-class="PatientMobileCountryCodeError == true ? 'invalid' : 'valid' " id="PatientMobileCountryCode" placeholder="xxx" ng-model="PatientselectedCountry" uib-typeahead="i.CountryCode as i.CountryName for i in CountryList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedCountry($item)" replace="[^a-zA-Z0-9]" with=""> <!--ng-change="GetPatientCountryCode(PatientselectedCountry)"-->
+                            </div>
+                            <div class="col-sm-10 col-md-9 col-lg-9 col-xs-9 p-l-4">
+                                <input type="text" class="form-control alignRight" ng-hide="IsHideForExitsPatient" multi-validation="NumericArrowBkSpDelSpDCFSlash" ng-pattern="/^\d{1,15}$/" maxlength="10" ng-class="PatientMobileNumberError == true ? 'invalid' : 'valid' " id="" placeholder="xxx xxx xxxx" aria-describedby="basic-addon2" phone-input ng-model="PatientRegistration.PatientMobileNumber" uib-typeahead="i as (i.FullName) for i in PatientExistList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedPatientMainMobieNumber(PatientRegistration.PatientMobileNumber)" replace="[^0-9]" with="" ng-change="HideErrorMessage('PatientMobileNumber',PatientRegistration.PatientMobileNumber);">  <!--mobile-no="14" maxlength="14"-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> {{lblAppointmentReason}} </label>
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <select class="form-control" id="PatientVisitId" ng-class="PatientVisitIdError == true ? 'invalid' : 'valid' " ng-init="PatientRegistration.PatientVisitId = PatientVisitList[0].VTID" ng-model="PatientRegistration.PatientVisitId" ng-options="item.VTID as item.Description for item in PatientVisitList" ng-change="HideErrorMessage('PatientVisitId',PatientRegistration.PatientVisitId);"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblRemark}}</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <textarea type="text" class="form-control" id="" placeholder="" maxlength="50" ng-model="PatientRegistration.Remarks"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--ng-show="IsNewPatient ==2"-->
+                <div class="table-responsive ">
+                    <table class="table GridTable">
+                        <tr>
+                            <td class="txt_bold">@PIVF.LanguageResource.Resources.lblPatientName</td>
+                            <td class="txt_bold">@PIVF.LanguageResource.Resources.lblMRNO .</td>
+                            <td class="txt_bold">@PIVF.LanguageResource.Resources.lblvAgeGender</td>
+                        </tr>
+                        <tr class="parent_row">
+                            <td><span class="dataTxt Capitalize"> {{RegisteredPatient.FirstName+' '+RegisteredPatient.LastName}}</span></td>
+                            <td><span class="dataTxt"> {{selectedMRNo}}  </span></td>
+                            <td><span class="dataTxt"> {{ PatientRegistration.Age}} {{PatientRegistration.PatientGenderDescription}} </span></td>
+
+                        </tr>
+                        <tr class="parent_row">
+                            <td>
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblMobNo</label>
+                                <span class="dataTxt" style="margin-top: 5px; display: inline-block;"> {{PatientRegistration.PatientselectedCountryID}}{{PatientRegistration.PatientMobileNumber}} </span>
+                            </td>
+                            <td width="235">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> {{lblAppointmentReason}} </label>
+                                <select class="form-control" id="PatientVisitId" ng-class="PatientVisitIdError == true ? 'invalid' : 'valid' " ng-init="PatientRegistration.PatientVisitId = PatientVisitList[0].VTID" ng-model="PatientRegistration.PatientVisitId" ng-options="item.VTID as item.Description for item in PatientVisitList" ng-change="HideErrorMessage('PatientVisitId',PatientRegistration.PatientVisitId);"></select>
+                            </td>
+
+                            <td width="210">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblRemark}}</label>
+                                <textarea type="text" class="form-control" id="" placeholder="@PIVF.LanguageResource.Resources.lblRemarks" ng-model="PatientRegistration.Remarks"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-md-6 text-left">
+                    <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                        {{message}}
+                    </div>
+                    <div class="text-Red">
+                        @PIVF.LanguageResource.Resources.lblvFillLable
+                    </div>
+                </div>
+                <div class="col-md-6 text-right">
+                    <button class="btn btn-primary modal-save" type="button" id="" data-ng-click="save()">{{btnSave}}</button>
+                    <button class="btn btn-default" type="button" id="" ng-click="dismissAppointmentPopUp()">{{btnCancel}}</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</script>

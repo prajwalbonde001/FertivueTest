@@ -1,0 +1,320 @@
+2025-03-07 11:20:59.5831|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.5831|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.7893|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.7893|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.8176|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.8176|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.8176|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.8176|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.8561|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.8561|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.8657|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.8657|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.8842|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.8842|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.9053|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.9053|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.9307|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 11:20:59.9307|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 11:21:00.4553|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 11:21:00.4553|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 11:21:03.7376|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:03.7376|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:03.7445|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:03.7445|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:14.4337|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:akshaya.p,UnitID2
+2025-03-07 11:21:14.4337|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:akshaya.p,UnitID2
+2025-03-07 11:21:14.5281|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:14.5281|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:14.5728|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:14.5728|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:14.5728|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:14.5728|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:14.5884|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:14.5884|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 11:21:14.9406|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:akshaya.p,UnitID2
+2025-03-07 11:21:14.9406|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:akshaya.p,UnitID2
+2025-03-07 11:21:16.4584|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 11:21:16.4584|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 11:21:16.4797|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:akshaya.p,UnitID2
+2025-03-07 11:21:16.4797|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:akshaya.p,UnitID2
+2025-03-07 14:14:41.8517|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.8517|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.8783|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.8783|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.8923|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.8923|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.9139|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.9139|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.9139|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.9139|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.9414|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.9414|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.9624|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.9624|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.9976|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 14:14:41.9976|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 14:14:44.6636|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:44.6636|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:44.6817|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 14:14:44.6817|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 14:14:45.1898|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:45.1898|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:46.2075|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:46.2075|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:52.1021|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get Filter= IsSelect=True
+2025-03-07 14:14:52.1021|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get Filter= IsSelect=True
+2025-03-07 14:14:52.5757|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:52.5757|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:53.0791|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 14:14:53.0791|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 14:14:53.5984|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 14:14:53.5984|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 14:14:54.6086|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 14:14:54.6086|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 15:04:57.8329|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 15:04:57.8329|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 15:05:00.9986|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:05:00.9986|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.0088|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.0088|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.4636|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.4636|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.4826|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.4826|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.4923|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.4923|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.5100|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.5100|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.5267|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.5267|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.5399|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.5399|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.5593|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.5593|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.5825|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.5825|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.8384|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:05:01.8384|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:16.9688|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get Filter= IsSelect=True
+2025-03-07 15:06:16.9688|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get Filter= IsSelect=True
+2025-03-07 15:06:17.9608|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:17.9608|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:18.4623|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:06:18.4623|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:06:18.9786|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 15:06:18.9786|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 15:06:19.4909|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:19.4909|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:29.5358|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:akshaya.p,UnitID2
+2025-03-07 15:06:29.5358|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:akshaya.p,UnitID2
+2025-03-07 15:06:29.5440|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 15:06:29.5440|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 15:06:29.5596|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:akshaya.p,UnitID2
+2025-03-07 15:06:29.5596|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:akshaya.p,UnitID2
+2025-03-07 15:06:30.5532|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:30.5532|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:30.5532|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:30.5532|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:31.0745|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:akshaya.p,UnitID2
+2025-03-07 15:06:31.0745|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:akshaya.p,UnitID2
+2025-03-07 15:06:31.5895|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:31.5895|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:32.6072|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:32.6072|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:46.7130|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:46.7130|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:46.7130|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:06:46.7130|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:06:47.2339|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get Filter= IsSelect=True
+2025-03-07 15:06:47.2339|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get Filter= IsSelect=True
+2025-03-07 15:06:47.7133|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 15:06:47.7133|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 15:06:48.7287|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:48.7287|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:06:57.7884|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:06:57.7884|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:07:00.0297|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:07:00.0297|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:07:01.1248|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:07:01.1248|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:07:02.3860|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:07:02.3860|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|PatientRegistrationController, Get UnitId=2
+2025-03-07 15:07:02.8697|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:akshaya.p,UnitID2
+2025-03-07 15:07:02.8697|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:akshaya.p,UnitID2
+2025-03-07 15:07:02.8851|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:akshaya.p,UnitID2
+2025-03-07 15:07:02.8851|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:akshaya.p,UnitID2
+2025-03-07 15:07:02.8957|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 15:07:02.8957|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 15:07:03.8821|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetCountryCode,User:akshaya.p,UnitID:2
+2025-03-07 15:07:03.8821|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetCountryCode,User:akshaya.p,UnitID:2
+2025-03-07 15:07:04.9059|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:akshaya.p,UnitID:2
+2025-03-07 15:07:04.9059|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:akshaya.p,UnitID:2
+2025-03-07 15:07:36.7159|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetCountryCode,User:akshaya.p,UnitID:2
+2025-03-07 15:07:36.7159|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetCountryCode,User:akshaya.p,UnitID:2
+2025-03-07 15:07:36.7295|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:akshaya.p,UnitID2
+2025-03-07 15:07:36.7295|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:akshaya.p,UnitID2
+2025-03-07 15:07:38.7548|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:akshaya.p,UnitID2
+2025-03-07 15:07:38.7548|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:akshaya.p,UnitID2
+2025-03-07 15:07:38.7548|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 15:07:38.7548|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 15:07:39.2574|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:akshaya.p,UnitID:2
+2025-03-07 15:07:39.2574|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:akshaya.p,UnitID:2
+2025-03-07 15:07:47.5207|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:07:47.5207|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:07:48.0285|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:akshaya.p,UnitID:2
+2025-03-07 15:07:48.0285|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:akshaya.p,UnitID:2
+2025-03-07 15:07:48.5385|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:akshaya.p,UnitID:2
+2025-03-07 15:07:48.5385|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:akshaya.p,UnitID:2
+2025-03-07 15:07:49.5382|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 15:07:49.5382|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 15:15:20.4606|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:akshaya.p,UnitID:2
+2025-03-07 15:15:20.4606|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:akshaya.p,UnitID:2
+2025-03-07 15:15:21.5065|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:akshaya.p,UnitID:2
+2025-03-07 15:15:21.5065|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:akshaya.p,UnitID:2
+2025-03-07 15:15:27.5559|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:akshaya.p,UnitID:2
+2025-03-07 15:15:27.5559|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:akshaya.p,UnitID:2
+2025-03-07 15:15:28.0983|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 209
+2025-03-07 15:15:29.5482|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:akshaya.p,UnitID:2
+2025-03-07 15:15:29.5482|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:akshaya.p,UnitID:2
+2025-03-07 15:18:54.5837|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 15:18:54.5837|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.7097|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.7097|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.7390|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.7390|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.7547|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.7547|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.7773|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.7773|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.7884|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.7884|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.8060|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.8060|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.8282|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.8282|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.8532|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 15:18:55.8532|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 15:18:58.6041|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:18:58.6041|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:18:58.8245|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:18:58.8245|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:18:58.8359|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:18:58.8359|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:19:00.1361|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:19:00.1361|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 15:19:03.6955|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUnitList,User:akshaya.p,UnitID:2
+2025-03-07 15:19:03.6955|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUnitList,User:akshaya.p,UnitID:2
+2025-03-07 15:19:04.1982|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserList,User:akshaya.p,UnitID:2
+2025-03-07 15:19:04.1982|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserList,User:akshaya.p,UnitID:2
+2025-03-07 15:19:04.6997|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:19:04.6997|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:akshaya.p,UnitID:2
+2025-03-07 15:20:27.5671|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:akshaya.p,UnitID:2
+2025-03-07 15:20:27.5671|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:akshaya.p,UnitID:2
+2025-03-07 15:20:28.5840|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 15:20:28.5840|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 15:20:29.0972|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:20:29.0972|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:akshaya.p,UnitID:2
+2025-03-07 15:20:29.6147|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:akshaya.p,UnitID:2
+2025-03-07 15:20:29.6147|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:akshaya.p,UnitID:2
+2025-03-07 15:20:32.3613|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:akshaya.p,UnitID:2
+2025-03-07 15:20:32.3613|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:akshaya.p,UnitID:2
+2025-03-07 15:20:32.4313|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 209
+2025-03-07 15:20:32.8411|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:akshaya.p,UnitID:2
+2025-03-07 15:20:32.8411|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:akshaya.p,UnitID:2
+2025-03-07 15:33:21.3277|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:akshaya.p,UnitID:2
+2025-03-07 15:33:21.3277|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:akshaya.p,UnitID:2
+2025-03-07 15:33:21.3489|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 209
+2025-03-07 15:33:21.4442|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 15:33:21.4442|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.8294|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.8294|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.8657|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.8657|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.8873|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.8873|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.9115|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.9115|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.9115|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.9115|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.9413|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.9413|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.9633|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.9633|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.9883|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 16:51:33.9883|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 16:51:37.3260|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 16:51:37.3260|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 16:51:37.3502|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 16:51:37.3502|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 16:51:37.6025|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 16:51:37.6025|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 16:51:38.1172|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 16:51:38.1172|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 16:51:45.7218|INFO|PIVF.Web.Api.Billing.PatientAdvanceAPIController|Controller Name:AdvanceCtrl, Action:HttpGet, Method:GetAdvanceList, User:akshaya.p, UnitID:2
+2025-03-07 16:51:45.7218|INFO|PIVF.Web.Api.Billing.PatientAdvanceAPIController|Controller Name:AdvanceCtrl, Action:HttpGet, Method:GetAdvanceList, User:akshaya.p, UnitID:2
+2025-03-07 16:51:46.7337|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:akshaya.p,UnitID:2
+2025-03-07 16:51:46.7337|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:akshaya.p,UnitID:2
+2025-03-07 16:53:22.3456|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:akshaya.p,UnitID:2
+2025-03-07 16:53:22.3456|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:akshaya.p,UnitID:2
+2025-03-07 16:53:27.9509|INFO|PIVF.Web.Api.Billing.PatientAdvanceAPIController|Controller Name:AdvanceCtrl, Action:HttpGet, Method:GetAdvanceList, User:akshaya.p, UnitID:2
+2025-03-07 16:53:27.9509|INFO|PIVF.Web.Api.Billing.PatientAdvanceAPIController|Controller Name:AdvanceCtrl, Action:HttpGet, Method:GetAdvanceList, User:akshaya.p, UnitID:2
+2025-03-07 16:54:11.2032|INFO|PIVF.Web.Api.Billing.BillingAPIController|Controller Name:BillingCtrl,Action:HttpPost,Method:GetBillList,User:akshaya.p,UnitID:2
+2025-03-07 16:54:11.2032|INFO|PIVF.Web.Api.Billing.BillingAPIController|Controller Name:BillingCtrl,Action:HttpPost,Method:GetBillList,User:akshaya.p,UnitID:2
+2025-03-07 17:10:53.6381|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 17:10:53.6381|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.7218|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.7218|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.7514|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.7514|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetRegistrationDashboardByAgeGroupCount,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.7635|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.7635|INFO|PIVF.Web.Api.PatientDashboard.PatientDashboardAPIController|Controller Name:PatientDashboardAPI,Action:GET,Method:GetVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.7868|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.7868|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAppointmentDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.7868|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.7868|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetInvestigationDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.8160|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.8160|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetBillingDashboardCount,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.8373|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.8373|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetTotalRevenueDashboardServiceTypeCount,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.8652|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 17:10:56.8652|INFO|PIVF.Web.Api.FertivueDashboard.FertivueDashboardController|Controller Name:FertivueDashboard,Action:GET,Method:GetAdminDashboardPercentageCounts,User:akshaya.p,UnitID:2
+2025-03-07 17:10:57.0835|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 17:10:57.0835|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:akshaya.p,UnitID:2
+2025-03-07 17:10:57.3178|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 17:10:57.3178|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 17:10:57.3178|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 17:10:57.3178|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:05.2860|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:05.2860|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:06.2683|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:akshaya.p,UnitID:2
+2025-03-07 17:11:06.2683|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:akshaya.p,UnitID:2
+2025-03-07 17:11:06.3427|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 209
+2025-03-07 17:11:58.1319|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDoctorList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:58.1319|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDoctorList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:58.1848|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 17:11:58.1848|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:akshaya.p,UnitID:2
+2025-03-07 17:11:58.2763|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDGenderList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:58.2763|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDGenderList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:58.2944|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDSpecializationList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:58.2944|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDSpecializationList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:58.3251|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDoctorList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:58.3251|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDoctorList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:58.6400|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDDCabinList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:58.6400|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDDCabinList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:59.1403|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDDVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:59.1403|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDDVisitTypeList,User:akshaya.p,UnitID:2
+2025-03-07 17:11:59.6546|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:akshaya.p,UnitID:2
+2025-03-07 17:11:59.6546|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:akshaya.p,UnitID:2

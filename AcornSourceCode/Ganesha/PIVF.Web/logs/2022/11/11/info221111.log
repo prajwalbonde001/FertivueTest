@@ -1,0 +1,1143 @@
+2022-11-11 09:53:26.5221|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:26.5221|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:26.7541|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:26.7541|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:27.1667|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:27.1667|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:28.3928|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:28.3928|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:28.4164|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:28.4164|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:28.4364|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:28.4364|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:29.1241|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:alka.bhide,UnitID:2
+2022-11-11 09:53:29.1241|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:alka.bhide,UnitID:2
+2022-11-11 09:53:29.6374|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:alka.bhide,UnitID:2
+2022-11-11 09:53:29.6374|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:alka.bhide,UnitID:2
+2022-11-11 09:55:58.9993|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-11 09:55:58.9993|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-11 09:55:59.9839|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-11 09:55:59.9839|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-11 09:56:33.3044|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 09:56:33.3044|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 09:56:33.3373|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 09:56:33.3373|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 09:56:33.7399|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 09:56:33.7399|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 09:56:34.7545|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 09:56:34.7545|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 09:56:34.8308|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 09:56:34.8308|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 09:56:36.3725|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 09:56:36.3725|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 09:56:36.4664|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 09:56:36.4664|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 09:56:36.4848|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 09:56:36.4848|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 09:56:40.3929|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID2
+2022-11-11 09:56:40.3929|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID2
+2022-11-11 09:56:40.5311|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:2
+2022-11-11 09:56:40.5311|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:2
+2022-11-11 09:56:40.5552|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:56:40.5552|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:56:40.5976|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:56:40.5976|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:56:40.9731|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:56:40.9731|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:56:40.9731|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:56:40.9731|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:56:40.9876|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:56:40.9876|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:56:41.3989|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID2
+2022-11-11 09:56:41.3989|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID2
+2022-11-11 09:56:47.6008|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:56:47.6008|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:56:48.8154|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:56:48.8154|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:56:55.5927|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 09:56:55.5927|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 09:56:55.9732|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 09:56:55.9732|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 09:56:56.0155|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 09:56:56.0155|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 09:56:56.0683|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 09:56:56.0683|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 09:56:56.5016|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 09:56:56.5016|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 09:56:56.5812|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 09:56:56.5812|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 09:56:57.0951|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 09:56:57.0951|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 09:56:57.5958|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 09:56:57.5958|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 09:57:00.0100|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID2
+2022-11-11 09:57:00.0100|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID2
+2022-11-11 09:57:00.0782|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:57:00.0782|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:57:00.0963|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:57:00.0963|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:57:00.0963|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:57:00.0963|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:57:00.1141|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:57:00.1141|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 09:57:00.5675|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:2
+2022-11-11 09:57:00.5675|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:2
+2022-11-11 09:57:00.6015|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:57:00.6015|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:57:01.0337|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID2
+2022-11-11 09:57:01.0337|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID2
+2022-11-11 09:57:10.2406|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:57:10.2406|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:57:11.6523|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:57:11.6523|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:57:12.8292|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:57:12.8292|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:57:13.8791|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:57:13.8791|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:57:30.2111|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 09:57:30.2111|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 10:05:48.3796|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 10:05:48.3796|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 10:10:12.1441|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 10:10:12.1441|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 10:15:20.5048|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:15:20.5048|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:15:50.6001|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:15:50.9232|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:15:50.9232|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:16:20.9574|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:20:15.5100|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:20:15.5100|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:20:45.6255|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:20:45.7552|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:20:45.7552|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:21:15.7864|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:21:15.8113|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:21:15.8113|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:21:45.8413|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:21:45.8683|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:21:45.8683|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:22:15.8949|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:22:15.9255|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:22:15.9255|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:22:45.9460|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:22:45.9710|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:22:45.9710|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:23:16.0030|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:23:16.0299|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:23:16.0299|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:23:46.0607|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:23:46.1433|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:23:46.1433|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:24:16.1863|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:24:16.2323|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:24:16.2323|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:24:46.2587|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:24:46.2858|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:24:46.2858|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:25:16.3130|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:25:16.3440|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:25:16.3440|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:25:46.4240|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:25:46.4883|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:25:46.4883|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:26:16.5101|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:26:16.5385|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:26:16.5385|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:26:46.5632|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 10:26:46.5838|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 10:26:46.5838|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:2
+2022-11-11 11:32:37.9008|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 11:32:37.9008|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 11:32:38.6251|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 11:32:38.6251|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 11:32:38.6468|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 11:32:38.6468|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 11:32:38.6619|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 11:32:38.6619|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 11:32:38.9013|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 11:32:38.9013|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 11:32:39.0312|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 11:32:39.0312|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 11:32:39.7916|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 11:32:39.7916|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 11:32:40.3143|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 11:32:40.3143|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 11:34:45.4610|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 11:34:45.4610|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 11:34:45.6197|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:1
+2022-11-11 11:34:45.6197|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:1
+2022-11-11 11:34:46.4074|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:1
+2022-11-11 11:34:46.4074|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:1
+2022-11-11 11:34:46.4261|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:1
+2022-11-11 11:34:46.4261|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:1
+2022-11-11 11:34:46.5916|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 11:34:46.5916|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 11:34:46.8871|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:1
+2022-11-11 11:34:46.8871|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:1
+2022-11-11 11:34:47.2298|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:1
+2022-11-11 11:34:47.2298|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:1
+2022-11-11 11:34:47.7402|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:1
+2022-11-11 11:34:47.7402|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:1
+2022-11-11 11:34:56.3429|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:1
+2022-11-11 11:34:56.3429|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:1
+2022-11-11 11:34:59.3967|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID1
+2022-11-11 11:34:59.3967|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID1
+2022-11-11 11:34:59.5228|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:1
+2022-11-11 11:34:59.5228|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:1
+2022-11-11 11:34:59.5565|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:1
+2022-11-11 11:34:59.5565|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:1
+2022-11-11 11:34:59.5624|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:1
+2022-11-11 11:34:59.5624|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:1
+2022-11-11 11:34:59.5624|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:1
+2022-11-11 11:34:59.5624|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:1
+2022-11-11 11:34:59.8342|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID1
+2022-11-11 11:34:59.8342|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID1
+2022-11-11 11:35:00.3490|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:1
+2022-11-11 11:35:00.3490|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:1
+2022-11-11 11:35:00.8867|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID1
+2022-11-11 11:35:00.8867|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID1
+2022-11-11 11:35:04.8779|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID1
+2022-11-11 11:35:04.8779|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID1
+2022-11-11 11:35:06.3739|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID1
+2022-11-11 11:35:06.3739|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID1
+2022-11-11 11:35:07.7616|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID1
+2022-11-11 11:35:07.7616|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID1
+2022-11-11 11:35:11.1813|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:1
+2022-11-11 11:35:11.1813|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:1
+2022-11-11 11:35:20.3750|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:1
+2022-11-11 11:35:20.3750|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:1
+2022-11-11 11:36:22.1404|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:1
+2022-11-11 11:36:22.1404|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:1
+2022-11-11 11:37:46.9972|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 11:37:47.9084|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:1
+2022-11-11 11:37:47.9084|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:1
+2022-11-11 11:39:00.5134|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 11:39:00.5663|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:1
+2022-11-11 11:39:00.5663|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:1
+2022-11-11 11:39:34.3872|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 11:43:04.3639|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:1
+2022-11-11 11:43:04.3639|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:saveUpdate,User:multiply,UnitID:1
+2022-11-11 11:52:01.6480|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/saveUpdate,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.CheckExistingDocDuplicacy(String FN, String LN, String MobNo)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.SaveUpdate(NewRegistrationVO obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.SaveUpdate(NewRegistrationVO obj) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 46
+2022-11-11 12:01:07.5188|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 12:01:07.5188|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 12:03:33.3045|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 12:03:33.3045|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 12:07:39.5250|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDDCabinList,User:multiply,UnitID:1
+2022-11-11 12:07:39.5250|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDDCabinList,User:multiply,UnitID:1
+2022-11-11 12:07:39.5694|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDSpecializationList,User:multiply,UnitID:1
+2022-11-11 12:07:39.5694|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDSpecializationList,User:multiply,UnitID:1
+2022-11-11 12:07:39.6246|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:1
+2022-11-11 12:07:39.6246|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:1
+2022-11-11 12:07:40.0187|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:multiply,UnitID:1
+2022-11-11 12:07:40.0187|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetPatientDetails,User:multiply,UnitID:1
+2022-11-11 12:07:40.5176|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDoctorList,User:multiply,UnitID:1
+2022-11-11 12:07:40.5176|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDoctorList,User:multiply,UnitID:1
+2022-11-11 12:07:40.5560|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDoctorList,User:multiply,UnitID:1
+2022-11-11 12:07:40.5560|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDoctorList,User:multiply,UnitID:1
+2022-11-11 12:07:41.0216|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDDVisitTypeList,User:multiply,UnitID:1
+2022-11-11 12:07:41.0216|INFO|PIVF.Web.Api.Patient.PatientVisitController|Controller Name:PatientVisit,Action:GET,Method:GetDDVisitTypeList,User:multiply,UnitID:1
+2022-11-11 12:07:41.0508|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDGenderList,User:multiply,UnitID:1
+2022-11-11 12:07:41.0508|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDGenderList,User:multiply,UnitID:1
+2022-11-11 12:07:43.9618|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiply,UnitID:1
+2022-11-11 12:07:43.9618|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:GET,Method:getPatientList,User:multiply,UnitID:1
+2022-11-11 12:08:14.0875|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientList,MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientList(NewPatient obj)
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientList(String searchParams) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 155
+2022-11-11 12:08:18.9082|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 12:08:18.9082|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 12:08:19.3538|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:1
+2022-11-11 12:08:19.3538|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:1
+2022-11-11 12:08:20.7932|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:1
+2022-11-11 12:08:20.7932|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:1
+2022-11-11 12:08:20.8143|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:1
+2022-11-11 12:08:20.8143|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:1
+2022-11-11 12:08:21.6271|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 12:08:21.6271|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 12:08:22.0819|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:1
+2022-11-11 12:08:22.0819|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:1
+2022-11-11 12:08:22.5947|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:1
+2022-11-11 12:08:22.5947|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:1
+2022-11-11 12:08:23.5956|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:1
+2022-11-11 12:08:23.5956|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:1
+2022-11-11 12:08:38.1115|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 12:08:38.1115|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:1
+2022-11-11 12:09:40.4854|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 12:09:40.4854|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 12:09:40.6928|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 12:09:40.6928|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 12:09:41.2057|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 12:09:41.2057|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 12:09:42.3937|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 12:09:42.3937|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 12:09:42.8990|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 12:09:42.8990|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 12:09:43.0812|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 12:09:43.0812|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 12:09:43.6893|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:09:43.6893|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:09:43.6893|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:09:43.6893|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:09:47.0396|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2022-11-11 12:09:47.0396|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2022-11-11 12:09:48.1983|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2022-11-11 12:09:48.1983|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2022-11-11 12:09:49.9948|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2022-11-11 12:09:49.9948|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2022-11-11 12:09:51.5106|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2022-11-11 12:09:51.5106|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2022-11-11 12:09:54.7429|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2022-11-11 12:09:54.7429|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2022-11-11 12:10:32.7211|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:10:32.7211|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:10:37.9935|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:10:37.9935|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:10:41.2745|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 12:10:41.2745|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 12:10:41.2893|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 12:10:41.2893|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 12:10:41.7828|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 12:10:41.7828|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 12:10:42.8467|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 12:10:42.8467|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 12:10:43.0340|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 12:10:43.0340|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 12:10:43.5343|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 12:10:43.5343|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 12:10:44.4052|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:10:44.4052|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:10:45.1277|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:10:45.1277|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:10:45.1477|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 12:10:45.1477|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 15:49:10.1166|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 15:49:10.1166|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 15:49:10.2556|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 15:49:10.2556|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 15:49:10.5838|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 15:49:10.5838|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 15:49:10.5965|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 15:49:10.5965|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 15:49:10.9885|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 15:49:10.9885|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 15:49:11.0972|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 15:49:11.0972|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 15:49:12.0235|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 15:49:12.0235|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 15:49:12.1174|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 15:49:12.1174|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 15:49:15.1419|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 15:49:15.1419|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 15:49:15.8315|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 15:49:15.8315|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 15:49:16.6841|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 15:49:16.6841|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 15:49:16.6996|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 15:49:16.6996|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 15:49:16.7072|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 15:49:16.7072|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 15:49:17.7152|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 15:49:17.7152|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 15:49:18.3312|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 15:49:18.3312|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 15:49:18.5033|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 15:49:18.5033|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 16:38:24.3449|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:38:24.3449|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:38:24.4658|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:38:24.4658|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:38:24.7603|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 16:38:24.7603|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 16:38:24.8727|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 16:38:24.8727|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 16:38:25.8005|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 16:38:25.8005|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 16:38:25.8916|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 16:38:25.8916|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 16:38:25.9104|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 16:38:25.9104|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 16:38:26.4033|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 16:38:26.4033|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 16:38:30.1192|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 16:38:30.1192|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 16:38:30.1297|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 16:38:30.1297|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 16:38:30.1766|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:38:30.1766|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:38:30.1966|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:38:30.1966|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:38:30.4019|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:38:30.4019|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:38:30.4090|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:38:30.4090|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:38:30.4090|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:38:30.4090|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:38:31.6534|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 16:38:31.6534|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 16:39:00.0187|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:39:00.0187|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:39:01.5146|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:39:01.5146|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:46:08.2358|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:46:08.2358|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:47:25.4489|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:47:25.4489|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:48:17.2714|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 16:48:17.2714|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 16:48:17.7792|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 16:48:17.7792|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 16:48:27.0714|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:48:27.0714|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:48:29.0266|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:48:29.0266|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:49:01.4550|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 16:49:01.4550|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 16:49:02.4901|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 16:49:02.4901|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 16:49:03.0012|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 16:49:03.0012|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 16:49:03.5220|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 16:49:03.5220|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 16:49:07.9084|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 16:49:07.9084|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 16:49:07.9084|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 16:49:07.9084|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 16:49:07.9386|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:49:07.9386|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:49:07.9600|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:49:07.9600|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:49:08.2007|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:49:08.2007|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:49:08.2095|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:49:08.2095|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:49:08.3449|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 16:49:08.3449|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 16:49:08.7482|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:49:08.7482|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:55:00.7336|ERROR|PIVF.Web.Api.Master.Configuration.UserAPIController|UserAPI/GetGrandParentList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Configuration.UserAPIController.GetGrandParentList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Configuration\UserAPIController.cs:line 59
+2022-11-11 16:55:00.7697|ERROR|PIVF.Web.Api.Master.Configuration.UserAPIController|UserAPI/GetUserRoleRights MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Configuration.UserAPIController.GetUserRoleRights() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Configuration\UserAPIController.cs:line 398
+2022-11-11 16:55:02.1317|ERROR|PIVF.Web.Api.Master.Common.CommonController|3_Exc: Common/GetDepartmentList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Common.CommonController.GetDepartmentList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Common\CommonController.cs:line 485,InnerExc:
+2022-11-11 16:55:02.1690|ERROR|PIVF.Web.Api.Master.Common.CommonController|3_Exc: Common/GetDoctorsList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Common.CommonController.GetDoctorsList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Common\CommonController.cs:line 451,InnerExc:
+2022-11-11 16:55:02.2261|ERROR|PIVF.Web.Api.Master.Common.CommonController|3_Exc: Common/GetSpeclRegTypeList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Common.CommonController.GetSpeclRegTypeList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Common\CommonController.cs:line 519,InnerExc:
+2022-11-11 16:55:02.3114|ERROR|PIVF.Web.Api.QueueMgt.QueueMgtController|QueueMgt/GetQueueList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.QueueMgt.QueueMgtController.GetQueueList(String[] Que) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\QueueMgt\QueueMgtController.cs:line 33
+2022-11-11 16:56:21.7375|ERROR|PIVF.Web.Api.Master.Configuration.UserAPIController|UserAPI/GetGrandParentList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Configuration.UserAPIController.GetGrandParentList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Configuration\UserAPIController.cs:line 59
+2022-11-11 16:56:21.8102|ERROR|PIVF.Web.Api.Master.Configuration.UserAPIController|UserAPI/GetUserRoleRights MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Configuration.UserAPIController.GetUserRoleRights() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Configuration\UserAPIController.cs:line 398
+2022-11-11 16:56:22.1809|ERROR|PIVF.Web.Api.Master.Common.CommonController|3_Exc: Common/GetDepartmentList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Common.CommonController.GetDepartmentList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Common\CommonController.cs:line 485,InnerExc:
+2022-11-11 16:56:22.2044|ERROR|PIVF.Web.Api.QueueMgt.QueueMgtController|QueueMgt/GetQueueList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.QueueMgt.QueueMgtController.GetQueueList(String[] Que) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\QueueMgt\QueueMgtController.cs:line 33
+2022-11-11 16:56:22.2381|ERROR|PIVF.Web.Api.Master.Common.CommonController|3_Exc: Common/GetDoctorsList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Common.CommonController.GetDoctorsList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Common\CommonController.cs:line 451,InnerExc:
+2022-11-11 16:56:22.3058|ERROR|PIVF.Web.Api.Master.Common.CommonController|3_Exc: Common/GetSpeclRegTypeList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Common.CommonController.GetSpeclRegTypeList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Common\CommonController.cs:line 519,InnerExc:
+2022-11-11 16:56:30.0083|ERROR|PIVF.Web.Api.Master.Configuration.UserAPIController|UserAPI/GetUserRoleRights MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Configuration.UserAPIController.GetUserRoleRights() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Configuration\UserAPIController.cs:line 398
+2022-11-11 16:56:30.0399|ERROR|PIVF.Web.Api.Master.Configuration.UserAPIController|UserAPI/GetGrandParentList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Configuration.UserAPIController.GetGrandParentList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Configuration\UserAPIController.cs:line 59
+2022-11-11 16:56:30.2919|ERROR|PIVF.Web.Api.Master.Common.CommonController|3_Exc: Common/GetDepartmentList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Common.CommonController.GetDepartmentList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Common\CommonController.cs:line 485,InnerExc:
+2022-11-11 16:56:30.4137|ERROR|PIVF.Web.Api.Master.Common.CommonController|3_Exc: Common/GetDoctorsList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Common.CommonController.GetDoctorsList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Common\CommonController.cs:line 451,InnerExc:
+2022-11-11 16:56:30.4521|ERROR|PIVF.Web.Api.Master.Common.CommonController|3_Exc: Common/GetSpeclRegTypeList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Common.CommonController.GetSpeclRegTypeList() in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\Master\Common\CommonController.cs:line 519,InnerExc:
+2022-11-11 16:56:30.4797|ERROR|PIVF.Web.Api.QueueMgt.QueueMgtController|QueueMgt/GetQueueList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.QueueMgt.QueueMgtController.GetQueueList(String[] Que) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\QueueMgt\QueueMgtController.cs:line 33
+2022-11-11 16:56:46.5968|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 16:56:46.5968|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 16:56:47.1067|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 16:56:47.1067|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 16:56:48.7164|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 16:56:48.7164|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 16:56:49.7300|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 16:56:49.7300|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 16:56:50.2409|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 16:56:50.2409|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 16:56:50.2594|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:56:50.2594|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:56:50.2732|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:56:50.2732|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 16:56:50.7693|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 16:56:50.7693|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 16:58:31.7211|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 16:58:31.7211|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 16:58:31.8194|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:58:31.8194|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:58:31.8986|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:58:31.8986|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:58:31.8986|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:58:31.8986|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:58:31.9090|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:58:31.9090|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 16:58:33.2578|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 16:58:33.2578|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 16:58:34.2868|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 16:58:34.2868|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 16:58:34.3130|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:58:34.3130|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:58:36.3101|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:58:36.3101|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:58:38.2976|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:58:38.2976|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:58:40.3183|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:58:40.3183|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:58:42.8869|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 16:58:42.8869|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:19:37.2340|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:19:37.2340|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:19:37.4867|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 17:19:37.4867|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 17:19:37.9173|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 17:19:37.9173|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 17:19:38.0379|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 17:19:38.0379|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 17:19:38.1052|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 17:19:38.1052|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 17:19:38.1169|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:19:38.1169|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:19:38.3968|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 17:19:38.3968|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 17:19:38.9416|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 17:19:38.9416|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 17:19:43.4745|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 17:19:43.4745|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 17:19:43.4905|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 17:19:43.4905|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 17:19:43.5484|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:19:43.5484|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:19:43.7502|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:19:43.7502|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:19:43.8137|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:19:43.8137|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:19:43.8292|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:19:43.8292|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:19:43.8472|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:19:43.8472|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:19:45.0040|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 17:19:45.0040|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 17:36:03.1944|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 17:36:03.1944|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 17:36:04.7352|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 17:36:04.7352|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 17:36:04.8708|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 17:36:04.8708|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 17:36:04.9750|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 17:36:04.9750|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 17:36:05.0284|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 17:36:05.0284|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 17:36:05.2214|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 17:36:05.2214|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 17:36:05.4932|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:36:05.4932|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:36:06.0267|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:36:06.0267|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:36:07.9527|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 17:36:07.9527|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 17:36:08.1912|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 17:36:08.1912|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 17:36:08.2584|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:36:08.2584|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:36:08.3646|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:36:08.3646|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:36:08.7924|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:36:08.7924|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:36:08.8017|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:36:08.8017|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:36:08.8017|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:36:08.8017|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:36:10.4753|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 17:36:10.4753|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 17:36:14.4168|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:36:14.4168|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:36:21.3188|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:36:21.3188|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:36:21.9376|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:36:21.9376|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:36:22.7338|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:36:22.7338|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:36:22.9282|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:36:22.9282|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:24.1821|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 17:38:24.1821|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 17:38:24.5102|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 17:38:24.5102|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 17:38:24.6119|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 17:38:24.6119|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 17:38:24.6531|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:38:24.6531|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:38:24.9562|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:38:24.9562|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:38:25.0657|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 17:38:25.0657|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 17:38:25.3964|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 17:38:25.3964|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 17:38:25.9104|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 17:38:25.9104|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 17:38:28.3362|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 17:38:28.3362|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 17:38:28.5642|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 17:38:28.5642|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 17:38:28.6157|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:38:28.6157|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:38:28.7494|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:28.7494|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:28.8405|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:38:28.8405|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:38:29.4286|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:38:29.4286|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:38:29.4286|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:38:29.4286|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:38:30.3994|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 17:38:30.3994|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 17:38:37.5997|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:37.5997|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:38.8710|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:38.8710|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:39.6952|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:39.6952|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:40.4171|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:40.4171|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:40.4412|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:40.4412|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:41.0043|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:41.0043|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:41.0170|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:38:41.0170|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:39:17.1857|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:39:17.1857|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:39:17.4719|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 17:39:17.4719|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 17:39:17.4879|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 17:39:17.4879|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 17:39:17.5014|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 17:39:17.5014|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 17:39:17.5333|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 17:39:17.5333|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 17:39:18.0286|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 17:39:18.0286|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 17:39:18.0491|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:39:18.0491|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 17:39:18.5357|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 17:39:18.5357|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 17:39:23.1049|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 17:39:23.1049|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 17:39:23.1179|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:39:23.1179|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:39:23.1369|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:39:23.1369|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:39:23.1537|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:39:23.1537|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:39:23.2110|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:39:23.2110|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 17:39:24.1300|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 17:39:24.1300|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 17:39:24.1672|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:39:24.1672|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:39:24.6443|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 17:39:24.6443|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 17:39:39.7581|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:39:39.7581|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:39:41.6642|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:39:41.6642|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:39:42.9611|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:39:42.9611|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:39:49.8487|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:39:49.8487|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:44:16.0794|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:44:16.0794|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 17:44:29.1119|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 17:44:29.1119|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 17:44:29.1119|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 17:44:29.1119|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 17:44:29.1448|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 17:44:29.1448|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 17:44:29.6298|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 17:44:29.6298|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 17:44:29.9414|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 17:44:29.9414|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 17:44:30.0363|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:44:30.0363|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:44:30.0363|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:44:30.0363|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:44:30.4420|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 17:44:30.4420|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 17:44:32.5677|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID2
+2022-11-11 17:44:32.5677|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID2
+2022-11-11 17:44:32.5677|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID2
+2022-11-11 17:44:32.5677|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID2
+2022-11-11 17:44:32.6006|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:44:32.6006|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:44:32.6279|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:44:32.6279|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:44:32.6444|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:44:32.6444|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:44:32.6444|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:44:32.6444|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:44:33.0795|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:2
+2022-11-11 17:44:33.0795|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:2
+2022-11-11 17:44:33.0795|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 17:44:33.0795|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 17:46:14.6287|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 17:46:14.6287|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 17:46:14.9888|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 17:46:14.9888|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 17:46:20.2347|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:46:20.2347|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:46:23.7288|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:46:23.7288|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:49:15.2396|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 17:49:15.2396|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2022-11-11 17:49:15.7839|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 17:49:15.7839|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2022-11-11 17:49:19.0168|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:49:19.0168|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:49:21.6827|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:49:21.6827|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2022-11-11 17:51:06.5988|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 17:51:06.5988|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2022-11-11 17:51:07.1607|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 17:51:07.1607|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2022-11-11 17:51:07.6293|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 17:51:07.6293|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2022-11-11 17:51:08.1284|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 17:51:08.1284|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2022-11-11 17:51:10.2443|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID2
+2022-11-11 17:51:10.2443|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID2
+2022-11-11 17:51:10.2555|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:2
+2022-11-11 17:51:10.2555|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:2
+2022-11-11 17:51:10.2745|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:51:10.2745|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:51:10.3025|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:51:10.3025|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:51:10.3150|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 17:51:10.3150|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID2
+2022-11-11 17:51:10.3293|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:51:10.3293|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:51:10.3293|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:51:10.3293|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:2
+2022-11-11 17:51:11.7544|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID2
+2022-11-11 17:51:11.7544|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID2
+2022-11-11 18:02:51.9881|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 18:02:51.9881|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 18:02:52.5104|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 18:02:52.5104|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 18:03:04.5027|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:03:04.5027|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:03:18.1670|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:03:18.1670|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:04:06.0731|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 18:04:06.0731|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 18:04:06.7777|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:04:06.7777|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:04:06.9555|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 18:04:06.9555|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 18:04:08.0874|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 18:04:08.0874|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 18:04:08.1016|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 18:04:08.1016|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 18:04:08.2020|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 18:04:08.2020|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 18:04:08.7144|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:04:08.7144|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:04:10.2054|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 18:04:10.2054|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 18:04:11.3974|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 18:04:11.3974|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:multiply,UnitID4
+2022-11-11 18:04:11.4112|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 18:04:11.4112|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:multiply,UnitID:4
+2022-11-11 18:04:11.4271|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 18:04:11.4271|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 18:04:11.4633|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 18:04:11.4633|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:multiply,UnitID4
+2022-11-11 18:04:11.7904|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 18:04:11.7904|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 18:04:11.8206|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 18:04:11.8206|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 18:04:11.8514|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 18:04:11.8514|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:multiply,UnitID4
+2022-11-11 18:04:12.3613|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 18:04:12.3613|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetRoleList,User:multiply,UnitID:4
+2022-11-11 18:05:44.9750|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 18:05:44.9750|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:4
+2022-11-11 18:05:45.2182|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:05:45.2182|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:05:46.0006|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:05:46.0006|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:4
+2022-11-11 18:05:46.5762|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 18:05:46.5762|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:4
+2022-11-11 18:05:47.5459|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 18:05:47.5459|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:4
+2022-11-11 18:05:47.5987|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 18:05:47.5987|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:4
+2022-11-11 18:05:48.1499|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 18:05:48.1499|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:4
+2022-11-11 18:05:48.6140|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4
+2022-11-11 18:05:48.6140|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:4

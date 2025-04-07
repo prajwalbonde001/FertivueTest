@@ -1,0 +1,160 @@
+﻿@{ Layout = null;}
+<div ng-controller="ConsentIndexCtr" ng-init="PageSetup()">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="searchContainer singleSearchOpt" ng-init="show=true">
+                <a href="" class="searchTab1" ng-class="{active:show}" ng-click="show=true"><i class="fa fa-search" aria-hidden="true"></i>@PIVF.LanguageResource.Resources.btnSearch</a>
+
+                <!-- Main Search Box Start -->
+                <div class="MainSearchBoxContainer" ng-show="show">
+                    <div class="BlackSearchBoxSection" ng-init="LoadData()">
+                        <div class="SearchInputGroupContainer">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="InputBoxDiv">
+                                        <input class="form-control" type="text" id="" ng-model="SearchConsent.Code" placeholder="@PIVF.LanguageResource.Resources.lblCode_Description">@*Code/Description ::Modified by swatih for localization 28/7/2020*@
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="InputBoxDiv">
+                                        <select class="form-control " ng-model="SearchConsent.ARTTypeID" ng-options="item.ID as item.Description for item in ArtTypeList" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="InputBoxDiv">
+                                        <select class="form-control " ng-model="SearchConsent.ARTSubTypeID" ng-options="item.ID as item.Description for item in ArtSubtypeList" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="InputBoxDiv">
+                                        <button id="" type="button" class="btn btn-primary m-0" ng-click="GetConsentList()" ng-keypress="($event.which === 13)?GetQueueList(Que,false):0">@PIVF.LanguageResource.Resources.btnSearch</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- Main Search Box End-->
+            </div>
+        </div>
+    </div>
+    <div class="form_Content m-h-390">
+        <div class="row m-t-10">
+            @*<div class="col-md-3 col-lg-3 ">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-4 col-lg-3 control-label" for="">
+                            Code/Description
+                        </label>
+                        <div class="col-sm-12 col-md-8 col-lg-9">
+                            <input type="text" class="form-control" for="" ng-model="SearchConsent.Code" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 ">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-4 col-lg-3 control-label" for="">
+                            Art Type
+                        </label>
+                        <div class="col-sm-12 col-md-8 col-lg-9">
+                            <select class="form-control " ng-model="SearchConsent.ARTTypeID" ng-options="item.ID as item.Description for item in ArtTypeList" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 ">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-4 col-lg-3 control-label" for="">
+                            Art Sub Type
+                        </label>
+                        <div class="col-sm-12 col-md-8 col-lg-9">
+                            <select class="form-control " ng-model="SearchConsent.ARTSubTypeID" ng-options="item.ID as item.Description for item in ArtSubtypeList" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-2">
+                    <button class="btn btn-primary minHeightBtn" id="" name="btnNew" value="New" ng-click="GetConsentList()">Search</button>
+                </div>*@
+            <div class="col-md-12 col-lg-12 text-right p-r-25">
+                <button class="btn-link m-b-10" title="@PIVF.LanguageResource.Resources.btnNew" type="button" id="btnNew" ng-click="NewPage()" value="Add"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
+
+            <div class="col-md-12 consent_content">
+                <div class="table-responsive fixed_header">
+                    <table class="table table-hover table-striped " style="min-height:390px;min-width:1000px;">
+                        @*max-height:390px;*@
+                        <thead>
+                            <tr>
+                                <th st-ratio="5">&nbsp;</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblCode</th>@*Code ::Modified by swatih for localization 24/7/2020*@
+                                <th st-ratio="30">@PIVF.LanguageResource.Resources.lblConsent</th>@*Consent ::Modified by swatih for localization 24/7/2020*@
+                                <th st-ratio="5">@PIVF.LanguageResource.Resources.lblActive</th>@*Active ::Modified by swatih for localization 24/7/2020*@
+                                <th st-ratio="50">@PIVF.LanguageResource.Resources.lblCycleType</th>@*Cycle Type ::Modified by swatih for localization 24/7/2020*@
+                            </tr>
+                        </thead>
+                        <tbody style="height: calc(100vh - 455px);">
+                            <tr ng-repeat="Item in ConsentList">
+                                <td st-ratio="5" class="text-center"><button type="button" class="btn btn_edit" ng-click="EditData(Item)"></button></td>
+                                <td st-ratio="10">
+                                    {{Item.Code}}
+                                </td>
+                                <td st-ratio="30">{{Item.Description}}</td>
+                                <td st-ratio="5">
+                                    @*<span type="button" class="ActiveIcon" ng-model="Item.Status"></span>*@
+                                <span type="button" class="cursorPointer" ng-model="Item.Status" ng-class="{ActiveIcon:Item.Status==true,DeActiveIcon:Item.Status==false}" ng-click="objRgt.IsUpdate?openReasonPopUp(Item):0;"></span>
+                            </td>
+
+                            <td st-ratio="50">
+                                <div style="">
+                                    <table style="color: #454545;font-size:14px;">
+                                        <tr ng-repeat="item in Item.LinkDetails">
+                                            <td><b>{{item.ARTTypeDesc}}</b>-</td>
+                                            <td><b>{{item.ARTSubTypeDesc}}</b></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <!-- pagination -->
+        <div class="col-md-12 col-lg-12 col-sm-12 page">
+            <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="5" class="pagination-sm pull-left" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+        </div>
+        <!-- /pagination -->
+    </div>
+</div>
+
+<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+
+<!-- reason model -->
+<div class="modal fade reason-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="reasonModel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="@PIVF.LanguageResource.Resources.btnClose"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblReason</h4>@*Reason ::Modified by swatih for localization 24/7/2020*@
+            </div>
+            <div class="modal-body" ng-class="{'Invalid':deleteReason==null}">
+                <textarea class="form-control" id="txtReason" name="txtReason" ng-required="true" maxlength="100" rows="2" ng-model="deleteReason"></textarea>
+            </div>
+            <div class="modal-footer">
+                <div class="page_actions">
+                    <button class="btn btn-primary" type="button" id="" value="" ng-click="ActivateDeactivateConsent(deleteReason)"> @PIVF.LanguageResource.Resources.btnSave</button>@*Save ::Modified by swatih for localization 24/7/2020*@
+                    <button class="btn btn-default" type="button" id="" value="" data-dismiss="modal"> @PIVF.LanguageResource.Resources.btnCancel</button> @*Cancel ::Modified by swatih for localization 24/7/2020*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /reason model -->
+</div>
+

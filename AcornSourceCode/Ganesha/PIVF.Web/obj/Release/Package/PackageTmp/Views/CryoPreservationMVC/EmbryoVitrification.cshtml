@@ -1,0 +1,263 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+
+    .has-error input {
+        border: 1px solid red !important;
+    }
+</style>
+<form name="frmEmbVitrification" novalidate>
+    <div ng-controller="EmbryoVitrificationCtr" ng-init="PageSetup()" style="position: relative;
+        z-index: 11;">
+        <!-- cycles links -->
+        <div class="cycleLinks">
+            <ul>
+                <li ng-click="Navigate('CycleOverview')">@PIVF.LanguageResource.Resources.tlblOverview</li>
+                <li ng-click="Navigate('StimulationChart')">@PIVF.LanguageResource.Resources.lblStimulationChart</li>
+                <li ng-click="Navigate('SemenDetails')" ng-show="configData.SemenDetail">@PIVF.LanguageResource.Resources.tlblSemenDetails</li>
+                <li ng-click="Navigate('IUI')" ng-show="configData.IUI">@PIVF.LanguageResource.Resources.tlblIUI</li>
+                <li ng-click="Navigate('OPU')" ng-show="configData.OPU">@PIVF.LanguageResource.Resources.tlblOPU</li>
+                <li ng-click="Navigate('Embrology')" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.tlblEmbryology</li>
+                <li ng-click="Navigate('PGT');" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.tlblPGT</li>
+
+                <li class="active subMenucryo" ng-show="configData.CryoPreservation">
+                    <span class="menu-title">
+                        @PIVF.LanguageResource.Resources.lblCryobank
+                        <span class="arrow"></span> <!-- Arrow added -->
+                    </span>
+                    <ul>
+                        <li ng-click="Navigate('OocyteVitrification')" ng-show="configData.OocyteVitrification">@PIVF.LanguageResource.Resources.tlblOocyteVitrification</li>
+                        <li ng-click="Navigate('OocyteThowing')" ng-show="configData.OocyteThawing">@PIVF.LanguageResource.Resources.tlblOocyteThawing</li>
+                        <li class="active" ng-click="Navigate('EmbryoVitrification')" ng-show="configData.EmbryoVitrification">@PIVF.LanguageResource.Resources.tlblEmbryoVitrification</li>
+                        <li ng-click="Navigate('EmbryoThowing')" ng-show="configData.EmbryoThawing">@PIVF.LanguageResource.Resources.tlblEmbryoThawing</li>
+                    </ul>
+                </li>
+                <li ng-click="Navigate('EmbryoTransfer')" ng-show="configData.EmbryoTransfer">@PIVF.LanguageResource.Resources.tlblEmbryoTransfer</li>
+                <li ng-click="Navigate('Outcome')" ng-show="configData.Outcome">@PIVF.LanguageResource.Resources.lblOutcome</li>
+            </ul>
+        </div>
+        <!-- /cycles links -->
+        <div class="div60"></div>
+        <div class="form_Content">
+            <div class="row">
+                <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.tlblEmbryoFreezing</h5></section>
+                <div class="col-lg-12">
+                    <div class="table-responsive fixed_header">
+                        <!-- min-height:355px;  -->
+                        <table class="table " id="profile_table" style="min-width:2290px;min-height:440px; max-height:440px;">
+                            <thead>
+                                <tr>
+                                    <th st-ratio="4">@PIVF.LanguageResource.Resources.tlblEmbryoNo</th>
+                                    <th st-ratio="7">@PIVF.LanguageResource.Resources.tlblVitrificationDate</th>
+                                    <th st-ratio="5">@PIVF.LanguageResource.Resources.tlblVitrificationTime</th>
+                                    <th st-ratio="5">@PIVF.LanguageResource.Resources.tlblFreezingNo</th>
+                                    <th st-ratio="4">@PIVF.LanguageResource.Resources.tlblTank</th>
+                                    <th st-ratio="4">@PIVF.LanguageResource.Resources.lblCanister</th>
+                                    <th st-ratio="5">@PIVF.LanguageResource.Resources.tlblGobletColor</th>
+                                    <th st-ratio="5" ng-hide="true">@PIVF.LanguageResource.Resources.tlblGobletSize</th>
+                                    <th st-ratio="4">@PIVF.LanguageResource.Resources.tlblCryolock</th>
+                                    <th st-ratio="5">@PIVF.LanguageResource.Resources.tlblCryolockColour</th>
+                                    <th st-ratio="5">@PIVF.LanguageResource.Resources.tlblVisotubeColour</th>
+                                    <th st-ratio="5">@PIVF.LanguageResource.Resources.tlblMediaUsed</th>
+                                    <th st-ratio="4">@PIVF.LanguageResource.Resources.tlblLotNo</th>
+                                    <th st-ratio="7">@PIVF.LanguageResource.Resources.tlblMediaExpiryDate</th>
+                                    <th st-ratio="5">@PIVF.LanguageResource.Resources.tlblCellStageGrade</th>
+                                    <th st-ratio="4">@PIVF.LanguageResource.Resources.lblDay</th>
+                                    <th st-ratio="7">@PIVF.LanguageResource.Resources.lblExpiryDate</th>
+                                    <th st-ratio="5">@PIVF.LanguageResource.Resources.tlblExpiryTime</th>
+                                    <th st-ratio="6">@PIVF.LanguageResource.Resources.tlblEmbryologist</th>
+                                    <th st-ratio="7">@PIVF.LanguageResource.Resources.tlblWitnessEmbryologist</th>
+                                    <th st-ratio="6">@PIVF.LanguageResource.Resources.lblRemarks</th>
+                                    @*<th width="">Info</th>*@
+                                    <th st-ratio="3">@PIVF.LanguageResource.Resources.lblStatus</th>
+                                    <th st-ratio="3" class="text-center">@PIVF.LanguageResource.Resources.lblFinalize</th>
+                                </tr>
+                            </thead>
+                            <tbody style="height: 440px;">
+                                <tr class="" ng-repeat="Item in FillGrid" ng-form="cellForm">
+                                    <td st-ratio="4">{{Item.EmbNumber}}</td>
+                                    <td st-ratio="7">
+                                        <div class="input-group date" ng-class="{invalid:Item.VitriDateInvalid==true}">
+                                            <input type="text" class="form-control" id="VitriDate" name="VitriDate" ng-disabled="Item.rowdisable"
+                                                   min-date="minDate"
+                                                   max-date="maxDate"
+                                                   placeholder="@PIVF.LanguageResource.Resources.tlblddMmmyyyy"
+                                                   ng-model="Item.VitriDate"
+                                                   aria-describedby=""
+                                                   uib-datepicker-popup="{{format}}"
+                                                   show-button-bar="false"
+                                                   datepicker-options="Item.dateOptions"
+                                                   alt-input-formats="altInputFormats"
+                                                   is-open="Item.opened1"
+                                                   ng-change="SetExpireDate(Item)"
+                                                   ng-required="true"
+                                                   tabindex="1">
+                                            <span class="input-group-addon" id="" ng-click="open1($event,Item)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </td>
+                                    <td st-ratio="5">
+                                        @*<div class="relDiv gridTime">*@
+                                        <div uib-timepicker ng-model="Item.VitriTime" ng-disabled="Item.rowdisable"
+                                             class="timeCss"
+                                             ng-required="true"
+                                             hour-step="1"
+                                             minute-step="1"
+                                             show-meridian="false"
+                                             show-spinners="false"
+                                             show-seconds="false"
+                                             ng-class="{'has-error':Item.VitriTimeInvalid == true}"
+                                             tabindex="2">
+                                        </div>
+                                        @*</div>*@
+                                    </td>
+                                    <td st-ratio="5">
+                                        <input type="text" class="form-control" ng-model="Item.FreezingNo" ng-disabled="Item.rowdisable" maxlength="50" ng-class="{select:Item.FreezingNoInvalid==true}" ng-blur="CheckDuplicateFreezingNo($index,Item.FreezingNo)">
+                                    </td>
+                                    <td st-ratio="4">
+                                        <select ng-model="Item.TankID" ng-disabled="Item.rowdisable" ng-class="{select:Item.TankIDInvalid==true}"
+                                                class="form-control"
+                                                ng-options="item.ID as item.Description for item in MasterData.Tank">
+                                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                                        </select>
+                                    </td>
+                                    <td st-ratio="4">
+                                        <select ng-model="Item.ConistorID" ng-disabled="Item.rowdisable"
+                                                class="form-control"
+                                                ng-options="item.ID as item.Description for item in MasterData.Canister">
+                                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                                        </select>
+                                    </td>
+                                    <td st-ratio="5">
+                                        <select ng-model="Item.GlobletColorID" ng-disabled="Item.rowdisable"
+                                                class="form-control"
+                                                ng-options="item.ID as item.Description for item in MasterData.GobletColor">
+                                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                                        </select>
+                                    </td>
+                                    <td st-ratio="5" ng-hide="true">
+                                        <select ng-model="Item.GlobletSizeID" ng-disabled="Item.rowdisable"
+                                                class="form-control"
+                                                ng-options="item.ID as item.Description for item in MasterData.GobletSize">
+                                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                                        </select>
+                                    </td>
+                                    <td st-ratio="4">
+                                        <select ng-model="Item.CryolockID" ng-disabled="Item.rowdisable"
+                                                class="form-control"
+                                                ng-options="item.ID as item.Description for item in MasterData.Cryolock">
+                                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                                        </select>
+                                    </td>
+                                    <td st-ratio="5">
+                                        <select ng-model="Item.CryolockColourID" ng-disabled="Item.rowdisable" class="form-control ng-pristine ng-valid ng-not-empty ng-not-modified ng-touched" ng-options="item.ID as item.Description for item in MasterData.CryolockColour"><option value="" class="" selected="selected">@PIVF.LanguageResource.Resources.lblSelect</option></select>
+                                    </td>
+                                    <td st-ratio="5">
+                                        <select ng-model="Item.VisotubeColourID" ng-disabled="Item.rowdisable" class="form-control ng-pristine ng-valid ng-not-empty ng-not-modified ng-touched" ng-options="item.ID as item.Description for item in MasterData.VisotubeColour"><option value="" class="" selected="selected">@PIVF.LanguageResource.Resources.lblSelect</option></select>
+                                    </td>
+                                    <td st-ratio="5">
+                                        <select ng-model="Item.MediaID" ng-disabled="Item.rowdisable"
+                                                class="form-control"
+                                                ng-options="item.ID as item.Description for item in MasterData.ListMediaUsed">
+                                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                                        </select>
+                                    </td>
+                                    <td st-ratio="4">
+                                        <input type="text" class="form-control" ng-model="Item.LotNo" ng-disabled="Item.rowdisable" maxlength="50">
+                                    </td>
+                                    <td st-ratio="7">
+                                        <div class="input-group date">
+                                            <input id="2" type="text" class="form-control"
+                                                   min-date="minDate" max-date="maxDate"
+                                                   placeholder="@PIVF.LanguageResource.Resources.tlblddMmmyyyy" ng-model="Item.MediaExpiryDate" ng-disabled="Item.rowdisable"
+                                                   aria-describedby="" uib-datepicker-popup="{{format}}"
+                                                   show-button-bar="false" datepicker-options="MediaExpdateOptions"
+                                                   alt-input-formats="altInputFormats" is-open="Item.opened3"
+                                                   ng-class="{select:Item.DirtyMediaExpiryDate == true}">
+                                            <span class="input-group-addon" id="" ng-click="open3($event,Item)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </td>
+
+
+                                    <td st-ratio="6">
+                                        {{Item.CellSatge}}-{{Item.Grade}}
+                                    </td>
+                                    <td st-ratio="4">
+                                        {{Item.Day}}
+                                    </td>
+                                    <td st-ratio="7">
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control" ng-disabled="Item.rowdisable"
+                                                   min-date="minDate"
+                                                   max-date="maxDate"
+                                                   placeholder="@PIVF.LanguageResource.Resources.tlblddMmmyyyy"
+                                                   ng-model="Item.ExpiryDate"
+                                                   aria-describedby=""
+                                                   uib-datepicker-popup="{{format}}"
+                                                   show-button-bar="false"
+                                                   datepicker-options="ExpdateOptions"
+                                                   alt-input-formats="altInputFormats"
+                                                   is-open="Item.opened2"
+                                                   tabindex="1">
+                                            <span class="input-group-addon" id="" ng-click="open2($event,Item)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </td>
+                                    <td st-ratio="5">
+                                        @*<div class="relDiv gridTime">*@
+                                        <div uib-timepicker ng-model="Item.ExpiryTime" ng-disabled="Item.rowdisable"
+                                             class="timeCss"
+                                             ng-required="true"
+                                             hour-step="1"
+                                             minute-step="1"
+                                             show-meridian="false"
+                                             show-spinners="false"
+                                             show-seconds="false"
+                                             tabindex="2">
+                                        </div>
+                                        @*</div>*@
+                                    </td>
+                                    <td st-ratio="6">
+                                        <select ng-model="Item.EmbryologistID" ng-disabled="Item.rowdisable" ng-class="{select:Item.EmbryologistIDInvalid==true}"
+                                                class="form-control"
+                                                ng-options="item.ID as item.Description for item in EmbryologistAndrologist">
+                                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                                        </select>
+                                    </td>
+                                    <td st-ratio="7">
+                                        <select ng-model="Item.WitnessID" ng-disabled="Item.rowdisable" ng-class="{select:Item.WitnessIDInvalid==true}"
+                                                class="form-control"
+                                                ng-options="item.ID as item.Description for item in EmbryologistAndrologist">
+                                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                                        </select>
+                                    </td>
+                                    <td st-ratio="6">
+                                        <input type="text" class="form-control" ng-model="Item.Remarks" maxlength="250" ng-disabled="Item.rowdisable">
+                                    </td>
+                                    <td st-ratio="3" class="boldLable">{{Item.Isfresh}}</td> <!-- txtGreen -->
+                                    <td st-ratio="3" class="text-center"><input type="checkbox" ng-model="Item.IsFinalized" ng-disabled="Item.rowdisable"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Save Cancle Buttons -->
+        <div class="row form-horizontal m-t-10">
+            <div class="col-lg-12 text-right">
+                <button class="btn btn-primary" type="button" ng-click="Save()" ng-disabled="disableSaveBtn">@PIVF.LanguageResource.Resources.btnSave</button>
+            </div>
+        </div>
+        <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+
+    </div>
+</form>

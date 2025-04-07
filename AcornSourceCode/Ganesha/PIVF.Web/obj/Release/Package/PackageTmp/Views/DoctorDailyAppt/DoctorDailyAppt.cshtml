@@ -1,0 +1,436 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<style>
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+
+    .icoSearch {
+        position: absolute;
+        right: 5px;
+        z-index: 1;
+        top: 9px;
+    }
+</style>
+
+@*---------------------------------------page start Here ------------------------------------------------*@
+
+<form name="frmDailySchedule" novalidate autocomplete="off" ng-controller="DoctorDailyApptController">
+    <!-- Main Search Box Start -->
+    <div class="row form-horizontal">
+        <div class="col-md-offset-4 col-md-4">
+            <div class="form-group">
+                <div class="input-group m-t-10">
+                    <input type="text" class="form-control" name="DoctorFullName" typeahead-on-select="GetDoctDetailByNameSearch(selectedDoctorName,false)" ng-class="DoctorNameListError == true ? 'invalid' : 'valid' " id="SpouseMobileCountryCode" placeholder="@PIVF.LanguageResource.Resources.lblDoctor" ng-model="selectedDoctorName" uib-typeahead="i as (i.FirstName) for i in doctorlistNames | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedDoctorName(selectedDoctorName)" ng-change="HideErrorMessage('DoctorNameList',selectedDoctorName); GetAllDoctorNames(selectedDoctorName)" tabindex="1">
+                    <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Search Box End-->
+
+
+    <section class="searchContent form_Content">
+        <div class="row">
+            <div class="col-lg-12 m-b-5" ng-show="isDoctorAvail">
+                @*<div class="col-lg-offset-3 col-lg-6 DoctorScheduleWrap" ng-show="isDoctorAvail">*@
+                <div class="PatientInfoWrapper">
+                    <div class="BlueWrap">
+                        <div class="ProfileImgWrap">
+                            <img ng-if="Photo !=''" ng-src="{{Photo}}" class="profile">
+                            <img ng-if="Photo =='' && GenderId==1" ng-src="../images/Male_default.jpg" class="profile">
+                            <img ng-if="Photo =='' && GenderId==2" ng-src="../images/Female_default.jpg" class="profile">
+                            @*<img ng-src="{{Photo || '/images/Male_default.jpg'}}" alt="User Profile Pic" class="profile">*@
+                        </div>
+                        <div class="ProfileInfoWrap">
+                            <p class="profile-data">
+                                <span class="PatientName Capitalize" ng-bind="firstName"></span>
+                                <span class="MRN-Green m-b-5">
+                                    <span>{{registrationNumber }}</span>
+                                </span>
+                                <span class="RightMobNo LinkName">
+                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                    <span class="">{{'+'+mobCountryId+' '+mobileNo}}</span>
+                                </span>
+
+                            </p>
+                            <ul class="profile-data">
+                                <li class="" style="width:39%;">
+                                    <div class="iconInfoLine">
+                                        <span class="LinkName Txtcolor"></span><span>{{SpecializationDesc}}</span> /<span class="LinkName Txtcolor"></span><span>{{SubSpecializationDesc}}</span>
+                                    </div>
+                                </li>
+                                <li class="" style="width:60%;">
+                                    <div class="iconInfoLine">
+                                        @*<span class="LinkName Txtcolor"></span><span>{{SubSpecializationDesc}}</span>*@
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Content Start -->
+        <div class="row form-horizontal">
+            <!-- Column 1 Start -->
+            <div class="col-md-4 col-lg-4">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblClinic @*@PIVF.Gemino.LanguageResource.Resources.lblClinic*@</label>@*Clinic :: Modified by swatih for localization 28/7/2020*@
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <select class="form-control" ng-class="UnitListError == true ? 'invalid' : 'valid' " name="ddlPatientUnitList" title="@PIVF.LanguageResource.Resources.lblClinic" id="ddlPatientUnit" ng-model="Schedule.ScheduleUnitID"
+                                ng-options="Schedule.UnitID as Schedule.Description for Schedule in UnitList" ng-change="GetDepartmentsByID(Schedule.ScheduleUnitID);HideErrorMessage('UnitList',Schedule.ScheduleUnitID);" tabindex="2"></select>
+                    </div>
+                </div>
+            </div>
+            <!-- Column 1 End -->
+            <div class="col-md-4 col-lg-4 form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblDepartment @*@PIVF.Gemino.LanguageResource.Resources.lblDepartment*@</label>@*Department :: Modified by swatih for localization 28/7/2020*@
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <select class="form-control" title="@PIVF.LanguageResource.Resources.lblDepartment" id="ddlDoctorDepartment" ng-class="DepartmentListError == true ? 'invalid' : 'valid' " ng-model="Schedule.DeptID"
+                                ng-options="Schedule.ID as Schedule.Description for Schedule in  DepartmentListByDocID" ng-change="HideErrorMessage('DoctorDepartment',Schedule.DeptID);" tabindex="3"></select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2 Start -->
+            <div class="col-md-4 col-lg-4 form-horizontal" ng-hide="true">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblSchedule @*@PIVF.Gemino.LanguageResource.Resources.lblSchedule*@</label>@*Shedule :: Modified by swatih for localization 28/7/2020*@
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <select name="ScheduleType" class="form-control" ng-init="Appointment.Type ='Daily'" ng-model="Appointment.Type" ng-dropdown required ng-change="changeAppointmentType() ">
+                            <option ng-option value="Daily"> @PIVF.LanguageResource.Resources.lblDaily@*@PIVF.Gemino.LanguageResource.Resources.lblDaily*@</option>@*Daily :: Modified by swatih for localization 28/7/2020*@
+                            <option ng-option value="Monthly">@PIVF.LanguageResource.Resources.lblMonthly@*@PIVF.Gemino.LanguageResource.Resources.lblMonthly*@</option>@*Monthly :: Modified by swatih for localization 28/7/2020*@
+                            <option ng-option value="Weekly">@PIVF.LanguageResource.Resources.lblWeekly @*@PIVF.Gemino.LanguageResource.Resources.lblWeekly*@</option>@*Weekly :: Modified by swatih for localization 28/7/2020*@
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Column 2 End -->
+            <div class="col-md-12">
+                <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblAppoinmentTime</h5>
+            </div>
+            <!--  For Daily -->
+            <div class="col-md-12" ng-show="isDailyShow">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblStartDate @*@PIVF.Gemino.LanguageResource.Resources.lblStartDate*@</label>@*Start Date :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="input-group date" ng-class="StartDateError == true ? 'invalid' : 'valid' ">
+                                    <input name="ScheduleStartDate" type="text" class="form-control" ng-change="HideErrorMessage('StartDate',Schedule.StartDate);" id="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.lblFromDate" ng-model="Schedule.StartDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="startdateOption" ng-required="true" alt-input-formats="altInputFormats" tabindex="4">
+                                    <span class="input-group-addon" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""> @PIVF.LanguageResource.Resources.lblEndDate @*@PIVF.Gemino.LanguageResource.Resources.lblEndDate*@</label>@*End date :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="input-group date">
+                                    <input type="text" name="ScheduleEndDate" class="form-control" id="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.lblToDate" ng-model="Schedule.EndDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="enddateOption" ng-required="true" alt-input-formats="altInputFormats" tabindex="5">
+                                    <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 form-horizontal" ng-hide="true">
+                        <div class="form-group " ng-hide="true">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblDurationMin @*@PIVF.Gemino.LanguageResource.Resources.lblDurationMin*@</label>@*DurationMin :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select name="ScheduleInterval" class="form-control" ng-model="Schedule.Interval" ng-class="IntervalListError == true ? 'invalid' : 'valid' "
+                                        ng-init="Schedule.Interval = timelist[1]" ng-options="t as t for t in timelist" ng-change="HideErrorMessage('IntervalList',Schedule.Interval);"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Column 1 Start -->
+                    <div class="col-md-2 col-lg-2 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label m-t-25" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblStartTime @*@PIVF.Gemino.LanguageResource.Resources.lblStartTime*@</label>@*Start Time :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <div uib-timepicker ng-model="Schedule.StartTime" hour-step="1" class="timeCss" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false" tabindex="6"></div>
+
+                                @*<ul class="uib-dropdown-menu p-l-0" name="ScheduleStartTime">
+
+                                        <uib-timepicker ng-model="Schedule.StartTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                                    </ul>*@
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 1 End -->
+                    <!-- Column 2 Start -->
+                    <div class="col-md-2 col-lg-2 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label m-t-25" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblEndTime @*@PIVF.Gemino.LanguageResource.Resources.lblEndTime*@</label>@*End Time :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div uib-timepicker ng-model="Schedule.EndTime" hour-step="1" class="timeCss" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false" tabindex="7"></div>
+                                @*<div class="col-sm-12 col-md-12 col-lg-12">
+                                        <ul class="uib-dropdown-menu p-l-0" name="ScheduleEndTime">
+                                            <uib-timepicker ng-model="Schedule.EndTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                                        </ul>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column 2 End -->
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label m-t-25" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblScheduleslot @*@PIVF.Gemino.LanguageResource.Resources.lblStartTime*@</label>@*Shedules slot :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <select class="form-control" title="@PIVF.LanguageResource.Resources.tlblSlot" id="ddlScheduleSlotList" ng-class="ScheduleSlotListError == true ? 'invalid' : 'valid' " ng-model="Schedule.SlotID" @*Schedule.ScheduleSlot*@
+                                        ng-options="Schedule.SlotID as Schedule.SlotDescription for Schedule in  ScheduleSlotList" ng-change="HideErrorMessage('ScheduleSlotList',Schedule.ScheduleSlot);" tabindex="8"></select>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--  For Weekly -->
+            <div class="col-md-12" ng-show="isWeeklyShow">
+                <div class="row">
+                    <!-- column 1 start -->
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblStartDate @*@PIVF.Gemino.LanguageResource.Resources.lblStartDate*@</label>@*Start Date :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="input-group date" ng-class="StartDateError == true ? 'invalid' : 'valid' ">
+                                    <input type="text" name="ScheduleStartDate" class="form-control" ng-change="HideErrorMessage('StartDate',Schedule.StartDate);" id="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.lblFromDate" ng-model="Schedule.StartDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="startdateOption" ng-required="true" alt-input-formats="altInputFormats">
+                                    <span class="input-group-addon" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""> @PIVF.LanguageResource.Resources.lblEndDate @*@PIVF.Gemino.LanguageResource.Resources.lblEndDate*@</label>@*End date :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="input-group date">
+                                    <input type="text" name="ScheduleEndDate" class="form-control" id="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.lblToDate" ng-model="Schedule.EndDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="enddateOption" ng-required="true" alt-input-formats="altInputFormats">
+                                    <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblStartTime @*@PIVF.Gemino.LanguageResource.Resources.lblStartTime*@</label>@*Start Time :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                @*<ul class="uib-dropdown-menu p-l-0" name="ScheduleStartTime">*@
+                                @*<uib-timepicker ng-model="Schedule.StartTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>*@
+                                <div uib-timepicker ng-model="Schedule.StartTime" hour-step="1" class="timeCss" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false"></div>
+                                @*</ul>*@
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- column 1 end -->
+                    <!-- column 2 start -->
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblEndTime @*@PIVF.Gemino.LanguageResource.Resources.lblEndTime*@ </label>@*End Time :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                @*<ul class="uib-dropdown-menu p-l-0" name="ScheduleEndTime">
+                                        <uib-timepicker ng-model="Schedule.EndTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                                    </ul>*@
+
+                                <div uib-timepicker ng-model="Schedule.EndTime" hour-step="1" class="timeCss" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- column 2 end -->
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group " ng-hide="true">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label " for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblDurationMin @*@PIVF.Gemino.LanguageResource.Resources.lblDurationMin*@</label>@*DurationMin :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select class="form-control" name="ScheduleInterval" ng-model="Schedule.Interval" ng-class="IntervalListError == true ? 'invalid' : 'valid' "
+                                        ng-init="Schedule.Interval = timelist[0]" ng-options="t as t for t in timelist" ng-change="HideErrorMessage('IntervalList',Schedule.Interval);"></select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <ul class="day_list">
+                            <li ng-repeat="ScheduleDay in DayMasterList">
+                                <label><input type="checkbox" ng-model="ScheduleDay.id" ng-click="fnChangeAssetType(ScheduleDay)"> {{ScheduleDay.Day}}</label>
+                            </li>
+                        </ul>
+                        <span ng-show="DaySelectionError" style="color:red">@PIVF.LanguageResource.Resources.MsgTitleSelectDay </span>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--For Monthly -->
+            <div class="col-md-12" ng-show="isMonthlyShow" ng-init="DayRadio=1">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblStartDate</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="input-group date" ng-class="StartDateError == true ? 'invalid' : 'valid' ">
+                                    <input type="text" name="ScheduleStartDate" class="form-control" ng-change="HideErrorMessage('StartDate',Schedule.StartDate);" id="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.lblFromDate" ng-model="Schedule.StartDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="startdateOption" ng-required="true" alt-input-formats="altInputFormats">
+                                    <span class="input-group-addon" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblEndDate @*@PIVF.Gemino.LanguageResource.Resources.lblEndDate*@</label>@*End Date :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="input-group date">
+                                    <input type="text" name="ScheduleEndDate" class="form-control" id="StaffDOB" placeholder="@PIVF.LanguageResource.Resources.lblToDate" ng-model="Schedule.EndDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="enddateOption" ng-required="true" alt-input-formats="altInputFormats">
+                                    <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column 2 End -->
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group " ng-hide="true">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblDurationMin @*@PIVF.Gemino.LanguageResource.Resources.lblDurationMin*@</label>@*DurationMin :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select class="form-control" name="ScheduleInterval" ng-model="Schedule.Interval" ng-class="IntervalListError == true ? 'invalid' : 'valid' "
+                                        ng-init="Schedule.Interval = timelist[0]" ng-options="t as t for t in timelist" ng-change="HideErrorMessage('IntervalList',Schedule.Interval);"></select>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Column 1 Start -->
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblStartTime @*@PIVF.Gemino.LanguageResource.Resources.lblStartTime*@</label>@*Start Time :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                @*<ul class="uib-dropdown-menu p-l-0" name="ScheduleStartTime">
+                                        <uib-timepicker ng-model="Schedule.StartTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                                    </ul>*@
+                                <div uib-timepicker ng-model="Schedule.StartTime" hour-step="1" class="timeCss" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column 1 End -->
+                    <!-- Column 2 Start -->
+                    <div class="col-md-4 col-lg-4 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""> @PIVF.LanguageResource.Resources.lblEndTime @*@PIVF.Gemino.LanguageResource.Resources.lblEndTime*@ </label>@*End Time :: Modified by swatih for localization 28/7/2020*@
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div uib-timepicker ng-model="Schedule.EndTime" hour-step="1" class="timeCss" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false"></div>
+                                @*<ul class="uib-dropdown-menu p-l-0" name="ScheduleEndTime">
+                                        <uib-timepicker ng-model="Schedule.EndTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                                    </ul>*@
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 col-md-12 form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-2 col-lg-3 control-label">
+                            <input type="radio" ng-model="DayRadio" name="DayRadio" ng-change="DisableRadioError()" value="1"><label> @PIVF.LanguageResource.Resources.lblDay @*@PIVF.Gemino.LanguageResource.Resources.lblDay*@</label>@*lblDay :: Modified by swatih for localization 28/7/2020*@
+                        </label>
+                        <div class="col-sm-2 col-md-1 col-lg-1 day-text">
+                            <input type="text" name="ScheduleDay" ng-disabled="IsDisableDayTextbox == true" ng-model="Schedule.Day" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="2" ng-class="ScheduleDayError == true ? 'invalid' : 'valid' " ng-change="HideErrorMessage('ScheduleDay',Schedule.Day);" class="form-control alignRight" style="text-align: right;" id="" placeholder="15">
+                        </div>
+                        <label class="col-sm-2 col-md-2 col-lg-2 control-label day-label" for="">@PIVF.LanguageResource.Resources.lblOfEvery </label>
+                        <div class="col-sm-2 col-md-1 col-lg-1 month-text">
+                            <input type="text" name="ScheduleMonth" ng-disabled="IsDisableDayTextbox == true" ng-model="Schedule.Month" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="2" ng-class="ScheduleMonthError == true ? 'invalid' : 'valid' " ng-change="HideErrorMessage('ScheduleMonth',Schedule.Month);" class="form-control alignRight" style="text-align: right;" id="" placeholder="1">
+                        </div>
+                        <label class="col-sm-3 col-md-3 col-lg-3 control-label month-label" for="">@PIVF.LanguageResource.Resources.lblMonths_S</label>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-12 form-horizontal">
+                    <div class="form-group ">
+                        <label class="col-sm-3 col-md-2 col-lg-2 control-label" for="">
+                            <input type="radio" name="DayRadio" ng-model="DayRadio" ng-change="DisableRadioError()" value="2"><label> @PIVF.LanguageResource.Resources.lblThe</label>@*The :: Modified by swatih for localization 28/7/2020*@
+                        </label>
+                        <div class="col-sm-3 col-md-2 col-lg-2 p-l-0">
+                            <select class="form-control" name="ScheduleWeek" ng-disabled="IsDisableDayTextbox ==false" ng-model="Schedule.SelectedWeek" ng-class="ScheduleWeekError == true ? 'invalid' : 'valid' " ng-change="HideErrorMessage('ScheduleWeek',Schedule.SelectedWeek);" ng-options="t as t for t in scheduleWeekTypeList"></select>
+                        </div>
+                        <div class="col-sm-3 col-md-2 col-lg-2 p-l-0">
+                            <select class="form-control" name="ScheduleDay" ng-disabled="IsDisableDayTextbox==false" ng-model="Schedule.Selectedday" ng-class="ScheduleWeekDayError == true ? 'invalid' : 'valid' " ng-change="HideErrorMessage('ScheduleWeekDay',Schedule.Selectedday);" ng-options="t as t for t in scheduleDaysList"></select>
+                        </div>
+                        <label class="col-sm-3 col-md-3 col-lg-3 control-label week-label" for="">@PIVF.LanguageResource.Resources.lblOfEveryMonths_S</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row " style="margin-bottom: 15px;">
+            <div class="col-sm-12 text-right m-t-10">
+                <button class="btn btn-primary " type="button" ng-click="AddNewSchedule(Schedule)" id="" tabindex="9">{{btnSaveTitle}}</button>
+                @*<button class="btn btn-primary btn_shadow hide_collapse_button" ng-click="CancelSchedule()" type="button" id="">@PIVF.Gemino.LanguageResource.Resources.btnCancel</button>*@
+                <button class="btn btn-default  hide_collapse_button" ng-click="DoctorlandingPage()" type="button" id="" tabindex="10">@PIVF.LanguageResource.Resources.btnCancel</button>
+            </div>
+        </div>
+
+
+        <div class="row" ng-show="isHideTable">
+            <div class="col-sm-12 m-t-10 m-b-10">
+                <div class="table-responsive table-bordered fixed_header" style="overflow:auto;">
+                    @*max-height:300px;*@
+                    <table class="table table-hover GridTable">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>&nbsp;</th>
+                                <th>@PIVF.LanguageResource.Resources.lblClinic @*@PIVF.Gemino.LanguageResource.Resources.lblClinic*@</th>@*Clinic :: Modified by swatih for localization 28/7/2020*@
+                                <th>@PIVF.LanguageResource.Resources.lblDepartment@*@PIVF.Gemino.LanguageResource.Resources.lblDepartment*@</th>@*Department :: Modified by swatih for localization 28/7/2020*@
+                                <th>@PIVF.LanguageResource.Resources.lblDate@*@PIVF.Gemino.LanguageResource.Resources.lblDate*@</th>@*Date :: Modified by swatih for localization 28/7/2020*@
+                                <th>@PIVF.LanguageResource.Resources.lblSchedule @*@PIVF.Gemino.LanguageResource.Resources.lblSchedule*@</th>@*Schedule :: Modified by swatih for localization 28/7/2020*@
+                                <th>@PIVF.LanguageResource.Resources.lblScheduleslot</th>@*Scheduleslot :: Modified by swatih for localization 28/7/2020*@
+
+                            </tr>
+                        </thead>
+                        <tbody style="height: calc(100vh - 735px);">
+                            <tr ng-repeat="item in ScheduleList">
+                                <td><button type="button" ng-click="UpdateDoctorSchedule(item,true)" class="btn_edit"></button></td>
+                                <td><button type="button" ng-click="DeleteDoctorSchedule(item,true)" class="btn_delete"></button></td>
+                                @*<td>{{GetClinicNameByScheduleID(item.ScheduleUnitID)}}</td>*@
+                                <td>{{item.ClinicName}}</td>
+                                <td>{{item.Department}}</td>
+                                <td class="w-20"><span>{{item.StartTime|date:'dd-MMM-yyyy'}} To {{item.EndTime |date:'dd-MMM-yyyy'}}</span></td>
+                                <td class="w-30"><span>{{item.ScheduleType+' '}}{{ item.StartTime | date:'HH:mm' |date:'shortTime'}} To {{item.EndTime | date:'HH:mm' |date:'shortTime'}}</span><span class="day_name ">{{ Dictionary[item.DaysByComma]}}</span></td>
+                                <td> {{item.SlotDescription}}  @*{{item.ScheduleSlotdesc}}*@ </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+                </div>
+            </div>
+            <!-- Button group row -->
+        </div>
+
+
+    </section>
+
+    <div class="clearfix"></div>
+
+    <div class="clearfix"></div>
+</form>

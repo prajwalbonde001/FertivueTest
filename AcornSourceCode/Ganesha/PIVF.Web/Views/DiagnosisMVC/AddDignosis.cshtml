@@ -1,0 +1,401 @@
+﻿@{Layout = null;}
+<form ng-controller="DiagnosisCtr" name="frmDiagnosis" >
+    <div ng-init="PageSetup()" style="position: relative; z-index: 11;"   class="customMainContaint"    >
+        <!--Navigate-->
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="row horizontalTab">
+                    <div class="col-lg-12 col-md-12 m-t-10 dignosisTab">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="" class="active"><a data-target="#icd" data-toggle="tab" aria-controls="home" ng-click="TabChange(1)">@PIVF.LanguageResource.Resources.lblICD</a></li>@*ICD :: Modified by Swatih for localization on 14/7/2020*@
+                            <li role=""><a data-target="#new" aria-controls="profile" role="tab" data-toggle="tab" ng-click="TabChange(2)">@PIVF.LanguageResource.Resources.lblOtherDiagnosis</a></li>@*Other Diagnosis :: Modified by Swatih for localization on 14/7/2020*@
+                            <li role=""><a data-target="#favouriteDiagnosis" aria-controls="messages" role="tab" data-toggle="tab" ng-click="TabChange(3)">@PIVF.LanguageResource.Resources.lblFavouriteDiagnosis</a></li>@*Favourite Diagnosis:: Modified by Swatih for localization on 14/7/2020*@
+                        </ul>
+                        <div class="f-right m-t-5">
+                            <a class="link" href="" ng-hide="CoupleDetails.FemalePatient.PatientCategoryID==8 || CoupleDetails.MalePatient.PatientCategoryID==9 || CoupleDetails.FemalePatient.PatientCategoryID==11 || CoupleDetails.MalePatient.PatientCategoryID==11" ng-click="btnClick()">{{btnText}}</a>
+                        </div>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            @*Tab ICD Start*@
+                            <div role="tabpanel" class="tab-pane active" id="icd">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-4 m-b-10">
+                                        <div class="input-group cursorPointer">
+                                            <input type="text" class="form-control" id="exampleInputAmount" placeholder="" ng-model="Diagnosis" ng-keydown="$event.which==13?FillDiagnosis():0">
+                                            <div class="btn input-group-addon"><span class="glyphicon glyphicon-search" ng-click="FillDiagnosis()"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="table-responsive fixed_header">
+                                            @*<table class="table table-hover table-striped" style="min-width:670px;height:220px;">*@
+                                            <table class="table table-hover table-striped" style="min-width:670px;height: calc(100vh - 791px);">
+                                                <thead>
+                                                    <tr>
+                                                        <th st-ratio="5">&nbsp;</th>
+                                                        <th st-ratio="15" class="text-center">@PIVF.LanguageResource.Resources.lblSelect</th>@*Select :: Modified by swatih for localization on 14/7/2020*@
+                                                        <th st-ratio="20" ng-click="SortData('Code')">@PIVF.LanguageResource.Resources.lblCode<div ng-class="sortClass"></div></th>@*Code :: Modified by swatih for localization on 14/7/2020*@
+                                                        <th st-ratio="55" ng-click="SortData('Diagnosis')">@PIVF.LanguageResource.Resources.lblDiagnosis<div ng-class="sortClass"></div></th>@*Diagnosis:: Modified by swatih for localization on 14/7/2020*@
+                                                        <th st-ratio="20">@PIVF.LanguageResource.Resources.lblType</th>@*Type :: Modified by swatih for localization on 14/7/2020*@
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in ListDiagnosis |orderBy:SortColumn:reverseSort">
+                                                        <td st-ratio="5" class="text-center">
+                                                            <div ng-if="item.IsFavourite" style="display:inline-block">
+                                                                <span class="dislike" ng-click="objRgtDia.IsUpdate?SetFavourite(item,0):0"></span>
+                                                            </div>
+                                                            <div ng-if="!item.IsFavourite" style="display:inline-block">
+                                                                <span class="like" title="@PIVF.LanguageResource.Resources.lblSetFavorite" ng-click="objRgtDia.IsUpdate?SetFavourite(item,1):0"></span>
+                                                            </div>
+                                                        </td>
+                                                        <td st-ratio="15" class="text-center">
+                                                            <input type="checkbox" ng-model="item.IsSelected" ng-change="item.IsSelected?0:item.DiagnosisTypeID=0" class="" id="" placeholder="">  <!--ng-change="Checked(item,item.IsSelected)"-->
+                                                        </td>
+                                                        <td st-ratio="20">{{item.Code}}</td>
+                                                        <td st-ratio="55">{{item.Diagnosis}}</td>
+                                                        <td st-ratio="20">
+                                                            <select id="ddlDiagnosisType"
+                                                                    ng-model="item.DiagnosisTypeID"
+                                                                    ng-disabled="!item.IsSelected"
+                                                                    class="form-control"
+                                                                    ng-options="item.ID as item.Description for item in DiagnosisType"></select>
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Save Cancle Buttons -->
+                                <div class="row form-horizontal m-t-10">
+                                    <div class="col-md-8 col-lg-8">
+                                        <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange(1)" max-size="5" class="m-t-0 pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="4" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 text-right">
+                                        @*<button class="btn btn-primary" type="button" ng-click="SavePatientDiagnosis(ListDiagnosis)" id="btnSaveDiagnosis" value="" ng-disabled="!isDoctor || IsVisitMarked"> Save</button>//commented by swatih for localization 9/7/2020*@
+                                        <button class="btn btn-primary" type="button" ng-click="SavePatientDiagnosis(ListDiagnosis)" id="btnSaveDiagnosis" value="" ng-disabled="!isDoctor || IsVisitMarked"> @PIVF.LanguageResource.Resources.btnSave</button>@*//modified by swatih for localization on 9/7/2020*@
+                                        @*<button class="btn btn-default" type="button" id="" value="" ng-click="CancelMain()"> Cancel</button>*@ @*//Comented by SwatiH for Locallization on 9/7/2020*@
+                                        <button class="btn btn-default" type="button" id="" value="" ng-click="CancelMain()">@PIVF.LanguageResource.Resources.btnCancel</button> @*//Modified by SwatiH for Locallization on 9/7/2020*@
+                                    </div>
+                                </div>
+                            </div>
+                            @*Tab ICD End*@
+                            @*Other Diagnosis Start*@
+                            <div role="tabpanel" class="tab-pane " id="new">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-4 m-b-10">
+                                        <div class="input-group cursorPointer">
+                                            <input type="text" class="form-control" id="exampleInputAmount" placeholder="" ng-model="search.SearchColumns"  ng-keydown="$event.which==13?FillOtherDiagnosis():0">
+                                            <div class="btn input-group-addon"><span class="glyphicon glyphicon-search" ng-click="FillOtherDiagnosis()"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-8 text-right">
+                                        <button class="btn btn-link m-b-0 m-t-7" title="@PIVF.LanguageResource.Resources.btnNew" data-toggle="modal" type="button" id="" value="New" data-target="#NewPopup" ng-click="AddNewOtherDiagnosis()" ng-disabled="!isDoctor" data-keyboard="false" data-backdrop="static" ><span class="glyphicon glyphicon-plus"></span></button>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="table-responsive fixed_header">
+                                            <table class="table table-hover table-striped" id="" style="min-width:700px;height:220px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th st-ratio="5">&nbsp;</th>
+                                                        <th st-ratio="5">&nbsp;</th>
+                                                        <th st-ratio="10" class="text-center">@PIVF.LanguageResource.Resources.lblSelect</th>@*Select :: Modified by swatih for localization on 14/7/2020*@
+                                                        <th st-ratio="10" ng-click="SortData('Code')">@PIVF.LanguageResource.Resources.lblCode<div ng-class="sortClass"></div></th>@*Code :: Modified by swatih for localization on 14/7/2020*@
+                                                        <th st-ratio="35" ng-click="SortData('Diagnosis')">@PIVF.LanguageResource.Resources.lblDiagnosis<div ng-class="sortClass"></div></th>@*Diagnosis :: Modified by swatih for localization on 14/7/2020*@
+                                                        <th st-ratio="20">@PIVF.LanguageResource.Resources.lblType</th>@*Type :: Modified by swatih for localization on 14/7/2020*@
+                                                        <th st-ratio="15" ng-click="SortData('AddedByUserName')">@PIVF.LanguageResource.Resources.lblAddedby<div ng-class="sortClass"></div></th>@*Added by :: Modified by swatih for localization on 14/7/2020*@
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in ListOtherDiagnosis | filter:search |orderBy:SortColumn:reverseSort">
+                                                        <td st-ratio="5" class="text-center">
+                                                            <button type="button" class="btn btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" data-toggle="modal" ng-click="objRgtDia.IsUpdate?SetValue(item):0"></button>
+                                                        </td>
+                                                        <td st-ratio="5" class="text-center">
+                                                            <div ng-if="item.IsFavourite" style="display:inline-block">
+                                                                <span class="dislike" ng-click="objRgtDia.IsUpdate?SetFavourite(item,0):0"></span>
+                                                            </div>
+                                                            <div ng-if="!item.IsFavourite" style="display:inline-block">
+                                                                <span class="like" title="@PIVF.LanguageResource.Resources.lblSetFavorite" ng-click="objRgtDia.IsUpdate?SetFavourite(item,1):0"></span>
+                                                            </div>
+                                                        </td>
+                                                        <td st-ratio="10" class="text-center">
+                                                            <input type="checkbox" ng-model="item.IsSelected" ng-change="item.IsSelected?0:item.DiagnosisTypeID=0" class="" id="" placeholder="">
+                                                        </td>
+                                                        <td st-ratio="10">{{item.Code}}</td>
+                                                        <td st-ratio="35">{{item.Diagnosis}}</td>
+                                                        <td st-ratio="20">
+                                                            <select id="ddlDiagnosisType"
+                                                                    ng-model="item.DiagnosisTypeID"
+                                                                    class="form-control"
+                                                                    ng-disabled="!item.IsSelected"
+                                                                    ng-options="item.ID as item.Description for item in DiagnosisType"></select>
+                                                        </td>
+                                                        <td st-ratio="15">{{item.AddedByUserName}}</td>
+                                                        
+                                                        
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-horizontal m-t-10">
+                                    <div class="col-md-8 col-lg-8">
+                                        <uib-pagination total-items="OtherTotalItems" ng-model="OtherCurrentPage" ng-change="PageChange(2)" max-size="5" class="m-t-0 pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="4" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 text-right">
+                                        <div class="bottomBtn">
+                                            @*<button class="btn btn-primary" type="button" id="btnSaveOthrDiagnosis" value="" ng-click="SavePatientDiagnosis(ListOtherDiagnosis)" ng-disabled="!isDoctor || IsVisitMarked"> Save</button>  @*ng-click="SavePatientOtherDiagnosis()"*@ @*//commented by swatih for localization on 9/7/2020*@
+                                            <button class="btn btn-primary" type="button" id="btnSaveOthrDiagnosis" value="" ng-click="SavePatientDiagnosis(ListOtherDiagnosis)" ng-disabled="!isDoctor || IsVisitMarked"> @PIVF.LanguageResource.Resources.btnSave</button>  @*ng-click="SavePatientOtherDiagnosis()"* //modified by swatih for localization on 9/7/2020
+                                            @*<button class="btn btn-default" type="button" id="" value="" ng-click="CancelMain()">Cancel</button>*@ @*//Comented By SwatiH for Localization 9/7/2020*@
+                                            <button class="btn btn-default" type="button" id="" value="" ng-click="CancelMain()">@PIVF.LanguageResource.Resources.btnCancel</button> @*//Modified by SwatiH for Locallization 9/7/2020*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*Other Diagnosis End*@
+                            @*Favourite Diagnosis Start*@
+                            <div role="tabpanel" class="tab-pane" id="favouriteDiagnosis">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-4 m-b-10">
+                                        <div class="input-group cursorPointer">
+                                            <input type="text" class="form-control" id="exampleInputAmount" placeholder="" ng-model="search1.SearchColumns" ng-keydown="$event.which==13?FillFavouriteDiagnosis():0">
+                                            <div class="btn input-group-addon"><span class="glyphicon glyphicon-search" ng-click="FillFavouriteDiagnosis()"></span></div>
+                                        </div>
+                                    </div>
+                                   <div class="col-md-12 col-lg-12">
+                                        <div class="table-responsive fixed_header">
+                                            <table class="table table-hover table-striped" id="" style="height:220px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th st-ratio="5">&nbsp;</th>
+                                                        <th st-ratio="10" class="text-center">@PIVF.LanguageResource.Resources.lblSelect</th>@*Select :: Modified by swatih for localization on 14/7/2020*@
+                                                        <th st-ratio="15" ng-click="SortData('Code')">@PIVF.LanguageResource.Resources.lblCode<div ng-class="sortClass"></div></th>@*Code:: Modified by swatih for localization on 14/7/2020*@
+                                                        <th st-ratio="45" ng-click="SortData('Diagnosis')">@PIVF.LanguageResource.Resources.lblDiagnosis<div ng-class="sortClass"></div></th>@*Diagnosis:: Modified by swatih for localization on 14/7/2020*@
+                                                        <th st-ratio="25">@PIVF.LanguageResource.Resources.lblType</th>@*Type:: Modified by swatih for localization on 14/7/2020*@
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in ListFavouriteDiagnosis |filter:search1.SearchColumns  |orderBy:SortColumn:reverseSort">
+                                                        <td st-ratio="5" class="text-center">
+                                                            <button type="button" class="btn btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" data-toggle="modal" data-target=".bs-example-modal-sm" ng-click="objRgtDia.IsUpdate?SetFavValue(item):0"></button>
+                                                        </td>
+                                                        <td st-ratio="10" class="text-center">
+                                                            <input type="checkbox" ng-model="item.IsSelected" ng-change="item.IsSelected?0:item.DiagnosisTypeID=0" class="" id="" placeholder="">
+                                                        </td>
+                                                        <td st-ratio="15" data-title="'Code'" sortable="'Code'">{{item.Code}}</td>
+                                                        <td st-ratio="45">{{item.Diagnosis}}</td>
+                                                        <td st-ratio="25">
+                                                            <select id="ddlDiagnosisType"
+                                                                    ng-disabled="!item.IsSelected"
+                                                                    ng-model="item.DiagnosisTypeID"
+                                                                    class="form-control"
+                                                                    ng-options="item.ID as item.Description for item in DiagnosisType"></select>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row form-horizontal m-t-10">
+                                    <div class="col-md-8 col-lg-8">
+                                        <uib-pagination total-items="FevTotalItems" ng-model="FevCurrentPage" ng-change="PageChange(3)" max-size="5" class="m-t-0 pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="4" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 text-right">
+                                        @*<button class="btn btn-primary" type="button" id="btnSaveFavDiagnosis" value="" ng-click="SavePatientFavDiagnosis()" ng-disabled="!isDoctor || IsVisitMarked"> Save</button>//commented by swatih for localization on 9/7/2020*@
+                                        <button class="btn btn-primary" type="button" id="btnSaveFavDiagnosis" value="" ng-click="SavePatientFavDiagnosis()" ng-disabled="!isDoctor || IsVisitMarked"> @PIVF.LanguageResource.Resources.btnSave</button>@*//modified by swatih for localization on 9/7/2020*@
+                                        @*<button class="btn btn-default" type="button" id="" value="" ng-click="CancelMain()"> Cancel</button>*@ @*//Commented by SwatiH for Localization on 9/7/2020*@
+                                        <button class="btn btn-default" type="button" id="" value="" ng-click="CancelMain()"> @PIVF.LanguageResource.Resources.btnCancel</button> @*//Modified by SwatiH for Localization on 9/7/2020*@
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        @*Favourite Diagnosis End*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form_Content m-b-5" id="">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="row">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblDiagnosis</h5></section>@*Diagnosis :: Modified by swatih for localization on 13/7/2020*@
+                        <div class="col-lg-12">
+                            <div class="table-responsive fixed_header">
+                                <table class="table table-hover table-striped" style="min-height:150px;max-height:325px;min-width: 590px;">
+                                    <thead>
+                                        <tr>
+                                            <th st-ratio="4">&nbsp;</th>
+                                            <th st-ratio="16" ng-click="SortData1('TDate')">@PIVF.LanguageResource.Resources.lblDate<div ng-class="sortClass1"></div></th>@*Date:: Modified by swatih for localization on 13/7/2020*@
+                                            <th st-ratio="15" ng-click="SortData1('Code')">@PIVF.LanguageResource.Resources.lblCode<div ng-class="sortClass1"></div></th>@*Code:: Modified by swatih for localization on 13/7/2020*@
+                                            <th st-ratio="26" ng-click="SortData1('Diagnosis')">@PIVF.LanguageResource.Resources.lblDiagnosis<div ng-class="sortClass1"></div></th>@*Diagnosis:: Modified by swatih for localization on 13/7/2020*@
+                                            <th st-ratio="24" ng-click="SortData1('DiagnosisType')">@PIVF.LanguageResource.Resources.lblDiagnosisType<div ng-class="sortClass1"></div></th>@*Diagnosis Type:: Modified by swatih for localization on 13/7/2020*@
+                                            <th st-ratio="15" ng-click="SortData1('AddedByUserName')">@PIVF.LanguageResource.Resources.lblDoctor<div ng-class="sortClass1"></div></th>@*Doctor:: Modified by swatih for localization on 13/7/2020*@
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in ListPatientDiagnosis |orderBy:SortColumn1:reverseSort1">
+                                            @*|orderby:SortColumn:reverseSort*@
+                                            <td st-ratio="4" class="text-center">
+                                                <button type="button" class="btn btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" data-toggle="modal" data-target=".DeletePatientDiagnosis"  data-keyboard="false" data-backdrop="static" ng-click="objRgtDia.IsUpdate?SetPatientValue(item):0"></button>
+                                            </td>
+                                            <td st-ratio="16">{{item.TDate | date:"dd-MMM-yyyy" }}</td>
+                                            <td st-ratio="15">{{item.Code}}</td>
+                                            <td st-ratio="26">{{item.Diagnosis}}</td>
+                                            <td st-ratio="24">{{item.DiagnosisType}}</td>
+                                            <td st-ratio="15">{{item.AddedByUserName}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--trancsaction data  Delete option model -->
+    <div class="modal fade edit-modal" tabindex="-1" id="DeletePatient" role="dialog" aria-labelledby="mySmallModalLabel" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblReason</h4>@*Reason :: Modified by swatih for localization 14/7/2020*@
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 ">
+                            <div class="form-group ">
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <textarea class="form-control" rows="2" ng-model="PDataReason" id="PDataReason" name="PDataReason" ng-class="{select:frmDiagnosis.PDataReason.$invalid && frmDiagnosis.PDataReason.$dirty}" ng-required="true" maxlength="200"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-primary" ng-click="DeletePatientDiagnosis()" data-keyboard="false" data-backdrop="static">Save</button> //commented by swatih for localization on 9/7/2020*@
+                    *<button type="button" class="btn btn-primary" ng-click="DeletePatientDiagnosis()" data-keyboard="false" data-backdrop="static">@PIVF.LanguageResource.Resources.btnSave</button>@*//modified by swatih for localization on 9/7/2020*@
+                    @*<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelPatient()">Cancel</button> //Commented By SwatiH for Locallization on 9/7/2020*@
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelPatient()">@PIVF.LanguageResource.Resources.btnCancel</button> //Modified By SwatiH for Localization on 0/7/2020
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delete option model -->
+    <div class="modal fade edit-modal" id="DeleteFavModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblReason</h4>@*Reason :: Modified by swatih for localization on 14/7/2020*@
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 ">
+                            <div class="form-group ">
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <textarea class="form-control" rows="2" ng-model="Reason" name="Reason" id="Reason" ng-class="{select:frmDiagnosis.Reason.$invalid && frmDiagnosis.Reason.$dirty}" ng-required="true" maxlength="200"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-primary" ng-click="RemoveFavourite()">Save</button>//commented by swatih for localization on 9/7/2020*@
+                    <button type="button" class="btn btn-primary" ng-click="RemoveFavourite()">@PIVF.LanguageResource.Resources.btnSave</button>@*//modified by swatih for localization on 9/7/2020*@
+                    @*<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelFav()">Cancel</button>//Commented by SwatiH for Localization on 9/7/2020*@
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelFav()">@PIVF.LanguageResource.Resources.btnCancel</button>@*//Modified by SwatiH for Localization on 9/7/2020*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+    </div>
+    @*add new other popup*@
+    <div class="modal fade edit-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblNewDiagnosis</h4>@*New Diagnosis :: Modified by swatih for localization on 14/7/2020*@
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 ">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblCode</label>@*Code:: Modified by swatih for localization on 14/7/2020*@
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <input type="text" class="form-control" id="Code" name="Code" placeholder="" ng-class="{select:frmDiagnosis.Code.$invalid && frmDiagnosis.Code.$dirty}" ng-model="OtherDiagnosis.Code" ng-required="true" maxlength="50">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 ">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblDescription</label>@*Description:: Modified by swatih for localization on 14/7/2020*@
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <textarea type="text" class="form-control" id="Diagnosis" name="Diagnosis" placeholder="" ng-class="{select:frmDiagnosis.Diagnosis.$invalid && frmDiagnosis.Diagnosis.$dirty}" ng-model="OtherDiagnosis.Diagnosis" ng-required="true" maxlength="100"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-primary" ng-click="SaveOtherDiagnosis()" ng-disabled="IsVisitMarked">Save</button>//commented by swatih for localization on 9/7/2020*@
+                    <button type="button" class="btn btn-primary" ng-click="SaveOtherDiagnosis()" ng-disabled="IsVisitMarked">@PIVF.LanguageResource.Resources.btnSave</button> @*//modified by swatih for localization on 9/7/2020*@
+                    @*<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelNewOther()">Cancel</button>//Commented by SwatiH for Localization 9/7/2020*@
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelNewOther()">@PIVF.LanguageResource.Resources.btnCancel</button>@*//Modified By SwatiH for Localization on 9/7/2020*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--other diagnosis Delete option model -->
+    <div class="modal fade edit-modal" id="DeleteOtherDiagnosis1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblReason</h4>@*Reason :: Modified by swatih for localization on 14/7/2020*@
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 ">
+                            <div class="form-group ">
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <textarea type="text" class="form-control" id="DeleteReason" name="DeleteReason" placeholder="" ng-model="DeleteReason" ng-class="{select:frmDiagnosis.DeleteReason.$invalid && frmDiagnosis.DeleteReason.$dirty}" ng-required="true" maxlength="200"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-primary" ng-click="DeleteOtherDiagnosis()">Save</button>//commented by swatih for localization on 9/7/2020*@
+                    <button type="button" class="btn btn-primary" ng-click="DeleteOtherDiagnosis()">@PIVF.LanguageResource.Resources.btnSave</button>@*//modified by swatih for localization on 9/7/2020*@
+                    @*<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelDeleteOther()">Cancel</button>*@ @*//commented by swatih for localization on 9/7/2020*@
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelDeleteOther()">@PIVF.LanguageResource.Resources.btnCancel</button>@*//modified by swatih for localization on 9/7/2020*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+@*<script>
+        $(document).ready(function () {
+            var divHeight = $('.table').height();
+            $('.table-responsive.fixed_header').css('height', divHeight + 10 + 'px');
+        });
+    </script>*@

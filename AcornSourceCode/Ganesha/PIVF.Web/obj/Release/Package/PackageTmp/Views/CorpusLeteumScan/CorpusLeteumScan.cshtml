@@ -1,0 +1,180 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .rowPestalGreen {
+        background: #77dd77 !important;
+    }
+
+     .SelectRow {
+        background: #FFC0CB !important;
+    }
+</style>
+<div ng-controller="CorpusLeteumScanController">
+    <div class="" ng-init="PageInitialization()">  
+        <div class="row">
+            <div class="col-md-12 col-lg-12 text-right m-b-10">
+                <a class="link" href="" ng-click="GoToStimulationChart()"><span ng-hide="CycleDetails==null">Stimulation Chart</span></a>
+            </div>
+        </div>
+        <div class="form_Content form-horizontal" id="form_Content">
+            <form name="frmFScan" novalidate>
+                <div class="row">
+                    <div class="col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                Date
+                            </label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="input-group date">
+                                    <input type="text" class="form-control"
+                                           ng-model="CorpusLeteumScan.CorpusLeteumScanDate" 
+                                           id="Date" 
+                                           name="Date"
+                                           placeholder="dd-MMM-yyyy" 
+                                           aria-describedby="" 
+                                           uib-datepicker-popup="{{format}}" 
+                                           show-button-bar="false" 
+                                           is-open="popup1.opened" 
+                                           ng-disabled="true"
+                                           datepicker-options="dateOptions" 
+                                           alt-input-formats="altInputFormats" 
+                                           tabindex="" autofocus>
+                                    <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Day of Cycle</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <input type="text" class="form-control" ng-model="CorpusLeteumScan.CycleDay" id="Date" ng-disabled="true" placeholder="" tabindex="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 ">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-lg-12 control-label" for="" ng-hide="IsCycleCodeLblDisabled"> 
+                                Cycle Code
+                            </label>
+                            <div class="col-md-12 col-lg-12">
+                                <label class="control-label">{{CorpusLeteumScan.Cyclecode}}</label>   @*ng-hide="IsCycleCodeLblDisabled"*@
+                            </div>
+                            @*<div class="col-md-12 col-lg-12">
+                    <input type="text" class="form-control" id="" placeholder="" ng-model="SelectedPatient" uib-typeahead="i as (i.Description) for i in getMatchingCycleCode($viewValue)  | limitTo : 8" typeahead-on-select="onSelect($item, $model, $label)" ng-hide="IsCycleCodeDisabled" tabindex="3" />
+                </div>*@
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12"><h5 class="subTitle text-center" style="background: #eeeeee;padding: 10px 0px;">TVD & TVCD OF PELVIS</h5></div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">TVS</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12 m-b-10">
+                                <textarea type="text" class="form-control" ng-model="CorpusLeteumScan.TVS1" id="Date" placeholder="" tabindex=""></textarea>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12 m-b-10">
+                                <textarea type="text" class="form-control" ng-model="CorpusLeteumScan.TVS2" id="Date" placeholder="" tabindex=""></textarea>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <textarea type="text" class="form-control" ng-model="CorpusLeteumScan.TVS3" id="Date" placeholder="" tabindex=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">VCD</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <textarea type="text" class="form-control" ng-model="CorpusLeteumScan.VCD" id="Date" placeholder="" tabindex=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-sm-6 col-md-6 col-lg-6 control-label" for="">Ovary</label>
+                            <label class="col-sm-3 col-md-3 col-lg-3 control-label" for="">Right</label>
+                            <label class="col-sm-3 col-md-3 col-lg-3 control-label" for="">Left</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 col-md-4 col-lg-4 control-label" for="">1. Corpus Lut.</label>
+                            <label class="col-sm-2 col-md-2 col-lg-2 control-label" for="">RI</label>
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <input type="text" class="form-control" maxlength="5" ng-model="CorpusLeteumScan.RIRight" allow-decimal-numbers id="Date" placeholder="" tabindex="">
+                            </div>
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <input type="text" class="form-control" maxlength="5" ng-model="CorpusLeteumScan.RILeft" allow-decimal-numbers id="Date" placeholder="" tabindex="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 col-md-4 col-lg-4 control-label" for="">2. Corpus Lut.</label>
+                            <label class="col-sm-2 col-md-2 col-lg-2 control-label" for="">PI</label>
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <input type="text" class="form-control" maxlength="5" ng-model="CorpusLeteumScan.PIRight" allow-decimal-numbers id="Date" placeholder="" tabindex="">
+                            </div>
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <input type="text" class="form-control" maxlength="5" ng-model="CorpusLeteumScan.PILeft" allow-decimal-numbers id="Date" placeholder="" tabindex="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 col-md-4 col-lg-4 control-label" for="">3. Corpus Lut.</label>
+                            <label class="col-sm-2 col-md-2 col-lg-2 control-label" for="">PSV</label>
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <input type="text" class="form-control" maxlength="5" ng-model="CorpusLeteumScan.PSVRight" allow-decimal-numbers id="Date" placeholder="" tabindex="">
+                            </div>
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <input type="text" class="form-control" maxlength="5" ng-model="CorpusLeteumScan.PSVLeft" allow-decimal-numbers id="Date" placeholder="" tabindex="">
+                            </div>
+                        </div>
+                    </div><div class="clearfix"></div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Comment</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <textarea type="text" class="form-control" ng-model="CorpusLeteumScan.CorpusLeteumScanComment" id="Date" placeholder="" tabindex=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                </form>
+</div>
+        <!-- Save Cancle Buttons -->
+        <div class="row form-horizontal m-t-10 m-b-10">
+            <div class="col-lg-12 text-right">
+                <!-- <label class="checkbox-inline p-t-0"><input type="checkbox" id="inlineCheckbox1" value="option1"> Finalize</label> -->
+                <label class="checkbox-inline p-t-0"><input type="checkbox" id="inlineCheckbox1" value="option1" tabindex="" ng-model="CorpusLeteumScan.IsFinalize"  ng-disabled="IsDisableUpdate"> Finalize</label>              @*ng-disabled="IsDisableUpdate"*@
+                <button class="btn btn-primary" type="button" id="btnSaveFollicularScan" value="" tabindex="86" ng-click="SaveOrUpdateCLScan()"  ng-disabled="IsDisableUpdate" >Save</button> 
+                @*<button class="btn btn-default " type="button" ng-click="" id="" value="Cancel">Cancel</button>*@
+                <button class="btn btn-primary " type="button" ng-click="PrintCLScan()" id="" value="Cancel">Print</button>
+            </div>
+        </div>
+
+        <div class="form_Content form-horizontal" id="form_Content">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <h5 class="subTitle">Previous Corpus Leteum Scan</h5>
+                    <div class="table-responsive fixed_header" style="margin-top:10px;">
+                        <table class="table" style="min-height: 150px;border: 1px solid #ccc;max-height:300px;">
+                            <thead class="fixedheader">
+                                <tr>
+                                    <th st-ratio="25">Sr. No.</th>
+                                    <th st-ratio="30">Cycle Code</th>
+                                    <th st-ratio="30">Date</th>
+                                    <th st-ratio="15">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody style="min-height:30px; max-height:275px; overflow:auto;" ng-class="{'rowPestalGreen':item.IsFinalize == true,'SelectRow':item.SelectRow == true }" ng-repeat="item in PreviousCorpusLeteumScan |orderBy:SortColumn1:reverseSort1">
+                                <tr>
+                                    <td st-ratio="25">{{$index+1}}</td>
+                                    <td st-ratio="30">{{item.Cyclecode}}</td>
+                                    <td st-ratio="30">{{item.TherapyDate | date :  "dd-MMM-yyyy"}}</td>
+                                    <td st-ratio="15"><button id="CLS_{{$index}}" type="button" title="Edit" class="btn btn_edit"  ng-click="EditCorpusLeteumScan(item)"></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>

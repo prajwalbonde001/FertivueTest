@@ -1,0 +1,907 @@
+﻿@{
+    Layout = null;
+}
+
+<form name="frmNewART" novalidate ng-controller="ctrlNewART" ng-init="IsOverview=true;LoadData()">
+    <!-- cycles links -->
+    <div class="cycleLinks" style="position: relative;
+        z-index: 14;">
+        <ul>
+            <li class="active" ng-click="Navigate('CycleOverview')">@PIVF.LanguageResource.Resources.lblSOverview</li>
+            <li ng-click="Navigate('StimulationChart')">@PIVF.LanguageResource.Resources.lblStimulationChart</li>
+            <li ng-click="Navigate('SemenDetails')" ng-show="configData.SemenDetail">@PIVF.LanguageResource.Resources.lblSSemenDetails</li>
+            <li ng-click="Navigate('IUI')" ng-show="configData.IUI">@PIVF.LanguageResource.Resources.lblSIUI</li>
+            <li ng-click="Navigate('OPU')" ng-show="configData.OPU">@PIVF.LanguageResource.Resources.lblSOpu</li>
+            <li ng-click="Navigate('Embrology')" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSEmbryology</li>
+            <li ng-click="Navigate('PGT');" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSPgt</li>
+
+            <li class="subMenucryo" ng-show="configData.CryoPreservation">
+                <span class="menu-title">
+                    @PIVF.LanguageResource.Resources.lblCryobank
+                    <span class="arrow"></span> <!-- Arrow added -->
+                </span>
+                <ul>
+                    <li ng-click="Navigate('OocyteVitrification')" ng-show="configData.OocyteVitrification">@PIVF.LanguageResource.Resources.lblSOocyteVitrification</li>
+                    <li ng-click="Navigate('OocyteThowing')" ng-show="configData.OocyteThawing">@PIVF.LanguageResource.Resources.lblSOocyteThawing</li>
+                    <li ng-click="Navigate('EmbryoVitrification')" ng-show="configData.EmbryoVitrification">@PIVF.LanguageResource.Resources.lblSEmbryoVitrification</li>
+                    <li ng-click="Navigate('EmbryoThowing')" ng-show="configData.EmbryoThawing">@PIVF.LanguageResource.Resources.lblSEmbryoThawing</li>
+                </ul>
+            </li>
+            <li ng-click="Navigate('EmbryoTransfer')" ng-show="configData.EmbryoTransfer">@PIVF.LanguageResource.Resources.lblSEmbryoTransfer</li>
+            <li ng-click="Navigate('Outcome')" ng-show="configData.Outcome">@PIVF.LanguageResource.Resources.lblOutcome</li>
+        </ul>
+    </div>
+    <!-- /cycles links -->
+    @*<div class="div60"></div>*@
+    <div class="form_Content p-b-0">
+        <div class="row form-horizontal" style="position: relative;
+        z-index: 11;">
+            <label class="col-sm-6 col-md-6 col-lg-6 control-label labelBold" for=""><b>@PIVF.LanguageResource.Resources.lblMedicalHistory</b></label>
+            <div class="col-md-6 col-lg-6 text-right">
+                <label class="checkbox-inline Checkstatus p-l-25" ng-hide="IsConsent">
+                    <span class="{{ConsentIcon}}"></span> <span class="statuslbl">@PIVF.LanguageResource.Resources.lblConsent</span>
+                </label>
+                <label ng-show="IsDisplayPAC" class="checkbox-inline Checkstatus m-l-0">
+                    <span type="button" class="{{PACClass}}" ng-click="PACClick(NewART)"></span><span class="p-l-7">@PIVF.LanguageResource.Resources.lblSpac</span>
+                </label>
+            </div>
+            <div class="col-md-12 col-lg-12 ">
+                <div class="form-group ">
+                    <label class="control-label col-sm-12 normalLabel" for="">
+                        {{NewART.MedicalHistory}}
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblLMP</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':errLMP==true}">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="LMPDate" name="LMPDate" placeholder="dd-Mmm-yyyy" ng-required="true" ng-model="NewART.LMP" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="1">
+                            <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblARTType</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlArttype" name="ddlArttype" ng-model="NewART.ArtTypeID" ng-disabled="true" ng-options="item.ID as item.Description for item in ARTTypeList" ng-class="{select:NewART.ArtTypeID== 0 && frmNewART.ddlArttype.$dirty}" ng-required="true" tabindex="2"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 m-b-1">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblARTSubtype
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlArtSubType" name="ddlArtSubType"
+                                ng-change="ShowHideControls(NewART.ArtTypeID,NewART.ArtSubTypeID)"
+                                ng-model="NewART.ArtSubTypeID"
+                                ng-options="item.ID as item.Description for item in ARTSubTypeList"
+                                ng-class="{select:NewART.ArtSubTypeID== 0 && frmNewART.ddlArtSubType.$dirty}"
+                                tabindex="3"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 m-b-1">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblProtocol
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlProtocol" name="ddlProtocol"
+                                ng-model="NewART.ProtocolID" ng-options="item.ID as item.Description for item in ProtocolList"
+                                ng-class="{select:NewART.ProtocolID== 0 && frmNewART.ddlProtocol.$dirty}" tabindex="4"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3" ng-hide="hideSOfSperm">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblSSourceofSperm</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlSourceOfSperm" name="ddlSourceOfSperm" ng-model="NewART.SourceOfSpermID" ng-disabled="disableSOfSperm" ng-options="item.ID as item.Description for item in SourceOfSpermList" ng-change="Drpsetting()" ng-class="{select:NewART.SourceOfSpermID== 0 && frmNewART.ddlSourceOfSperm.$dirty}" ng-required="true" tabindex="5"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 " ng-hide="NewART.SourceOfSpermID ==2 || NewART.ArtSubTypeID==14" ng-show="NewART.SourceOfSpermID != 2">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label p-r-0" for="">
+                        @PIVF.LanguageResource.Resources.lblSMethodofSemenCollection
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select ng-disabled="NewART.ArtSubTypeID==1" class="form-control" id="ddlPartnrSpermCollMethod" name="ddlPartnrSpermCollMethod" ng-model="NewART.PartnrSpermCollMethodID" ng-options="item.ID as item.Description for item in SpermCollMethodList" tabindex="6"></select>
+                    </div>
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label small_label" for="">
+                        @PIVF.LanguageResource.Resources.lblSpartner
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3" ng-hide="NewART.SourceOfSpermID ==1 || NewART.SourceOfSpermID ==0" ng-show="NewART.SourceOfSpermID != 1 || NewART.SourceOfSpermID != 0">
+                <div class="form-group m-t-29">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlDonorSpermCollMethod" name="ddlDonorSpermCollMethod" ng-model="NewART.DonorSpermCollMethodID" ng-class="{select:NewART.SourceOfSpermID==3 && NewART.DonorSpermCollMethodID== 0 && frmNewART.ddlDonorSpermCollMethod.$dirty}" ng-options="item.ID as item.Description for item in DonorSpermCollMethodList" tabindex="7" ng-disabled="true"></select>
+                    </div>
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label small_label" for="">
+                        @PIVF.LanguageResource.Resources.lblDonor
+                    </label>
+                </div>
+            </div><div class="clearfix"></div>
+            <div class="col-md-12 col-lg-12">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblIndication</label>
+                                    <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'select':IsValidIndication}">
+                                        <div isteven-multi-select input-model="IndicationList"
+                                             output-model="NewART.SelectedIndication" id="ddlIndication" name="ddlIndication"
+                                             item-label="Description"
+                                             button-label="Description"
+                                             tick-property="ticked"
+                                             output-properties="ID"
+                                             tabindex="8"
+                                             max-height="250px"
+                                             max-labels="0">
+                                        </div>
+                                        <div style="min-height:80px;">
+                                            <table>
+                                                <tr ng-repeat="Item in IndicationList | filter: { ticked: true } ">
+                                                    <td>{{Item.Description}}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-12 ">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                        @PIVF.LanguageResource.Resources.lblSCycleWarning
+                                    </label>
+                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                        <textarea type="text" class="form-control" ng-model="NewART.CycleWarning" id="txtCyWarning" name="txtCyWarning" maxlength="250"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12" ng-hide="true">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                        @PIVF.LanguageResource.Resources.lblSStimulationDrug
+                                    </label>
+                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                        <div isteven-multi-select input-model="StimlnDrugList"
+                                             output-model="NewART.SelectedDrugs" id="ddlStimlnDrug" name="ddlStimlnDrug"
+                                             button-label="Description"
+                                             item-label="Description"
+                                             tick-property="ticked"
+                                             output-properties="ID"
+                                             tabindex="9"
+                                             on-item-click="fClick(data)"
+                                             max-height="250px"
+                                             max-labels="0"
+                                             helper-elements="filter">
+                                        </div>
+                                        <div style="min-height:80px;">
+                                            <table>
+                                                <tr ng-repeat="Item in StimlnDrugList | filter: { ticked: true } ">
+                                                    <td>{{Item.Description}}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                        @PIVF.LanguageResource.Resources.lblRemarks
+                                    </label>
+                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                        <textarea type="text" class="form-control" ng-model="NewART.Remark" id="txtRemark" name="txtRemark" maxlength="250"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Save Cancle Buttons -->
+            <div class="col-lg-12 text-right">
+                <button class="btn btn-primary m-t-5 m-b-10" type="button" id="btnSaveOverview" ng-disabled="disableClickART || NewART.IsFinalize" value="" ng-click="SaveUpdate(NewART)">@PIVF.LanguageResource.Resources.btnSave</button>
+                @*<button class="btn btn-primary" type="button" id="" value="" ng-click="Cancel()">Cancel</button>*@
+            </div>
+        </div>
+        <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+    </div>
+    <div class="form_Content m-t-10 m-b-10 singleCollapse form-horizontal" style="position: relative;
+        z-index: 11; height: calc(100vh - 790px); overflow: auto;">
+        <div class="row p-t-10">
+            <!--Investigations and Procedures Row-->
+            <section class="col-md-12 col-lg-12">
+                <div class="form-control CollapseTabBgcolor">
+                    <span class="col-md-5 col-lg-3 p-l-0">
+                        @*<span class="CollapseTabArrowIcon"></span>Investigations and Procedures</span>*@
+                        <a class="collapseArrowWrap title collapsed m-b-0" data-toggle="collapse" data-target="#collapseInvestigationDtls" ng-attr-type="button" id="" value="">
+                            <span class="collapseArrow"></span>
+                            @PIVF.LanguageResource.Resources.lblSInvestigationsandprocedure
+                        </a>
+                    </span>
+                </div>
+            </section>
+            <div class="col-md-12 col-lg-12 form-horizontal collapse" id="collapseInvestigationDtls">
+                <div class="dataBorder">
+                    <div class="row">
+                        <div class="col-lg-12 text-right m-b-10">
+                            <a class="link" data-toggle="modal" data-target=".view-lab-result-modal">@PIVF.LanguageResource.Resources.lblViewLabResults</a>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="table-responsive table-bordered" style="max-height:150px;">
+                                @*ng-scrollbars ng-scrollbars-config="config">*@
+                                <table class="table table-hover table-striped table-bordered" id="" style="min-width:1250px">
+                                    <thead>
+                                        <tr>
+                                            <th width="80">@PIVF.LanguageResource.Resources.lblSDate</th>
+                                            <th width="80">@PIVF.LanguageResource.Resources.lblServiceCode</th>
+                                            <th width="90" class="">@PIVF.LanguageResource.Resources.lblServiceName</th>
+                                            <th width="90" class="">@PIVF.LanguageResource.Resources.lblSEvent</th>
+                                            <th width="90" class="">@PIVF.LanguageResource.Resources.lblCategory</th>
+                                            <th width="90" class="">@PIVF.LanguageResource.Resources.lblPlannedDate</th>
+                                            <th width="90" class="">@PIVF.LanguageResource.Resources.lblInstruction</th>
+                                            <th width="90" class="">@PIVF.LanguageResource.Resources.lblDoctor</th>
+                                            <th width="90" class="">@PIVF.LanguageResource.Resources.lblStatus</th>
+                                            @*<th width="60" class="text-center">View</th>*@
+                                            @*<th width="60" class="text-center">Upload</th>*@
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="" ng-repeat="item in lstInvestigation">
+                                            <td>{{item.AddedDatetime|date:'dd-MMM-yyyy'}}</td>
+                                            <td>{{item.ServiceCode}}</td>
+                                            <td class="">{{item.Service}}</td>
+                                            <td>{{item.OrderFrom}} </td>
+                                            <td>{{item.Category}}</td>
+                                            <td>{{item.PlannedDate|date:'dd-MMM-yyyy'}}</td>
+                                            <td>{{item.Instruction}}</td>
+                                            <td>{{item.DocName}}</td>
+                                            <td>{{item.Status}} </td>
+                                            @*<td class="text-center">
+                                                    <button class="btn btn_view" type="button" id="" value="" ng-click="ViewReport(item.ID,item.UnitID)">
+                                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                                    </button>
+                                                </td>*@
+                                            @*<td class="text-center">
+                                                    <button class="btn btn_view" type="button" id="" value="">
+                                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                                    </button>
+                                                </td>*@
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Prescriptions Row-->
+            <section class="col-md-12 col-lg-12">
+                <div class="form-control CollapseTabBgcolor">
+                    <span class="col-md-5 col-lg-3 p-l-0">
+                        <a class="collapseArrowWrap title collapsed m-b-0" data-toggle="collapse" data-target="#collapsePrescriptions" aria-expanded="false" ng-attr-type="button" id="" value="">
+                            <span class="collapseArrow"></span>
+                            @PIVF.LanguageResource.Resources.lblPrescriptions
+                        </a>
+                    </span>
+                </div>
+            </section>
+            <div class="col-md-12 col-lg-12 form-horizontal collapse" id="collapsePrescriptions">
+                <div class="dataBorder">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive table-bordered" style="max-height:150px;">
+                                @*ng-scrollbars ng-scrollbars-config="config">*@
+                                <!-- min-height:355px;  -->
+                                <table class="table table-hover table-striped table-bordered" id="" style="min-width:1390px">
+                                    <thead>
+                                        <tr>
+                                            <th width="90">@PIVF.LanguageResource.Resources.lblSDate</th>
+                                            <th width="150">@PIVF.LanguageResource.Resources.lblDrugName</th>
+                                            <th width="150" class="">@PIVF.LanguageResource.Resources.lblGenericName</th>
+                                            <th width="50" class="">@PIVF.LanguageResource.Resources.lblStrength</th>
+                                            <th width="50" class="">@PIVF.LanguageResource.Resources.lblUOM</th>
+                                            <th width="60" class="">@PIVF.LanguageResource.Resources.lblRoute</th>
+                                            <th width="50" class="">@PIVF.LanguageResource.Resources.lblFrequency</th>
+                                            <th width="150" class="">@PIVF.LanguageResource.Resources.lblInstruction</th>
+                                            <th width="50" class="">@PIVF.LanguageResource.Resources.lblSDays</th>
+                                            <th width="50" class="">@PIVF.LanguageResource.Resources.lblQuantity</th>
+                                            <th width="150" class="">@PIVF.LanguageResource.Resources.lblSWarningPrecautions</th>
+                                            <th width="110" class="">@PIVF.LanguageResource.Resources.lblDoctor</th>
+                                            <th width="100" class="">@PIVF.LanguageResource.Resources.lblDrugSource</th>
+                                            <th width="90" class="">@PIVF.LanguageResource.Resources.lblStatus</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="" ng-repeat="item in lstPrescription">
+                                            <td>{{item.Date|date:'dd-MMM-yyyy'}}</td>
+                                            <td>{{item.ItemName}}</td>
+                                            <td>{{item.MoleculeName}}</td>
+                                            <td class="">{{item.Strength}}</td>
+                                            <td>{{item.UOM}} </td>
+                                            <td>{{item.RouteName}}</td>
+                                            <td>{{item.Frequency}}</td>
+                                            <td>{{item.Instruction}}</td>
+                                            <td>{{item.Days}}</td>
+                                            <td>{{item.Quantity}}</td>
+                                            <td>{{item.Warning}}</td>
+                                            <td>{{item.AddedByName}}</td>
+                                            <td>{{item.DrugSource}}</td>
+                                            <td>{{item.Status}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Stimulation Row-->
+            <section class="col-md-12 col-lg-12">
+                <div class="form-control CollapseTabBgcolor">
+                    <span class="col-md-5 col-lg-3 p-l-0">
+                        <a class="collapseArrowWrap title collapsed m-b-0" data-toggle="collapse" data-target="#collapseStimulation" aria-expanded="false">
+                            <span class="collapseArrow"></span>
+                            @PIVF.LanguageResource.Resources.lblSStimulation
+                        </a>
+                    </span>
+                    <div class="col-md-7 col-lg-9 statusCol">
+                        <span ng-if="!objStimulation.IsFinalize" class="status1"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSPending</span><span ng-if="objStimulation.IsFinalize" class="status2"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSCompleted</span>
+                    </div>
+
+                </div>
+            </section>
+            <div class="col-md-12 col-lg-12 form-horizontal collapse" id="collapseStimulation">
+                <div class="dataBorder">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-lg-3 control-label" for="">
+                                            @PIVF.LanguageResource.Resources.lblSStartDate :
+                                        </label>
+                                        <label class="col-md-3 col-lg-3 control-label" for="">
+                                            {{objStimulation.StartDate|date:'dd-MMM-yyyy'}}
+                                        </label>
+                                        <label class="col-md-2 col-lg-2 control-label" for="">
+                                            @PIVF.LanguageResource.Resources.lblEndDate :
+                                        </label>
+                                        <label class="col-md-4 col-lg-4 control-label" for="">
+                                            {{objStimulation.EndDate|date:'dd-MMM-yyyy'}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-lg-3 control-label" for="">
+                                            @PIVF.LanguageResource.Resources.lblSoptimumfollicles :
+                                        </label>
+                                        <label class="col-md-3 col-lg-3 control-label" for="">
+                                            {{objStimulation.FollicleDate|date:'dd-MMM-yyyy'}}
+                                        </label>
+                                        <label class="col-md-2 col-lg-2 control-label" for="">
+                                            @PIVF.LanguageResource.Resources.lblSleft - {{objStimulation.LeftSize}}
+                                        </label>
+                                        <label class="col-md-4 col-lg-4 control-label" for="">
+                                            @PIVF.LanguageResource.Resources.lblSright - {{objStimulation.RightSIze}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label" for="">
+                                    @PIVF.LanguageResource.Resources.lblSDrug : <span>{{objStimulation.Dose}}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Trigger Row-->
+            <section class="col-md-12 col-lg-12">
+                <div class="form-control CollapseTabBgcolor">
+                    <span class="col-md-5 col-lg-3 p-l-0">
+                        <a class="collapseArrowWrap title collapsed m-b-0" data-toggle="collapse" data-target="#collapseTrigger" aria-expanded="false">
+                            <span class="collapseArrow"></span>
+                            @PIVF.LanguageResource.Resources.lblSTrigger
+                        </a>
+                    </span>
+                    <div class="col-md-7 col-lg-9 statusCol">
+                        <span ng-if="objTrigger.TriggerDate ==null" class="status1"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSPending</span><span ng-if="objTrigger.TriggerDate !=null" class="status2"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSCompleted</span>
+                    </div>
+                </div>
+            </section>
+            <div class="col-md-12 col-lg-12 form-horizontal collapse" id="collapseTrigger">
+                <div class="dataBorder">
+                    <div class="row">
+                        <label class="col-md-4 col-lg-4 control-label" for="">
+                            @PIVF.LanguageResource.Resources.lblSTriggerdatetime : {{objTrigger.TriggerDate|date:'dd-MMM-yyyy'}}  <span> {{ objTrigger.TriggerTime|date:'hh:mm'}}</span>
+                        </label>
+                        <label class="col-md-4 col-lg-4 control-label" for="">
+                            @PIVF.LanguageResource.Resources.lblSTriggerdrug :   {{objTrigger.TriggerDose}}
+                        </label>
+                        <label class="col-md-4 col-lg-4 control-label" for="">
+                            @PIVF.LanguageResource.Resources.lblSTriggerdose :  {{objTrigger.TriggerDrugDose}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!--OPU Row-->
+            <div ng-show="configData.OPU">
+                <section class="col-md-12 col-lg-12">
+                    <div class="form-control CollapseTabBgcolor">
+                        <span class="col-md-5 col-lg-3 p-l-0">
+                            <a class="collapseArrowWrap title collapsed m-b-0" data-toggle="collapse" data-target="#collapseOPU" aria-expanded="false">
+                                <span class="collapseArrow"></span>
+                                @PIVF.LanguageResource.Resources.lblSOpu
+                            </a>
+                        </span>
+                        <div class="col-md-7 col-lg-9 statusCol">
+                            <span ng-if="!objOPU.IsFinalize" class="status1"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSPending</span><span ng-if="objOPU.IsFinalize" class="status2"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSCompleted</span>
+                        </div>
+                    </div>
+                </section>
+                <div class="col-md-12 col-lg-12 form-horizontal collapse" id="collapseOPU">
+                    <div class="dataBorder">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label class="col-md-3 col-lg-2 control-label" for="">
+                                        @PIVF.LanguageResource.Resources.lblSDate : {{objOPU.OPUDate|date:'dd-MMM-yyyy'}}
+                                    </label>
+                                    <label class="col-md-2 col-lg-2 control-label" for="">
+                                        #@PIVF.LanguageResource.Resources.lblSOocytes : {{objOPU.Oocytes}}
+                                    </label>
+                                    <label class="col-md-2 col-lg-2 control-label" for="">
+                                        #@PIVF.LanguageResource.Resources.lblSFertilizeds : {{objOPU.Fertilized}}
+                                    </label>
+                                    <label class="col-md-2 col-lg-2 control-label" for="">
+                                        #@PIVF.LanguageResource.Resources.lblSCryoS : {{objOPU.Cryo}}
+                                    </label>
+                                    <label class="col-md-2 col-lg-2 control-label" for="">
+                                        #@PIVF.LanguageResource.Resources.lblSDiscard : {{objOPU.Discard}}
+                                    </label>
+                                </div>
+                            </div>
+                            @*<div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-6 col-lg-6 control-label" for="">
+                                            #Oocytes : {{objOPU.Oocytes}}
+                                        </label>
+                                        <label class="col-md-6 col-lg-6 control-label" for="">
+                                            #Fertilized : {{objOPU.Fertilized}}
+                                        </label>
+                                    </div>
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Embryo Transfer Date Row-->
+            <div ng-show="configData.EmbryoTransfer">
+                <section class="col-md-12 col-lg-12">
+                    <div class="form-control CollapseTabBgcolor">
+                        <span class="col-md-5 col-lg-3 p-l-0">
+                            <a class="collapseArrowWrap title collapsed m-b-0" data-toggle="collapse" data-target="#collapseEmbTransfer" aria-expanded="false">
+                                <span class="collapseArrow"></span>
+                                @PIVF.LanguageResource.Resources.lblSEmbryoTransfer
+                            </a>
+                        </span>
+                        <div class="col-md-7 col-lg-9 statusCol">
+                            <span ng-if="!ETFinalize" class="status1"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSPending</span><span ng-if="ETFinalize" class="status2"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSCompleted</span>
+                        </div>
+                    </div>
+                </section>
+                <div class="col-md-12 col-lg-12 form-horizontal collapse" id="collapseEmbTransfer">
+                    <div class="dataBorder">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">
+                                        #@PIVF.LanguageResource.Resources.lblEmbryosTransferred : {{count}}
+                                    </label>
+                                    <label class="col-md-12 col-lg-12 control-label" for="">
+                                        #@PIVF.LanguageResource.Resources.lblSCellStageGrade : {{CellGrade}}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="col-md-12 col-lg-12 control-label" for="">
+                                        #@PIVF.LanguageResource.Resources.lblSBlastocystTransferred : {{BlastoCyctcount}}
+                                    </label>
+                                    <label class="col-md-12 col-lg-12 control-label" for="">
+                                        #@PIVF.LanguageResource.Resources.lblGrade : {{BlastoCyctCellGrade}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Embryo Transfer Date Row-->
+            <!--Outcome Row-->
+            <section class="col-md-12 col-lg-12">
+                <div class="form-control CollapseTabBgcolor">
+                    <span class="col-md-5 col-lg-3 p-l-0">
+                        <a class="collapseArrowWrap title collapsed m-b-0" data-toggle="collapse" data-target="#collapseOutcome" aria-expanded="false">
+                            <span class="collapseArrow"></span>
+                            @PIVF.LanguageResource.Resources.lblOutcome
+                        </a>
+                    </span>
+                    <div class="col-md-7 col-lg-9 statusCol">
+                        <span ng-if="lstOutcome.length==0" class="status1"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSPending</span><span ng-if="lstOutcome.length>0" class="status2"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSCompleted</span>
+                    </div>
+                </div>
+            </section>
+            <div class="col-md-12 col-lg-12 form-horizontal collapse" id="collapseOutcome">
+                <div class="dataBorder">
+                    <span class="" ng-repeat="item in lstOutcome">
+                        <p class="">
+                            {{item.BHCGTitle}}/ {{item.BHCGDate|date:'dd-MMM-yyyy'}}/ {{item.Result}} lblSmiuml <span ng-if="item.IsPositive" class="positive"><span class="green_point"></span>@PIVF.LanguageResource.Resources.lblSpositive</span>
+                            <span ng-if="!item.IsPositive" class="negative"><span class="red_point"></span>@PIVF.LanguageResource.Resources.lblSNegative</span>
+                        </p>
+                        @*<p class="">II/ 3-Jan-2017/ 300 m IU/ml/ <span class="dash">-</span></p>
+                            <p class="">III/ 5-Jan-2017/ 400 m IU/ml/ <span class="negative"><span class="red_point"></span>Negative</span></p>
+                            <p class="">IV/ 5-Jan-2017/ 400 m IU/ml/ <span class="negative"><span class="red_point"></span>Negative</span></p>*@
+                    </span>
+                </div>
+            </div>
+            <!--Birth Dtls Row-->
+            <section class="col-md-12 col-lg-12">
+                <div class="form-control CollapseTabBgcolor">
+                    <span class="col-md-5 col-lg-3 p-l-0">
+                        <a class="collapseArrowWrap title collapsed m-b-0" data-toggle="collapse" data-target="#collapseBirthDtls" aria-expanded="false">
+                            <span class="collapseArrow"></span>
+                            @PIVF.LanguageResource.Resources.lblSBirthDetails
+                        </a>
+                    </span>
+                    <div class="col-md-7 col-lg-9 statusCol">
+                        <span ng-if="lstBirthDetails.length==0" class="status1"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSPending</span><span ng-if="lstBirthDetails.length>0" class="status2"><span class="fa fa-circle" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.lblSCompleted</span>
+                    </div>
+                </div>
+            </section>
+            <div class="col-md-12 col-lg-12 form-horizontal collapse" id="collapseBirthDtls">
+                <div class="dataBorder">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-3 form-horizontal">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-6 col-lg-12 control-label" for="">
+                                    @PIVF.LanguageResource.Resources.lblSpregnancy :
+                                </label>
+                                <div class="col-md-12 col-sm-6 col-lg-12 p-t-7">
+                                    {{Pregnancy}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 form-horizontal">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                    @PIVF.LanguageResource.Resources.lblSWeeksofgestation :
+                                </label>
+                                <div class="col-md-12 col-sm-12 col-lg-12 p-t-7">
+                                    {{WeaksOfgestation}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 form-horizontal">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                    @PIVF.LanguageResource.Resources.lblSTypeofDelivery :
+                                </label>
+                                <div class="col-md-12 col-sm-12 col-lg-12 p-t-7">
+                                    {{DeliveryType}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="table-responsive table-bordered" style="max-height:150px;">
+                                @*ng-scrollbars ng-scrollbars-config="config">*@
+                                <!-- min-height:355px;  -->
+                                <table class="table" id="profile_table">
+                                    <thead>
+                                        <tr>
+                                            <th width="">&nbsp;</th>
+                                            <th width="">@PIVF.LanguageResource.Resources.lblSBirthWeightinpound</th>
+                                            <th width="" class="">@PIVF.LanguageResource.Resources.lblSCongentialAbnormality</th>
+                                            <th width="350" class="">@PIVF.LanguageResource.Resources.lblRemarks</th>
+                                            <th width="" class="">@PIVF.LanguageResource.Resources.lblSApgarscore</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="" ng-repeat="item in lstBirthDetails">
+                                            <td>{{item.Child}}</td>
+                                            <td class="">{{item.BirthWeight}}</td>
+                                            <td><span ng-if="item.IsCongiAbnorm">Yes</span><span ng-if="!item.IsCongiAbnorm">No</span></td>
+                                            <td>{{item.Remark}}</td>
+                                            <td>{{item.Score}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- view lab result model -->
+    <div class="modal fade view-lab-result-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-keyboard="false" data-backdrop="static" style="position: relative;
+        z-index: 14;">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblViewLabResults</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+                            <div class="form-group ">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="" placeholder="@PIVF.LanguageResource.Resources.btnSearch">
+                                    <span class="input-group-addon glyphicon glyphicon-search cursorPointer" type="button"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive table-bordered" style="min-height:150px;max-height:550px;">
+                        <table class="table table-hover table-striped" style="min-width:570px;">
+                            <thead>
+                                <tr>
+                                    <th>lblSDate</th>
+                                    <th>lblTestName</th>
+                                    <th>lblParameterName</th>
+                                    <th>lblValue</th>
+                                    <th>lblReferenceRange</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>20/06/2017</td>
+                                    <td>Test Name</td>
+                                    <td>Parameter Name</td>
+                                    <td>Value</td>
+                                    <td>Reference Range</td>
+                                </tr>
+                                <tr>
+                                    <td>20/06/2017</td>
+                                    <td>Test Name</td>
+                                    <td>Parameter Name</td>
+                                    <td>Value</td>
+                                    <td>Reference Range</td>
+                                </tr>
+                                <tr>
+                                    <td>20/06/2017</td>
+                                    <td>Test Name</td>
+                                    <td>Parameter Name</td>
+                                    <td>Value</td>
+                                    <td>Reference Range</td>
+                                </tr>
+                                <tr>
+                                    <td>20/06/2017</td>
+                                    <td>Test Name</td>
+                                    <td>Parameter Name</td>
+                                    <td>Value</td>
+                                    <td>Reference Range</td>
+                                </tr>
+                                <tr>
+                                    <td>20/06/2017</td>
+                                    <td>Test Name</td>
+                                    <td>Parameter Name</td>
+                                    <td>Value</td>
+                                    <td>Reference Range</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="page_actions">
+                        <button class="btn btn-primary" type="button" id="" value="" data-dismiss="modal"> OK</button>
+                        @*<button class="btn btn-default" type="button" id="" value="" data-dismiss="modal"> Cancel</button>*@
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!--View Report model-->
+    <div class="modal fade edit-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-keyboard="false" data-backdrop="static" style="position: relative;
+        z-index: 14;">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" id="btnClosePop" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        {{FileName}} &nbsp;-
+                        <span class="femaleDetails"> {{PatientName}} <small>({{MRNO}})</small></span>
+                        @*<span class="femaleDetails"> Amit M S <small>(BLR-MSR-2017-02-192)</small></span>*@
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-horizontal">
+                        <div class="text-center" ng-if="extn == 'image'">
+                            <img ng-src="{{Image}}" style="width: 61%; height: 61%;" />
+                        </div>
+                        <div class="wrapper" ng-if="extn != 'image'">
+                            <object ng-show="content" data="{{content}}" type="application/pdf" style="width: 100%; height: 400px;"></object>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row form-horizontal">
+                        <div class="col-lg-12 text-right">
+                            <button class="btn btn-primary" type="button" id="" ng-click="Download()" value="" ng-show="extn == 'image'">@PIVF.LanguageResource.Resources.btnDownload</button>
+                            <button class="btn btn-primary" type="button" id="" value="" ng-show="extn == 'image'">@PIVF.LanguageResource.Resources.btnPrint</button>
+                            <button class="btn btn-default" type="button" id="" value="" ng-click="Close()">@PIVF.LanguageResource.Resources.btnClose</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- PAC Details -->
+<script type="text/ng-template" id="PACDetails">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="Cancel()"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblSpacdetails</h4>
+        </div>
+        <div class="modal-body" ng-init="GetPAC()">
+            <div class="row form-horizontal">
+                <div class="col-md-3 col-lg-3 ">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblSDate</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="input-group date">
+                                <input type="text" class="form-control" id="PACDate" name="PACDate" placeholder="dd-mm-yyyy" ng-required="true" ng-class="{invalid:PACDetails.DateInvalid == true}" ng-model="PACDetails.PACDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="1">
+                                <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 ">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblSTime</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div uib-timepicker ng-model="PACDetails.Time"
+                                 class="timeCss"
+                                 ng-required="true"
+                                 hour-step="1"
+                                 minute-step="1"
+                                 show-meridian="false"
+                                 show-spinners="false"
+                                 show-seconds="false"
+                                 ng-class="{'has-error':PACDetails.TimeInvalid == true}"
+                                 tabindex="2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 ">
+                    <div class="form-group m-t-29">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="PACDetails.Consent" /><span>@PIVF.LanguageResource.Resources.lblConsent</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div> <div class="clearfix"></div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblBrowse</label>
+                        <div class="col-md-12 col-lg-12">
+                            <label id="" class="UserImageUploadContainer img-attach">
+                                <span class="btn btn-primary fileinput-button">
+                                    <span class="glyphicon glyphicon-paperclip"></span> @PIVF.LanguageResource.Resources.lblSConsentupload
+                                    <input type="file" id="fileInput" name="fileInput" class="upload" onchange="angular.element(this).scope().handleFileSelect(this)" />
+                                </span>
+                            </label>
+                            <span>{{filename}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblView</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <button class="btn btn_view" type="button" ng-click="ViewConsent()">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblBrowse</label>
+                        <div class="col-md-12 col-lg-12">
+                            <label id="" class="UserImageUploadContainer img-attach">
+                                <span class="btn btn-primary fileinput-button">
+                                    <span class="glyphicon glyphicon-paperclip"></span> @PIVF.LanguageResource.Resources.lblReportUpload
+                                    <input type="file" id="fileInput" name="fileInput" class="upload" onchange="angular.element(this).scope().handleFileSelectForReport(this)" />
+                                </span>
+                            </label>
+                            <span>{{Reportfilename}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblView</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <button class="btn btn_view" type="button" ng-click="ViewReport()">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" ng-disabled="SaveBtn" ng-click="Save()">@PIVF.LanguageResource.Resources.btnSave</button>
+            <button type="button" class="btn btn-default" ng-click="Cancel()">@PIVF.LanguageResource.Resources.btnCancel</button>
+        </div>
+    </div>
+</script>
+<!-- PAC Details -->
+
+<script type="text/ng-template" id="PACViewDetails">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="ViewClose('Cancel')"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <div class="row form-horizontal" style="overflow: auto; height: 560px;">
+                <div class="text-center" ng-show="ViewData.extn == 'image'">
+                    <img ng-src="{{ViewData.Image}}" style="width: 90%; height: 50%;" />
+                </div>
+                <div class="text-center" ng-show="extn != 'image'">
+                    <object ng-show="ViewData.content" data="{{ViewData.content}}" type="application/pdf" style="width: 100%;height: 550px;"></object>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row form-horizontal">
+                <div class="col-lg-12 text-right">
+                    @*<button class="btn btn-primary" type="button" id="" value="" ng-show="extn == 'image'" ng-click="SaveReport()">Download</button>*@
+                    <button class="btn btn-default" type="button" ng-click="ViewClose('Cancel')">@PIVF.LanguageResource.Resources.btnClose</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

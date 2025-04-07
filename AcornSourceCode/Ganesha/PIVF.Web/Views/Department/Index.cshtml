@@ -1,0 +1,115 @@
+﻿<link href="~/Content/ui-grid.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/AngularPackages/ui-grid.js"></script>
+
+@*---------------------------------------page start Here ------------------------------------------------*@
+
+<section ng-controller="DepartmentController" ng-init="showhide_NewButn=true">
+
+    <section ng-show="showhide" class="form_Content showhide">
+        <form role="form" novalidate name="frnDept">
+            <div class="row">
+                <div class="col-sm-12 text-right add_row">
+                    @*<button class="btn btn-link" type="button" id="btnadd" value="Add Row" ng-click="GetValue()">@PIVF.Gemino.LanguageResource.Resources.btnAddRows</button>*@
+                    <button class="btn-link" type="button" id="btnadd" value="@PIVF.LanguageResource.Resources.btnAddRows" ng-click="GetValue()"><span class="glyphicon glyphicon-plus"></span></button>
+                </div>
+                <div class="col-sm-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead style="background: #F6F9FB; color: #5895A6;">
+                                <tr>
+                                    <th><span class="text-wht">*</span>@PIVF.LanguageResource.Resources.Code</th>@*Code ::Modified by swatih for localization 27/7/2020*@
+                                    <th><span class="text-wht">*</span>@PIVF.LanguageResource.Resources.Description</th>@*Description::Modified by swatih for localization 27/7/2020*@
+                                    <th class="text-center">@PIVF.LanguageResource.Resources.lblIsClinical</th>@*Is Clinical::Modified by swatih for localization 27/7/2020*@
+                                    <th class="text-center">@PIVF.LanguageResource.Resources.Active</th>@*Active::Modified by swatih for localization 27/7/2020*@
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="" ng-repeat="Item in ListItem">
+                                    <td>
+                                        <ng-form name="frmCode">
+                                            <div ng-class="{'has-error':frmCode.Code.$invalid && frmCode.Code.$dirty }">
+                                                <input class="form-control" type="text" id="Code" name="Code" ng-model="Item.DeptCode" maxlength="10" required ng-pattern="/^[a-zA-Z0-9\s\-\:\/\_']*$/">
+                                                <span class="help-block" ng-if="frmCode.Code.$error.required && frmCode.Code.$dirty">@PIVF.LanguageResource.Resources.IsCodeRequired</span>
+                                                <span class="help-block" ng-show="frmCode.Code.$error.pattern">@PIVF.LanguageResource.Resources.CodeRegExp</span>
+                                            </div>
+                                        </ng-form>
+                                    </td>
+                                    <td>
+                                        <div class="MobileContainer">
+                                            <div ng-form name="frmDesc">
+                                                <div ng-class="{'has-error':frmDesc.Description.$invalid && frmDesc.Description.$dirty }">
+                                                    <input type="text" class="form-control" id="Description" name="Description" ng-model="Item.Description" maxlength="50" required ng-pattern="/^[a-zA-Z0-9\s\-\:\/\_']*$/">
+                                                    @*<label class="max_250 pull-right">{{50-Item.Description.length}}</label>*@
+                                                    <span class="help-block" ng-if="frmDesc.Description.$error.required && frmDesc.Description.$dirty">@PIVF.LanguageResource.Resources.IsDescriptionRequired</span>
+                                                    <span class="help-block" ng-show="frmDesc.Description.$error.pattern">@PIVF.LanguageResource.Resources.CodeRegExp</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group text-center">
+                                            <div class="checkbox">
+                                                <label><input id="Status" type="checkbox" ng-model="Item.IsClinical" ng-init="Item.IsClinical=false"></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group text-center">
+                                            <div class="checkbox">
+                                                <label><input id="Status" type="checkbox" ng-model="Item.Active" ng-init="Item.Active=true"></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group text-center">
+                                            <button class="btn btn-danger btn-sm m-b-0" type="button" name="Remove" value="@PIVF.LanguageResource.Resources.btnRemove" id="Remove" ng-model="Item" ng-click="RemoveRow($index)">@PIVF.LanguageResource.Resources.btnRemove</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- start pagenation and button -->
+                <div class="col-sm-12 text-right m-t-10">
+                    <button class="btn btn-primary m-b-5" type="button" ng-disabled="frnDept.$invalid" id="" ng-click="saveItemList()">@PIVF.LanguageResource.Resources.btnSave</button>
+                    <button class="btn btn-default m-b-5 hide_collapse_button" type="button" id="btncancel" ng-click="HideDiv()">@PIVF.LanguageResource.Resources.btnCancel</button>
+                </div>
+                <!-- End Pagenation and button -->
+            </div>
+        </form>
+    </section>
+    <section class="form_Content m-t-10">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <p class="">
+                    <span>@PIVF.LanguageResource.Resources.Total_Count :</span>
+                    <span class="total_count">{{ gridOptions.data.length }}</span>
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-6 text-right">
+                @*<button class="btn btn-primary m-t-10" type="button" id="btnnew" value="Add" ng-show="showhide_NewButn" data-target="#PageContentSection" ng-click="TableGenerateOnAdd(1)"> @PIVF.Gemino.LanguageResource.Resources.btnNew</button>*@
+                <button class="btn-link p-r-0 t0" title="@PIVF.LanguageResource.Resources.btnNew" type="button" id="btnnew" value="@PIVF.LanguageResource.Resources.btnAdd" ng-show="showhide_NewButn" data-target="#PageContentSection" ng-click="TableGenerateOnAdd(1)"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
+            <div class="clear"></div>
+            <div class="col-md-12">
+                <div id="grid1" ui-grid="gridOptions" ui-grid-exporter ui-grid-move-columns ui-grid-edit ui-grid-cellnav ui-grid-resize-columns ui-grid-pinning ui-grid-importer ui-grid-grouping ui-grid-pagination class="grid"></div>
+                <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 page">
+                <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                @*<nav aria-label="Page navigation">
+                        <ul class="pagination pagination-sm pull-left"></ul>
+                    </nav>*@
+            </div>
+            <div class="col-md-6 col-sm-6 text-right">
+                <button class="btn btn-primary  m-t-10" type="button" id="" ng-click="updateDepartment()">@PIVF.LanguageResource.Resources.btnUpdate</button> @*ng-disabled="BtnUpdate"*@
+            </div>
+        </div>
+    </section>
+
+</section>
+

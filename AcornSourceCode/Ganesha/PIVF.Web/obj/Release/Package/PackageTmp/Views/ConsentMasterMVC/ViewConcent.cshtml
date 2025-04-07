@@ -1,0 +1,146 @@
+﻿
+@{ Layout = null;}
+ 
+    <div ng-controller="ConsentViewCtr" id="temp" ng-init="PageSetup()">
+        <div class="form_Content">
+            <form novalidate name="frmLink">
+                <div class="row ConcenttabResp Concentform">
+                    <div class="col-md-4 col-lg-3 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-lg-12 control-label" for="">
+                                @PIVF.LanguageResource.Resources.lblCode
+                            </label>@*Code ::Modified by swatih for localization 24/7/2020*@
+                            <div class="col-md-12 col-lg-12">
+                                <input type="text" class="form-control" ng-model="ConsentDetails.Code" name="txtCode" id="txtCode" ng-required="true" ng-class="{'select':frmLink.txtCode.$dirty && (ConsentDetails.Code == null || ConsentDetails.Code == undefined) }" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 form-horizontal form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-lg-12 control-label" for="">
+                                @PIVF.LanguageResource.Resources.lblDescription
+                            </label>@*Description ::Modified by swatih for localization 24/7/2020*@
+                            <div class="col-md-12 col-lg-12">
+                                <input type="text" class="form-control" ng-model="ConsentDetails.Description" ng-required="true" name="txtDescription" id="txtDescription" ng-class="{'select':frmLink.txtDescription.$dirty && (ConsentDetails.Description == null || ConsentDetails.Description== undefined) }" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="col-md-12 col-lg-12 "><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblLinkDetails</h5></div>@*Link Details ::Modified by swatih for localization 24/7/2020*@
+                    <div class="col-md-4 col-lg-3 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-lg-12 control-label" for="">
+                                @PIVF.LanguageResource.Resources.lblPatientCategory
+                            </label>@*Patient Category::Modified by swatih for localization 24/7/2020*@
+                                <div class="col-md-12 col-lg-12">
+                                    <select class="form-control " ng-model="PatientCategory" ng-options="item as item.Description for item in PatientCategoryList" ng-change="GetArtSubTypeList(ArtType)" ng-required="true" name="ddlPCategory" id="ddlPCategory" ng-class="{'select':frmLink.ddlPCategory.$dirty && PatientCategory.ID==0}" />
+                                </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-4 col-lg-3 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-lg-12 control-label" for="">
+                               @PIVF.LanguageResource.Resources.lblARTType
+                            </label> @*ART Type ::Modified by swatih for localization 24/7/2020*@
+                                <div class="col-md-12 col-lg-12">
+                                    <select class="form-control " ng-model="ArtType" ng-options="item as item.Description for item in ARTTypeList" ng-required="true" name="ddlARTType" id="ddlARTType" ng-change="GetArtSubTypeList(ArtType)" ng-class="{'select':frmLink.ddlARTType.$dirty && ArtType.ID==0}" />
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-md-12 col-lg-12 control-label" for="">
+                                @PIVF.LanguageResource.Resources.lblARTSubtype
+                            </label> @*ART Sub Type ::Modified by swatih for localization 24/7/2020*@
+                            <div class="col-md-12 col-lg-12">
+                                <select class="form-control " ng-model="ArtSubType" ng-options="item as item.Description for item in ARTSubTypeList" ng-required="true" name="ddlSubType" id="ddlSubType" ng-class="{'select':frmLink.ddlSubType.$dirty && ArtSubType.ID==0}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-1">
+                        <button type="button" class="btn btn-primary m-t-30" ng-click="AddLink()">@PIVF.LanguageResource.Resources.btnAdd</button>@*Add::Modified by swatih for localization 24/7/2020*@
+                    </div>
+                    <div class="col-md-12">
+                        <div class="table-responsive tbl_conset fixed_header" style="min-height:100px;">
+                            <table class="table table-hover table-bordered table-striped mt15" > @**@
+                                <thead>
+                                    <tr>
+                                        <th width="">&nbsp;</th>
+                                        <th width="">@PIVF.LanguageResource.Resources.lblPatientCategory</th>@*Patient Category ::Modified by swatih for localization 24/7/2020*@
+                                        <th width="">@PIVF.LanguageResource.Resources.lblARTType</th>@*ART Type::Modified by swatih for localization 24/7/2020*@
+                                        <th width="">@PIVF.LanguageResource.Resources.lblSubtype</th>@*Subtype::Modified by swatih for localization 24/7/2020*@
+                                    </tr>
+                                </thead>
+                                <tbody style="max-height:150px;">
+                                    <tr ng-repeat="Items in ConsentDetails.LinkDetails">
+                                        <td width=""><span class="btn_delete" title="Delete" data-toggle="modal" data-target=".reason-modal" ng-click="RemoveAddDrugRow($index)"></span></td>
+                                        <td>{{Items.PCategoryDesc}}</td>
+                                        <td>{{Items.ARTTypeDesc}}</td>
+                                        <td>{{Items.ARTSubTypeDesc}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-12 m-t-10">
+                        <text-angular ng-model="htmlForm" ta-toolbar="[['h1','h2','h3'],['bold','italics', 'underline', 'strikeThrough',  'ol', 'undo', 'redo', 'clear', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'indent', 'outdent'],['checkbox', 'input', 'datepicker','insertVariable']]"></text-angular>   @*'ul',*@
+                    </div>
+                </div>
+            </form>
+        
+            <div class="row">
+                <div class="col-md-12 text-right m-t-10">
+                    <button class="btn btn-primary btn_save" id="btnSave" ng-click="SaveForm()">@PIVF.LanguageResource.Resources.btnSave</button>@*Save::Modified by swatih for localization 24/7/2020*@
+                    <button class="btn btn-primary btn_save" ng-click="OpenForm('ShowForm')">@PIVF.LanguageResource.Resources.btnPreview</button>@*Preview::Modified by swatih for localization 24/7/2020*@
+                    <button class="btn btn-default btn_cancle" type="button" id="" value="" ng-click="Cancel()"> @PIVF.LanguageResource.Resources.btnCancel</button>@*Cancel::Modified by swatih for localization 24/7/2020*@
+                </div>
+            </div>
+        </div>
+      
+    </div>
+<script type="text/ng-template" id="ShowForm">
+    <div class="modal-content" ng-init="updateForm()">
+        <div class="modal-header">
+            <button  type="button" class="close" data-dismiss="modal" aria-label="Close"  ng-click="Cancel()"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblConsentPreview</h4>@*Consent Preview ::Modified by swatih for localization 24/7/2020*@
+        </div>
+        <div class="modal-body">
+            <div id="printSection1" class="">
+                <form sf-schema="schema" sf-form="form" sf-model="model" ng-submit="submitForm(form,model)"></form>
+            </div>            
+        </div>
+        <div class="modal-footer">
+            <div class="row page_actions text-right">
+                <div class="col-lg-12 col-md-12">
+                    @*<button class="btn btn-primary" type="button" id="" value="" ng-click="showPDF()"> Print</button>*@
+                    <button class="btn btn-primary" ng-print print-element-id="printSection1">@PIVF.LanguageResource.Resources.btnPrint</button>@*Print ::Modified by swatih for localization 24/7/2020*@
+                    <button class="btn btn-default" type="button" id="" value="" ng-click="Cancel()"> @PIVF.LanguageResource.Resources.btnCancel</button>@*Cancel ::Modified by swatih for localization 24/7/2020*@
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+@*delete Todays Select Model box*@
+<script type="text/ng-template" id="DeleteModel">
+    <form name="frmReason" novalidate>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblReason</h4>@*Reason ::Modified by swatih for localization 24/7/2020*@
+            </div>
+            <div class="modal-body">
+                <textarea id="Reason" name="Reason" class="form-control" ng-model="Item.Reason" rows="2" ng-required="true" ng-class="{select:frmReason.Reason.$dirty && (Item.Reason == null || Item.Reason == undefined)}"></textarea>
+            </div>
+            <div class="modal-footer">
+                <div class="page_actions">
+                    <button class="btn btn-primary" type="button" ng-click="Delete(Item)"> @PIVF.LanguageResource.Resources.btnSave</button>@*Save ::Modified by swatih for localization 24/7/2020*@
+                    <button class="btn btn-default" type="button" id="" value="" data-dismiss="modal" ng-click="Cancel()"> @PIVF.LanguageResource.Resources.btnCancel</button>@*Cancel ::Modified by swatih for localization 24/7/2020*@
+                </div>
+            </div>
+        </div>
+    </form>
+</script>
+<!-- /reason model -->

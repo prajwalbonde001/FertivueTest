@@ -1,0 +1,70 @@
+2022-09-21 16:36:51.2000|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:51.2000|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:51.6494|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:51.6494|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:52.5508|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:52.5508|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:52.7105|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:52.7105|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:53.2098|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:53.2098|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:53.7306|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:53.7306|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:55.5503|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:55.5503|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:55.7508|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-21 16:36:55.7508|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:20.7025|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:20.7025|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:21.8991|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:21.8991|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:23.3731|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetARTCycleList,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:23.3731|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetARTCycleList,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:24.6841|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:24.6841|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:25.1943|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:25.1943|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:25.8760|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:newCyclebtnFlag,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:25.8760|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:newCyclebtnFlag,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:31.1321|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetARTCycleList,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:31.1321|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetARTCycleList,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:32.1851|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:newCyclebtnFlag,User:multiplyadmin,UnitID:2
+2022-09-21 16:37:32.1851|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:newCyclebtnFlag,User:multiplyadmin,UnitID:2
+2022-09-21 17:33:09.1394|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-21 17:33:09.1394|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-21 17:34:39.7807|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-21 17:34:39.7807|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-21 17:34:41.8113|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-21 17:34:41.8113|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-21 17:35:43.7887|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-21 17:35:43.7887|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-21 17:35:46.5875|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-21 17:35:46.5875|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-21 17:35:47.3898|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-21 17:35:47.3898|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-21 17:36:17.9223|ERROR|PIVF.Web.Api.QueueMgt.QueueMgtController|QueueMgt/GetQueueList MessageExecution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.QueueMgt.QueueMgtDAL.GetQueueList(String[] Que) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.DataAccessLayer\QueueMgt\QueueMgtDAL.cs:line 53
+   at PIVF.Web.Api.QueueMgt.QueueMgtController.GetQueueList(String[] Que) in D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\PIVF.Web\Api\QueueMgt\QueueMgtController.cs:line 34
+2022-09-21 17:36:17.9536|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-21 17:36:17.9536|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-21 17:36:27.5171|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-21 17:36:27.5171|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-21 17:36:27.8335|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-21 17:36:27.8335|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2

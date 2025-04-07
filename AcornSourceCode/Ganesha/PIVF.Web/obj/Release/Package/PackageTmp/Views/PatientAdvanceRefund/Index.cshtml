@@ -1,0 +1,305 @@
+﻿
+@{
+    Layout = null;
+}
+<form name="frmPatientAdvanceRefund" ng-controller="PatientAdvanceRefundCtr" ng-init="LoadData();">
+    @*ng-controller="PatientAdvanceRefundCtr" ng-init="LoadData();"*@
+    <div class="form_Content">
+        <div class="row form-horizontal" style="height: calc(100vh - 572px); overflow: auto;">
+            <div class="col-lg-offset-4 col-md-4 col-sm-3 col-lg-offset-4 col-lg-4 m-t-5 m-b-5" style="margin-bottom:5px;">
+                <div class="form-group ">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="MRNO" name="MRNO" placeholder="@PIVF.LanguageResource.Resources.lblSearchPatient" ng-model="selectedPatientFromPatient" typeahead-min-length="3" uib-typeahead="i as (i.PatientName + ' '  + '(' + i.PatientMRNo + '|' + i.PatientMobileNo + ')' ) for i in PatientList | filter:$viewValue | limitTo:150" typeahead-on-select="SelectedPatient(selectedPatientFromPatient,false);BindData();" autocomplete="off">
+                            <span class="input-group-addon" id="">
+                                <i class="fa fa-search"
+                                   aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            @*Patient Details*@
+            <div class="col-lg-12" ng-show="PatientData.PatientMRNo">
+                @*ng-show="PatientData.MRNo"*@
+                @*ng-show="PatientData.MRNo"*@
+                <div class="PatientInfoWrapper m-b-15 m-t-10">
+                    <div class="BlueWrap">
+                        <div class="ProfileImgWrap">
+                            @*<img src="./images/ladies-profile-pic.jpg" alt="User Profile Pic" class="profile">*@
+                            @*   <img ng-src="{{PatientData.PhotoString}}" width="100%" />*@
+                            <img ng-if="PatientData.PhotoString !=''" ng-src="{{PatientData.PhotoString}}" class="profile">
+                            <img ng-if="PatientData.Gender=='Male'" ng-src="../images/Male_default.jpg" class="profile">
+                            <img ng-if="PatientData.Gender=='Female'" ng-src="../images/Female_default.jpg" class="profile">
+                        </div>
+                        <div class="ProfileInfoWrap ">
+                            <p class="m-b-0">
+                                <span class="PatientName p-l-20">{{PatientData.Prefix}}</span>
+                                <span class="PatientName">{{PatientData.PatientName}}</span>
+                                <span class="MRN-Green">
+                                    <span> {{PatientData.PatientMRNo}}</span>
+                                </span>
+                                <span class="patient-gander p-l-5">{{PatientData.Gender}} -</span>
+                                <span class="patient-gander">{{PatientData.PatientAge}} yrs</span>
+                                <span class="patient-gander iconInfoLine">
+                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                    <span class="LinkName">{{PatientData.PatientMobileNo}}</span>
+                                </span>
+                                @*<span class="patient-gander iconInfoLine">
+                                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                        <span class="LinkName">+{{PatientData.AltMobileno}}</span>
+                                    </span>*@
+                            </p>
+                            <ul class="profile-data">
+                                <li style="width:63%;" ng-show="PatientData.PatientCommunicationAddress">
+                                    <span class="patient-gander p-l-0">@PIVF.LanguageResource.Resources.lblPermanantAddress : {{PatientData.PatientCommunicationAddress}}</span>@*Permanant Address :: Modided by swatih for localization 13/7/2020*@
+                                </li>
+                                <li style="width:63%;" ng-show="PatientData.CommunicationAddress">
+                                    @*Added by Nayan Kamble on 25/11/2019*@
+                                    <span class="patient-gander p-l-0">@PIVF.LanguageResource.Resources.lblCommunicationAddress : {{PatientData.CommunicationAddress}}</span>@*Communication Address :: Modided by swatih for localization 13/7/2020*@
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*Patient Details*@
+            <section class="col-md-12 col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcListofAdvances</h5></section>
+            <div class="col-md-12 col-lg-12">
+                <div class="table-responsive  fixed_header table-bordered m-b-10 m-t-10">
+                    <table class="table" style="min-width: 1100px;min-height:150px;">
+                        <thead>
+                            <tr>
+                                <th>@PIVF.LanguageResource.Resources.lblSelect</th>
+                                <th>@PIVF.LanguageResource.Resources.lblcReceiptNo</th>
+                                <th>@PIVF.LanguageResource.Resources.lblClinic</th>
+                                <th>@PIVF.LanguageResource.Resources.lblDate</th>
+                                <th>@PIVF.LanguageResource.Resources.lblcTotalAmount</th>
+                                <th>@PIVF.LanguageResource.Resources.lblBalanceAmount</th>
+                                <th>@PIVF.LanguageResource.Resources.lblcConsumed</th>
+                                <th>@PIVF.LanguageResource.Resources.lblRefund</th>
+                                <th>@PIVF.LanguageResource.Resources.lblcAdvanceType</th>
+                                <th>@PIVF.LanguageResource.Resources.lblcAgainst</th>
+                                <th>@PIVF.LanguageResource.Resources.lblRemarks</th>
+                                <!-- <th>Package Bill Freeze</th>  -->
+
+                            </tr>
+                        </thead>
+                        <tbody style="max-height: 250px;">
+                            <tr ng-repeat="item in AdvanceList" ng-class="{'tableRowColor' : $index == selectedRow}" ng-click="setClickedRow($index)">
+                                <td>
+                                    <input type="checkbox" ng-model="item.isSelected" ng-change="populateFormData(item)" />
+                                </td>
+                                <td>{{item.AdvanceNo}}</td>
+                                <td>{{item.UnitName}}</td>
+                                <td>{{item.Date | date :  "dd-MMM-yyyy"}}</td>
+                                <td>{{item.Total}}</td>
+                                <td>{{item.Balance}}</td>
+                                <td>{{item.Used}}</td>
+                                <td>{{item.Refund}}</td>
+                                <td>{{item.AdvanceType}}</td>
+                                <td>{{item.AdvanceAgainst}}</td>
+                                <td>{{item.Remarks}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <section class="col-md-12 col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcAddRefund</h5></section>
+
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label">
+                        @PIVF.LanguageResource.Resources.lblcRefundAmountRs
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="number" class="form-control" maxlength="7" ng-class="{select:IsRefundAmount == true}" ng-model="PatientAdvanceRefundData.RefundAmount" ng-required="true" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label">
+                        @PIVF.LanguageResource.Resources.lblcTotalAdvanceRs
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="number" ng-disabled="true" class="form-control" maxlength="7" ng-model="PatientAdvanceRefundData.TotalAdvance" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label">
+                        @PIVF.LanguageResource.Resources.lblcAdvanceConsumedRs
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="number" ng-disabled="true" class="form-control" maxlength="7" ng-model="PatientAdvanceRefundData.AdvancedConsumed" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label">
+                        @PIVF.LanguageResource.Resources.lblcTotalRefundRs
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="number" ng-disabled="true" class="form-control" maxlength="7" ng-model="PatientAdvanceRefundData.TotalRefund" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label">
+                        @PIVF.LanguageResource.Resources.lblcAdvanceAvailableforRefundRs
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="number" ng-disabled="true" class="form-control" ng-model="PatientAdvanceRefundData.AdvanceAvailableRefund" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label">
+                        @PIVF.LanguageResource.Resources.lblRemarks
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" maxlength="50" ng-model="PatientAdvanceRefundData.Remarks" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-12 text-right">
+                <button class="btn btn-link link p-r-0" type="button" id="btnAddFamilyHistoryRow" ng-click="AddPaymentRowFromAdvance()">@PIVF.LanguageResource.Resources.btnAddRows</button>
+            </div>
+            <div class="col-md-12 col-lg-12">
+                <div class="table-responsive fixed_header table-bordered m-b-10">
+                    <table class="table" style="min-width: 700px;min-height:130px;">
+                        <thead>
+                            <tr>
+                                <th>@PIVF.LanguageResource.Resources.lblPaymentMode</th>
+                                <th>@PIVF.LanguageResource.Resources.lblAmount</th>
+                                <th>@PIVF.LanguageResource.Resources.lblcAccountName</th>
+                                <th>@PIVF.LanguageResource.Resources.lblcTransactionNo</th>
+                                <th>@PIVF.LanguageResource.Resources.lblBank</th>
+                                <th>@PIVF.LanguageResource.Resources.lblcBranchName</th>
+                                <th>@PIVF.LanguageResource.Resources.lblcIFSCCOde</th>
+                                <th>@PIVF.LanguageResource.Resources.lblDate</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody style="max-height: 250px;">
+                            <tr ng-repeat="item in OtherSrvPaymentModeList track by $index">
+                                <td>
+                                    <select id="ddlPaymentMode"
+                                            name="ddlPaymentMode"
+                                            class="form-control"
+                                            ng-model="item.PaymentModeID"
+                                            ng-options="i.ID as i.Description for i in PaymentModeList"
+                                            ng-change="ChangeModeOfPayment($index)"
+                                            ng-class="{select:item.PaymentModeID == 0 && frmPatientAdvanceRefund.ddlPaymentMode.$dirty}"></select>  @*"{select:item.IsPaymentModeID == true}"*@
+                                        </td>
+                                        <td>
+                                            <input type="number" ng-model="item.PaymentAmount" ng-disabled="item.DisableAmount"
+                                                   ng-class="{'Invalid':frmPatientAdvanceRefund.txtPaymentAmount.$invalid && frmPatientAdvanceRefund.txtPaymentAmount.$dirty }" @*ng-class="{select:i.IsAmountNotFill == true}"*@
+                                                   maxlength="7" name="txtPaymentAmount" ng-required="true"
+                                                   multi-validation="NumericArrowBkSpDelSpDCFSlash" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <input type="text" id="txtTransNo" name="txtTransNo" ng-model="item.AccountName" ng-required="true"
+                                                   ng-class="{select:item.IsNoRequiredValidation == true}" @*ng-class="{'Invalid':frmPatientAdvanceRefund.txtTransNo.$invalid && frmPatientAdvanceRefund.txtTransNo.$dirty }"*@
+                                                   ng-disabled="!item.IsNoRequired" @*ng-disabled="item.CashMode"*@ class="form-control" /> @*ng-class="{select:item.IsNumberNotFill == true}"*@
+                                            </td>
+                                            <td>
+                                                <input type="text" id="txtTransNo" name="txtTransNo" ng-model="item.TransactionNo" ng-required="true"
+                                                       ng-class="{select:item.IsNoRequiredValidation == true}" @*ng-class="{'Invalid':frmPatientAdvanceRefund.txtTransNo.$invalid && frmPatientAdvanceRefund.txtTransNo.$dirty }"*@
+                                                       ng-disabled="!item.IsNoRequired" @*ng-disabled="item.CashMode"*@ class="form-control" /> @*ng-class="{select:item.IsNumberNotFill == true}"*@
+                                                </td>
+                                                <td>
+                                                    <select id="ddlBank"
+                                                            name="ddlBank"
+                                                            class="form-control"
+                                                            ng-model="item.BankID"
+                                                            ng-options="i.ID as i.Description for i in BankList"
+                                                            @*ng-class= "{select:item.BankID == 0 && frmPatientAdvanceRefund.ddlBank.$dirty}"*@
+                                                            ng-class="{select:item.IsBankRequiredValidation == true}"
+                                                            ng-disabled="!item.IsBankRequired" ng-change="OnChangePaymentValidation()" @*ng-disabled="item.CashMode"*@></select> @*ng-class="{select:item.IsBankIDNotFill == true}"*@
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="txtTransNo" name="txtTransNo" ng-model="item.BranchName" ng-required="true"
+                                                                   ng-class="{select:item.IsNoRequiredValidation == true}" @*ng-class="{'Invalid':frmPatientAdvanceRefund.txtTransNo.$invalid && frmPatientAdvanceRefund.txtTransNo.$dirty }"*@
+                                                                   ng-disabled="!item.IsNoRequired" @*ng-disabled="item.CashMode"*@ class="form-control" /> @*ng-class="{select:item.IsNumberNotFill == true}"*@
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" id="txtTransNo" name="txtTransNo" ng-model="item.IFSCCode" ng-required="true"
+                                                                       ng-class="{select:item.IsNoRequiredValidation == true}" @*ng-class="{'Invalid':frmPatientAdvanceRefund.txtTransNo.$invalid && frmPatientAdvanceRefund.txtTransNo.$dirty }"*@
+                                                                       ng-disabled="!item.IsNoRequired" @*ng-disabled="item.CashMode"*@ class="form-control" /> @*ng-class="{select:item.IsNumberNotFill == true}"*@
+                                                                </td>
+                                                                <td>
+                                                                    <div class="input-group date">
+                                                                        <input type="text" id="txtDate" name="txtDate" class="form-control" ng-model="item.PaymentDate"
+                                                                               placeholder="dd-mmm-yyyy" ng-disabled="!item.IsDateRequired"
+                                                                               ng-class="{select:item.IsDateRequiredValidation == true}"
+                                                                               ng-required="true" uib-datepicker-popup="{{format}}"
+                                                                               datepicker-options="dateOptionsDOB" show-button-bar="false" is-open="item.dtpickropened" alt-input-formats="altInputFormats">
+                                                                        <span class="input-group-addon" ng-click="openLabDtPickr($event,item)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td style="text-align: center">
+                                                                    <span class="btn_delete" title="@PIVF.LanguageResource.Resources.lblDelete" data-toggle="modal" ng-click="DeletePayment($index)"></span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+                                        </div>
+
+
+                                        <!-- Save Cancle Buttons -->
+                                        <div class="row form-horizontal" style="border-top: 1px solid #E2E3E5; padding-top: 20px;">
+                                            <div class="col-lg-12 text-right">
+                                                <button class="btn btn-primary btn_save" type="button" ng-click="savePatientAdvanceRefund(PatientAdvanceRefundData)">@PIVF.LanguageResource.Resources.btnSave</button> @*data-toggle="modal" data-target="#PaymentDtls"*@
+                                                <button class="btn btn-primary btn_cancle" type="button" id="" value="Cancel">@PIVF.LanguageResource.Resources.btnCancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- End Grid -->
+                                    <div class="form_Content" style="min-height: 150px !important;">
+                                        <div class="row form-horizontal">
+                                            <section class="col-md-12 col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcRefundList</h5></section>
+                                            <div class="col-md-12 col-lg-12">
+                                                <div class="table-responsive fixed_header table-bordered m-b-10">
+                                                    <table class="table" style="min-width: 1100px;min-height:150px;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>@PIVF.LanguageResource.Resources.lblcReceiptNo</th>
+                                                                <th>@PIVF.LanguageResource.Resources.lblClinic</th>
+                                                                <th>@PIVF.LanguageResource.Resources.lblcRefundDate</th>
+                                                                <th>@PIVF.LanguageResource.Resources.lblcRefundAmount</th>
+                                                                <th>@PIVF.LanguageResource.Resources.lblcAdvanceReceiptNo</th>
+                                                                <th>@PIVF.LanguageResource.Resources.lblRemarks</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody style="max-height: 150px;">
+                                                            <tr ng-repeat="item in RefundList">
+                                                                <td>{{item.ReceiptNo}}</td>
+                                                                <td>{{item.UnitName}}</td>
+                                                                <td>{{item.RefundDate | date :  "dd-MMM-yyyy"}}</td>
+                                                                <td>{{item.RefundAmount}}</td>
+                                                                <td>{{item.AdvanceNO}}</td>
+                                                                <td>{{item.Remarks}}</td>
+                                                                <td style="text-align: center"><a href="" ng-click="PrintPatientAdvanceRefundReceipt(item)">Receipt</a></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>

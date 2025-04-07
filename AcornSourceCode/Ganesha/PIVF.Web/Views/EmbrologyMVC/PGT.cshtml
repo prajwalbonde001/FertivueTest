@@ -1,0 +1,651 @@
+﻿@{
+    Layout = null;
+}
+
+<style>
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .close {
+        background-color: #d3d3d3 !important; /* Light gray background */
+        border-radius: 50%; /* Makes it circular */
+        width: 32px; /* Adjust size */
+        height: 32px; /* Adjust size */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px; /* Adjust size of the '×' */
+        color: black !important; /* Make the '×' black */
+        opacity: 1 !important; /* Ensure full visibility */
+        border: none;
+    }
+
+    .button-custom {
+        background: rgba(239, 245, 247, 1) !important;
+        padding: 12px 24px 12px 24px !important;
+        border: 1px solid transparent !important;
+        border-radius: 8px !important;
+        color: rgba(88, 149, 166, 1) !important;
+        font-weight: 700 !important;
+        font-size: 16px !important;
+    }
+
+        .button-custom:hover {
+            background: rgba(239, 245, 247, 1) !important;
+            border: 1px solid transparent !important;
+        }
+
+    .button-custom-save {
+        background: rgba(88, 149, 166, 1) !important;
+        padding: 12px 24px 12px 24px !important;
+        border: 1px solid transparent !important;
+        border-radius: 8px !important;
+        color: rgba(255, 255, 255, 1) !important;
+        font-weight: 700 !important;
+        font-size: 16px !important;
+    }
+
+    .page_actions {
+        display: inline-flex;
+        gap: 10px; /* Adjust space between buttons */
+    }
+
+        .page_actions .btn-default {
+            order: -1; /* Moves the Cancel button to the start */
+        }
+
+    .button-custom-save:hover {
+        background: rgba(239, 245, 247, 1) !important;
+        border: 1px solid transparent !important;
+    }
+
+    .close:hover {
+        background-color: #b0b0b0; /* Slightly darker gray on hover */
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+
+    .has-error input {
+        border: 1px solid red !important;
+    }
+
+    .refreezeCryo {
+        background: #b19cd9 !important;
+    }
+
+    td {
+        white-space: nowrap;
+    }
+
+    .first {
+        position: absolute;
+        top: auto;
+    }
+
+    .second {
+        position: absolute;
+        top: auto;
+    }
+
+    .table-wrapper {
+        overflow-x: scroll;
+        margin-left: 80px;
+    }
+
+    .select { /*added by Nayan Kamble*/
+        border: 1px solid red;
+    }
+
+    .overlay1 {
+        /*position: fixed; */
+        /* top: 17px; */
+        /* left: 76px; */
+        /* width: 100%; */
+        height: 100%;
+        /* background: rgba(0, 0, 0, 0.4); */
+        /* display: flex
+    ; */
+        position: relative;
+        /* justify-content: center; */
+        /* top: 0px; */
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        border: 1px solid transparent;
+        border-radius: 20px;
+        align-items: center;
+    }
+
+    .container1 {
+        background: transparent;
+        /*padding: 20px;
+        border-radius: 12px;*/
+        /*width: 100%;
+        max-width: none;*/
+        /*box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);*/
+        font-family: 'Arial', sans-serif;
+    }
+
+    .header1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 22px;
+        cursor: pointer;
+        color: #777;
+    }
+
+    .tabs1 {
+        display: flex;
+        background: rgba(245, 249, 250, 1);
+        border-radius: 12px;
+        padding: 4px;
+        gap: 5px;
+        height: 51px;
+        margin-top: 89px;
+        margin-left: 14px;
+        width: 306px;
+        justify-content: flex-start;
+    }
+
+        .tabs1 button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #555;
+            text-align: center;
+        }
+
+        .tabs1 .active {
+            font-weight: bold;
+            color: #007bff;
+            /*border-bottom: 3px solid #007bff;*/
+        }
+
+    .body1 {
+        display: flex;
+        /* flex-wrap: wrap; */
+        background: white;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+        .body1 label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .body1 input,
+        .body1 select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+    .input-group {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .embryologist-box {
+        background: #e0e0e0;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        color: black;
+    }
+
+    .container1 {
+    }
+
+        .container1 table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .container1 thead {
+            position: sticky;
+            top: 0;
+            background: rgba(239, 245, 247, 1);
+            z-index: 2;
+        }
+
+        .container1 tbody {
+            display: block;
+            /*max-height: 300px;*/ /* Adjust this height */
+            overflow-y: auto;
+            width: 100%;
+        }
+
+        .container1 tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .container1 th, .container1 td {
+            padding: 10px;
+            text-align: center;
+            color: rgba(53, 53, 53, 1);
+        }
+
+        .container1 th {
+            font-weight: bold;
+            color: rgba(88, 149, 166, 1);
+        }
+
+
+    .footer1 {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 50px;
+        border-top: 1px solid rgba(226, 227, 229, 1);
+        padding: 12px 24px 12px 24px;
+        /* height: 70px; */
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        background: white;
+        width: 100%;
+    }
+
+    .cancel-btn {
+        background: rgba(239, 245, 247, 1);
+        padding: 12px 24px 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-right: 10px;
+        border: none;
+        font-size: 14px;
+        font-weight: 700;
+        color: rgba(88, 149, 166, 1);
+    }
+
+    .schedule-btn {
+        background: rgba(88, 149, 166, 1);
+        color: white;
+        padding: 12px 24px 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        border: none;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .input-container {
+        display: flex;
+        flex-wrap: nowrap; /* Prevents wrapping */
+        background: white;
+        gap: 75px; /* Adds spacing between inputs */
+        overflow-x: auto; /* Enables horizontal scrolling if necessary */
+        padding: 10px;
+    }
+
+    .input-group {
+        flex: 1; /* Makes inputs flexible */
+        min-width: 150px; /* Ensures a minimum size */
+        /*display: flex;*/
+        flex-direction: column;
+    }
+
+
+        .input-group label {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: black;
+        }
+
+        .input-group input,
+        .input-group select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+    .header1 {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        padding: 10px 15px;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        height: 70px;
+    }
+
+        .header1 h2 {
+            margin: 0;
+            font-size: 20px;
+            position: absolute;
+            top: 27px;
+            left: 15px; /* Positions 'Biopsy' at the top-left */
+        }
+
+    .close-btn {
+        position: absolute;
+        top: 27px;
+        right: 15px; /* Positions close button at the top-right */
+        width: 24px;
+        height: 24px;
+        background: lightgray;
+        color: darkgray;
+        border-radius: 50%;
+        border: none;
+        font-size: 18px;
+        text-align: center;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+        .close-btn:hover {
+            background-color: #d6d6d6; /* Slightly darker on hover */
+            color: #333; /* Darker cross on hover */
+        }
+
+    .tabs1 {
+        display: flex;
+        background: rgba(245, 249, 250, 1);
+        border-radius: 12px;
+        padding: 4px;
+        gap: 5px;
+        height: 51px;
+        width: 306px;
+        margin-top: 89px;
+        margin-left: 14px;
+        justify-content: flex-start;
+    }
+
+        .tabs1 button {
+            background: transparent;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px; /* Rounded edges */
+            font-size: 14px;
+            font-weight: bold;
+            color: rgba(158, 158, 158, 1); /* Default text color */
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .tabs1 button.active {
+                background: white; /* Active tab background */
+                color: rgba(88, 149, 166, 1); /* Active text color */
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Slight elevation */
+            }
+
+    .tooltip-container {
+        position: relative; /* Ensures the arrow is positioned correctly */
+        border: 1px solid rgba(222, 234, 237, 1);
+        border-radius: 12px;
+        font-weight: 400;
+        z-index: 15;
+        background: #fff;
+        padding: 16px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        text-align: left;
+    }
+
+        /* Tooltip Arrow */
+        .tooltip-container::before {
+            content: "";
+            position: absolute;
+            top: -20px; /* Moves arrow above the card */
+            left: 152px; /* Adjusts arrow position */
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent rgba(222, 234, 237, 1) transparent; /* Triangle color matches border */
+        }
+
+    .tooltip-content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .tooltip-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #232323;
+    }
+
+    /* Force popover to appear below */
+    .popover {
+        top: 9% !important;
+        left: 10% !important;
+        transform: translateX(-50%);
+        background: none !important;
+        border: none !important;
+    }
+
+        .popover .arrow {
+            display: none;
+        }
+
+    .ellipsis-text {
+        /*display: inline-block;*/
+        /*max-width: 150px;*/ /* Adjust as needed */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .input-group-inline {
+        display: flex;
+        gap: 10px; /* Adjust spacing between elements */
+        align-items: center;
+        flex-wrap: wrap; /* Wrap in case of small screens */
+    }
+
+        .input-group-inline label,
+        .input-group-inline span {
+            display: inline;
+        }
+</style>
+
+<div ng-controller="EmbrologyMainCtrl" ng-init="PageSetuppgt();" style="position: relative;
+        z-index: 14;
+        background: rgba(255, 255, 255, 1);
+        padding: 0px 20px 0px 20px;
+        /* margin-bottom: 26px; */
+        /* margin-top: -17px; */
+        border-radius: 16px;
+            /*margin-top: -174px;*/
+        ">
+    <div class="cycleLinks" style="width: calc(100vw - 342px) !important;">
+        <ul>
+            <li ng-click="Navigate('CycleOverview')">@PIVF.LanguageResource.Resources.lblSOverview</li>
+            <li ng-click="Navigate('StimulationChart')">@PIVF.LanguageResource.Resources.lblStimulationChart</li>
+            <li ng-click="Navigate('SemenDetails')" ng-show="configData.SemenDetail">@PIVF.LanguageResource.Resources.tbtnSemenDetails</li>
+            <li ng-click="Navigate('IUI')" ng-show="configData.IUI">@PIVF.LanguageResource.Resources.tlblIUI</li>
+            <li ng-click="Navigate('OPU')" ng-show="configData.OPU">@PIVF.LanguageResource.Resources.tlblOPU</li>
+            <li ng-click="Navigate('Embrology')" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSEmbryology</li>
+            <li class="active" ng-click="Navigate('PGT');">@PIVF.LanguageResource.Resources.lblSPgt</li>
+
+            <li class="subMenucryo" ng-show="configData.CryoPreservation">
+                @PIVF.LanguageResource.Resources.lblCryobank
+                <ul>
+                    <li ng-click="Navigate('OocyteVitrification')" ng-show="configData.OocyteVitrification">@PIVF.LanguageResource.Resources.lblSOocyteVitrification</li>
+                    <li ng-click="Navigate('OocyteThowing')" ng-show="configData.OocyteThawing">@PIVF.LanguageResource.Resources.tlblOocyteThawing</li>
+                    <li ng-click="Navigate('EmbryoVitrification')" ng-show="configData.EmbryoVitrification">@PIVF.LanguageResource.Resources.lblSEmbryoVitrification</li>
+                    <li ng-click="Navigate('EmbryoThowing')" ng-show="configData.EmbryoThawing">@PIVF.LanguageResource.Resources.tlblEmbryoThawing</li>
+                </ul>
+            </li>
+            <li ng-click="Navigate('EmbryoTransfer')" ng-show="configData.EmbryoTransfer">@PIVF.LanguageResource.Resources.tlblEmbryoTransfer</li>
+            <li ng-click="Navigate('Outcome')" ng-show="configData.Outcome">@PIVF.LanguageResource.Resources.lblOutcome1</li>
+        </ul>
+    </div>
+
+    <div class="overlay1">
+        <div class="container1">
+            @*<div class="header1">
+                    <h2>Biopsy</h2>
+                    <button class="close-btn" ng-click="CancelDay()">×</button>
+                </div>*@
+
+
+            <div class="body1">
+                <div class="tabs1">
+                    <button ng-class="{'active': activeTab === 'schedule'}" ng-click="setTab('schedule')">@PIVF.LanguageResource.Resources.lblSchedule</button>
+                    <button ng-class="{'active': activeTab === 'pgt'}" ng-click="setTab('pgt'); fetchresultpgt();">@PIVF.LanguageResource.Resources.lblcPGTResult</button>
+                </div>
+                <div ng-show="activeTab === 'schedule'">
+                    <div class="body1">
+                        <div class="input-container">
+                            <div class="input-group">
+                                <label>@PIVF.LanguageResource.Resources.lblcDates</label>
+                                <input type="date" ng-model="biopsy.date">
+                            </div>
+                            <div class="input-group">
+                                <label>@PIVF.LanguageResource.Resources.lblcTimes</label>
+                                <input type="time" ng-model="biopsy.time">
+                            </div>
+                            <div class="input-group">
+                                <label>@PIVF.LanguageResource.Resources.lblIncubator :</label>
+                                <select ng-model="biopsy.Incubator" ng-options="incubator.ID as incubator.Description for incubator in IncubatorList"></select>
+                            </div>
+                            <div class="input-group">
+                                <label>@PIVF.LanguageResource.Resources.lblSWitness :</label>
+                                <select ng-model="biopsy.Witness" ng-options="doctor.ID as doctor.Description for doctor in DocList"></select>
+                            </div>
+                            <div class="input-group">
+                                <label>@PIVF.LanguageResource.Resources.lblvEmbryologist :</label>
+                                <select ng-model="biopsy.Embryologist" ng-options="doctor.ID as doctor.Description for doctor in DocList"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr style="background: rgba(239, 245, 247, 1);">
+                                <th style="border-top-left-radius: 12px; border-bottom-left-radius: 12px;"></th>
+                                <th>@PIVF.LanguageResource.Resources.tlblEmbryoNo.</th>
+                                <th>@PIVF.LanguageResource.Resources.lblGrade</th>
+                                <th>@PIVF.LanguageResource.Resources.lblDay</th>
+                                <th>@PIVF.LanguageResource.Resources.lblSPlan</th>
+                                <th>@PIVF.LanguageResource.Resources.lblSStage</th>
+                                <th>@PIVF.LanguageResource.Resources.lblcBiopsyNo</th>
+                                <th style="border-top-right-radius: 12px; border-bottom-right-radius: 12px;">Accession No.</th>
+                            </tr>
+                        </thead>
+                        <tbody style="height: calc(100vh - 650px); overflow: auto;">
+                            <tr ng-repeat="embryo in embryos">
+                                <td><input type="checkbox" ng-model="embryo.selected" ng-disabled="embryo.accession_number && embryo.biopsy_id"></td>
+                                <td>{{embryo.Embryo}}</td>
+                                <td>{{embryo.Grade}}</td>
+                                <td>{{embryo.Day}}</td>
+                                <td>{{embryo.Plans}}</td>
+                                <td>{{embryo.Stage}}</td>
+                                <td>{{embryo.biopsy_id}}</td>
+                                <td>{{embryo.accession_number}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div ng-show="activeTab === 'pgt'">
+                    <div ng-show="activeTab === 'pgt'">
+                        <div class="body1">
+                            <!-- Input Row -->
+                            <div ng-if="reportNotCreated" style="text-align: center; color: #5895A6; font-size: 20px; margin-top: 20px;">
+                                Report Not Created!
+                            </div>
+                            <div ng-if="!reportNotCreated" class="input-container">
+                                <div class="input-group-inline">
+                                    <label><strong>@PIVF.LanguageResource.Resources.lblcDates</strong></label> <span>{{ biopsyresult.date | date:'dd/MM/yyyy' }}</span> |
+                                    <label><strong>@PIVF.LanguageResource.Resources.lblcTimes</strong></label> <span>{{ biopsyresult.time | date:'hh:mm a' }}</span> |
+                                    <label><strong>@PIVF.LanguageResource.Resources.lblIncubator :</strong></label> <span>{{ biopsyresult.incubator }}</span> |
+                                    <label><strong>@PIVF.LanguageResource.Resources.lblSWitness :</strong></label> <span><strong>{{ biopsyresult.witness }}</strong></span> |
+                                    <label><strong>@PIVF.LanguageResource.Resources.lblvEmbryologist :</strong></label> <span><strong>{{ biopsyresult.embryologist }}</strong></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Table -->
+
+
+                        <table ng-if="!reportNotCreated">
+                            <thead>
+                                <tr style="background: rgba(239, 245, 247, 1);">
+                                    <th style="border-top-left-radius: 12px; border-bottom-left-radius: 12px;">@PIVF.LanguageResource.Resources.lblSEmbryono .</th>
+                                    <th>@PIVF.LanguageResource.Resources.lbltest</th>
+                                    @*<th>Image</th>*@
+                                    <th>@PIVF.LanguageResource.Resources.lblSStage</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblcBiopsyDate</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblcEmbryoGrade</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblcSpecimen</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblcKaryotype</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblSResult</th>
+                                    <th style="border-top-right-radius: 12px; border-bottom-right-radius: 12px;">@PIVF.LanguageResource.Resources.lblGender</th>
+                                </tr>
+                            </thead>
+                            <tbody style="height: calc(100vh - 650px); overflow: auto;">
+                                <tr ng-repeat="embryo in testembryos">
+                                    <td><strong>{{ embryo.name }}</strong></td>
+                                    <td>{{ embryo.test }}</td>
+                                    @*<td><img src="embryo-icon.png" alt="Embryo Image"></td>*@
+                                    <td>{{ embryo.stage }}</td>
+                                    <td>{{ embryo.biopsyDate | date:'dd/MM/yyyy' }}</td>
+                                    <td>{{ embryo.grade }}</td>
+                                    <td>{{ embryo.day }}</td>
+                                    <td>{{ embryo.karyotype }}</td>
+                                    <td>{{ embryo.result }}</td>
+                                    <td>{{ embryo.gender }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                @*<div>
+                        <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                    </div>*@
+                <div class="footer1">
+                    <button class="cancel-btn" ng-click="CancelDay()">@PIVF.LanguageResource.Resources.lblSCancel</button>
+                    <button class="schedule-btn" ng-show="activeTab === 'schedule'" ng-click="scheduleBiopsy()">@PIVF.LanguageResource.Resources.lblcScheduleBiopsy</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+</div>
+

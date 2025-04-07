@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<style>
+    .errorMsg {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div ng-controller="loginController" @*ng-init="startSignalR()"*@>
+    <form role="form" novalidate name="frmuser" class="signin-wrapper">
+        <div class="content form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-12 col-md-12 col-lg-12 control-label loginLabel" for="">@PIVF.LanguageResource.Resources.lblUserName</label> @*//Modified by SwatiH for Localization on 10/7/2020*@
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="input-group" ng-class="{'has-error':frmuser.userName.$invalid && frmuser.userName.$dirty }">                       
+                        <input class="form-control input-lg" placeholder="@PIVF.LanguageResource.Resources.lblUserName" type="text" name="LoginName" ng-model="loginData.userName" ng-blur="FillUnit(loginData.userName)" id="userName" ng-required="true" autofocus>@*//Modified by SwatiH for Localization on 10/7/2020*@
+                        <span class="input-group-addon">
+                       @* <i class="fa fa-user iconwidth24"></i>*@
+                            <img src="../images/NewUsername1.svg" alt="NewUsername1">
+                        </span>
+                        @*<span class="help-block" ng-if="frmuser.userName.$error.required && frmuser.userName.$dirty">User Name is must</span>*@
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-12 col-md-12 col-lg-12 control-label loginLabel" for="">@PIVF.LanguageResource.Resources.lblPassword</label> @*//Modified by SwatiH for Localization on 10/7/2020*@
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="input-group" ng-class="{'has-error':frmuser.password.$invalid && frmuser.password.$dirty }">
+                        <input type="password" id="password" name="password" class="form-control input-block-level input-lg" placeholder="@PIVF.LanguageResource.Resources.lblPassword" ng-model="loginData.password" ng-required="true">@*//Modified by SwatiH for Localization on 10/7/2020*@
+                        <span class="input-group-addon">
+                        @*<i class="fa fa-key"></i>*@
+                            <img src="../images/newLock1.svg" alt="newLock1">
+                        </span>                        
+                        @*<span class="help-block" ng-if="frmuser.password.$error.required && frmuser.password.$dirty" />*@
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-12 col-md-12 col-lg-12 control-label loginLabel" for="">@PIVF.LanguageResource.Resources.lblClinic</label>@*//Modified by SwatiH for Localization on 10/7/2020*@
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="input-group">
+                        <select class="form-control input-lg" name="InputSourceOfReference" id="InputSourceOfReference" ng-model="loginData.Unit" ng-options="item.UnitName for item in UnitList"></select>
+                        <span class="input-group-addon">
+                       @* <i class="fa fa-hospital-o iconwidth24" aria-hidden="true"></i>*@
+                            <img src="../images/newClinic1.svg" alt="newClinic1">
+                        </span> 
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-t-25">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="actions">
+                        <input type="button" class="btn btn-primary btn-block btn-md" name="Login" value="LOG IN" ng-click="count == 0?Checkuser(loginData):0" ng-disabled="frmuser.$invalid">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-hide="true">
+                <div class="col-sm-12 col-md-12 col-lg-12 text-right">
+                    <a href="" class="text-decoration" ng-click="redirectfp()">@PIVF.LanguageResource.Resources.lblForgetYourPassword</a> @*//Modified by SwatiH for Localization on 10/7/2020*@
+                </div>
+            </div>
+                <div>
+                    <span class="errorMsg" ng-show="loginData.userName !== ''">{{Message}}</span>
+                    <span class="errorMsg" >{{SessionMessage}}</span>
+                </div>
+            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="false"></span>
+            </div>
+    </form>
+</div>
+
+
+

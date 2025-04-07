@@ -1,0 +1,241 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!--Patient Bill List-->
+
+<div class="form-horizontal" ng-controller="BillingCtrl" ng-init="LoadBillList()">
+    @*<h5 class="subTitle">Patient Bill List</h5>*@
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div style="background: #35c2af;color: #fff;padding-bottom: 1px;padding-left: 5px;margin-bottom: 5px;border-radius: 4px;border: 1px solid #2b81ba;">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" style="font-size: 18px; font-weight: 500;" for="">@PIVF.LanguageResource.Resources.lblcPatientNameMRNo <span style="color: #cc5d0b;font-size: 18px; font-weight: 500; padding-left: 25px;">{{PatientBillDetails.PatientName}}  </span>&nbsp;&nbsp; / <span style="font-size: 15px;color: #066086;padding: 0px 15px;font-weight: 600;">{{PatientBillDetails.MRNo}}</span>  @*Patient Name : Aarti Kulkarni*@   </label>
+                    @*<label class="col-md-3 col-lg-3 control-label" for="" >   MRN : KKR/107 </label>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form_Content m-t-15" style="height:480px;">
+        <div class="row">
+            <div class="col-md-3 col-lg-3 m-t-15">
+                <div class="form-group">
+                    <label class="col-md-5 col-lg-4 control-label" for="">@PIVF.LanguageResource.Resources.lblcDateFilters</label>
+                    <div class="col-md-7 col-lg-7">
+                        <select class="form-control" ng-init="BillingList.DateFilter='Todays'" ng-change="FilterDate(BillingList.DateFilter)" ng-model="BillingList.DateFilter">
+                            <option value="Todays" selected="selected">@PIVF.LanguageResource.Resources.lblcTodays</option>
+                            <option value="2" selected="selected">@PIVF.LanguageResource.Resources.lblcLast15Days</option>
+                            <option value="3" selected="selected">@PIVF.LanguageResource.Resources.lblcLast30Days</option>
+                            <option value="4" selected="selected">@PIVF.LanguageResource.Resources.lblcCustom</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 m-t-15">
+                <div class="form-group">
+                    <label class="col-md-4 col-lg-4 control-label" for="">@PIVF.LanguageResource.Resources.lblFromDate </label>
+                    <div class="col-md-7 col-lg-7">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="" ng-model="BillingList.VisitFromDate" ng-disabled="IsFromDate" placeholder="@PIVF.LanguageResource.Resources.lblVisitFrom" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="dateOptionsDOB1" alt-input-formats="altInputFormats">
+                            <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 m-t-15">
+                <div class="form-group">
+                    <label class="col-md-4 col-lg-4 control-label" for="">@PIVF.LanguageResource.Resources.lblToDate </label>
+                    <div class="col-md-7 col-lg-7">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="" ng-model="BillingList.VisitToDate" ng-disabled="IsToDate" placeholder="@PIVF.LanguageResource.Resources.lblVisitTo" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup3.opened" datepicker-options="dateOptionsDOB1" alt-input-formats="altInputFormats">
+                            <span class="input-group-addon" id="" ng-click="open3()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 m-t-15">
+                <div class="SearchBtnContainer">
+                    <div class="InputBoxDiv">
+                        <!--ng-disabled="!(Que.Date || Que.DeptID!=0 || Que.PatientName || Que.DocID!=0) ? true :false"-->
+                        <button id="" type="button" class="btn btn-primary" ng-click="GetBillList(BillingList)" ng-keypress="($event.which === 13)?GetBillList(BillingList):0">@PIVF.LanguageResource.Resources.btnSearch</button>  @*ClearAdvSearch();*@
+                    </div>
+                </div>
+            </div>
+            <div class="find_title">
+
+                <div class="col-md-12">
+                    <span class="count_title">@PIVF.LanguageResource.Resources.Total_Count :</span>
+                    <span class="total_count">{{TotalItems}}</span>
+                </div>
+
+                @*<div class="col-md-6 text-right">
+                        <button class="btn-link" ng-click="GetQueueList(Que,true)"><span class="glyphicon glyphicon-print"></span></button>
+                    </div>*@
+            </div>
+
+
+
+            <div class="col-sm-12 m-t-10">
+                <div class="table-responsive fixed_header table-bordered" id="">
+                    <table class="table table-hover table-striped" style="height:330px;">
+                        <thead>
+                            <tr>
+                                <th st-ratio="5">&nbsp;</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblcBillDate</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblcBillNo</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblcTotalAmount</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblcTotalConcession</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblNetAmount</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblPaidAmount</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblBalanceAmount</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblcSettleBill</th>
+                                <th st-ratio="5">@PIVF.LanguageResource.Resources.lblFreeze</th>
+                                <th st-ratio="5">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="i in BillList track by $index">
+                                <td st-ratio="5">
+                                    <a class="link p-r-5" href="" ng-click="ViewBill(i)">@PIVF.LanguageResource.Resources.lblView</a>   @*ViewBill(i)*@
+                                </td>
+                                <td st-ratio="10">{{i.Date | date:'dd-MMM-yyyy'}}</td>
+                                <td st-ratio="10">{{i.BillNo}}</td>
+                                <td st-ratio="10">{{i.TotalBillAmount | number:2}}</td>
+                                <td st-ratio="10">{{i.TotalConcessionAmount | number:2}}</td>
+                                <td st-ratio="10">{{i.NetBillAmount | number:2}}</td>
+                                <td st-ratio="10">{{i.PaidAmount | number:2}}</td>
+                                <td st-ratio="10">{{i.BalanceAmountSelf | number:2}}</td>
+                                <td st-ratio="10">
+                                    <a class="link p-r-5" href="" ng-click="ShowPopUpForPayment(i,$index)" ng-show="i.BalanceAmountSelf > 0 &&  i.IsFreezed">@PIVF.LanguageResource.Resources.lblSettleBill</a>   @*data-toggle="modal" data-target="#Settle_Bill"*@
+                                </td>
+                                <td st-ratio="5"><input type="checkbox" id="inlineCheckbox1" value="option1" ng-model="i.IsFreezed" ng-disabled="true" /> </td> @*ng-disabled="true"*@
+                                <td st-ratio="5">
+                                    <a class="link" href="" ng-show="i.IsFreezed" ng-click="PrintBill($index)">@PIVF.LanguageResource.Resources.btnPrint</a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-left">
+            <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+            <!-- Button group row -->
+        </div>
+        <div class="col-sm-6 text-right m-t-10">
+            <button class="btn btn-default" type="button" id="" ng-click="redirect(1);GetServiceList()">@PIVF.LanguageResource.Resources.btnNew</button>
+            <button class="btn btn-primary" type="button" id="" ng-click="redirect(2)">@PIVF.LanguageResource.Resources.btnCancel</button>
+        </div>
+    </div>
+
+    <!-- Settle Bill model -->
+    <div class="modal fade favorite-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="Settle_Bill">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="Cancel()"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblcPaymentDetails {{PaymentData.PatientName}} - {{PaymentData.MRNO}}</h4>
+                </div>
+                <div class="modal-body" ng-init="templateType='New'">
+                    <div class="row">
+
+
+                        <div class="col-sm-12">
+                            <div class="table-responsive" id="">
+                                <table class="table table-hover table-striped table-bordered" style="">
+                                    <tbody>
+                                        <tr>
+                                            <td class="control-label">@PIVF.LanguageResource.Resources.lblcTotalAmount</td>
+                                            <td class="text-right">{{PaymentData.TotalBillAmount}}</td>   @*ng-model="BillDetails.TotalBillAmount"*@
+                                            <td class="control-label">@PIVF.LanguageResource.Resources.lblNetAmount</td>
+                                            <td class="text-right">{{PaymentData.NetBillAmount}}</td>    @*ng-model="BillDetails.NetBillAmount"*@
+                                        </tr>
+                                        <tr>
+                                            <td class="control-label">@PIVF.LanguageResource.Resources.lblPaidAmount</td>
+                                            <td class="text-right">{{PaymentData.PaidAmount}}</td>   @*ng-model="BillDetails.TotalConcessionAmount"*@
+                                            <td class="control-label">@PIVF.LanguageResource.Resources.lblBalanceAmount</td>
+                                            <td class="text-right">{{PaymentData.BalanceAmountSelf}}</td>   @*ng-model="BillDetails.PaidAmount"*@
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-12 text-right">
+                            <button class="btn btn-link link p-r-0" type="button" id="btnAddFamilyHistoryRow" value="" ng-disabled="IsDisableRow" ng-click="AddPaymentRow()">Add Rows</button>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="table-responsive fixed_header table-bordered" id="">
+                                <table class="table table-hover table-striped" style="max-height:300px;min-height:200px;">
+                                    <thead>
+                                        <tr>
+                                            <th st-ratio="19">@PIVF.LanguageResource.Resources.lblPaymentMode</th>
+                                            <th st-ratio="12">@PIVF.LanguageResource.Resources.lblAmount</th>
+                                            <th st-ratio="23">@PIVF.LanguageResource.Resources.lblReferenceNo</th>
+                                            <th st-ratio="22">@PIVF.LanguageResource.Resources.lblBankName</th>
+                                            <th st-ratio="12">@PIVF.LanguageResource.Resources.lblDate</th>
+                                            <th st-ratio="12">&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="i in BillDetails.OtherSrvPaymentModeList track by $index ">
+                                            @*track by $index*@
+                                            <td st-ratio="19">
+                                                <select class="form-control" id="ddlModeOfPayment" name="ddlModeOfPayment" ng-class="{select:i.IsPaymentModeID == true}" ng-model="i.PaymentModeID" ng-change="ChangeModeOfPayment($index)" ng-options="item.ID as item.Description for item in ModeOfPaymentList"></select>
+                                            </td>
+                                            <td st-ratio="12"><input class="form-control text-right" ng-class="{select:i.IsAmountNotFill == true}" ng-disabled="i.DisableAmount" ng-model="i.PaidAmount" replace="[^0-9.]" with="" /> </td>  @*ng-change="CalBalanceAmt(i.PaidAmount)" *@
+                                            <td st-ratio="23"><input class="form-control text-right" ng-class="{select:i.IsNumberNotFill == true    }" id="txtRefNo" name="txtRefNo" ng-model="i.Number" ng-disabled="i.CashMode" with="" ng-change="EnableUpdateBtn()" /></td> @*replace="[^0-9.]"*@
+                                            <td st-ratio="22">
+                                                <select class="form-control" ng-class="{select:i.IsBankIDNotFill == true}" id="ddlBankList" name="ddlBankList" ng-model="i.BankID" ng-disabled="i.CashMode" ng-options="item.ID as item.Description for item in BankList" ng-change=""></select>
+                                            </td>
+                                            <td st-ratio="22">
+                                                <div class="input-group date">
+                                                    @*<input type="text" class="form-control" ng-model="i.Date" ng-disabled="i.CashMode" id="" placeholder="dd-Mmm-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" datepicker-options="dateOptionsDOB" show-button-bar="false" is-open="popup1.opened" alt-input-formats="altInputFormats">
+                                                        <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>*@
+
+
+                                                    <input type="text" class="form-control" ng-class="{select:i.IsDateIDNotFill == true}" ng-model="i.Date" ng-disabled="i.CashMode" id="" placeholder="dd-Mmm-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" datepicker-options="dateOptionsDOB" show-button-bar="false" is-open="i.dtpickropened" alt-input-formats="altInputFormats">
+                                                    <span class="input-group-addon" id="" ng-click="openLabDtPickr($event,i)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" data-toggle="modal" ng-click="DeletePayment($index)"></span>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="row">
+                            <div class="col-sm-12 text-right m-t-20">
+                                @*<label class="control-label"><input type="checkbox" ng-disabled="disableFeeeze" value="1" ng-click="FreezeBill(BillDetails.IsFreeze)" ng-model="BillDetails.IsFreeze"> Freeze</label>* @
+                                <button class="btn btn-default" type="button" id="" ng-disabled="" ng-click="SaveBill(BillDetails)">Update Payment</button>    @*,false* @
+                                <button class="btn btn-primary" type="button" id="" ng-click="redirect(2)">Pay Later</button>
+                            </div>
+                        </div> *@
+                </div>
+                <div class="modal-footer">
+                    <div class="page_actions">
+                        <button class="btn btn-default" type="button" id="" ng-disabled="" ng-click="SaveUpdatePayment(BillDetails)">@PIVF.LanguageResource.Resources.btnSave</button>    @*,false  Update Payment*@
+                        <button class="btn btn-primary" type="button" id="" ng-click="Cancel()">@PIVF.LanguageResource.Resources.btnCancel</button>  @*Pay Later*@
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Settle Bill model -->
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+</div>
+

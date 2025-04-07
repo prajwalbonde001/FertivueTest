@@ -1,0 +1,150 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+
+
+<style>
+    #content {
+        /*padding: 2%;*/
+    }
+
+    .custom-table-container {
+        /*max-height: 518px;*/
+        height: calc(100vh - 300px);
+        overflow-y: auto;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .unique-table-class {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+    }
+
+
+
+
+
+        .unique-table-class th,
+        .unique-table-class td {
+            /*border: 1px solid gray;*/
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+            white-space: nowrap; /* Prevent word breaking */
+        }
+
+        .unique-table-class th {
+            /*background-color: #f2f2f2;*/
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            white-space: nowrap; /* Prevent word breaking */
+        }
+
+       
+   .unique-table-class > thead > tr {
+    background: #F6F9FB;
+    color: #5895a6;
+    border: none !important;
+    border-radius: 12px !important;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    white-space: nowrap;
+   }
+
+
+    .unique-table-class > tbody > tr > td {
+    background: #FFFFFF !important;
+    border-bottom: 1px solid #F4F4F5 !important;
+    color: #353535 !important;
+    border-top: none !important;
+    white-space: nowrap;
+}
+
+
+
+    .no-table-styles {
+        max-height: none !important;
+        overflow-y: visible !important;
+        overflow-x: visible !important;
+        border: none !important;
+    }
+
+
+    .hide-in-pdf .hideDivInPDF {
+    display: none !important;
+}
+
+
+
+</style>
+
+
+
+
+<div class="row" ng-controller="PatientListCtrl" ng-init="FormLoad();">
+    <div class="col-lg-12 col-md-12">
+        <div class="form_Content p-t-10">
+            <div class="row" id="content">
+                <div class="find_title">
+                    <div class="col-md-6">
+                        <span class="count_title">@PIVF.LanguageResource.Resources.Total_Count :</span>
+                        <span class="total_count">{{TotalItems || 0}}</span>
+                    </div>
+                    <div class="col-md-6" style="text-align:end;">
+                        <span class="count_title" style="font-weight:bold;">{{listName}}</span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    @*<div class="table-responsive fixed_header" id="tableToExport">
+                        <table class="table table-hover table-striped custom-table-container">*@
+                    <div class="custom-table-container"  id="tableToExport">
+                       
+                            <table id="data-table" class="table table-hover table-striped  unique-table-class">
+                                <thead>
+                                    <tr>
+                                        @*<th st-ratio="6">&nbsp;</th>*@
+                                        <th st-ratio="30">@PIVF.LanguageResource.Resources.lblPatientName</th>
+                                        <th st-ratio="30">@PIVF.LanguageResource.Resources.lblPartnerName</th>
+                                        <th st-ratio="20">@PIVF.LanguageResource.Resources.lblCoupleId</th>
+                                        <th st-ratio="20">@PIVF.LanguageResource.Resources.lblvContactNo</th>                              
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="Item in PatientList">
+                                        @*<td st-ratio="4">
+                        <button ng-attr-type="button" class="btn btn_edit" title="Edit" ng-click="EditPatient(Item)"></button>
+                    </td>*@
+                                        <td st-ratio="30">{{Item.Prefix}} {{Item.PatientName}}<br /><b> <a href="" ng-click="EditPatient(Item)" class="txt_bold">{{Item.MRNo}}</a></b></td>
+                                        <td st-ratio="30">{{ Item.PartnerName && Item.PartnerName != 0 ? Item.PartnerName : '-' }}<br /><b> <a href="" ng-click="EditPatient(Item)" class="txt_bold">{{Item.PartnerMRNo}}</a></b> </td>
+                                        <td st-ratio="20">{{ Item.CoupleID && Item.CoupleID != 0 ? Item.CoupleID : '-' }}</td>
+                                        <td st-ratio="20">{{ Item.ContactNo1 && Item.ContactNo1 != 0 ? Item.ContactNo1 : '-' }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+                <div class="col-md-12 text-right m-t-10 hideDivInPDF">
+                    @*<button type="button" class="btn btn-primary" ng-click="PrintPatient()">Print</button>*@
+                    <button type="button" class="btn btn-primary" ng-click="downloadReportwithPreview()">@PIVF.LanguageResource.Resources.btnPrint</button>
+                    <button type="button" class="btn btn-default" ng-click="CancelView()">@PIVF.LanguageResource.Resources.btnCancel</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+
+</div>

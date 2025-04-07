@@ -1,0 +1,590 @@
+﻿@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Semen Examination </title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/Style.css" rel="stylesheet">
+        <link href="css/dev.css" rel="stylesheet">
+        <script src="js/jquery-3.2.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-datepicker.min.js"></script>
+        <script src="js/bootstrap-timepicker.js"></script>
+        <!-- <script src="js/style.js"></script> -->
+    </head>
+    <body>*@
+@{ Layout = null;}
+<section>
+    <div class="pageContentWrapper" style="position: relative;
+        z-index: 11;">
+        <div class="container-fluid">
+            <!-- Preliminary Details Start -->
+            <div class="row form-horizontal">
+                <section class="col-lg-12"><h5 class="subTitle">Preliminary Details</h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Collection Date</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <div class="input-group date" data-provide="datepicker">
+                                <input type="text" class="form-control" id="" placeholder="mm/dd/yyyy" aria-describedby="">
+                                <span class="input-group-addon" id=""><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Collection Time</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="time" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Receiving Date</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <div class="input-group date" data-provide="datepicker">
+                                <input type="text" class="form-control" id="" placeholder="mm/dd/yyyy" aria-describedby="">
+                                <span class="input-group-addon" id=""><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Receiving Time</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="time" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Method of Semen Collection</label>
+                        <div class="col-sm-7 col-md-6 col-lg-3">
+                            <select class="form-control " id="">
+                                <option>Select</option>
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-7 col-md-6 col-lg-3">
+                            <select class="form-control " id="">
+                                <option>Select</option>
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Abstinence</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <select class="form-control " id="">
+                                <option>Select</option>
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Sample Collection</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7 ">
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Inhouse
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Outside
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Preliminary Details End -->
+            <!-- Physical Examination Start -->
+            <div class="row form-horizontal">
+                <section class="col-lg-12"><h5 class="subTitle">Physical Examination</h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Volume</label>
+                        <div class="col-sm-7 col-md-6 col-lg-6">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                        <label class="col-sm-4 col-md-6 col-lg-1 control-label" for="">ml</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Color</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <select class="form-control " id="">
+                                <option>Select</option>
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Appearance</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7 p-b-7">
+                            <select class="form-control " id="">
+                                <option>Select</option>
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">ph</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Liquefaction Time</label>
+                        <div class="col-sm-7 col-md-6 col-lg-6">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                        <label class="col-sm-4 col-md-6 col-lg-1 control-label" for="">min</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Viscosity</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7 radiobtn">
+                            <select class="form-control " id="">
+                                <option>Select</option>
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Odour</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7 p-b-7">
+                            <select class="form-control " id="">
+                                <option>Select</option>
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Physical Examination Start -->
+            <!-- Microscopic Examination Start -->
+            <div class="row form-horizontal">
+                <section class="col-lg-12"><h5 class="subTitle">Microscopic Examination</h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Sperm Concentration</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Total Sperm Count</label>
+                        <div class="col-sm-7 col-md-6 col-lg-5">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                        <label class="col-sm-4 col-md-6 col-lg-2 control-label p-l-0" for="">mill/ejaculate</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Microscopic Examination End -->
+            <!-- Motility Start -->
+            <div class="row form-horizontal">
+                <section class="col-lg-12"><h5 class="subTitle">Motility</h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Progressive</label>
+                        <div class="col-sm-7 col-md-6 col-lg-6">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                        <label class="col-sm-4 col-md-6 col-lg-1 control-label p-l-0" for="">%</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Non Progressive</label>
+                        <div class="col-sm-7 col-md-6 col-lg-6">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                        <label class="col-sm-4 col-md-6 col-lg-1 control-label p-l-0" for="">%</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Immotile</label>
+                        <div class="col-sm-7 col-md-6 col-lg-6">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                        <label class="col-sm-4 col-md-6 col-lg-1 control-label p-l-0" for="">%</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Total Motility</label>
+                        <div class="col-sm-7 col-md-6 col-lg-6">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                        <label class="col-sm-4 col-md-6 col-lg-1 control-label p-l-0" for="">%</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Motility End -->
+            <!-- Advanced Total Progressive Motility Start -->
+            <div class="row form-horizontal">
+                <section class="col-lg-12"><h5 class="subTitle">Advanced Total Progressive Motility</h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Slow Progressive</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Rapid Progressive</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Advanced Total Progressive Motility End -->
+            <!-- Viability Start -->
+            <div class="row form-horizontal m-t-20">
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label fontWeight" for="">Viability</label>
+                        <div class="col-sm-7 col-md-6 col-lg-6">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                        <label class="col-sm-4 col-md-6 col-lg-1 control-label p-l-0" for="">%</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Viability End -->
+            <!-- Morphology Start -->
+            <div class="row form-horizontal">
+                <section class="col-lg-12"><h5 class="subTitle">Morphology</h5></section>
+                <section class="col-lg-12"><h5 class="underline">Head Defects</h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Small</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Large</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Tapered</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Round</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Amorphous</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Vacuolated</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Pyriform</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Morphology End -->
+            <!-- Neck & Midpiece Defects Start -->
+            <div class="row form-horizontal">
+                <section class="col-lg-12"><h5 class="underline">Neck & Midpiece Defects</h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Bent</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Thin</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Thick</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Asymmetrical Insertion</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Vacuoles</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Neck & Midpiece Defects End -->
+            <!-- Tail Defects Start -->
+            <div class="row form-horizontal">
+                <section class="col-lg-12"><h5 class="underline">Tail Defects</h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Short</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Coiled</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Double</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tail Defects End -->
+            <!-- Cytoplasmic Droplet Start -->
+            <div class="row form-horizontal m-t-20">
+                <section class="col-lg-12"><h5 class=""></h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Cytoplasmic Droplet</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-3 control-label" for="">Total</label>
+                        <div class="col-sm-7 col-md-6 col-lg-2">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                        <label class="col-sm-4 col-md-6 col-lg-6 control-label text-left p-l-0" for="">Head + Neck & Midpiece + Tail + Cytoplasmic Droplet</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Cytoplasmic Droplet End -->
+            <!-- Agglutination Start -->
+            <div class="row form-horizontal">
+                <section class="col-lg-12"><h5 class="underline">Agglutination</h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Head to Head</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Tail to Tail</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Head to Tail</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Sperm to other</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Agglutination End -->
+            <!-- Other Parameters Start -->
+            <div class="row form-horizontal">
+                <section class="col-lg-12"><h5 class="underline">Other Parameters</h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">WBC</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Pus Cells</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">RBC</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Epithelial Cells</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Fructose</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Remark</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <textarea type="text" class="form-control" id="" placeholder=""></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Other Parameters End -->
+            <!-- Interpretation Start -->
+            <div class="row form-horizontal m-t-20">
+                <section class="col-lg-12"><h5 class="underline"></h5></section>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label fontWeight" for="">Interpretation</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <select class="form-control " id="">
+                                <option>Select</option>
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label fontWeight" for="">Comments</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <textarea type="text" class="form-control" id="" placeholder=""></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Interpretation End -->
+            <!-- Done by Start -->
+            <div class="row form-horizontal m-t-20">
+                <!-- <section class="col-lg-12"><h5 class="underline"></h5></section> -->
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Done by</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <select class="form-control " id="">
+                                <option>Select</option>
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-6 col-lg-5 control-label" for="">Witnessed by</label>
+                        <div class="col-sm-7 col-md-6 col-lg-7">
+                            <select class="form-control " id="">
+                                <option>Select</option>
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Done by End -->
+            <!-- Save Cancle Buttons -->
+            <div class="row form-horizontal">
+                <div class="col-lg-12 text-center">
+                    <button class="btn btn-primary show_collapse_button" type="button" id="" value=""><span class="glyphicon glyphicon-plus-sign"></span> Save</button>
+                    <button class="btn btn-primary show_collapse_button" type="button" id="" value=""><span class="glyphicon glyphicon-plus-sign"></span> Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*</body>
+</html>*@

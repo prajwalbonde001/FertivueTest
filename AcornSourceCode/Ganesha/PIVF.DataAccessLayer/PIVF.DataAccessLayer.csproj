@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5A1475A-0199-418E-AA67-2211CC77BFF1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIVF.DataAccessLayer</RootNamespace>
+    <AssemblyName>PIVF.DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.402.26\lib\net45\AWSSDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.S3.3.7.415.25\lib\net45\AWSSDK.S3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PIVF.Web\Reference dll\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Practices.EnterpriseLibrary.Common.dll.3.1.0\lib\2.0\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Practices.ObjectBuilder.dll.3.1.0\lib\2.0\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\PIVF.Web\Reference dll\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\PIVF.Web\Reference dll\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.DynamicData.Design" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Entity.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PIVF.Web\Reference dll\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ARTMgmt\Cryo-Preservation\ConvertToDonorDAL.cs" />
+    <Compile Include="ARTMgmt\Cryo-Preservation\CryoPreservationDAL.cs" />
+    <Compile Include="ARTMgmt\Cryo-Preservation\EmbryoThowingDAL.cs" />
+    <Compile Include="ARTMgmt\Cryo-Preservation\EmbryoVitrificationDAL.cs" />
+    <Compile Include="ARTMgmt\Embrology\EmbrologyDAL.cs" />
+    <Compile Include="ARTMgmt\EmbryoTransfer\EmbryoTransferDAL.cs" />
+    <Compile Include="ARTMgmt\IUI\IUIDAL.cs" />
+    <Compile Include="ARTMgmt\MediaConsumption\MediaConsumptionDAL.cs" />
+    <Compile Include="ARTMgmt\OPU\OPUDAL.cs" />
+    <Compile Include="ARTMgmt\Outcome\OutcomeDAL.cs" />
+    <Compile Include="ARTMgmt\ReportUpload\ReportUploadDAL.cs" />
+    <Compile Include="ARTMgmt\SemenDetails\SemenDetailsDAL.cs" />
+    <Compile Include="ARTMgmt\StimulationChart\StimulationChartDAL.cs" />
+    <Compile Include="Billing\BillingDAL.cs" />
+    <Compile Include="Billing\PatientAdvanceDAL.cs" />
+    <Compile Include="Billing\PatientAdvanceRefundDAL.cs" />
+    <Compile Include="Clinic\DoctorAppointmentsService.cs" />
+    <Compile Include="Clinic\ScheduleService.cs" />
+    <Compile Include="Common\AwsS3Services .cs" />
+    <Compile Include="Common\CommonServiceDAL.cs" />
+    <Compile Include="Consent\ConsentAction\ConsentActionDAL.cs" />
+    <Compile Include="Consent\ConsentMaster\ConsentMasterDAL.cs" />
+    <Compile Include="CounterSale\CounterSaleDAL.cs" />
+    <Compile Include="Donor\DonorDAL.cs" />
+    <Compile Include="EMR\DesignEMR\DesignEMRServiceDAL.cs" />
+    <Compile Include="EMR\Diagnosis\DiagnosisDAL.cs" />
+    <Compile Include="EMR\EMRLandingPageDAL\EMRLandingPageDAL.cs" />
+    <Compile Include="EMR\FemaleHistory\CorpusLeteumScanDAL.cs" />
+    <Compile Include="EMR\FemaleHistory\FemaleComplaintsDAL.cs" />
+    <Compile Include="EMR\FemaleHistory\FemaleHistoryServiceDAL.cs" />
+    <Compile Include="EMR\FemaleHistory\FollicularScanDAL.cs" />
+    <Compile Include="EMR\Investigation\InvestigationDAL.cs" />
+    <Compile Include="EMR\MaleHistory\MaleComplaintsDAL.cs" />
+    <Compile Include="EMR\MaleHistory\MaleHistoryServiceDAL.cs" />
+    <Compile Include="EMR\MaleHistory\SemenAnalysisServiceDAL.cs" />
+    <Compile Include="EMR\MaleHistory\SemenFreezServiceDAL.cs" />
+    <Compile Include="EMR\MaleHistory\SemenPreparationDAL.cs" />
+    <Compile Include="EMR\MaleHistory\SemenThawingDAL.cs" />
+    <Compile Include="EMR\MaleHistory\SurgicalSpermRetrievalServiceDAL.cs" />
+    <Compile Include="EMR\Prescription\PrescriptioncDAL.cs" />
+    <Compile Include="EMR\Vitals\VitalsDAL.cs" />
+    <Compile Include="FertivueDashboard\FertivueDashboardDAL.cs" />
+    <Compile Include="FinancialKPIs\FinancialKPIsDAL.cs" />
+    <Compile Include="IPD\IPDDAL.cs" />
+    <Compile Include="ItemStock\ItemStockDAL.cs" />
+    <Compile Include="KPI\KPIDAL.cs" />
+    <Compile Include="KPI\ManagementDAL.cs" />
+    <Compile Include="Lab\NewLabEnteryDAL.cs" />
+    <Compile Include="LinkPartner\LinkPartnerDAL.cs" />
+    <Compile Include="Master\Clinic\ClinicService.cs" />
+    <Compile Include="Master\Clinic\CountryService.cs" />
+    <Compile Include="Master\Clinic\DepartmentService.cs" />
+    <Compile Include="Master\Clinic\DoctorService.cs" />
+    <Compile Include="Master\Clinic\StaffService.cs" />
+    <Compile Include="Master\Clinic\StateService.cs" />
+    <Compile Include="Master\Inventory\StoreServiceDAL.cs" />
+    <Compile Include="MaterialConsumptionEntry\MaterialConsumptionEntryDAL.cs" />
+    <Compile Include="MaterialConsumptionList\MaterialConsumptionListDAL.cs" />
+    <Compile Include="NewART\NewARTDAL.cs" />
+    <Compile Include="NewRegistration\NewRegistrationDAL.cs" />
+    <Compile Include="PatientDashboard\PatientDashboardDAL.cs" />
+    <Compile Include="Patient\PatientVisitService.cs" />
+    <Compile Include="Patient\RegistrationDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QualityControl\QualityControlDAL.cs" />
+    <Compile Include="QueueMgt\QueueMgtDAL.cs" />
+    <Compile Include="Security\Security.cs" />
+    <Compile Include="Ticket\TicketsService.cs" />
+    <Compile Include="User\UserRoleServiceDAL.cs" />
+    <Compile Include="User\UserServiceDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">
+      <Project>{f68a1d19-93fb-47c1-a22b-42bea3e4fd8c}</Project>
+      <Name>Repository.Pattern.Ef6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Repository.Pattern\Repository.Pattern.csproj">
+      <Project>{6E682A14-C872-4813-B620-76E108DEA683}</Project>
+      <Name>Repository.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Service.Pattern\Service.Pattern.csproj">
+      <Project>{86F86650-EE3C-4372-8FEC-40C2FE015022}</Project>
+      <Name>Service.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBaseConfiguration\DataBaseConfiguration.csproj">
+      <Project>{6a49b5f3-57f9-4216-9ff6-aca73d7c3e32}</Project>
+      <Name>DataBaseConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIVF.BusinessLayer\PIVF.BusinessLayer.csproj">
+      <Project>{d47d4df6-f3ef-4254-b125-db09f28721f8}</Project>
+      <Name>PIVF.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIVF.Entities\PIVF.Entities.csproj">
+      <Project>{94e81d48-74b2-42eb-b389-f25c8c23f9c4}</Project>
+      <Name>PIVF.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reference dll\Dapper.dll" />
+    <Content Include="Reference dll\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.S3.3.7.415.25\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.S3.3.7.415.25\analyzers\dotnet\cs\SharedAnalysisCode.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

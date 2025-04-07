@@ -1,0 +1,271 @@
+﻿
+@{
+    Layout = null;
+}
+
+<form name="NewLab" novalidate autocomplete="off">
+    <div class="form_Content" ng-controller="NewLabEntryCtr" ng-init="LoadData()" >
+        <div class="row form-horizontal">
+            <div class="col-lg-offset-4 col-md-4 col-sm-3 col-lg-offset-4 col-lg-4 m-t-5 m-b-5" style="margin-bottom:5px;">
+                <div class="form-group ">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group">
+                            <input type="text" I class="form-control" id="exampleInputAmount" placeholder="Patient Search" autocomplete="off" ng-blur="model=''"
+                                   name="txtUsrName" ng-model="model" uib-typeahead="i as (i.PatientName) for i in getMatchingPatient($viewValue) | limitTo : 8"
+                                   typeahead-on-select="SelectedLabPatient(model)" typeahead-input-formatter="a" autofocus>
+                            <span class="input-group-addon" id=""> <i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="col-md-3 col-lg-2">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        MRNO
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" ng-disabled="disableLab" ng-model="NewLab.Mrno" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Patient Name
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" ng-disabled="disableLab" ng-model="NewLab.PatientName" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-2">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Gender
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" ng-disabled="disableLab" ng-model="NewLab.Gender" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-2">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Age
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" ng-disabled="disableLab" ng-model="NewLab.Age" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Mobile No.
+                    </label>
+                    <div class="col-md-3 col-sm-3 col-lg-3">
+                        <input type="text" class="form-control" ng-disabled="disableLab" ng-model="NewLab.MobilecountryCode" />
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-lg-9">
+                        <input type="text" class="form-control"ng-disabled="disableLab" ng-model="NewLab.MobileNo" />
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Email ID
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" ng-disabled="disableLab" ng-model="NewLab.Email" />
+                    </div>
+                </div>
+            </div>*@
+            <div class="col-md-3 col-lg-2">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Report Date
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group date">
+
+                            <input type="text" class="form-control" id="txtDate" name="txtDate" placeholder="dd-mmm-yyyy" ng-model="NewLab.ReportDate"
+                                   uib-datepicker-popup="{{format}}"
+                                   show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" onkeydown="return false"
+                                   alt-input-formats="altInputFormats" tabindex="12" />
+                            <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Sample No.
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" maxlength="15"  ng-model="NewLab.SampleNo" @*replace="[^0-9-]"*@/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-2">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Sample Collection Date
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="Date"
+                                   name="dtplannedDate" ng-model="NewLab.SampleCollectionDate" placeholder="dd-mmm-yyyy"
+                                   aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false"
+                                   is-open="popup2.opened" datepicker-options="dateOptions1"
+                                   alt-input-formats="altInputFormats">
+                            <span class="input-group-addon" id="" ng-click="open2()">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-2">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Sample Collection Location
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control " id="ddlCollectionLocation" name="ddlCollectionLocation"
+                                ng-model="NewLab.SampleCollectionLocation" ng-options="item.ID as item.Description for item in SampleLocList" tabindex="40"></select>
+                    </div>
+                </div>
+            </div>
+           
+
+            <div class="col-md-3 col-lg-3 " id="seletTestWrap">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for=""> Select Test</label>
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" id="txtServiceName" name="txtServiceName" placeholder="Search" ng-blur="selSer=''" ng-model="selSer"
+                               uib-typeahead="i as (i.ServiceCodeDesc) for i in ServiceList | filter:$viewValue | limitTo:8"
+                               typeahead-on-select="SelectedService(selSer);"
+                               class="form-control Capitalize" typeahead-input-formatter="a">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-12">
+                <div class="table-responsive table-bordered m-b-10 m-t-10" style="min-width: 1100px;min-height:150px;">
+                    <table class="table" >
+                        <thead>
+                            <tr>
+                                <th>Test Name</th>
+                                <th>Parameter Name</th>
+                                <th>Result Value</th>
+                                <th>Unit</th>
+                                @*<th>Normal Range</th>*@
+                                <th>Varying References</th>
+                                <th>Help Values</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in PathoTestParamList">
+                                <td>{{item.TestName}}</td>
+                                <td>{{item.Parameter}}</td>
+                                <td st-ratio="8">
+                                    <input class="form-control  text-right" placeholder="" ng-model="item.ResultValue"/>
+                                </td>
+                                @*<td>{{item.PreviousResultValue}}</td>*@
+                                <td>{{item.Unit}}</td>
+                                @*<td>{{item.LowerPanicValue}}-{{item.UpperPanicValue}}</td>*@
+                                @*<td>5-8</td>*@
+                                <td>{{item.VaryingReferences}}</td>
+                               
+                                <td><a data-toggle="modal" id="modTest" ng-if="item.IsNumeric" data-target=".ValueDetails" ng-click="GetTestList(item)">Hyperlink</a></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Done by
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control " id="ddlDoneby" name="ddlDoneby"
+                                @*ng-class="{select:frmSemenAnalysis.ddlDoneby.$dirty && SemenAnalysis.DoneBy==0}"*@
+                                ng-model="NewLab.DoneBy" ng-options="item.ID as item.Description for item in DocList" tabindex="40"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Authorized by
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control " id="ddlWitnessedby" name="ddlWitnessedby"
+                                @*ng-class="{select:frmSemenAnalysis.ddlWitnessedby.$dirty && SemenAnalysis.WitnessedBy==0}"*@
+                                ng-model="NewLab.AuthorizedBy" ng-options="item.ID as item.Description for item in DocList" tabindex="41"></select>
+                    </div>
+                </div>
+            </div>
+
+          
+        </div>
+
+        <!-- Save Cancle Buttons -->
+        <div class="row form-horizontal m-t-20">
+            <div class="col-lg-12 text-right">
+                @*<label class="control-label"><input type="checkbox" value="true" ng-click="" @*ng-model=""> Freeze</label>*@
+                <button class="btn btn-primary btn_save" type="button" id="" value="Add" data-toggle="modal" ng-click="SaveLabEntery(NewLab)">{{btnSaveUpdate}}@*Save*@</button>
+                <button class="btn btn-primary btn_cancle" type="button" id="" value="Cancel" ng-click="CancelNewLab();">Cancel</button>
+            </div>
+        </div>
+       <!-- <button type="button" class="btn btn-primary">Small modal</button> -->
+        
+        <div class="modal fade ValueDetails" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modTest">
+            <div class="modal-dialog modal-sm" role="document">
+             <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="Cancel();"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Help Value Details</h4>
+                    </div>
+                <div class="modal-body">
+                    <div class="table-responsive table-bordered m-b-10 m-t-10">
+                        <table class="table" style="min-height:150px;max-height:150px;">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Is Default</th>
+                                 </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in TestEntryValueTest">
+                                    <td>{{item.HelpValue}}</td>
+                                    <td><input type="checkbox"ng-model="item.IsDefault" ng-click="Selecttest(item)" ></td>
+                                 </tr>
+                            </tbody>
+                        </table>
+                    </div> 
+                </div>
+                <div class="modal-footer">
+                    <div class="row page_actions text-right">
+                        <div class="col-lg-12 col-md-12">
+                            <button class="btn btn-primary" type="button"ng-click="SaveTestParametervalues()">Save</button>
+                            <button class="btn btn-default" type="button" id="" ng-click="ValueDetails();" >Cancel</button>@*Cancel ::Modified by swatih for localization 30/7/2020*@
+                        </div>
+                    </div>
+                </div>
+             </div>
+            </div>
+        </div>
+
+  </div>
+</form>
