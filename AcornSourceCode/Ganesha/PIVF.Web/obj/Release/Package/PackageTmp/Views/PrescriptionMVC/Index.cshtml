@@ -1,0 +1,831 @@
+﻿
+
+@{ Layout = null;}
+<style>
+    .effectfront {
+        border: none;
+        margin: 0 auto;
+        width: 24px;
+        height: 24px;
+    }
+
+        .effectfront:hover {
+            -webkit-transform: scale(5);
+            -moz-transform: scale(5);
+            -o-transform: scale(5);
+            transform: scale(5);
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            z-index: 66666;
+            position: absolute;
+        }
+
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+
+    .has-error input {
+        border: 1px solid red !important;
+    }
+</style>
+
+<div ng-controller="PrescriptionCtr" ng-init="PageSetup(1)" style="position: relative;
+        z-index: 11;">
+    <!--Navigate-->
+    <div class="f-right">
+        <a class="link" href="" ng-hide="CoupleDetails.FemalePatient.PatientCategoryID==8 || CoupleDetails.MalePatient.PatientCategoryID==9 || CoupleDetails.FemalePatient.PatientCategoryID==11|| CoupleDetails.MalePatient.PatientCategoryID==11" ng-click="btnClick()">{{btnText}}</a>
+    </div>
+    <div class="clear"></div>
+    <!-- prescriptions -->
+    <div class="preContenair page_prescription">
+        @*<div ng-show="selectPatient.GenderID == 1">
+                 <a class="link" href="" ng-click="Navigate(CoupleDetails.FemalePatient.GenderID,item.Path,item.Title,item.ModuleId)">Female Precription</a>
+            </div>
+            <div ng-show="selectPatient.GenderID == 2">
+                <a class="link" href="" ng-click="Navigate(CoupleDetails.FemalePatient.GenderID,item.Path,item.Title,item.ModuleId)">Male Precription</a>
+            </div>*@
+        <!-- todays prescriptions -->
+        <div class="{{TAnimation}}">
+            @*preBox1 transform1*@
+            <button type="button" id="button1" ng-click="RefreshTTab()"><span class="ico_todayPres"></span>@PIVF.LanguageResource.Resources.btnTodaysPrescriptions</button>@*Todays Prescriptions ::Modifed by swatih for localization 16/7/2020*@
+            <!-- box content -->
+            <div class="boxContent">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="table-responsive fixed_header">
+                            <table class="table table-hover table-striped" style="height:220px;min-width:435px;">
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="34">@PIVF.LanguageResource.Resources.lblDrugName</th>@*Drug Name :: Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="34">@PIVF.LanguageResource.Resources.lblMoleculeName</th>@*Molecule Name :: Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="17">@PIVF.LanguageResource.Resources.lblRoute</th>@*Route :: Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="15">@PIVF.LanguageResource.Resources.lblFrequency</th>@*Frequency:: Modified by swatih for localization 16/7/2020*@
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="" ng-repeat="Item in TodaysDrugs.DrugList">
+                                        <td st-ratio="34">{{Item.ItemName}}</td>
+                                        <td st-ratio="34">{{Item.MoleculeName}}</td>
+                                        <td st-ratio="17">{{Item.RouteName}}</td>
+                                        <td st-ratio="15">{{Item.Frequency}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /box content -->
+            <!-- active box content -->
+            <div class="boxContent _active">
+                <div class="row">
+                    <a href="javascript:void(0)" ng-click="boxClose()"><span class="boxClose glyphicon glyphicon-remove"></span></a>
+                    <div class="col-md-5 col-lg-4 p-r-0 m-t-5">
+                        @*w20*@
+                        <label class="radio-inline">
+                            <input type="radio" name="IsBrand" id="IsBrand" ng-checked="IsBrand" ng-click="OnChange(1)"> @PIVF.LanguageResource.Resources.lblBrandName @*Brand Name ::Modified by swatih for localization 16/7/2020*@
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions3" id="" ng-checked="IsMolecule" ng-click="OnChange(2)"> @PIVF.LanguageResource.Resources.lblGenericName @*Generic Name ::Modified by swatih for localization 16/7/2020*@
+                        </label>
+                    </div>
+                    <div class="col-md-7 col-lg-8 p-0">
+                        <form class="form-inline selectListColor" name="frmTdrugs" novalidate>
+                            <div class="form-group p-0 p-l-0" ng-show="IsBrand">
+                                <input type="text" class="form-control" id="SelectedDrug" placeholder="@PIVF.LanguageResource.Resources.lblvSearchByBrand" name="SelectedDrug" ng-class="{select:frmTdrugs.SelectedDrug.$invalid && frmTdrugs.SelectedDrug.$dirty && IsBrand==1}" ng-required="true" ng-model="SelectedDrug" uib-typeahead="i as (i.Description) for i in getMatchingBrand($viewValue) | limitTo : 8" typeahead-on-select="onSelect($item, $model, $label)">  @*ng-keydown="$event.which==13?AddDrug():0"*@
+                            </div>
+                            <div class="form-group  p-0 p-l-0" ng-show="IsMolecule">
+                                <input type="text" class="form-control" id="SelectedMolecule" placeholder="@PIVF.LanguageResource.Resources.lblvSearchByGeneric" name="SelectedMolecule" ng-class="{select:frmTdrugs.SelectedMolecule.$invalid && frmTdrugs.SelectedMolecule.$dirty && IsMolecule==1}" ng-required="true" ng-model="SelectedMolecule" uib-typeahead="i as (i.Description) for i in getMatchingMolecule($viewValue) | limitTo : 8" typeahead-on-select="onSelect($item, $model, $label)">
+                            </div>
+                            @*<button type="submit" class="btn btn-txt-link" ng-click="AddDrug()">Add</button>*@
+                            <span class="bdr_right"></span>
+                            <button type="button" class="btn btn-txt-link" id="btnAddOtherDrug" ng-click="AddOtherDrug()">@PIVF.LanguageResource.Resources.btnAddOtherDrug</button>@*Add Other Drug ::Modified by swatih for localization 4/8/2020*@
+
+                            <label class="radio-inline">
+                                @PIVF.LanguageResource.Resources.lblFollowUpDate
+                            </label> @*Follow Up Date ::Modified by swatih for localization 16/7/2020*@
+                            @*<div class="input-group date">
+                                <input type="text" class="form-control" id="PrescriptionDate" name="PrescriptioDate" placeholder="dd-Mmm-yyyy" ng-required="true"
+                                         ng-model="TodaysDrugs.PrescriptionFollowUpDate"aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false"
+                                       is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="1">
+                                <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>*@
+
+                            <div class="input-group date">
+                                <input type="text" class="form-control" id="dtplannedDate"
+                                        name="dtplannedDate" ng-model="TodaysDrugs.PrescriptionFollowUpDate" placeholder="dd-Mon-yyyy" 
+                                       aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" 
+                                       is-open="popup1.opened" datepicker-options="dateOptions" 
+                                       alt-input-formats="altInputFormats">
+                                <span class="input-group-addon" id=""  ng-click="open1()">
+                                <i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                           
+
+
+                            @*<div class="input-group date" >
+                                <input type="text" class="form-control" id="NFUpDate" name="NFUpDate" placeholder="dd-MMM-yyyy" 
+                                       ng-model="TodaysDrugs.PrescriptionFollowUpDate" 
+                                       @*ng-model="PrescriptionFollowUpDate"*@ 
+                                      @* aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions"
+                                        alt-input-formats="altInputFormats" tabindex="" ng-required="true">
+                                <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>*@
+                        </form>
+                    </div>
+
+
+
+                    
+                    <div class="col-md-12 col-lg-12">
+
+                        <!-- Todays Prescriptions (Brand Name) -->
+
+                        <div class="table-responsive fixed_header">
+                            <table class="table table-hover table-striped" style="min-width:1470px !important;height:280px;">
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="3">&nbsp;</th>
+                                        <th st-ratio="3">&nbsp;</th>
+                                        <th st-ratio="11">@PIVF.LanguageResource.Resources.lblDrugName</th>@*Drug Name::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblGenericName</th>@*GenericName::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="5">@PIVF.LanguageResource.Resources.lblStrength</th>@*Strength::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="8">@PIVF.LanguageResource.Resources.lblUOM</th>@*UOM::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="7">@PIVF.LanguageResource.Resources.lblRoute</th>@*Route::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="7">@PIVF.LanguageResource.Resources.lblFrequency</th>@*Frequency::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="9">@PIVF.LanguageResource.Resources.lblInstruction</th>@*Instruction::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="5">@PIVF.LanguageResource.Resources.lblDays</th>@*Days::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="5">@PIVF.LanguageResource.Resources.lblQuantity</th>@*Quantity::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblWarning_Precautions</th>@*Warning /Precaution::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblNotes</th>@*Notes::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="9">@PIVF.LanguageResource.Resources.lblDrugSource</th>@*Drug Source::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="9">@PIVF.LanguageResource.Resources.lblDoctor</th>@*Doctor::Modified by swatih for localization 16/7/2020*@
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="" ng-repeat="Item in TodaysDrugs.DrugList">
+                                        <td st-ratio="3"><span class="btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" ng-click="objRgt.IsUpdate?RemoveAddDrugRow($index,Item):0"></span></td>
+                                        <td st-ratio="3">
+                                            <span class="btn_like" title="@PIVF.LanguageResource.Resources.lblSetFavorite" data-toggle="modal" data-target=".favorite-modal" ng-click="objRgt.IsUpdate?SetFavorite(Item):0">
+                                                
+                                            </span>
+                                        </td>
+                                        <td st-ratio="11">
+                                            <div class="form-group" ng-show="!Item.IsOther">
+                                                {{Item.ItemName}}
+                                            </div>
+                                            <div class="form-group" ng-show="Item.IsOther">
+                                                <input type="text" class="form-control" id="ItemName" placeholder="" ng-model="Item.ItemName"  ng-class="{select:Item.DirtyItemName == true}"  ng-required="true"/>
+                                            </div>
+                                        </td>
+                                        <td st-ratio="10">{{Item.MoleculeName}}</td>
+                                        <td st-ratio="5">
+                                            <div class="form-group" ng-show="Item.IsMolecule || Item.IsOther">
+                                                <input type="text" class="form-control" id="Strength" name="Strength" placeholder="" ng-model="Item.Strength" />  @*ng-class="{select:Item.DirtyStrength == true}" ng-required="true"*@
+                                            </div>
+                                            <div class="form-group" ng-show="!Item.IsMolecule && !Item.IsOther">
+                                                {{Item.Strength}}
+                                            </div>
+                                        </td>
+                                        <td st-ratio="8">{{Item.UOM}}</td>
+                                        <td st-ratio="7">
+                                            <select id=""
+                                                    ng-model="Item.RouteID"
+                                                    ng-class="{select:Item.DirtyRouteID == true}"
+                                                    ng-required="true"
+                                                    class="form-control"
+                                                    ng-options="item.ID as item.Description for item in RouteList"
+                                                    ng-change="CheckDuplicate(Item,$index)"></select>
+                                        </td>
+                                        <td st-ratio="7">
+                                            <select id=""
+                                                    ng-model="Item.FrequencyID"
+                                                    class="form-control"
+                                                    ng-class="{select:Item.DirtyFrequencyID == true}"
+                                                    ng-required="true"
+                                                    ng-options="item.ID as item.Description for item in FrequencyList"
+                                                    ng-change="CalQuantity(Item,$index)"></select>
+                                        </td>
+                                        <td st-ratio="9">
+                                            <select id=""
+                                                    ng-model="Item.InstructionID"
+                                                    class="form-control"
+                                                    ng-options="item.ID as item.Description for item in InstructionList"></select>
+                                        </td>
+                                        <td st-ratio="5">
+                                            <input type="text" class="form-control" id="Days" placeholder="" ng-model="Item.Days" ng-change="CalQuantity(Item)" ng-required="true" ng-class="{select:Item.DirtyDays == true}" maxlength="3" />          @*ng-required="true" and ng-class="{select:Item.DirtyDays == true}" added by Nayan Kamble on 21/06/2019*@  
+                                        </td>
+                                        <td st-ratio="5">
+                                            <input type="text" class="form-control" id="Quantity" placeholder="" ng-model="Item.Quantity" maxlength="6" />        @*maxlength added by Nayan Kamble , ng-required="true" and ng-class="{select:Item.DirtyQuantity == true}" removed by Nayan Kamble   *@
+                                        </td>
+                                        <td st-ratio="10">
+                                            <input type="text" class="form-control" id="Warning" placeholder="" ng-model="Item.Warning" />
+                                        </td>
+                                        <td st-ratio="10">
+                                            <input type="text" class="form-control" id="Warning" placeholder="" ng-model="Item.Notes" />
+                                        </td>
+
+                                        <td st-ratio="9">{{Item.DrugSource}}</td>
+                                        <td st-ratio="9">{{Item.AddedByName}}</td>
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 m-t-5 text-right">
+                        <button class="btn btn-primary " type="button" id="btnSaveTodayPre" value="" ng-click="Save()" ng-disabled="disableClick || !isDoctor || IsVisitMarked"> @PIVF.LanguageResource.Resources.btnSave</button>@*Save ::Modified by swatih for localization 16/7/2020*@
+                        <button type="submit" class="btn btn-primary btn-print" ng-click="showreport()">@PIVF.LanguageResource.Resources.btnPrint </button>@*Print ::Modified by swatih for localization 16/7/2020*@
+                        <button class="btn btn-default " type="button" id="" value="" ng-click="boxClose()"> @PIVF.LanguageResource.Resources.btnCancel</button>@*Cancel ::Modified by swatih for localization 16/7/2020*@
+                    </div>
+                </div>
+            </div>
+            <!-- /active box content -->
+        </div>
+        <!-- /todays prescriptions -->
+        <!-- previous prescriptions -->
+        <div class="{{PAnimation}}">
+            @*preBox2 transform2*@
+            <button type="button" id="button2" ng-click="RefreshPTab()"><span class="ico_prevPres"></span>@PIVF.LanguageResource.Resources.lblPreviousPrescriptions</button>@*Previous Prescriptions ::Modified by swatih for localization 4/8/2020*@
+            <!-- box content -->
+            <div class="boxContent">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="table-responsive fixed_header">
+                            <table class="table table-hover table-striped table-hover" style="height:220px;min-width: 355px;">
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="30">@PIVF.LanguageResource.Resources.lblDrugName</th>@*Drug Name ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="30">@PIVF.LanguageResource.Resources.lblMoleculeName</th>@*Molecule Name ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="18">@PIVF.LanguageResource.Resources.lblRoute</th>@*Route ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="22">@PIVF.LanguageResource.Resources.lblFrequency</th>@*Frequency ::Modified by swatih for localization 16/7/2020*@
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="Item in TodaysDrugs.PriDrugList">
+                                        <td st-ratio="30">{{Item.ItemName}}</td>
+                                        <td st-ratio="30">{{Item.MoleculeName}}</td>
+                                        <td st-ratio="18">{{Item.RouteName}}</td>
+                                        <td st-ratio="22">{{Item.Frequency}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /box content -->
+            <!-- active box content -->
+            <div class="boxContent _active">
+                <div class="row">
+                    <a href="javascript:void(0)" ng-click="boxClose()"><span class="boxClose glyphicon glyphicon-remove"></span></a>
+                    <div class="col-md-5 col-lg-4">
+                        @*<div class="form-group p-0">
+                                <input type="text" class="form-control" id="" placeholder="Search" ng-model="search">
+                                <div class="ico_search"><span class="glyphicon glyphicon-search"></span></div>
+                            </div>*@
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="" placeholder="@PIVF.LanguageResource.Resources.btnSearch" ng-model="search">
+                            <div class="btn input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="table-responsive fixed_header">
+                            <table class="table table-hover table-striped m-t-5" style="min-width:1900px !important;height:285px;">
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="5">&nbsp;</th>
+                                        <th st-ratio="7" ng-click="SortData('Date')" width="99">@PIVF.LanguageResource.Resources.lblDate<div ng-class="sortClass"></div> </th>@*Date ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="8" ng-click="SortData('AddedByName')" width="150">@PIVF.LanguageResource.Resources.lblDoctor<div ng-class="sortClass"></div> </th>@*Doctor ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="8" ng-click="SortData('ItemName')" width="150">@PIVF.LanguageResource.Resources.lblDrugName<div ng-class="sortClass"></div> </th>@*Drug Name ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="8" ng-click="SortData('MoleculeName')" width="200">@PIVF.LanguageResource.Resources.lblGenericName<div ng-class="sortClass"></div> </th>@*Generic Name ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="7" ng-click="SortData('Strength')" width="110">@PIVF.LanguageResource.Resources.lblStrength<div ng-class="sortClass"></div> </th>@*Strength ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="6" ng-click="SortData('UOM')" width="80">@PIVF.LanguageResource.Resources.lblUOM<div ng-class="sortClass"></div> </th>@*UOM ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="6" ng-click="SortData('RouteName')" width="90">@PIVF.LanguageResource.Resources.lblRoute<div ng-class="sortClass"></div> </th>@*Route ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="8" ng-click="SortData('Frequency')" width="150">@PIVF.LanguageResource.Resources.lblFrequency<div ng-class="sortClass"></div> </th>@*Frequency ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="8" ng-click="SortData('Instruction')" width="150">@PIVF.LanguageResource.Resources.lblInstruction<div ng-class="sortClass"></div> </th>@*Instruction ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="7" ng-click="SortData('Days')" width="150">@PIVF.LanguageResource.Resources.lblDays<div ng-class="sortClass"></div> </th>@*Days ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="7" ng-click="SortData('Quantity')" width="150">@PIVF.LanguageResource.Resources.lblQuantity<div ng-class="sortClass"></div> </th>@*Quantity ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="8" ng-click="SortData('Warning')" width="150">@PIVF.LanguageResource.Resources.lblWarning_Precautions<div ng-class="sortClass"></div> </th>@*Warning/Precautions ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblNotes</th>@*Notes::Modified by swatih for localization 16/7/2020*@  @*Added by divya on 26 aug 2020*@
+                                        <th st-ratio="7">@PIVF.LanguageResource.Resources.lblDrugSource</th>@*Drug Source ::Modified by swatih for localization 16/7/2020*@
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="Item in TodaysDrugs.PriDrugList | orderBy:SortColumn:reverseSort | filter:search">
+                                        @*| filter:filterOnName*@
+                                        <td st-ratio="5">
+                                            <input type="checkbox" class="" ng-model="Item.IsChecked" id="{{$index}}{{Item.ID}}" name="chkSelect" ng-click="PriDrugChecked(Item)" />
+                                            <label for="{{$index}}{{Item.ID}}"></label>
+                                        </td>
+                                        <td st-ratio="7">{{Item.Date | date:'dd-MMM-yyyy'}}</td>
+                                        <td st-ratio="8">{{Item.AddedByName}}</td>
+                                        <td st-ratio="8">{{Item.ItemName}}</td>
+                                        <td st-ratio="8">{{Item.MoleculeName}}</td>
+                                        <td st-ratio="7">{{Item.Strength}}</td>
+                                        <td st-ratio="6">{{Item.UOM}}</td>
+                                        <td st-ratio="6">{{Item.RouteName}}</td>
+                                        <td st-ratio="8">{{Item.Frequency}}</td>
+                                        <td st-ratio="8">{{Item.Instruction}}</td>
+                                        <td st-ratio="7">{{Item.Days}}</td>
+                                        <td st-ratio="7">{{Item.Quantity}}</td>
+                                        <td st-ratio="8">{{Item.Warning}}</td>
+                                        <td st-ratio="8">{{Item.Notes}}</td>  @*Added by divya on 26 aug 2020*@
+                                        <td st-ratio="7">{{Item.DrugSource}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row page_actions text-right">
+                    <div class="col-lg-12 col-md-12 m-t-5">
+                        <button class="btn btn-primary" type="button" id="btnAddPreDrugs" value="" ng-disabled="!isDoctor" ng-click="AddPriToTodaysDrugs()"> @PIVF.LanguageResource.Resources.btnAdd </button>@*Add::Modified by swatih for localization 16/7/2020*@
+                        <button class="btn btn-default" type="button" id="" value="" ng-click="boxClose()"> @PIVF.LanguageResource.Resources.btnCancel</button> @*cancel::Modified by swatih for localization 16/7/2020*@
+                    </div>
+                </div>
+            </div>
+            <!-- /active box content -->
+        </div>
+        <!-- /previous prescriptions -->
+        <!-- set favourite drug -->
+        <div class="{{SAnimation}}">
+            @*preBox3 transform3*@
+            <button type="button" id="button3" ng-click="RefreshSTab()"><span class="ico_setFav"></span>@PIVF.LanguageResource.Resources.lblSetFavouriteDrug</button>@*Set Favourite Drug::Modified by swatih for localization 16/7/2020*@
+            <!-- box content -->
+            <div class="boxContent">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div>
+                            <div class="table-fav m-0">
+                                <div class="col-md-12 col-lg-8 col-sm-12  p-r-0 p-l-0">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions1" ng-checked="FavDrug.IsNewTemp"> @PIVF.LanguageResource.Resources.lblNew @*New::Modified by swatih for localization 16/7/2020*@
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions1" ng-checked="FavDrug.IsExiTemp"> @PIVF.LanguageResource.Resources.lblExisting @*Existing::Modified by swatih for localization 16/7/2020*@
+                                    </label>
+                                </div>
+                                <div class="col-md-12 col-lg-4 col-sm-12 p-r-0 p-l-0">
+                                    <div ng-show="FavDrug.IsNewTemp">
+                                        <input type="text" name="txtTemplate" id="txtTemplate" class="form-control" placeholder="@PIVF.LanguageResource.Resources.lblTemplateName" ng-model="FavDrug.TemplateName" ng-required="true" maxlength="50">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-lg-8 col-sm-12  p-r-0 p-l-0">
+                                    <div class="input-group" ng-show="FavDrug.IsExiTemp">
+                                        <select><option>@PIVF.LanguageResource.Resources.lblSelect</option></select>@*Select::Modified by swatih for localization 16/7/2020*@
+                                    </div>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions2" ng-checked="FavDrug.IsBrand" ng-model="BrandName"> @PIVF.LanguageResource.Resources.lblBrandName @*BrandName::Modified by swatih for localization 16/7/2020*@
+                                    </label>
+                                    <label class="radio-inline m-l-0">
+                                        <input type="radio" name="inlineRadioOptions2" ng-checked="FavDrug.IsMolecule" ng-model="MoleculeName"> @PIVF.LanguageResource.Resources.lblGenericName @*Generic Name::Modified by swatih for localization 16/7/2020*@
+                                    </label>
+                                </div>
+                                <div class="col-md-12 col-lg-4 col-sm-12  p-r-0 p-l-0">
+
+                                    <div ng-show="FavDrug.IsBrand">
+                                        <input type="text" class="form-control" id="txtItemName" placeholder="@PIVF.LanguageResource.Resources.lblvSearchByBrand">
+                                    </div>
+                                    <div ng-show="FavDrug.IsMolecule">
+                                        <input type="text" class="form-control" id="txtItemName1" placeholder="@PIVF.LanguageResource.Resources.lblvSearchByGeneric">
+                                    </div>
+                                </div>
+
+                                @*<button type="submit" class="btn btn-default t2"><span class="glyphicon glyphicon-plus"></span> Add Drug</button>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /box content -->
+            <!-- active box content -->
+            <div class="boxContent _active">
+                <a href="javascript:void(0)" ng-click="boxClose()"><span class="boxClose glyphicon glyphicon-remove"></span></a>
+                <form name="frmSSR" class="" novalidate>
+                    <div class="row form-horizontal">
+                        <div class="col-md-12 col-lg-4">
+                            <div class="row">
+                                <div class="col-md-5 col-lg-7 p-r-0">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions1" ng-checked="FavDrug.IsNewTemp" ng-click="OnChangeTemp(1)"> @PIVF.LanguageResource.Resources.lblNew @*New::Modified by swatih for localization 16/7/2020*@
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions1" ng-checked="FavDrug.IsExiTemp" ng-click="OnChangeTemp(2)"> @PIVF.LanguageResource.Resources.lblExisting @*Existing::Modified by swatih for localization 16/7/2020*@
+                                    </label>
+                                </div>
+                                <div class="col-md-5 col-lg-5 p-l-0 p-r-0">
+                                    <div class="" ng-show="FavDrug.IsNewTemp">
+                                        @*<div class="col-sm-6 col-md-6 col-lg-6" ng-class="{'Invalid':frmSSR.txtTemplate.$invalid && frmSSR.txtTemplate.$dirty }">*@
+                                        <input type="text" name="txtTemplate" id="txtTemplate" class="form-control" placeholder="@PIVF.LanguageResource.Resources.lblTemplateName" ng-model="FavDrug.TemplateName" ng-class="{select:frmSSR.txtTemplate.$dirty && frmSSR.txtTemplate.$invalid && FavDrug.IsNewTemp==1}" ng-required="true" maxlength="50">
+                                        @*</div>*@
+                                    </div>
+                                    <div class="" ng-show="FavDrug.IsExiTemp">
+                                        <select id="ddlIndication"
+                                                name="ddlIndication"
+                                                ng-model="FavDrug.TemplateID"
+                                                class="form-control"
+                                                ng-class="{select:frmSSR.ddlIndication.$dirty && FavDrug.TemplateID==0 && FavDrug.IsExiTemp==1}"
+                                                ng-required="true"
+                                                ng-options="item.ID as item.Description for item in TemplateList"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-7">
+                            <div class="row">
+                                <div class="col-md-5 col-lg-6 p-r-0">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions2" ng-checked="FavDrug.IsBrand" ng-model="BrandName" ng-click="OnChangeFav(1)"> @PIVF.LanguageResource.Resources.lblBrandName @*BrandName::Modified by swatih for localization 16/7/2020*@
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions2" ng-checked="FavDrug.IsMolecule" ng-model="MoleculeName" ng-click="OnChangeFav(2)"> @PIVF.LanguageResource.Resources.lblGenericName @*Generic Name::Modified by swatih for localization 16/7/2020*@
+                                    </label>
+                                </div>
+                                <div class="col-md-5 col-lg-6 p-l-0 p-r-0">
+                                    <input type="text" class="form-control" id="txtItemName" ng-show="FavDrug.IsBrand" placeholder="@PIVF.LanguageResource.Resources.lblvSearchByBrand" name="txtItemName" ng-class="{select:frmSSR.txtItemName.$invalid && frmSSR.txtItemName.$dirty && FavDrug.IsBrand==true}" ng-required="true" ng-model="FavDrug.SelectedDrug" uib-typeahead="i as (i.Description) for i in getMatchingBrand($viewValue) | limitTo : 8" typeahead-on-select="onSelect1($item, $model, $label)">
+                                    <input type="text" class="form-control" id="txtItemName1" ng-show="FavDrug.IsMolecule" placeholder="@PIVF.LanguageResource.Resources.lblvSearchByGeneric" name="txtItemName1" ng-class="{select:frmSSR.txtItemName1.$invalid && frmSSR.txtItemName1.$dirty && FavDrug.IsMolecule==true}" ng-required="true" ng-model="FavDrug.SelectedMolecule" uib-typeahead="i as (i.Description) for i in getMatchingMolecule($viewValue) | limitTo : 8" typeahead-on-select="onSelect1($item, $model, $label)">
+                                    @*<span class="bdr_right"></span>*@
+                                    @*<button type="submit" class="btn  btn-txt-link t2" ng-click="AddFavDrug(FavDrug)">Add Drug</button>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="clear"></div>
+                <div class="table-responsive fixed_header" style="">
+                    <table class="table table-hover table-striped" style="min-width:1400px !important;height:290px;">
+                        <thead>
+                            <tr>
+                                <th st-ratio="4">&nbsp;</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblDrugName</th>@*DrugName :: Modified by swatih for localization 16/7/2020*@
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblGenericName</th>@*Generic Name :: Modified by swatih for localization 16/7/2020*@
+                                <th st-ratio="9">@PIVF.LanguageResource.Resources.lblUOM</th>@*UOM :: Modified by swatih for localization 16/7/2020*@
+                                <th st-ratio="9">@PIVF.LanguageResource.Resources.lblRoute</th>@*Route :: Modified by swatih for localization 16/7/2020*@
+                                <th st-ratio="9">@PIVF.LanguageResource.Resources.lblFrequency</th>@*Frequency :: Modified by swatih for localization 16/7/2020*@
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblInstruction</th>@*Instruction :: Modified by swatih for localization 16/7/2020*@
+                                <th st-ratio="9">@PIVF.LanguageResource.Resources.lblDays</th>@*Days :: Modified by swatih for localization 16/7/2020*@
+                                <th st-ratio="9">@PIVF.LanguageResource.Resources.lblQuantity</th>@*Quantity :: Modified by swatih for localization 16/7/2020*@
+                                <th st-ratio="11">@PIVF.LanguageResource.Resources.lblWarning_Precautions</th>@*Warning_Precautions :: Modified by swatih for localization 16/7/2020*@
+                                @*<th st-ratio="10">Drug Source</th>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="Item in FavDrugList">
+                                <td st-ratio="4"><span class="btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" ng-click="objRgt.IsUpdate?RemoveFavDrugRow($index):0"></span></td>
+                                <td st-ratio="10">{{Item.ItemName}}</td>
+                                <td st-ratio="10">{{Item.MoleculeName}}</td>
+                                <td st-ratio="9">{{Item.UOM}}</td>
+                                <td st-ratio="9">
+                                    <select id=""
+                                            ng-model="Item.RouteID"
+                                            class="form-control"
+                                            ng-options="item.ID as item.Description for item in RouteList"></select>
+                                </td>
+                                <td st-ratio="9">
+                                    <select id=""
+                                            ng-model="Item.FrequencyID"
+                                            class="form-control"
+                                            ng-options="item.ID as item.Description for item in FrequencyList"   ng-change="CalQuantity(Item,$index)"></select>              @*ng-change="CalQuantity(Item,$index)" --added by Nayan Kamble on 25/12/2019*@
+                                </td>
+                                <td st-ratio="10">
+                                    <select id=""
+                                            ng-model="Item.InstructionID"
+                                            class="form-control"
+                                            ng-options="item.ID as item.Description for item in InstructionList"></select>
+                                </td>
+                                <td st-ratio="9">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="Days" placeholder="" ng-model="Item.Days"  ng-change="CalQuantity(Item)" maxlength="3"/>     @*ng-change="CalQuantity(Item)"       maxlength="3"      --added by Nayan Kamble on 25/12/2019*@
+                                    </div>
+                                </td>
+                                <td st-ratio="9">
+                                    <input type="text" class="form-control" id="Quantity" placeholder="" ng-model="Item.Quantity" />
+                                </td>
+                                <td st-ratio="11">
+                                    <input type="text" class="form-control" id="Warning" placeholder="" ng-model="Item.Warning" />
+                                </td>
+                                @*<td st-ratio="10">{{Item.DrugSource}}</td>*@
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row page_actions text-right">
+                    <div class="col-lg-12 col-md-12 m-t-10">
+                        <button class="btn btn-primary" type="button" id="btnSaveFavDrug" ng-click="SaveFavDrug()" ng-disabled="!isDoctor"> @PIVF.LanguageResource.Resources.btnSave</button>@*Save ::Modified by swatih for localization 4/8/2020*@
+                        <button class="btn btn-default" type="button" id="" value="" ng-click="boxClose()"> @PIVF.LanguageResource.Resources.btnCancel</button>@*Cancel ::Modified by swatih for localization 4/8/2020*@
+                    </div>
+                </div>
+            </div>
+            <!-- /active box content -->
+        </div>
+        <!-- /set favourite drug -->
+        <!-- add favourite drug --> 
+        <div class="{{FAnimation}}">
+            @*preBox4 transform4*@
+            <button type="button" id="button4" ng-click="RefreshFTab()"><span class="ico_addFav"></span>@PIVF.LanguageResource.Resources.lblFavouriteDrugs</button>@*Favourite Drugs ::Modified by swatih for localization 4/8/2020*@
+            <!-- box content -->
+            <div class="boxContent collapse">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="table-responsive" style="height:220px;">
+                            <table class="table table-hover table-striped table-hover" style="height:230px;">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" class="th-lighBlue"> @PIVF.LanguageResource.Resources.lblTemplate </th>@*Template ::Modified by swatih for localization 4/8/2020*@
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="Item in FavTemplateList">
+                                        <td colspan="2">
+                                            <span class="" role="button" data-toggle="collapse" data-target="{{'#'+($index+1)}}" aria-expanded="false" aria-controls="{{$index+1}}" ng-click="GetItemByTemplate(Item.ID)">
+                                                {{Item.TemplateName}}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /box content -->
+            <!-- active box content -->
+            <div class="boxContent _active">
+                <div class="row">
+                    <a href="javascript:void(0)" ng-click="boxClose()"><span class="boxClose glyphicon glyphicon-remove"></span></a>
+                    <div class="col-md-5 col-lg-4">
+                        <div class="input-group">
+                         @*   <input type="text" class="form-control" id="" placeholder="Search" ng-model="SearchTemplate">    commented by Nayan Kamble on 26/12/2019*@
+                        
+                            @*<input type="text" class="form-control" id="txtItemName"  placeholder="Search"                            
+                            ng-model="SearchTemplate" uib-typeahead="i as (i.Description) for i in getMatchingFavouriteDrug($viewValue) | limitTo : 8" 
+                                   typeahead-on-select="onSelect1($item, $model, $label)">*@
+
+                            <input type="text" class="form-control" id="" placeholder="@PIVF.LanguageResource.Resources.btnSearch" ng-model="SearchTemplate" 
+                                   ng-keydown="$event.which==13? GetTemplateAndItems():0">
+
+
+                           
+                            <div class="btn input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="table-responsive m-t-5" style="min-height:290px;max-height:290px;">
+                            <table class="table table-hover table-striped" style="min-width:1140px;">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" class="th-lighBlue"> @PIVF.LanguageResource.Resources.lblTemplate </th>  <!-- class="fix-header" --> @*Template ::Modified by swatih for localization 4/8/2020*@
+                                    </tr>
+                                </thead>
+                                <tbody ng-repeat="Item in FavTemplateList  |filter:SearchTemplate  |orderBy:SortColumn:reverseSort     track by $index" style="height:240px;    "   >
+                                    <tr>
+                                        <td class="text-center" width="30">
+                                            <input type="checkbox"  ng-model="Item.IsChecked" id="{{$index}}{{Item.ID}}" name="chkSelecttmp" ng-click="TempChecked(Item,$index)" />             @*class=""*@
+                                            <label for="{{$index}}{{Item.ID}}"><span class="checkbox"></span></label>
+                                        </td>
+                                        <td colspan="2">
+                                            <span class="collapsed" data-toggle="collapse" data-target="{{'#'+($index+1)}}" aria-expanded="false" aria-controls="{{$index+1}}" >
+                                                {{Item.TemplateName}}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="AppointmentDetailTR collapse" id="{{$index+1}}">
+                                        <td colspan="9" class="tbl_collapse">
+                                            <div id="{{$index+1}}" class="collapse in">
+                                                <div class="well">
+                                                    <div class="table-responsive table-bordered" style="max-height: 200px;min-height: 70px;">
+                                                        <table class="table table-hover table-striped" style="border-bottom:none;min-width:1075px;">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>&nbsp;</th>
+                                                                    <th>&nbsp;</th>
+                                                                    <th>@PIVF.LanguageResource.Resources.lblDrugName</th>@*DrugName::Modified by swatih for localization 16/7/2020*@
+                                                                    <th>@PIVF.LanguageResource.Resources.lblGenericName</th>@*GenericName::Modified by swatih for localization 16/7/2020*@
+                                                                    <th>@PIVF.LanguageResource.Resources.lblUOM</th>@*UOM::Modified by swatih for localization 16/7/2020*@
+                                                                    <th>@PIVF.LanguageResource.Resources.lblRoute</th>@*Route::Modified by swatih for localization 16/7/2020*@
+                                                                    <th>@PIVF.LanguageResource.Resources.lblFrequency</th>@*Frequency::Modified by swatih for localization 16/7/2020*@
+                                                                    <th>@PIVF.LanguageResource.Resources.lblInstruction</th>@*Instruction::Modified by swatih for localization 16/7/2020*@
+                                                                    <th>@PIVF.LanguageResource.Resources.lblDays</th>@*Days::Modified by swatih for localization 16/7/2020*@
+                                                                    <th>@PIVF.LanguageResource.Resources.lblQuantity</th>@*Quantity::Modified by swatih for localization 16/7/2020*@
+                                                                    <th>@PIVF.LanguageResource.Resources.lblWarning_Precautions</th>@*Warning/Precautions::Modified by swatih for localization 16/7/2020*@
+                                                                    <th>@PIVF.LanguageResource.Resources.lblDrugSource</th>@*DrugSource::Modified by swatih for localization 16/7/2020*@
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr ng-repeat="Item1 in Item.FavDrugList track by $index ">
+                                                                    <td><span class="btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" data-toggle="modal" data-target=".reason-modalFavDelete" ng-click="objRgt.IsUpdate?DeleteFavDrug(Item1):0"></span></td>
+                                                                    <td>
+                                                                        <input type="checkbox" class="" ng-model="Item1.IsChecked" id="{{Item.ID}}{{$index+100}}" name="chkSelectFav" ng-click="ItemTempChecked(Item1,Item.FavDrugList)" />
+                                                                        <label for="{{Item.ID}}{{$index+100}}"></label>
+                                                                    </td>
+                                                                    <td>{{Item1.ItemName}}</td>
+                                                                    <td>{{Item1.MoleculeName}}</td>
+                                                                    <td>{{Item1.UOM}}</td>
+                                                                    <td>{{Item1.RouteName}}</td>
+                                                                    <td>{{Item1.Frequency}}</td>
+                                                                    <td>{{Item1.Instruction}}</td>
+                                                                    <td>{{Item1.Days}}</td>
+                                                                    <td>{{Item1.Quantity}}</td>
+                                                                    <td>{{Item1.Warning}}</td>
+                                                                    <td>{{Item1.DrugSource}}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div><div class="clear"></div>
+                <div class="row page_actions text-right mt15">
+                    <div class="col-lg-12 col-md-12">
+                        <button class="btn btn-primary" type="button" id="btnAddFavToTodayDrug" value="" ng-disabled="!isDoctor" ng-click="AddFavToTodaysDrugs()"> @PIVF.LanguageResource.Resources.btnAdd </button>@*Add :: Modified by swatih for localization 16/7/2020*@
+                        <button class="btn btn-default" type="button" id="" value="" ng-click="boxClose()"> @PIVF.LanguageResource.Resources.btnCancel</button> @*cancel :: Modified by swatih for localization 16/7/2020*@
+                    </div>
+                </div>
+            </div>
+            <!-- /active box content -->
+        </div>
+        <!-- /add favourite drug -->
+    </div>
+    <!-- /prescriptions -->
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+    <div class="clear"></div>
+    <!-- favorite model -->
+    <!-- /favorite model -->
+    <!-- reason model -->
+    <div class="modal fade reason-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblAppointmentReason</h4>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <div class="page_actions">
+                        <button class="btn btn-primary" type="button" id="" value=""> @PIVF.LanguageResource.Resources.btnSave</button>@*save :: Modified by swatih for localization 16/7/2020*@
+                        <button class="btn btn-default" type="button" id="" value="" data-dismiss="modal" ng-click="boxClose()"> @PIVF.LanguageResource.Resources.btnCancel</button>@*cancel :: Modified by swatih for localization 16/7/2020*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*delete fav Select Model box*@
+    <script type="text/ng-template" id="DeleteFavmodel">
+        <form name="frmFavReason" novalidate>
+            <div tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblReason</h4> @*Reason :: Modified by swatih for localization 16/7/2020*@
+                    </div>
+                    <div class="modal-body">
+                        <div ng-class="{'Invalid':frmFavReason.Comment.$invalid && frmFavReason.Comment.$dirty }">
+                            <textarea id="Comment" name="Comment" class="form-control" ng-model="Item.Comment" rows="2"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="page_actions">
+                            <button class="btn btn-primary" type="button" ng-click="FavDelete(Item)"> @PIVF.LanguageResource.Resources.btnSave</button>@*save :: Modified by swatih for localization 16/7/2020*@
+                            <button class="btn btn-default" type="button" id="" value="" data-dismiss="modal" ng-click="boxClose()"> @PIVF.LanguageResource.Resources.btnCancel</button>@*cancel :: Modified by swatih for localization 16/7/2020*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </script>
+    @*delete Todays Select Model box*@
+    <script type="text/ng-template" id="DeleteTodaysmodel">
+        <form name="frmTodaysReason" novalidate>
+            <div tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="boxClose()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblReason</h4>@*Reason :: Modified by swatih for localization 4/8/2020*@
+                    </div>
+                    <div class="modal-body">
+                        <textarea id="Comment" name="Comment" class="form-control" ng-model="Item.Comment" rows="2" ng-required="true" ng-class="{select:frmTodaysReason.Comment.$dirty && (Item.Comment == null || Item.Comment == undefined)}"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="page_actions">
+                            <button class="btn btn-primary" type="button" ng-click="Delete(Item)"> @PIVF.LanguageResource.Resources.btnSave</button>@*save :: Modified by swatih for localization 16/7/2020*@
+                            <button class="btn btn-default" type="button" id="" value="" data-dismiss="modal" ng-click="boxClose()"> @PIVF.LanguageResource.Resources.btnCancel</button>@*cancel :: Modified by swatih for localization 16/7/2020*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </script>
+    <!-- /reason model -->
+    <!--Set Favourite from todays Prescription-->
+    <script type="text/ng-template" id="SetFavmodel">
+        <form name="frmSetFav" novalidate>
+            <div class="modal-content" ng-init="PageSetup(1)">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="boxClose()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblTemplate</h4>@*Template ::Modified by swatih for localization 4/8/2020*@
+                </div>
+                <div class="modal-body form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions1" ng-checked="FavDrug.IsNewTemp" ng-click="OnChangeTemp(1)"> @PIVF.LanguageResource.Resources.lblNew  @*New :: Modified by swatih for localization 16/7/2020*@
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions1" ng-checked="FavDrug.IsExiTemp" ng-click="OnChangeTemp(2)"> @PIVF.LanguageResource.Resources.lblExisting  @*Existing :: Modified by swatih for localization 16/7/2020*@
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-6" ng-show="FavDrug.IsNewTemp">
+                            @*<div class="col-sm-6 col-md-6 col-lg-6" ng-class="{'Invalid':frmSSR.txtTemplate.$invalid && frmSSR.txtTemplate.$dirty }">*@
+                            <input type="text" name="txtTemplate" id="txtTemplate" class="form-control" placeholder="@PIVF.LanguageResource.Resources.lblTemplateName" ng-model="FavDrug.TemplateName" ng-required="true" maxlength="50">
+                            @*</div>*@
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-6" ng-show="FavDrug.IsExiTemp">
+                            <select id="ddlIndication"
+                                    name="ddlIndication"
+                                    ng-model="FavDrug.TemplateID"
+                                    class="form-control"
+                                    ng-class="{select:FavDrug.TemplateID== 0 && frmSetFav.ddlIndication.$dirty}"
+                                    ng-options="item.ID as item.Description for item in TemplateList"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="page_actions">
+                        <button class="btn btn-primary" type="button" id="" value="" ng-click="SetFavInfo(FavDrug)"> @PIVF.LanguageResource.Resources.btnSave</button>@*save :: Modified by swatih for localization 16/7/2020*@
+                        <button class="btn btn-default" type="button" id="" value="" data-dismiss="modal" ng-click="boxClose()"> @PIVF.LanguageResource.Resources.btnCancel</button>@*cancel :: Modified by swatih for localization 16/7/2020*@
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </script>
+    @*for animation*@
+    <script>
+        $(document).ready(function () {
+            $(".preBox1").click(function () {
+                if ($(".preBox1").hasClass('transform-active'))//
+                    return;
+                $(".transform1").toggleClass("transform-active");
+                $(".transform1").removeClass("boxIcoMenu");
+                $(".transform2,.transform3,.transform4").removeClass("transform-active").addClass("boxIcoMenu")
+            });
+            $(".preBox2").click(function () {
+                if ($(".preBox2").hasClass('transform-active'))
+                    return;
+                $(".transform2").toggleClass("transform-active");
+                $(".transform2").removeClass("boxIcoMenu");
+                $(".transform1,.transform3,.transform4").removeClass("transform-active").addClass("boxIcoMenu")
+            });
+            $(".preBox3").click(function () {
+                if ($(".preBox3").hasClass('transform-active'))
+                    return;
+                $(".transform3").toggleClass("transform-active");
+                $(".transform3").removeClass("boxIcoMenu");
+                $(".transform1,.transform2,.transform4").removeClass("transform-active").addClass("boxIcoMenu")
+            });
+            $(".preBox4").click(function () {
+                if ($(".preBox4").hasClass('transform-active'))
+                    return;
+                $(".transform4").toggleClass("transform-active");
+                $(".transform4").removeClass("boxIcoMenu");
+                $(".transform1,.transform2,.transform3").removeClass("transform-active").addClass("boxIcoMenu")
+            })
+        });
+    </script>
+    @*display report*@
+    <div class="modal fade edit-modal" id="ViewReport" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div>
+                    <h1>@PIVF.LanguageResource.Resources.lbltest</h1> @*test ::Modified by swatih for localization 16/7/2020*@
+                    <div class="wrapper">
+                        <object data="{{ReportContent}}" type="application/pdf" style="width: 100%; height: 400px;"></object>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

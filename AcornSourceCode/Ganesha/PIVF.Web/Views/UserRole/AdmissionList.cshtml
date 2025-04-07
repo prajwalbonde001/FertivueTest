@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="row" ng-controller="WardCtr">
+    <div class="form_Content">
+        <h1>AddMission List</h1>
+
+        <!-- New User Button -->
+        <div class="row">
+            <div class="col-sm-12 text-right p-r-25" style="padding-bottom:5px">
+                <button class="btn-link p-t-10" title="Print" ng-click="exportToExcel('#tableToExport')"><span class="glyphicon glyphicon-print"></span></button>
+                <button class="btn-link m-t-10 pull-right" title="New" type="button" onclick="window.location.href='#NewAdmission'"><span class="glyphicon glyphicon-plus"></span></button>
+
+            </div>
+        </div>
+
+        <!-- User List Table (Hidden When Adding New User) -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive fixed_header" id="tableToExport">
+                    <table class="table table-hover" id="tblUserList">
+                        <thead>
+                            <tr>
+                                <th>Clinic</th>
+                                <th>Department</th>
+                                <th>Admission Date and Time</th>
+                                <th>Reason For the Admission</th>
+                                <th>Admitting Doctor</th>
+                                <th>Admission Remarks</th>
+                                <th>Ward</th>
+                                <th>Class</th>
+                                <th>Bed</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="data in tableData">
+                                <td>{{ data.clinic }}</td>
+                                <td>{{ data.department }}</td>
+                                <td>{{ data.admissionDateTime }}</td>
+                                <td>{{ data.reason }}</td>
+                                <td>{{ data.doctor }}</td>
+                                <td>{{ data.remarks }}</td>
+                                <td>{{ data.ward }}</td>
+                                <td>{{ data.class }}</td>
+                                <td>{{ data.bed }}</td>
+                                <td>
+                                    <div style="position: relative; display: inline-block;">
+                                        <button ng-click="toggleMenu($index)" style="background: none; border: none; font-size: 20px; cursor: pointer;">&#x22EE;</button>
+
+                                        <div ng-show="data.showMenu"
+                                             style="position: absolute; background: white; border: 1px solid #ddd; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+                                          padding: 5px 0; min-width: 120px; z-index: 1000;">
+                                            <a ng-click="performAction('Discharge', data)" style="display: block; padding: 8px 15px; text-decoration: none; color: black;">Discharge</a>
+                                            <a ng-click="performAction('Close', data)" style="display: block; padding: 8px 15px; text-decoration: none; color: black;">Cancel Admission</a>
+                                        </div>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Pagination -->
+        <div class="row form-horizontal" style="display: flex;justify-content: flex-end; margin-top:10px">
+            <div class="col-sm-12 m-b-10" style="display: flex;flex-direction: row;align-content: flex-end;justify-content: flex-end;">
+                <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize"
+                                class="pagination-sm pull-left" boundary-links="true" num-pages="numPages" items-per-page="10"
+                                first-text="@PIVF.LanguageResource.Resources.lblFirst"
+                                previous-text="@PIVF.LanguageResource.Resources.lblPrevious"
+                                next-text="@PIVF.LanguageResource.Resources.lblNext"
+                                last-text="@PIVF.LanguageResource.Resources.lblLast">
+                </uib-pagination>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,173 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<form name="LabTestList" novalidate autocomplete="off">
+    <div ng-controller="LabTestListCtr" ng-init="LoadData();getPatientList(); ">
+        <div class="form_Content" style="min-height: 160px;">
+            <div class="row form-horizontal">
+                <div class="col-lg-offset-4 col-md-4 col-sm-3 col-lg-offset-4 col-lg-4 m-t-20">
+                    <div class="form-group ">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="form-group">
+                                <input type="text" I class="form-control" id="exampleInputAmount" placeholder="Patient Search" autocomplete="off" ng-blur="model=''"
+                                       name="txtUsrName" ng-model="model" uib-typeahead="i as (i.PatientName) for i in getMatchingPatient($viewValue) | limitTo : 25"
+                                       typeahead-on-select="SelectedLabPatient(model)" 
+                                       @*typeahead-on-select="getPatientList()"*@
+                                       typeahead-input-formatter="a" autofocus>
+
+                                @*<input class="form-control Capitalize" type="text" id="" ng-model="LabTestList.PatientName" placeholder="Patient Search" with=""
+                                        ng-keypress="($event.which === 13)?getPatientList():0">*@@*//Modified By Swati for Localization on 10/7/2020*@
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Report From Date
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="input-group date">
+
+                                <input type="text" class="form-control" id="txtDate" name="txtDate" placeholder="dd-mmm-yyyy" ng-model="LabTestList.ReportFromDate"
+                                       uib-datepicker-popup="{{format}}"
+                                       show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" onkeydown="return false"
+                                       alt-input-formats="altInputFormats" tabindex="12" />
+                                <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Report To Date
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="input-group date">
+                                <input type="text" class="form-control" id="Date"
+                                       name="dtplannedDate" ng-model="LabTestList.ReportToDate" placeholder="dd-mmm-yyyy"
+                                       aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false"
+                                       is-open="popup2.opened" datepicker-options="dateOptions1"
+                                       alt-input-formats="altInputFormats">
+                                <span class="input-group-addon" id="" ng-click="open2()">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-md-3 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                Select Test
+                            </label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control " id="ddlserviceTest" name="ddlserviceTest"
+                                        ng-model="LabTestList.ServiceTest" ng-options="item.ID as item.Description for item in ServiceList"
+                                         tabindex="40"></select>
+
+                            </div>
+                        </div>
+                    </div>*@
+
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Select Test
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <input type="text" I class="form-control" id="exampleInputAmount" placeholder="select test" autocomplete="off" ng-blur="model=''"
+                                   name="txtUsrName" ng-model="LabTestList.ServiceTest" uib-typeahead="i as (i.Description) for i in getMatchingLab($viewValue) | limitTo : 8"
+                                   typeahead-on-select="selectedtest(model)" typeahead-input-formatter="a" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Sample Collection Location
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select class="form-control " id="ddlCollectionLocation" name="ddlCollectionLocation"
+                                    ng-model="LabTestList.SampleCollectionLocation" ng-options="item.ID as item.Description for item in SampleLocList" tabindex="40"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1 col-lg-1">
+                    <button id="" type="button" class="btn btn-primary m-t-30" ng-click="getPatientList();ClearAdvSearch();" ng-keypress="ClearAdvSearch();($event.which === 13)?getPatientList():0">Search</button>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="form_Content m-t-10">
+            <div class="row form-horizontal">
+                <div class="find_title">
+                    <div class="col-md-6 col-lg-6">
+                        <span class="count_title">Total_Count :</span>
+                        <span class="total_count">{{TotalItems}}</span>
+                    </div>
+                    @*<div class="col-md-6 text-right">
+                            <button class="btn-link" ng-click="GetQueueList(Que,true)"><span class="glyphicon glyphicon-print"></span></button>
+                        </div>*@
+                    <div class="col-md-6 col-lg-6 text-right">
+                        <button class="btn button-primary m-t-5" ng-click="NewTestReport()"> New Test Report</button>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <div class="table-responsive table-bordered m-b-10 m-t-10" id="table-Print" style="height:300px;">
+                        <table class="table" style="min-width: 1100px;">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Report Date</th>
+                                    <th>Patient Name</th>
+                                    <th>Test Name</th>
+                                    <th>sample No.</th>
+                                    <th>Sample Location</th>
+                                    <th>Print</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in TestReportDetailsListnew">
+
+                                    <td st-ratio="5">
+                                        <a class="link p-r-5" href="" ng-click="ViewLab(item)">View</a>   @*ViewBill(i)*@
+                                    </td>
+                                    <td>{{item.Date| date:'dd-MMM-yyyy' }}</td>
+                                    <td>{{item.PatientName}}</td>
+                                    <td>{{item.TestName}}</td>
+                                    <td>{{item.SampleNo}}</td>
+                                    <td>{{item.CollectionName}}</td>
+                                    <td class="text-left">
+                                        <button class="btn_print" style="float:left;top:5px">
+                                            <span class="glyphicon glyphicon-print" ng-click="PrintTestDetails(item)"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                    <!-- Button group row -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

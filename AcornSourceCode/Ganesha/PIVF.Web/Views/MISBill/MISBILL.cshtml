@@ -1,0 +1,83 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="form_Content " ng-controller="MISBillController" ng-init="loadData()" style="min-height: 125px;">
+    <div class="row form-horizontal">
+        <div class="col-md-3 col-lg-3">
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">MIS</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <select class="form-control" id="ddlChartList" ng-change="ChangeReport()" name="ddlChartList" ng-model="MIS.reportType" ng-options="item.ID as item.Description for item in ListReportType"></select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3" ng-if="MIS.reportType!=5">
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label">From Date </label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="input-group date">
+                        <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" ng-model="MIS.fromDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="month1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                        <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3" ng-if="MIS.reportType!=5">
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label">To Date</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="input-group date">
+                        <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" ng-model="MIS.toDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="month2.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                        <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3">
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">Clinic</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <select id="ddlChartList"
+                            class="form-control"
+                            name="ddlChartList"
+                            ng-model="MIS.clinicID"
+                            ng-options="item.ID as item.Description for item in ListClinic"></select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3" ng-if="MIS.reportType==5">
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">Visit Days</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <select id="ddlDaysList"
+                            class="form-control"
+                            name="ddlDaysList"
+                            ng-model="MIS.DayID"
+                            ng-options="item.ID as item.Description for item in ListMISDay"></select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3 col-lg-offset-9 text-right">
+            <div class="form-group">
+                <div class="col-md-8 col-lg-8 p-t-15">
+                    <label>
+                        <input type="radio" name="rdpdf" value="pdf" ng-model="MIS.PDF">
+                        PDF
+                    </label>
+                    <label>
+                        <input type="radio" name="rdpdf" value="exel" ng-model="MIS.PDF">
+                        EXCEL
+                    </label>
+                </div>
+                <div class="col-md-4 col-lg-4 text-right p-t-10">
+                    <button class="btn btn-primary" type="button" id="" value="" ng-click="GenerateMIS(MIS)">View MIS</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

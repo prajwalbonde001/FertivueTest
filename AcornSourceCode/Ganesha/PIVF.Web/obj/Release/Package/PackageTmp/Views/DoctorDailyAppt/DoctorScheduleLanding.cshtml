@@ -1,0 +1,201 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<style>
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+</style>
+
+@*---------------------------------------page start Here ------------------------------------------------*@
+
+<!-- Main Search Box End-->
+<div ng-controller="DoctorScheduleLandingController">
+    <section id="" class="m-t-5">
+        <!-- searchContainer -->
+        <div class="searchContainer singleSearchOpt" ng-init="LoadDD(true);">
+            <a href="" class="searchTab1 active"><i class="fa fa-search" aria-hidden="true"></i>@PIVF.LanguageResource.Resources.lblSearch</a>
+            <section class="MainSearchBoxContainer">
+                <div class="BlackSearchBoxSection">
+                    <div class="SearchInputGroupContainer">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="InputBoxDiv">
+                                    <select class="form-control" ng-model="Schedule.DOCID" ng-options="item.ID as item.Description for item in DocList | orderBy:'DOCID'"></select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="InputBoxDiv">
+                                    <div class="InputBoxDiv">
+                                        <select class="form-control" ng-class="UnitListError == true ? 'invalid' : 'valid' " name="ddlPatientUnitList" title="@PIVF.LanguageResource.Resources.lblClinic" id="ddlPatientUnit" ng-model="Schedule.ScheduleUnitID"
+                                                ng-options="Schedule.UnitID as Schedule.UnitName for Schedule in UnitList" ng-change="HideErrorMessage('UnitList',Schedule.ScheduleUnitID); GetDDDepartmentList(Schedule.ScheduleUnitID )"></select>
+                                    </div>
+                                </div>
+                            </div>  <div class="col-sm-3">
+                                <div class="InputBoxDiv">
+                                    <select class="form-control" title="@PIVF.LanguageResource.Resources.lblDepartment" id="ddlDoctorDepartment" ng-class="DepartmentListError == true ? 'invalid' : 'valid' " ng-model="Schedule.DeptID"
+                                            ng-options="Schedule.DeptID as Schedule.Description for Schedule in DepartmentList" ng-change="HideErrorMessage('DoctorDepartment',Schedule.DeptID);"></select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="InputBoxDiv">
+                                    <button ng-click="SearchDShcedule(Schedule)" type="button" class="btn btn-primary">@PIVF.LanguageResource.Resources.lblSearch</button>
+                                </div>
+                            </div>
+                            <div class="col-sm-3" ng-hide="true">
+                                <div class="InputBoxDiv">
+                                    <select name="type" class="form-control" ng-init="Schedule.Type ='ScheduleType'" ng-model="Schedule.Type" ng-dropdown required>
+                                        <option ng-option value="ScheduleType">@PIVF.LanguageResource.Resources.lblScheduleType</option>
+                                        <option ng-option value="Daily">@PIVF.LanguageResource.Resources.lblDaily</option>
+                                        <option ng-option value="Monthly">@PIVF.LanguageResource.Resources.lblMonthly</option>
+                                        <option ng-option value="Weekly">@PIVF.LanguageResource.Resources.lblWeekly</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </section>
+
+        </div>
+        <!-- /searchContainer -->
+        <div class="form_Content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row find_title">
+                        <div class="col-sm-6">
+                            <p class="m-b-0">
+                                <span>@PIVF.LanguageResource.Resources.Total_Count :</span>
+                                <span class="total_count">{{scheduleTotalItems}}</span>
+                            </p>
+                        </div>
+
+                        <div class="col-sm-6 text-right m-t-5">
+                            <button class="btn-link" title="@PIVF.LanguageResource.Resources.btnPrint" role="button" ng-click="exportToExcel('#tableToExport',$event)" ng-hide="true"><span class="glyphicon glyphicon-print"></span></button>
+                            @*<button class="btn btn-primary m-b-5" ng-click="NewDocSchedule();" type="button" id="" value="Add"> New Schedule</button>*@
+                            <button class="btn-link p-r-0" title="@PIVF.LanguageResource.Resources.btnNew" ng-click="NewDocSchedule();" type="button" id="" value="Add"><span class="glyphicon glyphicon-plus"></span></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12">
+                    <div class="table-responsive fixed_header" id="tableToExport">
+                        <table class="table  GridTable QueMgtGrid" style="min-height:320px;">
+                            @*max-height:370px;*@
+                            <thead>
+                                <tr>
+                                    <th st-ratio="5">&nbsp;</th>
+                                    <th st-ratio="15">@PIVF.LanguageResource.Resources.lblDoctorName</th>
+                                    <th st-ratio="15">@PIVF.LanguageResource.Resources.lblClinic</th>
+                                    <th st-ratio="15">@PIVF.LanguageResource.Resources.lblDepartment</th>
+                                    <th st-ratio="15">@PIVF.LanguageResource.Resources.lblDate</th>
+                                    <th st-ratio="15">@PIVF.LanguageResource.Resources.lblSchedule</th>
+                                    <th st-ratio="10">@PIVF.LanguageResource.Resources.lblScheduleslot</th>
+                                    <th st-ratio="10">@PIVF.LanguageResource.Resources.lblStatus</th>
+
+                                </tr>
+                            </thead>
+                            <tbody style="height: calc(100vh - 440px);">
+                                <tr ng-repeat="item in ScheduleListLanding">
+                                    <td st-ratio="5"><button type="button" ng-click="UpdateDoctorScheduleLanding(item.DOCID)" class="btn_edit"></button></td>
+                                    <td st-ratio="15" ng-bind="ScheduleListLanding[$index-1].DoctorName!=item.DoctorName ? item.DoctorName : item.DoctorName"></td>
+                                    <td st-ratio="15">{{item.ClinicName}}</td>
+                                    <td st-ratio="15">{{item.Department}}</td>
+                                    <td st-ratio="15" class="w-20"><span>{{item.StartTime|date:'dd-MMM-yyyy'}} To {{item.EndTime |date:'dd-MMM-yyyy'}}</span></td>
+                                    <td st-ratio="15" class="w-30">
+                                        <span> {{item.ScheduleType+' '}}{{item.StartTime|date:'shortTime'}} To {{item.EndTime |date:'shortTime'}}</span>
+                                        <span class="day_name">{{Dictionary[item.DaysByComma]}}</span>
+                                    </td>
+                                    <td st-ratio="10">{{item.SlotDescription}}</td>                          @*{{item.ScheduleSlotdesc}}*@
+                                    <td st-ratio="10" style="cursor: pointer;">
+                                        <span class="btn_link" type="button" ng-model="item.Status" ng-class="{ActiveIcon:item.Status==true,DeActiveIcon:item.Status==false}" ng-click="ChangeStatusLandPage(item)"></span>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 page">
+                            <b><ul class="pagination pagination-sm pull-left" uib-pagination total-items="scheduleTotalItems" ng-model="scheduleCurrentPage" ng-change="pageChange()" max-size="maxSize" boundary-link-numbers="true" num-pages="scheduleNumPages" items-per-page="10" rotate="false"></ul></b>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button group row -->
+            </div>
+        </div>
+
+    </section>
+    <div class="clearfix"></div>
+
+    @*<script type="text/ng-template" id="modReason">
+            <div class="modal-content">
+                <div class="FormContainerBlue">
+                    <div class="FormContainerTitle">
+                        <span class="glyphicon glyphicon-remove-circle close" type="button" data-dismiss="modal" ng-click="ReasonCancel();"></span>
+                        <h3 class="FormTitle">@PIVF.Gemino.LanguageResource.Resources.lblReason</h3>
+                    </div>
+                    <div class="FormContentContainer">
+                        <div class="modal-body">
+                            <div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 col-md-5 col-lg-4 control-label" for="company_code">@PIVF.Gemino.LanguageResource.Resources.lblReason</label>
+                                    <div class="col-sm-7 col-md-7 col-lg-7">
+                                        <textarea class="form-control Capitalize" type="text" name="Reason" placeholder="" ng-model="Reason" maxlength="100" ng-required="true" tabindex="1"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="find_btn text-center" style="margin-left: 35px;">
+                                    <button class="btn btn-primary" type="button" id="" ng-click="Reason?ReasonOk(Reason):0">@PIVF.Gemino.LanguageResource.Resources.btnSave</button>
+                                    <button class="btn btn-default" type="button" id="" ng-click="ReasonCancel();">@PIVF.Gemino.LanguageResource.Resources.btnCancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>*@
+
+
+    <script type="text/ng-template" id="modReason">
+        <div tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" ng-click="Cancel()" aria-label="@PIVF.LanguageResource.Resources.btnClose"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblReason</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <textarea class="form-control Capitalize" type="text" name="Reason" placeholder="" ng-model="Reason" maxlength="100" ng-required="true" tabindex="1"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" id="" ng-click="Reason?ReasonOk(Reason):0">@PIVF.LanguageResource.Resources.btnSave</button>
+                    <button class="btn btn-default" type="button" id="" ng-click="ReasonCancel();">@PIVF.LanguageResource.Resources.btnCancel</button>
+                </div>
+            </div>
+        </div>
+    </script>
+</div>

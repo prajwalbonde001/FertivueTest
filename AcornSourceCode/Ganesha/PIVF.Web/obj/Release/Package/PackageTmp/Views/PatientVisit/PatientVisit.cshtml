@@ -1,0 +1,842 @@
+﻿
+<style>
+    .Invalid {
+        border-color: red;
+    }
+
+    .select {
+        border: 1px solid red;
+    }
+
+
+    .fixed_header > table > thead > tr > th, .fixed_header > table > tbody > tr > td {
+        width: 100% !important;
+        overflow-x: inherit;
+        text-overflow: ellipsis;
+        display: inline-block;
+    }
+
+
+    .InputBoxDiv ul {
+        width: -webkit-fill-available;
+        max-height: 500px;
+        overflow: auto;
+    }
+</style>
+<link href="~/Content/select2-bootstrap.css" rel="stylesheet" />
+<link href="~/Content/select2.css" rel="stylesheet" />
+<!-- Page Content Start -->
+<div ng-controller="PatientVisitController">
+    <form name="frmPatientVisit" role="form" novalidate>
+        <!-- Fixed Link Start -->
+        <div ng-init="LoadData();">
+            <div class="row m-b-10">
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblClinic</label>@*Clinic :: Modified by swatih for localization on 13/7/2020*@
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select id="ddlClinic"
+                                    name="ddlClinic"
+                                    class="form-control"
+                                    ng-model="PatientData.UnitID"
+                                    ng-change="GetPatientListClinicWise(PatientData)"
+                                    ng-options="i.ID as i.Description for i in clinicList" tabindex="6"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 m-t-25">
+                    <div class="InputBoxDiv">
+                        <div class="input-group">
+                            <input type="text" ng-disabled="IsDisableSearch" class="form-control" id="" name="MRNO" with="" placeholder="@PIVF.LanguageResource.Resources.lblSearchPatient" ng-model="selectedPatientFromPatient" typeahead-min-length="3" uib-typeahead="i as (i.PatientData) for i in PatientList | filter:$viewValue | limitTo:150" typeahead-on-select="SelectedPatient(selectedPatientFromPatient,false);BindData();" autocomplete="off"> @*replace="[^a-zA-Z0-9\s]"*@ @*ng-change="GetPatientDetailsFromPatient(false)"*@ @*Commented by  AniketK on 03Dec2019*@
+                            <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>   @*ng-click="BindData();"  commented by Nayan kamble on 18/11/2019*@
+                        </div>
+                    </div>
+                </div>
+
+
+                @*<div class="col-md-4">
+                        <div class="InputBoxDiv">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="" name="MRNO" replace="[^a-zA-Z0-9\s]" with="" placeholder="@PIVF.LanguageResource.Resources.lblSearchAppointment" ng-model="selectedPatientFromApp" typeahead-min-lengh="3" uib-typeahead="i as (i.PatientData) for i in PatientList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedPatient(selectedPatientFromApp,true);BindData();" ng-change="GetPatientDetailsFromApp(true)" autocomplete="off">
+                                <span class="input-group-addon" ng-click="BindData();"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>*@      @*tempaory commented by sujata appointment search*@
+
+
+                </div>
+                @*<div class="row" ng-hide="IsHideSearch">
+                        <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-7 col-xs-12">
+                            <div class="row search_patient form-horizontal btn_shadow m-t-20">
+                                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                                    <input type="text" class="form-control" id="" name="MRNO" replace="[^a-zA-Z0-9\s]" with="" placeholder="@PIVF.Gemino.LanguageResource.Resources.lblSearchPatient" ng-model="selectedPatientFromPatient" typeahead-min-lengh="3" uib-typeahead="i as (i.PatientData) for i in PatientList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedPatient(selectedPatientFromPatient,false)" ng-change="GetPatientDetailsFromPatient(false)" ng-keypress="($event.which === 13)?BindData():0;">
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                                    <input type="text" class="form-control" id="" name="MRNO" replace="[^a-zA-Z0-9\s]" with="" placeholder="@PIVF.Gemino.LanguageResource.Resources.lblSearchAppointment" ng-model="selectedPatientFromApp" typeahead-min-lengh="3" uib-typeahead="i as (i.PatientData) for i in PatientList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedPatient(selectedPatientFromApp,true)" ng-change="GetPatientDetailsFromApp(true)" ng-keypress="($event.which === 13)?BindData():0;">
+                                </div>
+                                <div class="col-lg-2 col-md-2 btn_padding_class">
+                                    <button class="btn btn-primary button_padding search_btn " type="button" id="" ng-click="BindData();"><i class="fa fa-search" aria-hidden="true"></i>@PIVF.Gemino.LanguageResource.Resources.btnSearch</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+            </div>
+            <section id="" class="">
+                <div class="form_Content">
+                    <div class="row" ng-show="PatientData.MRNo">
+                        <div class="col-lg-12">
+                            <div class="PatientInfoWrapper m-b-15 m-t-10">
+                                <div class="BlueWrap">
+                                    <div class="ProfileImgWrap">
+                                        @*<img src="./images/ladies-profile-pic.jpg" alt="User Profile Pic" class="profile">*@
+                                        @*   <img ng-src="{{PatientData.PhotoString}}" width="100%" />*@
+                                        <img ng-if="PatientData.PhotoString !=''" ng-src="{{PatientData.PhotoString}}" class="profile">
+                                        <img ng-if="PatientData.PhotoString =='' && PatientData.GenderId==1" ng-src="../images/Male_default.jpg" class="profile">
+                                        <img ng-if="PatientData.PhotoString =='' && PatientData.GenderId==2" ng-src="../images/Female_default.jpg" class="profile">
+                                    </div>
+                                    <div class="ProfileInfoWrap ">
+                                        <p class="m-b-0">
+                                            @*<span class="PatientName p-l-20">{{PatientData.Prefix}}</span>*@
+                                            <span class="PatientName">{{PatientData.PatientName}}</span>
+                                            <span class="MRN-Green">
+                                                <span> {{PatientData.MRNo}}</span>
+                                            </span>
+                                            <span class="patient-gander p-l-5">{{PatientData.Gender}} -</span>
+                                            <span class="patient-gander">{{PatientData.Age}} yrs</span>
+                                            <span class="patient-gander iconInfoLine">
+                                                <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                                <span class="LinkName">{{PatientData.MobileNo}}</span>
+                                            </span>
+                                            @*<span class="patient-gander iconInfoLine">
+                                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                                    <span class="LinkName">+{{PatientData.AltMobileno}}</span>
+                                                </span>*@
+                                        </p>
+                                        @*<ul class="profile-data">
+                                                <li style="width:63%;"  ng-show="PatientData.PatientAddress">
+                                                    <span class="patient-gander p-l-0">@PIVF.LanguageResource.Resources.lblPermanantAddress : {{PatientData.PatientAddress}}</span>
+                                                </li>
+                                                <li style="width:63%;"   ng-show="PatientData.CommunicationAddress" >
+                                                    <span class="patient-gander p-l-0">@PIVF.LanguageResource.Resources.lblCommunicationAddress : {{PatientData.CommunicationAddress}}</span>
+                                                </li>
+                                            </ul>*@
+                                        @*<ul class="profile-data">
+                                                <li>
+                                                    <div class="iconInfoLine">
+                                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                                        <span class="LinkName">{{PatientData.MStatus}}</span>
+                                                    </div>
+                                                </li>
+                                                <li class="mailWidth">
+                                                    <div class="iconInfoLine">
+                                                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                                        <span class="LinkName">{{PatientData.Email}}</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="iconInfoLine">
+                                                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                                        <span class="LinkName">+{{PatientData.MobileNo}}</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="iconInfoLine">
+                                                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                                        <span class="LinkName">+{{PatientData.AltMobileno}}</span>
+                                                    </div>
+                                                </li>
+                                            </ul>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- First Section Start -->
+                        <div class="col-md-12 form-horizontal" style="margin-bottom: 20px;">
+                            <div class="row DetailSectionContainer">
+                                <!--  Section Title Container Start -->
+                                <div class="col-sm-12">
+                                    <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblVisitInformation</h5>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblDate</label>
+                                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                                    <div class="input-group date">
+                                                        @*<input type="text" class="form-control" id="VisitDate" name="VisitDate" placeholder="dd-MMM-yyyy" ng-disabled="true" ng-model="PatientData.VisitDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup3.opened3" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats">
+                                                            <span class="input-group-addon" ng-click="open3()">
+                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                            </span>*@
+                                                        <label> {{PatientData.VisitDate | date :  "dd-MMM-yyyy hh:mm"}}</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @*<div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.Gemino.LanguageResource.Resources.lblTime</label>
+                                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="input-group date" data-provide="datepicker">
+                                                                <input type="text" class="form-control" id="" placeholder="mm/dd/yyyy" aria-describedby="">
+                                                                <span class="input-group-addon" id=""><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                            </div>
+                                                        <div class="timeCss" ng-class="{select:frmPatientVisit.Time.$dirty}" name="Time" uib-timepicker ng-model="PatientData.VisitTime" hour-step="1" minute-step="1" show-meridian="false" show-spinners="false" show-seconds="false">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>*@
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblVisitType</label>
+                                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                                    @*<select class="form-control " id="" ng-model="PatientData.VTID" ng-options="item.VTID as item.Description for item in VisitTypeList">
+                                                        </select>*@
+                                                    <ui-select ng-model="PatientData.VTID" ng-disabled="IsPatientSelected" name="VTID" ng-class="{select:PatientData.VTID== 0 && frmPatientVisit.VTID.$dirty}" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                        <ui-select-match allow-clear="false" placeholder="">{{$select.selected.Description}}</ui-select-match>
+                                                        <ui-select-choices repeat="person.VTID as person in VisitTypeList | propsFilter: {Description: $select.search}">
+                                                            <div ng-bind-html="person.Description | highlight: $select.search"></div>
+                                                        </ui-select-choices>
+                                                    </ui-select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 m-b-5">
+                                            <div class="form-group">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblDepartment</label>
+                                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                                    @*<select class="form-control " id="" ng-model="PatientData.DeptID" ng-options="item.DeptID as item.Description for item in DepartmentList"></select>*@
+                                                    <ui-select ng-model="PatientData.DeptID" ng-disabled="IsPatientSelected" name="DeptID" ng-class="{select:PatientData.DeptID== 0 && frmPatientVisit.DeptID.$dirty}" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                        <ui-select-match allow-clear="false" placeholder="">{{$select.selected.Description}}</ui-select-match>
+                                                        <ui-select-choices repeat="person.DeptID as person in DepartmentList | propsFilter: {Description: $select.search}">
+                                                            <div ng-bind-html="person.Description | highlight: $select.search"></div>
+                                                        </ui-select-choices>
+                                                    </ui-select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblDoctor</label>
+                                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                                    <ui-select ng-model="PatientData.DOCID" ng-disabled="IsPatientSelected" name="DOCID" ng-class="{select:PatientData.DOCID== 0 && frmPatientVisit.DOCID.$dirty}" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                        <ui-select-match allow-clear="false" placeholder="">{{$select.selected.FirstName}}</ui-select-match>
+                                                        <ui-select-choices repeat="person.DOCID as person in InHouseDoctorList | propsFilter: {FirstName: $select.search}">
+                                                            <div ng-bind-html="person.FirstName | highlight: $select.search"></div>
+                                                            <small>
+                                                                @*email: {{person.FirstName}}*@
+                                                                @*age: <span ng-bind-html="''+person.DOCID | highlight: $select.search"></span>*@
+                                                            </small>
+                                                        </ui-select-choices>
+                                                    </ui-select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblCabin</label>
+                                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                                    @*<select class="form-control " id="" ng-model="PatientData.CabinID" ng-options="item.CabinID as item.CabinDescription for item in CabinList">
+                                                        </select>*@
+                                                    <ui-select ng-model="PatientData.CabinID" ng-disabled="IsPatientSelected" name="CabinID" theme="select2" class="UIselectclass" title="" append-to-body="true" ng-change="GetTokenNo(PatientData.CabinID);">
+                                                        <ui-select-match allow-clear="false" placeholder="">{{$select.selected.CabinDescription}}</ui-select-match>
+                                                        <ui-select-choices repeat="person.CabinID as person in CabinList | propsFilter: {CabinDescription: $select.search}">
+                                                            <div ng-bind-html="person.CabinDescription | highlight: $select.search"></div>
+                                                        </ui-select-choices>
+                                                    </ui-select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @*<div class="col-md-6">
+                                                <div class="form-group m-b-20">
+                                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.Gemino.LanguageResource.Resources.lblTokenNo.</label>
+                                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" id="" name="lblTokenNo" placeholder="" ng-model="PatientData.TokenNo" ng-disabled="true">
+                                                    </div>
+                                                </div>
+                                            </div>*@
+                                        <div class="col-md-4 m-b-5">
+                                            <div class="form-group">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblRefDoc</label>
+                                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                                    @*<ui-select ng-model="PatientData.ReferredDoctorID" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                            <ui-select-match allow-clear="false" placeholder="">{{$select.selected.FirstName}}</ui-select-match>
+                                                            <ui-select-choices repeat="person.ReferredDoctorID as person in ReferralDoctorList | propsFilter: {FirstName: $select.search}">
+                                                                <div ng-bind-html="person.FirstName | highlight: $select.search"></div>
+                                                            </ui-select-choices>
+                                                        </ui-select>*@
+                                                    <ui-select ng-model="PatientData.ReferredDoctorID" ng-disabled="IsPatientSelected" name="ReferredDoctorID" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                        <ui-select-match allow-clear="false" placeholder="">{{$select.selected.FirstName}}</ui-select-match>
+                                                        <ui-select-choices repeat="person.DOCID as person in ReferralDoctorList | propsFilter: {FirstName: $select.search}">
+                                                            <div ng-bind-html="person.FirstName | highlight: $select.search"></div>
+                                                        </ui-select-choices>
+                                                    </ui-select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblRemark</label>
+                                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                                    <textarea type="text" class="form-control" name="Remark" ng-model="PatientData.Remark" id="" replace="[^a-zA-Z0-9\s]" with="" placeholder="" maxlength="500"></textarea>
+                                                    <!-- <label class="max_250 pull-right">250</label> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""></label>
+                                                <div class="col-sm-12 col-md-12 col-lg-12 m-t-20 p-r-0 link-pl">
+                                                    <button class="btn btn-link " type="button" ng-disabled="IsPatientSelected" data-toggle="modal" data-target="#RegisterDoctor" aria-expanded="false" aria-controls="RegisterDoctor">@PIVF.LanguageResource.Resources.lblRegisterExternalDoctor</button>
+                                                    <button ng-hide="true" class="btn btn-link" type="button" ng-disabled="IsPatientSelected" data-toggle="modal" data-target=".bankInfo" aria-expanded="false"> Bank Information </button>  @* tempay added sujata ng-hide="true"*@
+                                                    <button ng-hide="true" class="btn btn-link" type="button" ng-disabled="IsPatientSelected" data-toggle="modal" data-target=".AddPayer" aria-expanded="false" ng-click="GetPayersDD();">@PIVF.LanguageResource.Resources.lblAddPayer</button> @* tempay added sujata ng-hide="true"*@
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Sponsor Details Button Start-->
+                                    </div>
+                                </div>
+                                <div class="col-sm-12" ng-hide="true">
+                                    @*ng-hide="true"  added by Nayan Kamble on 07/06/2019*@
+                                    <div class="container-fluid">
+                                        <div class="row GridBackground miniGridHeight p-0 m-t-10">
+                                            <div class="col-sm-12">
+                                                <div class="row ">
+                                                    <div class="col-sm-12">
+                                                        <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblPayerInfo</h5>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="table-responsive fixed_header" style="background:#ffffff;">
+                                                    <table class="table table-hover table-striped" style="min-width:1050px; max-height:225px;min-height:225px; ">
+                                                        <thead>
+                                                            <tr>
+                                                                <th st-ratio="3">&nbsp;</th>
+                                                                <th st-ratio="11">@PIVF.LanguageResource.Resources.lblCategoryL1</th>
+                                                                <th st-ratio="12">@PIVF.LanguageResource.Resources.lblCategoryL2</th>
+                                                                <th st-ratio="12">@PIVF.LanguageResource.Resources.lblCompany</th>
+                                                                <th st-ratio="12">@PIVF.LanguageResource.Resources.lblAssoCompany</th>
+                                                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblTariff</th>
+                                                                @*<th>@PIVF.Gemino.LanguageResource.Resources.lblCreditlimit</th>*@
+                                                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblEffectiveDate</th>
+                                                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblExpiryDate</th>
+                                                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblStaffDiscount</th>
+                                                                @*<th>@PIVF.Gemino.LanguageResource.Resources.lblStaffRelation</th>*@
+                                                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblRemark</th>
+                                                                @*<th>&nbsp;</th>*@
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="item in SponserList">
+                                                                <td st-ratio="3" class="text-center"> <button class="btn btn_delete" ng-disabled="SpRowsCount>$index" ng-click="RemoveSponser(item);"><span type="" role="button" data-toggle="modal" data-target="#ViewQuePatient" aria-expanded="false" aria-controls="ViewQuePatient"></span></button></td>
+                                                                <td st-ratio="11">{{item.CatL1Description}}</td>
+                                                                <td st-ratio="12">{{item.CatL2Description}}</td>
+                                                                <td st-ratio="12">{{item.Comp}}</td>
+                                                                <td st-ratio="12">{{item.AssComp}}</td>
+                                                                <td st-ratio="10">{{item.Tariff}}</td>
+                                                                @*<td class="alignRight">{{item.CreditLimit}}</td>*@
+                                                                <td st-ratio="10">{{item.VFromDate | date : "dd-MMM-yyyy" }}</td>
+                                                                <td st-ratio="10">{{item.VToDate | date : "dd-MMM-yyyy" }}</td>
+                                                                <td st-ratio="10">{{item.IsStaffDiscount}}</td>
+                                                                @*<td>{{item.Relation}}</td>*@
+                                                                <td st-ratio="10">{{item.Remark}}</td>
+                                                                @*<td class="text-center"><span type="" class="info_btn" role="button" data-toggle="modal" data-target="#ViewQuePatient" aria-expanded="false" aria-controls="ViewQuePatient"><i class="fa fa-info-circle" aria-hidden="true"></i></span></td>*@
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Pagination & Buttons Start -->
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 page" ng-hide="true">
+                                            @*ng-hide="true"  added by Nayan Kamble on 07/06/2019*@
+                                            <uib-pagination total-items="SpRowsCount" ng-model="CurrentPage2" ng-change="GetSponsers()" max-size="maxSize" class="pagination-sm  pull-left" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 text-right m-t-10">
+                                            <button class="btn btn-primary" type="button" id="" ng-disabled="disableClick" ng-click="SaveVisit(PatientData,false);">@PIVF.LanguageResource.Resources.btnSave</button>
+                                            @*<button class="btn btn-primary" type="button" id="" ng-click="SaveVisit(PatientData,true);">@PIVF.LanguageResource.Resources.btnSaveAndBill</button>*@  @*Commented by sujata for ridge temprory*@
+                                            <button class="btn btn-default" type="button" id="" ng-click="ClearAfterVisit()">@PIVF.LanguageResource.Resources.btnCancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Pagination & Buttons End -->
+                            </div>
+                        </div>
+                        <!-- First Section End -->
+                        <div class="col-md-12">
+                            <div class="container-fluid">
+                                <div class="row m-t-5">
+                                    @*GridBackground GridHeight*@
+                                    <div class="col-sm-12">
+                                        <div class="row find_title previousVisit">
+                                            <div class="col-sm-6 col-md-4 col-lg-5">
+                                                <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblPreviousVisits</h5>
+                                            </div>
+                                            <div class="col-sm-6 col-md-8 col-lg-7 text-right">
+                                                <p class="">
+                                                    <span class="total_count themeBlueBg" ng-hide="true">@PIVF.LanguageResource.Resources.lblTotalBalance :<i class="fa fa-inr" aria-hidden="true"></i>100000</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="table-responsive fixed_header" style="background:#ffffff">
+                                            <table class="table table-hover" style="min-width:470px; height: calc(100vh - 790px);">
+                                                @*min-height:470px; max-height:470px;*@
+                                                <thead>
+                                                    <tr>
+                                                        <th>@PIVF.LanguageResource.Resources.lblDate / @PIVF.LanguageResource.Resources.lblTime </th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblClinic / @PIVF.LanguageResource.Resources.lblVisitType</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblDepartment / @PIVF.LanguageResource.Resources.lblDoctor</th>
+                                                        @*<th>@PIVF.Gemino.LanguageResource.Resources.lblRefDoc</th>*@
+                                                        <th ng-hide="true">@PIVF.LanguageResource.Resources.lblBalancePayment</th>   @*ng-hide="true"   Added by Nayan Kamble on 14/11/2019*@
+                                                        <th>&nbsp;</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in VisitList">
+                                                        <td>{{item.VisitDate | date : "dd-MMM-yyyy" }}<br><b>{{item.VisitDate  | date: "h:mm a"}}</b></td>   @*VisitTime*@
+                                                        <td>{{item.Clinic}}<br><b>{{item.VisitType}}</b></td>
+                                                        <td>{{item.DeptName}}<br><b>{{item.DocFullName}}</b></td>
+                                                        @*<td>{{item.RefDocFullName}}</td>*@
+                                                        <td ng-hide="true" class="alignRight">{{item.BalancePayment}}</td>     @*ng-hide="true"   Added by Nayan Kamble on 14/11/2019*@
+                                                        <td class="text-left"><span type="" class="btn_info" role="button" data-toggle="modal" ng-click="GetAdditioalInfo(item)" data-target="#priviousVisitsInfo" aria-expanded="false" aria-controls="priviousVisitsInfo"></span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <uib-pagination total-items="VRowsCount" ng-model="CurrentPage1" ng-change="GetVisits()" max-size="maxSize" class="pagination-sm  pull-left" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end container -->
+            </section>
+            <div class="clearfix"></div>
+        </form>
+
+        <div class="modal fade" id="RegisterDoctor" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog modal-lg" ng-init="GetDDGenderList(false);GetSpecializationList(false);">
+                <!-- Modal content-->
+                <form name="frmAddDoctor" role="form" novalidate>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" id="btnClosePop" class="close" ng-click="Cancel()" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            @*<button type="button" id="btnClosePop" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*@
+                            <!-- <button type="button" class="" data-dismiss="modal">&times;</button> -->
+                            <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblExtDocInfo</h4>
+                        </div>
+                        <div class="modal-body form-horizontal">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblFirstName</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':frmAddDoctor.FirstName.$invalid && frmAddDoctor.FirstName.$dirty }">
+                                            <input class="form-control" type="text" name="FirstName" placeholder="" ng-model="DoctorData.FirstName" replace="[^a-zA-Z]" with="" capitalize-first maxlength="20" ng-required="true" tabindex="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblMiddleName</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <input class="form-control" type="text" name="MiddleName" id="company_code" placeholder="" ng-model="DoctorData.MiddleName" replace="[^a-zA-Z]" with="" capitalize-first maxlength="20" tabindex="2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblLastName</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':frmAddDoctor.LastName.$invalid && frmAddDoctor.LastName.$dirty }">
+                                            <input class="form-control" type="text" name="LastName" placeholder="" ng-model="DoctorData.LastName" replace="[^a-zA-Z]" with="" capitalize-first maxlength="20" ng-required="true" tabindex="3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 form-horizontal">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblGender</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <select class="form-control" id="" placeholder="" ng-class="{'Invalid':DoctorData.GenderId==0 && frmAddDoctor.GenderId.$dirty}" name="GenderId" ng-model="DoctorData.GenderId" ng-options="item.GenderId as item.GenderDescription for item in GenderList" ng-required="true" tabindex="4"></select>
+                                            @*<ui-select ng-model="DoctorData.GenderId" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                    <ui-select-match allow-clear="false" placeholder="">{{$select.selected.GenderDescription}}</ui-select-match>
+                                                    <ui-select-choices repeat="person.GenderId as person in GenderList | propsFilter: {GenderDescription: $select.search}">
+                                                        <div ng-bind-html="person.GenderDescription | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 form-horizontal">
+                                    <div class="form-group MobileContainer">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblMobNo</label>
+                                        <div class="col-md-4 col-xs-3 p-r-0" ng-class="{'Invalid':frmAddDoctor.MobCountryCode.$invalid && frmAddDoctor.MobCountryCode.$dirty }">
+                                            <input type="text" class="form-control alignRight" name="MobCountryCode" placeholder="xxx" ng-model="selectedCountry1" limit-to="7" maxlength="7" typeahead-min-lengh="1" uib-typeahead="i as (i.CountryName) for i in CountryList1 | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedCountry1(selectedCountry1)" ng-change="GetCountryCode1()" replace="[^a-zA-Z0-9]" with="" ng-required="true" tabindex="5">
+                                        </div>
+                                        <div class="col-md-8 col-xs-9" ng-class="{'Invalid':frmAddDoctor.Mobno.$invalid && frmAddDoctor.Mobno.$dirty }">
+                                            <input type="text" class="form-control alignRight" name="Mobno" placeholder="xxx xxx xxxx" ng-model="DoctorData.Mobno" ng-pattern="/^\d{10}$/" multi-validation="MobNoStartWith" ng-keyup="ValidateMobNumber(DoctorData.Mobno)" ng-required="true" maxlength="10" @*uib-tooltip="Mobile No. must start with 7/8/9 & contain 10 digits" tooltip-placement="bottom" tooltip-enable="result1==false"*@ tabindex="6">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 form-horizontal">
+                                    <div class="form-group MobileContainer">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblLandlineNo</label>
+                                        <div class="col-md-4 col-xs-3 p-r-0">
+                                            <input type="text" class="form-control alignRight" id="" name="StdCode" placeholder="xxx" ng-model="DoctorData.StdCode" limit-to="7" maxlength="7" replace="[^0-9]" with="" @*uib-tooltip="STD code must start with 0 & contain 7 digits" tooltip-placement="bottom"*@ tabindex="7">
+                                        </div>
+                                        <div class="col-md-8 col-xs-9">
+                                            <input type="text" class="form-control alignRight" id="" name="LandLineNo" placeholder="xxx xxx xxxx" ng-model="DoctorData.LandLineNo" multi-validation="NumericArrowBkSpDelSpDCFSlash" maxlength="8" tabindex="8">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 form-horizontal">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblSpecialization</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <select class="form-control " id="" name="SID" ng-class="{'select':DoctorData.SID== 0 && frmAddDoctor.SID.$dirty}" ng-model="DoctorData.SID" ng-class="{'select':DoctorData.GenderId== 0 && frmAddDoctor.GenderId.$touched}" ng-options="item.SID as item.Description for item in SpecializationList" ng-required="true" tabindex="9"></select>
+                                            @*<ui-select ng-model="DoctorData.SID" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                    <ui-select-match allow-clear="false" placeholder="">{{$select.selected.Description}}</ui-select-match>
+                                                    <ui-select-choices repeat="person.SID as person in SpecializationList | propsFilter: {Description: $select.search}">
+                                                        <div ng-bind-html="person.Description | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblQualification</label>
+                                        <div class="col-md-11 col-sm-11 col-lg-11 p-r-0">
+                                            <textarea type="text" class="form-control" id="" name="Education" placeholder="" maxlength="500" ng-model="DoctorData.Education" replace="[^a-zA-Z\.\/\,\s]" with="" tabindex="10"></textarea>
+                                        </div>
+                                        <label class="col-md-1 col-sm-1 col-lg-1 txtlastLabel control-label" for="">{{500-DoctorData.Education.length}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer text-right">
+                            <button class="btn btn-primary" type="button" id="" tabindex="11" ng-click="SaveDoctor(DoctorData)">@PIVF.LanguageResource.Resources.btnAdd</button>
+                            <button class="btn btn-default" type="button" ng-click="DoctorData={};DoctorData.ID=0" id="" data-dismiss="modal">@PIVF.LanguageResource.Resources.btnCancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal Start-->
+        <form name="frmAddPayer" novalidate>
+            <div class="modal fade AddPayer" id="AddPayer" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" id="btnPlayerClosePop" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <!-- <button type="button" class="" data-dismiss="modal">&times;</button> -->
+                            <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblPayerInfo</h4>
+                        </div>
+                        <div class="modal-body form-horizontal">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblCategoryL1</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            @*ng-class="{'Invalid':frmAddDoctor.FirstName.$invalid && frmAddDoctor.FirstName.$dirty }"*@
+                                            <select class="form-control " id="" ng-model="PayerData.CatL1ID" name="CatL1ID" ng-class="{'select':PayerData.CatL1ID.CatL1ID==0 && frmAddPayer.CatL1ID.$dirty}" ng-options="item.CatL1Description for item in PatientSourceList" ng-change="GetPatientCatBySrcID(PayerData.CatL1ID.CatL1ID)"></select>
+                                            @*<ui-select ng-model="PayerData.CatL1ID" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                    <ui-select-match allow-clear="false" placeholder="">{{$select.selected.CatL1Description}}</ui-select-match>
+                                                    <ui-select-choices repeat="person.CatL1ID as person in PatientSourceList | propsFilter: {CatL1Description: $select.search}">
+                                                        <div ng-bind-html="person.CatL1Description | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblCategoryL2</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <select class="form-control " id="" ng-model="PayerData.CatL2ID" name="CatL2ID" ng-class="{'select':PayerData.CatL2ID.CatL2ID==0 && frmAddPayer.CatL2ID.$dirty}" ng-options="item.CatL2Description for item in CategoryList"></select>
+                                            @*<ui-select ng-model="PayerData.CatL2ID" theme="select2" class="UIselectclass" title="" append-to-body="true" ng-change="GetPatientSrcByCatID(PayerData.CatL2ID)">
+                                                    <ui-select-match allow-clear="false" placeholder="">{{$select.selected.CatL2Description}}</ui-select-match>
+                                                    <ui-select-choices repeat="person.CatL2ID as person in CategoryList | propsFilter: {CatL2Description: $select.search}">
+                                                        <div ng-bind-html="person.CatL2Description | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblCompany</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <select class="form-control " id="" ng-model="PayerData.CompID" name="CompID" ng-options="item.Description for item in CompanyList" ng-change="GetAssCompany(PayerData.CompID.CompID)"></select>
+                                            @*<ui-select ng-model="PayerData.CompID" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                    <ui-select-match allow-clear="false" placeholder="">{{$select.selected.Description}}</ui-select-match>
+                                                    <ui-select-choices repeat="person.CompID as person in CompanyList | propsFilter: {Description: $select.search}">
+                                                        <div ng-bind-html="person.Description | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblAssoCompany</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <select class="form-control " id="" ng-model="PayerData.CompAssID" name="CompAssID" ng-options="item.Description for item in AssCompanyList" ng-change="GetTariffByAssCompany(PayerData.CompAssID.CompAssID)"></select>
+                                            @*<ui-select ng-model="PayerData.CompAssID" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                    <ui-select-match allow-clear="false" placeholder="">{{$select.selected.Description}}</ui-select-match>
+                                                    <ui-select-choices repeat="person.CompAssID as person in AssCompanyList | propsFilter: {Description: $select.search}">
+                                                        <div ng-bind-html="person.Description | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblTariff</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <select class="form-control " id="" ng-model="PayerData.TID" name="TID" ng-class="{'select':PayerData.TID.TID==0 && frmAddPayer.TID.$dirty}" ng-options="item as item.Description for item in TariffList"></select>
+                                            @*<ui-select ng-model="PayerData.TID" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                    <ui-select-match allow-clear="false" placeholder="">{{$select.selected.Description}}</ui-select-match>
+                                                    <ui-select-choices repeat="person.TID as person in TariffList | propsFilter: {Description: $select.search}">
+                                                        <div ng-bind-html="person.Description | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    @*<div class="form-group ">
+                                            <label class="col-sm-4 control-label" for="">@PIVF.Gemino.LanguageResource.Resources.lblCreditlimit</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control alignRight" id="" name="CreditLimit" ng-model="PayerData.CreditLimit" replace="[^0-9]" with="" maxlength="8" placeholder="">
+                                            </div>
+                                        </div>*@
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblEffectiveDate</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <div class="input-group date">
+                                                <input type="text" class="form-control" id="VFromDate" name="lblEffectiveDate" datepicker-options="dateOptionsDOB" placeholder="dd-MMM-yyyy" ng-model="PayerData.VFromDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened1" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats">
+                                                <span class="input-group-addon" ng-click="open1()">
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblExpiryDate</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <div class="input-group date">
+                                                <input type="text" class="form-control" id="VToDate" name="lblExpiryDate" datepicker-options="dateOptionsDOB" placeholder="dd-MMM-yyyy" ng-model="PayerData.VToDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened2" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats">
+                                                <span class="input-group-addon" ng-click="open2()">
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblStaffDiscount</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" ng-model="PayerData.IsStaffDiscount" name="IsStaffDiscount">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    @*<div class="form-group ">
+                                            <label class="col-sm-4 control-label" for="">@PIVF.Gemino.LanguageResource.Resources.lblStaffRelation</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control " id="" ng-disabled="!PayerData.IsStaffDiscount" name="RelationId" ng-model="PayerData.RelationId" ng-options="item as item.Description for item in RelationList"></select>
+                                            </div>
+                                        </div>*@
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblRemark</label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <textarea type="text" class="form-control" id="" ng-model="PayerData.Remark" name="lblRemark" replace="[^a-zA-Z0-9\s]" with="" placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer text-right">
+                            <button class="btn btn-primary" type="button" id="" ng-click="AddSponsers(PayerData)">@PIVF.LanguageResource.Resources.lblAdd</button>
+                            <button class="btn btn-default" type="button" ng-click="PayerData={};PayerData.ID=0" id="" data-dismiss="modal">@PIVF.LanguageResource.Resources.btnCancel</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- Modal End -->
+
+        <div class="modal fade " id="priviousVisitsInfo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+                <div tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" ng-click="Cancel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            @*<h4 class="modal-title" id="myModalLabel">Reason</h4>*@
+                            <h4 class="modal-title" id="myModalLabel">
+                                @PIVF.LanguageResource.Resources.lblvAdditionalInformation
+                                @*&nbsp;-*@
+                                @*<span class="femaleDetails Capitalize"> {{CoupleDetails.FemalePatient.FemalePatientName}} <small>(({{CoupleDetails.FemalePatient.FemalePatientMRNO}}))</small></span> /
+                                    <span class="femaleDetails Capitalize">{{CoupleDetails.MalePatient.MalePatientName}}<small>(({{CoupleDetails.FemalePatient.FemalePatientMRNO}}))</small></span>*@
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="col-sm-6 col-md-3 col-lg-3 control-label" for="">@PIVF.LanguageResource.Resources.lblCabin</label>@*Cabin:Modified by swatih for localization 13/7/2020*@
+                                        <label class="col-sm-6 col-md-9 col-lg-9 control-label" for="">{{AddCabinDescription}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="col-sm-6 col-md-3 col-lg-3 control-label" for="">@PIVF.LanguageResource.Resources.lblRefDoc</label>@*Referral Doctor ::Modified by swatih for localization 13/7/2020*@
+                                        <label class="col-sm-6 col-md-9 col-lg-9 control-label" for="">{{AddRefDocFullName}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="col-sm-6 col-md-3 col-lg-3 control-label" for="">@PIVF.LanguageResource.Resources.lblRemark</label>@*Remark :Modified by swatih for localization 13/7/2020*@
+                                        <label class="col-sm-6 col-md-9 col-lg-9 control-label" for="">{{AddVisitNotes}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Add Player PopUp Start-->
+        <form name="frmAddBankDetail" role="form" novalidate>
+            <div class="modal fade bankInfo" id="bankInfo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" ng-init="GetBankNamesList(); BankData.AccountType =0;BankData.BankID =0;" data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" id="btnBankClosePop" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="gridSystemModalLabel">@PIVF.LanguageResource.Resources.lblBankInformation</h4>@*Bank Information :: Modified by swatih for localization on 13/7/2020*@
+                        </div>
+                        <div class="modal-body form-horizontal">
+
+                            <div class="row">
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblNameoftheBank</label>@*Name of the Bank ::Modified by swatih for localization on 13/7/2020*@
+                                        <div class="col-sm-12" ng-class="{'Invalid':frmAddBankDetail.BankID.$invalid && frmAddBankDetail.BankID.$dirty }">
+                                            <select class="form-control" id="" placeholder="" ng-class="{'Invalid':BankData.BankID==0 && frmAddDoctor.BankID.$dirty}" name="BankID" ng-model="BankData.BankID" ng-options="item.ID as item.Description for item in BankNamesList" ng-required="true" tabindex="1"></select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4 form-horizontal">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblBranch</label>@*Branch :: Modified by swatih for localization on 13/7/2020*@
+                                        <div class="col-sm-12" ng-class="{'Invalid':frmAddBankDetail.BranchName.$invalid && frmAddBankDetail.BranchName.$dirty }">
+                                            <input type="text" ng-required="true" ng-model="BankData.BranchName" class="form-control" id="" maxlength="50" name="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4 form-horizontal">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblIFSCCode</label>@*IFSC Code :: Modified by swatih for localization on 13/7/2020*@
+                                        <div class="col-sm-12" ng-class="{'Invalid':frmAddBankDetail.IFSCCode.$invalid && frmAddBankDetail.IFSCCode.$dirty }">
+                                            <input type="text" ng-required="true" ng-model="BankData.IFSCCode" class="form-control" id="" maxlength="11" name="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4 form-horizontal">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblAccountType </label>@*Account Type :: Modified by swatih for localization on 13/7/2020*@
+                                        <div class="col-sm-12">
+
+                                            <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions" ng-model="BankData.AccountType" id="inlineRadio1" value="0">@PIVF.LanguageResource.Resources.lblCurrentAccount @*Current Account: Modified by swatih for localization on 13/7/2020*@
+                                            </label>
+
+                                            <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions" ng-model="BankData.AccountType" id="inlineRadio2" value="1">@PIVF.LanguageResource.Resources.lblSavingAccount @*Saving Account:: Modified by swatih for localization on 13/7/2020*@
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                @*<div class="clear"></div>*@
+                                <div class="col-md-4 col-lg-4 form-horizontal">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblAccountNo</label>@*Account No :: Modified by swatih for localization on 13/7/2020*@
+                                        <div class="col-sm-12" ng-class="{'Invalid':frmAddBankDetail.AccountNo.$invalid && frmAddBankDetail.AccountNo.$dirty }">
+                                            <input type="text" maxlength="20" ng-model="BankData.AccountNo" ng-required="true" numbers-only class="form-control" id="AccountNo" name="AccountNo">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4 form-horizontal">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 control-label" for=""><span class="text-Red">*</span> @PIVF.LanguageResource.Resources.lblAccountHolder_Name</label>@*Account Holder's Name ::Modified by swatih for localization on 13/7/2020*@
+                                        <div class="col-sm-12" ng-class="{'Invalid':frmAddBankDetail.CustName.$invalid && frmAddBankDetail.CustName.$dirty }">
+                                            <input type="text" ng-required="true" ng-model="BankData.CustName" replace="[^a-zA-Z\s]" with="" maxlength="20" class="form-control" name="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <div class="col-sm-12 text-right">
+                                <button class="btn btn-primary" ng-click="AddBankDetails(BankData)" type="button" id="">@PIVF.LanguageResource.Resources.btnSave</button> @*Save :: Modified by swatih for localization 13/7/2020*@
+                                <button class="btn btn-default" type="button" ng-click="BankData={};BankData.BankID=0" id="" data-dismiss="modal">@PIVF.LanguageResource.Resources.btnCancel</button>@*Cancel :: Modified by swatih for localization 13/7/2020*@
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+        <!--Add Player PopUp End-->
+    </div>
+    <div class="clearfix"></div>
+
+    <!-- Page Content End -->

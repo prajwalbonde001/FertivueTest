@@ -1,0 +1,132 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+
+<link href="~/Content/ui-grid.css" rel="stylesheet" type="text/css" />
+
+
+@*---------------------------------------page start Here ------------------------------------------------*@
+
+
+<section id="PageContentSection" ng-init="showhide_NewButn=true">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="formTitle">@PIVF.LanguageResource.Resources.lblIVFMethodOfSpermPreparation </h4></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row find_title">
+
+                    <button class="btn btn-primary btn_shadow edit_btn" type="button" id="btnnew" value="" data-target="#PageContentSection" ng-show="showhide_NewButn"  ng-click="TableGenerateOnAdd(1)"><span class="glyphicon glyphicon-plus"></span> @PIVF.LanguageResource.Resources.btnNew</button>
+                    <section ng-show="showhide">
+
+                        <form role="form" novalidate name="frmSpermPreparation">
+
+                            <div class="col-sm-12">
+                                <div class="find_title text-right find_btn">
+                                    <div class="form-group add_row m-b-0">
+                                        <button class="btn btn-primary btn_shadow" type="button" id="btnadd" value="Add Row" ng-click="GetValue()">@PIVF.LanguageResource.Resources.btnAddRows</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th><span class="text-wht">*</span>@PIVF.LanguageResource.Resources.Code</th>
+                                                    <th><span class="text-wht">*</span>@PIVF.LanguageResource.Resources.Description</th>
+                                                    <th>@PIVF.LanguageResource.Resources.Active</th>
+                                                    <th>&nbsp;</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr class="" ng-repeat="Item in ListItem">
+                                                    <td>
+                                                        <ng-form name="frmCode">
+                                                            <div ng-class="{'has-error':frmCode.IVFMOSPCode.$invalid && frmCode.IVFMOSPCode.$dirty }">
+                                                                <input class="form-control" name="IVFMOSPCode" type="text" id="IVFMOSPCode" ng-model="Item.IVFMOSPCode" maxlength="10" ng-required="true" ng-pattern="/^[a-zA-Z0-9\s\-\:\/\_']*$/">
+                                                                <span style="color:red" ng-show="frmCode.IVFMOSPCode.$dirty && frmCode.IVFMOSPCode.$invalid">
+                                                                    <span class="help-block" ng-if="frmCode.IVFMOSPCode.$error.required && frmCode.IVFMOSPCode.$dirty">@PIVF.LanguageResource.Resources.IsCodeRequired</span>
+                                                                    <span class="help-block" ng-show="frmCode.IVFMOSPCode.$error.pattern">@PIVF.LanguageResource.Resources.CodeRegExp</span>
+                                                                </span>
+                                                                @*<span >trim {{Item.IVFSDNCode.length}}</span>*@
+                                                            </div>
+                                                        </ng-form>
+                                                    </td>
+                                                    <td>
+                                                        <div class="MobileContainer">
+                                                            <div ng-form name="frmDescription">
+                                                                <div ng-class="{'has-error':frmDescription.Description.$invalid && frmDescription.Description.$dirty }">
+                                                                    <input type="text" class="form-control" name="Description" id="Description" ng-model="Item.Description" maxlength="50" ng-required="true" ng-pattern="/^[a-zA-Z0-9\s\-\:\/\_']*$/" />
+                                                                    <label class="max_250 pull-right">{{50-Item.Description.length}}</label>
+                                                                    <span class="help-block" ng-if="frmDescription.Description.$error.required && frmDescription.Description.$dirty">@PIVF.LanguageResource.Resources.IsDescriptionRequired</span>
+                                                                    <span class="help-block" ng-show="frmDescription.Description.$error.pattern">@PIVF.LanguageResource.Resources.CodeRegExp</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group text-center">
+                                                            <div class="checkbox">
+                                                                <label><input id="Status" type="checkbox" ng-model="Item.Active" ng-init="Item.Active=true"></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group text-center">
+                                                            <button class="btn btn-danger btn-sm" type="button" name="Remove" value="Remove" id="Remove" ng-model="Item" ng-click="RemoveRow($index)">@PIVF.LanguageResource.Resources.btnRemove</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                            </div>
+                            <!-- start pagenation and button -->
+                            <div class="col-sm-12 find_btn m-b-35">
+                                <div class="text-right">
+                                    <button class="btn btn-primary btn_shadow" type="button" id="" ng-click="saveItemList()" ng-disabled="frmSpermPreparation.$invalid"><span class="glyphicon glyphicon-floppy-save"></span>@PIVF.LanguageResource.Resources.btnSave</button>
+                                    <button class="btn btn-primary btn_shadow hide_collapse_button" type="button" id="btncancel" ng-click="HideDiv()"><span class="glyphicon glyphicon-floppy-remove"></span>@PIVF.LanguageResource.Resources.btnCancel</button>
+                                </div>
+                            </div>
+                            <!-- End Pagenation and button -->
+                        </form>
+                    </section>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        @*<p>@PIVF.LanguageResource.Resources.Grid_Header :</p>*@
+
+                        <p class="">
+                            <span class="count_title">@PIVF.LanguageResource.Resources.Total_Count :</span>
+                            <span class="total_count">{{ gridOptions.data.length }}</span>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div id="grid1" ui-grid="gridOptions" ui-grid-exporter ui-grid-move-columns ui-grid-edit ui-grid-cellnav ui-grid-resize-columns ui-grid-pinning ui-grid-importer ui-grid-grouping ui-grid-pagination class="grid"></div>
+                <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+            </div>
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 page">
+                        <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                    </div>
+                    <div class="col-md-6 col-sm-6 find_btn">
+                        <div class="pull-right">
+                            <button class="btn btn-primary btn_shadow" type="button" id="" ng-disabled="BtnUpdate" ng-click="updateVisitType()"><span class="glyphicon glyphicon-edit"></span>@PIVF.LanguageResource.Resources.btnUpdate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Button group row -->
+        </div>
+    </div>
+</section>

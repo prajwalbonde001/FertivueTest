@@ -1,0 +1,736 @@
+﻿
+@{
+    Layout = null;
+}
+@*<link rel="stylesheet" href="/angular-chart.js/dist/angular-chart.css" />*@
+@*<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>*@
+
+
+
+
+<style>
+        .card-body {
+            border: 1px solid #EDEDEF;
+            border-radius: 20px;
+            /*margin:2%;*/
+            background: #FFFFFF;
+        }
+
+        .headB {
+            border-bottom: 1px solid gray;
+            margin: 20px;
+        }
+
+
+        .surgery-dashboard {
+            font-family: Montserrat;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 21.94px;
+            text-align: left;
+            color: #232323;
+            padding-left: 20px;
+        }
+
+        .surgery-row {
+            background-color: #E5E5E5;
+            border-radius: 15px;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+            cursor: pointer;
+            /*border:1px solid gray;*/
+        }
+
+        .text-number {
+            font-family: Montserrat;
+            /* font-size: 2rem; */
+            font-weight: 700;
+            line-height: 24.38px;
+            text-align: left;
+        }
+
+        .char-number {
+            font-family: Montserrat;
+            font-size: 0.7rem;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19.5px;
+            text-align: left;
+        }
+
+
+        .surgery-images img {
+            width: 100%;
+            max-width: 50px;
+        }
+
+        .sergery_contains_two {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+
+
+        .form_Content1 {
+            border: 1px solid #c3c3c3;
+            padding: 0px 10px 20px 10px;
+            margin-top: 10px;
+            background: #ffffff;
+            border-radius: 4px;
+            position: relative;
+            height: auto;
+        }
+
+
+        /*canvas{
+        width:90% !important;
+        height:390px!important;
+    }*/
+
+        .headB {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .headBox {
+            display: flex;
+            gap: 10px;
+        }
+
+
+
+        .nav-tabs {
+            display: flex;
+            justify-content: flex-end; /* Align tabs to the right */
+            border: none !important;
+        }
+
+
+            .nav-tabs .active a {
+                /*color: #fff !important;
+        background-color: #df7d36 !important;*/
+                background: #EFF5F7 !important;
+                color: #5895A6 !important;
+                border-radius: 12px !important;
+                border: 1px solid #E4EEF1 !important;
+                font-weight: bold;
+                padding: 10px 30px !important;
+            }
+
+
+            .nav-tabs li a {
+                /*color: #000 !important;
+        background-color: #f8f9fa !important;
+        border-radius: 5px;*/
+                background: #FFFFFF !important;
+                color: #232323 !important;
+                border-radius: 12px !important;
+                text-decoration: none;
+                border: 1px solid #E4EEF1 !important;
+                padding: 10px 30px !important;
+            }
+
+
+        .tabDiv {
+            padding-right: 2%;
+            padding-left: 2%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .modal-content {
+            max-width: 500px !important;
+        }
+
+        /* Modal Container */
+        .custom-modal-content {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Modal Header */
+        .custom-modal-header {
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .custom-modal-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            text-align: center;
+        }
+
+        /* Labels */
+        .custom-label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555555;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Input Group */
+        .custom-input-group {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #f9f9f9;
+        }
+
+        .custom-input {
+            flex: 1;
+            border: none;
+            padding: 10px 12px;
+            font-size: 14px;
+            color: #333333;
+            background-color: transparent;
+            outline: none;
+        }
+
+            .custom-input::placeholder {
+                color: #999999;
+            }
+
+        .custom-calendar-btn {
+            background-color: #eeeeee;
+            border: none;
+            padding: 10px 12px;
+            cursor: pointer;
+            color: #555555;
+            font-size: 16px;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+
+            .custom-calendar-btn:hover {
+                background-color: #dddddd;
+            }
+
+        /* Modal Footer */
+        .custom-modal-footer {
+            border-top: 1px solid #f0f0f0;
+            margin-top: 20px;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .custom-btn-primary {
+            background-color: #0a9c92;
+            border: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .custom-btn-primary:hover {
+                background-color: #df7d36;
+            }
+
+
+
+
+        .custom-date-display {
+            font-weight: bolder;
+            font-style: italic;
+        }
+
+
+
+
+        .percentS {
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 29.96px;
+            margin: 0px;
+            color: #232323;
+        }
+
+        .percentH {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19.07px;
+            margin: 0px;
+            color: #9E9E9E;
+        }
+
+        .percentStatusS {
+            color: #46A65B;
+            background: #F5FBF7;
+            padding: 8px 20px;
+            border-radius: 16px;
+            width: max-content;
+        }
+
+        .percentStatusF {
+            color: #E08A34;
+            background: #FCF4EB;
+            padding: 8px 20px;
+            border-radius: 16px;
+            width: max-content;
+        }
+
+        .percentContainer {
+            border: 1px solid #EDEDEF;
+            padding: 20px;
+            border-radius: 20px;
+            background: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .customChartContainer {
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            height: 390px; /* Adjust the height as needed */
+        }
+
+
+        .customDashboardLable {
+            text-align: end;
+        }
+</style>
+
+
+
+
+
+<link href="../Content/dev.css" rel="stylesheet">
+
+
+
+
+<section class="form_content1" ng-controller="fertivueDashboardCtrl" ng-init="FormLoad()">
+
+    <div class="tabDiv">
+        <h3 class="card-title">@PIVF.LanguageResource.Resources.lblDashboardOverview</h3>
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-tabs">
+            <li ng-class="{ active: selectedTab === 'year' }">
+                <a ng-click="showTab('year')">@PIVF.LanguageResource.Resources.lblYear</a>
+            </li>
+            <li ng-class="{ active: selectedTab === 'month' }">
+                <a ng-click="showTab('month')">@PIVF.LanguageResource.Resources.lblMonth</a>
+            </li>
+            <li ng-class="{ active: selectedTab === 'day' }">
+                <a ng-click="showTab('day')">@PIVF.LanguageResource.Resources.lblDay</a>
+            </li>
+            <li ng-class="{ active: selectedTab === 'custom' }">
+                <a ng-click="showTab('custom')">
+                    @PIVF.LanguageResource.Resources.lblCustom
+                    <span class="custom-date-display" ng-if="chartCustomFdate && chartCustomTdate">
+                        {{chartCustomFdate}} - {{chartCustomTdate}}
+                    </span>
+                </a>
+            </li>
+
+        </ul>
+
+
+
+    </div>
+
+    @* --------------------------- *@
+
+
+
+    @* ------------------------------------------- *@
+
+
+
+
+    <div class="container-fluid p-4" style="padding:20px">
+        <div class="row">
+            <!-- Sidebar Widgets -->
+            <div class="col-md-2">
+                <div class="percentContainer">
+                    <h6 class="percentH">{{GetAdminDashboardPercentageData[0].Label}}</h6>
+                    <h3 class="percentS">{{GetAdminDashboardPercentageData[0].Value}}</h3>
+                    <span class="percentStatusS" ng-if="GetAdminDashboardPercentageData[0].Flag === 'true'">
+                        <img src="../images/percentStatusS.svg" alt="">
+                        {{GetAdminDashboardPercentageData[0].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                    <span class="percentStatusF" ng-if="GetAdminDashboardPercentageData[0].Flag === 'false'">
+                        <img src="../images/dashboardDecreasePercentageF.svg" alt="">
+                        {{GetAdminDashboardPercentageData[0].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                </div>
+
+                <div class="percentContainer">
+                    <h6 class="percentH">{{GetAdminDashboardPercentageData[1].Label}}</h6>
+                    <h3 class="percentS">{{GetAdminDashboardPercentageData[1].Value }}</h3>
+                    <span class="percentStatusS" ng-if="GetAdminDashboardPercentageData[1].Flag === 'true'">
+                        <img src="../images/percentStatusS.svg" alt="">
+                        {{GetAdminDashboardPercentageData[1].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                    <span class="percentStatusF" ng-if="GetAdminDashboardPercentageData[1].Flag === 'false'">
+                        <img src="../images/dashboardDecreasePercentageF.svg" alt="">
+                        {{GetAdminDashboardPercentageData[1].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                </div>
+
+                <div class="percentContainer">
+                    <h6 class="percentH">{{GetAdminDashboardPercentageData[2].Label}}</h6>
+                    <h3 class="percentS">{{GetAdminDashboardPercentageData[2].Value  }}</h3>
+                    <span class="percentStatusS" ng-if="GetAdminDashboardPercentageData[2].Flag === 'true'">
+                        <img src="../images/percentStatusS.svg" alt="">
+                        {{GetAdminDashboardPercentageData[2].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                    <span class="percentStatusF" ng-if="GetAdminDashboardPercentageData[2].Flag === 'false'">
+                        <img src="../images/dashboardDecreasePercentageF.svg" alt="">
+                        {{GetAdminDashboardPercentageData[2].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                </div>
+
+                <div class="percentContainer">
+                    <h6 class="percentH">{{GetAdminDashboardPercentageData[3].Label}}</h6>
+                    <h3 class="percentS">{{GetAdminDashboardPercentageData[3].Value }}</h3>
+                    <span class="percentStatusS" ng-if="GetAdminDashboardPercentageData[3].Flag === 'true'">
+                        <img src="../images/percentStatusS.svg" alt="">
+                        {{GetAdminDashboardPercentageData[3].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                    <span class="percentStatusF" ng-if="GetAdminDashboardPercentageData[3].Flag === 'false'">
+                        <img src="../images/dashboardDecreasePercentageF.svg" alt="">
+                        {{GetAdminDashboardPercentageData[3].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                </div>
+
+                <div class="percentContainer">
+                    <h6 class="percentH">{{GetAdminDashboardPercentageData[4].Label}}</h6>
+                    <h3 class="percentS">{{GetAdminDashboardPercentageData[4].Value}}</h3>
+                    <span class="percentStatusS" ng-if="GetAdminDashboardPercentageData[4].Flag === 'true'">
+                        <img src="../images/percentStatusS.svg" alt="">
+                        {{GetAdminDashboardPercentageData[4].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                    <span class="percentStatusF" ng-if="GetAdminDashboardPercentageData[4].Flag === 'false'">
+                        <img src="../images/dashboardDecreasePercentageF.svg" alt="">
+                        {{GetAdminDashboardPercentageData[4].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                </div>
+
+                <div class="percentContainer">
+                    <h6 class="percentH">{{GetAdminDashboardPercentageData[5].Label}}</h6>
+                    <h3 class="percentS">{{GetAdminDashboardPercentageData[5].Value }}</h3>
+                    <span class="percentStatusS" ng-if="GetAdminDashboardPercentageData[5].Flag === 'true'">
+                        <img src="../images/percentStatusS.svg" alt="">
+                        {{GetAdminDashboardPercentageData[5].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                    <span class="percentStatusF" ng-if="GetAdminDashboardPercentageData[5].Flag === 'false'">
+                        <img src="../images/dashboardDecreasePercentageF.svg" alt="">
+                        {{GetAdminDashboardPercentageData[5].Percentage | number:2}} % vs last {{percentageAsPer}}
+                    </span>
+                </div>
+            </div>
+
+
+
+            <!-- Main Content -->
+            <div class="col-md-10">
+                <div class="row" style="margin-bottom:20px;">
+
+
+                    <div class="col-md-8 mb-3">
+                        <div class="card p-3">
+
+
+                            <div class="card-body">
+                                <div>
+                                    <div class="headB py-2">
+                                        <div class="headBox">
+                                            @*<img src="../images/revenue.svg" alt="">*@
+                                            <h2 class="card-title">@PIVF.LanguageResource.Resources.lblInvestigationsAndRevenue</h2>
+
+                                        </div>
+
+                                        <div class="customDashboardLable">
+                                            <label class="radio-inline" for="rdbInvestigations">
+                                                <input type="radio" name="rdbRevenueRadioOptions" id="rdbInvestigations" value="1"
+                                                       ng-model="selectedChart" ng-change="changeSelectedChart(selectedChart)">
+                                                @PIVF.LanguageResource.Resources.lblInvestigations
+                                            </label>
+                                            <label class="radio-inline" for="rdbRevenue">
+                                                <input type="radio" name="rdbRevenueRadioOptions" id="rdbRevenue" value="2"
+                                                       ng-model="selectedChart" ng-change="changeSelectedChart(selectedChart)">
+                                                @PIVF.LanguageResource.Resources.lblTotalRevenue
+                                            </label>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="customChartContainer" ng-if="selectedChart == 1">
+                                    <canvas id="investigationChart1"></canvas>
+                                </div>
+
+                                <div class="customChartContainer" ng-if="selectedChart == 2">
+
+                                    <canvas id="revenueChart"></canvas>
+                                </div>
+
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-4 mb-3">
+                        <div class="card p-3">
+                            <div class="card-body">
+                                <div>
+                                    <div class="headB py-2">
+                                        <div class="headBox">
+                                            @*<img src="../images/registration.svg" alt="">*@
+                                            <h2 class="card-title">@PIVF.LanguageResource.Resources.lblRegistration</h2>
+
+                                        </div>
+                                        <div class="customDashboardLable">
+                                            <label class="radio-inline" for="rdbLab">
+                                                <input type="radio" name="registrationRadioOptions" id="rdbLab" value="1"
+                                                       ng-model="RegID" ng-change="changeRegi(RegID)">
+                                                @PIVF.LanguageResource.Resources.lblAgeDistribution
+                                            </label>
+                                            <label class="radio-inline" for="rdbRadio">
+                                                <input type="radio" name="registrationRadioOptions" id="rdbRadio" value="2"
+                                                       ng-model="RegID" ng-change="changeRegi(RegID)">
+                                                @PIVF.LanguageResource.Resources.lblTrends
+                                            </label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                                @*<div class="customChartContainer" ng-click="showRegistrationPatientList()">
+                                        <canvas id="registrationChart1"></canvas>
+                                    </div>*@
+
+                                <div class="customChartContainer">
+                                    <canvas id="registrationChart1"></canvas>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+
+                    <div class="col-md-4 mb-3">
+                        <div class="card p-3">
+                            <div class="card-body">
+
+                                <div>
+                                    <div class="headB py-2">
+                                        <div class="headBox">
+                                            @*<img src="../images/registration.svg" alt="">*@
+                                            <h2 class="card-title">@PIVF.LanguageResource.Resources.lblBilling</h2>
+                                        </div>
+
+                                        <div class="customDashboardLable">
+                                            <label class="radio-inline">
+                                                <input type="radio" name="billRadioOptions" ng-click="changeBill(BillID)"
+                                                       ng-model="BillID" id="rdbLab11" value="1">@PIVF.LanguageResource.Resources.lblvCollectionBreakdown
+
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="billRadioOptions" ng-click="changeBill(BillID)"
+                                                           ng-model="BillID" id="rdbRadio12" value="2">@PIVF.LanguageResource.Resources.lblvChargesBreakdown
+                                                    </label>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="customChartContainer">
+                                            <canvas id="billingChart1"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 mb-3">
+                                <div class="card p-3">
+                                    <div class="card-body">
+
+                                        <div>
+                                            <div class="headB py-2">
+                                                <div class="headBox">
+                                                    @*<img src="../images/registration.svg" alt="">*@
+                                                    <h2 class="card-title">@PIVF.LanguageResource.Resources.lblVisitType</h2>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="customChartContainer">
+                                            <canvas id="visitChart1"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-4 mb-3">
+                                <div class="card p-3">
+                                    <div class="card-body">
+
+                                        <div>
+                                            <div class="headB py-2">
+                                                <div class="headBox">
+                                                    @*<img src="../images/appointment.svg" alt="">*@
+                                                    <h2 class="card-title">@PIVF.LanguageResource.Resources.lblvAppointments</h2>
+                                                </div>
+                                                <div class="customDashboardLable">
+                                                    <label class="radio-inline" for="rdbLab1">
+                                                        <input type="radio" name="appointmentRadioOptions" id="rdbLab1" value="1"
+                                                               ng-model="AppID" ng-change="changeApp(AppID)">
+                                                        @PIVF.LanguageResource.Resources.lblvType
+                                                    </label>
+
+                                                    <label class="radio-inline" for="rdbRadio3">
+                                                        <input type="radio" name="appointmentRadioOptions" id="rdbRadio3" value="3"
+                                                               ng-model="AppID" ng-change="changeApp(AppID)">
+                                                        @PIVF.LanguageResource.Resources.lblDepartment
+                                                    </label>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="customChartContainer">
+                                            <canvas id="appointmentChart1"></canvas>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+            </div>
+            </div>
+            </div>
+
+
+
+            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+            </div>
+
+        </section>
+
+
+        <script type="text/ng-template" id="exampleModal">
+            <div class="custom-modal-content">
+                <div class="custom-modal-header">
+                    <h5 class="custom-modal-title">@PIVF.LanguageResource.Resources.lblvSelectDates</h5>
+                </div>
+
+                <div class="custom-modal-body">
+                    <div class="form-group">
+                        <label for="fromDate" class="custom-label">@PIVF.LanguageResource.Resources.lblFromDate : </label>
+                        <div class="custom-input-group">
+                            <input type="text"
+                                   id="fromDate"
+                                   class="custom-input"
+                                   placeholder="@PIVF.LanguageResource.Resources.msgSelectfromdate"
+                                   uib-datepicker-popup="{{format}}"
+                                   ng-model="FromDate"
+                                   is-open="isFromDatePickerOpen"
+                                   datepicker-options="FromDateOptions"
+                                   ng-focus="isFromDatePickerOpen=true" />
+                            <button class="custom-calendar-btn" type="button" ng-click="isFromDatePickerOpen=true">
+                                <i class="fa fa-calendar"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="toDate" class="custom-label">@PIVF.LanguageResource.Resources.lblToDate : </label>
+                        <div class="custom-input-group">
+                            <input type="text"
+                                   id="toDate"
+                                   class="custom-input"
+                                   placeholder="@PIVF.LanguageResource.Resources.msgSelecttodate"
+                                   uib-datepicker-popup="{{format}}"
+                                   ng-model="ToDate"
+                                   is-open="isToDatePickerOpen"
+                                   datepicker-options="ToDateOptions"
+                                   ng-focus="isToDatePickerOpen=true" />
+                            <button class="custom-calendar-btn" type="button" ng-click="isToDatePickerOpen=true">
+                                <i class="fa fa-calendar"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-modal-footer">
+                    <button class="custom-btn-primary" ng-click="close()">@PIVF.LanguageResource.Resources.lblvSubmit</button>
+                </div>
+            </div>
+        </script>
+

@@ -1,0 +1,126 @@
+﻿@{    Layout = null; }
+<div class="row form-horizontal" ng-controller="KPIController" ng-init="loadData()">
+
+    <div class="col-md-9 col-lg-10" id="print1" style="overflow:auto;max-height:600px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="" ng-hide="!DataPresent">
+                    <canvas id="bar" ng-hide="KPI.chartType!=1" ng-show="KPI.chartType==1" class="chart chart-bar" chart-data="data"
+                            chart-labels="labels" chart-series="series" chart-options="options"
+                            chart-dataset-override="datasetOverride" chart-click="onClick" chart-colors="chartColor" style="border: 1px solid #ddd;"></canvas>
+
+                    <canvas id="line" ng-hide="KPI.chartType!=2" ng-show="KPI.chartType==2" class="chart chart-line" chart-data="data"
+                            chart-labels="labels" chart-series="series" chart-options="options"
+                            chart-dataset-override="datasetOverride" chart-click="onClick" chart-colors="chartColor" style="border: 1px solid #ddd;"></canvas>
+
+                    <canvas id="pie" ng-hide="KPI.chartType!=3" ng-show="KPI.chartType==3" class="chart chart-pie" chart-data="data"
+                            chart-labels="labels" chart-options="options" chart-colors="chartColor" style="border: 1px solid #ddd;"></canvas>
+
+                    <div class="col-md-6 col-md-offset-3 col-md-offset-3  col-lg-6 m-t-30">
+                        <div class="table-responsive" style="min-height:100px;max-height:300px;">
+                            <table class="table table-hover table-striped table-bordered" id="ListKIPData">
+                                <thead>
+                                    <tr>
+                                        <th width="">@PIVF.LanguageResource.Resources.plblMonth</th>
+                                        <th>@PIVF.LanguageResource.Resources.plblTotal</th>
+                                        <th>@PIVF.LanguageResource.Resources.plblCountofSuccess</th>
+                                        <th>@PIVF.LanguageResource.Resources.plblPercentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="" ng-repeat="Item in ListKPIData">
+                                        <td>
+                                            {{Item.label}}
+                                        </td>
+                                        <td>
+                                            {{Item.Total}}
+                                        </td>
+                                        <td>
+                                            {{Item.Success}}
+                                        </td>
+
+                                        <td>
+
+                                            {{Item.data}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-lg-2" style="border:1px solid #ddd">
+        <div class="form-group">
+            <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.plblChartType</label>
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <select class="form-control" id="ddlChartList" ng-change="ChangeChart()" name="ddlChartList" ng-model="KPI.chartType" ng-options="item.ID as item.Description for item in ListChartType"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.plblKPI</label>
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <select class="form-control" id="ddlChartList" ng-change="ChangeReport()" name="ddlChartList" ng-model="KPI.reportType" ng-options="item.ID as item.Description for item in ListReportType"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblFromDate</label>
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <div class="input-group date">
+                    <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" ng-model="KPI.fromDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="month1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                    <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblToDate</label>
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <div class="input-group date">
+                    <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" ng-model="KPI.toDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="month2.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                    <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        @*<div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">Clinician/Embryologist</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <select id="ddlChartList" class="form-control" ng-change="ChangeReport()" name="ddlChartList" ng-model="KPI.personID" ng-options="item.ID as item.Description for item in ListClinicianEmbryologist"></select>
+                </div>
+            </div>*@
+        <div class="form-group">
+            <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblClinic</label>
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <select id="ddlChartList" class="form-control" ng-change="ChangeReport()" name="ddlChartList" ng-model="KPI.clinicID" ng-options="item.ID as item.Description for item in ListClinic"></select>
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.plblFemaleAge</label>
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <input type="number"
+                       class="form-control"
+                       ng-model="KPI.AgeMin"
+                       id="" placeholder="Min Age" />
+            </div>
+            <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.plblBetween</label>
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <input type="number"
+                       class="form-control"
+                       ng-model="KPI.AgeMax"
+                       id="" placeholder="Max Age" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <button class="btn btn-primary" type="button" id="" value="" ng-click="GenerateKPI(KPI)">@PIVF.LanguageResource.Resources.lblView @PIVF.LanguageResource.Resources.plblKPI</button>
+                <button class="btn btn-primary" ng-disabled="!DataPresent" ng-click="print()">@PIVF.LanguageResource.Resources.btnPrint</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>

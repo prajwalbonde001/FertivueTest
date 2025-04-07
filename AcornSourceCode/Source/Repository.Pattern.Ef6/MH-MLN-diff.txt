@@ -1,0 +1,17 @@
+PalashIVF
+	Dashboard : 26 files
+
+Datadriven
+	No diff
+
+PalashIPD
+	No diff
+
+Pharmacy
+	5 files
+	Inventory: 5 files
+	ItemSearch: 3 files
+	
+Administration
+	4 files
+

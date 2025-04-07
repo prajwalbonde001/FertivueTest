@@ -1,0 +1,1263 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .red {
+        color: red;
+    }
+
+    .black {
+        color: black;
+    }
+
+    .DisplayNone {
+        display: none;
+    }
+
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+
+    .has-error input {
+        border: 1px solid red !important;
+    }
+</style>
+
+
+<div ng-controller="StimulationChartController" ng-init="PageInitialization()" class="page_stimulationChart">
+    <!-- cycles links -->
+    <div class="cycleLinks" style="position: relative;
+        z-index: 14;">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul>
+                    <li ng-click="Navigate('CycleOverview')">@PIVF.LanguageResource.Resources.lblSOverview</li>
+                    <li class="active" ng-click="Navigate('StimulationChart')">@PIVF.LanguageResource.Resources.lblStimulationChart</li>
+                    <li ng-click="Navigate('SemenDetails')" ng-show="configData.SemenDetail">@PIVF.LanguageResource.Resources.lblSSemenDetails</li>
+                    <li ng-click="Navigate('IUI')" ng-show="configData.IUI">@PIVF.LanguageResource.Resources.lblSIUI</li>
+                    <li ng-click="Navigate('OPU')" ng-show="configData.OPU">@PIVF.LanguageResource.Resources.lblSOpu</li>
+                    <li ng-click="Navigate('Embrology')" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSEmbryology</li>
+                    <li ng-click="Navigate('PGT');" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSPgt</li>
+
+                    <li class="subMenucryo" ng-show="configData.CryoPreservation">
+                        <span class="menu-title">
+                            @PIVF.LanguageResource.Resources.lblCryobank
+                            <span class="arrow"></span> <!-- Arrow added -->
+                        </span>
+                        <ul>
+                            <li ng-click="Navigate('OocyteVitrification')" ng-show="configData.OocyteVitrification">@PIVF.LanguageResource.Resources.lblSOocyteVitrification</li>
+                            <li ng-click="Navigate('OocyteThowing')" ng-show="configData.OocyteThawing">@PIVF.LanguageResource.Resources.lblSOocyteThawing</li>
+                            <li ng-click="Navigate('EmbryoVitrification')" ng-show="configData.EmbryoVitrification">@PIVF.LanguageResource.Resources.lblSEmbryoVitrification</li>
+                            <li ng-click="Navigate('EmbryoThowing')" ng-show="configData.EmbryoThawing">@PIVF.LanguageResource.Resources.lblSEmbryoThawing</li>
+                        </ul>
+                    </li>
+                    <li ng-click="Navigate('EmbryoTransfer')" ng-show="configData.EmbryoTransfer">@PIVF.LanguageResource.Resources.lblSEmbryoTransfer</li>
+                    <li ng-click="Navigate('Outcome')" ng-show="configData.Outcome">@PIVF.LanguageResource.Resources.lblOutcome</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- /cycles links -->
+    <div class="div60"></div>
+    <div class="row text-right" style="position: relative;
+        z-index: 11;">
+        <div class="col-lg-12">
+            <div class="">
+                @*linkFolliScan apDiv*@
+                <a class="link p-r-15" ng-show="IsOICycle" ng-click="GoToCorpusScan()">@PIVF.LanguageResource.Resources.lblSCorpusleteumscan</a>  @*By Nayan Kamble*@
+                <a class="link p-r-15" data-toggle="modal" data-target=".uiModal" data-backdrop="static" data-keyboard="false">@PIVF.LanguageResource.Resources.lblSgraphs</a>
+                <a class="link" ng-click="GoToFollicularScan()">@PIVF.LanguageResource.Resources.lblSFollicularscan</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="form_Content m-t-0" style="position: relative;
+        z-index: 11; height: calc(100vh - 345px); overflow: auto !important; ">
+        <!-- Preliminary Details Start -->
+        <div class="row text-right">
+            <div class="col-md-12 col-lg-12 m-t-5 m-b-5">
+                <button ng-attr-type="button" class="btn btn-default m-l-10" data-toggle="modal" data-target=".trigger-edit-modal" ng-disabled="IsValidToDisabelSave" @*ng-show="SimulationChart.TriggerDateDoseList.length==0"*@ ng-click="SetDefaultValuesTrigger()"><span class="glyphicon glyphicon-pencil"></span> @PIVF.LanguageResource.Resources.lblSAddtrigger</button>
+                <button class="btn btn-link link" ng-attr-type="button" id="" value="" data-toggle="modal" data-target=".edit-modal" ng-disabled="IsValidToDisabelSave" ng-click="SetDefaultValues()">@PIVF.LanguageResource.Resources.lblSAddstimdrug</button>
+                <button class="btn btn-primary collapseArrowWrap collapsed btn-txt-link m-b-0" data-toggle="collapse" data-target="#targetBtn" ng-attr-type="button" id="" value="">
+                    <span class="collapseArrow"></span>
+                    @PIVF.LanguageResource.Resources.lblSummary
+                </button>
+            </div>
+        </div>
+        <div class="row form-horizontal collapse" id="targetBtn">
+            @*<div class="col-md-12 col-lg-4" ng-hide="true">   @ *ng-hide="true"  Added by Nayan Kamble on 24/06/2019* @
+                    <div class="form-group ">
+                        <label class="col-md-2 col-lg-4 control-label txt_bold p-r-0" id="text-right" for="">Medical History :</label>
+                        <label class="col-md-10 col-lg-8 p-t-7" for="">
+                            <span class="tooltip_element stimuTooltip">
+                                <span class="tooltiptext tooltip-top ">{{SimulationChart.MedicalHistory}}</span>
+                                <span class="txt_ellipsis">{{SimulationChart.MedicalHistory}}</span>
+                            </span>
+                        </label>
+                        @ *<label class="col-md-10 col-lg-8 p-t-7" for="">{{SimulationChart.MedicalHistory}}</label>* @
+                    </div>
+                </div>*@
+            <div class="col-md-12 col-lg-4">
+                <div class="form-group ">
+                    <label class="col-md-2 col-lg-4 control-label txt_bold p-r-0" id="text-right" for="">@PIVF.LanguageResource.Resources.lblSCycleWarning :</label>
+                    <label class="col-md-10 col-lg-8 p-t-7" for="">{{SimulationChart.CycleWarnings}}</label>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <div class="form-group">
+                    <label class="col-md-2 col-lg-4 control-label txt_bold  p-r-0" id="text-right" for="">@PIVF.LanguageResource.Resources.lblIndication :</label>
+                    <label class="col-md-10 col-lg-8 p-t-7" for="">
+                        <span class="tooltip_element stimuTooltip">
+                            @*<span class="tooltiptext tooltip-top ">{{SimulationChart.TherapyIndications}}</span>*@
+                            <span class="txt_ellipsis" title="{{SimulationChart.TherapyIndications}}">{{SimulationChart.TherapyIndications}}</span>
+                        </span>
+                    </label>
+                    @*<label class="col-md-10 col-lg-8 p-t-7" for="">{{SimulationChart.TherapyIndications}}</label>*@
+                </div>
+            </div><div class="clear"></div>
+            <div class="col-md-6 col-lg-4">
+                <div class="form-group">
+                    <label class="col-md-4 col-lg-4 control-label txt_bold p-r-0 p-t-0" id="text-right" for="">@PIVF.LanguageResource.Resources.lblProtocol :</label>
+                    <label class="col-md-8 col-lg-8 p-t-0" for="">{{SimulationChart.SCProtocol}}</label>@*p-t-7*@
+                </div>
+            </div>
+            @*<div class="clearfix"></div>*@
+            <div class="col-md-6 col-lg-4">
+                <div class="form-group ">
+                    <label class="col-md-4 col-lg-4 control-label txt_bold p-r-0  p-t-0" id="text-right" for="">@PIVF.LanguageResource.Resources.lblLMP :</label>
+                    <label class="col-md-8 col-lg-8  p-t-0" for="">{{SimulationChart.SCLMP | date:'dd-MMM-yyyy'}}</label>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="form-group">
+                    <label class="col-md-4 col-lg-4 control-label txt_bold p-lr-0  p-t-0" id="text-right" for="">@PIVF.LanguageResource.Resources.lblSSourceofSperm :</label>
+                    <label class="col-md-8 col-lg-8 p-t-0" for="">{{SimulationChart.SCSourceOfSperm}}</label>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="form-group">
+                    @*m-b-0 *@
+                    <label class="col-md-4 col-lg-4 control-label txt_bold p-r-0  p-t-0" id="text-right" for="">@PIVF.LanguageResource.Resources.lblSTotalDose :</label>
+                    <label class="col-md-4 col-lg-8  p-t-0" id="" for="">{{TotalDrugCount | number : 2}} <span ng-hide="DrugFirstName==undefined">{{DrugFirstName}}={{DrugFirstCount | number : 2}}</span> <span ng-hide="DrugSecondName==undefined">{{DrugSecondName}}={{DrugSecondCount | number : 2}}</span> <span ng-hide="DrugThirdName==undefined">{{DrugThirdName}}={{DrugThirdCount | number : 2}}</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="form-group">
+                    @*m-b-0 *@
+                    <label class="col-md-4 col-lg-4 control-label txt_bold p-lr-0  p-t-0" id="text-right" for="">@PIVF.LanguageResource.Resources.lblSAntralFollicle</label>
+                    <div class="col-md-3 col-lg-3">
+                        <input type="text" class="form-control" id="" ng-attr-placeholder="" ng-model="SimulationChart.AntralFollicleCount" replace="[^0-9]" with="" maxlength="2" ng-disabled="SimulationChart.IsFinalize">
+                    </div>
+
+                </div>
+            </div>
+            @*<div class="col-md-6 col-lg-4" ng-show="configData.OPU">
+                    <div class="form-group m-b-0">
+                        <label class="col-md-4 col-lg-4 control-label txt_bold" id="text-right" for="">Set OPU Date</label>
+                        <div class="col-md-6 col-lg-8">
+                            <div class="input-group date">
+                                <input type="text" class="form-control"
+                                       id="SSRDate"
+                                       name="SSRDate"Trigger
+                                       ng-attr-placeholder="dd-MMM-yyyy"
+                                       ng-model="SimulationChart.OPUDate"
+                                       aria-describedby=""
+                                       uib-datepicker-popup="{{format}}"
+                                       show-button-bar="false"
+                                       is-open="popup4.opened"
+                                       datepicker-options="dateOptions4"
+                                       alt-input-formats="altInputFormats">
+                                <span class="input-group-addon" id="" ng-click="open4()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+
+        </div>
+
+        <!-- Preliminary Details End -->
+        <!-- Antral Follicle Count Grid start -->
+        <div class="row">
+            <div class="col-lg-12 stimulationTable">
+                <div class="table-responsive fixed_header1 days_chart_35" style="height: calc(100vh - 580px); overflow: auto !important;">
+                    @*min-height:390px;max-height:390px;*@
+                    <table class="table table-bordered timeTableGrid customeStimTable" id="" style="min-width:2600px;">
+                        <thead style="position: sticky; top: 0; z-index: 2;">
+                            <tr class="">
+                                <th st-ratio="10" class="stimFirstHead">@PIVF.LanguageResource.Resources.lblDay</th>
+                                <th st-ratio="3" colspan="2" class="text-center" ng-repeat="date in futureDates track by $index">{{$index+1}}</th>
+                            </tr>
+                            <tr class="">
+                                <!--  <th st-ratio="13" class="p-l-0">
+                                      @*width="13%"*@
+                                      <div class="tableDate">
+                                          <div class="input-group date">
+                                              <input type="text" class="form-control"
+                                                     id="SSRDate"
+                                                     name="SSRDate"
+                                                     min-date="minDate"
+                                                     max-date="maxDate"
+                                                     ng-attr-placeholder="dd-MMM-yyyy"
+                                                     ng-model="SimulationChart.SimulationCycleStartDate"
+                                                     aria-describedby=""
+                                                     uib-datepicker-popup="{{format}}"
+                                                     show-button-bar="false"
+                                                     is-open="popup1.opened"
+                                                     datepicker-options="dateOptions"
+                                                     alt-input-formats="altInputFormats">
+                                              <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                          </div>
+                                          <label class="m-t-5 f-left">
+                                              <a class="btnOk" ng-attr-type="button" id="" value="" ng-click="Next15DaysGenerator('FromControl')">OK</a>
+                                          </label>
+                                      </div>
+                                  </th>
+                                    -->
+                                <th st-ratio="10" class="p-l-0 stimFirstHead"></th>
+                                <th st-ratio="3" colspan="2" class="text-center" ng-repeat="date in futureDates">{{ date | date : 'dd-MMM' }}</th>
+                            </tr>
+                            <tr class="">
+                                <th st-ratio="10" class="stimFirstHead">&nbsp;</th>
+                                <th st-ratio="3" colspan="2" class="text-center" ng-repeat="date in futureDates"><span ng-class="{'red': ((date |  toSec | date:'EEE') === 'Sun'), black: ((date |  toSec | date:'EEE') !== 'Sun')}"> {{ date |  toSec | date:'EEE' }}</span></th>
+                            </tr>
+                            <tr class="">
+                                <th st-ratio="10" class="stimFirstHead">@PIVF.LanguageResource.Resources.lblSFollicularscan</th>@*width="300px"*@
+                                <th class="text-center" st-ratio="3" colspan="2" ng-repeat="item in SimulationChart.FolliScanDaysCheckList"><input type="checkbox" id="Follicdates" value="option1" ng-model="item.IsChecked" ng-disabled="EnableOrDisableFolliScanCheck(item) || SimulationChart.IsFinalize"></th>
+                            </tr>
+
+                            <tr>
+                                @*width="300px"*@
+                                <th class="cursorPointer stimFirstHead" st-ratio="10">
+                                    @*data-toggle="collapse" data-target=".collapseExample"*@
+                                    <div class="STtableArrow" ng-click="isFollicleSizeExpanded = !isFollicleSizeExpanded">
+                                        <img src="~/images/CollapseUp_black.png" ng-hide="!isFollicleSizeExpanded" />
+                                        <img src="~/images/CollapseDown_black.png" ng-hide="isFollicleSizeExpanded" />
+                                        @PIVF.LanguageResource.Resources.lblFollicleSize
+                                    </div>
+                                </th>
+
+                                <th st-ratio="3" class="text-center" ng-repeat="date in futureDates">
+                                    <div style="display: flex;">
+                                        <div style="flex: 1;text-align: left;width: 45% ;display: inline-block; text-align: center;">@PIVF.LanguageResource.Resources.lblSlt</div>
+                                        <div style="flex: 1;text-align: right;width: 45% ;float: right ; text-align: center;">@PIVF.LanguageResource.Resources.lblSRt</div>
+                                    </div>
+                                </th>
+                                @*<td class="cursorPointer" width="300px"><button class="btn btn-primary collapseArrowWrap collapsed btn-txt-link m-b-0" data-toggle="collapse" data-target=".collapseExample" ng-attr-type="button" id="" value=""><span class="collapseArrow"></span> Follicle Size</button></td>*@
+                                @*<th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>
+                                    <th class="text-center Lt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSlt</th>
+                                    <th class="text-center Rt" st-ratio="2">@PIVF.LanguageResource.Resources.lblSRt</th>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*<tr class="collapse collapseExample" ng-repeat="item in MonitoringSizeStaticMeasurement track by $index" ng-init="outerIndex=$index" ng-class="{'gridRowColor':item.Code == '1.5' || item.Code == '1.55' || item.Code == '1.6' || item.Code == '1.65' || item.Code == '1.7' || item.Code == '1.75' || item.Code == '1.8' || item.Code == '1.85' || item.Code == '1.9' || item.Code == '1.95' || item.Code == '2' || item.Code == '2.05' || item.Code == '2.1' || item.Code == '2.15' || item.Code == '2.2' || item.Code == '2.25' || item.Code == '2.3' || item.Code == '>2.3' || item.Code == 'cyst'}">*@
+                            <tr uib-collapse="!isFollicleSizeExpanded" class="collapseExample" ng-repeat="item in MonitoringSizeStaticMeasurement track by $index" ng-init="outerIndex=$index">
+                                <td st-ratio="10" class="stimFirstBody">{{item.Code}}</td>
+                                <td st-ratio="3" colspan="2" ng-repeat="date in futureDates track by $index" ng-click="GetRiPsv(date,item)">
+                                    <div uib-popover-html="htmlPopover1" tooltip-placement="top" popover-append-to-body="true" data-popover-trigger="click">
+                                        <div class="colLeft">
+                                            <span ng-repeat="x in :: FollicularSizeDeatilsList">{{ ::(((date | date : 'dd-MMM-yyyy')==(x.Date | date : 'dd-MMM-yyyy')) && (item.Code==x.LeftFollicularNumber) && (x.Side=='Left'))? x.LeftSizeCount:''}}</span>
+                                        </div>
+                                        <div class="colRight">
+                                            <span ng-repeat="x in :: FollicularSizeDeatilsList">
+                                                {{:: (((date | date : 'dd-MMM-yyyy')==(x.Date | date : 'dd-MMM-yyyy')) && (item.Code==x.RightFollicularNumber) && (x.Side=='Right'))? x.RightSizeCount:''}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    @*<i class="fa fa-info-circle fa-lg" style="color:#26a6d1"
+                                           uib-tooltip="tooltip text" tooltip-placement="right"
+                                           tooltip-trigger="'click'">
+                                        </i>*@
+                                    @*<div class="colLeft tooltip_element">
+                                            <span class="tooltiptext tooltip-top" style="margin-left: -25px !important;"ng-repeat="x in :: FollicularSizeDeatilsList">{{x.cyst}}</span>
+                                            <span class="txt_ellipsis" style="width:50%;"ng-repeat="x in :: FollicularSizeDeatilsList">{{x.cyst}}</span>
+                                        </div>
+                                        <div class="colRight tooltip_element">
+                                            <span class="tooltiptext tooltip-top" style="margin-left: -25px !important;"ng-repeat="x in :: FollicularSizeDeatilsList">{{ ::(((date | date : 'dd-MMM-yyyy')==(x.Date | date : 'dd-MMM-yyyy')) && (item.Code==x.LeftFollicularNumber) && (x.Side=='Left'))? x.LeftSizeCount:''}}</span>
+                                            <span class="txt_ellipsis" style="width:50%;"ng-repeat="x in :: FollicularSizeDeatilsList">{{ ::(((date | date : 'dd-MMM-yyyy')==(x.Date | date : 'dd-MMM-yyyy')) && (item.Code==x.LeftFollicularNumber) && (x.Side=='Left'))? x.LeftSizeCount:''}}</span>
+                                        </div>*@
+
+                                </td>
+                            </tr>
+                            <tr>
+                                @*<td st-ratio="10" class="cursorPointer flexcollapsed collapsed" data-toggle="collapse" data-target=".collapseExample1" ng-click="isCollapsed = !isCollapsed"><img src="~/images/CollapseRight_black.png" /> @PIVF.LanguageResource.Resources.lblEndometrium</td>*@
+                                <td st-ratio="10" class="cursorPointer flexcollapsed collapsed stimFirstBody" ng-click="isEndometriumExpanded = !isEndometriumExpanded"><img src="~/images/CollapseUp_black.png" ng-hide="!isEndometriumExpanded" />    <img src="~/images/CollapseDown_black.png" ng-hide="isEndometriumExpanded" /> @PIVF.LanguageResource.Resources.lblEndometrium </td>
+                                <td st-ratio="3" colspan="2" width="" ng-repeat="x in SimulationChart.EndometriumList track by $index">
+                                    <div class="form-group ">
+                                        <span>{{x.EndometriumThickness}}</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="collapseExample1" uib-collapse="!isEndometriumExpanded">
+                                <td st-ratio="10" class="stimFirstBody">@PIVF.LanguageResource.Resources.lblEndometriumMorphology</td>
+                                <td st-ratio="3" colspan="2" width="" ng-repeat="x in SimulationChart.EndometriumList">
+                                    <div class="form-group tooltip_element" style="color:red">
+                                        @*<span class="tooltiptext tooltip-top">{{x.EndometriumMorphology}}</span>*@
+                                        <span class="txt_ellipsis" title="{{x.EndometriumMorphology}}">{{x.EndometriumMorphology}}</span>
+                                    </div>
+                                </td>
+                                @*<td st-ratio="3" colspan="2" class="overflowTxt" ng-repeat="x in SimulationChart.EndometriumList">
+                                        <div class="form-group tooltip_element" style="color:red">
+                                            <span class="tooltiptext tooltip-top" ng-repeat="doc in SimulationChart.LatestDoctors">{{((date | date : 'dd-MMM-yyyy')==(doc.date | date : 'dd-MMM-yyyy'))? doc.Name:''}}</span>
+                                            <span class="txt_ellipsis" ng-repeat="doc in SimulationChart.LatestDoctors">{{((date | date : 'dd-MMM-yyyy')==(doc.date | date : 'dd-MMM-yyyy'))? doc.Name:''}}</span>
+                                        </div>
+                                    </td>*@
+                            </tr>
+                            @*vikrant Change as per dr Priyanka suggesstion*@
+                            <tr class="collapseExample1" uib-collapse="!isEndometriumExpanded">
+                                <td st-ratio="10" class="stimFirstBody"> @PIVF.LanguageResource.Resources.lblSCyst </td>
+                                <td st-ratio="3" colspan="2" width="" ng-repeat="x in SimulationChart.EndometriumList">
+                                    <div class="form-group ">
+                                        <div class="colLeft">
+                                            <span>{{x.cyst}}</span>
+                                        </div>
+                                        <div class="colRight">
+                                            <span>{{x.Rcyst}}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="collapseExample1" uib-collapse="!isEndometriumExpanded">
+                                <td st-ratio="10" class="stimFirstBody">@PIVF.LanguageResource.Resources.lblE2</td>
+                                <td st-ratio="3" colspan="2" width="" ng-repeat="e in SimulationChart.E2 track by $index">
+                                    <div class="form-group ">
+                                        <input type="text" class="form-control" id="" ng-attr-placeholder="" ng-model="e.Size" valid-decimal-number ng-disabled="SimulationChart.IsFinalize">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="collapseExample1" uib-collapse="!isEndometriumExpanded">
+                                <td st-ratio="10" class="stimFirstBody">@PIVF.LanguageResource.Resources.lblSProgesterone</td>
+                                <td st-ratio="3" colspan="2" width="" ng-repeat="pg in SimulationChart.Progesterone">
+                                    <div class="form-group ">
+                                        <input type="text" class="form-control" id="" ng-attr-placeholder="" ng-model="pg.Size" valid-decimal-number ng-disabled="SimulationChart.IsFinalize">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="collapseExample1 " uib-collapse="!isEndometriumExpanded">
+                                <td st-ratio="10" class="stimFirstBody">@PIVF.LanguageResource.Resources.lblFSH</td>
+                                <td st-ratio="3" colspan="2" width="" ng-repeat="f in SimulationChart.FSH">
+                                    <div class="form-group ">
+                                        <input type="text" class="form-control" id="" ng-attr-placeholder="" ng-model="f.Size" valid-decimal-number ng-disabled="SimulationChart.IsFinalize">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="collapseExample1" uib-collapse="!isEndometriumExpanded">
+                                <td st-ratio="10" class="stimFirstBody">@PIVF.LanguageResource.Resources.lblLH</td>
+                                <td st-ratio="3" colspan="2" width="" ng-repeat="f in SimulationChart.LH">
+                                    <div class="form-group ">
+                                        <input type="text" class="form-control" id="" ng-attr-placeholder="" ng-model="f.Size" valid-decimal-number ng-disabled="SimulationChart.IsFinalize">
+                                    </div>
+                                </td>
+                            </tr>
+                            @*uib-collapse="!isCollapsed"*@
+                            <tr class="collapseExample1" uib-collapse="!isEndometriumExpanded" ng-repeat="drug in SimulationChart.AddDrugList track by $index" ng-init="DrugOuterIndex=$index">
+                                @*ng-show="AddDrugList.length >=1"*@
+                                <td st-ratio="10" class="stimFirstBody">
+                                    {{drug.DrugName}}<br />
+                                    <button ng-click="SetDrugIndex($index)" ng-hide="true" ng-attr-type="button" class="btn btn_edit inline-block" data-toggle="modal" data-target=".edit-row-modal" ng-disabled="SimulationChart.IsFinalize">@*<span class="glyphicon glyphicon-pencil"></span>*@</button>
+                                    <button ng-attr-type="button" class="btn btn_delete inline-block" data-toggle="modal" data-target=".bs-example-modal-sm" ng-click="SetIdToDeleteDrug(drug, $index)" ng-disabled="SimulationChart.IsFinalize"></button>  @*ng-click="DeleteDrug($index)"*@
+                                </td>
+                                <td st-ratio="3" class="text-center" colspan="2" width="" ng-repeat="date in futureDates track by $index" ng-init="DrugInnerIndex=$index">
+                                    @*<div ng-click="setDrugItemToEdit(DrugOuterIndex,DrugInnerIndex,date,drug)" class="cursorPointer" data-toggle="modal" data-target=".inputModal" style="height:38px;">
+                                            <span ng-repeat="dt in drug.DrugNextDates">{{((date | date : 'dd-MMM-yyyy')==(dt.NextDate | date : 'dd-MMM-yyyy'))? dt.DateWiseDose:''}}</span>
+                                        </div>*@
+                                    <span ng-repeat="dt in drug.DrugNextDates">
+                                        {{((date | date : 'dd-MMM-yyyy')==(dt.NextDate | date : 'dd-MMM-yyyy'))? dt.DateWiseDose:''}}
+                                        <button ng-attr-type="button"
+                                                ng-show="((date | date : 'dd-MMM-yyyy')==(dt.NextDate | date : 'dd-MMM-yyyy'))"
+                                                class="btn btn_edit inline-block cursorPointer"
+                                                ng-click="setDrugItemToEdit(DrugOuterIndex,DrugInnerIndex,date,drug)"
+                                                data-toggle="modal" data-target=".inputModal" ng-disabled="SimulationChart.IsFinalize"></button>
+                                    </span>
+                                </td>
+                            </tr>
+                            @*<tr class="collapseExample1 collapse ">
+                                <td st-ratio="10">
+                                    <span class="text-Red" ng-show="IsValideToDisplay">*</span>
+                                    Trigger  {{(SCTriggerList | filter : {'ID':SimulationChart.TriggerDateDoseList[0].DrugID})[0].Description }}
+                                    <button ng-attr-type="button" class="btn btn_edit inline-block m-l-10" data-toggle="modal" data-target=".trigger-edit-modal" ng-show="SimulationChart.TriggerDateDoseList.length==0" ng-click="SetDefaultValues()">@*<span class="glyphicon glyphicon-pencil"></span>*@</button>
+                            @* </td>
+                                    <td st-ratio="3" colspan="2" width="" ng-repeat="date in futureDates track by $index">
+                                        <div class="form-group ">
+                                            <span ng-repeat="dt in SimulationChart.TriggerDateDoseList">{{((date | date : 'dd-MMM-yyyy')==(dt.TriggerDate | date : 'dd-MMM-yyyy'))? dt.TriggerDose:''}}</span>
+                                        </div>
+                                    </td>
+                                </tr>*@
+
+
+                            <tr class="collapseExample1" uib-collapse="!isEndometriumExpanded" ng-repeat="dt1 in SimulationChart.TriggerDateDoseList">
+                                <td st-ratio="10" class="stimFirstBody">
+                                    <span class="text-Red" ng-show="IsValideToDisplay">*</span>
+                                    @PIVF.LanguageResource.Resources.lblSTrigger-{{dt1.TriggerDrug}}
+                                </td>
+                                <td st-ratio="3" colspan="2" width="" ng-repeat="date in futureDates track by $index">
+                                    <div class="form-group ">
+                                        <span ng-repeat="dt in SimulationChart.TriggerDateDoseList">{{((date | date : 'dd-MMM-yyyy')==(dt.TriggerDate | date : 'dd-MMM-yyyy')) && (dt1.TriggerDrug===dt.TriggerDrug)? dt.TriggerDose:''}}</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+
+
+                            <tr class="collapseExample1" uib-collapse="!isEndometriumExpanded">
+                                <td st-ratio="10" class="stimFirstBody">@PIVF.LanguageResource.Resources.lblRemarks</td>
+                                <td st-ratio="3" class="" colspan="2" width="" ng-repeat="r in SimulationChart.RemarksList">
+                                    <div ng-class="r.Remark==undefined?'form-group ':' input-tooltip'">
+                                        @*<span class="tooltiptext tooltip-top">{{r.Remark}}</span>
+                                            <textarea class="form-control" id="" ng-attr-placeholder="" ng-model="r.Remark" maxlength="100"></textarea>*@
+                                        <textarea class="form-control" title="{{r.Remark}}" id="" ng-attr-placeholder="" ng-model="r.Remark" maxlength="100" ng-disabled="SimulationChart.IsFinalize"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                @*<td st-ratio="10" class="cursorPointer" data-toggle="collapse" data-target=".collapseExample2"><img src="~/images/CollapseRight_black.png" /> @PIVF.LanguageResource.Resources.lblSconsultantphysician</td>*@
+                                <td st-ratio="10" class="cursorPointer stimFirstBody" ng-click="isConsultantPhysicianExpanded = !isConsultantPhysicianExpanded"><img src="~/images/CollapseUp_black.png" ng-hide="!isConsultantPhysicianExpanded" /> <img src="~/images/CollapseDown_black.png" ng-hide="isConsultantPhysicianExpanded" /> @PIVF.LanguageResource.Resources.lblSconsultantphysician</td>
+                                <td st-ratio="3" colspan="2" class="overflowTxt" ng-repeat="date in futureDates track by $index">
+                                    <div class="form-group tooltip_element" style="color:red">
+                                        @*<span class="tooltiptext tooltip-top" ng-repeat="doc in SimulationChart.LatestDoctors">{{((date | date : 'dd-MMM-yyyy')==(doc.date | date : 'dd-MMM-yyyy'))? doc.Name:''}}</span>*@
+                                        <span class="txt_ellipsis" ng-repeat="doc in SimulationChart.LatestDoctors" title="{{((date | date : 'dd-MMM-yyyy')==(doc.date | date : 'dd-MMM-yyyy'))? doc.Name:''}}">{{((date | date : 'dd-MMM-yyyy')==(doc.date | date : 'dd-MMM-yyyy'))? doc.Name:''}}</span>
+                                        @*<select id="ddlDrug{{$index}}" ng-init="date.DoctorID=0"
+                                            ng-model="date.DoctorID"
+                                            class="form-control"
+                                            ng-options="item.ID as item.Description for item in DoctorList | limitTo:4"></select>*@
+                                    </div>
+
+                                    @*<td st-ratio="3" colspan="2" class="overflowTxt" ng-repeat="x in SimulationChart.EndometriumList">
+                                            <div class="form-group tooltip_element" style="color:red">
+                                                <span class="tooltiptext tooltip-top">{{x.EndometriumMorphology}}</span>
+                                                <span class="txt_ellipsis">{{x.EndometriumMorphology}}</span>
+                                            </div>
+                                        </td>*@
+
+                                </td>
+                            </tr>
+                            <tr class="collapseExample2" uib-collapse="!isConsultantPhysicianExpanded">
+                                <td st-ratio="10" class="stimFirstBody">@PIVF.LanguageResource.Resources.lblSdrugadministration</td>
+                                <td st-ratio="3" colspan="2" width="" ng-repeat="name in SimulationChart.DoctorNameList track by $index">
+                                    <div class="form-group text-center">
+                                        <input type="checkbox"
+                                               id="User{{$index}}" value="option1"
+                                               ng-model="name.IsChecked"
+                                               ng-click="DrugAdmin($index,name.date,name.Inhouse,name.Outside)"
+                                               data-toggle="modal"
+                                               data-target=".checkedPopup" ng-disabled="SimulationChart.IsFinalize">
+                                        <br />
+                                        <!-- <input type="text" class="form-control" id="" ng-attr-placeholder="" > -->
+                                        <span>{{name.DoctorName}}</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 form-horizontal">
+                <div class="form-group ">
+                    <!-- <label class="col-md-4 col-sm-3 col-lg-1 control-label" for=""></label> -->
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="" style="display: flex; align-items: center; gap: 10px;" ng-disabled="SimulationChart.IsFinalize">
+                        <input type="checkbox" class="" ng-model="SimulationChart.IsCycleCancellation" ng-click="EnableDisableReason(SimulationChart.IsCycleCancellation)" style="margin:0px;" ng-disabled="SimulationChart.IsFinalize">@PIVF.LanguageResource.Resources.lblSCycleCancellation
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <textarea type="text" class="form-control" maxlength="500" id="" ng-attr-placeholder="Reason" ng-model="SimulationChart.Reason" ng-disabled="MakeReasonDisabled"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 form-horizontal">
+                <div class="form-group ">
+                    <!-- <label class="col-md-4 col-sm-3 col-lg-1 control-label" for=""></label> -->
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="" style="display: flex; align-items: center; gap: 10px;" ng-disabled="SimulationChart.IsFinalize">
+                        <input type="checkbox" class="" ng-model="SimulationChart.IsCloseCycleOnCancellation" style="margin:0px;" ng-disabled="SimulationChart.IsFinalize"> @PIVF.LanguageResource.Resources.lblSClosecyclecancellation
+                    </label>
+                </div>
+            </div>
+        </div>
+   
+        <!-- Save Cancle Buttons -->
+        <div class="row form-horizontal m-t-10" style="position: relative;
+        z-index: 11;">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <label class="control-label noteLabel p-t-0" id="" for="">@PIVF.LanguageResource.Resources.lblLastUpdatedBy: <span ng-hide="SimulationChart.CapturedBy=='undefined' || SimulationChart.CapturedBy==null">Dr.</span> {{SimulationChart.CapturedBy}} <span ng-hide="SimulationChart.LastUpdatedByDate=='undefined' || SimulationChart.LastUpdatedByDate==null">on</span> {{SimulationChart.LastUpdatedByDate | date :'dd-MMM-yyyy HH:mm:ss a'}}</label>
+                <label class="control-label noteLabel block p-t-0" id="" for="" ng-show="IsValidToDisabelSave">@PIVF.LanguageResource.Resources.lblSFinalizedby: <span ng-hide="SimulationChart.FinalizedUser=='undefined' || SimulationChart.FinalizedUser==null">Dr.</span> {{SimulationChart.FinalizedUser}} <span ng-hide="SimulationChart.FinalizedByDate=='undefined' || SimulationChart.FinalizedByDate==null">on</span> {{SimulationChart.FinalizedByDate | date :'dd-MMM-yyyy HH:mm:ss a'}}</label>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 text-right">
+                <label class="checkbox-inline p-t-0"><input type="checkbox" id="inlineCheckbox1" value="option1" ng-model="SimulationChart.IsFinalize" ng-disabled="SimulationChart.IsFinalize"> @PIVF.LanguageResource.Resources.lblFinalize</label>
+                <button class="btn btn-primary" ng-attr-type="button" id="" value="" ng-click="SaveUpdateStimulationChart(SimulationChart)" ng-disabled="IsValidToDisabelSave">@PIVF.LanguageResource.Resources.btnSave</button>
+                @*<button class="btn btn-primary btn-print" ng-click="PrintSummary()">Print</button>*@
+                @*<button class="btn-link dashboard_print" title="Print Female Detail Summary" ng-click="PrintSummary()"><span class="glyphicon glyphicon-print"></span></button>*@
+                @*<button class="btn btn-primary" ng-attr-type="button" id="" value="">Cancel</button>*@
+            </div>
+
+        </div>
+    
+     </div>
+
+ 
+
+    <!-- reason model -->
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button ng-attr-type="button" id="btnClosePop" ng-click="ClearDelete()" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblAppointmentReason</h4>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control" ng-model="DeleteDrugReason" rows="2" maxlength="250"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button ng-attr-type="button" class="btn btn-primary" ng-click="DeleteDrug()">@PIVF.LanguageResource.Resources.btnSave</button>
+                    <button ng-attr-type="button" class="btn btn-default" ng-click="ClearDelete()" data-dismiss="modal">@PIVF.LanguageResource.Resources.btnCancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /reason model -->
+    <!-- Edit model -->
+    <form name="frmSChartAddDrug" novalidate>
+        <div class="modal fade edit-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button ng-attr-type="button" id="btnClosePop" class="close" ng-click="ClearDrugList(1)" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblSAdddrug</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label id="text-right">
+                                <a ng-click="AddNewDrugs()">@PIVF.LanguageResource.Resources.lblSAdddrug</a>
+                            </label>
+                        </div>
+                        <div class="row form-horizontal">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="table-responsive table-bordered" style="max-height:420px;">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th width="160px">@PIVF.LanguageResource.Resources.lblDrugName</th>
+                                                <th width="180px">@PIVF.LanguageResource.Resources.lblSStartDate</th>
+                                                <th width="180px">@PIVF.LanguageResource.Resources.lblSTime</th>
+                                                <th width="200px">#@PIVF.LanguageResource.Resources.lblSDays</th>
+                                                <th width="200px">@PIVF.LanguageResource.Resources.lblDose</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="Item in MultipleDrug">
+                                                <td>
+                                                    <select id="SCDrugID"
+                                                            name="SCDrugID"
+                                                            @*ng-model="SimulationChart.SCDrugID"*@
+                                                            ng-model="Item.SCDrugID"
+                                                            class="form-control"
+                                                            ng-class="{select:Item.SCDrugIDInvalid==true}"
+                                                            ng-required="true"
+                                                            ng-change="CheckDuplicatDrug(Item)"
+                                                            ng-options="item.ID as item.Description for item in SCDrugList "></select>
+                                                    @*<input type="text" class="form-control" id="SCDrugID" placeholder="Search"
+                                                        name="SCDrugID" ng-class="{select:Item.SCDrugIDInvalid==true}" ng-change="CheckDuplicatDrug(Item)"
+                                                        ng-required="true" ng-model="Item.SCDrug" uib-typeahead="item as (item.Description) for item in getMatchingBrand($viewValue) | limitTo : 8"
+                                                        typeahead-on-select="onSelect($item, $model, $label)">*@ @*Added by divya on 17aug2020*@
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control"
+                                                                   id="DrugDate"
+                                                                   name="DrugDate"
+                                                                   min-date="minDate"
+                                                                   max-date="maxDate"
+                                                                   ng-attr-placeholder="dd-MMM-yyyy"
+                                                                   ng-model="Item.DrugDate"
+                                                                   aria-describedby=""
+                                                                   uib-datepicker-popup="{{format}}"
+                                                                   show-button-bar="false"
+                                                                   ng-required="true"
+                                                                   ng-change="AddDays(Item)"
+                                                                   @*ng-change="GetDaysList('FromControl')"*@
+                                                                   @*is-open="popup2.opened"*@
+                                                                   ng-class="{invalid:Item.DateInvalid == true}"
+                                                                   is-open="Item.opened"
+                                                                   datepicker-options="dateOptions2"
+                                                                   alt-input-formats="altInputFormats">
+                                                            <span class="input-group-addon" id=""
+                                                                  @*ng-click="open2()"*@
+                                                                  ng-click="open1($event,Item)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div uib-timepicker
+                                                             @*ng-model="SimulationChart.StimulationTime"*@
+                                                             ng-model="Item.StimulationTime"
+                                                             id="StimulationTime"
+                                                             class="timeCss text-center"
+                                                             name="StimulationTime"
+                                                             ng-class="{'has-error':Item.TimeInvalid == true}"
+                                                             ng-required="true"
+                                                             hour-step="1"
+                                                             minute-step="1"
+                                                             show-meridian="false"
+                                                             show-spinners="false"
+                                                             show-seconds="false"></div>
+                                                    </td>
+                                                    <td>
+                                                        <select id="SCDays"
+                                                                name="SCDays"
+                                                                ng-init="SimulationChart.SCDays= SimulationChart.SCDays || DaysList[0].ID"
+                                                                @*ng-model="SimulationChart.SCDays"*@
+                                                                ng-model="Item.SCDays"
+                                                                class="form-control"
+                                                                @*ng-class="{select:SimulationChart.SCDays== 0 && frmSChartAddDrug.SCDays.$dirty}"*@
+                                                                ng-class="{select:Item.DaysInvalid==true}"
+                                                                ng-required="true"
+                                                                ng-options="item.ID as item.Description for item in Item.DaysList"></select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="SCDose" name="SCDose"
+                                                               ng-attr-placeholder=""
+                                                               @*ng-model="SimulationChart.SCDose"*@
+                                                               ng-model="Item.SCDose"
+                                                               ng-class="{invalid:Item.DoseInvalid == true}"
+                                                               ng-required="true"
+                                                               allow-decimal-numbers-with-precision-and-scale-restricted>
+                                                    </td>
+                                                    <td ng-show="MultipleDrug.length > 1">
+                                                        <input type="button" value="Remove" ng-click="RemoveDrug($index)" />
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row form-horizontal">
+                                <div class="col-lg-12 text-right">
+                                    <button class="btn btn-primary m-b-0" ng-attr-type="button" ng-disabled="ExceedLimit" ng-click="NewAddDrug()" @*ng-click="AddDrug()"*@>@PIVF.LanguageResource.Resources.lblSSave</button>
+                                    <button class="btn btn-default" ng-attr-type="button" id="" ng-click="ClearDrugList(1)" data-dismiss="modal" aria-label="Close" value="">@PIVF.LanguageResource.Resources.btnCancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- /Edit model -->
+        <!-- Edit model -->
+        <form name="frmEditRowwiseDrug" novalidate>
+            <div class="modal fade edit-row-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button ng-attr-type="button" id="btnClosePop" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblSEditDrug</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row form-horizontal">
+                                <div class="col-md-3 col-lg-3 ">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">
+                                            @PIVF.LanguageResource.Resources.lblDrugName
+                                        </label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <select id="SCDrugID"
+                                                    name="SCDrugID"
+                                                    ng-disabled="editDrugNamePopupDDDisabled"
+                                                    ng-model="SimulationChart.SCDrugID"
+                                                    class="form-control"
+                                                    ng-class="{select:SimulationChart.SCDrugID == 0 && frmEditRowwiseDrug.SCDrugID.$dirty}"
+                                                    ng-required="true"
+                                                    ng-options="item.ID as item.Description for item in SCDrugList"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-lg-5">
+                                    <div class="form-group ">
+                                        <div class="col-md-8 col-lg-8">
+                                            <div class="form-group ">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                                    @PIVF.LanguageResource.Resources.lblStartDate
+                                                </label>
+                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                    <div class="input-group date" ng-class="{'invalid':frmEditRowwiseDrug.DrugDate.$invalid && frmEditRowwiseDrug.DrugDate.$dirty  }">
+                                                        <input type="text" class="form-control"
+                                                               id="DrugDate"
+                                                               name="DrugDate"
+                                                               min-date="minDate"
+                                                               max-date="maxDate"
+                                                               ng-attr-placeholder="dd-MMM-yyyy"
+                                                               ng-model="SimulationChart.DrugDate"
+                                                               aria-describedby=""
+                                                               uib-datepicker-popup="{{format}}"
+                                                               ng-required="true"
+                                                               show-button-bar="false"
+                                                               ng-change="GetDaysList('FromControl')"
+                                                               is-open="popup10.opened"
+                                                               ng-disabled="false"
+                                                               datepicker-options="dateOptions10"
+                                                               alt-input-formats="altInputFormats">
+                                                        <span class="input-group-addon" id="" ng-click="open10()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-lg-4">
+                                            <div class="form-group ">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblSTime</label>
+                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                    <div uib-timepicker ng-model="SimulationChart.StimulationTime"
+                                                         id="StimulationTime"
+                                                         class="timeCss text-center"
+                                                         name="StimulationTime"
+                                                         ng-class="{'has-error':frmEditRowwiseDrug.StimulationTime.$invalid && frmEditRowwiseDrug.StimulationTime.$dirty  }"
+                                                         ng-required="true"
+                                                         hour-step="1"
+                                                         minute-step="1"
+                                                         show-meridian="false"
+                                                         show-spinners="false"
+                                                         show-seconds="false"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-lg-2 ">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">
+                                            #@PIVF.LanguageResource.Resources.lblSDays
+                                        </label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <select id="SCDays"
+                                                    name="SCDays"
+                                                    ng-init="SimulationChart.SCDays= SimulationChart.SCDays || DaysList[0].ID"
+                                                    ng-model="SimulationChart.SCDays"
+                                                    class="form-control"
+                                                    ng-class="{select:SimulationChart.SCDays== 0 && frmEditRowwiseDrug.SCDays.$dirty}"
+                                                    ng-required="true"
+                                                    ng-options="item.ID as item.Description for item in DaysList"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-lg-2 ">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">
+                                            @PIVF.LanguageResource.Resources.lblDose
+                                        </label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <input type="text" class="form-control" id="SCDose" name="SCDose" ng-attr-placeholder="" ng-model="SimulationChart.SCDose" ng-class="{select:frmEditRowwiseDrug.SCDose.$invalid && frmEditRowwiseDrug.SCDose.$dirty}" ng-required="true" allow-decimal-numbers-with-precision-and-scale-restricted>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row form-horizontal m-t-10">
+                                <div class="col-lg-12 text-right">
+                                    <button class="btn btn-primary m-b-0" ng-attr-type="button" id="" value="" ng-click="EditRowWiseDrug(SimulationChart)">@PIVF.LanguageResource.Resources.btnUpdate</button>
+                                    <button class="btn btn-default" ng-attr-type="button" data-dismiss="modal" id="" value="">@PIVF.LanguageResource.Resources.btnCancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- /Edit model -->
+        <!-- Trigger model -->
+        @*<form name="frmAddTrigger" novalidate>
+            <div class="modal fade trigger-edit-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button ng-attr-type="button" id="btnClosePop" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Trigger</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row form-horizontal">
+                                <div class="col-md-4 col-lg-4 ">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">
+                                            Drug Name
+                                        </label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <select id="SCDrugID"
+                                                    name="SCDrugID"
+                                                    ng-model="SimulationChart.SCDrugID"
+                                                    class="form-control"
+                                                    ng-class="{select:SimulationChart.SCDrugID == 0 && frmAddTrigger.SCDrugID.$dirty}"
+                                                    ng-required="true"
+                                                    ng-options="item.ID as item.Description for item in SCTriggerList"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-lg-5">
+                                    <div class="form-group ">
+                                        <div class="col-md-8 col-sm-7 col-lg-8">
+                                            <div class="form-group ">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                                    Date
+                                                </label>
+                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                    <div class="input-group date" ng-class="{'invalid':frmAddTrigger.DrugDate.$invalid && frmAddTrigger.DrugDate.$dirty  }">
+                                                        <input type="text" class="form-control"
+                                                               id="DrugDate"
+                                                               name="DrugDate"
+                                                               min-date="minDate"
+                                                               max-date="maxDate"
+                                                               ng-attr-placeholder="dd-MMM-yyyy"
+                                                               ng-model="SimulationChart.TriggerDate"
+                                                               aria-describedby=""
+                                                               ng-required="true"
+                                                               uib-datepicker-popup="{{format}}"
+                                                               show-button-bar="false"
+                                                               is-open="popup5.opened"
+                                                               datepicker-options="dateOptions5"
+                                                               alt-input-formats="altInputFormats">
+                                                        <span class="input-group-addon" id="" ng-click="open5()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-lg-4">
+                                            <div class="form-group ">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Time</label>
+                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                    <div uib-timepicker ng-model="SimulationChart.SimulationChartTime"
+                                                         id="SimulationChartTime"
+                                                         class="timeCss text-center"
+                                                         name="SimulationChartTime"
+                                                         hour-step="1"
+                                                         minute-step="1"
+                                                         ng-class="{'has-error':frmAddTrigger.SimulationChartTime.$invalid && frmAddTrigger.SimulationChartTime.$dirty  }"
+                                                         ng-required="true"
+                                                         show-meridian="false"
+                                                         show-spinners="false"
+                                                         show-seconds="false"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3 ">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">
+                                            Dose
+                                        </label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <input type="text" class="form-control" id="SCDose" name="SCDose" ng-attr-placeholder="" ng-model="SimulationChart.SCDose" ng-class="{select:frmAddTrigger.SCDose.$invalid && frmAddTrigger.SCDose.$dirty}" ng-required="true" allow-decimal-numbers-with-precision-and-scale-restricted>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row form-horizontal">
+                                <div class="col-lg-12 text-right">
+                                    <button class="btn btn-primary" ng-attr-type="button" id="" value="" ng-click="AddTrigger()">Save</button>
+                                    <button class="btn btn-default" ng-attr-type="button" id="" value="" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            @*Show Spinner*@
+        @*<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+            </form>*@
+        <!-- /Trigger Edit model -->
+        <!-- Trigger model -->
+        <form name="frmAddTrigger" novalidate>
+            <div class="modal fade trigger-edit-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button ng-attr-type="button" id="btnClosePop" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblSTrigger</h4>
+                        </div>
+                        <div>
+                            <div class="form-group ">
+                                <button type="button" id="" value="" ng-click="AddNewTriggerDrugs()"> <span class="glyphicon glyphicon-plus"></span></button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive table-bordered" style="max-height:420px;">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th width="220px">@PIVF.LanguageResource.Resources.lblDrugName</th>
+                                        <th width="330px">@PIVF.LanguageResource.Resources.lblSStartDate</th>
+                                        <th width="120px">@PIVF.LanguageResource.Resources.lblSTime</th>
+                                        <th width="160px">@PIVF.LanguageResource.Resources.lblDose</th>
+                                        <th>&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="SimulationChart in SimulationChart.TriggerDateDoseListData">
+                                        <td>
+                                            <select id="SCDrugID"
+                                                    name="SCDrugID"
+                                                    ng-model="SimulationChart.SCDrugID"
+                                                    class="form-control"
+                                                    ng-change="CheckDuplicateTriggerDrug(SimulationChart)"
+                                                    ng-class="{select:SimulationChart.SCDrugID == 0 && frmAddTrigger.SCDrugID.$dirty}"
+                                                    ng-required="true"
+                                                    ng-options="item.ID as item.Description for item in SCTriggerList"></select>
+
+                                        </td>
+
+                                        <td>
+                                            <div class="input-group date" ng-class="{'invalid':frmAddTrigger.DrugDate.$invalid && frmAddTrigger.DrugDate.$dirty  }">
+                                                <input type="text" class="form-control"
+                                                       id="DrugDate"
+                                                       name="DrugDate"
+                                                       min-date="minDate"
+                                                       max-date="maxDate"
+                                                       ng-attr-placeholder="dd-MMM-yyyy"
+                                                       ng-model="SimulationChart.TriggerDate"
+                                                       aria-describedby=""
+                                                       ng-required="true"
+                                                       uib-datepicker-popup="{{format}}"
+                                                       show-button-bar="false"
+                                                       is-open="SimulationChart.opened"
+                                                       datepicker-options="dateOptions5"
+                                                       alt-input-formats="altInputFormats">
+                                                <span class="input-group-addon" id="" ng-click="open5($event,SimulationChart)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                            </div>
+                                        </td>
+
+
+                                        <td>
+                                            <div uib-timepicker ng-model="SimulationChart.SimulationChartTime"
+                                                 id="SimulationChartTime"
+                                                 class="timeCss text-center"
+                                                 name="SimulationChartTime"
+                                                 hour-step="1"
+                                                 minute-step="1"
+                                                 ng-class="{'has-error':frmAddTrigger.SimulationChartTime.$invalid && frmAddTrigger.SimulationChartTime.$dirty  }"
+                                                 ng-required="true"
+                                                 show-meridian="false"
+                                                 show-spinners="false"
+                                                 show-seconds="false"></div>
+
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                <input type="text" class="form-control" id="SCDose" name="SCDose" ng-attr-placeholder="" ng-model="SimulationChart.SCDose" ng-class="{select:frmAddTrigger.SCDose.$invalid && frmAddTrigger.SCDose.$dirty}" ng-required="true" allow-decimal-numbers-with-precision-and-scale-restricted>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <button class="btn_delete" value="Remove" type="button" ng-click="RemoveTriggerDrug($index)"></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="modal-footer">
+                                <div class="row form-horizontal">
+                                    <div class="col-lg-12 text-right">
+                                        @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#message_popup" data-dismiss="modal" ng-click="AddTrigger()">Save</button>*@
+                                        <button class="btn btn-primary" ng-attr-type="button" id="" value="" ng-click="AddTrigger()">@PIVF.LanguageResource.Resources.lblSSave</button>
+                                        @*<button class="btn btn-default" ng-attr-type="button" id="" value="" data-dismiss="modal" aria-hidden="true">Cancel</button>*@
+                                        <button ng-attr-type="button" class="btn btn-default" ng-click="CancelTrigger()" data-dismiss="modal">@PIVF.LanguageResource.Resources.btnCancel</button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*Show Spinner*@
+            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+        </form>
+        <!-- /Trigger Edit model -->
+        <!-- Input Field model -->
+        <form name="frmEditSpecificDrug" novalidate>
+            <div class="modal fade inputModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content form-horizontal">
+                        <div class="modal-header">
+                            <button ng-attr-type="button" id="btnClosePop" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblSEditDrug</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row form-horizontal">
+                                <div class="col-md-3 col-lg-3 ">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">
+                                            @PIVF.LanguageResource.Resources.lblDrugName
+                                        </label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <select id="SCDrugID"
+                                                    name="SCDrugID"
+                                                    ng-disabled="editDrugNamePopupDDDisabled"
+                                                    ng-model="SimulationChart.SCDrugID"
+                                                    class="form-control"
+                                                    ng-class="{select:SimulationChart.SCDrugID == 0 && frmEditSpecificDrug.SCDrugID.$dirty}"
+                                                    ng-required="true"
+                                                    ng-options="item.ID as item.Description for item in SCDrugList"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-lg-5">
+                                    <div class="form-group ">
+                                        <div class="col-md-7 col-lg-7">
+                                            <div class="form-group ">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                                    @PIVF.LanguageResource.Resources.lblSStartDate
+                                                </label>
+                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                    <div class="input-group date" ng-class="{'invalid':frmEditSpecificDrug.DrugDate.$invalid && frmEditSpecificDrug.DrugDate.$dirty  }">
+                                                        <input type="text" class="form-control"
+                                                               id="DrugDate"
+                                                               name="DrugDate"
+                                                               min-date="minDate"
+                                                               max-date="maxDate"
+                                                               ng-attr-placeholder="dd-MMM-yyyy"
+                                                               ng-model="SimulationChart.DrugDate"
+                                                               aria-describedby=""
+                                                               ng-required="true"
+                                                               uib-datepicker-popup="{{format}}"
+                                                               show-button-bar="false"
+                                                               ng-change="GetDaysList('FromControl')"
+                                                               ng-disabled="editSpecificDateDisable"
+                                                               is-open="popup2.opened"
+                                                               datepicker-options="dateOptions2"
+                                                               alt-input-formats="altInputFormats">
+                                                        <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 col-lg-5">
+                                            <div class="form-group ">
+                                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblSTime</label>
+                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                    <div uib-timepicker ng-model="SimulationChart.StimulationTime"
+                                                         id="StimulationTime"
+                                                         class="timeCss text-center"
+                                                         name="StimulationTime"
+                                                         ng-class="{'has-error':frmEditSpecificDrug.StimulationTime.$invalid && frmEditSpecificDrug.StimulationTime.$dirty  }"
+                                                         hour-step="1"
+                                                         minute-step="1"
+                                                         ng-required="true"
+                                                         show-meridian="false"
+                                                         show-spinners="false"
+                                                         show-seconds="false"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-lg-2 ">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">
+                                            #@PIVF.LanguageResource.Resources.lblSDays
+                                        </label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <select id="SCDays"
+                                                    name="SCDays"
+                                                    ng-init="SimulationChart.SCDays= SimulationChart.SCDays || DaysList[0].ID"
+                                                    ng-disabled="editDrugDaysDisabled"
+                                                    ng-model="SimulationChart.SCDays"
+                                                    class="form-control"
+                                                    ng-class="{select:SimulationChart.SCDays== 0 && frmEditSpecificDrug.SCDays.$dirty}"
+                                                    ng-required="true"
+                                                    ng-options="item.ID as item.Description for item in DaysList"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-lg-2">
+                                    <div class="form-group ">
+                                        <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">
+                                            @PIVF.LanguageResource.Resources.lblDose
+                                        </label>
+                                        <div class="col-md-12 col-sm-12 col-lg-12">
+                                            <input type="text" class="form-control"
+                                                   id="SCDose" name="SCDose" ng-attr-placeholder=""
+                                                   ng-model="SimulationChart.SCDose"
+                                                   ng-class="{select:frmEditSpecificDrug.SCDose.$invalid && frmEditSpecificDrug.SCDose.$dirty}"
+                                                   ng-disabled="editDoseDisabled"
+                                                   ng-required="true"
+                                                   allow-decimal-numbers-with-precision-and-scale-restricted>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row form-horizontal m-t-20">
+                                <div class="col-lg-12 text-right">
+                                    <button class="btn btn-primary m-b-0" ng-attr-type="button" id="" value="" ng-click="EditDrugAtIndexSpecific()">@PIVF.LanguageResource.Resources.btnUpdate</button>
+                                    <button class="btn btn-default m-b-0" ng-attr-type="button" id="" value="" ng-click="DeleteDrugAtIndexSpecific()">@PIVF.LanguageResource.Resources.btnDelete</button>
+                                    <button class="btn btn-default" ng-attr-type="button" id="" value="" data-dismiss="modal" aria-hidden="true">@PIVF.LanguageResource.Resources.btnCancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- /Input Field model -->
+        <!-- ART Type model -->
+        <div class="modal fade artType" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button ng-attr-type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblAppointmentReason</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblSArtsubtype</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select id="ddlSpecimenType"
+                                                ng-model="SimulationChart.SCARTSubID"
+                                                class="form-control"
+                                                ng-options="item.ID as item.Description for item in ARTSubTypeList"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label class="checkbox-inline p-t-7"><input type="checkbox" id="inlineCheckbox1" value="option1" tabindex="85" ng-model="SimulationChart.IsFinalize"> @PIVF.LanguageResource.Resources.lblFinalize</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button ng-attr-type="button" class="btn btn-primary" ng-click="SaveReason()">@PIVF.LanguageResource.Resources.btnSave</button>
+                        <button ng-attr-type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">@PIVF.LanguageResource.Resources.btnCancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /ART Type model -->
+        <!-- Checkbox checked model -->
+        <div class="modal fade checkedPopup" id="btnClosePop" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button ng-attr-type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblAppointmentReason</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label class="radio-inline" ng-init="InhouseOrOutside='Inhouse'">
+                            <input type="radio" name="inlineRadioOptions" id="Inhouse" value="Inhouse" ng-model="InhouseOrOutside" checked> @PIVF.LanguageResource.Resources.lblSInhouse
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" id="Outside" value="Outside" ng-model="InhouseOrOutside"> @PIVF.LanguageResource.Resources.lblSOutside
+                        </label>
+                    </div>
+                    <div class="modal-footer">
+                        <button ng-attr-type="button" class="btn btn-primary" ng-click="SetDoctorName(InhouseOrOutside)">@PIVF.LanguageResource.Resources.btnSave</button>
+                        <button ng-attr-type="button" class="btn btn-default" ng-click="DrugAdministrationCancel()" aria-hidden="true">@PIVF.LanguageResource.Resources.btnCancel</button> @*data-dismiss="modal"*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Checkbox checked model -->
+        <div class="modal fade uiModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button ng-attr-type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblShormonalgraphs</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div style="width:100%;">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button ng-attr-type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">@PIVF.LanguageResource.Resources.btnCancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+

@@ -1,0 +1,574 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    /* Ensure the input-group has a relative position */
+    .input-group.date {
+        position: relative !important;
+    }
+
+    /* Fix datepicker popup positioning */
+    .uib-datepicker-popup.dropdown-menu {
+        position: absolute !important;
+        z-index: 1050 !important; /* Ensure it appears above everything */
+        top: auto !important;
+        left: auto !important;
+        transform: translateY(5px) !important; /* Adjust the popup slightly below input */
+    }
+
+    /* Ensure that the input field doesn't get overlapped */
+    .uib-datepicker-popup {
+        white-space: nowrap !important;
+    }
+
+    /* Prevent other elements from overlapping */
+    /*.table-responsive td .input-group.date {
+        position: relative !important;
+        z-index: 9999 !important;
+    }*/
+
+    /* Ensure the datepicker is visible within tables */
+    .table-responsive {
+        overflow: visible !important;
+    }
+</style>
+<div ng-controller="OutcomeCtr" class="page_outcome">
+    <!-- cycles links -->
+    <div class="cycleLinks" style="position: relative;
+        z-index: 11;">
+        <ul>
+            <li ng-click="Navigate('CycleOverview')">@PIVF.LanguageResource.Resources.lblSOverview</li>
+            <li ng-click="Navigate('StimulationChart')">@PIVF.LanguageResource.Resources.lblStimulationChart</li>
+            <li ng-click="Navigate('SemenDetails')" ng-show="configData.SemenDetail">@PIVF.LanguageResource.Resources.lblSSemenDetails</li>
+            <li ng-click="Navigate('IUI')" ng-show="configData.IUI">@PIVF.LanguageResource.Resources.lblSIUI</li>
+            <li ng-click="Navigate('OPU')" ng-show="configData.OPU">@PIVF.LanguageResource.Resources.lblSOpu</li>
+            <li ng-click="Navigate('Embrology')" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSEmbryology</li>
+            <li ng-click="Navigate('PGT');" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSPgt</li>
+
+            <li class="subMenucryo" ng-show="configData.CryoPreservation">
+                <span class="menu-title">
+                    @PIVF.LanguageResource.Resources.lblCryobank
+                    <span class="arrow"></span> <!-- Arrow added -->
+                </span>
+                <ul>
+                    <li ng-click="Navigate('OocyteVitrification')" ng-show="configData.OocyteVitrification">@PIVF.LanguageResource.Resources.lblSOocyteVitrification</li>
+                    <li ng-click="Navigate('OocyteThowing')" ng-show="configData.OocyteThawing">@PIVF.LanguageResource.Resources.lblSOocyteThawing</li>
+                    <li ng-click="Navigate('EmbryoVitrification')" ng-show="configData.EmbryoVitrification">@PIVF.LanguageResource.Resources.lblSEmbryoVitrification</li>
+                    <li ng-click="Navigate('EmbryoThowing')" ng-show="configData.EmbryoThawing">@PIVF.LanguageResource.Resources.lblSEmbryoThawing</li>
+                </ul>
+            </li>
+            <li ng-click="Navigate('EmbryoTransfer')" ng-show="configData.EmbryoTransfer">@PIVF.LanguageResource.Resources.lblSEmbryoTransfer</li>
+            <li class="active" ng-click="Navigate('Outcome')" ng-show="configData.Outcome">@PIVF.LanguageResource.Resources.lblOutcome</li>
+        </ul>
+    </div>
+    <!-- /cycles links -->
+
+    <div class="div60"></div>
+    <div class="form_Content p-t-10" id="form_Content" ng-init="LoadData()">
+        <div class="row">
+            @*style="position: relative;
+                z-index: 11;"*@
+            @*<div class="col-lg-12 text-right">
+                    <button class="btn-link link m-t-10 m-b-10"  ng-disabled="IsEmryoTransfered" type="button" id="" ng-click="AddRow()" value=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                </div>*@
+            <div class="col-lg-12">
+                <div class="table-responsive table-bordered" style="min-height:130px; max-height:150px;">
+                    @*style="min-height:200px; max-height:200px;"*@
+                    <!-- min-height:355px;  -->
+                    <table class="table" id="profile_table">
+                        <thead>
+                            <tr>
+                                <th width="">&nbsp;</th>
+                                <th width="">{{GridTitle}}</th>
+                                <th width="300">@PIVF.LanguageResource.Resources.lblSDate</th>
+                                <th width="" class="" ng-hide="GridTitle=='UPT'">@PIVF.LanguageResource.Resources.lblSResult</th>
+                                <th width="">@PIVF.LanguageResource.Resources.lblStatus</th>
+                                <th width="" ng-show="TransferTo">@PIVF.LanguageResource.Resources.lblSTransferto</th>
+                                <th class="text-right" width=""><button class="btn-link link cursorPointer" ng-disabled="IsEmryoTransfered" title="New" type="button" id="" ng-click="AddRow()" value=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="" ng-repeat="i in BHCGList">
+                                <td><span class="btn_delete" data-toggle="modal" ng-click="DeleteRow($index)"></span></td>
+                                <td>{{i.BHCGTitle}}</td>
+                                <td>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control text-center" id="txtThawingDate" name="txtThawingDate" placeholder="dd-Mmm-yyyy" ng-model="i.HCGDate" aria-describedby="" uib-datepicker-popup="{{format}}"
+                                               show-button-bar="false" is-open="i.opened" datepicker-options="i.dateOptions" alt-input-formats="altInputFormats">
+                                        <span class="input-group-addon" id="" ng-click="open($event,$index)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    </div>
+                                </td>
+                                <td ng-hide="GridTitle=='UPT'"><input type="text" class="form-control" id="" ng-model="i.Result" placeholder="" ng-blur="IsBCHGEntered?0:ResultEnter()" ng-keypress="valiadeResult(i.Result,$event)"></td>
+                                <td>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="searchPatient_{{$index}}" ng-model="i.IsPositive" id="tdbPositive_{{$index}}" value="1" ng-change="StatusInUTPChange(i.IsPositive)">Positive
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="searchPatient_{{$index}}" ng-model="i.IsPositive" id="tdbNegative_{{$index}}" value="2" ng-change="StatusInUTPChange(i.IsPositive)"> Negative
+                                    </label>
+                                </td>
+                                <td ng-show="TransferTo">
+                                    @*ng-show="TransferTo"*@
+                                    <select ng-model="i.TransferToID"
+                                            class="form-control"
+                                            ng-change="USGChange(i.TransferToID,$index)"
+                                            ng-options="item.ID as item.Description for item in TransferToList"></select>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="position: relative;
+        z-index: 11;">
+            <section class="col-md-12 col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblSUSG</h5></section>
+            <div class="col-md-4 col-lg-3 form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblSDOO</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group date datepicker-container">
+                            <input type="text" ng-disabled="!IsBCHGEntered" class="form-control"
+                                   id="ObservationDate" name="ObservationDate" placeholder="dd-MMM-yyyy"
+                                   ng-model="Outcome.DateOfObservation"
+                                   uib-datepicker-popup="dd-MMM-yyyy"
+                                   show-button-bar="false"
+                                   is-open="popup1.opened"
+                                   datepicker-options="dateOptionsDOB"
+                                   alt-input-formats="altInputFormats">
+                            <span class="input-group-addon" id="" ng-click="open1()">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSNoofsacsobser
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        @*<input type="text" class="form-control" id="" placeholder="" ng-model="Outcome.NoOfSacs" ng-keydown="ValidateNoOfSacs($event)" maxlength="1">*@
+                        <select ng-model="Outcome.NoOfSacs" ng-disabled="!IsBCHGEntered" class="form-control" name="ddlNoOfSacs" id="ddlNoOfSacs" @*ng-disabled="!IsBCHGEntered"*@ ng-change="AddUSGRow(Outcome.NoOfSacs)" ng-options="item.ID as item.Description for item in noOfsacsList"></select>
+                    </div>
+                </div>
+            </div><div class="clearfix"></div>
+            <div class="col-lg-12">
+                <div class="table-responsive table-bordered " style="min-height:130px; max-height:150px;">
+                    @*fixed_header*@
+                    <!-- min-height:355px;  -->
+                    <table class="table table-bordered" id="profile_table" style="min-width:1379px;">
+                        <thead>
+                            <tr>
+                                <th width="">&nbsp;</th>
+                                <th width="" class="text-center">@PIVF.LanguageResource.Resources.lblSfetalheart</th>
+                                <th width="">@PIVF.LanguageResource.Resources.lblOutcome</th>
+                                <th width="" class="">@PIVF.LanguageResource.Resources.lblRemarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="" ng-repeat="j in USGList">
+                                <td>{{j.SacTitle}}</td>
+                                <td class="text-center">
+                                    <input type="checkbox" ng-model="j.IsFetalHeart">
+                                </td>
+                                <td>
+                                    <select class="form-control " name="ddlOutcome" id="ddlOutcome" ng-change="openGeneticAnalysis(j.OutcomeID)" ng-model="j.OutcomeID" ng-options="item.ID as item.Description for item in OutcomeList"></select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="txtremark" id="txtremark" ng-model="j.USGRemark" maxlength="100">
+                                </td>
+                            </tr>
+                            @*<tr class="" ng-repeat="j in USGList">
+                                    <td>{{j.SacTitle}}</td>
+                                    <td class="text-center">
+                                        <input type="checkbox" ng-model="j.IsFetalHeart">
+                                    </td>
+                                    <td>
+                                        <select class="form-control " name="ddlOutcome" id="ddlOutcome" ng-model="j.OutcomeID" ng-options="item.ID as item.Description for item in OutcomeList"></select>
+                                    </td>
+                                    <td>
+                                        <select class="form-control" name="ddlDelivery" id="ddlDelivery" ng-model="j.DeliveryID" ng-options="item.ID as item.Description for item in DeliveryList"></select>
+                                    </td>
+                                    <td>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="USG_{{$index}}" id="USGYes_{{$index}}" value="1"  ng-checked="true"> Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="USG_{{$index}}" id="USGNo_{{$index}}" value="2"> No
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="txtremark" id="txtremark" ng-model="j.USGRemark" >
+                                    </td>
+                                </tr>*@
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblComplications
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <textarea type="text" class="form-control" id="" ng-model="Outcome.Complications" maxlength="250"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 form-horizontal">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblRemarks
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <textarea type="text" class="form-control" id="" ng-model="Outcome.Remark" maxlength="250"></textarea>
+                    </div>
+                </div>
+            </div><div class="clearfix"></div>
+
+            @*Genetic Analysis of foetus*@
+            <div class="form-horizontal" ng-init="IsGenetaicAnalysis=true" ng-hide="IsGenetaicAnalysis">
+                <section class="col-md-12 col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblSGeneticanalysisoffoetus</h5></section>
+                <div class="col-md-5 col-lg-4 form-horizontal">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            @PIVF.LanguageResource.Resources.lblSUploadreport
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <label id="" class="UserImageUploadContainer img-attach">
+                                <span class="btn btn-primary fileinput-button">
+                                    @PIVF.LanguageResource.Resources.lblAttach
+                                    <input type="file" id="fileInput" ng-model="Outcome.GeneticAnalysisReportImage" name="fileInput" class="upload" onchange="angular.element(this).scope().handleFileSelect(this)" />
+                                </span>
+                            </label>
+                            <span>{{Outcome.GeneticAnalysisReportFileName}}</span>
+                            <button class="btn btn_view" type="button" id="" value="" ng-click="ShowImage()">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*Birth Dtls Row*@
+            <section class="col-md-12 col-lg-12" data-toggle="collapse" data-target=".collapseBirthDtls" ng-show="IsOutComeSaved && IsBirthDetailsHide"><h5 class="subTitle "><span class="cursorPointer link">@PIVF.LanguageResource.Resources.lblSBirthDetails</span></h5></section>
+            <div class="col-md-12 col-lg-12 form-horizontal collapse collapseBirthDtls">
+                <div class="row">
+                    <div class="col-md-4 col-lg-3 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                @PIVF.LanguageResource.Resources.lblSpregnancy
+                            </label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlDelivery" id="ddlDelivery" ng-change="updateWeaksOfgestation()" ng-disabled="!IsOutComeSaved" ng-model="Outcome.DeliveryID" ng-options="item.ID as item.Description for item in DeliveryList"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                @PIVF.LanguageResource.Resources.lblSWeeksofgestation
+                            </label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlDelivery" id="ddlDelivery" ng-disabled="!IsOutComeSaved" ng-model="Outcome.WeaksOfgestation" ng-options="item.ID as item.Description for item in WeeksList"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 form-horizontal">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                @PIVF.LanguageResource.Resources.lblSTypeofDelivery
+                            </label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <select class="form-control" name="ddlDeliveryType" id="ddlDeliveryType" ng-disabled="!IsOutComeSaved" ng-model="Outcome.DeliveryTypeID" ng-options="item.ID as item.Description for item in DeliveryTypeList"></select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="table-responsive table-bordered" style="min-height:100px; max-height:200px;">
+                            @*ng-scrollbars ng-scrollbars-config="config" style="min-height:200px; max-height:200px;">*@
+                            <!-- min-height:355px;  -->
+                            <table class="table table-bordered" id="" style="min-width:1200px;min-height:100px; max-height:200px;">
+                                <thead>
+                                    <tr>
+                                        <th width="">&nbsp;</th>
+                                        <th width="">@PIVF.LanguageResource.Resources.lblSBirthweight <br /> @PIVF.LanguageResource.Resources.lblSInpound</th>
+                                        <th width="" class="text-center">@PIVF.LanguageResource.Resources.lblSCongentialAbnormality</th>
+                                        <th width="" class="">@PIVF.LanguageResource.Resources.lblRemarks</th>
+                                        <th width="" class="">@PIVF.LanguageResource.Resources.lblSactivity <br /> @PIVF.LanguageResource.Resources.lblSmuscletone</th>
+                                        <th width="" class="">@PIVF.LanguageResource.Resources.lblSPulse</th>
+                                        <th width="" class="">@PIVF.LanguageResource.Resources.lblSgrimace <br />@PIVF.LanguageResource.Resources.lblSreflexirritablity</th>
+                                        <th width="" class="">@PIVF.LanguageResource.Resources.lblSAppereance <br /> @PIVF.LanguageResource.Resources.lblSSkincolor</th>
+                                        <th width="" class="">@PIVF.LanguageResource.Resources.lblSrespiration</th>
+                                        <th width="" class="">@PIVF.LanguageResource.Resources.lblSApgarscore</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="" ng-repeat="k in BirthdetailList">
+                                        <td>{{k.Child}}</td>
+                                        <td class="">
+                                            <input type="text" class="form-control" id="" ng-model="k.BirthWeight" ng-keypress="valiadeBirthWeight(k.BirthWeight,$event)" ng-class="{'select':k.weightInvalid}">
+                                        </td>
+                                        <td>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="USG_{{$index}}" id="USGYes_{{$index}}" ng-model="k.IsCongiAbnorm" value="1" ng-checked="true"> Yes
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="USG_{{$index}}" id="USGNo_{{$index}}" ng-model="k.IsCongiAbnorm" value="2"> No
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="" ng-model="k.Remark" maxlength="100">
+                                        </td>
+                                        <td>
+                                            <select class="form-control" name="ddlBirthActivity" id="ddlBirthActivity" ng-model="k.ActivityID" ng-change="CalcScore(k,$index)" ng-options="item.ID as item.Description for item in BirthActivityList"></select>
+                                        </td>
+                                        <td>
+                                            <select class="form-control" name="ddlPusle" id="ddlPusle" ng-model="k.PulseID" ng-change="CalcScore(k,$index)" ng-options="item.ID as item.Description for item in PusleList"></select>
+                                        </td>
+                                        <td>
+                                            <select class="form-control" name="ddlGrimace" id="ddlGrimace" ng-model="k.GrimaceID" ng-change="CalcScore(k,$index)" ng-options="item.ID as item.Description for item in GrimaceList"></select>
+                                        </td>
+                                        <td>
+                                            <select class="form-control" name="ddSkinColor" id="ddlSkinColor" ng-model="k.AppearanceID" ng-change="CalcScore(k,$index)" ng-options="item.ID as item.Description for item in SkinColorList"></select>
+                                        </td>
+                                        <td>
+                                            <select class="form-control" name="ddlRespiration" id="ddlRespiration" ng-model="k.RespirationID" ng-change="CalcScore(k,$index)" ng-options="item.ID as item.Description for item in RespirationList"></select>
+                                        </td>
+                                        <td>{{k.Score}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*Birth Dtls Row*@
+            <div class="col-md-offset-9 col-md-3 col-lg-offset-9 col-lg-3 form-horizontal" id="text-right">
+                @*<div class="col-md-12 col-lg-12 form-horizontal">*@
+                <div class="form-group">
+                    <div class="col-md-3 col-sm-3 col-lg-12" style="padding-top: 60px;">
+                        <div ng-show="isSurrogate" style="display:inline-block;font-weight:bold;"><a ng-click="UnLinkSurrogate()" style="text-decoration:underline;">lblSUnlinksurrogate</a></div>
+                        <label class="control-label text-Red " id="text-right">
+                            @*class="col-md-12 col-sm-12 col-lg-12"*@
+                            <input type="checkbox" ng-model="Outcome.IsCycleClose"> @PIVF.LanguageResource.Resources.lblSClosecycle
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Save Cancle Buttons -->
+        <div class="row form-horizontal m-t-10" style="position: relative;
+        z-index: 11;">
+            <div class="col-lg-12 text-right">
+                <!-- <label class="checkbox-inline p-t-0"><input type="checkbox" id="inlineCheckbox1" value="option1"> Finalize</label> -->
+                <button class="btn btn-primary" type="button" id="btnSave" value="" ng-disabled="disableSaveBtn" ng-click="SaveOutcome(Outcome)">@PIVF.LanguageResource.Resources.lblSSave</button>
+                <button class="btn btn-default" type="button" id="" value="" ng-click="cancel()">@PIVF.LanguageResource.Resources.btnCancel</button>
+            </div>
+        </div>
+
+        <div class="modal fade edit-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" id="btnClosePop" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row form-horizontal">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="text-center" ng-if="extn == 'image'">
+                                    <img ng-src="{{GetImage}}" style="width: 85%; height: 61%;" />
+                                </div>
+                                <div class="wrapper" ng-if="extn != 'image'">
+                                    <object ng-show="content" data="{{content}}" type="application/pdf" style="width: 100%; height: 400px;"></object>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row form-horizontal">
+                            <div class="col-lg-12 text-right">
+                                <button class="btn btn-primary" type="button" id="" value="" ng-show="extn == 'image'" ng-click="SaveReport()">@PIVF.LanguageResource.Resources.btnDownload</button>
+                                <button class="btn btn-primary" type="button" id="" value="" ng-hide="true">@PIVF.LanguageResource.Resources.btnPrint</button> @*ng-show="extn == 'image'"*@
+                                <button class="btn btn-default" type="button" id="" value="" ng-click="Close()">@PIVF.LanguageResource.Resources.btnClose</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Outcome model -->
+        <div class="modal fade" id="OrderInvestigation" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblInvestigations</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Preliminary Details Start -->
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="gridBorder">
+                                    <div class="row">
+                                        <!-- <section class="col-md-12 col-lg-12"><span class="title">Investigations</span></section> -->
+                                        <div class="col-md-12 col-lg-12 form-horizontal">
+                                            <div class="form-group ">
+                                                <div class="col-md-4 col-lg-4">
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="inlineRadioOptions" id="" value=""> @PIVF.LanguageResource.Resources.lblLaboratory
+                                                    </label>
+                                                    <label class="radio-inline p-l-35">
+                                                        <input type="radio" name="inlineRadioOptions" id="" value=""> @PIVF.LanguageResource.Resources.lblRadiology
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-2 col-lg-2 p-l-0 m-t-5">
+                                                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> @PIVF.LanguageResource.Resources.lblSearch</button>
+                                                </div>
+                                                <div class="col-md-2 col-lg-2 p-l-0">
+                                                    <button type="submit" class="btn-txt-link">@PIVF.LanguageResource.Resources.btnAdd</button>
+                                                </div>
+                                                <div class="col-md-12 col-lg-12">
+                                                    <button type="submit" title="Print" class="btn btn-default btn_print"><span class="glyphicon glyphicon-print"></span></button>
+                                                </div> <div class="clear"></div>
+                                            </div>
+                                            <!-- Todays Prescriptions (Brand Name) -->
+                                            <div style="min-height:280px;" class="table-responsive">
+                                                <table class="table table-hover table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>@PIVF.LanguageResource.Resources.lblServiceCode</th>
+                                                            <th>@PIVF.LanguageResource.Resources.lblServiceName</th>
+                                                            <th>@PIVF.LanguageResource.Resources.lblDate</th>
+                                                            <th>@PIVF.LanguageResource.Resources.lblInstruction</th>
+                                                            <th>&nbsp;</th>
+                                                            <th>&nbsp;</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>@PIVF.LanguageResource.Resources.lblLaboratory</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>234234</td>
+                                                            <td>@PIVF.LanguageResource.Resources.lblServiceName</td>
+                                                            <td>
+                                                                <div class="input-group date">
+                                                                    <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" aria-describedby="" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                                                                    <span class="input-group-addon" id="" ng-click="open1()">
+                                                                        <i class="fa fa-calendar"
+                                                                           aria-hidden="true"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="" placeholder="" />
+                                                            </td>
+                                                            <td>
+                                                                <span class="btn_like" data-toggle="modal" data-target=".favorite-modal">
+                                                                    <span class="tooltiptext tooltip-top">@PIVF.LanguageResource.Resources.lblSetFavorite</span>
+                                                                </span>
+                                                            </td>
+                                                            <td><span class="btn_delete" data-toggle="modal" data-target=".reason-modal"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>234234</td>
+                                                            <td>@PIVF.LanguageResource.Resources.lblServiceName</td>
+                                                            <td>
+                                                                <div class="input-group date">
+                                                                    <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" aria-describedby="" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                                                                    <span class="input-group-addon" id="" ng-click="open1()">
+                                                                        <i class="fa fa-calendar"
+                                                                           aria-hidden="true"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="" placeholder="" />
+                                                            </td>
+                                                            <td>
+                                                                <span class="btn_like" data-toggle="modal" data-target=".favorite-modal">
+                                                                    <span class="tooltiptext tooltip-top">@PIVF.LanguageResource.Resources.lblSetFavorite</span>
+                                                                </span>
+                                                            </td>
+                                                            <td><span class="btn_delete" data-toggle="modal" data-target=".reason-modal"></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>@PIVF.LanguageResource.Resources.lblRadiology</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>234234</td>
+                                                            <td>@PIVF.LanguageResource.Resources.lblServiceName</td>
+                                                            <td>
+                                                                <div class="input-group date">
+                                                                    <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" aria-describedby="" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                                                                    <span class="input-group-addon" id="" ng-click="open1()">
+                                                                        <i class="fa fa-calendar"
+                                                                           aria-hidden="true"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="" placeholder="" />
+                                                            </td>
+                                                            <td>
+                                                                <span class="btn_like" data-toggle="modal" data-target=".favorite-modal">
+                                                                    <span class="tooltiptext tooltip-top">@PIVF.LanguageResource.Resources.lblSetFavorite</span>
+                                                                </span>
+                                                            </td>
+                                                            <td><span class="btn_delete" data-toggle="modal" data-target=".reason-modal"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>234234</td>
+                                                            <td>@PIVF.LanguageResource.Resources.lblServiceName</td>
+                                                            <td>
+                                                                <div class="input-group date">
+                                                                    <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" aria-describedby="" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                                                                    <span class="input-group-addon" id="" ng-click="open1()">
+                                                                        <i class="fa fa-calendar"
+                                                                           aria-hidden="true"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="" placeholder="" />
+                                                            </td>
+                                                            <td>
+                                                                <span class="btn_like" data-toggle="modal" data-target=".favorite-modal">
+                                                                    <span class="tooltiptext tooltip-top">@PIVF.LanguageResource.Resources.lblSetFavorite</span>
+                                                                </span>
+                                                            </td>
+                                                            <td><span class="btn_delete" data-toggle="modal" data-target=".reason-modal"></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Preliminary Details End -->
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row page_actions text-right">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-primary" type="button" id="" value=""> @PIVF.LanguageResource.Resources.btnSave</button>
+                                <button class="btn btn-default" type="button" id="" value=""> @PIVF.LanguageResource.Resources.btnCancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Outcome model -->
+
+    </div>

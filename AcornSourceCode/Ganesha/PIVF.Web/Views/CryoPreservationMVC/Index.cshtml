@@ -1,0 +1,72 @@
+﻿@{Layout = null;}
+
+<div ng-controller="CryoPreservationCtr" style="position: relative;
+        z-index: 11;">
+    <!-- cycles links -->
+    <div class="cycleLinks">
+        <ul>
+            <li ng-click="Navigate('CycleOverview')">Overview</li>
+            <li ng-click="Navigate('StimulationChart')">Stimulation Chart</li>
+            <li ng-click="Navigate('SemenDetails')" ng-show="configData.SemenDetail">Semen Details</li>
+            <li ng-click="Navigate('IUI')" ng-show="configData.IUI">IUI</li>
+            <li ng-click="Navigate('OPU')" ng-show="configData.OPU">OPU</li>
+            <li class="active" ng-click="Navigate('Embrology')" ng-show="configData.Embryology">Embryology</li>
+            <li ng-click="Navigate('Embrology');" ng-show="configData.Embryology">PGT</li>
+
+            <li ng-show="configData.CryoPreservation">
+                Cryo Preservation
+                <ul>
+                    <li ng-click="Navigate('OocyteVitrification')" ng-show="configData.OocyteVitrification">Oocyte Vitrification</li>
+                    <li ng-click="Navigate('OocyteThowing')" ng-show="configData.OocyteThawing">Oocyte Thawing</li>
+                    <li ng-click="Navigate('EmbryoVitrification')" ng-show="configData.EmbryoVitrification">Embryo Vitrification</li>
+                    <li ng-click="Navigate('EmbryoThowing')" ng-show="configData.EmbryoThawing">Embryo Thawing</li>
+                </ul>
+            </li>
+            <li ng-click="Navigate('EmbryoTransfer')" ng-show="configData.EmbryoTransfer">Embryo Transfer</li>
+            <li ng-click="Navigate('Outcome')" ng-show="configData.Outcome">Outcome</li>
+        </ul>
+
+        <!-- cryo preservation links -->
+        @*<div class="cryoLinks">
+                <ul>
+                    <li ng-click="Navigate('OocyteVitrification')">Oocyte Vitrification</li>
+                    <li ng-click="Navigate('OocyteThowing')">Oocyte Thowing</li>
+                    <li ng-click="Navigate('EmbryoVitrification')">Embryo Vitrification</li>
+                    <li ng-click="Navigate('EmbryoThowing')">Embryo Thowing</li>
+                </ul>
+            </div>*@
+        <!-- /cryo preservation links -->
+
+    </div>
+    <!-- /cycles links -->
+
+</div>
+
+@*<div class="row form-horizontal">
+        <div class="col-md-2 ">
+            <button class="btn btn-primary"  type="button" id="" value=""  ng-click="Navigate('OocyteVitrification')">Oocyte Vitrification</button>
+        </div>
+        <div class="col-md-2 ">
+            <button class="btn btn-primary"  type="button" id="" value="" ng-click="Navigate('OocyteThowing')">Oocyte Thowing</button>
+        </div>
+        <div class="col-md-2 ">
+            <button class="btn btn-primary" type="button" id="" value="" ng-click="Navigate('EmbryoVitrification')">Embryo Vitrification</button>
+        </div>
+        <div class="col-md-2 ">
+            <button class="btn btn-primary"  type="button" id="" value="" ng-click="Navigate('EmbryoThowing')">Embryo Thowing</button>
+        </div>
+
+    </div>*@
+
+<!-- cryo preservation links -->
+<div class="cryoLinks" style="position: relative;
+        z-index: 11;">
+    <ul>
+        <li ng-click="Navigate('OocyteVitrification')">Oocyte Vitrification</li>
+        <li ng-click="Navigate('OocyteThowing')">Oocyte Thawing</li>
+        <li ng-click="Navigate('EmbryoVitrification')">Embryo Vitrification</li>
+        <li ng-click="Navigate('EmbryoThowing')">Embryo Thawing</li>
+    </ul>
+</div>
+<!-- /cryo preservation links -->
+</div>

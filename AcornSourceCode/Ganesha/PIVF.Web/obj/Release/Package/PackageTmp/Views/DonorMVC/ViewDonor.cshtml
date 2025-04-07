@@ -1,0 +1,136 @@
+﻿
+@{Layout = null;}
+<div ng-controller="DonorCtr" ng-init="PageSetup1()">
+    <form name="frmDonorView" novalidate>
+        <div class="form_Content">
+            @*style="min-height:485px;"*@
+            <div class="row form-horizontal">
+                <div class="col-md-3 col-sm-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Donor Code
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <input type="text" class="form-control" id="Code" name="Code" placeholder="Code" ng-model="Donor.DonorCode" ng-class="{select:frmDonorView.Code.$dirty && (Donor.DonorCode== null || Donor.DonorCode == undefined )}" ng-required="true" maxlength="10">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Agency Name</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select id="AgencyID"
+                                    name="AgencyID"
+                                    ng-class="{select:Donor.AgencyID==0 && frmDonorView.AgencyID.$dirty}"
+                                    ng-required="true"
+                                    ng-model="Donor.AgencyID"
+                                    class="form-control"
+                                    ng-options="item.ID as item.Description for item in AgencyList"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-horizontal">
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Blood Group
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select id=""
+                                    ng-model="Donor.BloodGroupID"
+                                    class="form-control"
+                                    ng-options="item.ID as item.Description for item in BloodGroupList"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 ">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Eye Color
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select id=""
+                                    ng-model="Donor.EyeColorID"
+                                    class="form-control"
+                                    ng-options="item.ID as item.Description for item in EyeColorList"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 ">
+                    <div class="form-group">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Hair Color</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select id=""
+                                    ng-model="Donor.HairColorID"
+                                    class="form-control"
+                                    ng-options="item.ID as item.Description for item in HairColorList"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Skin Color
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select id=""
+                                    ng-model="Donor.SkinColorID"
+                                    class="form-control"
+                                    ng-options="item.ID as item.Description for item in SkinColorList"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Height(cm)
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <input type="text" class="form-control" id="Height" name="Height" placeholder="Height" ng-model="Donor.HeightID" replace="[^0-9]" with="" maxlength="5">
+
+                            @*<select id=""
+                                    ng-model="Donor.HeightID"
+                                    class="form-control"
+                                    ng-options="item.ID as item.Description for item in HeightList"></select>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 ">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Built
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select id=""
+                                    ng-model="Donor.BuiltID"
+                                    class="form-control"
+                                    ng-options="item.ID as item.Description for item in BuiltList"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3 ">
+                    <div class="form-group">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Education</label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select id=""
+                                    ng-model="Donor.EducationID"
+                                    class="form-control"
+                                    ng-options="item.ID as item.Description for item in EducationList"></select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Save Cancle Buttons -->
+        <div class="row form-horizontal m-t-10 ">
+            <div class="col-lg-12 text-right">
+                <!-- <label class="checkbox-inline p-t-0"><input type="checkbox" id="inlineCheckbox1" value="option1"> Finalize</label> -->
+                <button class="btn btn-primary" type="button" id="btnDonor" value="" ng-click="SaveDonor(Donor)">{{Name}}</button>
+                <button class="btn btn-default" type="button" id="" value="" ng-click="CancelClick()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

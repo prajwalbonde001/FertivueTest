@@ -1,0 +1,292 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div ng-init="GetUserList();GetRoleList();GetUnitList();FormName='User List'" ng-cloak>
+    <!-- Advance Search Box Start -->
+    <!-- Advance Search Box End-->
+    <!-- searchContainer Start-->
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="searchContainer singleSearchOpt">
+                @**@
+                <a href="" class="searchTab1 active"><i class="fa fa-search" aria-hidden="true"></i> @PIVF.LanguageResource.Resources.lblSearch</a> @*Search ::Modified by swatih for localization 24/7/2020*@
+                <!-- Main Search Box Start -->
+                <div class="MainSearchBoxContainer">
+                    <div class="BlackSearchBoxSection">
+                        <div class="SearchInputGroupContainer">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3">
+                                    <div class="InputBoxDiv">
+                                        <input class="form-control Capitalize" type="text" ng-keypress="($event.which === 13)?GetUserList(UL.Name,UL.LogName,UL.UsrType,UL.UsrRole):0" ng-model="UL.Name" id="company_code" multi-validation='AlphaArrowBkSpDelSpDCFSlash' placeholder="@PIVF.LanguageResource.Resources.lblUserName" tabindex="1" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3">
+                                    <div class="InputBoxDiv">
+                                        <input class="form-control Capitalize" type="text" ng-model="UL.LogName" ng-keypress="($event.which === 13)?GetUserList(UL.Name,UL.LogName,UL.UsrType,UL.UsrRole):0" id="" placeholder="@PIVF.LanguageResource.Resources.lblLoginName" tabindex="2">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3">
+                                    <div class="InputBoxDiv">
+                                        <select class="form-control" id="MSID" ng-model="UL.UsrType" ng-change="($event.which === 13)?GetUserList(UL.Name,UL.LogName,UL.UsrType,UL.UsrRole):0" ng-options="item.ID as item.Type for item in UserTypeList" tabindex="3"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3">
+                                    <div class="InputBoxDiv">
+                                        <select class="form-control" id="MSID" ng-model="UL.UsrRole" ng-change="($event.which === 13)?GetUserList(UL.Name,UL.LogName,UL.UsrType,UL.UsrRole):0" ng-options="item.RoleId as item.Description for item in RoleList" tabindex="4"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="SearchBtnContainer">
+                            @*AdvSearchBtnContainer*@
+                            <div class="InputBoxDiv">
+                                <button id="" type="button" class="btn btn-primary" ng-keypress="($event.which === 13)?GetUserList(UL.Name,UL.LogName,UL.UsrType,UL.UsrRole):0" ng-click="GetUserList(UL.Name,UL.LogName,UL.UsrType,UL.UsrRole)" tabindex="5"> @PIVF.LanguageResource.Resources.btnSearch</button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Search Box End-->
+    </div>
+    <!-- /searchContainer End-->
+    <div class="form_Content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6 total_countCol">
+                        <span class="count_title">@PIVF.LanguageResource.Resources.Total_Count :</span>
+                        <span class="total_count">{{TotalItems}}</span>
+                    </div>
+                    <div class="col-sm-6 text-right p-r-25">
+                        <button class="btn-link p-t-10" title="@PIVF.LanguageResource.Resources.btnPrint" ng-click="exportToExcel('#tableToExport')"><span class="glyphicon glyphicon-print"></span></button>
+                        @*<button class="btn-txt-link m-t-10 pull-right" type="button" id="btnText" value="" ng-click="NewUserPge()">@PIVF.LanguageResource.Resources.btnNew </button>*@
+                        <button class="btn-link m-t-10 pull-right" title="@PIVF.LanguageResource.Resources.lblNew" type="button" id="btnText" value="" ng-click="NewUserPge()"><span class="glyphicon glyphicon-plus"></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="table-responsive fixed_header" id="tableToExport">
+                    @*fixed_header*@
+                <table class="table table-hover" id="tblUserList" style="min-height:310px; min-width:940px;">
+                    @*max-height:380px;*@
+                    <thead>
+                        <tr>
+                            <th st-ratio="6">&nbsp;</th>
+                            <th st-ratio="25">@PIVF.LanguageResource.Resources.lblName</th>
+                            <th st-ratio="16">@PIVF.LanguageResource.Resources.lblLoginName</th>
+                            <th st-ratio="20">@PIVF.LanguageResource.Resources.lblUserType</th>
+                            <th st-ratio="7">@PIVF.LanguageResource.Resources.lblLocked</th>
+                            <th st-ratio="15">@PIVF.LanguageResource.Resources.lblResetPwd</th>
+                            <th st-ratio="6">@PIVF.LanguageResource.Resources.Active</th>
+                            <th st-ratio="5">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody style="height: calc(100vh - 470px);">
+                        <tr ng-repeat="item in UserList">
+                            <td st-ratio="6"><button type="button" class="btn btn_edit" title="@PIVF.LanguageResource.Resources.btnEdit" ng-click="EditUser(item)"></button></td>
+                            <td st-ratio="25" class="Capitalize">{{item.UserName}}</td>
+                            <td st-ratio="16">{{item.LoginName}}</td>
+                            <td st-ratio="20">{{item.UserType}}</td>
+                            <td st-ratio="7">
+                                <span type="button" class="cursorPointer" title="@PIVF.LanguageResource.Resources.lblLocked" ng-model="item.IsLocked" ng-class="{LockIcon:item.IsLocked==true,UnlockIcon:item.IsLocked==false}" ng-click="LockUnlockUser(item);"></span>
+                            </td>
+                            <td st-ratio="15"><a href="" ng-click="objRgt.IsUpdate?ResetPassword(item):0">@PIVF.LanguageResource.Resources.lblResetPwd</a></td>
+                            <td st-ratio="6">
+                                <span type="button" class="cursorPointer" title="@PIVF.LanguageResource.Resources.lblStatus" ng-model="item.Status" ng-class="{ActiveIcon:item.Status==true,DeActiveIcon:item.Status==false}" ng-click="objRgt.IsUpdate?ActivateDeactivateUser(item):0;"></span>
+                            </td>
+                            @*<td><span type="button" class="edit_icon info_icon" role="button" ng-click="EditUser(item)"><i class="fa fa-info-circle" aria-hidden="true"></i></span></td>*@
+                            <td st-ratio="5">
+                                @*<div class="arrowWrap"><span class="collapse-arrow collapsed" data-toggle="collapse" data-target="{{'#'+($index+1)}}" ng-click="GetRoleListUserwise(item.UserID)"></span> </div>*@
+                                <a class="btn_view clinicList" ng-mouseover="GetRoleListUserwise(item.UserID)" title="@PIVF.LanguageResource.Resources.lblView"><span class="glyphicon glyphicon-eye-open"></span> </a>     @*ng-mouseover="GetRoleListUserwise(item.UserID)"    added by Nayan Kamble on 11/12/2019*@
+                                <div class="hoverabsDiv" id="{{$index+1}}">
+                                    @*id="{{$index+1}}"  added by Nayan Kamble on 11/12/2019*@
+                                    <table class="table table-hover GridTable">
+                                        <thead>
+                                            <tr>
+                                                <th>@PIVF.LanguageResource.Resources.lblClinic</th>
+                                                <th>@PIVF.LanguageResource.Resources.lblRole</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- ngRepeat: i in SelUnitRoleList -->
+                                            <tr ng-repeat="i in SelUnitRoleList">
+                                                <td class="">{{i.UnitName}}</td>
+                                                <td class="">{{i.Role}}</td>
+                                            </tr><!-- end ngRepeat: i in SelUnitRoleList -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        @*<tr class="AppointmentDetailTR" id="{{$index+1}}">
+                                <td colspan="8">
+                                    <div class="miniTable">
+                                        <table class="table table-hover GridTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>@PIVF.LanguageResource.Resources.lblClinic</th>
+                                                    <th>@PIVF.LanguageResource.Resources.lblRole</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- ngRepeat: i in SelUnitRoleList -->
+                                                <tr ng-repeat="i in SelUnitRoleList" class="ng-scope">
+                                                    <td class="ng-binding">{{i.UnitName}}</td>
+                                                    <td class="ng-binding">{{i.Role}}</td>
+                                                </tr><!-- end ngRepeat: i in SelUnitRoleList -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>*@
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row form-horizontal">
+        <div class="col-sm-12 m-b-10">
+            <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm pull-left" boundary-links="true"
+                            num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst"
+                            previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext"
+                            last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+        </div>
+    </div>
+
+</div>
+
+<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+</div>
+<script type="text/ng-template" id="modReason">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="Cancel();" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblReason</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row form-horizontal">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="company_code">@PIVF.LanguageResource.Resources.lblReason</label>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <textarea class="form-control Capitalize" type="text" name="Reason" placeholder="" ng-model="Reason" maxlength="100" ng-required="true" tabindex="1"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Add</button> -->
+            <div class="row">
+                <div class="col-sm-12 text-right">
+                    <button class="btn btn-primary" type="button" id="" ng-click="Reason?ReasonOk(Reason):0">@PIVF.LanguageResource.Resources.btnSave</button>
+                    <button class="btn btn-default" type="button" id="" ng-click="ReasonCancel();">@PIVF.LanguageResource.Resources.btnCancel</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</script>
+@*Reset Pwd popup start*@
+<script type="text/ng-template" id="resetPwd">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="Cancel();" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblResetPwd</h4>
+        </div>
+        <div class="modal-body">
+            <form name="frmUser" role="form" novalidate>
+                <div class="row form-horizontal" ng-init="IsValid = false">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <label class="col-sm-4 col-md-5 col-lg-4 control-label" for="company_code">@PIVF.LanguageResource.Resources.lblLoginName :</label>
+                            <label class="col-sm-7 col-md-7 col-lg-7 control-label text-left" for="company_code">{{reset.LoginName}}</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <label class="col-sm-4 col-md-5 col-lg-4 control-label" for="company_code"><span style="color:red">*</span>@PIVF.LanguageResource.Resources.btnNew @PIVF.LanguageResource.Resources.lblPassword :</label>
+                            <div class="col-sm-7 col-md-7 col-lg-7" ng-class="{'has-error':IsValid==false && frmUser.txtpwd.$touched}">
+                                <div class="input-group passwordWrap">
+                                    <input type="password" id="txtPwd" name="txtPwd" class="form-control" placeholder="" ng-model="reset.Password" ng-required="true" ng-blur="validatePwd()">
+                                    <div class="input-group-addon" ng-click="ViewPwd()"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <label class="col-sm-4 col-md-5 col-lg-4 control-label" for="company_code"><span style="color:red">*</span>@PIVF.LanguageResource.Resources.lblConfirmPassword :</label>
+                            <div class="col-sm-7 col-md-7 col-lg-7">
+                                <input type="password" class="form-control" placeholder="" ng-model="reset.confirmPassword" required ng-blur="Confirmpwd(reset.confirmPassword)">
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-lg-12 col-md-6">
+                            <div class="find_btn text-center" style="margin-left: 35px;">
+                                <button class="btn btn-primary btn_shadow" type="button" id="" ng-click="(IsValid && reset.Password ==reset.confirmPassword)?Ok(reset):0"><span class="glyphicon glyphicon-floppy-save"></span>@PIVF.LanguageResource.Resources.btnSave</button>
+                                <button class="btn btn-primary btn_shadow" type="button" id="" ng-click="Cancel();"><span class="glyphicon glyphicon-floppy-save"></span>@PIVF.LanguageResource.Resources.btnCancel</button>
+                                <span style="color:red">{{msg}}</span>
+                            </div>
+                        </div>*@
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <div class="row text-right">
+                <div class="col-sm-12">
+                    <span style="color:red">{{msg}}</span>
+                </div>
+                <div class="col-sm-12">
+                    <button class="btn btn-primary" type="button" id="" ng-click="(reset.Password ==reset.confirmPassword)?Ok(reset):0">@PIVF.LanguageResource.Resources.btnSave</button>
+                    <button class="btn btn-default" type="button" id="" ng-click="Cancel();">@PIVF.LanguageResource.Resources.btnCancel</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</script>
+@*Reset Pwd popup End*@
+@*Clinic List Popup start*@
+<div class="modal fade" id="clinicList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="Cancel();" aria-label="@PIVF.LanguageResource.Resources.btnClose"><span aria-hidden="true">&times;</span></button>
+
+                <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblClinicList</h4> @*Clinic List ::Modified by swatih for localization 24/7/2020*@
+            </div>
+
+            <div class="modal-body">
+                <table class="table-responsive table table-hover GridTable" id="{{$index+1}}">
+                    <thead>
+                        <tr>
+                            <th>@PIVF.LanguageResource.Resources.lblClinic</th>
+                            <th>@PIVF.LanguageResource.Resources.lblRole</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ngRepeat: i in SelUnitRoleList -->
+                        <tr ng-repeat="i in SelUnitRoleList" class="ng-scope">
+                            <td class="ng-binding">{{i.UnitName}}</td>
+                            <td class="ng-binding">{{i.Role}}</td>
+                        </tr><!-- end ngRepeat: i in SelUnitRoleList -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row text-right">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">@PIVF.LanguageResource.Resources.btnOK</button>@*OK ::Modified by swatih for localization 24/7/2020*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*Clinic List Popup End*@

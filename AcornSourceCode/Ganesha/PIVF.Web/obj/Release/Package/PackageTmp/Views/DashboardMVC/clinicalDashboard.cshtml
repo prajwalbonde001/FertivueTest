@@ -1,0 +1,618 @@
+﻿
+@{
+    Layout = null;
+}
+@*<link rel="stylesheet" href="/angular-chart.js/dist/angular-chart.css" />*@
+@*<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>*@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+
+
+<style>
+    .card-body {
+        border: 1px solid gray;
+        border-radius: 10px;
+        margin: 2%;
+        height: 550px;
+    }
+
+    .headB {
+        border-bottom: 1px solid gray;
+        margin: 20px;
+    }
+
+
+    .surgery-dashboard {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 21.94px;
+        text-align: left;
+        color: #232323;
+        padding-left: 20px;
+    }
+
+    .surgery-row {
+        background-color: #E5E5E5;
+        border-radius: 15px;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0;
+        cursor: pointer;
+        /*border:1px solid gray;*/
+    }
+
+    .text-number {
+        font-family: Montserrat;
+        /* font-size: 2rem; */
+        font-weight: 700;
+        line-height: 24.38px;
+        text-align: left;
+    }
+
+    .char-number {
+        font-family: Montserrat;
+        font-size: 0.7rem;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.5px;
+        text-align: left;
+    }
+
+
+    .surgery-images img {
+        width: 100%;
+        max-width: 50px;
+    }
+
+    .sergery_contains_two {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+
+
+
+    .form_Content1 {
+        border: 1px solid #c3c3c3;
+        padding: 0px 10px 20px 10px;
+        margin-top: 10px;
+        background: #ffffff;
+        border-radius: 4px;
+        position: relative;
+        height: auto;
+    }
+
+    canvas {
+        width: 90% !important;
+        height: 390px !important;
+    }
+
+
+
+    .headB {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .headBox {
+        display: flex;
+        gap: 10px;
+    }
+
+
+
+  
+.nav-tabs {
+        display: flex;
+        justify-content: flex-end; /* Align tabs to the right */
+        border:none !important;
+    }
+
+
+.nav-tabs .active a {
+    /*color: #fff !important; 
+    background-color: #df7d36 !important;*/
+    background: #EFF5F7 !important;
+    color : #5895A6 !important;
+    border-radius: 12px !important;
+    border : 1px solid #E4EEF1 !important;
+    font-weight: bold;
+    padding: 10px 30px !important;
+}
+
+
+.nav-tabs li a {
+    /*color: #000 !important; 
+    background-color: #f8f9fa !important; 
+    border-radius: 5px;*/
+    background: #FFFFFF !important;
+    color : #232323 !important;
+    border-radius: 12px !important;
+    text-decoration: none;
+    border : 1px solid #E4EEF1 !important;
+    padding: 10px 30px !important;
+}
+
+
+
+
+    .tabDiv{
+      /*padding-right:2%;*/
+      padding-left: 1%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .modal-content {
+        max-width: 500px !important;
+    }
+
+    /* Modal Container */
+    .custom-modal-content {
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 500px;
+        margin: auto;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Modal Header */
+    .custom-modal-header {
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .custom-modal-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333333;
+        text-align: center;
+    }
+
+    /* Labels */
+    .custom-label {
+        font-size: 14px;
+        font-weight: bold;
+        color: #555555;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    /* Input Group */
+    .custom-input-group {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+        background-color: #f9f9f9;
+    }
+
+    .custom-input {
+        flex: 1;
+        border: none;
+        padding: 10px 12px;
+        font-size: 14px;
+        color: #333333;
+        background-color: transparent;
+        outline: none;
+    }
+
+        .custom-input::placeholder {
+            color: #999999;
+        }
+
+    .custom-calendar-btn {
+        background-color: #eeeeee;
+        border: none;
+        padding: 10px 12px;
+        cursor: pointer;
+        color: #555555;
+        font-size: 16px;
+        outline: none;
+        transition: background-color 0.3s;
+    }
+
+        .custom-calendar-btn:hover {
+            background-color: #dddddd;
+        }
+
+    /* Modal Footer */
+    .custom-modal-footer {
+        border-top: 1px solid #f0f0f0;
+        margin-top: 20px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .custom-btn-primary {
+        background-color: #0a9c92;
+        border: none;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .custom-btn-primary:hover {
+            background-color: #df7d36;
+        }
+
+
+
+
+    .custom-date-display {
+        font-weight: bolder;
+        font-style: italic;
+    }
+
+
+
+
+    .footFallLayout {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .custom-table-container {
+        /*max-height: 518px;*/
+        overflow-y: auto;
+        overflow-x: auto;
+        width: 100%;
+        height: calc(100vh - 565px);
+    }
+
+    .unique-table-class {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+    }
+
+
+
+
+
+        .unique-table-class th,
+        .unique-table-class td {
+            /*border: 1px solid gray;*/
+            padding: 8px;
+            /*text-align: center;*/
+            font-size: 12px;
+            white-space: nowrap; /* Prevent word breaking */
+        }
+
+        .unique-table-class th {
+            /*background-color: #f2f2f2;*/
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            white-space: nowrap; /* Prevent word breaking */
+            border: none !important;
+        }
+
+       
+   .unique-table-class > thead > tr {
+    background: #F6F9FB;
+    color: #5895a6;
+    border: none !important;
+    border-radius: 12px !important;
+    position: sticky;
+    top: 2px;
+    z-index: 1;
+    white-space: nowrap;
+   }
+
+
+    .unique-table-class > tbody > tr > td {
+    background: #FFFFFF !important;
+    border-bottom: 1px solid #F4F4F5 !important;
+    color: #353535 !important;
+    border-top: none !important;
+    white-space: nowrap;
+}
+
+
+
+    .no-table-styles {
+        max-height: none !important;
+        overflow-y: visible !important;
+        overflow-x: visible !important;
+        border: none !important;
+    }
+
+
+
+   /*.hide-in-pdf img[alt="dashboardEye"] {
+    display: none !important;
+   }*/
+
+   .hide-in-pdf th:last-child,
+   .hide-in-pdf td:last-child {
+    display: none !important;
+ }
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+</style>
+
+
+
+
+
+<link href="../Content/dev.css" rel="stylesheet">
+
+
+
+
+<section class="form_content1" ng-controller="clinicalDashboardCtrl" ng-init="FormLoad()">
+
+    <div class="tabDiv">
+        <h3 class="card-title">@PIVF.LanguageResource.Resources.lblDashboardOverview</h3>
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-tabs">
+            <li ng-class="{ active: selectedTab === 'year' }">
+                <a ng-click="showTab('year')">@PIVF.LanguageResource.Resources.lblYear</a>
+            </li>
+            <li ng-class="{ active: selectedTab === 'month' }">
+                <a ng-click="showTab('month')">@PIVF.LanguageResource.Resources.lblMonth</a>
+            </li>
+            <li ng-class="{ active: selectedTab === 'day' }">
+                <a ng-click="showTab('day')">@PIVF.LanguageResource.Resources.lblDay</a>
+            </li>
+            <li ng-class="{ active: selectedTab === 'custom' }">
+                <a ng-click="showTab('custom')">
+                    @PIVF.LanguageResource.Resources.lblCustom
+                    <span class="custom-date-display" ng-if="chartCustomFdate && chartCustomTdate">
+                        {{chartCustomFdate}} - {{chartCustomTdate}}
+                    </span>
+                </a>
+            </li>
+
+        </ul>
+
+
+
+    </div>
+
+    <div class="col-md-12 col-lg-12 col-sm-12" id="cycle">
+
+
+        
+      <div class="row g-3" style="margin-top: 20px;">
+                <!-- Repeatable Card -->
+                <div class="col-md-2 col-sm-6" ng-click="changeSelectedTab(TodoLabels[0] , TodoData[0])">
+                    <div class="d-flex align-items-center" ng-class="{'dashboard-card': selectedDashboardTab !== TodoLabels[0] , 'dashboard-cardActive': selectedDashboardTab === TodoLabels[0]}">
+                        <div class="icon-box me-3">
+                            <img ng-show="selectedDashboardTab === TodoLabels[0]" src="../images/SchedulingS.svg" alt="SchedulingS">
+                            <img ng-show="selectedDashboardTab !== TodoLabels[0]" src="../images/SchedulingNS.svg" alt="SchedulingNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== TodoLabels[0] , 'cardSActive': selectedDashboardTab === TodoLabels[0]}" >{{TodoData[0]}}</h3>
+                            <h6 class="cardH" >{{TodoLabels[0]}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6" ng-click="changeSelectedTab(TodoLabels[1] , TodoData[1])">
+                    <div class="d-flex align-items-center"  ng-class="{'dashboard-card': selectedDashboardTab !== TodoLabels[1], 'dashboard-cardActive': selectedDashboardTab === TodoLabels[1]}">
+                        <div class="icon-box me-3">                           
+                            <img ng-show="selectedDashboardTab === TodoLabels[1]" src="../images/BillingS.svg" alt="BillingS">
+                            <img ng-show="selectedDashboardTab !== TodoLabels[1]" src="../images/BillingNS.svg" alt="BillingNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== TodoLabels[1], 'cardSActive': selectedDashboardTab === TodoLabels[1]}" >{{TodoData[1]}}</h3>
+                            <h6 class="cardH">{{TodoLabels[1]}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6" ng-click="changeSelectedTab(TodoLabels[2] , TodoData[2])">
+                    <div class="d-flex align-items-center"  ng-class="{'dashboard-card': selectedDashboardTab !== TodoLabels[2], 'dashboard-cardActive': selectedDashboardTab === TodoLabels[2]}">
+                        <div class="icon-box me-3">       
+                            <img ng-show="selectedDashboardTab === TodoLabels[2]" src="../images/FollowUpsS.svg" alt="FollowUpsS">
+                            <img ng-show="selectedDashboardTab !== TodoLabels[2]" src="../images/FollowUpsNS.svg" alt="FollowUpsNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== TodoLabels[2], 'cardSActive': selectedDashboardTab === TodoLabels[2]}" >{{TodoData[2]}}</h3>
+                            <h6 class="cardH">{{TodoLabels[2]}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6" ng-click="changeSelectedTab(TodoLabels[3] , TodoData[3])">
+                    <div class="d-flex align-items-center"  ng-class="{'dashboard-card': selectedDashboardTab !== TodoLabels[3], 'dashboard-cardActive': selectedDashboardTab === TodoLabels[3]}">
+                        <div class="icon-box me-3">
+                     
+                            <img ng-show="selectedDashboardTab === TodoLabels[3]" src="../images/ReportUploadS.svg" alt="ReportUploadS">
+                            <img ng-show="selectedDashboardTab !== TodoLabels[3]" src="../images/ReportUploadNS.svg" alt="ReportUploadNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== TodoLabels[3], 'cardSActive': selectedDashboardTab === TodoLabels[3]}" >{{TodoData[3]}}</h3>
+                            <h6 class="cardH">{{TodoLabels[3]}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6" ng-click="changeSelectedTab(TodoLabels[4] , TodoData[4])">
+                    <div class="d-flex align-items-center"  ng-class="{'dashboard-card': selectedDashboardTab !== TodoLabels[4], 'dashboard-cardActive': selectedDashboardTab === TodoLabels[4]}">
+                        <div class="icon-box me-3">
+                           
+                            <img ng-show="selectedDashboardTab === TodoLabels[4]" src="../images/ReportUploadS.svg" alt="ReportUploadS">
+                            <img ng-show="selectedDashboardTab !== TodoLabels[4]" src="../images/ConsentUploadNS.svg" alt="ConsentUploadNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== TodoLabels[4], 'cardSActive': selectedDashboardTab === TodoLabels[4]}" >{{TodoData[4]}}</h3>
+                            <h6 class="cardH">{{TodoLabels[4]}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6" ng-click="changeSelectedTab(TodoLabels[5] , TodoData[5])">
+                    <div class="d-flex align-items-center"  ng-class="{'dashboard-card': selectedDashboardTab !== TodoLabels[5], 'dashboard-cardActive': selectedDashboardTab === TodoLabels[5]}">
+                        <div class="icon-box me-3">                    
+                            <img ng-show="selectedDashboardTab === TodoLabels[5]" src="../images/CommunicationS.svg" alt="CommunicationS">
+                            <img ng-show="selectedDashboardTab !== TodoLabels[5]" src="../images/CommunicationNS.svg" alt="CommunicationNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== TodoLabels[5] , 'cardSActive': selectedDashboardTab === TodoLabels[5]}" >{{TodoData[5]}}</h3>
+                            <h6 class="cardH">{{TodoLabels[5]}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Repeatable Card -->
+        </div>
+
+
+        <div class="DashboardTableContainer">
+           
+            <div id="content" class="col-md-12" style="display:flex; flex-direction:column; gap : 20px;">
+                <h3 class="cardS"> {{selectedDashboardTab}} @PIVF.LanguageResource.Resources.lblvPatientList ( {{selectedDashboardTabValue}} )</h3>
+                @*<div class="table-responsive fixed_header" id="tableToExport">
+                  <table class="table table-hover table-striped custom-table-container">*@
+                 <div class="custom-table-container" id="tableToExport">
+                    <table id="data-table" class="table table-hover table-striped  unique-table-class">
+                        <thead>
+                            <tr>                     
+                                <th>@PIVF.LanguageResource.Resources.lblMRNO .</th>
+                                <th>@PIVF.LanguageResource.Resources.lblPatientName</th>
+                                <th>@PIVF.LanguageResource.Resources.lblvAGE</th>
+                                <th>@PIVF.LanguageResource.Resources.lblGender</th>
+                                <th>@PIVF.LanguageResource.Resources.lblPartnerName</th>
+                                @*<th>Cycle code</th>*@
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="Item in PatientList">
+                                <td>{{Item.MRNo  && Item.MRNo != 0 ? Item.MRNo : '-' }}</td>
+                                <td>{{Item.PatientName  && Item.PatientName != 0 ? Item.PatientName : '-' }}</td>
+                                <td>{{ Item.Age && Item.Age != 0 ? Item.Age : '-' }}</td>
+                                <td>{{ Item.Gender && Item.Gender != 0 ? Item.Gender : '-' }}</td>
+                                <td>{{ Item.PartnerName && Item.PartnerName != 0 ? Item.PartnerName : '-' }}</td>
+                                @* <td>{{ Item.ContactNo1 && Item.ContactNo1 != 0 ? Item.ContactNo1 : '-' }}</td>*@
+                                <td style="display:flex; justify-content: flex-end; padding-right:20px"><img src="../images/dashboardEye.svg" style="cursor:pointer;" ng-click="EditPatient(Item)" alt="dashboardEye"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+              
+
+
+
+
+            </div>
+
+            <div class="col-md-12 text-right m-t-10" style="padding: 12px; border-top: 1px solid #E2E3E5;" ng-show="PatientList.length">
+                <button type="button" class="btn btn-primary" ng-click="downloadReportWithPreview()">@PIVF.LanguageResource.Resources.btnPrint</button>
+            </div>
+        </div>
+
+
+
+
+        <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+    </div>
+
+</section>
+
+
+
+
+<script type="text/ng-template" id="exampleModal">
+    <div class="custom-modal-content">
+        <div class="custom-modal-header">
+            <h5 class="custom-modal-title">@PIVF.LanguageResource.Resources.lblvSelectDates</h5>
+        </div>
+
+        <div class="custom-modal-body">
+            <div class="form-group">
+                <label for="fromDate" class="custom-label">@PIVF.LanguageResource.Resources.lblFromDate : </label>
+                <div class="custom-input-group">
+                    <input type="text"
+                           id="fromDate"
+                           class="custom-input"
+                           placeholder="@PIVF.LanguageResource.Resources.msgSelectfromdate"
+                           uib-datepicker-popup="{{format}}"
+                           ng-model="FromDate"
+                           is-open="isFromDatePickerOpen"
+                           datepicker-options="FromDateOptions"
+                           ng-focus="isFromDatePickerOpen=true" />
+                    <button class="custom-calendar-btn" type="button" ng-click="isFromDatePickerOpen=true">
+                        <i class="fa fa-calendar"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="toDate" class="custom-label">@PIVF.LanguageResource.Resources.lblToDate : </label>
+                <div class="custom-input-group">
+                    <input type="text"
+                           id="toDate"
+                           class="custom-input"
+                           placeholder="@PIVF.LanguageResource.Resources.msgSelecttodate"
+                           uib-datepicker-popup="{{format}}"
+                           ng-model="ToDate"
+                           is-open="isToDatePickerOpen"
+                           datepicker-options="ToDateOptions"
+                           ng-focus="isToDatePickerOpen=true" />
+                    <button class="custom-calendar-btn" type="button" ng-click="isToDatePickerOpen=true">
+                        <i class="fa fa-calendar"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-modal-footer">
+            <button class="custom-btn-primary" ng-click="close()">@PIVF.LanguageResource.Resources.lblvSubmit</button>
+        </div>
+    </div>
+</script>

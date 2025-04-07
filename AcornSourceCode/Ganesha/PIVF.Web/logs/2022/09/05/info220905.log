@@ -1,0 +1,34 @@
+2022-09-05 11:16:14.2111|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:14.2111|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:15.5086|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:15.5086|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:15.7023|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:15.7023|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:15.8195|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:15.8195|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:19.6513|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:19.6513|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:20.7021|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:20.7021|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:21.1880|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:21.1880|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:21.6898|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-05 11:16:21.6898|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-05 11:36:14.9772|ERROR|PIVF.Web.Api.Master.Configuration.UserAPIController|UserAPI/GetUserRoleRights MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Configuration.UserAPIController.GetUserRoleRights() in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.Web\Api\Master\Configuration\UserAPIController.cs:line 398
+2022-09-05 11:36:14.9772|ERROR|PIVF.Web.Api.Master.Configuration.UserAPIController|UserAPI/GetGrandParentList MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.Web.Api.Master.Configuration.UserAPIController.GetGrandParentList() in D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\PIVF.Web\Api\Master\Configuration\UserAPIController.cs:line 59
+2022-09-05 12:22:30.4646|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:30.4646|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:33.3063|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:33.3063|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:34.5746|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:34.5746|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:34.7095|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:34.7095|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:35.1593|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:35.1593|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:35.6399|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:35.6399|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:36.1476|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:36.1476|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:37.1801|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2
+2022-09-05 12:22:37.1801|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiplyadmin,UnitID:2

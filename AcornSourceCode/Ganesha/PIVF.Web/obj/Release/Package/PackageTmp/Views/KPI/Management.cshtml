@@ -1,0 +1,265 @@
+﻿@{    Layout = null; }
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-piechart-outlabels"></script>
+
+    <div class="row form-horizontal" ng-controller="ManagementController" ng-init="loadData()">
+
+        <div class="col-md-9 col-lg-10" id="print1" style="overflow:auto;max-height:600px;">
+            <div class="form_Content MgtReport">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="">
+                            <div ng-show="hideChart">
+                                <canvas id="bar" ng-hide="KPI.chartType!=1" ng-show="KPI.chartType==1 && hideChart" class="chart chart-bar" chart-data="data"
+                                        chart-labels="labels" chart-series="series" chart-options="options"
+                                        chart-dataset-override="datasetOverride" chart-click="onClick" chart-colors="chartColor" style="border: 1px solid #ddd;"></canvas>
+
+                                <canvas id="line" ng-hide="KPI.chartType!=2" ng-show="KPI.chartType==2 && hideChart" class="chart chart-line" chart-data="data"
+                                        chart-labels="labels" chart-series="series" chart-options="options"
+                                        chart-dataset-override="datasetOverride" chart-click="onClick" chart-colors="chartColor" style="border: 1px solid #ddd;"></canvas>
+                                <canvas id="pie" ng-hide="KPI.chartType!=3" ng-show="KPI.chartType==3 && hideChart" style="border: 1px solid #ddd;"></canvas>
+                                @*<canvas id="pie" ng-hide="KPI.chartType!=3" ng-show="KPI.chartType==3 && hideChart" class="chart chart-pie" chart-data="data"
+                                        chart-labels="labels" chart-options="options" chart-colors="chartColor" style="border: 1px solid #ddd;"></canvas>*@
+
+                            </div>
+                            <div class="col-md-12 col-lg-12" ng-show="IsTableTitle">
+                                <h3>{{Title}}</h3>
+                            </div>
+                            <div class="col-md-12 col-lg-12" ng-show="IsFirstTable">
+                                <div class="table-responsive" style="min-height:100px;max-height:300px;">
+                                    <table class="table table-hover table-striped table-bordered" id="ListKIPData">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th width="" ng-repeat="i in cumulativeCases">{{ListClinic[i.UnitID-1].Description}}</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="">
+                                                <td>
+                                                    Fresh
+                                                </td>
+                                                <td ng-repeat="i in cumulativeCases">
+                                                    {{i.Fresh}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Frozen
+                                                </td>
+
+                                                <td ng-repeat="i in cumulativeCases">
+
+                                                    {{i.Frozen}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Total
+                                                </td>
+
+                                                <td ng-repeat="i in cumulativeCases">
+
+                                                    {{i.Frozen+i.Fresh}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-lg-12" ng-show="IsSecondTable">
+                                <div class="table-responsive m-b-15" style="min-height:100px;max-height:300px;">
+                                    <table class="table table-hover table-striped table-bordered" id="ListKIPData">
+                                        <thead>
+                                            <tr>
+                                                <th width="470">KPI</th>
+                                                <th width="370">CENTER ACHIEVEMENT</th>
+                                                <th>INTERNATIONAL RATES</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="">
+                                                <td>OOCYTE RETRIEVAL RATE</td>
+                                                <td>{{ClinicWiseData.SuccessRate.OOCYTERETRIEVALRate}}%</td>
+                                                <td>90%</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td>FERTILIZATION RATE</td>
+                                                <td>{{ClinicWiseData.SuccessRate.FertilizationRate}}%</td>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td>DEGENERATION RATE</td>
+                                                <td>{{ClinicWiseData.SuccessRate.DegenerationRate}}%</td>
+                                                <td><span> &lt;15%</span></td>
+                                            </tr>
+                                            <tr class="">
+                                                <td>CLEAVAGE RATE</td>
+                                                <td>{{ClinicWiseData.SuccessRate.CleavageRate}}%</td>
+                                                <td>85%</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td>GOOD GRADE EMBRYOS RATE</td>
+                                                <td>{{ClinicWiseData.SuccessRate.GoodGradeRate}}%</td>
+                                                <td><span>&gt;75%</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-lg-12" ng-show="IsSecondTable">
+                                <div class="table-responsive m-b-15" style="min-height:100px;max-height:300px;">
+                                    <table class="table table-hover table-striped table-bordered" id="ListKIPData">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="3" style="text-align: center;">SUCCESS RATE (FRESH EMBRYO TRANSFER)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="">
+                                                <td colspan="3" style="text-align: center;">TOTAL NUMBER OF Fresh EMBRYO TRANSFER:{{ClinicWiseData.ClinicWiseRate.TotalFresh}}</td>
+
+                                            </tr>
+                                            <tr class="">
+                                                <td width="470">PREGNANCY RATE</td>
+                                                <td width="370">{{ClinicWiseData.ClinicWiseRate.PregnacyRateFresh}}%</td>
+                                                <td>30-35%</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td>IMPLANTATION RATE</td>
+                                                <td>{{ClinicWiseData.ClinicWiseRate.ImplantationRateFresh}}%</td>
+                                                <td>16%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-12" ng-show="IsSecondTable">
+                                <div class="table-responsive m-b-15" style="min-height:100px;max-height:300px;">
+                                    <table class="table table-hover table-striped table-bordered" id="ListKIPData">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="3" style="text-align: center;">SUCCESS RATE (FROZEN EMBRYO TRANSFER)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="">
+                                                <td colspan="3" style="text-align: center;">TOTAL NUMBER OF FROZEN EMBRYO TRANSFER: {{ClinicWiseData.ClinicWiseRate.TotalFrozen}}</td>
+
+                                            </tr>
+                                            <tr class="">
+                                                <td width="470">PREGNANCY RATE</td>
+                                                <td width="370">{{ClinicWiseData.ClinicWiseRate.PregnacyRateFrozen}}%</td>
+                                                <td>30-35%</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td>IMPLANTATION RATE</td>
+                                                <td>{{ClinicWiseData.ClinicWiseRate.ImplantationRateFrozen}}%</td>
+                                                <td>16%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-lg-12" ng-show="IsThirdTable">
+                                <div class="table-responsive" style="min-height:100px;max-height:300px;">
+                                    <table class="table table-hover table-striped table-bordered" id="ListKIPData">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: center;">Center</th>
+                                                <th style="text-align: center;">Clinician</th>
+                                                <th style="text-align: center;">Pregnancy Rate</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="" ng-repeat="item in DoctorWiseRate">
+                                                <td>{{ListClinic[item.UnitID-1].Description}}</td>
+                                                <td>{{item.Name}}</td>
+                                                <td>{{item.Total}}</td>
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-2" style="border:1px solid #ddd">
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">Chart Type</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <select ng-disabled="!(KPI.reportType==2 || KPI.reportType==4 ||KPI.reportType==6)" class="form-control" id="ddlChartList" ng-change="ChangeChart()" name="ddlChartList" ng-model="KPI.chartType" ng-options="item.ID as item.Description for item in ListChartType"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">KPI</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <select class="form-control" id="ddlChartList" ng-change="ChangeReport()" name="ddlChartList" ng-model="KPI.reportType" ng-options="item.ID as item.Description for item in ListReportType"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label">From Date</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="input-group date">
+                        <input type="text" class="form-control" placeholder="mm-yyyy" ng-click="openmonth2()" ng-model="KPI.fromDate" aria-describedby="" uib-datepicker-popup="MM/yyyy" show-button-bar="false" is-open="month2.opened" datepicker-options="{minMode: 'month'}" alt-input-formats="altInputFormats" tabindex="1">
+                        <span class="input-group-addon" id="" ng-click="openmonth2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label">To Date</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="input-group date">
+                        <input type="text" class="form-control" placeholder="mm-yyyy" ng-click="openmonth1()" ng-model="KPI.toDate" aria-describedby="" uib-datepicker-popup="MM/yyyy" show-button-bar="false" is-open="month1.opened" datepicker-options="{minMode: 'month'}" alt-input-formats="altInputFormats" tabindex="1">
+                        <span class="input-group-addon" id="" ng-click="openmonth1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+            @*<div class="form-group">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">Clinician/Embryologist</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select id="ddlChartList" class="form-control" ng-change="ChangeReport()" name="ddlChartList" ng-model="KPI.personID" ng-options="item.ID as item.Description for item in ListClinicianEmbryologist"></select>
+                    </div>
+                </div>*@
+            <div class="form-group" ng-hide="!(KPI.reportType==3)">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">Clinic</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <select ng-hide="!(KPI.reportType==3)" id="ddlChartList" class="form-control" ng-change="ChangeReport()" name="ddlChartList" ng-model="KPI.clinicID" ng-options="item.ID as item.Description for item in ListClinic"></select>
+                </div>
+            </div>
+
+            <div class="form-group " ng-hide="true">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">Female Age</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <input type="number"
+                           class="form-control"
+                           ng-model="KPI.AgeMin"
+                           id="" placeholder="Min Age" />
+                </div>
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">Between</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <input type="number"
+                           class="form-control"
+                           ng-model="KPI.AgeMax"
+                           id="" placeholder="Max Age" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <button class="btn btn-primary" type="button" id="" value="" ng-click="GenerateKPI(KPI)">View KPI</button>
+                    <button class="btn btn-primary" ng-disabled="IsPrint" ng-click="print()">Print</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>

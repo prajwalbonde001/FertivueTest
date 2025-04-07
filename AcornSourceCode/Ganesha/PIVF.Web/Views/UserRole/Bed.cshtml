@@ -1,0 +1,134 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="row" ng-controller="WardCtr" ng-init="GetBedClassList(); GetUserList(); GetIPDClassList(); isBedFormVisible = false;">
+    <div class="form_Content">
+        <h1>For the Bed</h1>
+        <div class="row" ng-show="!isBedFormVisible">
+            <div class="col-md-3">
+                <label>Search by Code:</label>
+                <input type="text" class="form-control" ng-model="search.Code" placeholder="Enter Code">
+            </div>
+            <div class="col-md-3">
+                <label>Search by Description:</label>
+                <input type="text" class="form-control" ng-model="search.Description" placeholder="Enter Description">
+            </div>
+            <div class="col-md-3" style="display: flex; align-items: flex-end;margin-top:25px">
+                <button class="btn btn-primary" ng-click="SearchBedList()">Search</button>
+                <button class="btn btn-secondary m-l-10" ng-click="ResetBedSearch()">Reset</button>
+            </div>
+        </div>
+
+        <!-- New User Button -->
+        <div class="row">
+            <div class="col-sm-12 text-right p-r-25" style="padding-bottom:5px">
+                <button class="btn-link p-t-10" title="Print" ng-click="exportToExcel('#tableToExport')"><span class="glyphicon glyphicon-print"></span></button>
+                <button class="btn-link m-t-10 pull-right" title="New" type="button" ng-click="toggleBedForm()"><span class="glyphicon glyphicon-plus"></span></button>
+
+            </div>
+        </div>
+
+        <!-- User List Table (Hidden When Adding New User) -->
+        <div class="row" ng-show="!isBedFormVisible">
+            <div class="col-sm-12">
+                <div class="table-responsive fixed_header" id="tableToExport">
+                    <table class="table table-hover" id="tblUserList">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>@PIVF.LanguageResource.Resources.lblCode</th>
+                                <th>@PIVF.LanguageResource.Resources.lblDescription</th>
+                                <th>Class</th>
+                                <th>Ward</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in filteredBedClassList">
+                                <td>
+                                    <button type="button" class="btn btn_edit" title="Edit" ng-click="EditBedClass(item)"></button>
+                                </td>
+                                <td>{{ item.Code }}</td>
+                                <td>{{ item.Description }}</td>
+                                <td>{{ item.Class }}</td>
+                                <td>{{ item.Ward }}</td>
+                                <td>{{ item.status ? 'Inactive' : 'Active' }}</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- New User Form (Initially Hidden) -->
+        <!-- New User Form (Initially Hidden) -->
+        <div class="row" ng-show="isBedFormVisible" style="display: flex; justify-content: center;">
+            <div class="col-md-6">
+                <h3>{{ editingBedItem ? 'Edit Bed' : 'Add Bed' }}</h3>
+
+                <div class="form-group">
+                    <label>Code:</label>
+                    <input type="text" class="form-control" ng-model="newUser.Code" placeholder="Enter Code">
+                </div>
+
+                <div class="form-group">
+                    <label>Description:</label>
+                    <input type="text" class="form-control" ng-model="newUser.Description" placeholder="Enter Description">
+                </div>
+
+                <div class="form-group">
+                    <label for="class">Select Class:</label>
+                    <select class="form-control"
+                            ng-model="newUser.ClassID"
+                            ng-options="classItem.ID as classItem.Description for classItem in IPDClassList">
+                        <option value="">-- Select Class --</option>
+                    </select>
+                </div>
+
+                <!-- Ward Dropdown -->
+                <div class="form-group">
+                    <label for="ward">Select Ward:</label>
+                    <select class="form-control"
+                            ng-model="newUser.WardID"
+                            ng-options="wardItem.ID as wardItem.Description for wardItem in BillingList track by wardItem.ID">
+                        <option value="">-- Select Ward --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Status:</label>
+                    <select class="form-control" ng-model="newUser.status">
+                        <option value="">-- Select Status --</option>
+                        <option ng-value="true">Active</option>
+                        <option ng-value="false">Inactive</option>
+                    </select>
+                </div>
+
+                <div style="margin-top:5px; display:flex; justify-content:flex-end; column-gap:25px">
+                    <button class="btn btn-success" ng-click="SaveBedMaster()">
+                        {{ editingBedItem ? 'Update' : 'Save' }}
+                    </button>
+                    <button class="btn btn-secondary" ng-click="toggleBedForm()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Pagination -->
+        <div class="row form-horizontal" ng-show="!isBedFormVisible" style="display: flex;justify-content: flex-end; margin-top:10px">
+            <div class="col-sm-12 m-b-10" style="display: flex;flex-direction: row;align-content: flex-end;justify-content: flex-end;">
+                <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize"
+                                class="pagination-sm pull-left" boundary-links="true" num-pages="numPages" items-per-page="10"
+                                first-text="@PIVF.LanguageResource.Resources.lblFirst"
+                                previous-text="@PIVF.LanguageResource.Resources.lblPrevious"
+                                next-text="@PIVF.LanguageResource.Resources.lblNext"
+                                last-text="@PIVF.LanguageResource.Resources.lblLast">
+                </uib-pagination>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,593 @@
+﻿
+@{
+    Layout = null;
+
+}
+<style>
+    .Invalid {
+        border-color: red;
+    }
+
+    .select {
+        border: 1px solid red;
+    }
+</style>
+<link href="~/Content/select2-bootstrap.css" rel="stylesheet" />
+<link href="~/Content/select2.css" rel="stylesheet" />
+
+<form name="frmCounterSale" ng-controller="CounterSaleCtrl" ng-init="loadData()" nonvalidate>
+
+    <div class="form_Content m-b-10" style="min-height:100px;">
+        <div class="row form-horizontal">
+            <section class="col-md-12 col-lg-12"><h5 class="subTitle">Patient Information</h5></section>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <label class="radio-inline"><input type="radio" name="optradio" id="newradio" ng-disabled="disableFeeeze || HideWhenView" checked="checked" value="New" ng-click="NewCounterSaleInfo=true;PatientData.MRNo=false;inputboxdiv=false;Clearinformation();cancelView()">New</label>
+                        <label class="radio-inline"><input type="radio" name="optradio" id="existingradio" ng-disabled="disableFeeeze || HideWhenView" value="Existing" ng-click="NewpatientInfo=false;inputboxdiv=true;Clearinformation()">Existing</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-3 col-lg-4">
+                <div class="form-group ">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        @*<div class="input-group">
+                                <input type="text" class="form-control" id="exampleInputAmount" ng-readonly="IsDisable" placeholder="Search Patient" ng-model="selectedPatientFromPatient" typeahead-min-length="3" uib-typeahead="i as (i.PatientData) for i in PatientList | filter:$viewValue | limitTo:150" typeahead-on-select="SelectedPatient(selectedPatientFromPatient,false);BindData();" autocomplete="off">
+                                <span class="input-group-addon" id="">
+                                    <i class="fa fa-search"
+                                       aria-hidden="true"></i>
+                                </span>
+                            </div>*@
+                        <div class="InputBoxDiv" ng-show="inputboxdiv">
+                            <div class="input-group">
+                                <input type="text" @*ng-disabled="IsDisableSearch"*@  ng-disabled="disableFeeeze || HideWhenView" class="form-control" id="PatientSearchBox" name="MRNO" with="" placeholder="@PIVF.LanguageResource.Resources.lblSearchPatient" ng-model="selectedPatientFromPatient" typeahead-min-length="3" uib-typeahead="i as (i.PatientData) for i in PatientList | filter:$viewValue | limitTo:150" typeahead-on-select="SelectedPatient(selectedPatientFromPatient,false);BindData();" autocomplete="off"> @*replace="[^a-zA-Z0-9\s]"*@ @*ng-change="GetPatientDetailsFromPatient(false)"*@ @*Commented by  AniketK on 03Dec2019*@
+                                <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>   @*ng-click="BindData();"  commented by Nayan kamble on 18/11/2019*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-5 ">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-5 col-lg-5 control-label" id="text-right" for=""><span class="text-Red">* </span>Reference Doctor</label>
+                    <div class="col-md-12 col-sm-7 col-lg-7">
+                        <input type="text" class="form-control" id="ReferenceDoctor" ng-disabled="disableFeeeze || HideWhenView" placeholder="Search Doctor" ng-model="SelectedDoctor" uib-typeahead="i as (i.Description) for i in getMatchingDoctor($viewValue) | limitTo : 8" typeahead-on-select="onSelect($item, $model, $label)" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="clearfix"></div>*@
+        <div class="row" ng-show="PatientData.MRNo" @*ng-hide="NewpatientInfo"*@>
+
+            <div class="col-lg-12">
+                <div class="PatientInfoWrapper m-b-15 m-t-10">
+                    <div class="BlueWrap">
+                        <div class="ProfileImgWrap">
+                            @*<img src="./images/ladies-profile-pic.jpg" alt="User Profile Pic" class="profile">*@
+                            @*   <img ng-src="{{PatientData.PhotoString}}" width="100%" />*@
+                            <img ng-if="PatientData.PhotoString !=''" ng-src="{{PatientData.PhotoString}}" class="profile">
+                            <img ng-if="PatientData.PhotoString =='' && PatientData.GenderId==1" ng-src="../images/Male_default.jpg" class="profile">
+                            <img ng-if="PatientData.PhotoString =='' && PatientData.GenderId==2" ng-src="../images/Female_default.jpg" class="profile">
+                        </div>
+                        <div class="ProfileInfoWrap ">
+                            <p class="m-b-0">
+                                <span class="PatientName p-l-20">{{PatientData.Prefix}}</span>
+                                <span class="PatientName">{{PatientData.PatientFullName}}</span>
+                                <span class="MRN-Green">
+                                    <span> {{PatientData.MRNo}}</span>
+                                </span>
+                                <span class="patient-gander p-l-5">{{PatientData.GenderID}} -</span>
+                                <span class="patient-gander">{{PatientData.Age}}</span>
+                                <span class="patient-gander iconInfoLine">
+                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                    <span class="LinkName">{{PatientData.MobileNo}}</span>
+                                </span>
+                                @*<span class="patient-gander iconInfoLine">
+                                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                        <span class="LinkName">+{{PatientData.AltMobileno}}</span>
+                                    </span>*@
+                            </p>
+                            <ul class="profile-data">
+                                <li style="width:63%;" ng-show="PatientData.PatientAddress">
+
+                                    <span class="patient-gander p-l-0">@PIVF.LanguageResource.Resources.lblPermanantAddress : {{PatientData.PatientAddress}}</span>@*Permanant Address :: Modided by swatih for localization 13/7/2020*@
+                                </li>
+                                <li style="width:63%;" ng-show="PatientData.CommunicationAddress">
+                                    @*ng-show="PatientData.CommunicationAddress"*@
+                                    @*Added by Nayan Kamble on 25/11/2019*@
+                                    <span class="patient-gander p-l-0">@PIVF.LanguageResource.Resources.lblCommunicationAddress : {{PatientData.CommunicationAddress}}</span>@*Communication Address :: Modided by swatih for localization 13/7/2020*@
+                                </li>
+                            </ul>
+                            @*<ul class="profile-data">
+                                    <li>
+                                        <div class="iconInfoLine">
+                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                            <span class="LinkName">{{PatientData.MStatus}}</span>
+                                        </div>
+                                    </li>
+                                    <li class="mailWidth">
+                                        <div class="iconInfoLine">
+                                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                            <span class="LinkName">{{PatientData.Email}}</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="iconInfoLine">
+                                            <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                            <span class="LinkName">+{{PatientData.MobileNo}}</span>
+                                        </div>
+                                    </li>
+
+                                </ul>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row new_option_form m-t-35" id="newinfo" ng-show="NewpatientInfo" @*ng-hide="ExistingpatientInfo"*@ ng-hide="PatientData.MRNo">
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        <span class="text-Red">* </span>
+                        First Name
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':frmCounterSale.txtFirstName.$invalid && frmCounterSale.txtFirstName.$dirty }">
+                        <input type="text" class="form-control Capitalize" id="FirstName" name="txtFirstName" placeholder="First Name" ng-disabled="disableFeeeze || HideWhenView" @*ng-disabled="IsDisabled"*@ ng-model="PatientData.FirstName">
+
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-md-3 col-lg-3 ">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Middle Name
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <input type="text" class="form-control Capitalize" id="" ng-disabled="IsDisabled" placeholder="Middle Name" ng-model="PatientData.MiddleName">
+                        </div>
+                    </div>
+                </div>*@
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Last Name
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control Capitalize" id="LastName" ng-disabled="disableFeeeze || HideWhenView" @*ng-disabled="IsDisabled"*@ placeholder="Last Name" ng-model="PatientData.LastName" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3" ng-show="DateofBirth">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        Date of Birth
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group date">
+                            @*data-provide="datepicker"*@
+                            <input type="text" class="form-control" id="txtDate1" name="txtDate1" ng-disabled="IsDisabled" 
+                                   placeholder="yyyy-mm-dd" ng-model="PatientData.DateOfBirth" multi-validation="NumericArrowBkSpDelSpDCFSlash"
+                                   aria-describedby="" @*onkeydown="return false"*@
+                                   uib-datepicker-popup="{{format}}"
+                                   show-button-bar="false" is-open="popup1.opened"
+                                   datepicker-options="dateOptionsDOB"
+                                   alt-input-formats="altInputFormats" tabindex="">
+                            <span class="input-group-addon" id="" ng-click="open1()">
+                                <i class="fa fa-calendar"
+                                   aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        <span class="text-Red">* </span>
+                        Age
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" id="age" ng-disabled="disableFeeeze || HideWhenView" @*ng-disabled="IsDisabled"*@ placeholder="Year" ng-model="PatientData.Age">
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-4" ng-show="Month">
+                        <input type="text" class="form-control" id="" @*ng-disabled="IsDisabled"*@ placeholder="Month" ng-model="PatientData.Age1">
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-4" ng-show="Days">
+                        <input type="text" class="form-control" id="" @*ng-disabled="IsDisabled"*@ placeholder="Days" ng-model="PatientData.Age2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">* </span>Gender</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        @*<input type="text" class="form-control " id="" ng-model="PatientData.Gender" ng-disabled="IsDisabled" >*@
+
+                        <select class="form-control " id="gender" ng-model="PatientData.GenderID" ng-disabled="disableFeeeze || HideWhenView" @*ng-disabled="IsDisabled"*@ ng-options="i.ID as i.Description for i in GenderList"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        <span class="text-Red">* </span>
+                        Mobile Number
+                    </label>
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <input type="text" class="form-control" id="MobileCountryCode" @*ng-disabled="IsDisabled"*@ ng-disabled="disableFeeeze || HideWhenView" placeholder="xxxx" ng-model="country" name="txtMobCountryCode" uib-typeahead="i as  (i.CountryCode+'('+i.CountryName+')') for i in CountryList | filter:$viewValue | limitTo:8"
+                               typeahead-on-select="SelectedCountry(country,1)" maxlength="7">
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-lg-8">
+                        <input type="text" class="form-control" id="mobilenumber" @*ng-disabled="IsDisabled"*@ ng-disabled="disableFeeeze || HideWhenView" placeholder="Mobile No" ng-model="PatientData.MobileNo" ng-pattern="/^\d{1,15}$/" multi-validation="NumericArrowBkSpDelSpDCFSlash" maxlength="14">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div class="form_Content m-b-10" style="min-height:100px;">
+        <div class="row">
+            <section class="col-md-12 col-lg-12"><h5 class="subTitle">Item Search</h5></section>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-3 col-md-3 col-lg-3 control-label" for="">
+                        <span class="text-Red">* </span>
+                        Store
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-lg-9">
+                        <select class="form-control" id=""
+                                ng-model="CounterSaleInfo.StoreID"
+                                ng-change="GetItemListofStore()"
+                                ng-options="item.ID as item.Description for item in StoreList" ng-disabled="disableFeeeze || HideWhenView"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-3 col-lg-5  form-horizontal" style="margin-bottom: 10px;">
+                <div class="form-group ">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group">
+                            @*<input type="text" class="form-control" ng-model="PatientInfo.SelectedItem" id="exampleInputAmount" placeholder="Item Search"  uib-typeahead="i as (i.ItemName) for i in getMatchingItem($viewValue) | limitTo : 8" typeahead-on-select="onSelect1($item, $model, $label)" >*@
+                            <input type="text" class="form-control" ng-model="CounterSaleInfo.SelectedItem" id="itemsearch" @*ng-if="PatientInfo.SelectedItem" ng-init="setFocus()"*@ placeholder="Item Search" uib-typeahead="i as (i.ItemName) for i in getMatchingItem($viewValue) | limitTo : 8" typeahead-on-select="ViewBatchmodal($item, $model, $label)" data-target="#modbatchinfo" ng-disabled="disableFeeeze || HideWhenView" autocomplete="off">
+                            <span class="input-group-addon" id="">
+                                <i class="fa fa-search"
+                                   aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-2 col-sm-2 col-lg-2 p-l-0">
+                <button class="btn-primary">Prescribed Items</button>
+            </div>
+            @*<div class="col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+                    <div class="table-responsive table-bordered" style="min-height:150px;">
+                        <table class="table" style="margin-bottom:5px;">
+                            <thead>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>Item Name</th>
+                                    <th>Batch</th>
+                                    <th>Expiry</th>
+                                    <th>MRP</th>
+                                    <th>Purchase Rate</th>
+                                    <th>Available Stock</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="Items in FavItemList">
+                                    <td class="text-center"><input type="checkbox"  id="Ischeck" ng-model="Ischeck" ng-click="AddItemsDetails(PatientInfo,Ischeck)" /></td>
+                                    <td>{{Items.ItemName}}</td>
+                                    <td>{{Items.BatchCode}}</td>
+                                    <td>{{Items.ExpiryDate | date :  "dd.MM.y" }}</td>
+                                    <td>{{Items.MRP}}</td>
+                                    <td>{{Items.PurchaseRate}}</td>
+                                    <td>{{Items.AvailableStock}}</td>
+                                    <td  class="col-md-2 col-sm-2 col-lg-2">
+                                   <input type="text" class="form-control" ng-model="PatientInfo.Quantity" placeholder="Quantity"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>*@
+        </div>
+    </div>
+    <div class="form_Content m-b-10" style="min-height:200px;">
+        <div class="row">
+            <section class="col-md-12 col-lg-12"><h5 class="subTitle">Counter Sale Information</h5></section>
+            <div class="col-md-12 col-lg-12">
+                <div class="table-responsive table-bordered" style="height:150px;overflow:auto;">
+                    <table class="table" style="min-width:2200px;margin-bottom:5px">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Item Code</th>
+                                <th>Item Name</th>
+                                <th>Manufacture</th>
+                                <th>Batch Code</th>
+                                <th>Expiry Date</th>
+                                <th>Quantity</th>
+                                <th>UOM</th>
+                                <th>MRP</th>
+                                <th>Concession(%)</th>
+                                <th>Concession Amt</th>
+                                @*<th>SGST(%)</th>
+                                    <th>SGST Amt</th>*@
+                                <th>Amount</th>
+                                @*<th>C.Disc %</th>
+                                    <th>C.Disc Amount</th>*@
+                                <th>SGST %</th>
+                                <th>SGST Amount</th>
+                                <th>CGST %</th>
+                                <th>CGST Amount</th>
+                                @*<th>IGST %</th>
+                                    <th>IGST Amount</th>*@
+                                <th>Net Amount</th>
+                                <th>Remark</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="Item in ItemSaleDetailsList track by $index">
+                                <td><span class="btn_delete" title="Delete" data-toggle="modal" ng-click="RemoveItem(Item)"></span></td>
+                                <td>{{Item.ItemCode}}</td>
+                                <td>{{Item.ItemName}}</td>
+                                <td>{{Item.Manufacture}}</td>
+                                <td>{{Item.BatchCode}}</td>
+                                <td>{{Item.ExpiryDate | date :  "dd.MM.y"}}</td>
+                                <td st-ratio="6"><input type="text" class="form-control" ng-model="Item.Quantity" ng-change="CalAmount(Item,$index);TotalAmt()" placeholder="Quantity" ng-disabled="disableFeeeze || HideWhenView"></td>
+                                @*<td>{{Item.Quantity}}</td>*@
+                                <td><select class="form-control" @*name="ddlUOM"*@ id="ddlUOM" ng-model="Item.SelectedUOMID" ng-change="CalculateConversionFactorCentral(Item,$index);TotalAmt()" ng-options="i.ID as i.Description for i in Item.UOMList" ng-init="Item.SelectedUOMID = Item.UOMList[1].ID" tabindex="5" ng-disabled="disableFeeeze || HideWhenView"></select></td>
+                                @*<td><select class="form-control" name="ddlCamp" ng-model="Item.SelectedUOMID" ng-change="CalculateConversionFactorCentral(Item,$index)" ng-options="i.ID as i.Description for i in Item.UOMList" tabindex="5" uib-typeahead="i as (i.ItemName) for i in getMatchingItem($viewValue) | limitTo : 8" typeahead-on-select="onSelect2($item, $model, $label)"></select></td>*@
+                                @*<td>{{Item.BaseUOM}}</td>*@
+                                <td>{{Item.MRP}}</td>
+                                @*<td>{{Item.ConcessionPercentage}}</td>*@
+                                <td st-ratio="6">
+                                    <input class="form-control  text-left" placeholder="0.00" ng-model="Item.ConcessionPercentage"
+                                           @*multi-validation="NumericArrowBkSpDelSpDCFSlash"*@ maxlength="5" ng-disabled="disableFeeeze || HideWhenView" @*multi-validation="NumericArrowBkSpDelSpDCFSlash"*@
+                                           min="0" max="100" ng-change="calConcessionAmt(Item,$index);CalSGSTAmount(Item,$index);CalCGSTAmount(Item,$index);CalIGSTAmount(Item,$index);CalNetAmount(Item,$index);TotalAmt()" />
+                                </td>
+                                <td st-ratio="6"><input class="form-control text-left" placeholder="0.00" ng-disabled="disableFeeeze || HideWhenView" ng-model="Item.ConcessionAmount" ng-change="CalSGSTAmount(Item,$index);CalCGSTAmount(Item,$index);CalIGSTAmount(Item,$index);CalNetAmount(Item,$index);TotalAmt()" @*multi-validation="NumericArrowBkSpDelSpDCFSlash"*@ /></td>
+                                @*<td>{{Item.ConcessionAmount}}</td>*@
+                                @*<td>{{Item.Amount}}</td>*@
+                                <td st-ratio="6"><input class="form-control text-left" placeholder="0.00" readonly ng-model="Item.Amount"  ng-disabled="disableFeeeze || HideWhenView"/></td>
+                                @*<td></td>C.Disc %*@
+                                @*<td></td>C.Disc Amount*@
+                                <td>{{Item.Tax1Percentage}}</td>
+                                <td>{{Item.Tax1Amount}}</td>
+                                <td>{{Item.Tax2Percentage}}</td>
+                                <td>{{Item.Tax2Amount}}</td>
+                                @*<td>{{Item.Tax3Percentage}}</td>
+                                    <td>{{Item.Tax3Amount}}</td>*@
+                                <td st-ratio="6"><input class="form-control text-right" placeholder="0.00" readonly ng-model="Item.NetAmount" ng-change="TotalAmt()" ng-disabled="disableFeeeze || HideWhenView" /></td>
+                                @*<td>{{Item.NetAmount}}</td>*@
+                                <td class="col-md-2 col-sm-2 col-lg-2">
+                                    <input type="text" class="form-control" ng-disabled="disableFeeeze || HideWhenView" ng-model="CounterSaleInfo.Remarks" placeholder="Remarks">
+                                </td>
+                                @*<td><span class="btn_delete" title="Delete" data-toggle="modal" ng-click="RemoveItem(Item)"></span></td>*@
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End Grid -->
+        <div class="row form-horizontal">
+            <!-- <div class="col-md-3 col-lg-2">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Add
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <button class="btn-primary">Prescribed Items</button>
+                        <button class="btn-primary">Other Items</button>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <label class="col-md-3 col-lg-2" style="margin-top:35px;"><input type="checkbox" name="" > Mannual BarCode</label>
+            <div class="col-md-3 col-lg-2">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Bar Code
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" id="" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Verence Reason
+                    </label>
+                    <div class="col-md-10 col-sm-10 col-lg-8">
+                        <input type="text" class="form-control" id="" placeholder="">
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-lg-4">
+                        <button class="btn-primary">Previous Bills</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="form_Content m-b-10" style="min-height:200px;">
+        <div class="row">
+            <section class="col-md-12 col-lg-12"><h5 class="subTitle">Bill Payment</h5></section>
+            <div class="col-sm-offset-3 col-sm-6">
+                <div class="table-responsive" id="">
+                    <table class="table table-hover table-striped table-bordered Bill_Dtls" style=" ">
+                        <tbody>
+                            <tr>
+                                <td class="text-bold">Total Bill Amt</td>
+                                <td class="text-right"><input class="form-control text-right" placeholder="00.00" readonly id="TotalNetAmount" ng-model="BillDetails.TotalBillAmount" /></td>
+                                <td class="text-bold">Total Payable Amt
+                                <td class="text-right"><input class="form-control text-right" placeholder="00.00" readonly ng-model="BillDetails.NetBillAmount" /></td>
+                            </tr>
+                            <tr>
+                                <td class="text-bold">Total Concession Amount </td>
+                                <td class="text-right"><input class="form-control text-right" placeholder="00.00" readonly ng-model="BillDetails.TotalConcessionAmount" /></td>
+                                <td class="text-bold">Total Paid Amt.</td>
+                                <td class="text-right"><input class="form-control text-right" placeholder="00.00" readonly ng-model="BillDetails.PaidAmount" /> </td>
+                            </tr>
+                            <tr>
+                                <td class="text-bold">Previous Outstanding </td>
+                                @*<td class="text-right">{{PatientData.PreviousOutstanding}}</td>*@
+                                <td class="text-right"><input class="form-control text-right" placeholder="00.00" readonly ng-model="PatientData.PreviousOutstanding" /> </td>
+                                <td class="text-bold">Balance Amount</td>
+                                <td class="text-right"><input class="form-control text-right" placeholder="00.00" readonly /> </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-3 text-right" style="margin-top: 85px;">
+                <label class="control-label"><input type="checkbox" id="checkbox" disabled="disabled" @*ng-disabled="disableIsFreezed"*@ @*ng-disabled="disableFeeeze || HideWhenView"*@ value="option1" ng-checked="true" ng-click="FreezeBill(BillDetails.IsFreezed)"  ng-model="BillDetails.IsFreezed"> @PIVF.LanguageResource.Resources.lblFreeze</label>
+                <button class="btn btn-primary btn_save" type="button" id="" value="Add" ng-disabled="disableSave " @*ng-click="FreezeBill(true)"*@  ng-click="SaveCountersaleBill()" @*ng-click="SavePatientRecord()"*@>Save</button>
+                <button class="btn btn-primary btn_cancle" type="button" id="" value="Cancel" ng-click="cancelView()">Cancel</button>
+            </div>
+
+            <div class="col-md-12 col-lg-12" style="min-height: 180px;"   ng-show="ShowPaymentData" >
+                <div class="form_Content m-t-10 m-b-10" style="min-height: 180px;">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 text-right  ">
+                            <button class="btn btn-link link " type="button" id="btnAddFamilyHistoryRow" value="" ng-click="AddPaymentRow()">@PIVF.LanguageResource.Resources.btnAddRows</button>@*Add Rows::Modified by swatih for localization 22/7/2020*@   @*AddPaymentRow*@
+
+                            <div class="table-responsive table-bordered m-b-10">
+                                <table class="table" style="min-width: 700px;min-height:130px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Payment Mode</th>
+                                            <th>Payment Amount</th>
+                                            <th>Transaction No.</th>
+                                            <th>Bank</th>
+                                            <th>Date</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in BillDetails.OtherSrvPaymentModeList track by $index">
+                                            <td>
+                                                <select id="ddlPaymentMode"
+                                                        name="ddlPaymentMode"
+                                                        class="form-control"
+                                                        ng-model="item.PaymentModeID"
+                                                        ng-options="i.ID as i.Description for i in PaymentModeList"
+                                                        ng-change="ChangeModeOfPayment($index)"
+                                                        @*ng-class="{select:item.PaymentModeID == 0 && frmPatientAdvance.ddlPaymentMode.$dirty}"*@></select>  @*"{select:item.IsPaymentModeID == true}"*@
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" ng-model="item.PaidAmount" ng-disabled="item.DisableAmount"
+                                                               @*ng-class="{'Invalid':frmPatientAdvance.txtPaymentAmount.$invalid && frmPatientAdvance.txtPaymentAmount.$dirty }"*@ @*ng-class="{select:i.IsAmountNotFill == true}"*@
+                                                               maxlength="7" name="txtPaymentAmount" ng-required="true"  @*multi-validation="NumericArrowBkSpDelSpDCFSlash"*@
+                                                               replace="[^0-9.]" ng-class="{select:item.IsAmountNotFill == true}" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" id="txtTransNo" name="txtTransNo" ng-model="item.TransactionNo" ng-required="true"
+                                                               @*ng-class="{'Invalid':frmPatientAdvance.txtTransNo.$invalid && frmPatientAdvance.txtTransNo.$dirty }"*@ ng-disabled="item.CashMode" class="form-control" /> @*ng-class="{select:item.IsNumberNotFill == true}"*@
+                                                        </td>
+                                                        <td>
+                                                            <select id="ddlBank"
+                                                                    name="ddlBank"
+                                                                    class="form-control"
+                                                                    ng-model="item.BankID"
+                                                                    ng-options="i.ID as i.Description for i in BankList"
+                                                                    @*ng-class="{select:item.BankID == 0 && frmPatientAdvance.ddlBank.$dirty}"*@ ng-disabled="item.CashMode"></select> @*ng-class="{select:item.IsBankIDNotFill == true}"*@
+                                                                </td>
+                                                                <td>
+                                                                    <div class="input-group date">
+                                                                        @*<input type="text" class="form-control" id="txtDate" name="txtDate" placeholder="yyyy-mm-dd" ng-model="item.PaymentDate"
+                                                                                   aria-describedby="" uib-datepicker-popup="{{format}}"
+                                                                                   show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions1" onkeydown="return false"
+                                                                                   alt-input-formats="altInputFormats"/>
+                                                                            <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>*@
+                                                                        <input type="text" id="txtDate" name="txtDate" class="form-control" ng-model="item.PaymentDate" placeholder="yyyy-mm-dd" ng-disabled="item.CashMode" @*ng-class="{select:item.IsDateIDNotFill == true}"*@
+                                                                               @*ng-class="{'Invalid':frmPatientAdvance.txtDate.$invalid && frmPatientAdvance.txtDate.$dirty }"*@ ng-required="true" uib-datepicker-popup="{{format}}" datepicker-options="dateOptionsDOB1" show-button-bar="false" is-open="item.dtpickropened" alt-input-formats="altInputFormats">
+                                                                        <span class="input-group-addon" ng-click="openLabDtPickr($event,item)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                        <span class="btn_delete" title="Delete" data-toggle="modal" ng-click="DeletePayment($index)"></span>
+                                                                    </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                <div class="col-lg-12 text-right m-t-10">
+                    <button class="btn btn-default btn_save" type="button" id="" value="Add" @*ng-click="SaveCountersaleBill()"*@ ng-click="SavePatientRecord()" >Update Payment</button>
+                    <button class="btn btn-primary btn_cancle" type="button" id="" value="Cancel">Pay Later</button>
+
+                </div>
+                                </div>
+                                @*<div class="col-lg-12 text-right m-t-10">
+                                    <button class="btn btn-default btn_save" type="button" id="" value="Add">Update Payment</button>
+                                    <button class="btn btn-primary btn_cancle" type="button" id="" value="Cancel">Pay Later</button>
+
+                                </div>*@
+                            </div>
+                        </div>
+
+                        @*Item Information*@
+                        <div class="modal fade" tabindex="-1" role="dialog" id="modbatchinfo" data-keyboard="false" data-backdrop="static">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title">Batch Information </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12  col-lg-12">
+                                                <div class="table-responsive table-bordered" style="min-height:150px;">
+                                                    <table class="table" style="margin-bottom:5px;">
+                                                        <thead>
+                                                            <tr>
+                                                                @*<th>&nbsp;</th>*@
+                                                                <th>Item Name</th>
+                                                                <th>Batch</th>
+                                                                <th>UOM</th>
+                                                                <th>Expiry</th>
+                                                                <th>MRP</th>
+                                                                <th>Purchase Rate</th>
+                                                                <th>Available Stock</th>
+                                                                <th>Quantity</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="Items in BatchItemList">
+                                                                @*<td class="text-center"><input type="checkbox" id="Ischeck" ng-model="Ischeck" ng-click="AddItemsDetails(PatientInfo,Ischeck)" /></td>*@
+                                                                <td>{{Items.ItemName}}</td>@*{{Item.ItemName}}*@
+                                                                <td>{{Items.BatchCode}}</td>
+                                                                <td>{{Items.StockUOM}}</td>
+                                                                <td>{{Items.ExpiryDate | date :  "dd.MM.y" }}</td>
+                                                                <td>{{Items.MRP}}</td>
+                                                                <td>{{Items.PurchaseRate}}</td>
+                                                                <td>{{Items.AvailableStock}}</td>
+                                                                <td class="col-md-2 col-sm-2 col-lg-2">
+                                                                    <input type="text" class="form-control" id="QuntityInput" ng-model="Items.Quantity" placeholder="Quantity" multi-validation="NumericArrowBkSpDelSpDCFSlash" ng-keyup="$event.keyCode == 13 && AddItemsDetails(CounterSaleInfo)"   @*onkeypress="return isNumberKey(event,this)"*@ autofocus @*ng-keydown="AddItemsDetails(CounterSaleInfo)"*@>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" @*ng-click="AddItemsDetails(CounterSaleInfo)"*@> Ok</button>
+                                        <button type="button" class="btn btn-default" ng-click="closebatchinformation()">@PIVF.LanguageResource.Resources.btnClose @*Close*@</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Save Cancle Buttons-->

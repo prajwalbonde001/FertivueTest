@@ -1,0 +1,384 @@
+﻿
+@{
+    Layout = null;
+}
+@*<style>
+    .Invalid {
+        border-color: red;
+    }
+
+    .select {
+        border: 1px solid red;
+    }
+</style>*@
+<style>
+    .box_Individual {
+        width: 100% !important;
+    }
+
+    .croparea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width: 350px;
+        height: 350px;
+    }
+</style>
+
+<link href="~/Content/select2-bootstrap.css" rel="stylesheet" />
+<link href="~/Content/select2.css" rel="stylesheet" />
+<form name="frmMaterialConsumptionEntry" ng-controller="MaterialConsumptionEntryCtrl" ng-init="loadData()" nonvalidate>
+    <div class="form_Content m-t-10" style="min-height: 120px;">
+        <div class="row form-horizontal">
+            <section class="col-md-12 col-lg-12"><h5 class="subTitle">Patient Information</h5></section>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        <span class="text-Red">* </span>
+                        Store
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+
+                        <select class="form-control" id="StoreId"
+                                ng-model="MaterialConsumptionEntryInfo.StoreID"
+                                ng-change="GetItemListofStore()"
+                                ng-options="item.ID as item.Description for item in StoreList" 
+                                ng-disabled="disableFeeeze || HideWhenView"></select>
+                        @*<select class="form-control " id="">
+                                <option>Select</option>
+                                <option>--Select--</option>
+                            </select>*@
+                        @*<ui-select ng-model="MaterialConsumptionEntryInfo.StoreID" ng-disabled="IsPatientSelected" name="StoreID" ng-class="{select:MaterialConsumptionEntryInfo.StoreID== 0 && frmMaterialConsumptionEntry.StoreID.$dirty}" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                            <ui-select-match allow-clear="false" placeholder="">{{$select.selected.Description}}</ui-select-match>
+                            <ui-select-choices repeat="person.StoreID as person in StoreList | propsFilter: {Description: $select.search}">
+                                <div ng-bind-html="person.Description | highlight: $select.search"></div>
+                            </ui-select-choices>
+                        </ui-select>*@
+                    </div>
+                </div>
+            </div>
+            <label class="col-md-2 col-lg-2 checkbox m-t-20" style="">
+                <input type="checkbox" id="checkbox" ng-model="MaterialConsumptionEntryInfo.IsAgainstPatient"  ng-click="HideControl()"> Against Patient
+            </label>
+            <div class="col-md-3 col-sm-3 col-lg-3 m-t-25" id="search" ng-show="search">
+
+                <div class="input-group">
+                    <input type="text" class="form-control" id="PatientSearchBox" name="MRNO" with="" placeholder="@PIVF.LanguageResource.Resources.lblSearchPatient" ng-model="selectedPatientFromPatient" typeahead-min-length="3" uib-typeahead="i as (i.PatientData) for i in PatientList | filter:$viewValue | limitTo:150" typeahead-on-select="SelectedPatient(selectedPatientFromPatient,false);BindData();" autocomplete="off"> @*replace="[^a-zA-Z0-9\s]"*@ @*ng-change="GetPatientDetailsFromPatient(false)"*@ @*Commented by  AniketK on 03Dec2019*@
+                    <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                </div>
+            </div>
+            <!-- <div class="clearfix"></div> -->
+            <div class="col-md-4 col-lg-4" id="exist_patient" ng-show="PatientData.MRNo" @*ng-show="exist_patient"*@>
+                <div class="PatientInfoWrapper m-b-15">
+                    <div class="BlueWrap">
+                        <div class="ProfileImgWrap">
+                            <img ng-if="PatientData.PhotoString !=''" ng-src="{{PatientData.PhotoString}}" class="profile">
+                            <img ng-if="PatientData.PhotoString =='' && PatientData.GenderId==1" ng-src="../images/Male_default.jpg" class="profile">
+                            <img ng-if="PatientData.PhotoString =='' && PatientData.GenderId==2" ng-src="../images/Female_default.jpg" class="profile">
+                        </div>
+                        <div class="ProfileInfoWrap ">
+                            @*<p class="m-b-0">
+                                    <span class="PatientName p-l-20">Mr. {{PatientData.Prefix}} </span>
+                                    <span class="PatientName">Aravi Rajaram Kulkarni</span>an</br>
+                                    <span class="MRN-Green">
+                                        <span> AA/11/202000</span>
+                                    </span>
+                                    </
+                                </p>*@
+                            <p class="m-b-0">
+                                <span class="PatientName p-l-20">{{PatientData.Prefix}}</span>
+                                <span class="PatientName">{{PatientData.PatientFullName}}</span>
+                                <span class="MRN-Green">
+                                    <span> {{PatientData.MRNo}}</span>
+                                </span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-2 col-lg-2 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Patient Name
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Date
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy"  aria-describedby="" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                            <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar"
+                            aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="col-md-2 col-lg-2">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">MR No.
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control"/></textarea>
+                    </div>
+                </div>
+            </div>	 -->
+            <!-- <div class="clearfix"></div> -->
+            <!-- <section class="col-md-12 col-lg-12"><h5 class="subTitle">Invoice Details</h5></section> -->
+        </div>
+    </div>
+    <div class="form_Content m-t-10" style="min-height:20px;">
+        <div class="row">
+            <section class="col-md-12 col-lg-12"><h5 class="subTitle">Item Search</h5></section>
+
+            <div class="col-md-3 col-sm-3 col-lg-offset-4 col-lg-3  form-horizontal m-t-10 m-b-10">
+                <div class="form-group ">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group">
+                            @*<input type="text" class="form-control" id="exampleInputAmount" placeholder="Item Search">
+                                <span class="input-group-addon" id="">
+                                    <i class="fa fa-search"
+                                       aria-hidden="true"></i>
+                                </span>*@
+                            <input type="text" class="form-control" ng-model="MaterialConsumptionEntryInfo.SelectedItem" id="itemsearch" placeholder="Item Search" uib-typeahead="i as (i.ItemName) for i in getMatchingItem($viewValue) | limitTo : 8" typeahead-on-select="ViewBatchmodal($item, $model, $label)" data-target="#modbatchinfo" autocomplete="off">
+                            <span class="input-group-addon" id="">
+                                <i class="fa fa-search"
+                                   aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Collase -->
+            @*<div class="col-md-12 col-lg-12 form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-control CollapseTabBgcolor m-b-0" style="width: 100%;background-color:#35c2af;">
+                                <span class="col-md-12 col-lg-12 p-l-0" style="color:#ffffff">
+                                    <input type="checkbox" />
+                                    <a class="collapseArrowWrap title collapsed m-b-0" data-toggle="collapse" data-target="#collapseInvestigationDtls" ng-attr-type="button" id="" value="" style="color:#ffffff;cursor:pointer;">
+                                        <span class="collapseArrow"></span>
+                                        Item Name
+                                    </a>
+                                    <span class="glyphicon glyphicon-remove-circle" style="font-size:22px;float:right;"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12 form-horizontal collapse" id="collapseInvestigationDtls">
+                            <div class="dataBorder" style="border: 1px solid #ddd;padding: 5px;">
+                                <div class="row" ng-repeat="Items in BatchItemList">
+                                    <label class="col-sm-2 col-md-2 col-lg-2 control-label" for="">Batch : {{Items.BatchCode}}</label>
+                                    <label class="col-sm-2 col-md-2 col-lg-2 control-label" for="">Expiry :{{Items.ExpiryDate | date :  "dd.MM.y" }}</label>
+                                    <label class="col-sm-2 col-md-1 col-lg-1 control-label" for="">MRP : {{Items.MRP}}</label>
+                                    <label class="col-sm-2 col-md-1 col-lg-1 control-label" for="">CP : 20</label>
+                                    <label class="col-sm-2 col-md-2 col-lg-2 control-label" for="">Qty : 12</label>
+                                    <label class="col-sm-2 col-md-2 col-lg-2 control-label" for="">Available Qty : 20</label>
+                                    <label class="col-sm-2 col-md-2 col-lg-2 control-label" for="">UMO : 12</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+            <!-- Collase -->
+
+        </div>
+    </div>
+    <!-- End Grid -->
+    <div class="form_Content m-b-10" style="min-height:280px;">
+        <div class="row">
+            <section class="col-md-12 col-lg-12"><h5 class="subTitle">Material Consumption Information</h5></section>
+            <div class="col-md-12 col-lg-12">
+                <div class="table-responsive table-bordered" style="height:150px;overflow:auto;">
+                    <table class="table" style="min-width:2200px;margin-bottom:5px">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Item Name</th>
+                                <th>Batch Code</th>
+                                <th>Expiry Date</th>
+                                <th>Available Stock</th>
+                                <th>Used Quantity</th>
+                                <th>UOM</th>
+                                <th>S.UOM</th>
+                                <th>Conversation Factor</th>
+                                <th>Cost Price</th>
+                                @*<th>Total MRP Amount</th>*@
+                                <th>MRP</th>
+                                <th>Total Amount</th>
+                                <th>Remark</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="Item in ItemSaleDetailsList track by $index">
+                                <td><span class="btn_delete" title="Delete" data-toggle="modal" ng-click="RemoveItem(Item)"></span></td>
+                                <td>{{Item.ItemName}}</td>
+                                <td>{{Item.BatchCode}}</td>
+                                <td>{{Item.ExpiryDate | date :  "dd.MM.y"}}</td>
+                                <td>{{Item.AvailableQuantity}}</td>
+                                <td st-ratio="6"><input type="text" class="form-control" ng-model="Item.UsedQty" ng-change="CalAmount(Item,$index)" @*;CalTotalQuntity()*@ placeholder="Quantity" @*ng-disabled="disableFeeeze || HideWhenView"*@></td>
+                                @*<td>{{Item.Quantity}}</td>*@
+                                <td><select class="form-control" @*name="ddlUOM"*@ id="ddlUOM" ng-model="Item.SelectedUOMID"  ng-change="CalculateConversionFactorCentral(Item,$index);CalTotalQuntity()" ng-options="i.ID as i.Description for i in Item.UOMList" ng-init="Item.SelectedUOMID = Item.UOMList[1].ID" tabindex="5" @*ng-disabled="disableFeeeze || HideWhenView"*@></select></td>
+                                @*<td>{{Item.BaseUOM}}</td>*@
+                                <td>{{Item.StockUOM}}</td>
+                                <td>{{Item.ConversionFactor}}</td>
+                                <td>{{Item.PurchaseRate}}</td>@*Cost Price*@
+                                @*<td></td>  Total MRP Amount*@
+                                <td>{{Item.MRP}}</td>
+                                <td>{{Item.Amount}}</td>
+                                @*<td st-ratio="6"><input class="form-control text-left" placeholder="0.00" readonly ng-model="Item.Amount" ng-disabled="disableFeeeze || HideWhenView" /></td>*@
+
+                                <td class="col-md-2 col-sm-2 col-lg-2">
+                                    <input type="text" class="form-control" ng-disabled="disableFeeeze || HideWhenView" ng-model="Item.Remarks2" placeholder="Remarks">
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+        <div class="col-md-3 col-lg-3">
+            <div class="form-group ">
+                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                    Total Quantity
+                </label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <input type="text" class="form-control" id="" placeholder="0.00" readonly ng-model="MaterialConsumptionEntryInfo.TotalQuntity">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3">
+            <div class="form-group ">
+                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                    Total Amount
+                </label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <input type="text" class="form-control" id="" placeholder="0.00" readonly ng-model="MaterialConsumptionEntryInfo.TotalAmount">
+                </div>
+            </div>
+        </div><!-- <div class="clearfix"></div> -->
+        <div class="col-md-3 col-lg-3">
+            <div class="form-group ">
+                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red"  >* </span>
+                    Remark
+                </label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <input type="text" class="form-control" id="txtRemark" ng-model="MaterialConsumptionEntryInfo.Remarks2" placeholder="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Grid -->
+    <div class="row form-horizontal">
+        <!-- <div class="col-md-3 col-lg-2">
+            <div class="form-group ">
+                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Add
+                </label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <button class="btn-primary">Prescribed Items</button>
+                    <button class="btn-primary">Other Items</button>
+                </div>
+            </div>
+        </div> -->
+        <!-- <label class="col-md-3 col-lg-2" style="margin-top:35px;"><input type="checkbox" name="" > Mannual BarCode</label>
+        <div class="col-md-3 col-lg-2">
+            <div class="form-group ">
+                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Bar Code
+                </label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <input type="text" class="form-control" id="" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="form-group ">
+                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Verence Reason
+                </label>
+                <div class="col-md-10 col-sm-10 col-lg-8">
+                    <input type="text" class="form-control" id="" placeholder="">
+                </div>
+                <div class="col-md-2 col-sm-2 col-lg-4">
+                    <button class="btn-primary">Previous Bills</button>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    </div>
+
+    <!-- Save Cancle Buttons -->
+    <div class="row form-horizontal m-t-20">
+        <div class="col-lg-12 text-right">
+            <button class="btn btn-primary btn_save" type="button" id="" value="Add" ng-click="SaveUpdate()">@*SaveUpdate()*@Save</button>
+            <button class="btn btn-primary btn_cancle" type="button" id="" value="Cancel" ng-click="cancelView()">Cancel</button>
+        </div>
+    </div>
+    @*</div>*@
+
+    <!-- Save Cancle Buttons -->
+    @*<div class="row form-horizontal m-t-20">
+            <div class="col-lg-12 text-right">
+                <button class="btn btn-primary btn_save" type="button" id="" value="Add">Save</button>
+                <button class="btn btn-primary btn_cancle" type="button" id="" value="Cancel">Cancel</button>
+            </div>
+        </div>*@
+
+    @*Item Information*@
+    <div class="modal fade" tabindex="-1" role="dialog" id="modbatchinfo" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Batch Information </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12  col-lg-12">
+                            <div class="table-responsive table-bordered" style="min-height:150px;">
+                                <table class="table" style="margin-bottom:5px;">
+                                    <thead>
+                                        <tr>
+                                            @*<th>&nbsp;</th>*@
+                                            <th>Item Name</th>
+                                            <th>Batch</th>
+                                            <th>UOM</th>
+                                            <th>Expiry</th>
+                                            <th>MRP</th>
+                                            <th>Purchase Rate</th>
+                                            <th>Available Stock</th>
+                                            <th>Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="Items in BatchItemList">
+                                            @*<td class="text-center"><input type="checkbox" id="Ischeck" ng-model="Ischeck" ng-click="AddItemsDetails(PatientInfo,Ischeck)" /></td>*@
+                                            <td>{{Items.ItemName}}</td>@*{{Item.ItemName}}*@
+                                            <td>{{Items.BatchCode}}</td>
+                                            <td>{{Items.StockUOM}}</td>
+                                            <td>{{Items.ExpiryDate | date :  "dd.MM.y" }}</td>
+                                            <td>{{Items.MRP}}</td>
+                                            <td>{{Items.PurchaseRate}}</td>
+                                            <td>{{Items.AvailableStock}}</td>
+                                            <td class="col-md-2 col-sm-2 col-lg-2">
+                                                <input type="text" class="form-control" id="QuntityInput" ng-model="Items.Quantity" placeholder="Quantity" multi-validation="NumericArrowBkSpDelSpDCFSlash" ng-keyup="$event.keyCode == 13 && AddItemsDetails(MaterialConsumptionEntryInfo)" @*ng-change="CalTotalQuntity()"*@ @*onkeypress="return isNumberKey(event,this)"*@ autofocus @*ng-keydown="AddItemsDetails(CounterSaleInfo)"*@>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" @*ng-click="AddItemsDetails(CounterSaleInfo)"*@> Ok</button>
+                    <button type="button" class="btn btn-default" ng-click="closebatchinformation()">@PIVF.LanguageResource.Resources.btnClose @*Close*@</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

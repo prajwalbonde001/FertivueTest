@@ -1,0 +1,1011 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .not-active {
+        pointer-events: none;
+        cursor: default;
+    }
+</style>
+<form name="frmInv" novalidate ng-controller="InvestigationCtr">
+    <div ng-init="GetUserrights()" ng-hide="hideMain">
+        <div class="row p-t-95 m-l-10">
+
+            <div ng-hide="true" class="col-md-4 col-lg-4" id="divshowFavourite" ng-init="showfavourite=false" ng-click="showfavourite=true;showInvestigation=false;showProcedure=false;hideMain=true;FavType=5;CatID=0;
+                     GetCatwiseServiceList(0);GetFavouriteList()">
+                <a href="">
+                    <div class="circle_box" ng-init="FromDashboard()">
+                        <span class="ico_cir favourite"></span>
+                        <h3 class="favouriteColor">@PIVF.LanguageResource.Resources.lblFavourite</h3>
+                        <ul>
+                            <li style="border-right: 1px solid #c8c8c8;">@PIVF.LanguageResource.Resources.lblSetFavourite</li>
+                            <li>@PIVF.LanguageResource.Resources.lblFavouriteList</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+            <div  ng-hide="true" class="col-md-4 col-lg-4" id="divInvestigation" ng-init="showInvestigation=false" ng-click="showInvestigation=true;showProcedure=false;showfavourite=false;hideMain=true;
+                     GetCatwiseServiceList(CatID);GetTodaysInvestigation(CatID);GetPreviousInvestigation(CatID,SearchParam)">
+                <a href="">
+                    <div class="circle_box">
+                        <span class="ico_cir investigation" ng-click="CatID=1"></span>
+                        <h3 class="investColor" ng-click="CatID=1">@PIVF.LanguageResource.Resources.lblInvestigations</h3>
+                        <ul>
+                            <li ng-click="CatID=1" style="border-right: 1px solid #c8c8c8;">@PIVF.LanguageResource.Resources.lblLaboratory</li>
+                            <li ng-click="CatID=2">@PIVF.LanguageResource.Resources.lblRadiology</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 col-lg-4" id="divshowProcedure"  ng-init="CatID=4;showProcedure=true;showInvestigation=false;showfavourite=false;hideMain=true;
+                     GetCatwiseServiceList(4);GetArtTypeList();GetTodaysInvestigation(4);GetPreviousInvestigation(4,SearchParam)" ng-click="CatID=4;showProcedure=true;showInvestigation=false;showfavourite=false;hideMain=true;
+                     GetCatwiseServiceList(4);GetArtTypeList();GetTodaysInvestigation(4);GetPreviousInvestigation(4,SearchParam)" >
+                <a href="">    
+                    <div class="circle_box">
+                        <span class="ico_cir procedures" ng-click="CatID=3"></span>
+                        <h3 class="procedureColor" ng-click="CatID=3">@PIVF.LanguageResource.Resources.lblProcedures</h3>
+                        <ul>
+                            <li ng-click="CatID=3" ng-hide="!hideprocedure">@PIVF.LanguageResource.Resources.lblProcedures</li>
+                            <li ng-click="CatID=3" ng-hide="hideprocedure" style="border-right: 1px solid #c8c8c8;">@PIVF.LanguageResource.Resources.lblProcedures</li>
+                            <li ng-hide="hideprocedure" ng-click="CatID=4">@PIVF.LanguageResource.Resources.lblCycles</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+
+            @*<div class="col-md-4 col-lg-4" id="divshowFavourite" ng-init="showfavourite=false" ng-click="showfavourite=true;showInvestigation=false;showProcedure=false;hideMain=true;FavType=5;CatID=0;
+                         GetCatwiseServiceList(0);GetFavouriteList()">
+                    <a href="">
+                        <div class="circle_box" ng-init="FromDashboard()">
+                            <span class="ico_cir favourite"></span>
+                            <h3 class="favouriteColor">Favourite</h3>
+                            <ul>
+                                <li>Set Favourite</li>
+                                <li>Favourite List</li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>*@
+        </div>
+    </div>
+
+    <div class="page_content" id="page-content-investigation" ng-show="showInvestigation" ng-hide="!showInvestigation">
+        <div class="form_Content">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 text-right">
+                    <a href="" ng-click="hideMain=false;showInvestigation=false" class="closeSectionBtn glyphicon glyphicon-remove"></a>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <div class=""><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblInvestigations</h5></div>
+                    <div class="gridBorder tablePadding46px">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 form-horizontal">
+                                <div class="form-group ">
+                                    <div class="col-md-3 col-lg-3 p-r-0">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" ng-click="GetCatwiseServiceList(1)"
+                                                   ng-model="CatID" id="rdbLab" value="1"> @PIVF.LanguageResource.Resources.lblLaboratory
+                                        </label>
+                                        <label class="radio-inline">
+                                            @*p-l-35*@
+                                            <input type="radio" name="inlineRadioOptions" ng-click="GetCatwiseServiceList(2)"
+                                                   ng-model="CatID" id="rdbRadio" value="2"> @PIVF.LanguageResource.Resources.lblRadiology
+                                        </label>
+
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-4 p-l-0">
+                                        <input type="text" id="txtServiceName" name="txtServiceName" placeholder="@PIVF.LanguageResource.Resources.lblSearch" ng-blur="selSer=''" ng-model="selSer" uib-typeahead="i as (i.ServiceCodeDesc) for i in ServiceList | filter:$viewValue | limitTo:8"
+                                               typeahead-on-select="SelectedService(selSer)" class="form-control Capitalize" typeahead-input-formatter="a">
+                                        <button type="button" class="btn-txt-link m-t-0" id="btnAddInvEmptyRow" ng-click="AddRow()">@*<span id="spanAdd" class="glyphicon glyphicon-plus"></span>*@ @PIVF.LanguageResource.Resources.btnAdd</button>
+                                    </div>
+
+                                    <div class="clear"></div>
+                                </div>
+                                <!-- Todays Prescriptions (Brand Name) -->
+                                <div class="table-responsive table-bordered fixed_header">
+                                    <table class="table table-hover table-striped" style="min-width:660px;min-height: 300px;min-height: 150px;">
+                                        <thead>
+                                            <tr>
+                                                <th st-ratio="5">&nbsp;</th>
+                                                <th st-ratio="5">&nbsp;</th>
+                                                <th st-ratio="15">@PIVF.LanguageResource.Resources.lblServiceCode</th>
+                                                <th st-ratio="25">@PIVF.LanguageResource.Resources.lblServiceName</th>
+                                                <th st-ratio="30">@PIVF.LanguageResource.Resources.lblDate</th>
+                                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblInstruction</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-if="SelectedServiceListLab.length>0">
+                                                <td colspan="6"><b>@PIVF.LanguageResource.Resources.lblLaboratory</b></td>
+                                            </tr>
+                                            <tr ng-repeat="i in SelectedServiceListLab">
+                                                <td st-ratio="5"><span class="btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" data-toggle="modal" ng-click="objRgtInv.IsUpdate?DeleteService(i):0"></span></td>
+                                                <td st-ratio="5">
+                                                    <span class="btn_like" title="@PIVF.LanguageResource.Resources.lblSetFavorite" data-toggle="modal" ng-click="objRgtInv.IsUpdate?ShowFavModal(i):0">
+                                                        <span class="tooltiptext tooltip-top">@PIVF.LanguageResource.Resources.lblSetFavorite</span>
+                                                    </span>
+                                                </td>
+                                                <td st-ratio="15">{{i.ServiceCode}}</td>
+                                                <td st-ratio="25"><div ng-hide="i.ServiceID==0">{{i.Service}}</div> <div ng-show="i.ServiceID==0"><input type="text" class="form-control" ng-model="i.Service" /></div></td>
+                                                <td st-ratio="30">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" id="dtplannedDate" name="dtplannedDate" ng-model="i.PlannedDate" placeholder="dd-Mon-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="i.dtpickropened" datepicker-options="dateOptions" alt-input-formats="altInputFormats">
+                                                        <span class="input-group-addon" id="" ng-click="openLabDtPickr($event,i)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                    </div>
+                                                </td>
+                                                <td st-ratio="20">
+                                                    <input type="text" class="form-control" ng-model="i.Instruction" name="txtLabInstruction" id="txtLabInstruction" placeholder="" />
+                                                </td>
+
+                                            </tr>
+                                            @*</tbody>
+                                                <tbody>*@
+                                            <tr ng-if="SelectedServiceListRadiology.length>0">
+                                                <td colspan="6"><b>@PIVF.LanguageResource.Resources.lblRadiology</b></td>
+                                            </tr>
+                                            <tr ng-repeat="j in SelectedServiceListRadiology">
+                                                <td st-ratio="5"><span class="btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" data-toggle="modal" ng-click="objRgtInv.IsUpdate?DeleteService(j):0"></span></td>
+                                                <td st-ratio="5">
+                                                    <span class="btn_like" title="@PIVF.LanguageResource.Resources.lblSetFavorite" data-toggle="modal" ng-click="objRgtInv.IsUpdate?ShowFavModal(j):0">
+                                                        <span class="tooltiptext tooltip-top">@PIVF.LanguageResource.Resources.lblSetFavorite</span>
+                                                    </span>
+                                                </td>
+                                                <td st-ratio="15">{{j.ServiceCode}}</td>
+                                                <td st-ratio="25"><div ng-hide="j.ServiceID==0">{{j.Service}}</div> <div ng-show="j.ServiceID==0"><input type="text" class="form-control" ng-model="j.Service" maxlength="500" /></div></td>
+                                                <td st-ratio="30">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" id="dtplannedDate" name="dtplannedDate" ng-model="j.PlannedDate" placeholder="dd-Mon-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="j.dtpickropened" datepicker-options="dateOptions" alt-input-formats="altInputFormats">
+                                                        <span class="input-group-addon" id="" ng-click="openLabDtPickr($event,j)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                    </div>
+                                                </td>
+                                                <td st-ratio="20">
+                                                    <input type="text" class="form-control" ng-model="j.Instruction" name="txtRadioInstruction" id="txtRadioInstruction" maxlength="100" />
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row page_actions text-right mt15">
+                            @*<span>{{Message}}</span>*@
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-primary" type="button" id="btnSaveInvestigation" value="" ng-click="SaveInvestigation()"> @PIVF.LanguageResource.Resources.btnSave</button>
+                                <button class="btn btn-primary btn-print" type="button" id="" value="" ng-click="PrintCurrentInvestigation('TodaysInvestigation')"> @PIVF.LanguageResource.Resources.lblPrint</button>
+                                <button class="btn btn-default" type="button" id="" value="" ng-click="Cancel()"> @PIVF.LanguageResource.Resources.btnCancel</button>
+                            </div>
+                        </div>
+                        <!-- /active box content -->
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6"><h5 class="subTitle m-b-0">@PIVF.LanguageResource.Resources.lblPreviousInvestigations</h5></div>
+                        <div class="col-md-6 col-lg-6"><h6 class="subTitle f-right m-b-0 m-t-15"><a href="" class="link" ng-click="btnClick()" ng-hide="CoupleDetails.FemalePatient.PatientCategoryID==8 || CoupleDetails.MalePatient.PatientCategoryID==9|| CoupleDetails.FemalePatient.PatientCategoryID==11 || CoupleDetails.MalePatient.PatientCategoryID==11">{{btnText}}</a></h6></div>
+                    </div>
+                    <div class="gridBorder">
+                        <div class="row">
+                            <!-- <section class="col-md-12 col-lg-12"><span class="title"></span></section> -->
+                            <div class="col-md-12 col-lg-12 form-horizontal">
+                                <div class="form-group ">
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" ng-model="SearchParam" ng-keypress="($event.which==13)?GetPreviousInvestigation(CatID,SearchParam):0" id="" placeholder="@PIVF.LanguageResource.Resources.lblSearch">
+                                            <!-- <div class="ico_search"> --><span class="input-group-addon glyphicon glyphicon-search btn t0" id="spanSearch" type="button" ng-click="GetPreviousInvestigation(CatID,SearchParam)"></span><!-- </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-8">
+                                        <a class="link-modal pull-right cursorPointer link" data-toggle="modal" data-target=".view-lab-result-modal" data-keyboard="false" data-backdrop="static">@PIVF.LanguageResource.Resources.lblViewLabResults</a>
+                                    </div>
+
+                                </div>
+                                <!-- Todays Prescriptions (Brand Name) -->
+                                <div class="table-responsive table-bordered fixed_header">
+                                    <table class="table table-hover table-striped" style="min-width:1080px;max-height: 300px;min-height: 150px;">
+                                        <thead>
+                                            <tr>
+                                                @*<th st-ratio="5">View</th>*@
+                                                <th st-ratio="5">Select</th>
+                                                <th st-ratio="10" ng-click="SortData1('Category')">@PIVF.LanguageResource.Resources.lblCategory<div ng-class="sortClass1"></div></th>
+                                                <th st-ratio="10" ng-click="SortData1('AddedDatetime')">@PIVF.LanguageResource.Resources.lblDate<div ng-class="sortClass1"></div></th>
+                                                <th st-ratio="10" ng-click="SortData1('ServiceCode')">@PIVF.LanguageResource.Resources.lblServiceCode<div ng-class="sortClass1"></div></th>
+                                                <th st-ratio="16" ng-click="SortData1('Service')">@PIVF.LanguageResource.Resources.lblService<div ng-class="sortClass1"></div></th>
+                                                <th st-ratio="10" ng-click="SortData1('PlannedDate')">@PIVF.LanguageResource.Resources.lblPlannedDate<div ng-class="sortClass1"></div></th>
+                                                <th st-ratio="10" ng-click="SortData1('Instruction')">@PIVF.LanguageResource.Resources.lblInstruction<div ng-class="sortClass1"></div></th>
+                                                <th st-ratio="12" ng-click="SortData1('DocName')">@PIVF.LanguageResource.Resources.lblDoctorName<div ng-class="sortClass1"></div></th>
+                                                @*<th st-ratio="5" ng-click="SortData1('Status')">Status<div ng-class="sortClass1"></div></th>*@
+                                                @*<th st-ratio="7" class="text-center">Upload</th>*@
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="i in PreInvList|orderBy:SortColumn1:reverseSort1">
+                                                @*<td st-ratio="5">
+
+                                                        <button id="" type="button" title="View" class="btn btn_view" ng-click="ViewReport(i.ID,i.UnitID)"><span class="glyphicon glyphicon-eye-open"></span></button>
+                                                    </td>*@
+                                                <td st-ratio="5" class="text-center">
+                                                    <input name="chkSelect" id="{{$index}}" ng-model="i.chkSelect" type="checkbox" ng-click="SelectPrevInvestigation(i)">
+                                                    <label><span class="checkbox"></span></label>
+                                                </td>
+                                                <td st-ratio="10">{{i.Category}}</td>
+                                                <td st-ratio="10">{{i.AddedDatetime | date:'dd-MMM-yyyy'}}</td>
+                                                <td st-ratio="10">{{i.ServiceCode}}</td>
+                                                <td st-ratio="16">{{i.Service}}</td>
+                                                <td st-ratio="10">{{i.PlannedDate | date:'dd-MMM-yyyy'}}</td>
+                                                <td st-ratio="10">{{i.Instruction}}</td>
+                                                <td st-ratio="12">{{i.DocName}}</td>
+                                                @*<td st-ratio="5">{{i.Status}}</td>*@
+                                                @*<td st-ratio="7" class="text-center">
+                                                        <label id="" class="UserImageUploadContainer img-attach">
+                                                            <span class="img_attachBtn">
+                                                                <span class="glyphicon glyphicon-paperclip"></span>
+                                                                <input type="file" id="fileInput" name="fileInput" class="upload" ng-click="InvfileUp(i)" onchange="angular.element(this).scope().handleFileSelect(this)" />
+                                                            </span>
+                                                        </label>
+                                                    </td>*@
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                @*<uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange(CatID,SearchParam)" max-size="maxSize" class="pagination-sm" boundary-links="true"
+                                                    num-pages="numPages" items-per-page="10" first-text="First" previous-text="Previous" next-text="Next" last-text="Last"></uib-pagination>
+                                    <button ng-click="AddPreInvestigation()">Add</button>*@
+                            </div>
+                        </div>
+                        <div class="row form-inline text-right mt15">
+                            <div class="col-md-7 col-lg-7">
+                                <uib-pagination class="m-t-0 pagination-sm" total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange(CatID,SearchParam)" max-size="maxSize" boundary-links="true"
+                                                num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                            </div>
+                            <div class="col-md-5 col-lg-5">
+                                <button class="btn btn-primary" type="button" id="btnAddPreInv" value="" ng-click="AddPreInvestigation()"> @PIVF.LanguageResource.Resources.btnAdd</button>
+                                @*<button class="btn btn-primary btn-print" type="button" id="" value="" ng-click=""> Print</button>*@
+                            </div>
+                        </div>
+                        <!-- /active box content -->
+                    </div>
+                </div>
+            </div>
+            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+            <!-- row end -->
+        </div>
+    </div>
+    <div class="page_content" id="page-content-procedures" ng-show="showProcedure" ng-hide="!showProcedure">
+        <div class="form_Content">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <a href="" ng-click="hideMain=false;showProcedure=false" class="closeSectionBtn glyphicon glyphicon-remove"></a>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <div class=""><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblProcedures</h5></div>
+                    <div class="gridBorder">
+                        <div class="row">
+                            <!-- <section class="col-md-12 col-lg-12"><span class="title"></span></section> -->
+                            <div class="col-md-12 col-lg-12 form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-1 col-lg-1 control-label">
+                                        @PIVF.LanguageResource.Resources.lblService
+                                        @*<input type="radio" name="rdbProc" ng-click="GetCatwiseServiceList(3)" ng-model="CatID" id="rdbProc" value="3" > Procedures*@
+                                    </label>
+                                    @*<label class="radio-inline" ng-hide="hideprocedure">
+                                            <input type="radio" name="rdbProc" ng-click="GetCatwiseServiceList(4)" ng-model="CatID" id="rdbCycle" value="4" > Cycles
+                                        </label>*@
+
+                                    <div class="col-md-5 col-lg-4 p-l-0">
+                                        <input type="text" id="txtServiceName" name="txtServiceName" placeholder="@PIVF.LanguageResource.Resources.btnSearch" ng-blur="selSer=''" ng-model="selSer" uib-typeahead="i as (i.ServiceCodeDesc) for i in ServiceList | filter:$viewValue | limitTo:8" typeahead-on-select="SelectedService(selSer)" class="form-control Capitalize" typeahead-input-formatter="a">
+                                        <button type="button" class="btn-txt-link m-t-0" ng-click="CatID=3;AddRow()" id="btnAddProEmptyRow">@*<span class="glyphicon glyphicon-plus"></span>*@ @PIVF.LanguageResource.Resources.lblAdd</button>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 text-left m-t-8">
+                                        <b>@PIVF.LanguageResource.Resources.lblProcedures</b>
+                                    </div>
+                                    @*<div class="col-md-6 col-lg-6 m-t-5"><button type="submit" class="btn btn_print"><span class="glyphicon glyphicon-print"></span></button></div>*@
+                                    <div class="clear"></div>
+
+                                </div>
+                                <!-- Todays Prescriptions (Brand Name) -->
+                                <div class="divHeight">
+                                    <div class="table-responsive table-bordered" style="min-height: 200px;max-height: 300px;">
+                                        <table class="table table-hover table-striped" style="min-width:900px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>&nbsp;</th>
+                                                    <th>&nbsp;</th>
+                                                    <th>@PIVF.LanguageResource.Resources.lblServiceCode</th>
+                                                    <th>@PIVF.LanguageResource.Resources.lblServiceName</th>
+                                                    <th>@PIVF.LanguageResource.Resources.lblDate</th>
+                                                    <th colspan="3">@PIVF.LanguageResource.Resources.lblInstruction</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="i in SelectedServiceListProcedure">
+                                                    <td><span class="btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" data-toggle="modal" ng-click="objRgtInv.IsUpdate?DeleteService(i):0"></span></td>
+                                                    <td>
+                                                        <span class="btn_like" title="@PIVF.LanguageResource.Resources.lblSetFavorite" data-toggle="modal" ng-click="objRgtInv.IsUpdate?ShowFavModal(i):0">
+                                                            <span class="tooltiptext tooltip-top">@PIVF.LanguageResource.Resources.lblSetFavorite</span>
+                                                        </span>
+                                                    </td>
+                                                    <td>{{i.ServiceCode}}</td>
+                                                    <td ng-hide="i.ServiceID==0">{{i.Service}}</td>
+                                                    <td ng-show="i.ServiceID==0"><input class="form-control" type="text" ng-model="i.Service" maxlength="500" /></td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" id="dtplannedDate" name="dtplannedDate" ng-model="i.PlannedDate" placeholder="dd-Mon-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="i.dtpickropened" datepicker-options="dateOptions" alt-input-formats="altInputFormats">
+                                                            <span class="input-group-addon" id="" ng-click="openLabDtPickr($event,i)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="3">
+                                                        <input type="text" class="form-control" ng-model="i.Instruction" name="txtInstruction" id="txtInstruction" maxlength="100" />
+                                                    </td>
+
+                                                </tr>
+                                            </tbody>
+                                            <tbody>
+                                                <tr ng-hide="hideprocedure">
+                                                    <td><b>@PIVF.LanguageResource.Resources.lblCycles</b></td>
+                                                </tr>
+                                            <thead ng-hide="hideprocedure">
+                                                <tr>
+                                                    <th width="35">&nbsp;</th>
+                                                    <th width="35">&nbsp;</th>
+                                                    <th width="120">@PIVF.LanguageResource.Resources.lblPackageCode</th>
+                                                    <th width="160">@PIVF.LanguageResource.Resources.lblPackageName</th>
+                                                    <th width="150">@PIVF.LanguageResource.Resources.lblDate</th>
+                                                    <th width="85">@PIVF.LanguageResource.Resources.lblARTType</th>
+                                                    <th width="105">@PIVF.LanguageResource.Resources.lblvARTSubtype </th>
+                                                    <th width="90">&nbsp;</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="i in SelectedServiceListCycle" ng-hide="hideprocedure">
+                                                    <td><span class="btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" data-toggle="modal" ng-click="objRgtInv.IsUpdate?DeleteService(i):0"></span></td>
+                                                    <td>
+                                                        <span class="btn_like" title="@PIVF.LanguageResource.Resources.lblSetFavorite" data-toggle="modal" ng-click="objRgtInv.IsUpdate?ShowFavModal(i):0">
+                                                            <span class="tooltiptext tooltip-top">@PIVF.LanguageResource.Resources.lblSetFavorite</span>
+                                                        </span>
+                                                    </td>
+                                                    <td>{{i.ServiceCode}}</td>
+                                                    <td>{{i.Service}}</td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" ng-disabled="i.ID>0" id="dtplannedDate" name="dtplannedDate" ng-model="i.PlannedDate" placeholder="dd-Mon-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="i.dtpickropened" datepicker-options="dateOptions1" alt-input-formats="altInputFormats">
+                                                            <span class="input-group-addon" id="" ng-disabled="i.ID>0" ng-click="openLabDtPickr($event,i)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control" ng-change="GetArtSubTypeList(i)" ng-disabled="i.ID>0" ng-model="i.ArttypeID" ng-options="item.ID as item.Description for item in ARTTypeList"></select>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control" ng-model="i.ArtSubTypeID" ng-disabled="i.ID>0" ng-options="i.ID as i.Description for i in i.lstArtSubType"></select>
+                                                    </td>
+                                                    <td>
+                                                        <a href="" style="{{i.style}}" ng-show="CoupleDetails.FemalePatient.PatientCategoryID==7" class="link-modal text" id="lnkDonor_{{$index}}" name="lnkDonor_{{$index}}" ng-click="GetDonorList('');SetPackage(i)" data-toggle="modal" data-target=".link-donor-modal">@PIVF.LanguageResource.Resources.lblLinkDonor</a>
+                                                        <a href="" style="{{i.styleSurrogate}}" class="link-modal text" ng-show="MarkSurrogate=='true' && CoupleDetails.FemalePatient.PatientCategoryID == 7" id="lnkDonor_{{$index}}" name="lnkDonor_{{$index}}" ng-click="GetSurrogateList();SetPackageSurrogate($index);CurrentPage=1;" data-toggle="modal" data-target=".link-Surrogate-modal">@PIVF.LanguageResource.Resources.lblLinkSurrogate</a> 
+                                                        @*<a href="" style="{{i.style}}" class="link-modal text" id="lnkDonor_{{$index}}" name="lnkDonor_{{$index}}" ng-click="GetSurrogateList();" data-toggle="modal" data-target=".link-Surrogate-modal">Link Surrogate</a>*@
+                                                    </td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row page_actions text-right m-t-10">
+                            @*<span>{{Message}}</span>*@
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-primary" type="button" id="btnSaveProcedure" value="" ng-click="SaveInvestigation()">@PIVF.LanguageResource.Resources.btnSave</button>
+                                <button class="btn btn-default" type="button" ng-click="Cancel()" id="" value=""> @PIVF.LanguageResource.Resources.btnCancel</button>
+                            </div>
+                        </div>
+                        <!-- /active box content -->
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-md-7 col-lg-7 p-r-0"><h5 class="subTitle m-b-0 ">@PIVF.LanguageResource.Resources.lblPreviousProcedures</h5></div>
+                        <div class="col-md-5 col-lg-5 p-l-0"><h6 class="subTitle f-right m-b-0 m-t-15"><a href="" ng-hide="CoupleDetails.FemalePatient.PatientCategoryID==8 || CoupleDetails.MalePatient.PatientCategoryID==9 || CoupleDetails.FemalePatient.PatientCategoryID==11 || CoupleDetails.MalePatient.PatientCategoryID==11" class="link" ng-click="btnClick()">{{btnText}}</a></h6></div>
+                    </div>
+                    <div class="gridBorder">
+                        <div class="row">
+                            <!-- <section class="col-md-12 col-lg-12"><span class="title"></span></section> -->
+                            <div class="col-md-12 col-lg-12 form-horizontal">
+                                <div class="form-group ">
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="" ng-model="SearchParam" ng-keypress="($event.which==13)?GetPreviousInvestigation(CatID,SearchParam):0" placeholder="@PIVF.LanguageResource.Resources.lblSearch">
+                                            <!-- <div class="ico_search"> --><span class="input-group-addon glyphicon glyphicon-search btn t0" type="button" ng-click="GetPreviousInvestigation(CatID,SearchParam)"></span><!-- </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Todays Prescriptions (Brand Name) -->
+                                <div class="table-responsive table-bordered fixed_header">
+                                    <table class="table table-hover table-striped" style="min-width:1000px;max-height: 300px;min-height: 150px;">
+                                        <thead>
+                                            <tr>
+                                                @*<th st-ratio="5">View</th>*@
+                                                <th st-ratio="5">Select</th>
+                                                <th st-ratio="10" ng-click="SortData2('Category')">@PIVF.LanguageResource.Resources.lblCategory<div ng-class="sortClass2"></div></th>
+                                                <th st-ratio="10" ng-click="SortData2('AddedDatetime')">@PIVF.LanguageResource.Resources.lblDate<div ng-class="sortClass2"></div></th>
+                                                <th st-ratio="10" ng-click="SortData2('ServiceCode')">@PIVF.LanguageResource.Resources.lblServiceCode<div ng-class="sortClass2"></div></th>
+                                                <th st-ratio="16" ng-click="SortData2('Service')">@PIVF.LanguageResource.Resources.lblServiceName<div ng-class="sortClass2"></div></th>
+                                                <th st-ratio="10" ng-click="SortData2('PlannedDate')">@PIVF.LanguageResource.Resources.lblPlannedDate<div ng-class="sortClass2"></div></th>
+                                                <th st-ratio="10" ng-click="SortData2('Instruction')">@PIVF.LanguageResource.Resources.lblInstruction<div ng-class="sortClass2"></div></th>
+                                                <th st-ratio="10" ng-click="SortData2('DocName')">@PIVF.LanguageResource.Resources.lblDoctor<div ng-class="sortClass2"></div></th>
+                                                @*<th st-ratio="8" ng-click="SortData2('Status')">Status<div ng-class="sortClass2"></div></th>
+                                                    <th st-ratio="6" class="text-right">Upload</th>*@
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="i in PreInvList|orderBy:SortColumn2:reverseSort2">
+                                                @*<td st-ratio="5">
+
+                                                        <button id="" type="button" title="View" class="btn btn_view" ng-click="ViewReport(i.ID,i.UnitID)"><span class="glyphicon glyphicon-eye-open"></span></button>
+                                                    </td>*@
+                                                <td st-ratio="5" class="">
+                                                    <input name="" id="{{$index}}" ng-model="i.chkSelect" type="checkbox" ng-click="SelectPrevInvestigation(i)">
+                                                    <label for="{{$index}}"><span class="checkbox"></span></label>
+                                                </td>
+                                                <td st-ratio="10">{{i.Category}}</td>
+                                                <td st-ratio="10">{{i.AddedDatetime | date:'dd-MMM-yyyy'}}</td>
+                                                <td st-ratio="10">{{i.ServiceCode}}</td>
+                                                <td st-ratio="16">{{i.Service}}</td>
+                                                <td st-ratio="10">{{i.PlannedDate | date:'dd-MMM-yyyy'}}</td>
+                                                <td st-ratio="10">{{i.Instruction}}</td>
+                                                <td st-ratio="10">{{i.DocName}}</td>
+                                                @*<td st-ratio="8">{{i.Status}}</td>
+                                                    <td st-ratio="6" class="text-center">
+                                                        <label id="" class="UserImageUploadContainer img-attach">
+                                                            <span class="img_attachBtn">
+                                                                <span class="glyphicon glyphicon-paperclip"></span>
+                                                                <input type="file" id="fileInput" name="fileInput" class="upload" ng-click="InvfileUp(i)" onchange="angular.element(this).scope().handleFileSelect(this)" />
+                                                            </span>
+                                                        </label>
+                                                    </td>*@
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row form-inline m-t-10">
+                            <div class="col-lg-9 col-md-9">
+                                <uib-pagination class="m-t-0 pagination-sm" total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange(CatID)" max-size="maxSize" boundary-links="true"
+                                                num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                                @*<span>{{Message}}</span>*@
+                            </div>
+                            <div class="col-lg-3 col-md-3 text-right">
+                                <button class="btn btn-primary" type="button" id="btnAddPrePro" value="Save" ng-click="AddPreInvestigation()"> @PIVF.LanguageResource.Resources.btnAdd</button>
+                            </div>
+                        </div>
+                        <!-- /active box content -->
+                    </div>
+                </div>
+            </div>
+            <!-- row end -->
+        </div>
+        <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+    </div>
+    <div class="page_content" id="page-content-favorites" ng-show="showfavourite" ng-hide="!showfavourite">
+        <div class="form_Content">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <a href="" ng-click="hideMain=false;showfavourite=false" class="closeSectionBtn glyphicon glyphicon-remove"></a>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <div class=""><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblSetFavourite</h5></div>
+                    <div class="gridBorder">
+                        <div class="row">
+                            <!-- <section class="col-md-12 col-lg-12"><span class="title"></span></section> -->
+                            <div class="col-md-7 col-lg-5 form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-md-5 col-lg-5 p-r-0 form-horizontal">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="rdbFavourite" id="" ng-model="FavType" ng-value="5" ng-checked="true"> @PIVF.LanguageResource.Resources.btnNew
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="rdbFavourite" id="" ng-click="GetTemplateList()" ng-model="FavType" ng-value="6"> @PIVF.LanguageResource.Resources.lblExisting
+                                        </label>
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 form-horizontal p-l-0">
+                                        <input type="text" ng-show="FavType==5" class="form-control" ng-model="Template" placeholder="@PIVF.LanguageResource.Resources.lblTemplateName">
+                                        <div class="" ng-show="FavType==6">
+                                            <select class="form-control" ng-model="TemplateID" ng-options="u.ID as u.Description for u in TemplateList"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-lg-4 p-l-0 form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-md-9 col-lg-8 p-r-0">
+                                        <input type="text" id="txtFavServiceName" name="txtFavServiceName" placeholder="@PIVF.LanguageResource.Resources.lblvSearchService" ng-blur="FavselSer=''" ng-model="FavselSer" uib-typeahead="i as (i.ServiceCodeDesc) for i in ServiceList | filter:$viewValue | limitTo:8" typeahead-on-select="favSelectedService(FavselSer)" class="form-control Capitalize" typeahead-input-formatter="a">
+                                    </div>
+                                    <div class="col-md-3 col-lg-4">
+                                        <button type="submit" class="btn-txt-link" id="" ng-click="AddFavEmptyRow()">@*<span class="glyphicon glyphicon-plus"></span>*@ @PIVF.LanguageResource.Resources.btnAdd</button>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*<div class="col-md-12 col-lg-12 m-t-5">
+                                    <button type="submit" class="btn btn_print"><span class="glyphicon glyphicon-print"></span></button>
+                                </div>*@
+                            <div class="clear"></div>
+                            <div class="col-md-12 col-lg-12 form-horizontal">
+                                <!-- Todays Prescriptions (Brand Name) -->
+                                <div class="table-responsive table-bordered fixed_header" style="">
+                                    <table class="table table-hover table-striped" style="min-width: 465px;min-height:150px;max-height:300px;">
+                                        <thead>
+                                            <tr>
+                                                <th st-ratio="10">&nbsp;</th>
+                                                <th st-ratio="30">@PIVF.LanguageResource.Resources.lblCategory</th>
+                                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblServiceCode</th>
+                                                <th st-ratio="40">@PIVF.LanguageResource.Resources.lblServiceName</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @*style="height: 270px;"*@
+                                            <tr ng-repeat="i in setFavList">
+                                                <td st-ratio="10"><span class="btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" data-toggle="modal" ng-click="DeleteFavourite(i,$index)"></span></td>
+                                                <td st-ratio="30"><div ng-hide="i.ServiceID==0">{{i.Category}}</div><div ng-show="i.ServiceID==0"><select ng-model="i.CategoryID" ng-options="j.CategoryID as j.Category for j in ddlCategoryList" class="form-control"></select></div></td>
+                                                <td st-ratio="20">{{i.ServiceCode}}</td>
+                                                <td st-ratio="40"><div ng-hide="i.ServiceID==0">{{i.Service}}</div><div ng-show="i.ServiceID==0"><input class="form-control" typeof="text" ng-model="i.Service" maxlength="500" /></div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row page_actions text-right m-t-10">
+                            @*<span>{{Message}}</span>*@
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-primary" type="button" id="btnSaveFavourite" value="Save" ng-click="SaveFavourite()"> @PIVF.LanguageResource.Resources.btnSave</button>
+                                <button class="btn btn-default" type="button" id="" value="" ng-click="Cancel()"> @PIVF.LanguageResource.Resources.btnCancel</button>
+                            </div>
+                        </div>
+                        <!-- /active box content -->
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <div class=""><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblFavourites</h5></div>
+                    <div class="gridBorder">
+                        <div class="row">
+                            <!-- <section class="col-md-12 col-lg-12"><span class="title"></span></section> -->
+                            <div class="col-md-12 col-lg-12 form-horizontal">
+                                <div class="form-group ">
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="" ng-model="SearchParam" ng-keypress="($event.which==13)?GetFavouriteList(SearchParam):0" placeholder="@PIVF.LanguageResource.Resources.btnSearch">
+                                            <!-- <div class="ico_search"> --><span class="input-group-addon glyphicon glyphicon-search btn t0" type="button" ng-click="GetFavouriteList(SearchParam)"></span><!-- </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Todays Prescriptions (Brand Name) -->
+                                @*<div class="favHeight" style="height:295px;">*@
+                                <div class="table-responsive table-bordered">
+                                    <table class="table table-hover table-striped" style="min-height:100px;max-height:300px;">
+                                        @*height:325px;*@
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2" class="th-lighBlue"> @PIVF.LanguageResource.Resources.lblTemplate </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody ng-repeat="i in favouriteList track by $index">
+                                            <tr ng-hide="i.lstService.length==0">
+                                                <td width="30">
+                                                    <input type="checkbox" name="" ng-model="i.chkTemplate" id="chkFav_{{$index}}" ng-click="chkTemplate(i);selectedRow=($index+100)">
+                                                    <label for="chkFav_{{$index}}"><span class="checkbox"></span></label>
+                                                </td>
+                                                <td colspan="5">
+                                                    <span class="collapsed cursorPointer" data-toggle="collapse" data-target="{{'#'+($index+100)}}" aria-expanded="false" aria-controls="{{$index+100}}">
+                                                        {{i.Template}}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr class="collapse" id="{{$index+100}}" aria-expanded="false" style="height: 0px;" ng-click="selectedRow=($index+100)" ng-class="{'in':($index+100) == selectedRow}">
+                                                <td colspan="2" class="tbl_collapse">
+                                                    <div id="{{$index+100}}" class="collapse in">
+                                                        <div class="well tablePadding46px" style="max-height: 150px; overflow: auto;">
+                                                            <table class="table table-hover table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>&nbsp;</th>
+                                                                        <th>@PIVF.LanguageResource.Resources.lblCategory</th>
+                                                                        <th>@PIVF.LanguageResource.Resources.lblServiceCode</th>
+                                                                        <th>@PIVF.LanguageResource.Resources.lblServiceName</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr ng-repeat="j in i.lstService track by $index">
+                                                                        <td>
+                                                                            <input type="checkbox" name="" ng-model="j.chkService" id="{{i.Template}}_{{$index+1}}" ng-click="fnchkService(i,j)">
+                                                                            <label for="{{i.Template}}_{{$index+1}}"><span class="checkbox"></span></label>
+                                                                        </td>
+                                                                        <td>{{j.Category}}</td>
+                                                                        <td>{{j.ServiceCode}}</td>
+                                                                        <td>{{j.Description}}</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                @*</div>*@
+                            </div>
+                        </div>
+                        <!-- /active box content -->
+                        <div class="row form-inline mt15">
+                            <div class="col-lg-9 col-md-9">
+                                <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange(CatID)" max-size="maxSize" class="pagination-sm m-t-0" boundary-links="true"
+                                                num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+
+                            </div>
+                            <div class="col-lg-3 col-md-3  text-right">
+                                <button class="btn btn-primary" type="button" id="btnAddPreviousFavourite" value="" ng-click="AddPreviousFavourite()"> @PIVF.LanguageResource.Resources.btnAdd</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- row end -->
+        </div>
+        <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+    </div>
+
+    <div class="clear"></div>
+
+    <!-- favorite model -->
+    <div class="modal fade favorite-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modFavourite" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblTemplate</h4>
+                </div>
+                <div class="modal-body" ng-init="templateType='New'">
+                    <label class="radio-inline">
+                        <input type="radio" name="rdbFavourite" id="" ng-model="templateType" value="New" ng-checked="true"> @PIVF.LanguageResource.Resources.lblNew
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="rdbFavourite" id="" ng-model="templateType" ng-click="GetTemplateList()" value="Existing"> @PIVF.LanguageResource.Resources.lblExisting
+                    </label>
+                    <input type="text" class="form-control" placeholder="" ng-model="Template" ng-show="templateType=='New'" ng-hide="templateType=='Existing'" maxlength="100">
+                    <select class="form-control" ng-model="TemplateID" ng-options="u.ID as u.Description for u in TemplateList" ng-hide="templateType=='New'" ng-show="templateType=='Existing'"></select>
+                </div>
+                <div class="modal-footer">
+                    <div class="page_actions">
+                        <button class="btn btn-primary" type="button" id="" value="" ng-click="SetFavouriteUnsaved(Template,TemplateID)"> @PIVF.LanguageResource.Resources.btnSave</button>
+                        <button class="btn btn-default" type="button" id="" value="" data-dismiss="modal" ng-click="Template=null"> @PIVF.LanguageResource.Resources.btnCancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /favorite model -->
+    <!-- reason model -->
+    <div class="modal fade reason-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="reasonModel" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblAppointmentReason</h4>
+                </div>
+                <div class="modal-body" ng-class="{'Invalid':frmInv.txtReason.$invalid && frmInv.txtReason.$dirty}">
+                    <textarea class="form-control" id="txtReason" name="txtReason" ng-required="true" maxlength="100" rows="2" ng-model="deleteReason"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <div class="page_actions">
+                        <button class="btn btn-primary" type="button" id="" value="" ng-click="DeleteSavedService(deleteReason)"> @PIVF.LanguageResource.Resources.btnSave</button>
+                        <button class="btn btn-default" type="button" id="" value="" data-dismiss="modal" ng-click="CancelReason()"> @PIVF.LanguageResource.Resources.btnCancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /reason model -->
+    
+
+    <!-- link donor model -->
+    <div class="modal fade link-donor-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modDonor" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblLinkDonor</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4">
+                            <div class="form-group ">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="" ng-model="SearchParam" ng-keypress="($event.which==13)? GetDonorList(SearchParam,SelectedType,SelectedSubType):0" placeholder="@PIVF.LanguageResource.Resources.lblSearch">
+                                    <span class="input-group-addon glyphicon glyphicon-search btn" type="button" ng-click="GetDonorList(SearchParam,SelectedType,SelectedSubType)"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-hover" style="min-width: 1200px;">
+                                    <thead>
+                                        <tr>
+                                            <th>@PIVF.LanguageResource.Resources.lblSelect</th>
+                                            <th>@PIVF.LanguageResource.Resources.lblPRN</th>
+                                            <th>@PIVF.LanguageResource.Resources.lblvName</th>
+                                            <th>@PIVF.LanguageResource.Resources.lblAge</th>
+                                            <th>@PIVF.LanguageResource.Resources.lblLastLinkedDate</th>
+                                            <th>@PIVF.LanguageResource.Resources.lblLinkedCount</th>
+                                            @*<th>Is Donor Used</th>*@
+                                            <th>@PIVF.LanguageResource.Resources.lblOocyteRetrived</th>
+                                            <th>@PIVF.LanguageResource.Resources.lblRemainingOocytes</th>
+                                            <th>@PIVF.LanguageResource.Resources.lblRemainingEmbryo</th>
+                                            <th>@PIVF.LanguageResource.Resources.lblCycle</th>
+                                            <th>@PIVF.LanguageResource.Resources.lblCycleCode</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in DonorList">
+                                            <td class="">
+                                                <input name="" id="chkDonor_{{$index}}" ng-model="item.Status" type="checkbox" ng-click="SelectDonor(item)">
+                                                <label for="chkDonor_{{$index}}"><span class="checkbox"></span></label>
+                                            </td>
+                                            <td>{{item.MRNo}}</td>
+                                            <td>{{item.PatientName}}</td>
+                                            <td>{{item.Age}}</td>
+                                            <td>{{item.Date | date :'dd-MMM-yyyy'}}</td>
+                                            <td>{{item.VisitID}}</td>
+                                            @*<td>{{item.IsDonorUsed}}</td>*@
+                                            <td>{{item.OcyteRetrived}}</td>
+                                            <td>{{item.RemainingOcytes}}</td>
+                                            <td>{{item.RemainingEmbriyo}}</td>
+                                            <td>{{item.Cycle}}</td>
+                                            <td>{{item.CycleCode}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="col-lg-7 col-md-7">
+                        <uib-pagination class="pagination-sm m-t-0" total-items="TotalDonors" ng-model="CurrentPage" ng-change="GetDonorList(SearchParam,SelectedType,SelectedSubType)" max-size="maxSize" boundary-links="true"
+                                        num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                    </div>
+                    <div class="col-lg-5 col-md-5">
+                        <div class="page_actions">
+                            <button class="btn btn-primary" type="button" id="" ng-click="LinkDonor()" value=""> @PIVF.LanguageResource.Resources.btnSave</button>
+                            <button class="btn btn-default" type="button" id="" value="" ng-click="CurrentPage = 1" data-dismiss="modal"> @PIVF.LanguageResource.Resources.btnCancel</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <span style="color:red; display: inline-block;float: left;margin-top: 10px;" class=""> @PIVF.LanguageResource.Resources.lblADonorCandonateOocyte3timesinherlifetimewithanintervalof3monthsbetweentwodonation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /link donor model -->
+
+
+
+
+    <!-- Surrogate start-->
+    <div class="modal fade link-Surrogate-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modDonor" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="clearData()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblvSurrogateDonor</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4">
+                            <div class="form-group ">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="" ng-model="SearchParam" ng-keypress="($event.which==13)? GetSurrogateList(SearchParam):0" placeholder="@PIVF.LanguageResource.Resources.btnSearch">
+                                    <span class="input-group-addon glyphicon glyphicon-search btn" type="button" ng-click="GetSurrogateList(SearchParam)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-hover table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>@PIVF.LanguageResource.Resources.lblSelect</th>
+                                <th>@PIVF.LanguageResource.Resources.lblPRN</th>
+                                <th>@PIVF.LanguageResource.Resources.lblvName</th>
+                                <th>@PIVF.LanguageResource.Resources.lblAge</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in SurrogateList">
+                                <td class="">
+                                    <input name="" id="chkDonor_{{$index}}" ng-model="item.Status" type="checkbox" ng-click="SelectSurrogate(item)">
+                                    <label for="chkDonor_{{$index}}"><span class="checkbox"></span></label>
+                                </td>
+                                <td>{{item.MRNo}}</td>
+                                <td>{{item.PatientName}}</td>
+                                <td>{{item.Age}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="col-lg-7 col-md-12">
+                        <uib-pagination class="pagination-sm m-t-0" total-items="TotalDonors" ng-model="CurrentPage" ng-change="GetSurrogateList(SearchParam)" max-size="maxSize" boundary-links="true"
+                                        num-pages="numPages" items-per-page="10" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+                        <div class="page_actions">
+                            <button class="btn btn-primary" type="button" id="" ng-click="LinkSurrogate()" value=""> @PIVF.LanguageResource.Resources.btnSave</button>
+                            <button class="btn btn-default" type="button" id="" value="" ng-click="CurrentPage = 1;clearData()" data-dismiss="modal"> @PIVF.LanguageResource.Resources.btnCancel</button>
+                        </div>
+                    </div>
+                    @*<div class="col-lg-12 col-md-12">
+                            <span style="color:red; display: inline-block;float: left;margin-top: 10px;" class="">A Donor can donate Oocytes 3 times in her lifetime with an interval of 3 months between two donations.</span>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/end sarogate-->
+    <!-- view lab result model -->
+    <div class="modal fade view-lab-result-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblViewLabResults</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="form-group ">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="" placeholder="@PIVF.LanguageResource.Resources.btnSearch">
+                                    <span class="input-group-addon glyphicon glyphicon-search btn" type="button"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive" style="max-height: 500px;min-height: 100px;">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Test Name</th>
+                                    <th>Parameter Name</th>
+                                    <th>Value</th>
+                                    <th>Reference Range</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>20/06/2017</td>
+                                    <td>Test Name</td>
+                                    <td>Parameter Name</td>
+                                    <td>Value</td>
+                                    <td>Reference Range</td>
+                                </tr>
+                                <tr>
+                                    <td>20/06/2017</td>
+                                    <td>Test Name</td>
+                                    <td>Parameter Name</td>
+                                    <td>Value</td>
+                                    <td>Reference Range</td>
+                                </tr>
+                                <tr>
+                                    <td>20/06/2017</td>
+                                    <td>Test Name</td>
+                                    <td>Parameter Name</td>
+                                    <td>Value</td>
+                                    <td>Reference Range</td>
+                                </tr>
+                                <tr>
+                                    <td>20/06/2017</td>
+                                    <td>Test Name</td>
+                                    <td>Parameter Name</td>
+                                    <td>Value</td>
+                                    <td>Reference Range</td>
+                                </tr>
+                                <tr>
+                                    <td>20/06/2017</td>
+                                    <td>Test Name</td>
+                                    <td>Parameter Name</td>
+                                    <td>Value</td>
+                                    <td>Reference Range</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="page_actions">
+                        <button class="btn btn-primary" type="button" id="" value="" data-dismiss="modal"> @PIVF.LanguageResource.Resources.lblOK </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--View Report model-->
+    <div class="modal fade edit-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" id="btnClosePop" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        {{FileName}} &nbsp;-
+                        <span class="femaleDetails"> {{PatientName}} <small>({{MRNO}})</small></span>
+                        @*<span class="femaleDetails"> Amit M S <small>(BLR-MSR-2017-02-192)</small></span>*@<span class="femaleDetails"><small></small></span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-horizontal">
+                        <div class="text-center" ng-if="extn == 'image'">
+                            <img ng-src="{{Image}}" style="width: 61%; height: 61%;" />
+                        </div>
+                        <div class="wrapper" ng-if="extn != 'image'">
+                            <object ng-show="content" data="{{content}}" type="application/pdf" style="width: 100%; height: 400px;"></object>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row form-horizontal">
+                        <div class="col-lg-12 text-right">
+                            <button class="btn btn-primary" type="button" id="" ng-click="Download()" value="" ng-show="extn == 'image'">@PIVF.LanguageResource.Resources.btnDownload</button>
+                            <button class="btn btn-primary" type="button" id="" value="" ng-hide="true">@PIVF.LanguageResource.Resources.btnPrint</button> @*ng-show="extn == 'image'"*@
+                            <button class="btn btn-default" type="button" id="" value="" ng-click="Close()">@PIVF.LanguageResource.Resources.btnClose</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@*Visit Select Model box*@
+<script type="text/ng-template" id="visitmodel">
+    <div class="table-responsive fixed_header">
+        <table class="table table-hover table-striped table-hover selectPatient_item" id="" style="min-width:595px;max-height:325px;min-width: 595px;
+    max-height: 410px;">
+            <thead>
+                <tr>
+                    <th st-ratio="10">@PIVF.LanguageResource.Resources.lblSelect</th>
+                    <th st-ratio="18">@PIVF.LanguageResource.Resources.lblDate</th>
+                    <th st-ratio="18">@PIVF.LanguageResource.Resources.lblTime</th>
+                    <th st-ratio="24">@PIVF.LanguageResource.Resources.lblOPDNo </th>
+                    <th st-ratio="30">@PIVF.LanguageResource.Resources.lblDoctor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="Item in visitInformation">
+                    <td st-ratio="10">
+                        @*<input type="checkbox" name="" ng-click="SelectPatient(Item)" id="{{$index}}">
+                        <label for="{{$index}}"><span class="checkbox"></span></label>*@
+
+                        <div>
+                            <input type="radio" name="selectedPatient" ng-click="SelectPatient(Item)" id="{{$index}}">
+                            <label for="{{$index}}"><span class="checkbox"></span></label>
+                        </div>
+                    </td>
+                    <td st-ratio="18">{{Item.Date | date:"dd-MM-y"}}</td>
+                    <td st-ratio="18">{{Item.Date | date:"h:mm a"}} </td>
+                    <td st-ratio="24">{{Item.OPDNO}}</td>
+                    <td st-ratio="30">{{Item.DocName}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</script>

@@ -1,0 +1,339 @@
+﻿@{ Layout = null;}
+
+<style>
+    .popover {
+        background: #03a3f0 !important;
+        width: auto;
+        border: none;
+    }
+
+        .popover.top .arrow:after {
+            border-top-color: #03a3f0 !important;
+        }
+
+    .popover {
+    }
+
+    /*.table-striped tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }*/
+</style>
+
+<section ng-init="ddlPatientSearch();isView=false;isPatientSearch=true" ng-controller="NewRegistrationController">
+    <!-- searchContainer -->
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="searchContainer" ng-init="show=true">
+
+                <div class="customSearchTab">
+                    <a href="" class="searchTab1 active" ng-class="{active:show}" ng-click="show=true;"><i class="fa fa-search" aria-hidden="true"></i> @PIVF.LanguageResource.Resources.btnSearch</a>
+                    <a class="searchTab2" role="button" ng-class="{active:!show}" ng-click="show=false;ClearSearch()" data-toggle="collapse" data-target="#AdvanceSearchBox" aria-expanded="true" aria-controls="AdvanceSearchBox">
+                        <i class="fa fa-search" aria-hidden="true"></i> <span class="CollapseTitleTxt">@PIVF.LanguageResource.Resources.lblAdvanceSearch</span>
+                    </a>
+
+                </div>
+                <!-- Main Search Box Start -->
+                <section class="MainSearchBoxContainer" ng-show="show">
+                    <div class="BlackSearchBoxSection">
+                        <div class="SearchInputGroupContainer">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="InputBoxDiv">
+                                        @*<input class="form-control " type="text" id="" placeholder="@PIVF.LanguageResource.Resources.lblMRNO" ng-model="Patient.MRNo" multi-validation="MRNoValidate" ng-keypress="($event.which === 13)?getPatientList(Patient):0">*@
+                                        <select class="form-control" ng-model="NewInfo.UnitID" ng-options="i.ID as i.Description for i in clinicList"></select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="InputBoxDiv">
+                                        <select class="form-control" ng-model="NewInfo.regTypeID" ng-options="i.ID as i.Description for i in RegistrationTypeList1"></select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="InputBoxDiv">
+                                        <input class="form-control alignRight" type="text" id="" placeholder="@PIVF.LanguageResource.Resources.lblvNameMRNo" ng-model="NewInfo.FirstName" ng-keypress="ClearAdvSearch();($event.which === 13)?getPatientList():0">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="InputBoxDiv">
+                                        <button id="" type="button" class="btn btn-primary" ng-click="ClearAdvSearch();getPatientList();" ng-keypress="($event.which === 13)?getPatientList():0">@PIVF.LanguageResource.Resources.btnSearch</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </section>
+                <!-- Main Search Box End-->
+                <!-- Advance Search Box Start -->
+                <div class="MainSearchBoxContainer" ng-show="show==false">
+                    <div class="BlackSearchBoxSection">
+                        <div class="SearchInputGroupContainer">
+                            <div class="row" id="">
+                                @*<div class="col-sm-3">
+                                        <div class="InputBoxDiv">
+                                            <div class="input-group date">
+                                                <input type="text" class="form-control" id="txtRegFromDate" ng-model="NewInfo.RegFromDate" placeholder="Registration Date - From" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats" ng-change="disableDate()">
+                                                <span class="input-group-addon" id="spnRegFromDate" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="InputBoxDiv">
+                                            <div class="input-group date">
+                                                <input type="text" class="form-control" id="txtRegToDate" ng-model="NewInfo.RegToDate" placeholder="Registration Date - To" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats" ng-change="disableDate()">
+                                                <span class="input-group-addon" id="spnRegToDate" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                <div class="col-sm-3">
+                                    <div class="InputBoxDiv">
+                                        <div class="input-group date">
+                                            <label class="radio-inline"><input type="radio" ng-model="SearchBy" ng-value="1" name="optradio">@PIVF.LanguageResource.Resources.lblByRegistrationDate</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3" ng-init="SearchBy=1">
+                                    <div class="InputBoxDiv">
+                                        <div class="input-group date">
+                                            <label class="radio-inline"><input type="radio" ng-model="SearchBy" ng-value="2" name="optradio">@PIVF.LanguageResource.Resources.lblByVisitDate</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="InputBoxDiv">
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control" id="txtVisFromDate" ng-model="FromDate" placeholder="" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup3.opened" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats">
+                                            <span class="input-group-addon" id="spnVisFromDate" ng-click="open3()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="InputBoxDiv">
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control" id="txtVisToDate" ng-model="ToDate" placeholder="" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup4.opened" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats">
+                                            <span class="input-group-addon" id="spnVisToDate" ng-click="open4()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3" ng-hide="true">
+                                    <div class="InputBoxDiv">
+                                        <select class="form-control" ng-model="NewInfo.IdentityID" ng-options="i.ID as i.Description for i in IdPrppfTypeList" ng-change="validateIDProof(NewInfo.IdentityID)"></select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3" ng-hide="true">
+                                    <div class="InputBoxDiv">
+                                        <input class="form-control " type="text" id="txtIdProofNo" placeholder="@PIVF.LanguageResource.Resources.lblIdProffNo" ng-model="NewInfo.IdentityNumber" multi-validation="{{Multivalidation}}" ng-keypress="ClearSearch();($event.which === 13)?getPatientList(Patient):0;" maxlength="30">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="InputBoxDiv">
+                                        <select id="ddlPatientSourceOfReference" title="@PIVF.LanguageResource.Resources.lblSourceofReference" ng-model="NewInfo.SourceOfReferenceID" class="form-control"
+                                                ng-options="i.ID as i.Description for i in SourceOfrefList" ng-change="getDoctorList(NewInfo.SourceOfReferenceID)"></select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="InputBoxDiv">
+                                        <select id="ddlPatientExternalDoctor" title="@PIVF.LanguageResource.Resources.lblvReferralDoctors" ng-model="NewInfo.ReferredDoctorID" class="form-control"
+                                                ng-options="i.ID as i.Description for i in DocList"></select>
+                                    </div>
+                                </div>
+
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- Advance Search Box End-->
+                        </div>
+                        <div class="SearchBtnContainer AdvSearchBtnContainer">
+                            <div class="InputBoxDiv">
+                                <button id="" type="button" class="btn btn-primary" ng-click="ClearSearch();getPatientList();" ng-keypress="($event.which === 13)?getPatientList():0">@PIVF.LanguageResource.Resources.btnSearch</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /searchContainer -->
+        <div class="col-lg-12 col-md-12">
+            <div class="form_Content p-t-10" @*style="height:420px;"*@>
+                <div class="row find_title">
+                    <div class="col-sm-6">
+                        <span>@PIVF.LanguageResource.Resources.Total_Count :</span>
+                        <span class="total_count">{{TotalItems}}</span>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button class="btn-link" title="@PIVF.LanguageResource.Resources.btnPrint" ng-click="exportToExcel('#tableToExport')"><span class="glyphicon glyphicon-print" ng-hide="true"></span></button>
+                        @*<button class="btn btn-primary" type="button" id="" value="Add" ng-click="newPatient()"> @PIVF.LanguageResource.Resources.btnNew</button>*@
+                        <button class="btn-link" title="@PIVF.LanguageResource.Resources.lblNew" type="button" id="" value="Add" ng-click="newPatient()"><span class="glyphicon glyphicon-plus"></span></button>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="table-responsive fixed_header" id="tableToExport">
+                            <table class="table table-hover table-striped" style="min-width:1500px; height: calc(100vh - 400px);">
+                                @*min-height:350px;max-height:350px;*@
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="5">&nbsp;</th>
+                                        @*<th st-ratio="5">@PIVF.Gemino.LanguageResource.Resources.lblActions</th>*@
+                                        <th st-ratio="25">@PIVF.LanguageResource.Resources.lblPatientName @*Name*@</th>
+                                        <th st-ratio="25">@PIVF.LanguageResource.Resources.lblSpouseName @*Partner*@</th>
+                                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblCoupleId @*Couple Id*@</th>
+                                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblAgeGender @*Age/Gender*@</th>
+                                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblMobNo @*Mobile No*@</th>
+                                        <th st-ratio="15">@PIVF.LanguageResource.Resources.lblClinicDate @*Clinic/Date*@</th>
+                                        @*<th st-ratio="10">@PIVF.LanguageResource.Resources.lblSpecialRegistration @*Special Registration</th>*@ @*Commented by AniketK on 14Nov2019*@
+                                    </tr>
+                                </thead>
+                                <tbody style="height: calc(100vh - 440px)">
+                                    @*height:310px;*@
+                                    <tr ng-repeat="item in patientList" ng-click="setSelected(item.MRNo)" ng-class="{activeTRColor: item.MRNo === MRNo}">
+
+                                        <td st-ratio="5" class="cycle_actions">
+                                            <div class="dropdown">
+                                                <a href="" class="dropdown-toggle" id="cycleAction_1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                    <span class="glyphicon glyphicon-cog"></span>
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="cycleAction_1">
+                                                    <li><a class="cursorPointer" ng-click="viewPatient(item.ID,item.UnitID)" title="@PIVF.LanguageResource.Resources.lblViewPatient">@PIVF.LanguageResource.Resources.lblViewPatient</a></li>
+                                                    <li><a href="" ng-click="OpenPersonalCharacteristicsModal(item.ID,item.UnitID)" title="@PIVF.LanguageResource.Resources.lblvPersonalCharacteristics">@PIVF.LanguageResource.Resources.lblvPersonalCharacteristics</a></li>
+                                                    <li><a href="" ng-click="GetPatientDataForRegistrationPrint(item.ID,item.UnitID)" title="@PIVF.LanguageResource.Resources.btnPrint">@PIVF.LanguageResource.Resources.btnPrint</a></li>
+                                                    <li><a href="" title="@PIVF.LanguageResource.Resources.lblvPrintBarcode" data-toggle="modal" data-target="#barcodeDoctorSelectPopup" ng-click="CreateBarcode(item)">@PIVF.LanguageResource.Resources.lblvPrintBarcode</a></li>
+                                                    <li><a href="" ng-click="OpenPersonalInformationModal(item.ID,item.UnitID,item);" title="@PIVF.LanguageResource.Resources.lblAdditionalInformation" ng-model="model">@PIVF.LanguageResource.Resources.lblAdditionalInformation</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        @*<td> <div class="arrowWrap" title="Actions"><span class="collapse-arrow collapsed" data-toggle="collapse" data-target="{{'#'+($index+1)}}"></span> </div> </td>*@
+                                        <td st-ratio="25" class="Capitalize"><b>{{item.PatientName}}</b><br>{{item.MRNo}}</td>
+                                        <td st-ratio="25" class="Capitalize"><b>{{item.PartnerName}}</b><br>{{item.PartnerMRN}}<span ng-if="item.PartnerName==null">-</span></td>
+                                        <td st-ratio="10">{{item.Identity}}<span ng-if="item.Identity==null">-</span></td>
+                                        <td st-ratio="10">{{item.Age}} yrs/ {{item.Gender}}</td>
+                                        <td st-ratio="10">{{item.MobCountryCode}} {{item.MobileNo}}</td>
+                                        <td st-ratio="15" class="Capitalize"><b>{{item.FileName}}</b><br>{{item.RegistrationDate | date:'dd-MMM-yyyy'}}</td>
+                                    </tr>
+                                    @*<tr class="AppointmentDetailTR " id="{{$index+1}}">
+                                            <td colspan="11">
+                                                <div class="ButtonsContainer text-left">
+                                                    <button id="" type="button" class="btn btn-icon btn-secondary" title="View Patient"><i class="fa fa-eye" aria-hidden="true" ng-click="viewPatient(item.ID,item.UnitID)"></i></button>
+                                                    <div class="dropdown">
+                                                        <button id="" type="button" class="btn btn-icon btn-secondary" title="Print">
+                                                            <span class="btn-icon"><span class="glyphicon glyphicon-print"></span></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>*@
+                                </tbody>
+                            </table>
+                            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+                            <div class="col-md-12 col-lg-12">
+                                <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="getPatientList()" max-size="maxSize" class="pagination-sm  pull-left" boundary-links="true" num-pages="numPages" items-per-page="20" style="padding-right:14px;"></uib-pagination>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button group row -->
+    </div>
+    <script>
+        $(document).ready(function () {
+            JsBarcode(".barcode").init();
+        });
+    </script>
+
+    <div class="modal fade" id="barcodeDoctorSelectPopup" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblvSelectBarcode</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-offset-3 col-lg-6">
+                            <div class="form-group">
+                                <label class="col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblDoctorName</label>
+                                <div class="col-lg-12">
+                                    <select class="form-control" ng-model="BarCodeDoctorID" ng-options="i.ID as i.Description for i in DocListForBarCode" ng-change="DisplayBarcodeOnChange(i)"></select> @**@
+                                        @*<select id="ddlDoc"
+                                            name="ddlDoc"
+                                            class="form-control"
+                                            ng-model="DoctorLst"
+                                            ng-options="i.ID as i.Description for i in DocList" tabindex="1"
+                                            ng-class="{select:patient.ReferredDoctorID== 0 && NewfrmRegistration.ddlDoc.$dirty}"></select>*@<select id="ddlDoc"
+                                                                                                                                                    name="ddlDoc"
+                                                                                                                                                    class="form-control"
+                                                                                                                                                    ng-model="DoctorLst"
+                                                                                                                                                    ng-options="i.ID as i.Description for i in DocList" tabindex="1"
+                                                                                                                                                    ng-class="{select:patient.ReferredDoctorID== 0 && NewfrmRegistration.ddlDoc.$dirty}"></select>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="modal-footer">
+    <div class="page_actions">
+        <button class="btn btn-default" data-toggle="modal" data-target="#barcodePopup" data-dismiss="modal">@PIVF.LanguageResource.Resources.lblOK</button>
+        <button class="btn btn-default" type="button" id="" value="" data-dismiss="modal"> @PIVF.LanguageResource.Resources.btnCancel</button>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="barcodePopup" role="dialog">
+    <div class="modal-dialog modal-lg" style="width:1040px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblvPrintBarcode</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <label class="col-lg-6 control-label" style="font-size: 16px;height:25px;">{{SelectedPatientForBarcode.PatientName}}</label>
+                    <label class="col-lg-6 control-label" style="font-size: 16px;height:25px;">{{SelectedPatientForBarcode.PartnerName}}</label>
+                    <div class="col-lg-6" id="PatientprintSectionId">
+                        <div class="barcodeWrap">
+                            <div class="barcodeInfo">@PIVF.LanguageResource.Resources.lblPatientName : {{SelectedPatientForBarcode.PatientName}}<br />@PIVF.LanguageResource.Resources.lblMobNo : +{{SelectedPatientForBarcode.MobCountryCode}} {{SelectedPatientForBarcode.MobileNo}}<br />@PIVF.LanguageResource.Resources.lblGender : {{SelectedPatientForBarcode.Gender}}<br />@PIVF.LanguageResource.Resources.lblDoctorNameDr {{BarCodeDoctorIDdesc}}</div>
+                            <svg class="barcode" jsbarcode-format="code128" jsbarcode-value="{{SelectedPatientForBarcode.MRNo}}" jsbarcode-textmargin="0" jsbarcode-fontoptions="bold" jsbarcode-width="1" jsbarcode-height="50" textMargin="2"></svg>
+                            @*{{patientLst.PatientDoctor}}*@
+                        </div>
+                    </div>
+                    <div class="col-lg-6" id="PatientprintSectionId">
+                        <div style="height: 88px;">@PIVF.LanguageResource.Resources.lblPartnerName : {{SelectedPatientForBarcode.PartnerName}}<br />@PIVF.LanguageResource.Resources.lblMobNo : +{{SelectedPatientForBarcode.PartnerCountryCode}} {{SelectedPatientForBarcode.PartnerMobileNo}}<br />@PIVF.LanguageResource.Resources.lblGender : {{SelectedPatientForBarcode.PartnerGender}}</div>
+                        <svg class="barcode" jsbarcode-format="code128" jsbarcode-value="{{SelectedPatientForBarcode.PartnerMRN}}" jsbarcode-textmargin="0" jsbarcode-fontoptions="bold" jsbarcode-width="1" jsbarcode-height="50" textAlign="left"></svg>
+                    </div>
+                    @*<svg class="barcode" jsbarcode-format="EAN13" jsbarcode-value="{{x.code.trim()}}" jsbarcode-textmargin="0" jsbarcode-fontoptions="bold"></svg>*@<svg class="barcode" jsbarcode-format="EAN13" jsbarcode-value="{{x.code.trim()}}" jsbarcode-textmargin="0" jsbarcode-fontoptions="bold"></svg>
+                    @*<h4>{{item.MRNo}}</h4>*@<h4></h4>
+                    @*<input type="button" value="Prnt" ng-click="_printBarCode('barCodeId')" class="btn btn-primary" />
+                        <div id="barCodeId" class="barcodeplace">
+                            <div class="col-sm-12">
+                                <div barcode-generator="{{_barCodeGeneraterId}}" style="height:20px;">
+                                </div>
+                            </div>
+                        </div>*@<input type="button" value="Prnt" ng-click="_printBarCode('barCodeId')" class="btn btn-primary" />
+                    <div id="barCodeId" class="barcodeplace">
+                        <div class="col-sm-12">
+                            <div barcode-generator="{{_barCodeGeneraterId}}" style="height:20px;">
+                            </div>
+                        </div>
+                    </div>
+                    @*<svg id="code128"></svg>*@<svg id="code128"></svg>
+                </div>
+                @*<td st-ratio="10" ng-class="item.IsSpecialReg?'okgreen':null"><i ng-class="item.IsSpecialReg?'fa fa-check':null" aria-hidden="true"></i><span ng-if="item.IsSpecialReg==0">-</span></td>*@<td st-ratio="10" ng-class="item.IsSpecialReg?'okgreen':null"><i ng-class="item.IsSpecialReg?'fa fa-check':null" aria-hidden="true"></i><span ng-if="item.IsSpecialReg==0"></span></td> @*Commented by AniketK on 14Nov2019*@
+            </div>
+            <div class="modal-footer">
+                <div class="page_actions">
+                    <button ng-click="printToCart('PatientprintSectionId')" class="btn btn-default">@PIVF.LanguageResource.Resources.lblPrint</button>
+                    <button class="btn btn-default" type="button" id="" value="" data-dismiss="modal"> @PIVF.LanguageResource.Resources.btnCancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</section>
+<div class="clearfix"></div>

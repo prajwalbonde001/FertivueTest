@@ -1,0 +1,529 @@
+﻿@{
+    Layout = null;
+}
+
+<style>
+    .Invalid {
+        border-color: red;
+    }
+
+    .select {
+        border: 1px solid red;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .custom-container {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 30px; /* Adds space between dropdown and input */
+    }
+
+    #ddlClinic {
+        width: 250px; /* Adjust dropdown width */
+    }
+
+    .searchpatient {
+        margin-top: 25px;
+    }
+
+    #txtfullName {
+        width: 300px; /* Adjust search box width */
+    }
+
+    /* Disable hover */
+    .hover-disabled {
+        pointer-events: none; /* Disables all interactions */
+        opacity: 0.6; /* Optional: Make it look disabled */
+    }
+
+    /* Enable hover */
+    .hover-enabled:hover {
+        cursor: pointer; /* Normal hover effect */
+        opacity: 1; /* Optional: Reset to normal opacity */
+    }
+
+    .border-red {
+        border: 2px solid red;
+    }
+
+    .invalid-rate {
+        border: 1px solid red;
+    }
+     .fetch-prescription {
+        font-weight: bold;
+        color: #5895A6;
+        text-decoration: underline;
+        cursor: pointer;
+        display: inline-block;
+        transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+        .fetch-prescription:hover {
+            color: #417788;
+            transform: scale(1.05);
+        }
+
+        .fetch-prescription:active {
+            transform: scale(0.95);
+        }
+</style>
+
+<link href="~/Content/select2-bootstrap.css" rel="stylesheet" />
+<link href="~/Content/select2.css" rel="stylesheet" />
+
+<body>
+    <div ng-controller="BillingCtrl">
+        <div ng-init="fillClinicListNew();">
+            <!-- Container for the dropdown and search box -->
+            <div class="custom-container">
+
+                <!-- Search Text Box -->
+                <div class="form-group searchpatient">
+                    <input type="text"
+                           class="form-control"
+                           id="txtfullName"
+                           autocomplete="off"
+                           ng-blur="model=''"
+                           placeholder="@PIVF.LanguageResource.Resources.SearchCheckedPatient"
+                           name="txtUsrName"
+                           ng-model="searchText"
+                           ng-change="fetchCheckedInPatients(searchText)"
+                           uib-typeahead="patient as (patient.FirstName + ' ' + patient.LastName + ' ' + '(' + patient.ContactNo1 + ' | ' + patient.MRNo + ')') for patient in patientList | filter:$viewValue | limitTo:8"
+                           typeahead-on-select="onSelectPatient($item)"
+                           autofocus>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-horizontal Billing" id="billingContainer" ng-controller="BillingCtrl" ng-class="{'hover-disabled': !isLoadDataSuccessful, 'hover-enabled': isLoadDataSuccessful}">
+            @*<h5 class="subTitle">New Bill</h5>*@
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="PatientInfoWrapper m-b-5">
+                        <div class="BlueWrap" style="min-height:80px;">
+                            <div class="ProfileImgWrap">
+                                @* <img src="../images/Female_default.jpg" class="profile">*@
+                                @*<img src="../images/Male_default.jpg" class="profile">*@
+                                <img ng-if="PatientDetail.PatientGender=='Female' " ng-src="../images/Female_default.jpg" style="width:100%">
+                                <img ng-if="PatientDetail.PatientGender=='Male' " ng-src="../images/Male_default.jpg" style="width:100%">
+                            </div>
+                            <div class="ProfileInfoWrap">
+                                <p class="m-b-0">
+                                    <span class="Capitalize PatientName"> {{PatientDetail.PatientName}}</span>
+                                    <span class="MRN-Green">
+                                        <span> {{PatientDetail.PatientMRNo}}</span>
+                                    </span>
+
+                                    <span class="patient-gander p-l-5"> {{PatientDetail.PatientGender}}  / </span>
+                                    <span class="patient-gander">{{PatientDetail.PatientAge}} @PIVF.LanguageResource.Resources.lblYears</span> @*Years ::Modified by swatih for localization 22/7/2020*@
+                                    <span class="patient-gander iconInfoLine">
+                                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                        <span class="LinkName">{{PatientDetail.PatientMobileNo}}</span>
+                                    </span>
+
+                                    @*<ul class="profile-data">
+                                            <li style="width:100%;" ng-show="PatientDetail.PatientAddress">
+                                                <span class="patient-gander p-l-0">@PIVF.LanguageResource.Resources.lblAddress : {{PatientDetail.PatientAddress}}</span>
+                                            </li>
+                                        </ul>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" ng-hide="hideWhenIndividual">
+                    <div class="PatientInfoWrapper m-b-5">
+                        <div class="BlueWrap" style="min-height:80px;">
+                            <div class="ProfileImgWrap">
+                                @*<img src="../images/Female_default.jpg" class="profile">*@
+                                @*<img src="../images/Male_default.jpg" class="profile">*@
+                                <img ng-if="PatientDetail.PartnerGender=='Female' " ng-src="../images/Female_default.jpg" style="width:100%">
+                                <img ng-if="PatientDetail.PartnerGender=='Male' " ng-src="../images/Male_default.jpg" style="width:100%">
+                            </div>
+                            <div class="ProfileInfoWrap">
+                                <p class="m-b-0">
+                                    <span class="Capitalize PatientName"> {{PatientDetail.PartnerName}}  </span>
+                                    <span class="MRN-Green">
+                                        <span> {{PatientDetail.PartnerMRNo}}</span>
+                                    </span>
+                                    <span class="patient-gander p-l-5"> {{PatientDetail.PartnerGender}} / </span>
+                                    <span class="patient-gander">{{PatientDetail.PartnerAge}} @PIVF.LanguageResource.Resources.lblYears </span> @*Years ::Modified by swatih for localization 22/7/2020*@
+                                    <span class="patient-gander iconInfoLine">
+                                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                        <span class="LinkName">{{PatientDetail.PartnerMobileNo }}</span>
+                                    </span>
+                                    @*<ul class="profile-data">
+                                            <li style="width:100%;" ng-show="PatientDetail.PartnerAddress">
+                                                <span class="patient-gander p-l-0">@PIVF.LanguageResource.Resources.lblAddress : {{PatientDetail.PartnerAddress}}</span>
+                                            </li>
+                                        </ul>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @*<div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label class="col-md-12 col-lg-12 control-label" for="">Service Search</label>
+                            <div class="col-md-12 col-lg-12">
+                                <select class="form-control">
+                                    <option>Priscribed Services</option>
+                                    <option>Other Services</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="col-md-3 col-lg-3">
+                    <label class="radio-inline control-label"><input type="radio" name="optradio" value="1" ng-model="Services" checked ng-click="GetServiceList()">@PIVF.LanguageResource.Resources.lblOtherServices</label>@*Other Services ::Modified by swatih for localization 20/7/2020*@
+                    @*<label class="radio-inline control-label"><input type="radio"  name="optradio" value="2" ng-model="Services" ng-change="ShowPrescribedPage('PrescribedPage')">Prescribed Services</label>  *@
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        @*<label class="col-md-12 col-lg-12 control-label" for="">CBC</label>*@
+                        <div class="col-md-12 col-lg-12">
+                            <input type="text" id="txtServiceName" name="txtServiceName" placeholder="@PIVF.LanguageResource.Resources.String2" ng-blur="selSer=''" ng-model="selSer" uib-typeahead="i as (i.ServiceCodeDesc) for i in ServiceList | filter:$viewValue | limitTo:15"
+                                   ng-disabled="disableFeeeze || HideWhenView " typeahead-on-select="SelectedServiceNew(selSer);TotalAmt()" class="form-control Capitalize" typeahead-input-formatter="a">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <div class="col-md-12 col-lg-12">
+                            <span id="fetchPrescription" class="fetch-prescription" ng-click="fetchFromPrescription()">
+                                @PIVF.LanguageResource.Resources.lblSfetchfromprescriptionlist
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*</div>*@
+            <div class="form_Content" style="height: calc(100vh - 400px); overflow: auto;">
+                <div class="row">
+                    <div class="col-sm-12 m-t-20">
+                        <div class="table-responsive fixed_header table-bordered" id="">
+                            <table class="table table-hover table-striped" style="max-height:300px;min-height:200px;">
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="5">@PIVF.LanguageResource.Resources.lblSr_No</th>@*Sr. No.::Modified by swatih for localization 22/7/2020*@
+                                        <th st-ratio="12">@PIVF.LanguageResource.Resources.lblServiceCode</th>@*Service Code::Modified by swatih for localization 22/7/2020*@
+                                        <th st-ratio="23">@PIVF.LanguageResource.Resources.lblServiceName</th>@*Service Name::Modified by swatih for localization 22/7/2020*@
+                                        <th st-ratio="5">@PIVF.LanguageResource.Resources.lblQuantity</th>@*Quantity::Modified by swatih for localization 22/7/2020*@
+                                        <th st-ratio="8">@PIVF.LanguageResource.Resources.lblRate</th>@*Rate::Modified by swatih for localization 22/7/2020*@
+                                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblConcession (%)</th>@*Concession (%)::Modified by swatih for localization 22/7/2020*@
+                                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblConcession Amt.</th>@*Concession Amt.::Modified by swatih for localization 22/7/2020*@
+                                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblNetAmount</th>@*Net Amount::Modified by swatih for localization 22/7/2020*@
+                                        <th st-ratio="14">@PIVF.LanguageResource.Resources.lblDoctorName</th>@*Doctor Name::Modified by swatih for localization 22/7/2020*@
+                                        <th st-ratio="8">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="i in BillDetails.SelectedOtherServiceList track by $index">
+                                        <td st-ratio="5">{{$index+1}}</td>
+                                        <td st-ratio="12">{{i.ServiceCode}}</td>
+                                        <td st-ratio="23">{{i.Service}}</td>
+                                        <td st-ratio="5">{{i.Quantity}}</td>
+                                        <td st-ratio="8">
+                                            <input class="form-control  text-right" placeholder="@PIVF.LanguageResource.Resources.lblRate" ng-model="i.BaseServiceRate" ng-disabled="disableFeeeze || i.RateEditable" maxlength="15"
+                                                   ng-change="TotalBaseRate()" onkeypress="return isNumberKey(event,this)" />
+                                        </td> @*replace="[^0-9.]"*@ @*allow-decimal-numbers*@
+                                        <td st-ratio="10">
+                                            <input class="form-control  text-right" placeholder="00.00" ng-model="i.ConcessionPercentage"
+                                                   onkeypress="return isNumberKey(event,this)" ng-disabled="disableFeeeze || HideWhenView" maxlength="5" @*multi-validation="NumericArrowBkSpDelSpDCFSlash"*@
+                                                   min="0" max="100" ng-change="calConcessionAmt(i.ConcessionPercentage,i.BaseServiceRate,$index);TotalConcession()" />
+                                        </td>     @* ng-keydown="validate(i.ConcessionPercentage,$event)" ng-change="calConcessionAmt(i.ConcessionPercentage,i.BaseServiceRate,$index);TotalConcession()"    number-mask   replace="[^0-9.]" with=""   maxlength="6"*@
+                                        @*<td st-ratio="10"><input class="form-control text-right" placeholder="00.00" readonly ng-model="i.ConcessionAmount" /></td>*@  @*Commented and Modified by AniketK on 07Oct2020*@
+                                        <td st-ratio="10"><input class="form-control text-right" placeholder="00.00" ng-disabled="disableFeeeze || HideWhenView" ng-model="i.ConcessionAmount" ng-change="calConcessionPercentage(i.ConcessionAmount,i.BaseServiceRate,$index);TotalConcession()" onkeypress="return isNumberKey(event,this)" /></td>  @*multi-validation="NumericArrowBkSpDelSpDCFSlash"*@
+                                        <td st-ratio="10"><input class="form-control text-right" placeholder="00.00" readonly ng-model="i.NetAmount" /></td>
+                                        <td st-ratio="14">
+                                            @*<ui-select ng-model="i.DoctorID" name="DOCID" theme="select2" class="UIselectclass" title="" append-to-body="true">
+                                                    <ui-select-match allow-clear="false" placeholder="">{{$select.selected.FirstName}}</ui-select-match>
+                                                    <ui-select-choices repeat="i.DoctorID as i in InHouseDoctorList | propsFilter: {FirstName: $select.search}">
+                                                        <div ng-bind-html="i.FirstName | highlight: $select.search"></div>
+                                                        <small>
+                                                            @*email: {{i.FirstName}}* @
+                                                            @*age: <span ng-bind-html="''+person.DOCID | highlight: $select.search"></span>* @
+                                                        </small>
+                                                    </ui-select-choices>
+                                                </ui-select>*@
+                                            <select class="form-control" id="" ng-model="i.DoctorID" ng-options="item.ID as item.Description for item in DocList"
+                                                    ng-disabled="disableFeeeze || HideWhenView"></select>
+                                        </td>
+                                        <td class="text-center" st-ratio="8">
+                                            @*<span class="btn_delete" title="Delete"  ng-click="DeleteService(i)" ng-disabled="BillDetails.IsFreezed"></span>*@
+                                            <button class="btn_delete" title="@PIVF.LanguageResource.Resources.lblDelete" ng-click="DeleteService(i,$index)" ng-disabled="disableFeeeze || HideWhenView"></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-offset-1 col-sm-10 m-t-15 m-b-15">
+                        <div class="table-responsive" id="">
+                            <table class="table table-hover table-striped table-bordered" style="">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-bold">@PIVF.LanguageResource.Resources.lblTotalBillAmt</td>@*Total Bill Amt ::Modified by swatih for localization 22/7/2020*@
+                                        <td class="text-right"><input class="form-control text-right" placeholder="00.00" readonly ng-model="BillDetails.TotalBillAmount" /></td>
+                                        <td class="text-bold">@PIVF.LanguageResource.Resources.lblTotalPayableAmt.</td>@*Total Payable Amt.::Modified by swatih for localization 22/7/2020*@
+                                        <td class="text-right"><input class="form-control text-right" placeholder="00.00" readonly ng-model="BillDetails.NetBillAmount" /></td>
+                                        <td class="text-bold">@PIVF.LanguageResource.Resources.lblTotalConcessionAmount</td>@*Total Concession Amount ::Modified by swatih for localization 20/7/2020*@
+                                        <td class="text-right"><input class="form-control text-right" placeholder="00.00" maxlength="10" readonly ng-model="BillDetails.TotalConcessionAmount" /></td>
+                                        @*<td class="text-bold">Total Paid Amt.</td>Total Paid Amt.
+                                            <td class="text-right"><input class="form-control text-right" placeholder="00.00" maxlength="10" readonly ng-model="BillDetails.PaidAmount" />  </td>*@
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold">@PIVF.LanguageResource.Resources.lblPreviousOutstanding</td>@PIVF.LanguageResource.Resources.lblTotalPaidAmt.      @*PreviousOutstanding</td>Total Paid Amt. :: Modified by swatih for localization 22/7/2020*@
+                                        <td class="text-right">{{PatientDetail.PreviousOutstanding}}</td>
+                                        @*<td class="text-bold">@PIVF.LanguageResource.Resources.lblBalanceAmount</td>@PIVF.LanguageResource.Resources.lblBalanceAmount*@      @*Balance Amount::Modified by swatih for localization 20/7/2020*@
+                                        @*<td class="text-right">  <input class="form-control text-right" placeholder="00.00" maxlength="10" readonly ng-model="BillDetails.BillBalanceAmount" /></td>*@
+                                        @*<td class="text-bold">Total Balance Advance</td>*@      @*Balance Amount::Modified by swatih for localization 20/7/2020*@
+                                        @*<td class="text-right">  <input class="form-control text-right" placeholder="00.00" maxlength="10" readonly ng-model="BillDetails.TotalBalanceAdvance" /></td>*@
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-right">
+                        <label class="control-label"><input type="checkbox" ng-disabled="disableFeeeze || HideWhenView" value="option1" ng-click="FreezeBill(BillDetails.IsFreezed)" ng-model="BillDetails.IsFreezed"> @PIVF.LanguageResource.Resources.lblFreeze</label> @*Freez ::Modified by swatih for localization 22/7/2020*@
+                        <button class="btn btn-default" type="button" id="" ng-disabled="disableSave || disableClickNewBill || HideWhenView" ng-click="SaveBillNewwithConfarmation()">{{btnSaveUpdate}}</button>
+                        @*<button class="btn btn-default" type="button" id="" ng-disabled="disableSave || disableClickNewBill || HideWhenView" ng-click="SaveBillNew()">{{btnSaveUpdate}}</button>*@
+                        <button class="btn btn-primary" type="button" id="" ng-click="redirect(3)">@PIVF.LanguageResource.Resources.btnCancel</button>
+                    </div>
+                </div>
+                <div class="form_Content m-t-20" style="min-height:200px;" ng-show="ShowPaymentData">
+                    <div class="row">
+                        <div class="col-sm-12 m-t-20" ng-show="false">
+                            <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcPatientAdvanceDetails</h5>
+                            <div class="table-responsive  table-bordered" id="">
+                                @*fixed_header*@
+                                <table class="table table-hover table-striped" style="max-height:300px;min-height:200px;">
+                                    <thead>
+                                        <tr>
+                                            <th st-ratio="">@PIVF.LanguageResource.Resources.lblDate</th>
+                                            <th st-ratio="">@PIVF.LanguageResource.Resources.lblcAgainst</th>
+                                            <th st-ratio="">@PIVF.LanguageResource.Resources.lblRemarks</th>
+                                            <th st-ratio="">@PIVF.LanguageResource.Resources.lblcTotalAmount</th>
+                                            <th st-ratio="">@PIVF.LanguageResource.Resources.lblBalanceAmount</th>
+                                            <th st-ratio="">@PIVF.LanguageResource.Resources.lblcConsumeAmount</th>
+                                            <th st-ratio="">@PIVF.LanguageResource.Resources.lblcConsume</th>
+
+                                    <thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in tempAdvanceList track by $index">
+                                            <td>{{item.Date | date :  "dd-MMM-yyyy"}}</td>
+                                            <td>{{item.AdvanceAgainst}}</td>
+                                            <td>{{item.Remarks}}</td>
+                                            <td>{{item.Balance}}</td>
+                                            <td>{{item.BalanceAmount}}</td> @*item.BalanceAmount*@
+                                            <td><input type="number" ng-model="item.ConsumeAmount" ng-class="{select:item.IsConsumedAmountRequired == true}" ng-change="CalculateBalanceAmount(item, $index)" /></td>
+                                            <td><input type="checkbox" ng-model="item.check" value="1" ng-click="AddAdvanceAutoConsumed(item, $index)" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 m-t-20">
+                            <div class="text-right  p-r-0">
+                                <button class="btn btn-link link p-r-0" type="button" id="btnAddFamilyHistoryRow" value="" ng-click="AddPaymentRowFromBill()">@PIVF.LanguageResource.Resources.btnAddRows</button>@*Add Rows::Modified by swatih for localization 22/7/2020*@   @*AddPaymentRow*@
+                            </div>
+                            <div class="table-responsive fixed_header table-bordered" id="">
+                                <table class="table table-hover table-striped" style="max-height:300px;min-height:200px;">
+                                    <thead>
+                                        <tr>
+                                            <th st-ratio="19">@PIVF.LanguageResource.Resources.lblPaymentMode</th>@*Payment Mode::Modified by swatih for localization 22/7/2020*@
+                                            <th st-ratio="12" ng-disabled="true" ng-show="isPaymentModeVisible">@PIVF.LanguageResource.Resources.lblAdvanceAmt</th>@*Advance Amount added by Tejas Saxena*@
+                                            <th st-ratio="12">@PIVF.LanguageResource.Resources.lblAmount</th>@*Amount::Modified by swatih for localization 22/7/2020*@
+                                            <th st-ratio="23">@PIVF.LanguageResource.Resources.lblReferenceNo</th>@*Reference No::Modified by swatih for localization 22/7/2020*@
+                                            <th st-ratio="22">@PIVF.LanguageResource.Resources.lblBankName</th>@*Bank Name::Modified by swatih for localization 22/7/2020*@
+                                            <th st-ratio="12">@PIVF.LanguageResource.Resources.lblDate</th>@*Date::Modified by swatih for localization 22/7/2020*@
+                                            <th st-ratio="12">&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="i in BillDetails.OtherSrvPaymentModeList track by $index ">
+                                            @*track by $index*@
+                                            <td st-ratio="19">
+                                                <select class="form-control" id="ddlModeOfPayment" name="ddlModeOfPayment" ng-model="i.PaymentModeID" ng-options="item.ID as item.Description for item in ModeOfPaymentList"
+                                                        ng-change="ChangeModeOfPayment($index)" ng-class="{select:i.IsPaymentModeID == true}" ng-disabled="i.DisableAmount"></select>              @*ng-change="ChangeModeOfPayment()"*@
+                                                    </td>
+                                                    <td st-ratio="12" ng-if="i.PaymentModeID == 12">
+                                                        <input class="form-control text-right" ng-model="i.AdvanceBalance" replace="[^0-9.]" ng-disabled="true" @*ng-change="()"*@ @*ng-disabled="i.DisableAmount"*@
+                                                               ng-class="{'select': i.IsAmountNotFill == true, 'border-red': i.IsAdvanceExceeded == true}" />
+                                                    </td>
+                                                    <td st-ratio="12">
+                                                        <input class="form-control text-right" ng-model="i.PaidAmount" replace="[^0-9.]" ng-disabled="i.DisableAmount" ng-change="ChangeAdvanceExceedFlag($index) ;" @*ng-disabled="i.DisableAmount"*@
+                                                               ng-class="{select:i.IsAmountNotFill == true}" />
+                                                    </td>  @*ng-change="CalBalanceAmt(i.PaidAmount)"*@
+                                                    <td st-ratio="23">
+                                                        <input class="form-control text-right" id="txtRefNo" name="txtRefNo" ng-model="i.Number"
+                                                               @*replace="[^0-9.]"*@ with="" ng-class="{select:i.IsNumberNotFill == true    }" ng-disabled="i.CashMode" ng-change="EnableUpdateBtn()" />
+                                                    </td>    @* ng-disabled="i.CashMode"   ng-change="EnableUpdateBtn()"       maxlength="4"*@
+                                                    <td st-ratio="22">
+                                                        <select class="form-control" id="ddlBankList" name="ddlBankList" ng-model="i.BankID" ng-options="item.ID as item.Description for item in BankList" ng-class="{select:i.IsBankIDNotFill == true}" ng-disabled="i.CashMode" ng-change="EnableUpdateBtn()"></select>   @*ng-disabled="i.CashMode"  ng-change="EnableUpdateBtn()"   *@
+                                                    </td>
+                                                    <td st-ratio="22">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" ng-model="i.Date" id="" placeholder="dd-Mmm-yyyy" aria-describedby="" ng-class="{select:i.IsDateIDNotFill == true}" ng-disabled="i.CashMode" ng-change="EnableUpdateBtn()"
+                                                                   uib-datepicker-popup="{{format}}" datepicker-options="dateOptionsDOB" show-button-bar="false" is-open="i.dtpickropened" alt-input-formats="altInputFormats">
+                                                            <span class="input-group-addon" id="" ng-click="openLabDtPickr($event,i)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                            @*<input type="text" class="form-control" ng-model="i.Date" ng-disabled="i.CashMode" id="" placeholder="dd-Mmm-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" datepicker-options="dateOptionsDOB" show-button-bar="false" is-open="popup1.opened" alt-input-formats="altInputFormats">
+                                                                <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>*@
+                                                            @*<input type="text" class="form-control" id="dtDate" name="dtDate" ng-model="i.PlannedDate" placeholder="dd-Mon-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="i.dtpickropened" datepicker-options="dateOptions" alt-input-formats="altInputFormats">
+                                                                <span class="input-group-addon" id="" ng-click="openLabDtPickr($event,i)"><i class="fa fa-calendar" aria-hidden="true"></i></span>*@
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="btn_delete" title="@PIVF.LanguageResource.Resources.btnDelete" data-toggle="modal" ng-click="DeletePayment($index)"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 text-right m-t-20">
+                                    @*<label class="control-label"><input type="checkbox" ng-disabled="disableFeeeze" value="1" ng-click="FreezeBill(BillDetails.IsFreeze)" ng-model="BillDetails.IsFreeze"> Freeze</label>*@
+                                    <button class="btn btn-default" type="button" id="" ng-disabled="disableClickNewBill" ng-click="UpdatePaymentwithConfermation()">@PIVF.LanguageResource.Resources.lblUpdatePayment</button>@*UpdatePayment::Modified by swatih for localization 22/7/2020*@    @*,false*@
+                                    <button class="btn btn-primary" type="button" id="" ng-click="SaveBillWithoutPaymentNew()">@PIVF.LanguageResource.Resources.lblPayLater</button>@*Pay Later::Modified by swatih for localization 22/7/2020*@
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+                </div>
+
+
+                @*Prescribed Services*@
+                <div class="row form-horizontal" ng-controller="BillingCtrl" ng-hide="true">
+                    <div class="form_Content m-b-20">
+                        <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblPrescribedServices</h5>@*Prescribed Services::Modified by swatih for localization 22/7/2020*@
+                        <div class="row m-t-20">
+                            <label class="col-md-3 col-lg-3 control-label" for="">@PIVF.LanguageResource.Resources.lblFromDate12_1_2019</label>@*From Date : 12/1/2019::Modified by swatih for localization 22/7/2020*@
+                            <label class="col-md-3 col-lg-3 control-label" for="">@PIVF.LanguageResource.Resources.lblToDate12_2_2019</label>@*To Date : 12/2/2019::Modified by swatih for localization 20/7/2020*@
+                            <div class="col-sm-12 m-t-20 ">
+                                <div class="table-responsive fixed_header table-bordered" id="">
+                                    <table class="table table-hover table-striped GridTable" style="max-height:300px;min-height:200px;">
+                                        <thead>
+                                            <tr>
+                                                <th st-ratio="15">@PIVF.LanguageResource.Resources.lblSr_No.</th>@*Sr. No.::Modified by swatih for localization 22/7/2020*@
+                                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblVisitDate</th>@*Visit Date::Modified by swatih for localization 22/7/2020*@
+                                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblOPDNo.</th>@*OPD No.::Modified by swatih for localization 22/7/2020*@
+                                                <th st-ratio="25">@PIVF.LanguageResource.Resources.lblDrName</th>@*Dr. Name::Modified by swatih for localization 22/7/2020*@
+                                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblSettelBill</th>@*Settel Bill::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td st-ratio="15">@PIVF.LanguageResource.Resources.lbl12</td>@*12::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl12_02_2019</td>@*12/02/2019::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl303</td>@*303::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="25">@PIVF.LanguageResource.Resources.lblDrDhananjayDixit</td>@*Dr. Dhananjay Dixit::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lblSettelBill</td>@*Settel Bill::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                            <tr>
+
+                                                <td st-ratio="15">@PIVF.LanguageResource.Resources.lbl12</td>@*12::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl12_02_2019</td>@*12/02/2019::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl303</td>@*303::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="25">@PIVF.LanguageResource.Resources.lblDrDhananjayDixit</td>@*Dr. Dhananjay Dixit::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lblSettelBill</td>@*Settel Bill::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                            <tr>
+
+                                                <td st-ratio="15">@PIVF.LanguageResource.Resources.lbl12</td>@*12::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl12_02_2019</td>@*12/02/2019::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl303</td>@*303::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="25">@PIVF.LanguageResource.Resources.lblDrDhananjayDixit</td>@*Dr. Dhananjay Dixit::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lblSettelBill</td>@*Settel Bill::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                            <tr>
+
+                                                <td st-ratio="15">@PIVF.LanguageResource.Resources.lbl12</td>@*12::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl12_02_2019</td>@*12/02/2019::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl303</td>@*303::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="25">@PIVF.LanguageResource.Resources.lblDrDhananjayDixit</td>@*Dr. Dhananjay Dixit::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lblSettelBill</td>@*Settel Bill::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                            <tr>
+
+                                                <td st-ratio="15">@PIVF.LanguageResource.Resources.lbl12</td>@*12::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl12_02_2019</td>@*12/02/2019::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl303</td>@*303::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="25">@PIVF.LanguageResource.Resources.lblDrDhananjayDixit</td>@*Dr. Dhananjay Dixit::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lblSettelBill</td>@*Settel Bill::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                            <tr>
+
+                                                <td st-ratio="15">@PIVF.LanguageResource.Resources.lbl12</td>@*12::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl12_02_2019</td>@*12/02/2019::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl303</td>@*303::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="25">@PIVF.LanguageResource.Resources.lblDrDhananjayDixit</td>@*Dr. Dhananjay Dixit::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lblSettelBill</td>@*Settel Bill::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 m-t-20">
+                                <div class="table-responsive fixed_header table-bordered" id="tableToExport">
+                                    <table class="table table-hover table-striped GridTable" style="max-height:300px;min-height:200px;">
+                                        <thead>
+                                            <tr>
+
+                                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblVisitDate</th>@*Visit Date::Modified by swatih for localization 22/7/2020*@
+                                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblOPDNo.</th>@*OPD No.::Modified by swatih for localization 22/7/2020*@
+                                                <th st-ratio="30">@PIVF.LanguageResource.Resources.lblServiceName</th>@*Service Name::Modified by swatih for localization 22/7/2020*@
+                                                <th st-ratio="30">@PIVF.LanguageResource.Resources.lblDrName</th>@*Dr. Name::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl12_02_2019</td>@*12/02/2019::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl303</td>@*303::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="30">@PIVF.LanguageResource.Resources.lblService</td>@* Service::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="30">@PIVF.LanguageResource.Resources.lblDrDhananjayDixit</td>@*Dr. Dhananjay Dixit::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                            <tr>
+
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl12_02_2019</td>@*12/02/2019::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl303</td>@*303::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="30">@PIVF.LanguageResource.Resources.lblService</td>@* Service::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="30">@PIVF.LanguageResource.Resources.lblDrDhananjayDixit</td>@*Dr. Dhananjay Dixit::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                            <tr>
+
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl12_02_2019</td>@*12/02/2019::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl303</td>@*303::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="30">@PIVF.LanguageResource.Resources.lblService</td>@* Service::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="30">@PIVF.LanguageResource.Resources.lblDrDhananjayDixit</td>@*Dr. Dhananjay Dixit::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                            <tr>
+
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl12_02_2019</td>@*12/02/2019::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="20">@PIVF.LanguageResource.Resources.lbl303</td>@*303::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="30">@PIVF.LanguageResource.Resources.lblService</td>@* Service::Modified by swatih for localization 22/7/2020*@
+                                                <td st-ratio="30">@PIVF.LanguageResource.Resources.lblDrDhananjayDixit</td>@*Dr. Dhananjay Dixit::Modified by swatih for localization 22/7/2020*@
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </body>

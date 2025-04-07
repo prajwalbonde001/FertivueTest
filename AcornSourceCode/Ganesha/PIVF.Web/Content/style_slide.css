@@ -1,0 +1,349 @@
+body{
+	background:#f5f7fa;
+}
+
+a:focus {
+    outline: medium none;
+}
+
+.container_sysConfig{
+	background:#fff;
+	padding:20px;
+	box-sizing:boder-box;
+	position:relative;
+    min-height:450px;
+}
+
+.overlay { 
+    height: 100%;
+    left: 14.4%;
+    max-width: 1140px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: 0.5s; 
+    display:none;
+}
+
+.container_sysConfig a{
+	border-bottom: 1px dashed #cecece;
+    border-right: 1px dashed #cecece;
+    color: #666;
+    display: table;
+    font-size: 16px;
+    height: 135px;
+    line-height: 16px;
+    margin: 0 auto 35px;
+    padding-bottom: 15px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 135px;
+}
+
+.container_sysConfig a span{
+	display:table-cell;
+	vertical-align:bottom;
+}
+
+.ico_sysConfig {
+	top: 20px;
+    display: inline-block;
+    height: 70px;
+    left: 32px;
+    position: absolute;
+    text-align: center;
+    width: 70px;
+    /* z-index: 1; */
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+
+.clinic{
+	background: #8cbdd9 url("../images/ico_sprite_sys-conf.png") no-repeat scroll 18px center;
+    border: 1px solid #68a3c5;
+}
+.patient{  
+	background: #f1c77e url("../images/ico_sprite_sys-conf.png") no-repeat scroll -69px center;
+	border: 1px solid #d8a751;
+}
+.billing{
+	background: #b3ca8b url("../images/ico_sprite_sys-conf.png") no-repeat scroll -159px center;
+	border: 1px solid #9ec063;
+}
+.embryology{
+	background: #ca9cdb url("../images/ico_sprite_sys-conf.png") no-repeat scroll 18px center;
+	border: 1px solid #bc77d5;
+}
+.therapy{
+	background: #db8383 url("../images/ico_sprite_sys-conf.png") no-repeat scroll 18px center;
+    border: 1px solid #d16262;
+}
+.cryo{
+	background: #959594 url("../images/ico_sprite_sys-conf.png") no-repeat scroll -69px center;
+    border: 1px solid #74746f;
+}
+.et{
+	background: #7cd1e1 url("../images/ico_sprite_sys-conf.png") no-repeat scroll -159px center;
+    border: 1px solid #55c0d4;
+}
+.donor{
+	background: #d9d56a url("../images/ico_sprite_sys-conf.png") no-repeat scroll 18px center;
+    border: 1px solid #c5c047;
+}
+.newART{
+	background: #7cd1e1 url("../images/ico_sprite_sys-conf.png") no-repeat scroll 18px center;
+    border: 1px solid #55c0d4;
+}
+.opu{ 
+	background: #b3ca8b url("../images/ico_sprite_sys-conf.png") no-repeat scroll -69px center;
+    border: 1px solid #9ec063;
+}
+.hysteroscopy{ 
+	background: #8cbdd9 url("../images/ico_sprite_sys-conf.png") no-repeat scroll -159px center;
+    border: 1px solid #68a3c5;
+}
+.semenExe{
+	background: #f1c77e url("../images/ico_sprite_sys-conf.png") no-repeat scroll 18px center;
+    border: 1px solid #d8a751;
+}
+ 
+.sub-menu {
+	left: 185px;
+    position: absolute;
+    top: 20px;
+    z-index: 9;
+	width: 200%;
+	display:none;
+	transition: 1s; 
+}
+ 
+.sub-menu ul{
+	background: #8cbdd9;
+    border: 1px solid #68a3c5;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+    	
+}
+
+.sub-menu ul li{
+	display: inline-block;
+	width: calc(100% - 68%);
+	border-bottom: 1px solid #7fa5ba;
+}
+
+.sub-menu ul li a{ 
+	border: none;
+    color: #fff;
+    display: inline-block;
+    font-size: 15px;
+    height: auto;
+    line-height: 16px;
+    margin: 0;
+    padding: 10px 10px 10px 15px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    width: auto;
+}
+
+.active{
+	z-index:2;
+}
+
+.sub-menu ul li:hover{
+	background:#6ea9ca;
+}
+
+.sub-menu ul li a:after{
+	background: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 8px;
+    left: 2px;
+    position: absolute;
+    top: 16px;
+    width: 8px;
+}
+
+.sub-menu ul:after {
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #68a3c5;
+    border-top: 10px solid transparent;
+    content: "";
+    height: 0;
+    left: -10px;
+    position: absolute;
+    top: 21px;
+    width: 0; 
+}
+
+.icoList2.sub-menu ul {
+    background: #f1c77e none repeat scroll 0 0;
+    border: 1px solid #d8a751;
+}
+
+.icoList2.sub-menu ul::after {
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #d8a751;
+}
+
+.icoList2.sub-menu ul li {
+    border-bottom: 1px solid #d8a751;
+} 
+
+
+.icoList3.sub-menu ,.icoList4.sub-menu{
+    left: inherit;
+    right: 185px; 
+}
+
+.icoList3.sub-menu ul::after ,.icoList4.sub-menu ul::after {
+    border-bottom: 10px solid transparent;
+	border-top: 10px solid transparent;
+    border-left: 10px solid #9ec063; 
+    height: 0; 
+    right: -10px;
+	left: inherit;
+	border-right: inherit; 
+}
+
+.icoList3.sub-menu ul {
+    background: #b3ca8b none repeat scroll 0 0;
+    border: 1px solid #9ec063;
+}
+
+.icoList3.sub-menu ul li {
+    border-bottom: 1px solid #9ec063;
+}
+
+.icoList4.sub-menu ul {
+    background: #ca9cdb none repeat scroll 0 0;
+    border: 1px solid #bc77d5;
+}
+
+.icoList4.sub-menu ul li {
+    border-bottom: 1px solid #bc77d5;
+}
+
+.icoList4.sub-menu ul::after {
+    border-left: 10px solid #bc77d5; 
+}
+ 
+.icoList2.sub-menu ul li:hover{
+    background:#d8a751;
+}
+
+.icoList3.sub-menu ul li:hover {
+    background:#9ec063;
+}
+
+.icoList4.sub-menu ul li:hover {
+    background:#bc77d5;
+}
+
+.container {
+    position: relative; 
+}
+ 
+.sidenav {
+    height: 100%;  
+    width: 0;  
+    position: absolute;  
+    z-index: 1;  
+    top: 0;
+    left: 0;
+    background-color: #68a3c5;  
+    overflow-x: hidden;  
+    padding-top: 60px;  
+    transition: 0.5s;  
+}
+ 
+.sidenav a {
+    border-bottom: 1px solid #3a86b1;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    padding: 8px 8px 8px 25px;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    width: calc(100% - 70%);
+	margin-left: 25px;
+	position: relative;
+}
+
+.sidenav a:after{
+	background: #fff none repeat scroll 0 0;
+    border-radius: 50%;
+    content: "";
+    height: 10px;
+    left: 5px;
+    position: absolute;
+    top: 16px;
+    width: 10px;
+}
+
+.sidenav a:hover{
+	background:#3a86b1;
+}
+ 
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+ 
+.sidenav .closebtn {
+    color: #f9f9f9;
+    font-size: 35px;
+    margin-left: 50px;
+    position: absolute;
+    right: 15px;
+    top: 0;
+}
+
+.sidenav .closebtn:hover{
+	cursor:pointer;
+}
+
+#Patient.sidenav{
+	background-color: #f1c77e; 
+}
+ 
+#Patient.sidenav a {
+    border-bottom: 1px solid #d8a751;
+}
+
+#Patient.sidenav a:hover{
+	background:#d8a751;
+}
+
+#Billing.sidenav{
+	background-color: #b3ca8b; 
+} 
+#Billing.sidenav a {
+    border-bottom: 1px solid #9ec063;
+}
+#Billing.sidenav a:hover{
+	background:#9ec063;
+}
+
+#Embryology.sidenav{
+	background-color: #ca9cdb; 
+} 
+#Embryology.sidenav a {
+    border-bottom: 1px solid #bc77d5;
+}
+#Embryology.sidenav a:hover{
+	background:#bc77d5;
+} 
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+ 

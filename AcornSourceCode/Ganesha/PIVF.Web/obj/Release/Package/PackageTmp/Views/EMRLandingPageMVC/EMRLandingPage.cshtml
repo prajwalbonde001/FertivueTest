@@ -1,0 +1,1011 @@
+﻿@{
+    Layout = null;
+}
+
+<style>
+    .scroller {
+          /*height: calc(100vh - 625px);*/
+          height: calc(100vh - 445px);
+          overflow: auto;
+          overflow-x: hidden;
+    }
+    /*.EMRLanding{
+        width:85%
+    }*/
+
+
+
+    .medical-summary-container {
+       
+        /*margin: 5px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 11;
+        height: calc(100vh - 330px);
+        overflow: auto;
+        margin-top : -25px;*/
+
+  
+       padding: 24px;
+       border-radius: 16px;
+       position: relative;
+       z-index: 11;
+       /*height: calc(100vh - 345px);*/
+       height: calc(100vh - 164px);
+       overflow: auto;
+       background: #FFFFFF;
+       /*margin-top: -3px;*/
+       margin-top: -16px;
+       border: 1px solid #EEEEF0;
+    }
+
+    /* Header Section */
+    .medical-summary-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .header-section {
+        flex: 1;
+    }
+
+    .clinic-info p, .registration-info p {
+        font-size: 16px;
+    }
+
+    /* Visit Info Section */
+    .medical-summary-visit-info {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .medical-summary-visit-info p {
+            font-size: 16px;
+        }
+
+    /* Billing Info Section */
+    .medical-summary-billing-info {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid gray;
+        padding-bottom: 20px;
+    }
+
+        .medical-summary-billing-info p {
+            font-size: 16px;
+        }
+
+    /* Tabs Section */
+    .medical-summary-tabs {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .tab-button {
+        flex: 1;
+        padding: 10px;
+        text-align: center;
+        background: #ca6161;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        .tab-button:not(:last-child) {
+            margin-right: 5px;
+        }
+
+        .tab-button.active {
+            background: #5895a6;
+        }
+
+    /* Content Section */
+    .medical-summary-content h3 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .medical-summary-content p {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+
+    .customBox {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #d5d5d5;
+        padding: 20px;
+    }
+
+    .headerCard{
+        box-shadow: 0px 0px 10px 0px #0000000A;
+        border: 1px solid #EEEEF0;
+        background: #FFFFFF;
+        border-radius:12px;
+        padding:16px;
+        display:flex;
+        flex-direction:column;
+        gap : 10px;
+    }
+
+    .HeaderHeading{
+      
+        font-weight: 400;
+        font-size: 15px;
+        margin: 0px;
+        color: #9E9E9E;
+    }
+
+    .HeaderS{
+       
+        font-weight: 600;
+        font-size: 17px;
+        color: #464646;
+        margin: 0px;
+    }
+
+    .modal-tabs1 {
+        display: flex;
+        background: #F5F9FA;
+        border-radius: 12px;
+        padding: 4px;
+        width: max-content;
+        gap: 10px;
+    }
+
+    .modal-tabs1 button {
+           background: transparent;
+           border: none;
+           border-radius: 20px;
+           font-size: 15px;
+           color: #9E9E9E;
+           cursor: pointer;
+           transition: 0.3s;
+           padding: 8px 20px;
+     }
+
+     .modal-tabs1 button.active {
+             background: #FFFFFF;
+             color: #5895A6;
+             box-shadow: 0px 0px 10px 0px #0000000F;
+             border-radius: 10px;
+             padding: 8px 20px;
+             font-weight: bold;
+       }
+
+     .HeaderContainer{
+         display : flex;
+         gap : 14px;
+     }
+
+     .emrMainContainar{
+             display: flex;
+            flex-direction: column;
+           gap: 15px;
+
+     }
+
+
+
+     
+    .card-body {
+        border-radius: 12px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 10px 0px #0000000A;
+        padding: 16px;
+        border: 1px solid #EEEEF0;
+    }
+
+ 
+
+
+
+
+
+  .headB{
+    border-bottom: 1px solid #EEEEF0;
+  }
+
+
+.customChartContainer {
+    /*position: relative;
+    width: 100%;
+    height:150px;*/
+
+     /*height:100%;*/
+}
+
+
+.customChartContent{
+    display: flex;
+    flex-direction: column;
+    padding: 21px 0px;
+    /*justify-content: space-between;*/
+    gap: 5px;
+    /*height: 100%;*/
+    /*height: 250px;*/
+    overflow:auto;
+    height: 320px;
+}
+
+.visitCardHeading{
+    font-weight: 400;
+    font-size: 15px;
+    margin: 12px 0px;
+    color: #5895A6;
+}
+
+    .custom-table-container {
+        /*max-height: 518px;*/
+        overflow-y: auto;
+        overflow-x: auto;
+        width: 100%;
+        /*height: calc(100vh - 670px);*/
+        height: calc(100vh - 490px);
+    }
+
+
+
+       .unique-table-class {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+    }
+
+
+
+
+
+        .unique-table-class th,
+        .unique-table-class td {
+            /*border: 1px solid gray;*/
+            padding: 8px;
+            /*text-align: center;*/
+            font-size: 12px;
+            white-space: nowrap; /* Prevent word breaking */
+        }
+
+        .unique-table-class th {
+            /*background-color: #f2f2f2;*/
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            white-space: nowrap; /* Prevent word breaking */
+            border: none !important;
+        }
+
+       
+   .unique-table-class > thead > tr {
+    background: #F6F9FB;
+    color: #5895a6;
+    border: none !important;
+    border-radius: 12px !important;
+    position: sticky;
+    top: 2px;
+    z-index: 1;
+    white-space: nowrap;
+   }
+
+
+    .unique-table-class > tbody > tr > td {
+    background: #FFFFFF !important;
+    border-bottom: 1px solid #F4F4F5 !important;
+    color: #353535 !important;
+    border-top: none !important;
+    white-space: nowrap;
+}
+
+
+
+
+
+    /*.myRows{
+         height : 400px;
+    }
+
+
+    .customColheight{
+        height :100%;
+
+    }
+
+
+     .customCardHeight{
+        height :100%;
+
+    }
+
+      .customCardBodyHeight{
+        height :100%;
+
+    }*/
+
+
+
+
+
+
+
+
+</style>
+
+<div ng-controller="EMRLandingPageCtr">
+    <div class="row p-t-10 EMRLanding" ng-init="GetEMRLandingPageData()">
+
+
+        <div class="medical-summary-container">
+
+
+            <div class="emrMainContainar" >
+                <h3 class="card-title" style="margin: 0px; font-weight: bold;">@PIVF.LanguageResource.Resources.lblvVisitSummary</h3>
+                                       
+                 <div class="HeaderContainer">
+                    <div class="headerCard col-md-4 mb-3">
+                        <h6 class="HeaderHeading">@PIVF.LanguageResource.Resources.lblvRegistrationClinic :</h6>
+                        <h3 class="HeaderS">{{headerDetails.RegistrationClinic}}</h3>
+                    </div>
+                    <div class="headerCard col-md-4 mb-3">
+                        <h6 class="HeaderHeading">@PIVF.LanguageResource.Resources.lblRegistrationDate :</h6>
+                        <h3 class="HeaderS">{{headerDetails.RegistrationDate | date:'dd-MMM-yyyy'}}</h3>
+                    </div>
+                </div>
+
+
+                <div class="modal-tabs1">
+                    <button ng-class="{'active': activeTab === 'summary'}" ng-click="setActiveTab('summary')">@PIVF.LanguageResource.Resources.lblvRecentVisit</button>
+                    <button ng-class="{'active': activeTab === 'details'}" ng-click="setActiveTab('details')">@PIVF.LanguageResource.Resources.lblvAllVisits</button>
+                </div>
+
+                <h4 class="card-title" style="margin: 0px; font-weight: bold;">{{myTabNAme}}</h4>
+           
+                <div class="medical-summary-content scroller">
+                         
+                    <div ng-show="activeTab === 'summary'">
+
+                        <div class="row myRows" style="margin-bottom:30px;">
+                               <div class="col-md-4 mb-3 customColheight">
+                                   <div class="card p-3 customCardHeight">
+                                       <div class="card-body customCardBodyHeight">
+
+                                           <div>
+                                               <div class="headB">                                                                                                 
+                                                  <h2 class="card-title visitCardHeading">@PIVF.LanguageResource.Resources.lblVisitInformation</h2>                                          
+                                               </div>
+                                           </div>
+                                           <div class="customChartContainer">
+                                              <div class="customChartContent">
+                                                  <p class="HeaderS"><span class="HeaderHeading">@PIVF.LanguageResource.Resources.lblVisitDate :</span> {{headerDetails.VisitDate | date:'dd-MMM-yyyy'}}</p>
+                                                  <p class="HeaderS"><span class="HeaderHeading">@PIVF.LanguageResource.Resources.lblVisitTime :</span> {{ headerDetails.VisitDate | date:'hh:mm a' }}</p>
+                                                  <p class="HeaderS"><span class="HeaderHeading">@PIVF.LanguageResource.Resources.lblvReasonForVisit :</span> {{headerDetails.TodaysReasonForVisit}}</p>
+                                              </div>                                                                                                                                     
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+
+
+                               <div class="col-md-4 mb-3 customColheight">
+                                   <div class="card p-3 customCardHeight">
+                                       <div class="card-body customCardBodyHeight">
+
+                                           <div>
+                                               <div class="headB">
+                                                   <h2 class="card-title visitCardHeading">@PIVF.LanguageResource.Resources.lblvPaymentSummary</h2>
+                                               </div>
+                                           </div>
+                                           <div class="customChartContainer">
+                                               <div class="customChartContent">
+                                                   <p class="HeaderS"><span class="HeaderHeading">@PIVF.LanguageResource.Resources.lblvTotalBillAmount :</span> {{headerDetails.TotalBillAmount}}</p>
+                                                   <p class="HeaderS"><span class="HeaderHeading">@PIVF.LanguageResource.Resources.lblvTotalPaidAmount :</span> {{headerDetails.TotalPaidAmount}}</p>
+                                                   <p class="HeaderS"><span class="HeaderHeading">@PIVF.LanguageResource.Resources.lblBalanceAmount :</span> {{headerDetails.BalanceAmount}}</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+
+                               <div class="col-md-4 mb-3 customColheight">
+                                   <div class="card p-3 customCardHeight">
+                                       <div class="card-body customCardBodyHeight">
+
+                                           <div>
+                                               <div class="headB">
+                                                   <h2 class="card-title visitCardHeading">@PIVF.LanguageResource.Resources.lblInvestigations</h2>
+                                               </div>
+                                           </div>
+                                           <div class="customChartContainer">
+                                               <div class="customChartContent">
+
+                                               
+                                                
+                                                    <p class="HeaderS"  ng-repeat="item in InvestigationHistory" >{{item.Investigations}}</p>
+                                                 
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+
+                             
+                           </div>
+
+                        <div class="row myRows">
+                            <div class="col-md-4 mb-3 customColheight">
+                                <div class="card p-3 customCardHeight">
+                                    <div class="card-body customCardBodyHeight">
+
+                                        <div>
+                                            <div class="headB">
+                                                <h2 class="card-title visitCardHeading">@PIVF.LanguageResource.Resources.lblCaseSummary</h2>
+                                            </div>
+                                        </div>
+                                        <div class="customChartContainer">
+                                        
+                                            <div class="customChartContent">
+                                                <p class="HeaderS" ng-repeat="item in CaseSummaryHistory">
+                                                    {{item.CaseSummary}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 mb-3 customColheight">
+                                <div class="card p-3 customCardHeight">
+                                    <div class="card-body customCardBodyHeight">
+
+                                        <div>
+                                            <div class="headB">
+                                                <h2 class="card-title visitCardHeading">@PIVF.LanguageResource.Resources.lblPrescription</h2>
+                                            </div>
+                                        </div>
+                                        <div class="customChartContainer">
+                                            
+                                            <div class="customChartContent">
+                                                <p class="HeaderS" ng-repeat="item in PatientPrescriptionHistory">
+                                                    <span class="HeaderHeading">{{ item.ItemName }} :</span> {{ item.Quantity }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-3 customColheight">
+                                <div class="card p-3 customCardHeight">
+                                    <div class="card-body customCardBodyHeight">
+
+                                        <div>
+                                            <div class="headB">
+                                                <h2 class="card-title visitCardHeading">@PIVF.LanguageResource.Resources.lblvMedicalHistoryOverview</h2>
+                                            </div>
+                                        </div>
+                                        <div class="customChartContainer">                                      
+                                            <div class="customChartContent">
+                                                <p class="HeaderS" ng-repeat="item in GetHistorySummaryDetails | filter: validItems">
+                                                    <span class="HeaderHeading">{{ item.Key }} :</span> {{ item.Value }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div ng-show="activeTab === 'details'">
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <!-- Table Section -->
+                                <div class="col-12">
+                                    @*<div class="table-responsive fixed_header" style="max-height: 500px; min-width: 220px;">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 10%;"></th>
+                                                    <th style="width: 25%;">@PIVF.LanguageResource.Resources.lblVisitDate</th>
+                                                    <th style="width: 35%;">@PIVF.LanguageResource.Resources.lblOPDNo</th>
+                                                    <th style="width: 30%;">@PIVF.LanguageResource.Resources.lblDoctor</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="Item in PagedVisitList">
+                                                    <td style="width: 10%;"><a href="" ng-click="ViewHistory(VisitList.PatientID,VisitList.PatientUnitID,Item.VisitID,Item.VisitUnitID,VisitList.IsMale)">View</a></td>
+                                                    <td style="width: 25%;">{{Item.Date | date:"dd-MM-y"}} {{Item.Date | date:"h:mm a"}}</td>
+                                                    <td style="width: 35%;">{{Item.OPDNO}}</td>
+                                                    <td style="width: 30%;">{{Item.DocName}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>*@
+
+
+                                    <div class="custom-table-container">
+                                        <table id="data-table" class="table table-hover table-striped  unique-table-class">
+                                            <thead>
+                                                <tr>
+                                                    <th>@PIVF.LanguageResource.Resources.lblOPDNo</th>
+                                                    <th>@PIVF.LanguageResource.Resources.lblVisitDate</th>
+                                                    <th>@PIVF.LanguageResource.Resources.lblVisitTime</th>                                                 
+                                                    <th>@PIVF.LanguageResource.Resources.lblDoctor</th>                                          
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="Item in PagedVisitList">
+                                                    <td>{{Item.OPDNO}}</td>
+                                                    <td>{{Item.Date | date:"dd-MM-y"}}</td>
+                                                    <td>{{Item.Date | date:"h:mm a"}}</td>                                                   
+                                                    <td>{{Item.DocName}}</td>                                                 
+                                                    <td style="display:flex; justify-content: flex-end; padding-right:20px"><img src="../images/emrPrintSvg.svg" style="cursor:pointer;" ng-click="ViewHistory(VisitList.PatientID,VisitList.PatientUnitID,Item.VisitID,Item.VisitUnitID,VisitList.IsMale)" alt="emrPrintSvg"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 text-left">
+                                    <uib-pagination total-items="VisitList.length" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="3" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                                    <!-- Button group row -->
+                                </div>
+                            </div>
+                            <!-- IFrame Section -->
+                            <div class="row mt-3" style="margin-bottom:-30px; display:none;">
+                                <div class="col-12">
+                                    <iframe id="ReportFrame2" frameborder="1" scrolling="no" width="100%" height="450"></iframe>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+                  </div>
+
+
+             </div>
+
+           
+
+           
+
+            @*<div class="medical-summary-header">
+                <div class="header-section clinic-info">
+                    <p><strong>Registration Clinic :</strong> {{headerDetails.RegistrationClinic}}</p>
+                </div>
+                <div class="header-section registration-info">
+                    <p><strong>Registration Date :</strong> {{headerDetails.RegistrationDate | date:'dd-MMM-yyyy'}}</p>
+                </div>
+            </div>*@
+
+            @*<div class="medical-summary-visit-info">
+                <div class="header-section">
+                    <p><strong>Today's Reason for Visit :</strong> {{headerDetails.TodaysReasonForVisit}}</p>
+                </div>
+                <div class="header-section">
+                    <p><strong>Total Visits :</strong> {{headerDetails.TotalVisits}}</p>
+                </div>
+
+
+            </div>*@
+
+            @*<div class="medical-summary-billing-info">
+                <p><strong>Total Bill Amount :</strong> {{headerDetails.TotalBillAmount}}</p>
+                <p><strong>Total Paid Amount :</strong> {{headerDetails.TotalPaidAmount}}</p>
+                <p><strong>Balance Amount :</strong> {{headerDetails.BalanceAmount}}</p>
+            </div>*@
+
+            @*<div class="medical-summary-tabs">
+                <button class="tab-button summary-tab"
+                        ng-class="{'active': activeTab === 'summary'}"
+                        ng-click="setActiveTab('summary')">
+                    SUMMARY
+                </button>
+                <button class="tab-button details-tab"
+                        ng-class="{'active': activeTab === 'details'}"
+                        ng-click="setActiveTab('details')">
+                    DETAILS
+                </button>
+            </div>*@
+
+           @* <div class="medical-summary-content scroller">*@
+               
+                
+                 @*<div ng-show="activeTab === 'summary'">
+
+
+
+
+
+
+                    <div class="row customBox" ng-show="CaseSummaryHistory">
+                        <div class="col-md-3">
+                            <h3>Case Summary : </h3>
+                        </div>
+                        <div class="col-md-9">
+
+                            <h3>{{CaseSummaryHistory.CaseSummary}}</h3>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row customBox" ng-show="GetHistorySummaryDetails.length">
+                        <div class="col-md-3">
+                            <p><strong>History: </strong></p>
+                        </div>
+                        <div class="col-md-9" style="height: 200px;overflow: auto;">
+                            <ul ng-repeat="item in GetHistorySummaryDetails">
+                                <li ng-show="item.Value && item.Value.trim() !== 'N/A'">
+                                    <p>{{item.Key}} : {{item.Value}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="row customBox" ng-show="InvestigationHistory.length">
+                        <div class="col-md-3">
+                            <p><strong>Investigations : </strong></p>
+                        </div>
+                        <div class="col-md-9">
+                            <ul ng-repeat="item in InvestigationHistory">
+                                <li>
+                                    <p>{{item.Investigations}}</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="row customBox" ng-show="PatientPrescriptionHistory.length">
+                        <div class="col-md-3">
+                            <p><strong>Prescription : </strong></p>
+                        </div>
+                        <div class="col-md-9">
+                            <ul ng-repeat="item in PatientPrescriptionHistory">
+                                <li>
+                                    <p>{{item.ItemName}} : {{item.Quantity}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>*@
+                
+                
+                
+                @*<div ng-show="activeTab === 'details'">
+                    <h3>Details</h3>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!-- Table Section -->
+                            <div class="col-12">
+                                <div class="table-responsive table-bordered fixed_header" style="max-height: 500px; min-width: 220px;">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 10%;"></th>
+                                                <th style="width: 25%;">@PIVF.LanguageResource.Resources.lblVisitDate</th>
+                                                <th style="width: 35%;">@PIVF.LanguageResource.Resources.lblOPDNo</th>
+                                                <th style="width: 30%;">@PIVF.LanguageResource.Resources.lblDoctor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="Item in PagedVisitList">
+                                                <td style="width: 10%;"><a href="" ng-click="ViewHistory(VisitList.PatientID,VisitList.PatientUnitID,Item.VisitID,Item.VisitUnitID,VisitList.IsMale)">View</a></td>
+                                                <td style="width: 25%;">{{Item.Date | date:"dd-MM-y"}} {{Item.Date | date:"h:mm a"}}</td>
+                                                <td style="width: 35%;">{{Item.OPDNO}}</td>
+                                                <td style="width: 30%;">{{Item.DocName}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 text-left">
+                                <uib-pagination total-items="VisitList.length" ng-model="CurrentPage" ng-change="PageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="3" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+                                <!-- Button group row -->
+                            </div>
+                        </div>
+                        <!-- IFrame Section -->
+                        <div class="row mt-3" style="margin-bottom:-30px">
+                            <div class="col-12">
+                                <iframe id="ReportFrame2" frameborder="1" scrolling="no" width="100%" height="450"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+            
+            
+            
+            
+            @*</div>*@
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @*<div class="col-md-4 col-lg-4" ng-hide="isFollowupPatient">
+                <div class="icoImgComplaints"></div>
+                <div class="boxGridWrap bdrEMR-p">
+                    <section class=""><h5 class="subTitle txtBlue">Complaints/FU</h5></section>
+                    <div class="table-responsive fixed_header">
+                        <table class="table " id="profile_table" style="min-height:250px;max-height:250px;min-width: 300px;">
+                            <thead>
+                                <tr>
+                                    <th st-ratio="35">Date</th>
+                                    <th st-ratio="65">Captured By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="" ng-repeat="i in lstCC">
+                                    <td st-ratio="35">{{i.FCDate|date:'dd-MMM-yyyy'}}</td>
+                                    <td st-ratio="65">{{i.CapturedBy}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-right p-r-10">
+                        <button class="btn btn-primary colorBlue text-right" type="button" ng-click="Navigate(GenderID,'Complaint','Complaint',1)" id="" value=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4" ng-hide="isFollowupPatient">
+                <div ng-class="{1:'icoImgMaleHistory',2:'icoImgFemaleHistory'}[selPatGenID]"></div>
+
+                <div class="boxGridWrap bdrEMR-i">
+                    <section class=""><h5 class="subTitle txtGreen">History</h5></section>
+                    <div class="table-responsive fixed_header">
+                        <table class="table " id="profile_table" style="min-height:250px;max-height:250px;min-width: 300px;">
+                            <thead>
+                                <tr>
+                                    <th st-ratio="35">Date</th>
+                                    <th st-ratio="65">Captured By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="" ng-repeat="i in lstHistory">
+                                    <td st-ratio="35">{{i.Date|date:'dd-MMM-yyyy'}}</td>
+                                    <td st-ratio="65">{{i.CapturedBy}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-right p-r-10">
+                        <button class="btn btn-primary colorGreen text-right" type="button" ng-click="Navigate(GenderID,'History','History',1)" id="" value=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4" ng-show="isFollowupPatient">
+                <div class="icoImgPrescription"></div>
+                <div class="boxGridWrap bdrEMR-p">
+                    <section class=""><h5 class="subTitle txtBlue">Prescription</h5></section>
+                    <div class="table-responsive fixed_header PrescriptionTbl">
+                        <table class="table " id="profile_table" style="min-width: 465px;min-height: 235px;max-height: 235px;">
+                            <thead>
+                                <tr>
+                                    <th st-ratio="20">Date</th>
+                                    <th st-ratio="60">Drug Name/Molecule Name</th>
+
+                                    <th st-ratio="20">Frequency</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="" ng-repeat="item in PrescriptionList">
+                                    <td st-ratio="20">{{item.PrescriptionDate | date:'dd-MMM-yyyy'}}</td>
+                                    <td st-ratio="60">{{item.DrugName}}</td>
+
+                                    <td st-ratio="20">{{item.Frequency}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-right p-r-10">
+
+                        <button class="btn btn-primary colorBlue text-right" type="button" title="New" ng-click="Navigate(GenderID,'Prescription','Prescription',1)" value=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4" ng-show="isFollowupPatient">
+                <div class="icoImgInvestigations"></div>
+                <div class="boxGridWrap bdrEMR-i">
+                    <section class=""><h5 class="subTitle txtGreen">Investigations & Procedure</h5></section>
+                    <div class="table-responsive fixed_header">
+                        <table class="table " id="profile_table" style="min-height:250px;max-height:250px;min-width: 270px;">
+                            <thead>
+                                <tr>
+                                    <th st-ratio="40">Date</th>
+                                    <th st-ratio="60">Service Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="" ng-repeat="i in InvestigationList">
+                                    <td st-ratio="40">{{i.InvDate | date:'dd-MMM-yyyy'}}</td>
+                                    <td st-ratio="60">{{i.ServiceName}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-right p-r-10">
+                        <div class="btn btn-primary p-0 colorGreen text-right relDiv">
+                            <input id="dropList" type="checkbox">
+                            <label class="drop m-0" for="dropList"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
+                            <div class="listMenu">
+                                <ul>
+                                    <li ng-click="Navigate(GenderID,'Investigation','Investigation',1)">Investigations</li>
+                                    <li ng-click="Navigate(GenderID,'Procedures','Procedures',1)">Procedures</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4">
+                <div class="icoImgDiagnosis"></div>
+                <div class="boxGridWrap bdrEMR-d">
+                    <section class=""><h5 class="subTitle txtPink">Diagnosis</h5></section>
+                    <div class="table-responsive fixed_header">
+                        <table class="table " id="profile_table" style="min-height:250px;max-height:250px;min-width: 300px;">
+                            <thead>
+                                <tr>
+                                    <th st-ratio="35">Diagnosis Code</th>
+                                    <th st-ratio="65">Diagnosis Name</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="" ng-repeat="i in DiagnosisList">
+                                    <td st-ratio="35">{{i.DiagnoCode}}</td>
+                                    <td st-ratio="65">{{i.DiagnoName}}</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-right p-r-10">
+                        <button class="btn btn-primary colorPink text-right" type="button" ng-click="Navigate(GenderID,'Diagnosis','Diagnosis',1)" id="" value=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>*@
+
+        <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+    </div>
+</div>
+
+<script type="text/ng-template" id="visitmodel">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="Cancel();"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblPreviousVisits</h4>@*Previous Visits ::Modified by swatih for localization 29/7/2020*@
+    </div>
+    <div class="modal-body">
+        <div class="table-responsive fixed_header">
+            <table class="table table-hover table-striped selectPatient_item" style="min-width:595px;max-height:325px;min-width: 595px;
+    max-height: 410px;">
+                <thead>
+                    <tr>
+                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblSelect</th>
+                        @*Select ::Modified by swatih for localization 29/7/2020*@
+                        <th st-ratio="18">@PIVF.LanguageResource.Resources.lblDate</th>
+                        @*Date ::Modified by swatih for localization 29/7/2020*@
+                        <th st-ratio="18">@PIVF.LanguageResource.Resources.lblTime</th>
+                        @*Time ::Modified by swatih for localization 29/7/2020*@
+                        <th st-ratio="18">@PIVF.LanguageResource.Resources.lblClinicName</th>
+                        @*Clinic Name ::Modified by swatih for localization 29/7/2020*@
+                        <th st-ratio="22">@PIVF.LanguageResource.Resources.lblOPDNo </th>
+                        @*OPDNo ::Modified by swatih for localization 29/7/2020*@
+                        <th st-ratio="27">@PIVF.LanguageResource.Resources.lblDoctor</th>
+                        @*Doctor ::Modified by swatih for localization 29/7/2020*@
+                        <th st-ratio="5">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="Item in visitInformation">
+                        @*<td><a href="" ng-click="SelectPatient(Item)">Select</a></td>*@
+                        @*<td st-ratio="10"><a href="" ng-click="SelectPatient(Item)"></a></td>*@
+                        <td st-ratio="10">
+                            @*<div class="inputChkbx inputNone">
+                                <input type="checkbox" name="" ng-click="SelectPatient(Item)" id="{{$index}}">
+                                <label for="{{$index}}"><span class="checkbox"></span></label>
+                                </div>*@
+                            
+                            @*<div class="inputChkbx inputNone">
+                                <input type="checkbox" name="" ng-click="SelectPatient(Item)" id="{{$index}}">
+                                <label for="{{$index}}"><span class="checkbox"></span></label>
+                            </div>*@
+
+                            <div>
+                                <input type="radio" name="selectedPatient" ng-click="SelectPatient(Item)" id="{{$index}}">
+                                <label for="{{$index}}"><span class="checkbox"></span></label>
+                            </div>
+
+                            @*<div class="inputChkbx inputNone">
+                                    <input type="checkbox" name="" ng-click="SelectPatient(Item)" id="{{$index}}">
+                                    <label for="{{$index}}"><span class="checkbox"></span></label>
+                                </div>*@
+                        </td>
+                        <td st-ratio="18">{{Item.Date | date:"dd-MM-y"}}</td>
+                        <td st-ratio="18">{{Item.Date | date:"h:mm a"}} </td>
+                        <td st-ratio="18">{{Item.Clinicname }} </td>
+                        <td st-ratio="22">{{Item.OPDNO}}</td>
+                        <td st-ratio="27">{{Item.DocName}}</td>
+                        <td st-ratio="5"><a title="@PIVF.LanguageResource.Resources.lblvVideoConsultation" ng-show="Item.VisitTypeID==12"><span class="glyphicon glyphicon-facetime-video"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="row page_actions text-right">
+            <div class="col-lg-12 col-md-12">
+                <button class="btn btn-default" type="button" id="" ng-click="Cancel();" value=""> @PIVF.LanguageResource.Resources.btnCancel</button>@*Cancel ::Modified by swatih for localization 29/7/2020*@
+            </div>
+        </div>
+    </div>
+
+</script>

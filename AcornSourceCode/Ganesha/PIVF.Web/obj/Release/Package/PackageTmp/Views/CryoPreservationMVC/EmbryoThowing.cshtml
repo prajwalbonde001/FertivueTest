@@ -1,0 +1,305 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+
+    .has-error input {
+        border: 1px solid red !important;
+    }
+</style>
+
+<div ng-controller="EmbryoThowingCtr" ng-init="PageSetup()" style="position: relative;
+        z-index: 11;">
+    <!-- cycles links -->
+    <div class="cycleLinks">
+        <ul>
+            <li ng-click="Navigate('CycleOverview')">@PIVF.LanguageResource.Resources.lblSOverview</li>
+            <li ng-click="Navigate('StimulationChart')">@PIVF.LanguageResource.Resources.lblStimulationChart</li>
+            <li ng-click="Navigate('SemenDetails')" ng-show="configData.SemenDetail">@PIVF.LanguageResource.Resources.lblSSemenDetails</li>
+            <li ng-click="Navigate('IUI')" ng-show="configData.IUI">@PIVF.LanguageResource.Resources.lblSIUI</li>
+            <li ng-click="Navigate('OPU')" ng-show="configData.OPU">@PIVF.LanguageResource.Resources.lblSOpu</li>
+            <li ng-click="Navigate('Embrology')" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSEmbryology</li>
+            <li ng-click="Navigate('PGT');" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSPgt</li>
+
+            <li class="active subMenucryo" ng-show="configData.CryoPreservation">
+                <span class="menu-title">
+                    @PIVF.LanguageResource.Resources.lblCryobank
+                    <span class="arrow"></span> <!-- Arrow added -->
+                </span>
+                <ul>
+                    <li ng-click="Navigate('OocyteVitrification')" ng-show="configData.OocyteVitrification">@PIVF.LanguageResource.Resources.lblSOocyteVitrification</li>
+                    <li ng-click="Navigate('OocyteThowing')" ng-show="configData.OocyteThawing">@PIVF.LanguageResource.Resources.lblSOocyteThawing</li>
+                    <li ng-click="Navigate('EmbryoVitrification')" ng-show="configData.EmbryoVitrification">@PIVF.LanguageResource.Resources.lblSEmbryoVitrification</li>
+                    <li class="active" ng-click="Navigate('EmbryoThowing')" ng-show="configData.EmbryoThawing">@PIVF.LanguageResource.Resources.lblSEmbryoThawing</li>
+                </ul>
+            </li>
+            <li ng-click="Navigate('EmbryoTransfer')" ng-show="configData.EmbryoTransfer">@PIVF.LanguageResource.Resources.lblSEmbryoTransfer</li>
+            <li ng-click="Navigate('Outcome')" ng-show="configData.Outcome">@PIVF.LanguageResource.Resources.lblOutcome</li>
+        </ul>
+    </div>
+    <!-- /cycles links -->
+    <div class="div60"></div>
+    <div class="form_Content">
+        <div class="row">
+            <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblSEmbryovitsummary</h5></section>
+            <div class="col-lg-12">
+                <div class="table-responsive table-bordered fixed_header">
+                    <table class="table " id="" style="min-width: 2400px;min-height:250px; max-height:370px;">
+                        <thead>
+                            <tr>
+                                <th st-ratio="3" class="text-center">@PIVF.LanguageResource.Resources.lblSSelect</th>
+                                <th st-ratio="6" ng-click="SortData1('CycleCode')">@PIVF.LanguageResource.Resources.lblCycleCode<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="5" ng-click="SortData1('EmbNumber')">@PIVF.LanguageResource.Resources.lblSEmbryono<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="5" ng-click="SortData('FreezingNo')">@PIVF.LanguageResource.Resources.lblSFreezingNo<div ng-class="sortClass"></div></th>
+                                <th st-ratio="5" ng-click="SortData1('VitriDate')">@PIVF.LanguageResource.Resources.lblSVitrdate<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="5" ng-click="SortData1('VitriTime')">@PIVF.LanguageResource.Resources.lblSVitrtime<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="3" ng-click="SortData1('Tank')">@PIVF.LanguageResource.Resources.lblSTank<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="4" ng-click="SortData1('Conistor')">@PIVF.LanguageResource.Resources.lblCanister<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="4" ng-click="SortData1('GlobletColor')">@PIVF.LanguageResource.Resources.lblSgobletcolor<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="4" ng-click="SortData1('GlobletSize')" ng-hide="true">@PIVF.LanguageResource.Resources.lblSGobletsize<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="4" ng-click="SortData1('Cryolock')">@PIVF.LanguageResource.Resources.lblScryolock<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="4" ng-click="SortData('MediaUsed')">@PIVF.LanguageResource.Resources.lblSmediaused<div ng-class="sortClass"></div></th>
+                                <th st-ratio="4" ng-click="SortData('LotNo')">@PIVF.LanguageResource.Resources.lblSlotno<div ng-class="sortClass"></div></th>
+                                <th st-ratio="4" ng-click="SortData('MediaExpiryDate')">@PIVF.LanguageResource.Resources.lblSmediaexpirydate<div ng-class="sortClass"></div></th>
+                                <th st-ratio="6" ng-click="SortData1('CellSatge')">@PIVF.LanguageResource.Resources.lblSCellstagegrades<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="4" ng-click="SortData1('Day')">@PIVF.LanguageResource.Resources.lblDay<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="5" ng-click="SortData1('TDate')">@PIVF.LanguageResource.Resources.lblExpiryDate<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="7" ng-click="SortData1('ExpiryDate')">@PIVF.LanguageResource.Resources.lblSexpirytime<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="7" ng-click="SortData1('ExpiryTime')">@PIVF.LanguageResource.Resources.lblSEmbryologist<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="6" ng-click="SortData1('Embryologist')">@PIVF.LanguageResource.Resources.lblSWitnessembryologist<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="5" ng-click="SortData1('Remarks')">@PIVF.LanguageResource.Resources.lblRemarks<div ng-class="sortClass1"></div></th>
+                                <th st-ratio="4" ng-click="SortData1('IsfreshStatus')">@PIVF.LanguageResource.Resources.lblStatus<div ng-class="sortClass1"></div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="" ng-repeat="Item in FillVitriGrid" ng-class="{'rowDisableRed':Item.PlanTherapyID == CoupleDetails.FemalePatient.TherapyID && Item.PlanTherapyUnitID==CoupleDetails.FemalePatient.TherapyUnitID && !Item.Isfresh,'rowDisableGray':Item.IsThawDone && Item.IsThawFinalize}">
+                                @*| orderBy:SortColumn1:reverseSort1"*@
+                                <td st-ratio="3" class="text-center">
+                                    <input type="checkbox" name="" ng-model="Item.IsAddToThawing" id="{{$index}}" ng-click="AddRow(Item)" ng-checked="Item.IsThawDone" ng-disabled="Item.IsThawDone || Item.PlanTherapyID == CoupleDetails.FemalePatient.TherapyID && Item.PlanTherapyUnitID==CoupleDetails.FemalePatient.TherapyUnitID && !Item.Isfresh">
+                                    <label for="{{$index}}"><span class="checkbox"></span></label>
+                                </td>
+                                <td st-ratio="6">{{Item.CycleCode}}</td>
+                                <td st-ratio="5">{{Item.EmbNumber}}</td>
+                                <td st-ratio="5">{{Item.FreezingNo}}</td>
+                                <td st-ratio="5">{{Item.VitriDate | date:"dd-MMM-yyyy"}}</td>
+                                <td st-ratio="5">{{Item.VitriTime | date:"HH:mm"}}</td>
+                                <td st-ratio="3">{{Item.Tank}}</td>
+                                <td st-ratio="4">{{Item.Conistor}}</td>
+                                <td st-ratio="4">{{Item.GlobletColor}}</td>
+                                <td st-ratio="4" ng-hide="true">{{Item.GlobletSize}}</td>
+                                <td st-ratio="4">{{Item.Cryolock}}</td>
+                                <td st-ratio="4">{{Item.MediaUsed}}</td>
+                                <td st-ratio="4">{{Item.LotNo}}</td>
+                                <td st-ratio="4">{{Item.MediaExpiryDate | date :  "dd-MMM-yyyy"}}</td>
+                                <td st-ratio="6">{{Item.CellSatge}} - {{Item.Grade}}</td>
+                                <td st-ratio="4">{{Item.Day}}</td>
+                                <td st-ratio="7">{{Item.ExpiryDate | date:"dd-MMM-yyyy"}}</td>
+                                <td st-ratio="7">{{Item.ExpiryTime | date:"HH:mm"}}</td>
+                                <td st-ratio="5">{{Item.Embryologist}}</td>
+                                <td st-ratio="6">{{Item.Witness}}</td>
+                                <td st-ratio="5">{{Item.Remarks}}</td>
+                                <td st-ratio="4">{{Item.IsfreshStatus}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <section>
+                <div class="col-md-6 col-lg-6">
+                    <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblSEmbryoThawing</h5>
+                </div>
+                <div class="col-md-6 col-lg-6" ng-show="configData.DonarEmbBtn">
+                    <button class="btn btn-primary m-t-10 f-right" type="button" value="" ng-click="GetDonarEmbriyo()">@PIVF.LanguageResource.Resources.lblSgetdonorembryos</button>  @*data-toggle="modal" data-target="#getDonorOocytesmodal"*@
+                </div>
+            </section>
+            <div class="col-lg-12">
+                <div class="table-responsive fixed_header table-bordered">
+                    <!-- min-height:355px;  -->
+                    <table class="table " id="" style="min-width:1500px;min-height:200px; max-height:200px;">
+                        <thead>
+                            <tr>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblCycleCode</th>
+                                <th st-ratio="6">@PIVF.LanguageResource.Resources.lblSEmbryono</th>
+                                <th st-ratio="12">@PIVF.LanguageResource.Resources.lblDate</th>
+                                <th st-ratio="7">@PIVF.LanguageResource.Resources.lblSTime</th>
+                                <th st-ratio="14">@PIVF.LanguageResource.Resources.lblPostThawingPlan</th>
+                                <th st-ratio="14">@PIVF.LanguageResource.Resources.lblSEmbryologist</th>
+                                <th st-ratio="15">@PIVF.LanguageResource.Resources.lblSWitnessembryologist</th>
+                                <th st-ratio="15">@PIVF.LanguageResource.Resources.lblRemarks</th>
+                                <th st-ratio="7" class="text-center" width="">@PIVF.LanguageResource.Resources.lblFinalize</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="" ng-repeat="Item in ThowingGrid">
+                                <td st-ratio="10">{{Item.CycleCode}}</td>
+                                <td st-ratio="6">{{Item.EmbNumber}}</td>
+                                <td st-ratio="12">
+                                    <div class="input-group date" ng-class="{invalid:Item.ThowDateInvalid == true}">
+                                        <input type="text" class="form-control" ng-disabled="Item.rowdisable"
+                                               min-date="minDate"
+                                               max-date="maxDate"
+                                               placeholder="dd-Mmm-yyyy"
+                                               ng-model="Item.ThowDate"
+                                               aria-describedby=""
+                                               uib-datepicker-popup="{{format}}"
+                                               show-button-bar="false"
+                                               datepicker-options="dateOptions"
+                                               alt-input-formats="altInputFormats"
+                                               is-open="Item.opened1"
+                                               tabindex="1">
+                                        <span class="input-group-addon" id="" ng-click="open1($event,Item)"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    </div>
+                                </td>
+                                <td st-ratio="7">
+                                    @*<div class="relDiv gridTime">*@
+                                    <div uib-timepicker ng-model="Item.ThowTime" ng-disabled="Item.rowdisable"
+                                         class="timeCss"
+                                         ng-required="true"
+                                         hour-step="1"
+                                         minute-step="1"
+                                         show-meridian="false"
+                                         show-spinners="false"
+                                         show-seconds="false"
+                                         ng-class="{'has-error':Item.ThowTimeInvalid == true}"
+                                         tabindex="2">
+                                    </div>
+                                    @*</div>*@
+                                </td>
+                                <td st-ratio="14">
+                                    <select ng-model="Item.ThawingPlanID" ng-init="PGDPGSInit(Item)" ng-disabled="Item.rowdisable" ng-class="{select:Item.ThawingPlanIDInvalid==true}"
+                                            class="form-control"
+                                            ng-options="item.ID as item.Description for item in Item.PlanMaster">
+                                        <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                                    </select>
+                                </td>
+                                <td st-ratio="14">
+                                    <select ng-model="Item.ThowEmbryologistID" ng-disabled="Item.rowdisable" ng-class="{select:Item.ThowEmbryologistIDInvalid==true}"
+                                            class="form-control"
+                                            ng-options="item.ID as item.Description for item in EmbryologistAndrologist">
+                                        <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                                    </select>
+                                </td>
+                                <td st-ratio="15">
+                                    <select ng-model="Item.ThowWitnessID" ng-disabled="Item.rowdisable"
+                                            class="form-control"
+                                            ng-options="item.ID as item.Description for item in EmbryologistAndrologist">
+                                        <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                                    </select>
+                                </td>
+                                <td st-ratio="15"><input type="text" class="form-control" ng-model="Item.ThowRemark" ng-disabled="Item.rowdisable"></td>
+                                <td st-ratio="7" class="text-center"><input type="checkbox" ng-model="Item.ThowFinalize" ng-disabled="Item.rowdisable"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Save Cancle Buttons -->
+    <div class="row form-horizontal m-t-10">
+        <div class="col-lg-12 text-right">
+            <button class="btn btn-primary" type="button" ng-disabled="disableSaveBtn" ng-click="Save()">@PIVF.LanguageResource.Resources.lblSSave</button>
+            @*<button class="btn btn-primary" type="button" ng-click="Cancel()"  >Cancel</button>*@
+        </div>
+    </div>
+
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+</div>
+<style type="text/css">
+    .custom-class {
+        background-color: gray;
+    }
+</style>
+<!-- Get Donor Oocyte Modal Start -->
+<script type="text/ng-template" id="getDonorEmbriyosmodal">
+    <div class="modal-content"
+         ng-init="GetDonarList()">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="Cancel()"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblSgetdonorembryos</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 bdrRight">
+                    <h5 class="subTitle m-t-0">@PIVF.LanguageResource.Resources.lblSdonorlist</h5>
+                    <div class="table-responsive table-bordered" style="min-height:100px;">
+                        <table class="table table-hover table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>@PIVF.LanguageResource.Resources.lblPRN</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblName</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblAge</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="Item in DonorList">
+                                    <td>
+                                        <input type="radio" name="test" ng-click="GetEmbriyoVitrificationDetails(Item)" ng-disabled="Item.Isdisable">
+                                    </td>
+                                    <td>{{Item.MRNo}}</td>
+                                    <td>{{Item.PatientName}}</td>
+                                    <td>{{Item.Age}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <h5 class="subTitle m-t-0">lblSlistofembryos</h5>
+                    <div class="table-responsive table-bordered" style="min-height:100px;">
+                        <table class="table table-hover table-striped table-bordered" style="width: 680px;">
+                            <thead>
+                                <tr>
+                                    <th>@PIVF.LanguageResource.Resources.lblSelect</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblSEmbryono</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblSvitrdatetime</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblSTank</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblCanister</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblSgobletcolor</th>
+                                    <th ng-hide="true">@PIVF.LanguageResource.Resources.lblSGobletsize</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblScryolock</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblSMaturity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="Item in VitrificationDetails">
+                                    <td>
+                                        <input type="checkbox" ng-model="Item.IsReceived">
+                                    </td>
+                                    <td>{{Item.EmbNumber}}</td>
+                                    <td>{{Item.VitriDate  | date:"dd-MMM-yyyy"}} &nbsp; {{Item.VitriTime | date:"h:mm a"}}</td>
+                                    <td>{{Item.TankDescription}}</td>
+                                    <td>{{Item.CanistorDescription}}</td>
+                                    <td>{{Item.GlobletColorDescription}}</td>
+                                    <td ng-hide="true">{{Item.GlobletSizeDescription}}</td>
+                                    <td>{{Item.CryoLockDescription}}</td>
+                                    <td>{{Item.MaturityDesc}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" ng-click="TransferDonorEmbriyostoCouple()" ng-disabled="disableSaveBtn" class="btn btn-primary">@PIVF.LanguageResource.Resources.lblOK</button>
+            <button type="button" class="btn btn-default" ng-click="Cancel()">@PIVF.LanguageResource.Resources.btnCancel</button>
+        </div>
+
+    </div><!-- /.modal-content -->
+
+</script>
+<!-- Get Donor Oocyte Modal End -->

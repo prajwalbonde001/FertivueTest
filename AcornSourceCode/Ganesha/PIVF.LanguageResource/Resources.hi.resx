@@ -1,0 +1,3262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="btnAdd" xml:space="preserve">
+    <value>जोड़ना</value>
+    <comment>Add</comment>
+  </data>
+  <data name="btnAddRows" xml:space="preserve">
+    <value>पंक्तियाँ जोड़ें</value>
+    <comment>Add rows</comment>
+  </data>
+  <data name="btnAttachedIDproof" xml:space="preserve">
+    <value>आईडी प्रूफ संलग्न करें</value>
+    <comment>Attach ID Proof</comment>
+  </data>
+  <data name="btnBack" xml:space="preserve">
+    <value>वापस</value>
+    <comment>Back</comment>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>रद्द करना</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="btnCapture" xml:space="preserve">
+    <value>कब्जा</value>
+    <comment>Capture</comment>
+  </data>
+  <data name="btnChooseFromCamera" xml:space="preserve">
+    <value>एक तस्वीर ले लो</value>
+    <comment>Take a Picture</comment>
+  </data>
+  <data name="btnChooseFromGallary" xml:space="preserve">
+    <value>गैलरी से चयन करो</value>
+    <comment>Choose From Gallery</comment>
+  </data>
+  <data name="btnClear" xml:space="preserve">
+    <value>स्पष्ट</value>
+    <comment>Clear</comment>
+  </data>
+  <data name="btnClose" xml:space="preserve">
+    <value>बंद करे</value>
+    <comment>Close</comment>
+  </data>
+  <data name="btnContinue" xml:space="preserve">
+    <value>जारी रखें</value>
+    <comment>Continue</comment>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>हटाएं</value>
+    <comment>Delete</comment>
+  </data>
+  <data name="btnDownload" xml:space="preserve">
+    <value>डाउनलोड</value>
+    <comment>Download</comment>
+  </data>
+  <data name="btnEdit" xml:space="preserve">
+    <value>संपादित करें</value>
+    <comment>Edit</comment>
+  </data>
+  <data name="btnLink" xml:space="preserve">
+    <value>संपर्क</value>
+    <comment>Link</comment>
+  </data>
+  <data name="btnLinkPartner" xml:space="preserve">
+    <value>लिंक सहयोगी</value>
+    <comment>Link Partner</comment>
+  </data>
+  <data name="btnNew" xml:space="preserve">
+    <value>नया</value>
+    <comment>New</comment>
+  </data>
+  <data name="btnNo" xml:space="preserve">
+    <value>नहीं</value>
+    <comment>No</comment>
+  </data>
+  <data name="btnOK" xml:space="preserve">
+    <value>ठीक है</value>
+    <comment>OK</comment>
+  </data>
+  <data name="btnPhoto" xml:space="preserve">
+    <value>तस्वीर</value>
+    <comment>Photo</comment>
+  </data>
+  <data name="btnPreview" xml:space="preserve">
+    <value>पूर्वावलोकन</value>
+    <comment>Preview</comment>
+  </data>
+  <data name="btnPrint" xml:space="preserve">
+    <value>छाप</value>
+    <comment>Print</comment>
+  </data>
+  <data name="btnRegister" xml:space="preserve">
+    <value>नोंदणी करा</value>
+  </data>
+  <data name="btnRegisterExternalDoctor" xml:space="preserve">
+    <value>बाह्य डॉक्टरची नोंदणी करा</value>
+  </data>
+  <data name="btnRemove" xml:space="preserve">
+    <value>काढा</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>सहेजें</value>
+    <comment>save and bill</comment>
+  </data>
+  <data name="btnSaveAndBill" xml:space="preserve">
+    <value>बचाओ और बिल दो</value>
+  </data>
+  <data name="btnSavecheckin" xml:space="preserve">
+    <value>सेव - चेक-इन</value>
+  </data>
+  <data name="btnSearch" xml:space="preserve">
+    <value>खोज</value>
+  </data>
+  <data name="btnTodaysPrescriptions" xml:space="preserve">
+    <value>नुस्खे</value>
+    <comment>todays precription</comment>
+  </data>
+  <data name="btnUpdate" xml:space="preserve">
+    <value>अपडेट करें</value>
+    <comment>update</comment>
+  </data>
+  <data name="btnUploadPhoto" xml:space="preserve">
+    <value>फोटो अपलोड करें</value>
+    <comment>uplod photo</comment>
+  </data>
+  <data name="btnVisit" xml:space="preserve">
+    <value>पर जाएँ</value>
+    <comment>visit</comment>
+  </data>
+  <data name="btnYes" xml:space="preserve">
+    <value>हाँ</value>
+  </data>
+  <data name="categoryL1" xml:space="preserve">
+    <value>श्रेणी L1</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="CodeRegExp" xml:space="preserve">
+    <value>अल्फ़ान्यूमेरिक और विशेष वर्ण (-:, /, _) दर्ज करें</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>विवरण</value>
+  </data>
+  <data name="Form_Header" xml:space="preserve">
+    <value>विशेषज्ञता</value>
+  </data>
+  <data name="Grid_Header" xml:space="preserve">
+    <value>विशेषज्ञता सूची</value>
+  </data>
+  <data name="inValidAppointmentSelected" xml:space="preserve">
+    <value>माफ़ करना !!! डॉक्टर इस समय स्लॉट पर उपलब्ध नहीं हैं, कृपया हरे रंग में स्लॉट चुनें</value>
+    <comment>Sorry !!! Doctor Is Not Available At This Time Slot , Please Select Slot Within Green Color</comment>
+  </data>
+  <data name="IsCityReq" xml:space="preserve">
+    <value>शहर चुनें</value>
+  </data>
+  <data name="IsCodeRequired" xml:space="preserve">
+    <value>कोड आवश्यक है।</value>
+  </data>
+  <data name="IsCountryReq" xml:space="preserve">
+    <value>देश चुनिए</value>
+  </data>
+  <data name="IsDescriptionRequired" xml:space="preserve">
+    <value>विवरण की आवश्यकता है</value>
+  </data>
+  <data name="IsStateReq" xml:space="preserve">
+    <value>राज्य चुनें</value>
+  </data>
+  <data name="items_per_page" xml:space="preserve">
+    <value>आइटम प्रति पेज</value>
+  </data>
+  <data name="lbl12" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lbl12_02_2019" xml:space="preserve">
+    <value>12/02/2019</value>
+  </data>
+  <data name="lbl20_06_2017" xml:space="preserve">
+    <value>20/06/2017</value>
+  </data>
+  <data name="lbl303" xml:space="preserve">
+    <value>303</value>
+  </data>
+  <data name="lblA" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="lblAccountHolderName" xml:space="preserve">
+    <value>खाताधारक का नाम</value>
+  </data>
+  <data name="lblAccountHolder_Name" xml:space="preserve">
+    <value>खाता धारक का नाम</value>
+  </data>
+  <data name="lblAccountLockDuration" xml:space="preserve">
+    <value>खाता लॉक अवधि</value>
+  </data>
+  <data name="lblAccountLockThreshold" xml:space="preserve">
+    <value>खाता लॉक थ्रेशोल्ड</value>
+  </data>
+  <data name="lblAccountNo" xml:space="preserve">
+    <value>खाता क्रमांक</value>
+  </data>
+  <data name="lblAccountType" xml:space="preserve">
+    <value>खाते का प्रकार</value>
+  </data>
+  <data name="lblActions" xml:space="preserve">
+    <value>क्रिया</value>
+  </data>
+  <data name="lblActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="lblAdd" xml:space="preserve">
+    <value>जोड़ना</value>
+  </data>
+  <data name="lblAdd5Rows" xml:space="preserve">
+    <value>5 पंक्तियाँ जोड़ें</value>
+  </data>
+  <data name="lblAddAnotherAddress" xml:space="preserve">
+    <value>दूसरा पता भरो</value>
+  </data>
+  <data name="lblAddedby" xml:space="preserve">
+    <value>द्वारा जोड़ा</value>
+  </data>
+  <data name="lblAddedToTodaysList" xml:space="preserve">
+    <value>aaj की सूची में जोड़ा गया</value>
+  </data>
+  <data name="lblAddictions" xml:space="preserve">
+    <value>व्यसनों</value>
+  </data>
+  <data name="lblAdditionalInformation" xml:space="preserve">
+    <value>रोगी अतिरिक्त जानकारी</value>
+  </data>
+  <data name="lblAddPayer" xml:space="preserve">
+    <value>भुगतानकर्ता जोड़ें</value>
+  </data>
+  <data name="lblAddRemark" xml:space="preserve">
+    <value>रिमार्क जोड़ें</value>
+  </data>
+  <data name="lblAddress" xml:space="preserve">
+    <value>पता</value>
+  </data>
+  <data name="lblAddress1" xml:space="preserve">
+    <value>पता 1</value>
+  </data>
+  <data name="lblAddress2" xml:space="preserve">
+    <value>पता द्वितीय</value>
+  </data>
+  <data name="lblAddressFor" xml:space="preserve">
+    <value>के लिए पता</value>
+  </data>
+  <data name="lblAddressInformation" xml:space="preserve">
+    <value>पते की जानकारी</value>
+  </data>
+  <data name="lblAddressLine01" xml:space="preserve">
+    <value>पता पंक्ति 01</value>
+  </data>
+  <data name="lblAddressLine02" xml:space="preserve">
+    <value>पता पंक्ति 02</value>
+  </data>
+  <data name="lblAddressLine1" xml:space="preserve">
+    <value>पता पंक्ति 1</value>
+  </data>
+  <data name="lblAddressLine2" xml:space="preserve">
+    <value>पता पंक्ति नं। 2</value>
+  </data>
+  <data name="lblAddressLine3" xml:space="preserve">
+    <value>पता पंक्ति 3</value>
+  </data>
+  <data name="lblAddressType" xml:space="preserve">
+    <value>पता प्रकार</value>
+  </data>
+  <data name="lblAdhesions" xml:space="preserve">
+    <value>आसंजन</value>
+  </data>
+  <data name="lblADonorCandonateOocyte3timesinherlifetimewithanintervalof3monthsbetweentwodonation" xml:space="preserve">
+    <value>एक दाता अपने जीवनकाल में 3 बार दो दान के बीच 3 महीने के अंतराल के साथ Oocytes दान कर सकता है</value>
+  </data>
+  <data name="lblAdvanceAgainst" xml:space="preserve">
+    <value>एडवांस भुगतान का कारण</value>
+  </data>
+  <data name="lblAdvanceSearch" xml:space="preserve">
+    <value>उन्नत खोज</value>
+  </data>
+  <data name="lblAFC" xml:space="preserve">
+    <value>एएफसी</value>
+  </data>
+  <data name="lblAge" xml:space="preserve">
+    <value>आयु</value>
+  </data>
+  <data name="lblAgeFrom" xml:space="preserve">
+    <value>से आयु</value>
+  </data>
+  <data name="lblAgeGender" xml:space="preserve">
+    <value>उम्र और लिंग</value>
+  </data>
+  <data name="lblAgency" xml:space="preserve">
+    <value>एजेंसी</value>
+  </data>
+  <data name="lblAgent" xml:space="preserve">
+    <value>एजेंट</value>
+  </data>
+  <data name="lblAgeofMenarche_In_years" xml:space="preserve">
+    <value>मेनार्चे की आयु (वर्षों में)</value>
+  </data>
+  <data name="lblAgeTo" xml:space="preserve">
+    <value>आयु - को</value>
+  </data>
+  <data name="lblAge_Gender" xml:space="preserve">
+    <value>उम्र और लिंग</value>
+  </data>
+  <data name="lblAlcohol" xml:space="preserve">
+    <value>शराब</value>
+  </data>
+  <data name="lblAll" xml:space="preserve">
+    <value>सब</value>
+  </data>
+  <data name="lblAllergies" xml:space="preserve">
+    <value>एलर्जी</value>
+  </data>
+  <data name="lblAllergy" xml:space="preserve">
+    <value>Allergy</value>
+  </data>
+  <data name="lblAllToCSV" xml:space="preserve">
+    <value>CSV के सभी रिकॉर्ड डाउनलोड करें</value>
+  </data>
+  <data name="lblAllToPDF" xml:space="preserve">
+    <value>सभी रिकॉर्ड पीडीएफ में डाउनलोड करें</value>
+  </data>
+  <data name="lblAlternateAddress" xml:space="preserve">
+    <value>वैकल्पिक पता</value>
+  </data>
+  <data name="lblAltLandlineNo" xml:space="preserve">
+    <value>ऑल्ट लैंडलाइन नं</value>
+  </data>
+  <data name="lblAltMob" xml:space="preserve">
+    <value>वैकल्पिक मोबाइल नंबर</value>
+  </data>
+  <data name="lblAmenorrheaType" xml:space="preserve">
+    <value>Amenorrhea प्रकार</value>
+  </data>
+  <data name="lblAmmenorhea" xml:space="preserve">
+    <value>amenorrhea</value>
+  </data>
+  <data name="lblAmount" xml:space="preserve">
+    <value>रकम</value>
+  </data>
+  <data name="lblAnesthesiaType" xml:space="preserve">
+    <value>संज्ञाहरण प्रकार</value>
+  </data>
+  <data name="lblAnniversary" xml:space="preserve">
+    <value>सालगिरह</value>
+  </data>
+  <data name="lblAppoinmentTime" xml:space="preserve">
+    <value>भेंट करने का समय</value>
+  </data>
+  <data name="lblAppointment" xml:space="preserve">
+    <value>नियुक्ति</value>
+  </data>
+  <data name="lblAppointmentDate" xml:space="preserve">
+    <value>मिलने की तारीख</value>
+  </data>
+  <data name="lblAppointmentList" xml:space="preserve">
+    <value>नियुक्ति सूची</value>
+  </data>
+  <data name="lblAppointmentReason" xml:space="preserve">
+    <value>कारण</value>
+  </data>
+  <data name="lblAppointmentType" xml:space="preserve">
+    <value>नियुक्ति प्रकार</value>
+  </data>
+  <data name="lblArea" xml:space="preserve">
+    <value>क्षेत्र</value>
+  </data>
+  <data name="lblART" xml:space="preserve">
+    <value>एआरटी</value>
+  </data>
+  <data name="lblARTCycle" xml:space="preserve">
+    <value>एआरटी साइकिल</value>
+  </data>
+  <data name="lblArtDay" xml:space="preserve">
+    <value>ART Day</value>
+  </data>
+  <data name="lblARTSubtype" xml:space="preserve">
+    <value>ART Type</value>
+  </data>
+  <data name="lblARTType" xml:space="preserve">
+    <value>ART Type</value>
+  </data>
+  <data name="lblAssignClass" xml:space="preserve">
+    <value>कक्षा सौंपें</value>
+  </data>
+  <data name="lblAssignClassification" xml:space="preserve">
+    <value>वर्गीकरण निर्दिष्ट करें</value>
+  </data>
+  <data name="lblAssignClinic" xml:space="preserve">
+    <value>असाइनमेंट क्लिनिक - विभाग</value>
+  </data>
+  <data name="lblAssignTariff" xml:space="preserve">
+    <value>टैरिफ असाइन करें</value>
+  </data>
+  <data name="lblAssoCompany" xml:space="preserve">
+    <value>मिश्रित कंपनी</value>
+  </data>
+  <data name="lblAtleastoneDigit" xml:space="preserve">
+    <value>कम से कम एक अंक</value>
+  </data>
+  <data name="lblAtleastoneLowerCharacter" xml:space="preserve">
+    <value>कम से कम वनप्लस कैरेक्टर</value>
+  </data>
+  <data name="lblAtleastoneSpecialCharacter" xml:space="preserve">
+    <value>कम से कम एक विशेष चरित्र</value>
+  </data>
+  <data name="lblAtleastoneUppercaseCharacter" xml:space="preserve">
+    <value>कम से कम एक अपरकेस चरित्र</value>
+  </data>
+  <data name="lblATT" xml:space="preserve">
+    <value>ATT</value>
+  </data>
+  <data name="lblAttach" xml:space="preserve">
+    <value>संलग्न करें</value>
+  </data>
+  <data name="lblAttachIDProof" xml:space="preserve">
+    <value>आईडी प्रूफ संलग्न करें</value>
+  </data>
+  <data name="lblAttachment" xml:space="preserve">
+    <value>आसक्ति</value>
+  </data>
+  <data name="lblBalanceAmount" xml:space="preserve">
+    <value>शेष राशि</value>
+  </data>
+  <data name="lblBalancePayment" xml:space="preserve">
+    <value>शेष राशि का भुगतान</value>
+  </data>
+  <data name="lblBandingMethod" xml:space="preserve">
+    <value>बैंडिंग विधि</value>
+  </data>
+  <data name="lblBandResolution" xml:space="preserve">
+    <value>बैंड संकल्प</value>
+  </data>
+  <data name="lblBank" xml:space="preserve">
+    <value>बैंक</value>
+  </data>
+  <data name="lblBankInformation" xml:space="preserve">
+    <value>बैंक जानकारी</value>
+  </data>
+  <data name="lblBankName" xml:space="preserve">
+    <value>बैंक का नाम</value>
+  </data>
+  <data name="lblBaseRate" xml:space="preserve">
+    <value>आधार दर</value>
+  </data>
+  <data name="lblBDM" xml:space="preserve">
+    <value>BDM</value>
+  </data>
+  <data name="lblBill" xml:space="preserve">
+    <value>बिल</value>
+  </data>
+  <data name="lblBirthWeight_in_kg" xml:space="preserve">
+    <value>जन्म वजन (किलो में)</value>
+  </data>
+  <data name="lblBleedingDisorders" xml:space="preserve">
+    <value>रक्तस्राव विकार</value>
+  </data>
+  <data name="lblBloodGroup" xml:space="preserve">
+    <value>रक्त समूह</value>
+  </data>
+  <data name="lblBMI" xml:space="preserve">
+    <value>बीएमआई</value>
+  </data>
+  <data name="lblBP_Diastolic_Range" xml:space="preserve">
+    <value>बीपी डायस्टोलिक (एचजी की रेंज 60-80 मिमी)</value>
+  </data>
+  <data name="lblBP_Systolic_Range" xml:space="preserve">
+    <value>बीपी सिस्टोलिक (रेंज 90-120 मिमी एचजी)</value>
+  </data>
+  <data name="lblBranch" xml:space="preserve">
+    <value>Shakha</value>
+  </data>
+  <data name="lblBrandName" xml:space="preserve">
+    <value>ब्रांड का नाम</value>
+  </data>
+  <data name="lblBrowse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="lblBurningsensationonUrination" xml:space="preserve">
+    <value>मूत्रत्याग पर जलन</value>
+  </data>
+  <data name="lblByRegistrationDate" xml:space="preserve">
+    <value>पंजीकरण दिनांक द्वारा</value>
+  </data>
+  <data name="lblByVisitDate" xml:space="preserve">
+    <value>भेंट तिथि तक</value>
+  </data>
+  <data name="lblCabin" xml:space="preserve">
+    <value>केबिन</value>
+  </data>
+  <data name="lblCaffeinatedBeverages" xml:space="preserve">
+    <value>कैफीनयुक्त पेय पदार्थ</value>
+  </data>
+  <data name="lblCaffeineAddiction" xml:space="preserve">
+    <value>कैफीन की लत</value>
+  </data>
+  <data name="lblCalendar" xml:space="preserve">
+    <value>पंचांग</value>
+  </data>
+  <data name="lblCamp" xml:space="preserve">
+    <value>शिविर</value>
+  </data>
+  <data name="lblCancelAppointment" xml:space="preserve">
+    <value>अपॉइंटमेंट रद्द करें</value>
+  </data>
+  <data name="lblCanister" xml:space="preserve">
+    <value>डिब्बा</value>
+    <comment>Canister</comment>
+  </data>
+  <data name="lblCaptImg" xml:space="preserve">
+    <value>कृपया अपनी छवि कैप्चर करें</value>
+  </data>
+  <data name="lblCapturedBy" xml:space="preserve">
+    <value>kiske dwara kiya gaya</value>
+  </data>
+  <data name="lblCaptured_by" xml:space="preserve">
+    <value>dwara</value>
+  </data>
+  <data name="lblCaptured_by_Dr" xml:space="preserve">
+    <value>द्वारा कैद: डॉ।</value>
+  </data>
+  <data name="lblCardiacDisease" xml:space="preserve">
+    <value>हृदय रोग</value>
+  </data>
+  <data name="lblCaseSummary" xml:space="preserve">
+    <value>केस सारांश</value>
+  </data>
+  <data name="lblCategory" xml:space="preserve">
+    <value>वर्ग</value>
+  </data>
+  <data name="lblCategoryL1" xml:space="preserve">
+    <value>रोगी स्रोत</value>
+  </data>
+  <data name="lblCategoryL2" xml:space="preserve">
+    <value>रोगी श्रेणी</value>
+  </data>
+  <data name="lblCatheter" xml:space="preserve">
+    <value>कैथिटर</value>
+  </data>
+  <data name="lblCellStage" xml:space="preserve">
+    <value>सेल स्टेज</value>
+  </data>
+  <data name="lblCervicalCancer" xml:space="preserve">
+    <value>ग्रीवा कैंसर</value>
+  </data>
+  <data name="lblCerviDialatation" xml:space="preserve">
+    <value>सरवाइकल डायलाटेशन</value>
+  </data>
+  <data name="lblChar" xml:space="preserve">
+    <value>char</value>
+  </data>
+  <data name="lblChickenpox" xml:space="preserve">
+    <value>छोटी माता</value>
+  </data>
+  <data name="lblCINClinicRegistrationNo" xml:space="preserve">
+    <value>(CIN) क्लिनिक पंजीकरण संख्या</value>
+  </data>
+  <data name="lblCity" xml:space="preserve">
+    <value>shahar</value>
+  </data>
+  <data name="lblClass" xml:space="preserve">
+    <value>वर्ग</value>
+  </data>
+  <data name="lblClassification" xml:space="preserve">
+    <value>वर्गीकरण</value>
+  </data>
+  <data name="lblClassMaster" xml:space="preserve">
+    <value>क्लास मास्टर</value>
+  </data>
+  <data name="lblClearFilter" xml:space="preserve">
+    <value>साफ फिल्टर</value>
+  </data>
+  <data name="lblClinic" xml:space="preserve">
+    <value>क्लिनिक</value>
+  </data>
+  <data name="lblClinicCode" xml:space="preserve">
+    <value>क्लिनिक कोड</value>
+  </data>
+  <data name="lblClinicContactNo" xml:space="preserve">
+    <value>क्लिनिक संपर्क नं</value>
+  </data>
+  <data name="lblClinicDate" xml:space="preserve">
+    <value>क्लिनिक की तारीख</value>
+  </data>
+  <data name="lblClinicFaxNo" xml:space="preserve">
+    <value>क्लिनिक फेस नंबर</value>
+  </data>
+  <data name="lblClinicList" xml:space="preserve">
+    <value>क्लिनिक सूची</value>
+  </data>
+  <data name="lblClinicName" xml:space="preserve">
+    <value>क्लिनिक का नाम</value>
+  </data>
+  <data name="lblClinicType" xml:space="preserve">
+    <value>क्लिनिक का प्रकार</value>
+  </data>
+  <data name="lblClinicUsrRole" xml:space="preserve">
+    <value>क्लिनिक - उपयोगकर्ता भूमिका</value>
+  </data>
+  <data name="lblCloseVisit" xml:space="preserve">
+    <value>बंद पर जाएँ</value>
+  </data>
+  <data name="lblCluster" xml:space="preserve">
+    <value>समूह</value>
+  </data>
+  <data name="lblCode" xml:space="preserve">
+    <value>कोड</value>
+  </data>
+  <data name="lblCodeType" xml:space="preserve">
+    <value>कोड प्रकार</value>
+  </data>
+  <data name="lblCode_Description" xml:space="preserve">
+    <value>कोड / विवरण</value>
+  </data>
+  <data name="lblColumn" xml:space="preserve">
+    <value>stambhas</value>
+  </data>
+  <data name="lblCommunication" xml:space="preserve">
+    <value>संचार</value>
+  </data>
+  <data name="lblCommunicationAddress" xml:space="preserve">
+    <value>संचार पता</value>
+  </data>
+  <data name="lblCompany" xml:space="preserve">
+    <value>संगठन</value>
+  </data>
+  <data name="lblCompanyDetails" xml:space="preserve">
+    <value>संस्थान के विवरण</value>
+  </data>
+  <data name="lblCompanyType" xml:space="preserve">
+    <value>कंपनी के प्रकार</value>
+  </data>
+  <data name="lblComplaints_Follow_Up" xml:space="preserve">
+    <value>शिकायतें / फॉलो-अप</value>
+  </data>
+  <data name="lblComplications" xml:space="preserve">
+    <value>जटिलताओं</value>
+  </data>
+  <data name="lblConcession" xml:space="preserve">
+    <value>छूट</value>
+  </data>
+  <data name="lblConctPerson" xml:space="preserve">
+    <value>संपर्क व्यक्ति</value>
+  </data>
+  <data name="lblConfirmPassword" xml:space="preserve">
+    <value>पासवर्ड की पुष्टि कीजिये</value>
+  </data>
+  <data name="lblCongenitalAnamoly" xml:space="preserve">
+    <value>जन्मजात अनामोली</value>
+  </data>
+  <data name="lblConsanguinity" xml:space="preserve">
+    <value>रक्तसंबंध</value>
+  </data>
+  <data name="lblConsent" xml:space="preserve">
+    <value>सहमति</value>
+  </data>
+  <data name="lblConsentPreview" xml:space="preserve">
+    <value>सहमति पूर्वावलोकन</value>
+  </data>
+  <data name="lblConseReason" xml:space="preserve">
+    <value>रियायत का कारण</value>
+  </data>
+  <data name="lblContactDetails" xml:space="preserve">
+    <value>संपर्क विवरण</value>
+  </data>
+  <data name="lblContactInformation" xml:space="preserve">
+    <value>संपर्क जानकारी</value>
+  </data>
+  <data name="lblContraception" xml:space="preserve">
+    <value>गर्भनिरोध</value>
+  </data>
+  <data name="lblCopy" xml:space="preserve">
+    <value>प्रतिलिपि</value>
+  </data>
+  <data name="lblCount" xml:space="preserve">
+    <value>गिनती</value>
+  </data>
+  <data name="lblCountry" xml:space="preserve">
+    <value>देश</value>
+  </data>
+  <data name="lblCouple" xml:space="preserve">
+    <value>जोड़ा (yugal)</value>
+  </data>
+  <data name="lblCoupleId" xml:space="preserve">
+    <value>युगल आईडी</value>
+  </data>
+  <data name="lblCreatedon" xml:space="preserve">
+    <value>को निर्मित</value>
+  </data>
+  <data name="lblCreditlimit" xml:space="preserve">
+    <value>क्रेडिट सीमा</value>
+  </data>
+  <data name="lblCultureMethode" xml:space="preserve">
+    <value>संस्कृति विधि</value>
+  </data>
+  <data name="lblCurrentAccount" xml:space="preserve">
+    <value>चालू खाता</value>
+  </data>
+  <data name="lblCurrentStatus" xml:space="preserve">
+    <value>वर्तमान स्थिति</value>
+  </data>
+  <data name="lblCycle" xml:space="preserve">
+    <value>चक्र</value>
+  </data>
+  <data name="lblCycleCode" xml:space="preserve">
+    <value>साइकिल कोड</value>
+  </data>
+  <data name="lblCycleDay" xml:space="preserve">
+    <value>साइकिल दिवस</value>
+  </data>
+  <data name="lblCycleDuration" xml:space="preserve">
+    <value>चक्र अवधि</value>
+  </data>
+  <data name="lblCycles" xml:space="preserve">
+    <value>chakra</value>
+  </data>
+  <data name="lblCycleType" xml:space="preserve">
+    <value>chakra prakar</value>
+  </data>
+  <data name="lblCystinLeftOvary" xml:space="preserve">
+    <value>बाएं अंडाशय में पुटी</value>
+  </data>
+  <data name="lblCystinRightOvary" xml:space="preserve">
+    <value>दाएं अंडाशय में पुटी</value>
+  </data>
+  <data name="lblDaily" xml:space="preserve">
+    <value>रोज</value>
+  </data>
+  <data name="lblDashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="lblDatabase" xml:space="preserve">
+    <value>डेटाबेस</value>
+  </data>
+  <data name="lblDate" xml:space="preserve">
+    <value>तारीख</value>
+  </data>
+  <data name="lblDateValidation" xml:space="preserve">
+    <value>दिनांक मान्यता</value>
+  </data>
+  <data name="lblDay" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="lblDayGrad" xml:space="preserve">
+    <value>डे ग्रैड मैप</value>
+  </data>
+  <data name="lblDays" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="lblDay_Month_Year" xml:space="preserve">
+    <value>( दिन महीने साल )</value>
+  </data>
+  <data name="lblDeletePhoto" xml:space="preserve">
+    <value>फोटो हटाएं</value>
+  </data>
+  <data name="lblDelivery" xml:space="preserve">
+    <value>वितरण</value>
+  </data>
+  <data name="lblDeliveryType" xml:space="preserve">
+    <value>वितरण के प्रकार</value>
+  </data>
+  <data name="lblDepartment" xml:space="preserve">
+    <value>विभाग</value>
+  </data>
+  <data name="lblDescription" xml:space="preserve">
+    <value>विवरण</value>
+  </data>
+  <data name="lblDesignation" xml:space="preserve">
+    <value>पद</value>
+  </data>
+  <data name="lblDevStage" xml:space="preserve">
+    <value>vikas avastha</value>
+  </data>
+  <data name="lblDiabetes" xml:space="preserve">
+    <value>मधुमेह</value>
+  </data>
+  <data name="lblDiagnosis" xml:space="preserve">
+    <value>निदान</value>
+  </data>
+  <data name="lblDiagnosisType" xml:space="preserve">
+    <value>निदान प्रकार</value>
+  </data>
+  <data name="lblDiet" xml:space="preserve">
+    <value>आहार</value>
+  </data>
+  <data name="lblDifficultyinvoiding" xml:space="preserve">
+    <value>radda  करने में कठिनाई</value>
+  </data>
+  <data name="lblDiffiLvl" xml:space="preserve">
+    <value>कठिनाई स्तर</value>
+  </data>
+  <data name="lblDiffiType" xml:space="preserve">
+    <value>कठिनाई प्रकार</value>
+  </data>
+  <data name="lblDOB" xml:space="preserve">
+    <value>जन्म की तारीख</value>
+  </data>
+  <data name="lblDocCategory" xml:space="preserve">
+    <value>डॉक्टर श्रेणी</value>
+  </data>
+  <data name="lblDoctor" xml:space="preserve">
+    <value>चिकित्सक</value>
+  </data>
+  <data name="lblDoctorDetails" xml:space="preserve">
+    <value>डॉक्टर का विवरण</value>
+  </data>
+  <data name="lblDoctorInformation" xml:space="preserve">
+    <value>डॉक्टर की जानकारी</value>
+  </data>
+  <data name="lblDoctorName" xml:space="preserve">
+    <value>डॉक्टर का नाम</value>
+  </data>
+  <data name="lblDoctorShare" xml:space="preserve">
+    <value>doctor ka hissa</value>
+  </data>
+  <data name="lblDocType" xml:space="preserve">
+    <value>डॉक्टर टाइप</value>
+  </data>
+  <data name="lblDonor" xml:space="preserve">
+    <value>दाता</value>
+  </data>
+  <data name="lblDose" xml:space="preserve">
+    <value>खुराक</value>
+  </data>
+  <data name="lblDownload" xml:space="preserve">
+    <value>डाउनलोड</value>
+  </data>
+  <data name="lblDoYouWantToDeletePhoto" xml:space="preserve">
+    <value>क्या आप फोटो हटाना चाहते हैं?</value>
+  </data>
+  <data name="lblDr" xml:space="preserve">
+    <value>चिकित्सक</value>
+  </data>
+  <data name="lblDrDhananjayDixit" xml:space="preserve">
+    <value>Dr. Dhananjay Dixit</value>
+  </data>
+  <data name="lblDrName" xml:space="preserve">
+    <value>Dr. Name</value>
+  </data>
+  <data name="lblDrugAddiction" xml:space="preserve">
+    <value>मादक पदार्थों की लत</value>
+  </data>
+  <data name="lblDrugName" xml:space="preserve">
+    <value>औषधि का नाम</value>
+  </data>
+  <data name="lblDrugs" xml:space="preserve">
+    <value>Dawa</value>
+  </data>
+  <data name="lblDrugSource" xml:space="preserve">
+    <value>औषधि स्रोत</value>
+  </data>
+  <data name="lblDuration" xml:space="preserve">
+    <value>समयांतराल</value>
+  </data>
+  <data name="lblDurationMin" xml:space="preserve">
+    <value>अवधि (मिनट)</value>
+  </data>
+  <data name="lblDysmennorhea" xml:space="preserve">
+    <value>कष्टार्तव</value>
+  </data>
+  <data name="lblDyspareunia" xml:space="preserve">
+    <value>दर्दनाक संगम होना</value>
+  </data>
+  <data name="lblE" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="lblEdit" xml:space="preserve">
+    <value>संपादित करें</value>
+  </data>
+  <data name="lblEducation" xml:space="preserve">
+    <value>शिक्षा</value>
+  </data>
+  <data name="lblEffectiveDate" xml:space="preserve">
+    <value>प्रभावी तिथि</value>
+  </data>
+  <data name="lblEjaculation_Erection" xml:space="preserve">
+    <value>स्खलन/खड़ा किया जाना</value>
+  </data>
+  <data name="lblEmailId" xml:space="preserve">
+    <value>ईमेल आईडी</value>
+  </data>
+  <data name="lblEmbryoDesc" xml:space="preserve">
+    <value>भ्रूण की कमी</value>
+  </data>
+  <data name="lblEmbryosFrozen" xml:space="preserve">
+    <value>जमे हुए भ्रूण</value>
+  </data>
+  <data name="lblEmbryosTransferred" xml:space="preserve">
+    <value>भ्रूण हस्तांतरित</value>
+  </data>
+  <data name="lblEmpNo" xml:space="preserve">
+    <value>कर्मचारी संख्या।</value>
+  </data>
+  <data name="lblEMR" xml:space="preserve">
+    <value>EMR</value>
+  </data>
+  <data name="lblEndDate" xml:space="preserve">
+    <value>अंतिम तिथि</value>
+  </data>
+  <data name="lblEndometrialFlow" xml:space="preserve">
+    <value>एंडोमेट्रियल फ्लो</value>
+  </data>
+  <data name="lblEndometriosis" xml:space="preserve">
+    <value>अन्तर्गर्भाशय-अस्थानता</value>
+  </data>
+  <data name="lblEndometrium" xml:space="preserve">
+    <value>अंतर्गर्भाशयकला</value>
+  </data>
+  <data name="lblEndometriumMorphology" xml:space="preserve">
+    <value>एंडोमेट्रियम मॉर्फोलॉजी</value>
+  </data>
+  <data name="lblEndometriumThickness_mm" xml:space="preserve">
+    <value>एंडोमेट्रियम की मोटाई (मिमी)</value>
+  </data>
+  <data name="lblEndTime" xml:space="preserve">
+    <value>अंतिम समय</value>
+  </data>
+  <data name="lblEnterAppointmentReason" xml:space="preserve">
+    <value>कृपया अपॉइंटमेंट कारण चुनें</value>
+  </data>
+  <data name="lblEpilepsy" xml:space="preserve">
+    <value>मिरगी</value>
+  </data>
+  <data name="lblEthnicity" xml:space="preserve">
+    <value>जातीयता</value>
+  </data>
+  <data name="lblExercise" xml:space="preserve">
+    <value>व्यायाम</value>
+  </data>
+  <data name="lblExisting" xml:space="preserve">
+    <value>मौजूदा</value>
+  </data>
+  <data name="lblExistingChildren" xml:space="preserve">
+    <value>मौजूदा बच्चे</value>
+  </data>
+  <data name="lblExperience" xml:space="preserve">
+    <value>अनुभव</value>
+  </data>
+  <data name="lblExpirationInterval" xml:space="preserve">
+    <value>समाप्ति अंतराल</value>
+  </data>
+  <data name="lblExpiryDate" xml:space="preserve">
+    <value>समाप्ति तिथि</value>
+  </data>
+  <data name="lblExposuretoHeavyMetals" xml:space="preserve">
+    <value>भारी धातुओं के लिए एक्सपोजर</value>
+  </data>
+  <data name="lblExposuretoPesticides" xml:space="preserve">
+    <value>कीटनाशकों का एक्सपोजर</value>
+  </data>
+  <data name="lblExposuretoPollution" xml:space="preserve">
+    <value>प्रदूषण के संपर्क में</value>
+  </data>
+  <data name="lblExposuretoRadiation" xml:space="preserve">
+    <value>विकिरण के संपर्क में</value>
+  </data>
+  <data name="lblExtDocInfo" xml:space="preserve">
+    <value>बाहरी चिकित्सक जानकारी</value>
+  </data>
+  <data name="lblExternalDoctorDetail" xml:space="preserve">
+    <value>बाहरी चिकित्सक विस्तार</value>
+  </data>
+  <data name="lblExternalDoctorInformation" xml:space="preserve">
+    <value>बाहरी चिकित्सक</value>
+  </data>
+  <data name="lblEyeColor" xml:space="preserve">
+    <value>आँखों का रंग</value>
+  </data>
+  <data name="lblFamily" xml:space="preserve">
+    <value>परिवार</value>
+  </data>
+  <data name="lblFamilyHistory" xml:space="preserve">
+    <value>परिवार के इतिहास</value>
+  </data>
+  <data name="lblFamilyName" xml:space="preserve">
+    <value>Family Name</value>
+  </data>
+  <data name="lblFavourite" xml:space="preserve">
+    <value>पसंदीदा</value>
+  </data>
+  <data name="lblFavouriteDiagnosis" xml:space="preserve">
+    <value>पसंदीदा निदान</value>
+  </data>
+  <data name="lblFavouriteList" xml:space="preserve">
+    <value>पसंदीदा सूची</value>
+  </data>
+  <data name="lblFavourites" xml:space="preserve">
+    <value>पसंदीदा</value>
+  </data>
+  <data name="lblFemale" xml:space="preserve">
+    <value>महिला</value>
+  </data>
+  <data name="lblFemaleHistory" xml:space="preserve">
+    <value>महिला इतिहास</value>
+  </data>
+  <data name="lblFemaleInfertility" xml:space="preserve">
+    <value>महिला बांझपन</value>
+  </data>
+  <data name="lblFileUpload" xml:space="preserve">
+    <value>फाइल अपलोड</value>
+  </data>
+  <data name="lblFillMandatoryFields" xml:space="preserve">
+    <value>कृपया अनिवार्य फ़ील्ड भरें</value>
+  </data>
+  <data name="lblFinalize" xml:space="preserve">
+    <value>अंतिम रूप</value>
+  </data>
+  <data name="lblFindings" xml:space="preserve">
+    <value>जाँच - परिणाम</value>
+  </data>
+  <data name="lblFirst" xml:space="preserve">
+    <value>प्रथम</value>
+  </data>
+  <data name="lblFirstName" xml:space="preserve">
+    <value>पहला नाम</value>
+  </data>
+  <data name="lblFollicleSize" xml:space="preserve">
+    <value>कूप का आकार</value>
+  </data>
+  <data name="lblFollowUpDate" xml:space="preserve">
+    <value>आगे की कार्यवाही की तारीख</value>
+  </data>
+  <data name="lblFollowUpNotes" xml:space="preserve">
+    <value>नोट्स का पालन करें</value>
+  </data>
+  <data name="lblFollowUpReason" xml:space="preserve">
+    <value>कारण का पालन करें</value>
+  </data>
+  <data name="lblForgetYourPassword" xml:space="preserve">
+    <value>क्या आप पासवर्ड भूल गए</value>
+  </data>
+  <data name="lblForm" xml:space="preserve">
+    <value>प्रपत्र</value>
+  </data>
+  <data name="lblFreeze" xml:space="preserve">
+    <value>फ्रीज</value>
+  </data>
+  <data name="lblFrequency" xml:space="preserve">
+    <value>आवृत्ति</value>
+  </data>
+  <data name="lblFrequencyofExercise" xml:space="preserve">
+    <value>व्यायाम की आवृत्ति</value>
+  </data>
+  <data name="lblFrequencyofintercourse" xml:space="preserve">
+    <value>संभोग की आवृत्ति</value>
+  </data>
+  <data name="lblFromDate" xml:space="preserve">
+    <value>तारीख से</value>
+  </data>
+  <data name="lblFromDate12_1_2019" xml:space="preserve">
+    <value>दिनांक से: 12/1/2019</value>
+  </data>
+  <data name="lblFromTime" xml:space="preserve">
+    <value>समय से</value>
+  </data>
+  <data name="lblFutureAppointments" xml:space="preserve">
+    <value>भविष्य की नियुक्ति</value>
+  </data>
+  <data name="lblG" xml:space="preserve">
+    <value>G</value>
+  </data>
+  <data name="lblGender" xml:space="preserve">
+    <value>लिंग</value>
+  </data>
+  <data name="lblGenericName" xml:space="preserve">
+    <value>सामान्य नाम</value>
+  </data>
+  <data name="lblGestationWeeks" xml:space="preserve">
+    <value>इशारे करना सप्ताह</value>
+  </data>
+  <data name="lblGetTimeSlot" xml:space="preserve">
+    <value>टाइम स्लॉट प्राप्त करें</value>
+  </data>
+  <data name="lblGrade" xml:space="preserve">
+    <value>श्रेणी</value>
+  </data>
+  <data name="lblGSTINNo" xml:space="preserve">
+    <value>जीएसटीआईएन सं</value>
+  </data>
+  <data name="lblHaemoglobinDeficiency" xml:space="preserve">
+    <value>हीमोग्लोबिन की कमी</value>
+  </data>
+  <data name="lblHairColor" xml:space="preserve">
+    <value>बालो का रंग</value>
+  </data>
+  <data name="lblHeadache_Nausea" xml:space="preserve">
+    <value>सिरदर्द / मतली</value>
+  </data>
+  <data name="lblHeight_cm" xml:space="preserve">
+    <value>ऊंचाई (सेंटिमीटर)</value>
+  </data>
+  <data name="lblHepatitisA" xml:space="preserve">
+    <value>हेपेटाइटिस ए</value>
+  </data>
+  <data name="lblHepatitisB" xml:space="preserve">
+    <value>हेपेटाइटिस बी</value>
+  </data>
+  <data name="lblHistoryofRecurrentAbortion" xml:space="preserve">
+    <value>आवर्तक गर्भपात का इतिहास</value>
+  </data>
+  <data name="lblHR_Range" xml:space="preserve">
+    <value>HR (Range 60-100 per min)</value>
+  </data>
+  <data name="lblHysteroscopy" xml:space="preserve">
+    <value>गर्भाशयदर्शन</value>
+  </data>
+  <data name="lblICD" xml:space="preserve">
+    <value>ICD</value>
+  </data>
+  <data name="lblIdentityProof" xml:space="preserve">
+    <value>पहचान प्रमाण</value>
+  </data>
+  <data name="lblIdProffNo" xml:space="preserve">
+    <value>आईडी प्रूफ नं</value>
+  </data>
+  <data name="lblIFSCCode" xml:space="preserve">
+    <value>IFSC कोड</value>
+  </data>
+  <data name="lblImageUploadType" xml:space="preserve">
+    <value>कृपया छवि अपलोड प्रकार चुनें</value>
+  </data>
+  <data name="lblImgFromGallery" xml:space="preserve">
+    <value>कृपया गैलरी से छवि चुनें</value>
+  </data>
+  <data name="lblImpact" xml:space="preserve">
+    <value>प्रभाव</value>
+  </data>
+  <data name="lblImportant" xml:space="preserve">
+    <value>जरूरी</value>
+  </data>
+  <data name="lblIndication" xml:space="preserve">
+    <value>संकेत</value>
+  </data>
+  <data name="lblIndividual" xml:space="preserve">
+    <value>व्यक्ति</value>
+  </data>
+  <data name="lblInfertilityType" xml:space="preserve">
+    <value>बांझपन प्रकार</value>
+  </data>
+  <data name="lblInfluenza" xml:space="preserve">
+    <value>श्‍लैष्मिक ज्‍वर</value>
+  </data>
+  <data name="lblInfo" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="lblInhouseDoctor" xml:space="preserve">
+    <value>इनहाउस डॉक्टर</value>
+  </data>
+  <data name="lblInrelationshipsince" xml:space="preserve">
+    <value>रिश्ते में कब से है</value>
+  </data>
+  <data name="lblInstruction" xml:space="preserve">
+    <value>अनुदेश</value>
+  </data>
+  <data name="lblIntermenstrualBleeding" xml:space="preserve">
+    <value>इंटरमेंस्ट्रुअल ब्लीडिंग</value>
+  </data>
+  <data name="lblInterpretation" xml:space="preserve">
+    <value>व्याख्या</value>
+  </data>
+  <data name="lblInvestigations" xml:space="preserve">
+    <value>जांच</value>
+  </data>
+  <data name="lblIsClinical" xml:space="preserve">
+    <value>क्लिनिकल है</value>
+  </data>
+  <data name="lblIVFBuilt" xml:space="preserve">
+    <value>आईवीएफ निर्मित</value>
+  </data>
+  <data name="lblIVFCatheterType" xml:space="preserve">
+    <value>आईवीएफ कैथेटर प्रकार</value>
+  </data>
+  <data name="lblIVFETPattern" xml:space="preserve">
+    <value>आईवीएफ ईटी पैटर्न</value>
+  </data>
+  <data name="lblIVFFertilizationStage" xml:space="preserve">
+    <value>आईवीएफ निषेचन चरण</value>
+  </data>
+  <data name="lblIVFGobletColor" xml:space="preserve">
+    <value>आईवीएफ गोबल रंग</value>
+    <comment>कटोरा</comment>
+  </data>
+  <data name="lblIVFGobletSize" xml:space="preserve">
+    <value>आईवीएफ गोबल आकार</value>
+  </data>
+  <data name="lblIVFIncubator" xml:space="preserve">
+    <value>आईवीएफ इनक्यूबेटर</value>
+    <comment>अण्डे सेने की मशीन</comment>
+  </data>
+  <data name="lblIVFMainIndication" xml:space="preserve">
+    <value>IVF Main Indication</value>
+  </data>
+  <data name="lblIVFMethodOfSpermPreparation" xml:space="preserve">
+    <value>शुक्राणु तैयार करने की आईवीएफ विधि</value>
+  </data>
+  <data name="lblIVFMOI" xml:space="preserve">
+    <value>IVF MOI</value>
+  </data>
+  <data name="lblIVFPlannedSpermCollection" xml:space="preserve">
+    <value>आईवीएफ योजनाबद्ध शुक्राणु संग्रह</value>
+  </data>
+  <data name="lblIVFPlannedTreatment" xml:space="preserve">
+    <value>आईवीएफ योजनाबद्ध उपचार</value>
+  </data>
+  <data name="lblIVFProtocolType" xml:space="preserve">
+    <value>आईवीएफ प्रोटोकॉल प्रकार</value>
+  </data>
+  <data name="lblIVFSourceDenudingNeedle" xml:space="preserve">
+    <value>आईवीएफ स्रोत सुई से इनकार करना</value>
+  </data>
+  <data name="lblIVFStraw" xml:space="preserve">
+    <value>आईवीएफ स्ट्रॉ</value>
+  </data>
+  <data name="lblIVFTank" xml:space="preserve">
+    <value>आईवीएफ टैंक</value>
+  </data>
+  <data name="lblJoint" xml:space="preserve">
+    <value>संयुक्त</value>
+  </data>
+  <data name="lblKaryotyping" xml:space="preserve">
+    <value>Karyotyping</value>
+  </data>
+  <data name="lblL" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="lblLaboratory" xml:space="preserve">
+    <value>प्रयोगशाला</value>
+  </data>
+  <data name="lblLandlineNo" xml:space="preserve">
+    <value>लैंडलाइन नंबर</value>
+  </data>
+  <data name="lblLandmark" xml:space="preserve">
+    <value>सीमा चिन्ह</value>
+  </data>
+  <data name="lblLaparoscopy" xml:space="preserve">
+    <value>लेप्रोस्कोपी</value>
+  </data>
+  <data name="lblLapAssociatedProceduresMaster" xml:space="preserve">
+    <value>गोद एसोसिएटेड प्रक्रिया मास्टर</value>
+  </data>
+  <data name="lblLast" xml:space="preserve">
+    <value>अंतिम</value>
+  </data>
+  <data name="lblLastLinkedDate" xml:space="preserve">
+    <value>अंतिम लिंक की गई तिथि</value>
+  </data>
+  <data name="lblLastName" xml:space="preserve">
+    <value>अंतिम नाम</value>
+  </data>
+  <data name="lblLastUpdatedBy" xml:space="preserve">
+    <value>अंतिम अपडेट</value>
+  </data>
+  <data name="lblLeftOvary" xml:space="preserve">
+    <value>अंडाशय छोड़ दिया</value>
+  </data>
+  <data name="lblLink" xml:space="preserve">
+    <value>संपर्क</value>
+  </data>
+  <data name="lblLinkDetails" xml:space="preserve">
+    <value>लिंक विवरण</value>
+  </data>
+  <data name="lblLinkDonor" xml:space="preserve">
+    <value>लिंक दाता</value>
+  </data>
+  <data name="lblLinkedCount" xml:space="preserve">
+    <value>लिंक की गई गणना</value>
+  </data>
+  <data name="lblLinkPartner" xml:space="preserve">
+    <value>लिंक सहयोगी</value>
+  </data>
+  <data name="lblLinkSurrogate" xml:space="preserve">
+    <value>लिंक सरोगेट</value>
+  </data>
+  <data name="lblListofReports" xml:space="preserve">
+    <value>रिपोर्ट की सूची</value>
+  </data>
+  <data name="lblLMP" xml:space="preserve">
+    <value>अंतिम माहवारी</value>
+  </data>
+  <data name="lblLMPDate" xml:space="preserve">
+    <value>अंतिम माहवारी दिनांक</value>
+  </data>
+  <data name="lblLocked" xml:space="preserve">
+    <value>बंद</value>
+  </data>
+  <data name="lblLoginName" xml:space="preserve">
+    <value>लॉगिन नाम</value>
+  </data>
+  <data name="lblLongDescription" xml:space="preserve">
+    <value>लंबा वर्णन</value>
+  </data>
+  <data name="lblLubricationused" xml:space="preserve">
+    <value>स्नेहन का इस्तेमाल किया</value>
+  </data>
+  <data name="lblMailingAddress" xml:space="preserve">
+    <value>डाक पता</value>
+  </data>
+  <data name="lblMale" xml:space="preserve">
+    <value>नर</value>
+  </data>
+  <data name="lblMaleComplaints" xml:space="preserve">
+    <value>पुरुष शिकायतें</value>
+  </data>
+  <data name="lblMaleHistory" xml:space="preserve">
+    <value>पुरुष इतिहास</value>
+  </data>
+  <data name="lblMaleInfertility" xml:space="preserve">
+    <value>पुरुष बांझपन</value>
+  </data>
+  <data name="lblMalignancy" xml:space="preserve">
+    <value>हानिकरता</value>
+  </data>
+  <data name="lblMarkDonor" xml:space="preserve">
+    <value>निशान दाता</value>
+  </data>
+  <data name="lblMarkSurrogate" xml:space="preserve">
+    <value>निशान Surrogate</value>
+  </data>
+  <data name="lblMarriedLife" xml:space="preserve">
+    <value>विवाहित जीवन</value>
+  </data>
+  <data name="lblMarriedSince" xml:space="preserve">
+    <value>के बाद से शादी हुई</value>
+  </data>
+  <data name="lblMarryStatus" xml:space="preserve">
+    <value>वैवाहिक स्थिति</value>
+  </data>
+  <data name="lblMaternal_Paternal" xml:space="preserve">
+    <value>माता का/पिता का</value>
+  </data>
+  <data name="lblMaximum" xml:space="preserve">
+    <value>ज्यादा से ज्यादा</value>
+  </data>
+  <data name="lblMaximumPasswordAge" xml:space="preserve">
+    <value>अधिकतम पासवर्ड आयु</value>
+  </data>
+  <data name="lblMaximumPasswordLength" xml:space="preserve">
+    <value>अधिकतम पासवर्ड लंबाई</value>
+  </data>
+  <data name="lblMedicalHistory" xml:space="preserve">
+    <value>चिकित्सा का इतिहास</value>
+  </data>
+  <data name="lblMedication" xml:space="preserve">
+    <value>दवाई</value>
+  </data>
+  <data name="lblMedicationUsedtobringPeriod" xml:space="preserve">
+    <value>दवा पीरियड लाने के काम आती थी</value>
+  </data>
+  <data name="lblMenstrualFlow" xml:space="preserve">
+    <value>माहवारी</value>
+  </data>
+  <data name="lblMenstrualHistory" xml:space="preserve">
+    <value>मासिक धर्म का इतिहास</value>
+  </data>
+  <data name="lblMenstrualRegularity" xml:space="preserve">
+    <value>मासिक धर्म की नियमितता</value>
+  </data>
+  <data name="lblMenstruation" xml:space="preserve">
+    <value>माहवारी</value>
+  </data>
+  <data name="lblMetaphaseCellsAnalysed" xml:space="preserve">
+    <value>मेटाफ़ेज़ सेल का विश्लेषण किया</value>
+  </data>
+  <data name="lblMetaphaseCellsCounted" xml:space="preserve">
+    <value>मेटाफ़ेज़ कक्ष की गणना की गई</value>
+  </data>
+  <data name="lblMethodofContraception" xml:space="preserve">
+    <value>गर्भनिरोधक की विधि</value>
+  </data>
+  <data name="lblMethodology" xml:space="preserve">
+    <value>क्रियाविधि</value>
+  </data>
+  <data name="lblMiddleName" xml:space="preserve">
+    <value>मध्य नाम</value>
+  </data>
+  <data name="lblMin" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="lblMinimum" xml:space="preserve">
+    <value>न्यूनतम</value>
+  </data>
+  <data name="lblMinimumPasswordAge" xml:space="preserve">
+    <value>न्यूनतम पासवर्ड आयु</value>
+  </data>
+  <data name="lblMinimumPasswordLength" xml:space="preserve">
+    <value>न्यूनतम पासवर्ड लंबाई</value>
+  </data>
+  <data name="lblMMR" xml:space="preserve">
+    <value>एमएमआर</value>
+  </data>
+  <data name="lblMnth" xml:space="preserve">
+    <value>महीना</value>
+  </data>
+  <data name="lblMnths" xml:space="preserve">
+    <value>महीने</value>
+  </data>
+  <data name="lblMobileNo" xml:space="preserve">
+    <value>मोबाइल न</value>
+  </data>
+  <data name="lblMobNo" xml:space="preserve">
+    <value>मोबाइल न</value>
+  </data>
+  <data name="lblModality" xml:space="preserve">
+    <value>साधन</value>
+  </data>
+  <data name="lblMoleculeName" xml:space="preserve">
+    <value>अणु का नाम</value>
+  </data>
+  <data name="lblMonthly" xml:space="preserve">
+    <value>माहवार</value>
+  </data>
+  <data name="lblMonths" xml:space="preserve">
+    <value>महीना (रों)</value>
+  </data>
+  <data name="lblMonths_S" xml:space="preserve">
+    <value>महीने</value>
+  </data>
+  <data name="lblMood" xml:space="preserve">
+    <value>भाव</value>
+  </data>
+  <data name="lblMRNO" xml:space="preserve">
+    <value>एमआर नं</value>
+  </data>
+  <data name="lblMRNumber" xml:space="preserve">
+    <value>एमआर नंबर</value>
+  </data>
+  <data name="lblName" xml:space="preserve">
+    <value>नाम</value>
+  </data>
+  <data name="lblNameoftheBank" xml:space="preserve">
+    <value>बैंक का नाम</value>
+  </data>
+  <data name="lblName_MRN_MobileNo" xml:space="preserve">
+    <value>नाम / एमआरएन / मोबाइल नं</value>
+  </data>
+  <data name="lblNationality" xml:space="preserve">
+    <value>राष्ट्रीयता</value>
+  </data>
+  <data name="lblNeedleType" xml:space="preserve">
+    <value>सुई प्रकार</value>
+  </data>
+  <data name="lblNetAmount" xml:space="preserve">
+    <value>शुद्ध राशि</value>
+  </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>नया</value>
+  </data>
+  <data name="lblNewAppointment" xml:space="preserve">
+    <value>नव नियुक्ति</value>
+  </data>
+  <data name="lblNewAppointments" xml:space="preserve">
+    <value>नया कैलेंडर</value>
+  </data>
+  <data name="lblNewDiagnosis" xml:space="preserve">
+    <value>नया निदान</value>
+  </data>
+  <data name="lblNext" xml:space="preserve">
+    <value>आगे</value>
+  </data>
+  <data name="lblNextFollowUp" xml:space="preserve">
+    <value>अगला अनुसरण करें</value>
+  </data>
+  <data name="lblNextFollowUpon" xml:space="preserve">
+    <value>अगला पर का पालन करें</value>
+  </data>
+  <data name="lblNoOfCigarette_Day" xml:space="preserve">
+    <value>सिगरेट / दिन की संख्या</value>
+  </data>
+  <data name="lblNoofMetaphasesKaryotyped" xml:space="preserve">
+    <value>मेटाफ़ेज़ की कोई सीमा नहीं है</value>
+  </data>
+  <data name="lblNoofPasswordToRemember" xml:space="preserve">
+    <value>नंबर पासवर्ड याद करने के लिए</value>
+  </data>
+  <data name="lblNoOfTimes_Day" xml:space="preserve">
+    <value>टाइम्स / डे की संख्या</value>
+  </data>
+  <data name="lblNotes" xml:space="preserve">
+    <value>टिप्पणियाँ</value>
+  </data>
+  <data name="lblNuclear" xml:space="preserve">
+    <value>नाभिकीय</value>
+  </data>
+  <data name="lblObstetricHistory" xml:space="preserve">
+    <value>प्रसूति इतिहास</value>
+  </data>
+  <data name="lblOccupation" xml:space="preserve">
+    <value>व्यवसाय</value>
+  </data>
+  <data name="lblOccupationhazardous" xml:space="preserve">
+    <value>व्यवसाय 
+जोखिम वाला</value>
+  </data>
+  <data name="lblOf" xml:space="preserve">
+    <value>का</value>
+  </data>
+  <data name="lblOfEvery" xml:space="preserve">
+    <value>हरेक का</value>
+  </data>
+  <data name="lblOfEveryMonths_S" xml:space="preserve">
+    <value>हर महीने</value>
+  </data>
+  <data name="lblOK" xml:space="preserve">
+    <value>ठीक है</value>
+  </data>
+  <data name="lblon" xml:space="preserve">
+    <value>पर</value>
+  </data>
+  <data name="lblOnMedication" xml:space="preserve">
+    <value>दवा पर</value>
+  </data>
+  <data name="lblOnset" xml:space="preserve">
+    <value>शुरुआत</value>
+  </data>
+  <data name="lblOocyteRetrived" xml:space="preserve">
+    <value>डिम्बाणुजनकोशिका पुनः प्राप्त किया</value>
+  </data>
+  <data name="lblOocytesCleaved" xml:space="preserve">
+    <value>डिम्बाणुजनकोशिका  फोड़ना</value>
+  </data>
+  <data name="lblOocytesFertilized" xml:space="preserve">
+    <value>डिम्बाणुजनकोशिका फलयुक्त करना</value>
+  </data>
+  <data name="lblOocytesRetrieved" xml:space="preserve">
+    <value>डिम्बाणुजनकोशिका 
+पुनः प्राप्त किया</value>
+  </data>
+  <data name="lblOPDNo" xml:space="preserve">
+    <value>ओपीडी नं</value>
+  </data>
+  <data name="lblOR" xml:space="preserve">
+    <value>अथवा</value>
+  </data>
+  <data name="lblOrchitis" xml:space="preserve">
+    <value>अण्डकोष की सूजन</value>
+  </data>
+  <data name="lblOther" xml:space="preserve">
+    <value>अन्य</value>
+  </data>
+  <data name="lblOtherComplaints" xml:space="preserve">
+    <value>अन्य शिकायतें</value>
+  </data>
+  <data name="lblOtherDiagnosis" xml:space="preserve">
+    <value>अन्य निदान</value>
+  </data>
+  <data name="lblOtherDisease" xml:space="preserve">
+    <value>अन्य रोग</value>
+  </data>
+  <data name="lblOtherServices" xml:space="preserve">
+    <value>अन्य सेवाएं</value>
+  </data>
+  <data name="lblOutcome" xml:space="preserve">
+    <value>परिणाम</value>
+  </data>
+  <data name="lblOvarianFindings" xml:space="preserve">
+    <value>डिम्बग्रंथि की खोज</value>
+  </data>
+  <data name="lblP" xml:space="preserve">
+    <value>P</value>
+  </data>
+  <data name="lblPackageCode" xml:space="preserve">
+    <value>पैकेज कोड</value>
+  </data>
+  <data name="lblPackageName" xml:space="preserve">
+    <value>पैकेज का नाम</value>
+  </data>
+  <data name="lblPanNo" xml:space="preserve">
+    <value>पैन नंबर</value>
+  </data>
+  <data name="lblParameterName" xml:space="preserve">
+    <value>मापदण्ड नाम</value>
+  </data>
+  <data name="lblPartnerAdditionalInformation" xml:space="preserve">
+    <value>साथी की अतिरिक्त जानकारी</value>
+  </data>
+  <data name="lblPartnerExists" xml:space="preserve">
+    <value>साथी पहले से मौजूद है</value>
+  </data>
+  <data name="lblPartnerInformation" xml:space="preserve">
+    <value>साथी की जानकारी</value>
+  </data>
+  <data name="lblPartnerName" xml:space="preserve">
+    <value>साथी का नाम</value>
+  </data>
+  <data name="lblPassword" xml:space="preserve">
+    <value>पासवर्ड</value>
+  </data>
+  <data name="lblPasswordConfiguration" xml:space="preserve">
+    <value>पासवर्ड कॉन्फ़िगरेशन</value>
+  </data>
+  <data name="lblPastMedicationHistory" xml:space="preserve">
+    <value>पिछले दवा का इतिहास</value>
+  </data>
+  <data name="lblPatientCategory" xml:space="preserve">
+    <value>रोगी श्रेणी</value>
+  </data>
+  <data name="lblPatientDashboard" xml:space="preserve">
+    <value>रोगी डैशबोर्ड</value>
+  </data>
+  <data name="lblPatientExists" xml:space="preserve">
+    <value>रोगी पहले से ही मौजूद है</value>
+  </data>
+  <data name="lblPatientInformation" xml:space="preserve">
+    <value>रोगी के बारे में जानकारी</value>
+  </data>
+  <data name="lblPatientName" xml:space="preserve">
+    <value>रोगी का नाम</value>
+  </data>
+  <data name="lblPatientReferralInformation" xml:space="preserve">
+    <value>रोगी रेफरल जानकारी</value>
+  </data>
+  <data name="lblPatientRelation" xml:space="preserve">
+    <value>रोगी का संबंध</value>
+  </data>
+  <data name="lblPatientSearch" xml:space="preserve">
+    <value>मरीज़</value>
+  </data>
+  <data name="lblPayerInfo" xml:space="preserve">
+    <value>भुगतान जानकारी</value>
+  </data>
+  <data name="lblPayLater" xml:space="preserve">
+    <value>बाद में भुगतान करें</value>
+  </data>
+  <data name="lblPaymentMode" xml:space="preserve">
+    <value>भुगतान का प्रकार</value>
+  </data>
+  <data name="lblPelvicInfection" xml:space="preserve">
+    <value>पैल्विक संक्रमण</value>
+  </data>
+  <data name="lblPelvicSites" xml:space="preserve">
+    <value>पेल्विक साइट्स</value>
+  </data>
+  <data name="lblPelvicSurgery" xml:space="preserve">
+    <value>पेल्विक सर्जरी</value>
+  </data>
+  <data name="lblPerformedAt" xml:space="preserve">
+    <value>पर प्रदर्शन किया</value>
+  </data>
+  <data name="lblPermanantAddress" xml:space="preserve">
+    <value>स्थायी पता</value>
+  </data>
+  <data name="lblPermanentAddress" xml:space="preserve">
+    <value>स्थाई पता</value>
+  </data>
+  <data name="lblPersonality" xml:space="preserve">
+    <value>व्यक्तित्व</value>
+  </data>
+  <data name="lblPharmacyLicenseNo" xml:space="preserve">
+    <value>फार्मेसी लाइसेंस सं</value>
+  </data>
+  <data name="lblPincode" xml:space="preserve">
+    <value>पिन कोड</value>
+  </data>
+  <data name="lblPlaceOfTreatment" xml:space="preserve">
+    <value>उपचार का स्थान</value>
+  </data>
+  <data name="lblPlannedDate" xml:space="preserve">
+    <value>नियोजित तिथि</value>
+  </data>
+  <data name="lblPolio" xml:space="preserve">
+    <value>पोलियो</value>
+  </data>
+  <data name="lblPostThawingPlan" xml:space="preserve">
+    <value>pighalne ke baad ki yajana</value>
+  </data>
+  <data name="lblPreferredLang" xml:space="preserve">
+    <value>पसंदीदा भाषा</value>
+  </data>
+  <data name="lblPrefix" xml:space="preserve">
+    <value>उपाधि</value>
+  </data>
+  <data name="lblPrescribedServices" xml:space="preserve">
+    <value>निर्धारित सेवाएं</value>
+  </data>
+  <data name="lblPresentingComplaint" xml:space="preserve">
+    <value>वर्तमान 
+शिकायत</value>
+  </data>
+  <data name="lblPresentingComplaints" xml:space="preserve">
+    <value>वर्तमान 
+शिकायतों</value>
+  </data>
+  <data name="lblPrevious" xml:space="preserve">
+    <value>पिछला</value>
+  </data>
+  <data name="lblPreviousFollicularScan" xml:space="preserve">
+    <value>पिछला कूपिक स्कैन</value>
+  </data>
+  <data name="lblPreviousFollow_UpNotes" xml:space="preserve">
+    <value>पिछले अनुवर्ती नोट्स</value>
+  </data>
+  <data name="lblPreviousHistory" xml:space="preserve">
+    <value>पिछला इतिहास</value>
+  </data>
+  <data name="lblPreviousInvestigations" xml:space="preserve">
+    <value>पिछली जांच</value>
+  </data>
+  <data name="lblPreviousOutstanding" xml:space="preserve">
+    <value>पिछला बकाया</value>
+  </data>
+  <data name="lblPreviousProcedures" xml:space="preserve">
+    <value>पिछली प्रक्रियाएँ</value>
+  </data>
+  <data name="lblPreviousTreatmentHistory" xml:space="preserve">
+    <value>उपचार का इतिहास</value>
+  </data>
+  <data name="lblPreviousVisits" xml:space="preserve">
+    <value>पिछला दौरा</value>
+  </data>
+  <data name="lblPreviousVitals" xml:space="preserve">
+    <value>पिछला मुख्य अंग</value>
+  </data>
+  <data name="lblPrimarySymptoms" xml:space="preserve">
+    <value>प्राथमिक लक्षण</value>
+  </data>
+  <data name="lblPrint" xml:space="preserve">
+    <value>छपाई</value>
+  </data>
+  <data name="lblPRN" xml:space="preserve">
+    <value>PRN</value>
+  </data>
+  <data name="lblProcedures" xml:space="preserve">
+    <value>प्रक्रियाएं</value>
+  </data>
+  <data name="lblPSV" xml:space="preserve">
+    <value>PSV</value>
+  </data>
+  <data name="lblPwdShouldContain" xml:space="preserve">
+    <value>आपका पासवर्ड होना चाहिए</value>
+  </data>
+  <data name="lblQualification" xml:space="preserve">
+    <value>योग्यता</value>
+  </data>
+  <data name="lblQuantity" xml:space="preserve">
+    <value>मात्रा</value>
+  </data>
+  <data name="lblQuantityml" xml:space="preserve">
+    <value>मात्रा (एमएल)</value>
+  </data>
+  <data name="lblQueue" xml:space="preserve">
+    <value>कतार</value>
+  </data>
+  <data name="lblRadiology" xml:space="preserve">
+    <value>रेडियोलोजी</value>
+  </data>
+  <data name="lblRate" xml:space="preserve">
+    <value>मूल्य</value>
+  </data>
+  <data name="lblRateEditable" xml:space="preserve">
+    <value>दर संपादन योग्य</value>
+  </data>
+  <data name="lblRating" xml:space="preserve">
+    <value>कर स्थिर करना</value>
+  </data>
+  <data name="lblReason" xml:space="preserve">
+    <value>बदलाव के कारण</value>
+  </data>
+  <data name="lblReasonForCancellation" xml:space="preserve">
+    <value>निरस्तीकरण का कारण</value>
+  </data>
+  <data name="lblReasonForChange" xml:space="preserve">
+    <value>बदलाव के कारण</value>
+  </data>
+  <data name="lblRecordsPerPage" xml:space="preserve">
+    <value>प्रति पृष्ठ अभिलेखॉ</value>
+  </data>
+  <data name="lblRefDoc" xml:space="preserve">
+    <value> रेफरल चिकित्सक</value>
+  </data>
+  <data name="lblReferenceNo" xml:space="preserve">
+    <value>संदर्भ संख्या</value>
+  </data>
+  <data name="lblReferenceRange" xml:space="preserve">
+    <value>संदर्भ श्रेणी</value>
+  </data>
+  <data name="lblReferralInformation" xml:space="preserve">
+    <value>संदर्भ जानकारी</value>
+  </data>
+  <data name="lblReferralPatient" xml:space="preserve">
+    <value>रेफरल रोगी</value>
+  </data>
+  <data name="lblReferralRemark" xml:space="preserve">
+    <value>रेफरल टिप्पणी</value>
+  </data>
+  <data name="lblRefresh" xml:space="preserve">
+    <value>ताज़ा करना</value>
+  </data>
+  <data name="lblRegisteredAt" xml:space="preserve">
+    <value>पर पंजीकृत है</value>
+  </data>
+  <data name="lblRegisterExternalDoctor" xml:space="preserve">
+    <value>बाहरी चिकित्सक को पंजीकृत करें</value>
+  </data>
+  <data name="lblRegistrationDate" xml:space="preserve">
+    <value>पंजीकरण की तारीख</value>
+  </data>
+  <data name="lblRegistrationNo" xml:space="preserve">
+    <value>पंजीकरण क्रमांक</value>
+  </data>
+  <data name="lblRegistrationType" xml:space="preserve">
+    <value>पंजीकरण प्रकार</value>
+  </data>
+  <data name="lblRelationship" xml:space="preserve">
+    <value>संबंध</value>
+  </data>
+  <data name="lblReligion" xml:space="preserve">
+    <value>धर्म</value>
+  </data>
+  <data name="lblRemainingEmbryo" xml:space="preserve">
+    <value>शेष भ्रूण</value>
+  </data>
+  <data name="lblRemainingOocytes" xml:space="preserve">
+    <value>शेष रहा Oocytes</value>
+  </data>
+  <data name="lblRemark" xml:space="preserve">
+    <value>टिप्पणी</value>
+  </data>
+  <data name="lblRemarks" xml:space="preserve">
+    <value>टिप्पणियों</value>
+  </data>
+  <data name="lblReportCategory" xml:space="preserve">
+    <value>रिपोर्ट श्रेणी</value>
+  </data>
+  <data name="lblReportDate" xml:space="preserve">
+    <value>रिपोर्ट तिथि</value>
+  </data>
+  <data name="lblReportName" xml:space="preserve">
+    <value>रिपोर्ट का नाम</value>
+  </data>
+  <data name="lblReportUpload" xml:space="preserve">
+    <value>रिपोर्ट अपलोड करें</value>
+  </data>
+  <data name="lblRescheduleAppointment" xml:space="preserve">
+    <value>मिलने के समय को दोबारा अनुसूचित करें</value>
+  </data>
+  <data name="lblResetPwd" xml:space="preserve">
+    <value>पासवर्ड रीसेट</value>
+  </data>
+  <data name="lblRespiratoryDisease" xml:space="preserve">
+    <value>श्वसन संबंधी रोग</value>
+  </data>
+  <data name="lblResultValue" xml:space="preserve">
+    <value>परिणाम मान</value>
+  </data>
+  <data name="lblResult_ISCN" xml:space="preserve">
+    <value>परिणाम (ISCN)</value>
+  </data>
+  <data name="lblRI" xml:space="preserve">
+    <value>RI</value>
+  </data>
+  <data name="lblRightOvary" xml:space="preserve">
+    <value>दायां अंडाशय</value>
+  </data>
+  <data name="lblRole" xml:space="preserve">
+    <value>भूमिका</value>
+  </data>
+  <data name="lblRoute" xml:space="preserve">
+    <value>मार्ग</value>
+  </data>
+  <data name="lblSample" xml:space="preserve">
+    <value>नमूना</value>
+  </data>
+  <data name="lblSampleType" xml:space="preserve">
+    <value>नमूना प्रकार</value>
+  </data>
+  <data name="lblSavingAccount" xml:space="preserve">
+    <value>बचत खाता</value>
+  </data>
+  <data name="lblSchedule" xml:space="preserve">
+    <value>अनुसूची</value>
+  </data>
+  <data name="lblScheduleActiveDeactiveMessage" xml:space="preserve">
+    <value>सक्रिय रूप से शेड्यूल / निष्क्रिय करें</value>
+  </data>
+  <data name="lblScheduleslot" xml:space="preserve">
+    <value>अनुसूची स्लॉट</value>
+  </data>
+  <data name="lblScheduleType" xml:space="preserve">
+    <value>अनुसूची प्रकार</value>
+  </data>
+  <data name="lblSearch" xml:space="preserve">
+    <value>खोज</value>
+  </data>
+  <data name="lblSearchAppointment" xml:space="preserve">
+    <value>अपॉइंटमेंट खोजें</value>
+  </data>
+  <data name="lblSearchPatient" xml:space="preserve">
+    <value>रोगी खोजें</value>
+  </data>
+  <data name="lblSelCityAndClinic" xml:space="preserve">
+    <value>क्लिनिक स्थान और शहर का चयन करें</value>
+  </data>
+  <data name="lblSelect" xml:space="preserve">
+    <value>चुनते हैं</value>
+  </data>
+  <data name="lblSelfInformation" xml:space="preserve">
+    <value>स्वयं की जानकारी</value>
+  </data>
+  <data name="lblSemenAnalysisInterpretation" xml:space="preserve">
+    <value>वीर्य विश्लेषण व्याख्या</value>
+  </data>
+  <data name="lblSemenColor" xml:space="preserve">
+    <value>वीर्य का रंग</value>
+  </data>
+  <data name="lblSeniorCitizenDiscount" xml:space="preserve">
+    <value>वरिष्ठ नागरिक छूट</value>
+  </data>
+  <data name="lblService" xml:space="preserve">
+    <value>सेवा</value>
+  </data>
+  <data name="lblServiceActiveDeactiveMessage" xml:space="preserve">
+    <value>सेवा सक्रिय / निष्क्रिय करना सफलतापूर्वक</value>
+  </data>
+  <data name="lblServiceCode" xml:space="preserve">
+    <value>सेवा कोड</value>
+  </data>
+  <data name="lblServiceName" xml:space="preserve">
+    <value>सेवा का नाम</value>
+  </data>
+  <data name="lblServiceNo" xml:space="preserve">
+    <value>सेवा संख्या</value>
+  </data>
+  <data name="lblSetFavorite" xml:space="preserve">
+    <value>पसंदीदा सेट करें</value>
+  </data>
+  <data name="lblSetFavourite" xml:space="preserve">
+    <value>पसंदीदा सेट करें</value>
+  </data>
+  <data name="lblSetFavouriteDrug" xml:space="preserve">
+    <value>पसंदीदा दवा निर्धारित करें</value>
+  </data>
+  <data name="lblSettelBill" xml:space="preserve">
+    <value>सेटल बिल</value>
+  </data>
+  <data name="lblSeverity" xml:space="preserve">
+    <value>तीव्रता</value>
+  </data>
+  <data name="lblSexualDysfunction" xml:space="preserve">
+    <value>यौन रोग</value>
+  </data>
+  <data name="lblSexualHistory" xml:space="preserve">
+    <value>यौन इतिहास</value>
+  </data>
+  <data name="lblSinceWhen" xml:space="preserve">
+    <value>कब से</value>
+  </data>
+  <data name="lblSkinColor" xml:space="preserve">
+    <value>त्वचा का रंग</value>
+  </data>
+  <data name="lblSLEDisease" xml:space="preserve">
+    <value>SLE रोग</value>
+  </data>
+  <data name="lblSleep" xml:space="preserve">
+    <value>नींद</value>
+  </data>
+  <data name="lblSmoking" xml:space="preserve">
+    <value>धूम्रपान</value>
+  </data>
+  <data name="lblSno" xml:space="preserve">
+    <value>Sno</value>
+  </data>
+  <data name="lblSocialHistory" xml:space="preserve">
+    <value>सामाजिक इतिहास</value>
+  </data>
+  <data name="lblSourceNeedle" xml:space="preserve">
+    <value>स्रोत सुई</value>
+  </data>
+  <data name="lblSourceofReference" xml:space="preserve">
+    <value>संदर्भ का स्रोत</value>
+  </data>
+  <data name="lblSourceSemen" xml:space="preserve">
+    <value>स्रोत वीर्य</value>
+  </data>
+  <data name="lblSpecialization" xml:space="preserve">
+    <value>विशेषज्ञता</value>
+  </data>
+  <data name="lblSpecialRegistration" xml:space="preserve">
+    <value>विशेष पंजीकरण</value>
+  </data>
+  <data name="lblSpouseInformation" xml:space="preserve">
+    <value>जीवनसाथी की जानकारी</value>
+  </data>
+  <data name="lblSpouseName" xml:space="preserve">
+    <value>साथी का नाम</value>
+  </data>
+  <data name="lblSr_No" xml:space="preserve">
+    <value>धारावाहिक। संख्या</value>
+  </data>
+  <data name="lblStaff" xml:space="preserve">
+    <value>कर्मचारी</value>
+  </data>
+  <data name="lblStaffActDeact" xml:space="preserve">
+    <value>कर्मचारी सक्रिय रूप से सक्रिय / निष्क्रिय हो जाते हैं</value>
+  </data>
+  <data name="lblStaffDetail" xml:space="preserve">
+    <value>स्टाफ का विवरण</value>
+  </data>
+  <data name="lblStaffDiscount" xml:space="preserve">
+    <value>कर्मचारी छूट</value>
+  </data>
+  <data name="lblStaffInfo" xml:space="preserve">
+    <value>स्टाफ जानकारी</value>
+  </data>
+  <data name="lblStaffRelation" xml:space="preserve">
+    <value>स्टाफ रिलेशन</value>
+  </data>
+  <data name="lblStaffSearch" xml:space="preserve">
+    <value>स्टाफ खोज</value>
+  </data>
+  <data name="lblStartDate" xml:space="preserve">
+    <value>आरंभ करने की तिथि</value>
+  </data>
+  <data name="lblStartTime" xml:space="preserve">
+    <value>समय शुरू</value>
+  </data>
+  <data name="lblState" xml:space="preserve">
+    <value>राज्य</value>
+  </data>
+  <data name="lblStatus" xml:space="preserve">
+    <value>स्थिति</value>
+  </data>
+  <data name="lblSTD_s" xml:space="preserve">
+    <value>एसटीडी</value>
+  </data>
+  <data name="lblStimulationChart" xml:space="preserve">
+    <value>उत्तेजना चार्ट</value>
+  </data>
+  <data name="lblStreet" xml:space="preserve">
+    <value>सड़क</value>
+  </data>
+  <data name="lblStrength" xml:space="preserve">
+    <value>शक्ति</value>
+  </data>
+  <data name="lblStress" xml:space="preserve">
+    <value>तनाव</value>
+  </data>
+  <data name="lblSubSpecialization" xml:space="preserve">
+    <value>उप विशेषज्ञता</value>
+  </data>
+  <data name="lblSubtype" xml:space="preserve">
+    <value>उपप्रकार</value>
+  </data>
+  <data name="lblSuccessfulpregnancieswithpastpartner" xml:space="preserve">
+    <value>पिछले साथी के साथ सफल गर्भधारण</value>
+  </data>
+  <data name="lblSucessful" xml:space="preserve">
+    <value>सफलता</value>
+  </data>
+  <data name="lblSurgery_PreviousTreatmentHistory" xml:space="preserve">
+    <value>सर्जरी और पिछला उपचार इतिहास</value>
+  </data>
+  <data name="lblSurgicalHistory" xml:space="preserve">
+    <value>सर्जिकल इतिहास</value>
+  </data>
+  <data name="lblSurrogate" xml:space="preserve">
+    <value>Surrogate</value>
+  </data>
+  <data name="lblS_No" xml:space="preserve">
+    <value>S.No.</value>
+  </data>
+  <data name="lblTariff" xml:space="preserve">
+    <value>टैरिफ़</value>
+  </data>
+  <data name="lblTemperature_Range" xml:space="preserve">
+    <value>तापमान (रेंज 97.8-99 &amp; # 8457;)</value>
+  </data>
+  <data name="lblTemplate" xml:space="preserve">
+    <value>टेम्पलेट</value>
+  </data>
+  <data name="lblTemplateName" xml:space="preserve">
+    <value>टेम्पलेट नाम</value>
+  </data>
+  <data name="lbltest" xml:space="preserve">
+    <value>परीक्षण</value>
+  </data>
+  <data name="lblTestName" xml:space="preserve">
+    <value>परीक्षण का नाम</value>
+  </data>
+  <data name="lblTetanus" xml:space="preserve">
+    <value>धनुस्तंभ</value>
+  </data>
+  <data name="lblThe" xml:space="preserve">
+    <value>The</value>
+  </data>
+  <data name="lblThyroidDisorder" xml:space="preserve">
+    <value>थाइराइड विकार</value>
+  </data>
+  <data name="lblTime" xml:space="preserve">
+    <value>समय</value>
+  </data>
+  <data name="lblTimePeriod" xml:space="preserve">
+    <value>समय सीमा</value>
+  </data>
+  <data name="lblTo" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="lblTobacco" xml:space="preserve">
+    <value>तंबाकू</value>
+  </data>
+  <data name="lblToDate" xml:space="preserve">
+    <value>तारीख तक</value>
+  </data>
+  <data name="lblToDate12_2_2019" xml:space="preserve">
+    <value>आज तक: 12/2/2019</value>
+  </data>
+  <data name="lblTodaysVitals" xml:space="preserve">
+    <value>aaj ke mukhya anga</value>
+  </data>
+  <data name="lblTokenNo" xml:space="preserve">
+    <value>टोकन नंबर</value>
+  </data>
+  <data name="lblTotalBalance" xml:space="preserve">
+    <value>कुल शेष</value>
+  </data>
+  <data name="lblTotalBillAmt" xml:space="preserve">
+    <value>कुल बिल राशि</value>
+  </data>
+  <data name="lblTotalConcessionAmount" xml:space="preserve">
+    <value>कुल रियायत राशि</value>
+  </data>
+  <data name="lblTotalCount" xml:space="preserve">
+    <value>कुल संख्या</value>
+  </data>
+  <data name="lblTotalPaidAmt" xml:space="preserve">
+    <value>कुल भुगतान कार्यालय</value>
+  </data>
+  <data name="lblTotalPayableAmt" xml:space="preserve">
+    <value>कुल देय राशि</value>
+  </data>
+  <data name="lblTransgender" xml:space="preserve">
+    <value>ट्रांसजेंडर</value>
+  </data>
+  <data name="lblTreatmentRequired" xml:space="preserve">
+    <value>उपचार आवश्यक है</value>
+  </data>
+  <data name="lblTrophoectodermDecription" xml:space="preserve">
+    <value>ट्रोफोक्टोडर्म विवरण</value>
+  </data>
+  <data name="lblTryingtoachievepregnancywithcurrentpartnersince" xml:space="preserve">
+    <value>वर्तमान साथी के साथ गर्भावस्था को प्राप्त करने की कोशिश कर रहा है</value>
+  </data>
+  <data name="lblTryingtoconceivesince" xml:space="preserve">
+    <value>कब से गर्भ धारण करने की कोशिश कर रही है</value>
+  </data>
+  <data name="lblTuberculosis" xml:space="preserve">
+    <value>क्षय</value>
+  </data>
+  <data name="lblType" xml:space="preserve">
+    <value>प्रकार</value>
+  </data>
+  <data name="lblTypeofAllergy" xml:space="preserve">
+    <value>एलर्जी का प्रकार</value>
+  </data>
+  <data name="lblTypeOfConceiving" xml:space="preserve">
+    <value>गर्भ धारण करने का प्रकार</value>
+  </data>
+  <data name="lblTypeofDisease" xml:space="preserve">
+    <value>रोग का प्रकार</value>
+  </data>
+  <data name="lblTypeofSurgery" xml:space="preserve">
+    <value>सर्जरी के प्रकार</value>
+  </data>
+  <data name="lblUOM" xml:space="preserve">
+    <value>नाप की इकाई</value>
+  </data>
+  <data name="lblUpdateAttachment" xml:space="preserve">
+    <value>अद्यतन अनुलग्नक</value>
+  </data>
+  <data name="lblUpdatePayment" xml:space="preserve">
+    <value>भुगतान अपडेट करें</value>
+  </data>
+  <data name="lblUpload" xml:space="preserve">
+    <value>भार डालना</value>
+  </data>
+  <data name="lblUploadImage" xml:space="preserve">
+    <value>तस्वीर डालिये</value>
+  </data>
+  <data name="lblUploadPhoto" xml:space="preserve">
+    <value>फोटो अपलोड करें</value>
+  </data>
+  <data name="lblUrgencyforUrination" xml:space="preserve">
+    <value>पेशाब के लिए आग्रह</value>
+  </data>
+  <data name="lblUrinationonstraining_coughing" xml:space="preserve">
+    <value>पेशाब के लिए  तनाव / खाँसी पर आग्रह</value>
+  </data>
+  <data name="lblUser" xml:space="preserve">
+    <value>उपयोगकर्ता</value>
+  </data>
+  <data name="lblUserDetail" xml:space="preserve">
+    <value>उपयोगकर्ता की जानकारी</value>
+  </data>
+  <data name="lblUserName" xml:space="preserve">
+    <value>उपयोगकर्ता नाम</value>
+  </data>
+  <data name="lblUserRole" xml:space="preserve">
+    <value>उपयोगकर्ता भूमिका</value>
+  </data>
+  <data name="lblUserRoleDetails" xml:space="preserve">
+    <value>उपयोगकर्ता भूमिका विवरण</value>
+  </data>
+  <data name="lblUserType" xml:space="preserve">
+    <value>उपयोगकर्ता का प्रकार</value>
+  </data>
+  <data name="lblUsrActDeact" xml:space="preserve">
+    <value>उपयोगकर्ता सक्रिय रूप से सक्रिय / निष्क्रिय</value>
+  </data>
+  <data name="lblUterinFindings" xml:space="preserve">
+    <value>गर्भाशय की खोज</value>
+  </data>
+  <data name="lblUterusMobility" xml:space="preserve">
+    <value>गर्भाशय की गतिशीलता</value>
+  </data>
+  <data name="lblUterusPosition" xml:space="preserve">
+    <value>गर्भाशय की स्थिति</value>
+  </data>
+  <data name="lblUterusShape" xml:space="preserve">
+    <value>गर्भाशय का आकार</value>
+  </data>
+  <data name="lblVaccination" xml:space="preserve">
+    <value>टीका लगाना</value>
+  </data>
+  <data name="lblValidEmail" xml:space="preserve">
+    <value>कृपया मान्य ईमेल आईडी दर्ज करें</value>
+  </data>
+  <data name="lblValidMobNo" xml:space="preserve">
+    <value>कृपया मान्य मोबाइल नंबर दर्ज करें</value>
+  </data>
+  <data name="lblValue" xml:space="preserve">
+    <value>मूल्य</value>
+  </data>
+  <data name="lblValue12_0to_15_5g_dl" xml:space="preserve">
+    <value>मान (12.0 से 15.5 g / dl)</value>
+  </data>
+  <data name="lblView" xml:space="preserve">
+    <value>देखना</value>
+  </data>
+  <data name="lblViewIdProof" xml:space="preserve">
+    <value>आईडी प्रमाण देखें</value>
+  </data>
+  <data name="lblViewLabResults" xml:space="preserve">
+    <value>लैब परिणाम देखें</value>
+  </data>
+  <data name="lblViewPatient" xml:space="preserve">
+    <value>रोगी को देखें</value>
+  </data>
+  <data name="lblViewRoleMenu" xml:space="preserve">
+    <value>भूमिका मेनू देखें</value>
+  </data>
+  <data name="lblView_Edit" xml:space="preserve">
+    <value>देखें सुधारें</value>
+  </data>
+  <data name="lblVisitDate" xml:space="preserve">
+    <value>भेंट दिनांक पर जाएँ</value>
+  </data>
+  <data name="lblVisitFrom" xml:space="preserve">
+    <value> भेंटसे जाएँ</value>
+  </data>
+  <data name="lblVisitInformation" xml:space="preserve">
+    <value>भेंट जानकारी पर जाएँ</value>
+  </data>
+  <data name="lblVisitMarkedby" xml:space="preserve">
+    <value>भेंट द्वारा चिह्नित पर जाएँ</value>
+  </data>
+  <data name="lblVisitStatus" xml:space="preserve">
+    <value>भेंट 
+स्थिति का दौरा करें</value>
+  </data>
+  <data name="lblVisitTime" xml:space="preserve">
+    <value> भेंट समय पर जाएँ</value>
+  </data>
+  <data name="lblVisitTo" xml:space="preserve">
+    <value>भेंट </value>
+  </data>
+  <data name="lblVisitType" xml:space="preserve">
+    <value>भेंट 
+प्रकार</value>
+  </data>
+  <data name="lblVisitTypeServiceLinkMaster" xml:space="preserve">
+    <value>भेंट प्रकार सर्विस लिंक पेस्ट पर जाएं </value>
+  </data>
+  <data name="lblWarning_Precautions" xml:space="preserve">
+    <value>चेतावनी / सावधानियाँ</value>
+  </data>
+  <data name="lblWebCamNotStarted" xml:space="preserve">
+    <value>वेबकैम शुरू नहीं किया जा सका। क्या आपने इसे एक्सेस दिया?</value>
+  </data>
+  <data name="lblWeekly" xml:space="preserve">
+    <value>साप्ताहिक</value>
+  </data>
+  <data name="lblWeight_kg" xml:space="preserve">
+    <value>वजन (किग्रा)</value>
+  </data>
+  <data name="lblWhen" xml:space="preserve">
+    <value>कब</value>
+  </data>
+  <data name="lblYear" xml:space="preserve">
+    <value>साल</value>
+  </data>
+  <data name="lblYears" xml:space="preserve">
+    <value>वर्षों</value>
+  </data>
+  <data name="lblYr" xml:space="preserve">
+    <value>साल</value>
+  </data>
+  <data name="lblYrs" xml:space="preserve">
+    <value>वर्षों</value>
+  </data>
+  <data name="lbl_Name_PRNNo_MobNo_OPDNo" xml:space="preserve">
+    <value>नाम / PRN नहीं / Mob No / OPD नहीं</value>
+  </data>
+  <data name="lbToTime" xml:space="preserve">
+    <value>समय पर</value>
+  </data>
+  <data name="msg5RowOnly" xml:space="preserve">
+    <value>आप एक बार में अधिकतम 5 पंक्तियाँ जोड़ सकते हैं</value>
+  </data>
+  <data name="msgActivatedSuccessfully" xml:space="preserve">
+    <value>सफलतापूर्वक सफल हुआ</value>
+  </data>
+  <data name="msgAddatleast1service" xml:space="preserve">
+    <value>कम से कम 1 सेवा जोड़ें</value>
+  </data>
+  <data name="msgAddRow_Cancel" xml:space="preserve">
+    <value>पक्का आप रद्द करना चाहते हैं?</value>
+  </data>
+  <data name="msgAddtofavouritesuccessfully" xml:space="preserve">
+    <value>पसंदीदा में सफलतापूर्वक जोड़ें</value>
+  </data>
+  <data name="msgAlreadyAddedToFavouriteList" xml:space="preserve">
+    <value>पहले से ही पसंदीदा सूची में जोड़ा गया</value>
+  </data>
+  <data name="msgAlreadyaddedundersameVisit" xml:space="preserve">
+    <value>पहले से ही एक ही यात्रा के तहत जोड़ा गया</value>
+  </data>
+  <data name="msgAlreadyBookedAppointment" xml:space="preserve">
+    <value>क्षमा करें, दी गई समयावधि के लिए नियुक्ति पहले से ही बुक या वर्तमान में अनुपलब्ध है</value>
+  </data>
+  <data name="msgAlreadysetasfavouriteforthistemplate" xml:space="preserve">
+    <value>पहले से ही इस टेम्पलेट के लिए पसंदीदा के रूप में सेट करें</value>
+  </data>
+  <data name="msgAmountexceeded" xml:space="preserve">
+    <value>राशि पार हो गई</value>
+  </data>
+  <data name="msgAnnivarsaryValidation" xml:space="preserve">
+    <value>मिन 18 साल अलग। DOB और वर्षगांठ के बीच की आवश्यकता</value>
+  </data>
+  <data name="msgAppointmentAddedSuccessfully" xml:space="preserve">
+    <value>नियुक्ति सफलतापूर्वक बच गई</value>
+  </data>
+  <data name="msgAppointmentAlreadyCancelled" xml:space="preserve">
+    <value>नियुक्ति पहले ही रद्द</value>
+  </data>
+  <data name="msgAppointmentAlreadyMarked" xml:space="preserve">
+    <value>नियुक्ति पहले ही चिह्नित कर ली गई है</value>
+  </data>
+  <data name="msgAreYouSureWanttoMarkaDonor" xml:space="preserve">
+    <value>क्या आप निश्चित रूप से एक दाता को चिह्नित करना चाहते हैं?</value>
+  </data>
+  <data name="msgAreYouSureWanttoMarkaSurrogate" xml:space="preserve">
+    <value>क्या आप सुनिश्चित हैं कि एक सरोगेट को चिह्नित करना चाहते हैं</value>
+  </data>
+  <data name="msgAtleastoneDigit" xml:space="preserve">
+    <value>कम से कम 1 अंक</value>
+  </data>
+  <data name="msgAtlistonedatashouldbeentered" xml:space="preserve">
+    <value>सूची में एक डेटा दर्ज किया जाना चाहिए</value>
+  </data>
+  <data name="msgAttactmentshouldbeinpng_jpeg_pdf_format" xml:space="preserve">
+    <value>attachment  png, jpeg, pdf फॉर्मेट में होना चाहिए</value>
+  </data>
+  <data name="msgAttactmentshouldbenotgreaterthan2MB" xml:space="preserve">
+    <value>व्यवहार 2 एमबी से अधिक नहीं होना चाहिए</value>
+  </data>
+  <data name="msgAttactmentshouldnotbegreaterthan2MB" xml:space="preserve">
+    <value>व्यवहार 2 एमबी से अधिक नहीं होना चाहिए</value>
+  </data>
+  <data name="msgBankDetailsAddedsuccessfully" xml:space="preserve">
+    <value>बैंक विवरण सफलतापूर्वक जोड़ा गया</value>
+  </data>
+  <data name="msgBankDetailsUpdatedsuccessfully" xml:space="preserve">
+    <value>बैंक विवरण सफलतापूर्वक अपडेट किया गया</value>
+  </data>
+  <data name="msgBillsavedsuccessfully" xml:space="preserve">
+    <value>बिल सफलतापूर्वक सहेजा गया</value>
+  </data>
+  <data name="msgBillUpdatedsuccessfully" xml:space="preserve">
+    <value>बिल अपडेट सफलतापूर्वक</value>
+  </data>
+  <data name="msgBothimagearesamepleaseselectanotherimage" xml:space="preserve">
+    <value>दोनों चित्र समान हैं, कृपया दूसरी छवि चुनें</value>
+  </data>
+  <data name="msgCannotActivatBecauseFormAlreadyLinkedToOtherTemplate" xml:space="preserve">
+    <value>सक्रिय नहीं हो सकता क्योंकि फॉर्म पहले से ही दूसरे टेम्पलेट से लिंक है</value>
+  </data>
+  <data name="msgCheckDuplicateRecord" xml:space="preserve">
+    <value>डुप्लिकेट रिकॉर्ड की जाँच करें</value>
+  </data>
+  <data name="msgCheckRemainingEmbryoorOocyte" xml:space="preserve">
+    <value>शेष भ्रूण या Oocyte की जाँच करें</value>
+  </data>
+  <data name="msgCnfSave" xml:space="preserve">
+    <value>क्या आप परिवर्तनों को सेव करना चाहते हैं ?</value>
+  </data>
+  <data name="msgCnfUpdate" xml:space="preserve">
+    <value>क्या आप परिवर्तन अपडेट करना चाहते हैं?</value>
+  </data>
+  <data name="msgCodealreadyexists" xml:space="preserve">
+    <value>कोड पहले से मौजूद है</value>
+  </data>
+  <data name="msgCodeDescReq" xml:space="preserve">
+    <value>कोड / विवरण आवश्यक है।</value>
+  </data>
+  <data name="msgCycleCannotbeaddedtomalePatient" xml:space="preserve">
+    <value>साइकिल को पुरुष रोगी में नहीं जोड़ा जा सकता है</value>
+  </data>
+  <data name="msgCycleiscreatedagainstthispackageYoucannotdeletepackage" xml:space="preserve">
+    <value>इस पैकेज के खिलाफ साइकिल बनाई गई है, आप पैकेज को हटा नहीं सकते</value>
+  </data>
+  <data name="msgDataSavedSuccessfully" xml:space="preserve">
+    <value>डेटा सफलतापूर्वक सहेजा गया</value>
+  </data>
+  <data name="msgDateislessthanselectedyear" xml:space="preserve">
+    <value>तिथि चयनित वर्ष से कम है</value>
+  </data>
+  <data name="msgDateisMandartoryinCycles" xml:space="preserve">
+    <value>तिथि चक्रों में अनिवार्य है</value>
+  </data>
+  <data name="msgDateShouldbeLessThenCurrentDate" xml:space="preserve">
+    <value>तिथि कम होनी चाहिए फिर वर्तमान तिथि</value>
+  </data>
+  <data name="msgDeactivatedSuccessfully" xml:space="preserve">
+    <value>सफलतापूर्वक सफल हुआ</value>
+  </data>
+  <data name="msgDefinetemplate" xml:space="preserve">
+    <value>टेम्पलेट को परिभाषित करें</value>
+  </data>
+  <data name="msgDefinetemplatefirst" xml:space="preserve">
+    <value>पहले टेम्पलेट को परिभाषित करें</value>
+  </data>
+  <data name="msgDelete" xml:space="preserve">
+    <value>रिकॉर्ड नष्ट कर दिया गया</value>
+  </data>
+  <data name="msgDeletedSuccessfully" xml:space="preserve">
+    <value>सफलतापूर्वक मिटाया गया</value>
+  </data>
+  <data name="msgDeleteMessageAck" xml:space="preserve">
+    <value>कृपया नियुक्ति रद्द करने का कारण दर्ज करें</value>
+  </data>
+  <data name="msgDeletephoto" xml:space="preserve">
+    <value>फ़ोटो सफलतापूर्वक हटा दिया गया</value>
+  </data>
+  <data name="msgDeleteSuccess" xml:space="preserve">
+    <value>नियुक्ति सफलतापूर्वक हटा दी गई</value>
+  </data>
+  <data name="msgDescriptionalreadyexists" xml:space="preserve">
+    <value>वर्णन पहले से मौजूद है</value>
+  </data>
+  <data name="msgDiagnosisAlreadyAdded" xml:space="preserve">
+    <value>निदान जोड़ा पहले से ही</value>
+  </data>
+  <data name="msgDiagnosisAlreadyAddedToPatientDoYouWantToContinue" xml:space="preserve">
+    <value>निदान पहले से ही रोगी को जोड़ा गया, क्या आप जारी रखना चाहते हैं?</value>
+  </data>
+  <data name="msgDiagnosisCanBeDeletedOfActiveVisitsOnly" xml:space="preserve">
+    <value>निदान केवल सक्रिय यात्राओं का हटाया जा सकता है</value>
+  </data>
+  <data name="msgDiagnosisDeletedsuccessfully" xml:space="preserve">
+    <value>निदान सफलतापूर्वक हटा दिया गया</value>
+  </data>
+  <data name="msgDiagnosisisaddedintheFavouriteList" xml:space="preserve">
+    <value>पसंदीदा सूची में निदान जोड़ा गया है</value>
+  </data>
+  <data name="msgDiagnosisisremovedfromtheFavouriteList" xml:space="preserve">
+    <value>पसंदीदा सूची से निदान हटा दिया जाता है</value>
+  </data>
+  <data name="msgDoctorExistsInExternalList" xml:space="preserve">
+    <value>डॉक्टर पहले से ही बाहरी सूची में मौजूद है</value>
+  </data>
+  <data name="msgDoctorExistsInInternalList" xml:space="preserve">
+    <value>डॉक्टर पहले से ही इनडोर सूची में मौजूद हैं</value>
+  </data>
+  <data name="msgDoctorNotAvailable" xml:space="preserve">
+    <value>चयनित तिथि पर उपलब्ध नहीं है, कृपया कुछ अन्य तिथि चुनें</value>
+  </data>
+  <data name="msgDonorCycleIsCreatedSoCantDeleteTheRecord" xml:space="preserve">
+    <value>दाता चक्र बनाया गया है तो रिकॉर्ड को नष्ट नहीं कर सकता</value>
+  </data>
+  <data name="msgDonorlinkedsuccessfully" xml:space="preserve">
+    <value>डोनर सफलतापूर्वक जुड़ा हुआ है</value>
+  </data>
+  <data name="msgDonorNotMarkTryAgain" xml:space="preserve">
+    <value>daata mark nahi hain firse koshish kijiye</value>
+  </data>
+  <data name="msgDoyouwanttoclosevisit" xml:space="preserve">
+    <value>क्या आप यात्रा बंद करना चाहते हैं?</value>
+  </data>
+  <data name="msgDoYouWantToContinueValidation" xml:space="preserve">
+    <value>क्या आप बिना बचत के लेन-देन छोड़ना चाहते हैं</value>
+  </data>
+  <data name="msgDoyouwanttodeletereport" xml:space="preserve">
+    <value>क्या आप रिपोर्ट हटाना चाहते हैं?</value>
+  </data>
+  <data name="msgDoYouWantToDisardthedrugsaddedinSetFavList" xml:space="preserve">
+    <value>क्या आप सेट Fav सूची में शामिल दवाओं को त्यागना चाहते हैं</value>
+  </data>
+  <data name="msgDoYouWantToFreezBill" xml:space="preserve">
+    <value>क्या आप वाकई बिल को फ्रीज करना चाहते हैं?</value>
+  </data>
+  <data name="msgDoYouwanttoMarkVisitForPartner" xml:space="preserve">
+    <value>क्या आप पार्टनर के लिए मार्क विजिट करना चाहते हैं?</value>
+  </data>
+  <data name="msgDoyouwanttoRegisterPatient" xml:space="preserve">
+    <value>क्या आप रोगी पंजीकरण करना चाहते हैं?</value>
+  </data>
+  <data name="msgDrugeNameshouldnotbeemptyinPastMedicationHistoryrow" xml:space="preserve">
+    <value>पिछले दवा इतिहास पंक्ति में ड्रूज नाम खाली नहीं होना चाहिए</value>
+  </data>
+  <data name="msgDuplicate" xml:space="preserve">
+    <value>रिकॉर्ड पहले से ही उपलब्ध विवरण के साथ मौजूद है।</value>
+  </data>
+  <data name="msgDuplicateCode" xml:space="preserve">
+    <value>डुप्लिकेट कोड</value>
+  </data>
+  <data name="msgDuplication_Code" xml:space="preserve">
+    <value>कोड / विवरण पहले से मौजूद है! कृपया एक अद्वितीय कोड दर्ज करें।</value>
+  </data>
+  <data name="msgDuplication_Description" xml:space="preserve">
+    <value>कोड / विवरण पहले से मौजूद है! कृपया एक अद्वितीय विवरण दर्ज करें</value>
+  </data>
+  <data name="msgEnterAccountNo" xml:space="preserve">
+    <value>खाता दर्ज करें</value>
+  </data>
+  <data name="msgEnterAge" xml:space="preserve">
+    <value>उम्र दर्ज करें</value>
+  </data>
+  <data name="msgEnterBranchname" xml:space="preserve">
+    <value>शाखा का नाम दर्ज करें</value>
+  </data>
+  <data name="msgEntercontactno" xml:space="preserve">
+    <value>संपर्क </value>
+  </data>
+  <data name="msgEntercountrycode" xml:space="preserve">
+    <value>देश कोड दर्ज करें</value>
+  </data>
+  <data name="msgEnterCustomername" xml:space="preserve">
+    <value>ग्राहक का नाम दर्ज करें</value>
+  </data>
+  <data name="msgEnterDaysBetween1to365" xml:space="preserve">
+    <value>1 से 365 के बीच दिन दर्ज करें</value>
+  </data>
+  <data name="msgEnterIFSCcode" xml:space="preserve">
+    <value>IFSC कोड डालें</value>
+  </data>
+  <data name="msgEnterMedicationforthecapturedMedicalHistory" xml:space="preserve">
+    <value>पकड़े गए मेडिकल इतिहास के लिए दवा दर्ज करें</value>
+  </data>
+  <data name="msgEnterPastMedicationtocaptureMedicalHistory" xml:space="preserve">
+    <value>मेडिकल इतिहास पर कब्जा करने के लिए पिछले दवा दर्ज करें</value>
+  </data>
+  <data name="msgEnterPaymentMode" xml:space="preserve">
+    <value>भुगतान मोड दर्ज करें</value>
+  </data>
+  <data name="msgEnterPwd" xml:space="preserve">
+    <value>पास वर्ड दर्ज करें</value>
+  </data>
+  <data name="msgEnterReason" xml:space="preserve">
+    <value>कारण दर्ज करें</value>
+  </data>
+  <data name="msgEntertheamount" xml:space="preserve">
+    <value>राशि दर्ज करें</value>
+  </data>
+  <data name="msgEntFirstName" xml:space="preserve">
+    <value>पहला नाम दर्ज करें</value>
+  </data>
+  <data name="msgEntLastName" xml:space="preserve">
+    <value>अंतिम नाम दर्ज करो</value>
+  </data>
+  <data name="msgEntMobNo" xml:space="preserve">
+    <value>मोबाइल नंबर दर्ज करें</value>
+  </data>
+  <data name="msgEntValidEmail" xml:space="preserve">
+    <value>मान्य ईमेल आईडी दर्ज करें</value>
+  </data>
+  <data name="msgError" xml:space="preserve">
+    <value>कुछ गलत हो गया!</value>
+  </data>
+  <data name="msgErrorOccured" xml:space="preserve">
+    <value>त्रुटि हुई</value>
+  </data>
+  <data name="msgErrorOccuredWhileAddingDetails" xml:space="preserve">
+    <value>विवरण जोड़ते समय त्रुटि हुई</value>
+  </data>
+  <data name="msgErrorOccuredWhileDeleteingRecord" xml:space="preserve">
+    <value>रिकॉर्ड हटाते समय हुई त्रुटि</value>
+  </data>
+  <data name="msgErrorOccuredWhileProcessing" xml:space="preserve">
+    <value>संसाधन करते समय त्रुटि हुई</value>
+  </data>
+  <data name="msgErrorProgNonProgTitle" xml:space="preserve">
+    <value>प्रोग्रेसिव, नॉन प्रोग्रेसिव एंड इम्मोटिलिटी का योग 100 से अधिक नहीं हो सकता है</value>
+  </data>
+  <data name="msgErrorRapidSlowProgressTitle" xml:space="preserve">
+    <value>स्लो एंड रैपिड प्रोग्रेसिव का योग प्रोग्रेसिव मोटिव से ज्यादा नहीं हो सकता</value>
+  </data>
+  <data name="msgError_Common" xml:space="preserve">
+    <value>कुछ गलत हो गया! कृपया अपने व्यवस्थापक से संपर्क करें</value>
+  </data>
+  <data name="msgFavouriteDiagnosisDeletedSuccessfuly" xml:space="preserve">
+    <value>पसंदीदा निदान सफल हो गया</value>
+  </data>
+  <data name="msgFilladdress" xml:space="preserve">
+    <value>पता भरें</value>
+  </data>
+  <data name="msgFillallmandatoryfields" xml:space="preserve">
+    <value>सभी अनिवार्य फ़ील्ड भरें</value>
+  </data>
+  <data name="msgFillmandatoryfield" xml:space="preserve">
+    <value>अनिवार्य फ़ील्ड भरें</value>
+  </data>
+  <data name="msgFromdateshouldbegreaterthanTodate" xml:space="preserve">
+    <value>तिथि से तिथि से अधिक होनी चाहिए</value>
+  </data>
+  <data name="msgGridUnsaveData" xml:space="preserve">
+    <value>आपके पास बिना सहेजे गए डेटा हैं, पहले डेटा सहेजें</value>
+  </data>
+  <data name="msgImportantMarkRemoved" xml:space="preserve">
+    <value>महत्वपूर्ण मार्क हटाया गया</value>
+  </data>
+  <data name="msgInfo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgInputisnotinacorrectformat" xml:space="preserve">
+    <value>इनपुट एक सही प्रारूप में नहीं है।</value>
+  </data>
+  <data name="msgInsertAppointmentSuccess" xml:space="preserve">
+    <value>सफलतापूर्वक जोड़ा गया नियुक्ति</value>
+  </data>
+  <data name="msgInsertReportDate" xml:space="preserve">
+    <value>रिपोर्ट दिनांक डालें</value>
+  </data>
+  <data name="msgInsertResultvalueorAttachreport" xml:space="preserve">
+    <value>रिजल्ट वैल्यू या अटैच रिपोर्ट डालें</value>
+  </data>
+  <data name="msgInvalidText" xml:space="preserve">
+    <value>अमान्य पाठ</value>
+  </data>
+  <data name="msgLapsedAppointment" xml:space="preserve">
+    <value>नियुक्ति समय व्यतीत हो गया</value>
+  </data>
+  <data name="msgLapsedAppointmentCannotCancel" xml:space="preserve">
+    <value>आप व्यपगत अपॉइंटमेंट को रद्द नहीं कर सकते</value>
+  </data>
+  <data name="msgloginExist" xml:space="preserve">
+    <value>लॉगिन नाम मौजूद है</value>
+  </data>
+  <data name="msgMarkedAsImportant" xml:space="preserve">
+    <value>महत्वपूर्ण के रूप में चिह्नित</value>
+  </data>
+  <data name="msgMaxLimit10" xml:space="preserve">
+    <value>अधिकतम सीमा 10 है</value>
+  </data>
+  <data name="msgMaxLimit50" xml:space="preserve">
+    <value>अधिकतम सीमा 50 है</value>
+  </data>
+  <data name="msgMaxPwdAgegrtrThanMinAge" xml:space="preserve">
+    <value>अधिकतम पासवर्ड की आयु न्यूनतम पासवर्ड की उम्र से अधिक होनी चाहिए</value>
+  </data>
+  <data name="msgMaxPwdGrtrThanMinPwd" xml:space="preserve">
+    <value>अधिकतम पासवर्ड की लंबाई न्यूनतम पासवर्ड की लंबाई से अधिक होनी चाहिए</value>
+  </data>
+  <data name="msgMaxPwdLen" xml:space="preserve">
+    <value>न्यूनतम पासवर्ड लंबाई अधिकतम पासवर्ड लंबाई से कम होनी चाहिए</value>
+  </data>
+  <data name="msgMaxPwdLeneql20" xml:space="preserve">
+    <value>अधिकतम पासवर्ड की लंबाई 20 से कम या उसके बराबर होनी चाहिए</value>
+  </data>
+  <data name="msgMinPwdAgelessThanMaxAge" xml:space="preserve">
+    <value>न्यूनतम पासवर्ड आयु अधिकतम पासवर्ड आयु से कम होनी चाहिए</value>
+  </data>
+  <data name="msgMinPwdAgenotZero" xml:space="preserve">
+    <value>न्यूनतम पासवर्ड की आयु 0 से अधिक होनी चाहिए</value>
+  </data>
+  <data name="msgMinPwdLen" xml:space="preserve">
+    <value>न्यूनतम पासवर्ड की लंबाई 0 से अधिक होनी चाहिए</value>
+  </data>
+  <data name="msgNoSelectedDayFound" xml:space="preserve">
+    <value>चयनित दिन नहीं मिला</value>
+  </data>
+  <data name="msgOneLowerCase" xml:space="preserve">
+    <value>कम से कम 1 मामला चार</value>
+  </data>
+  <data name="msgoneSpclChar" xml:space="preserve">
+    <value>और कम से कम 1 विशेष </value>
+  </data>
+  <data name="msgOneUpperCase" xml:space="preserve">
+    <value>कम से कम 1 ऊपरी मामला</value>
+  </data>
+  <data name="msgPartnerageshouldbeinrangeof21_60" xml:space="preserve">
+    <value>साथी की आयु 21-60 की सीमा में होनी चाहिए</value>
+  </data>
+  <data name="msgPartnerLinkedSuccessfully" xml:space="preserve">
+    <value>पार्टनर ने सफलतापूर्वक लिंक किया</value>
+  </data>
+  <data name="msgPartnerNotLinkedTryAgain" xml:space="preserve">
+    <value>पार्टनर नॉट लिंक्ड ट्राई अगेन</value>
+  </data>
+  <data name="msgPasswordreset" xml:space="preserve">
+    <value>पासवर्ड रीसेट सफलतापूर्वक</value>
+  </data>
+  <data name="msgPatientageshouldbeinangeof2137" xml:space="preserve">
+    <value>रोगी की आयु 21-37 के बीच होनी चाहिए</value>
+  </data>
+  <data name="msgPatientageshouldbeinrangeof18_60" xml:space="preserve">
+    <value>रोगी की आयु 18-60 की सीमा में होनी चाहिए</value>
+  </data>
+  <data name="msgPatientageshouldbeinrangeof21_35" xml:space="preserve">
+    <value>रोगी की आयु, ME की सीमा में होनी चाहिए</value>
+  </data>
+  <data name="msgPatientageshouldbeinrangeof21_37" xml:space="preserve">
+    <value>रोगी की आयु 21-37 के बीच होनी चाहिए</value>
+  </data>
+  <data name="msgPatientageshouldbeinrangeof21_45" xml:space="preserve">
+    <value>रोगी की आयु 21-45 के बीच होनी चाहिए</value>
+  </data>
+  <data name="msgPatientageshouldbeinrangeof21_60" xml:space="preserve">
+    <value>रोगी की आयु 21-60 की सीमा में होनी चाहिए</value>
+  </data>
+  <data name="msgPatientalreadyregisterdwiththeseMRNo" xml:space="preserve">
+    <value>रोगी पहले से ही इन MRNo के साथ पंजीकृत है</value>
+  </data>
+  <data name="msgPatientdataupdatedsuccessfully" xml:space="preserve">
+    <value>रोगी डेटा सफलतापूर्वक अपडेट किया गया</value>
+  </data>
+  <data name="msgPatientisallergiesto" xml:space="preserve">
+    <value>रोगी को एलर्जी है</value>
+  </data>
+  <data name="msgPatientregisteredsuccessfully" xml:space="preserve">
+    <value>रोगी सफलतापूर्वक पंजीकृत</value>
+  </data>
+  <data name="msgPatientSuccessfullyMarkAsaDonor" xml:space="preserve">
+    <value>रोगी सफलतापूर्वक एक दाता के रूप में मार्क</value>
+  </data>
+  <data name="msgPatientSuccessfullyMarkAsaSurrogate" xml:space="preserve">
+    <value>रोगी सफलतापूर्वक एक सरोगेट के रूप में मार्क</value>
+  </data>
+  <data name="msgPaymentsavedsuccessfully" xml:space="preserve">
+    <value>भुगतान सफलतापूर्वक सहेजा गया</value>
+  </data>
+  <data name="msgPleaseaddpayerinformation" xml:space="preserve">
+    <value>कृपया भुगतानकर्ता जानकारी जोड़ें</value>
+  </data>
+  <data name="msgPleaseCheckDuplicateValues" xml:space="preserve">
+    <value>कृपया डुप्लिकेट मान जांचें</value>
+  </data>
+  <data name="msgPleaseEnterObstetricHistoryDetails" xml:space="preserve">
+    <value>कृपया प्रसूति इतिहास विवरण दर्ज करें</value>
+  </data>
+  <data name="msgPleaseEnterReason" xml:space="preserve">
+    <value>कृपया कारण दर्ज करें</value>
+  </data>
+  <data name="msgPleaseEnterServiceName" xml:space="preserve">
+    <value>कृपया सेवा का नाम दर्ज करें</value>
+  </data>
+  <data name="msgPleaseenterSourceOfReference" xml:space="preserve">
+    <value>कृपया संदर्भ का स्रोत दर्ज करें</value>
+  </data>
+  <data name="msgPleaseentervalidcountrycode" xml:space="preserve">
+    <value>कृपया मान्य देश कोड दर्ज करें</value>
+  </data>
+  <data name="msgPleaseentervalidemailid" xml:space="preserve">
+    <value>कृपया मान्य ईमेल आईडी दर्ज करें</value>
+  </data>
+  <data name="msgPleaseEnterVitals" xml:space="preserve">
+    <value>कृपया प्रविष्ट करें</value>
+  </data>
+  <data name="msgPleaseEnter_SelectTemplatetoSetFavouriteDrug" xml:space="preserve">
+    <value>कृपया पसंदीदा दवा सेट करने के लिए टेम्प्लेट / चयन करें</value>
+  </data>
+  <data name="msgPleasefillallrequiredfileds" xml:space="preserve">
+    <value>कृपया सभी आवश्यक दायरें भरें</value>
+  </data>
+  <data name="msgPleasefillExternalDoctorDetails" xml:space="preserve">
+    <value>कृपया बाहरी चिकित्सक विवरण भरें</value>
+  </data>
+  <data name="msgPleaseFillMandatoryFields" xml:space="preserve">
+    <value>कृपया सभी अनिवार्य फ़ील्ड भरें</value>
+  </data>
+  <data name="msgPleaseFilltheReason" xml:space="preserve">
+    <value>कृपया कारण भरें</value>
+  </data>
+  <data name="msgPleaselinkthedonor" xml:space="preserve">
+    <value>कृपया दाता को लिंक करें</value>
+  </data>
+  <data name="msgPleaseSelectAnyRecords" xml:space="preserve">
+    <value>कृपया किसी भी रिकॉर्ड का चयन करें</value>
+  </data>
+  <data name="msgPleaseSelectARTType" xml:space="preserve">
+    <value>कृपया एआरटी प्रकार चुनें</value>
+  </data>
+  <data name="msgPleaseselectatleastOnetoadd" xml:space="preserve">
+    <value>कृपया जोड़ने के लिए कम से कम एक का चयन करें</value>
+  </data>
+  <data name="msgPleaseSelectCategory" xml:space="preserve">
+    <value>कृपया श्रेणी का चयन करें</value>
+  </data>
+  <data name="msgPleaseselectDateofAbortion" xml:space="preserve">
+    <value>कृपया गर्भपात की तारीख चुनें</value>
+  </data>
+  <data name="msgPleaseselectFile" xml:space="preserve">
+    <value>कृपया फ़ाइल का चयन करें</value>
+  </data>
+  <data name="msgPleaseselectfilebothfilesaresame" xml:space="preserve">
+    <value>कृपया फ़ाइल का चयन करें / दोनों फाइलें समान हैं</value>
+  </data>
+  <data name="msgPleaseselectoutcomeifyearselectedinObstetricHistory" xml:space="preserve">
+    <value>यदि वर्ष ऑब्स्टेट्रिक हिस्ट्री में चुना गया है तो कृपया परिणाम का चयन करें</value>
+  </data>
+  <data name="msgPleaseselectPartner" xml:space="preserve">
+    <value>कृपया साथी चुनें</value>
+  </data>
+  <data name="msgPleaseselectpatient" xml:space="preserve">
+    <value>कृपया रोगी का चयन करें</value>
+  </data>
+  <data name="msgPleaseselectstatusifDrugeNameselectedinPastMedicationHistory" xml:space="preserve">
+    <value>कृपया स्थिति का चयन करें यदि पिछले दवा इतिहास में ड्रूज़ नाम चुना गया है</value>
+  </data>
+  <data name="msgPleaseselectsuccessfulstatusifARTCycleselectedinPreviousTreatmentHistory" xml:space="preserve">
+    <value>कृपया सफल स्थिति का चयन करें यदि पिछला उपचार इतिहास में एआरटी चक्र चुना गया हो</value>
+  </data>
+  <data name="msgPleaseselectTemplate" xml:space="preserve">
+    <value>कृपया टेम्पलेट का चयन करें</value>
+  </data>
+  <data name="msgPleaseselectthedate" xml:space="preserve">
+    <value>कृपया तारीख का चयन करें</value>
+  </data>
+  <data name="msgPleaseSelectVisit" xml:space="preserve">
+    <value>कृपया विजिट का चयन करें</value>
+  </data>
+  <data name="msgPleaseSelecytARTSubType" xml:space="preserve">
+    <value>कृपया सेलेटी एआरटी सबटाइप करें</value>
+  </data>
+  <data name="msgpwdandcnfpwdmatch" xml:space="preserve">
+    <value>पासवर्ड और कन्फर्म पासवर्ड मैच होना चाहिए</value>
+  </data>
+  <data name="msgReasonAddedSuccessfully" xml:space="preserve">
+    <value>कारण जोड़ा गया</value>
+  </data>
+  <data name="msgRecordAddedSuccessfully" xml:space="preserve">
+    <value>रिकॉर्ड जोड़ा गया सफलतापूर्वक</value>
+  </data>
+  <data name="msgRecorddeletedsuccessfully" xml:space="preserve">
+    <value>रिकॉर्ड सफलतापूर्वक हटाया गया</value>
+  </data>
+  <data name="msgRecordSave" xml:space="preserve">
+    <value>रिकॉर्ड सहेजें सफलता!</value>
+  </data>
+  <data name="msgRecordSaveSuccessfully" xml:space="preserve">
+    <value>रिकॉर्ड सहेजें सफलतापूर्वक</value>
+  </data>
+  <data name="msgRemarkAddedSuccessfully" xml:space="preserve">
+    <value>सफलतापूर्वक जोड़ा गया</value>
+  </data>
+  <data name="msgRemoveRow" xml:space="preserve">
+    <value>आप इस पंक्ति को हटा नहीं सकते</value>
+  </data>
+  <data name="msgReportuploadedsuccessfully" xml:space="preserve">
+    <value>रिपोर्ट सफलतापूर्वक अपलोड की गई</value>
+  </data>
+  <data name="msgRescheduleMsgAck" xml:space="preserve">
+    <value>कृपया नियुक्ति तिथि का चयन करें</value>
+  </data>
+  <data name="msgRescheduleSuccess" xml:space="preserve">
+    <value>कृपया नियुक्ति तिथि का चयन करें</value>
+  </data>
+  <data name="msgSave" xml:space="preserve">
+    <value>रिकॉर्ड सफलतापूर्वक सहेजा गया!</value>
+  </data>
+  <data name="msgSavedSuccessfully" xml:space="preserve">
+    <value>सफलतापूर्वक बचाया</value>
+  </data>
+  <data name="msgSave_Error" xml:space="preserve">
+    <value>रिकॉर्ड सहेजा नहीं जा सका। कृपया पुन: प्रयास करें</value>
+  </data>
+  <data name="msgScheduleIsAlreadyBooked" xml:space="preserve">
+    <value>शेड्यूल पहले से ही बुक है</value>
+  </data>
+  <data name="msgSelArtDay" xml:space="preserve">
+    <value>एआरटी दिवस का चयन करें</value>
+  </data>
+  <data name="msgSelCountryCode" xml:space="preserve">
+    <value>देश कोड चुनें</value>
+  </data>
+  <data name="msgSelDept" xml:space="preserve">
+    <value>विभाग का चयन करें</value>
+  </data>
+  <data name="msgSelDesignation" xml:space="preserve">
+    <value>पदनाम का चयन करें</value>
+  </data>
+  <data name="msgSelectAllergyTypeandAllergy" xml:space="preserve">
+    <value>एलर्जी प्रकार और एलर्जी का चयन करें</value>
+  </data>
+  <data name="msgSelectappropriateafternoontime" xml:space="preserve">
+    <value>उचित दोपहर का समय चुनें</value>
+  </data>
+  <data name="msgSelectappropriateeveningtime" xml:space="preserve">
+    <value>उचित शाम का समय चुनें</value>
+  </data>
+  <data name="msgSelectappropriatemorningtime" xml:space="preserve">
+    <value>उचित समय का चयन करें</value>
+  </data>
+  <data name="msgSelectAtleastOneDiagnosisToSave" xml:space="preserve">
+    <value>बचाने के लिए कम से कम एक निदान का चयन करें</value>
+  </data>
+  <data name="msgSelectAtleastoneDrug" xml:space="preserve">
+    <value>कम से कम एक दवा का चयन करें</value>
+  </data>
+  <data name="msgSelectatleastoneservice" xml:space="preserve">
+    <value>कम से कम एक सेवा का चयन करें</value>
+  </data>
+  <data name="msgSelectAtlistOneDiagnosisToSave" xml:space="preserve">
+    <value>सहेजें के लिए एक निदान का चयन करें</value>
+  </data>
+  <data name="msgSelectBankname" xml:space="preserve">
+    <value>बैंक का नाम चुनें</value>
+  </data>
+  <data name="msgSelectclinic" xml:space="preserve">
+    <value>क्लिनिक का चयन करें</value>
+  </data>
+  <data name="msgSelectdepartment" xml:space="preserve">
+    <value>विभाग का चयन करें</value>
+  </data>
+  <data name="msgSelectDiagnosisTypeForAllSelectedDiagnosis" xml:space="preserve">
+    <value>सभी चयनित निदान के लिए निदान प्रकार का चयन करें</value>
+  </data>
+  <data name="msgSelectdoctor" xml:space="preserve">
+    <value>डॉक्टर का चयन करें</value>
+  </data>
+  <data name="msgSelectDonor" xml:space="preserve">
+    <value>दाता का चयन करें</value>
+  </data>
+  <data name="msgSelectedAppointmentTime" xml:space="preserve">
+    <value>आपने चयनित नियुक्ति समय:</value>
+  </data>
+  <data name="msgSelectfromdate" xml:space="preserve">
+    <value>तिथि से चयन करें</value>
+  </data>
+  <data name="msgSelectRating" xml:space="preserve">
+    <value>रेटिंग का चयन करें</value>
+  </data>
+  <data name="msgSelectrole" xml:space="preserve">
+    <value>कम से कम एक भूमिका का चयन करें।</value>
+  </data>
+  <data name="msgSelectschedulteslot" xml:space="preserve">
+    <value>शेड्यूल स्लॉट चुनें</value>
+  </data>
+  <data name="msgSelectstartdate" xml:space="preserve">
+    <value>प्रारंभ तिथि चुनें</value>
+  </data>
+  <data name="msgSelectSurrogate" xml:space="preserve">
+    <value>सरोगेट का चयन करें</value>
+  </data>
+  <data name="msgSelectTimeSlot" xml:space="preserve">
+    <value>कृपया नियुक्ति के लिए तिथि / समय-स्लॉट चुनें</value>
+  </data>
+  <data name="msgSelecttodate" xml:space="preserve">
+    <value>आज तक का चयन करें</value>
+  </data>
+  <data name="msgSelGender" xml:space="preserve">
+    <value>लिंग चुनें</value>
+  </data>
+  <data name="msgSelGrade" xml:space="preserve">
+    <value>ग्रेड का चयन करें</value>
+  </data>
+  <data name="msgSelSpecialization" xml:space="preserve">
+    <value>विशेषज्ञता का चयन करें</value>
+  </data>
+  <data name="msgSelValidDateDOB" xml:space="preserve">
+    <value>कृपया वैध DOB चुनें</value>
+  </data>
+  <data name="msgSelVisFrmDtAndVisToDt" xml:space="preserve">
+    <value>तारीख से यात्रा का चयन करें और तारीख पर जाएँ</value>
+  </data>
+  <data name="msgServicealreadyadded" xml:space="preserve">
+    <value>सेवा पहले ही जोड़ी जा चुकी है</value>
+  </data>
+  <data name="msgServicenameshouldnotbeemptyinLaboratory" xml:space="preserve">
+    <value>प्रयोगशाला में सेवा का नाम रिक्त नहीं होना चाहिए</value>
+  </data>
+  <data name="msgServicenameshouldnotbeemptyinProcedures" xml:space="preserve">
+    <value>प्रोसीजर में सेवा का नाम खाली नहीं होना चाहिए</value>
+  </data>
+  <data name="msgServicenameshouldnotbeemptyinRadiology" xml:space="preserve">
+    <value>रेडियोलॉजी में सेवा का नाम खाली नहीं होना चाहिए</value>
+  </data>
+  <data name="msgSessionTimeout" xml:space="preserve">
+    <value>आपका सत्र समाप्त हो गया है</value>
+  </data>
+  <data name="msgSheduleislapsed" xml:space="preserve">
+    <value>शेड्यूल लैप्स हो गया है।</value>
+  </data>
+  <data name="msgSomethingWentWrong" xml:space="preserve">
+    <value>कुछ गलत हो गया</value>
+  </data>
+  <data name="msgStatusupdatedsuccessfully" xml:space="preserve">
+    <value>स्थिति सफलतापूर्वक अपडेट की गई</value>
+  </data>
+  <data name="msgSuccess_Save" xml:space="preserve">
+    <value>रिकॉर्ड सफलतापूर्वक सहेजा गया</value>
+  </data>
+  <data name="msgSurrogatealreadylinkedtootherpatient" xml:space="preserve">
+    <value>सरोगेट पहले से ही अन्य रोगी से जुड़ा हुआ है</value>
+  </data>
+  <data name="msgTemplatealreadyexistpleaseselectexistingtemplate" xml:space="preserve">
+    <value>पहले से मौजूद टेम्प्लेट मौजूदा टेम्पलेट का चयन करें</value>
+  </data>
+  <data name="msgTemplatealreadyexists" xml:space="preserve">
+    <value>टेम्पलेट पहले से मौजूद है</value>
+  </data>
+  <data name="msgTemplateNameAlredyExist" xml:space="preserve">
+    <value>टेम्प्लेट नाम Alredy Exist</value>
+  </data>
+  <data name="msgTitle" xml:space="preserve">
+    <value>मल्टीप्लाय IVF</value>
+  </data>
+  <data name="MsgTitleSelectDay" xml:space="preserve">
+    <value>कृपया कम से कम एक दिन का चयन करें</value>
+  </data>
+  <data name="msgTodayVisitisnotmarkedforthePatient" xml:space="preserve">
+    <value>आज का दौरा रोगी के लिए चिह्नित नहीं है</value>
+  </data>
+  <data name="msgTryingtoconcievesinceperiodshoudbelessthanInrelationshipsinceperiod" xml:space="preserve">
+    <value>पीरियड के बाद से रिलेशनशिप को कम करने की कोशिश की जानी चाहिए</value>
+  </data>
+  <data name="msgUpdate" xml:space="preserve">
+    <value>रिकॉर्ड सफलतापूर्वक अपडेट किया गया!</value>
+  </data>
+  <data name="msgUpdateAppointmentSuccess" xml:space="preserve">
+    <value>सफलतापूर्वक नियुक्ति की गई</value>
+  </data>
+  <data name="msgUpdateAttachement" xml:space="preserve">
+    <value>संलग्न अद्यतन सफलतापूर्वक</value>
+  </data>
+  <data name="msgUpdateCancelledAppointment" xml:space="preserve">
+    <value>यह अपॉइंटमेंट पहले ही रद्द हो चुका है, इसलिए आप अपॉइंटमेंट रद्द नहीं कर सकते</value>
+  </data>
+  <data name="msgUpdatephoto" xml:space="preserve">
+    <value>फोटो सफलतापूर्वक अपडेट किया गया</value>
+  </data>
+  <data name="msgUpdate_Error" xml:space="preserve">
+    <value>रिकॉर्ड अपडेट नहीं किए जा सके। कृपया पुन: प्रयास करें।</value>
+  </data>
+  <data name="msgUserAlreadyLoginPleaseLoginFromAnother" xml:space="preserve">
+    <value>उपयोगकर्ता पहले से ही लॉगिन करें, कृपया दूसरे से लॉगिन करें</value>
+  </data>
+  <data name="msgusrLockUnlock" xml:space="preserve">
+    <value>उपयोगकर्ता लॉक / अनलॉक सफलतापूर्वक।</value>
+  </data>
+  <data name="msgVisAlrdyClosed" xml:space="preserve">
+    <value>यात्रा पहले से ही बंद है।</value>
+  </data>
+  <data name="msgVisClosed" xml:space="preserve">
+    <value>यात्रा सफलतापूर्वक बंद हुई।</value>
+  </data>
+  <data name="msgVisFrmDtGrtrThnVisToDt" xml:space="preserve">
+    <value>यात्रा के फॉर्म की तारीख यात्रा की तारीख से कम होनी चाहिए।</value>
+  </data>
+  <data name="msgVisitalreadymarkedundersamedepartmentanddoctor" xml:space="preserve">
+    <value>एक ही विभाग और चिकित्सक के तहत पहले से ही चिह्नित</value>
+  </data>
+  <data name="msgVisitNotMarkedForFemalePatientPleaseFirstMarkVist" xml:space="preserve">
+    <value>महिला रोगी के लिए चिह्नित नहीं, कृपया पहले निशान की यात्रा करें</value>
+  </data>
+  <data name="msgWait" xml:space="preserve">
+    <value>कृपया प्रक्रिया करते समय प्रतीक्षा करें</value>
+  </data>
+  <data name="msgWarning" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgWebCamError" xml:space="preserve">
+    <value>वेबकैम शुरू नहीं किया जा सका। क्या आपने इसे एक्सेस दिया?</value>
+  </data>
+  <data name="msgYoucanaddfirstprescription" xml:space="preserve">
+    <value>आप पहले पर्चे जोड़ सकते हैं</value>
+  </data>
+  <data name="msgYoucanaddonly3newservices" xml:space="preserve">
+    <value>आप केवल 3 नई सेवाओं को जोड़ सकते हैं</value>
+  </data>
+  <data name="msgYoucanaddonlyonecycleforsamevisit" xml:space="preserve">
+    <value>आप एक ही यात्रा के लिए केवल एक चक्र जोड़ सकते हैं</value>
+  </data>
+  <data name="msgyoucannotaddmorethan20rows" xml:space="preserve">
+    <value>आप 20 से अधिक पंक्तियों को नहीं जोड़ सकते</value>
+  </data>
+  <data name="msgYouCannotDeleteSchedule" xml:space="preserve">
+    <value>आप शेड्यूल नहीं हटा सकते।</value>
+  </data>
+  <data name="msgyoucannotprescribed" xml:space="preserve">
+    <value>आप निर्धारित नहीं कर सकते।</value>
+  </data>
+  <data name="msgYouhaveselectedduplicateDiagnosis" xml:space="preserve">
+    <value>आपने डुप्लिकेट डायग्नोसिस चुना है</value>
+  </data>
+  <data name="msgyouhaveunsavedchangesyouwantToDiscardTheChanges" xml:space="preserve">
+    <value>आपने इस पृष्ठ पर परिवर्तन नहीं किए हैं, क्या आप परिवर्तन छोड़ना चाहते हैं</value>
+  </data>
+  <data name="msgYouWantToSettleBill" xml:space="preserve">
+    <value>क्या आप वाकई बिल को सेटल करना चाहते हैं?</value>
+  </data>
+  <data name="nsgCloseexistingcyclefirst" xml:space="preserve">
+    <value>पहले मौजूदा चक्र को बंद करें</value>
+  </data>
+  <data name="OnlyNumericValues" xml:space="preserve">
+    <value>केवल संख्यात्मक दर्ज करें</value>
+  </data>
+  <data name="sss" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>नवीनतम</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>खोज</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>टिप्पणियों</value>
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>सेटल बिल</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>शीर्षक</value>
+  </data>
+  <data name="Total_Count" xml:space="preserve">
+    <value>कुल संख्या</value>
+  </data>
+</root>

@@ -1,0 +1,278 @@
+﻿<div ng-app="PIVF" ng-controller="AppointmentController" id="addNewAppointment" ng-init="getResourceNameValue()">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="">{{lblRescheduleAppointment}}</h4>
+        </div>
+        <div class="modal-body form-horizontal p-t-5">
+            <!-- Reschedule for Non Register Patient-->
+            <div ng-show="IsRegisterPatient">
+                <div class="row form-horizontal" style="padding: 15px;">
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label Capitalize" for="">{{lblFirstName}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <input class="form-control" id="" name="FirstName" type="text" ng-model="FirstName" placeholder="" maxlength="20" ng-disabled="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblLastName}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <input class="form-control" name="LastName" id="" type="text" ng-model="LastName" placeholder="" maxlength="20" ng-disabled="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-md-12 col-sm-12 col-lg-12 control-label"><span class="text-Red">*</span> {{lblDOB}}</label>
+                                    <div class="col-md-12 col-sm-12 col-lg-12" ng-disabled="true" ng-readonly="true">
+                                        <ng-combo-date-picker ng-model="DOB" ng-min-model="min" ng-order="ymd" ng-max-model="max" ng-year-order="desc" ng-placeholder="{{lblYear}},{{lblcMonthss}},{{lblDate}}" ng-readonly="true" ng-disabled="true"></ng-combo-date-picker>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group MobileContainer">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblMobNo}}</label>
+                                    <!--<input class="form-control alignRight" id="" type="text" ng-model="PatientMobileNumber" placeholder="" ng-disabled="true">-->
+                                    <div class="col-sm-2 col-md-3 col-lg-3 col-xs-3 p-r-0">
+                                        <!--<input type="text" class="form-control alignRight" placeholder="xxx">-->
+                                        <input type="text" class="form-control alignRight" placeholder="xxx" ng-class="PatientMobileCountryCodeError == true ? 'invalid' : 'valid' " id="PatientMobileCountryCode" ng-model="PatientMobileConIdNonReg" uib-typeahead="i.CountryCode as i.CountryName for i in CountryList | filter:$viewValue | limitTo:20" typeahead-on-select="SelectedCountry($item)" ng-change="GetPatientCountryCode(PatientselectedCountry)" replace="[^a-zA-Z0-9]" with="" ng-disabled="true">
+                                    </div>
+                                    <div class="col-sm-10 col-md-9 col-lg-9 col-xs-9 p-l-4">
+                                        <input type="text" class="form-control alignRight" id="" ng-model="PatientMobileNumber" placeholder="xxx xxx xxxx" ng-disabled="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>{{lblDate}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div class="input-group date" ng-class="StartDateError == true ? 'invalid' : 'valid' ">
+                                            <input name="ScheduleStartDate" type="text" class="form-control" id="rescheduleDate" placeholder="{{lblFromDate}}" ng-model="rescheduleDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="dateOptionsReschedule" ng-required="true" alt-input-formats="altInputFormats" ng-change="ClearSlots()">
+                                            <span class="input-group-addon" ng-click="open2();"> <i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>{{lblClinic}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control" ng-model="UnitID"
+                                                ng-options="item.UnitID as item.UnitName for item in CityAndClinicNameListToReschedule | orderBy:'UnitID'"
+                                                ng-change="vm.GetDepartmentByUnitIDForReschedule(UnitID,'FromControl')"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>{{lblDepartment}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control"
+                                                ng-model="DeptID"
+                                                ng-options="item.ID as item.Description for item in DepartmentListForReschedule | orderBy:'DeptID'"
+                                                ng-change="vm.GetDoctorListByDeptIDForReschedule(DeptID,'FromControl');"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group Capitalize">
+                                    <!--ng-change="vm.PatientAppointmentOnChangeParam()"-->
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>{{lblDoctor}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control "
+                                                ng-model="DOCID"
+                                                ng-change="GetDoctorName(DOCID,'FromControl')"
+                                                ng-options="item.ID as item.DoctorName for item in DoctorCategoryListForReschedule | orderBy:'DOCID'"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group MobileContainer">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>{{Reason}} </label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                        <!--ng-init="PatientRegistration.PatientVisitId = PatientVisitList[0].VTID"-->
+                                        <select class="form-control" id="PatientVisitId"
+                                                ng-model="AppReasonID"
+                                                ng-options="item.VTID as item.Description for item in PatientVisitList"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div class="row form-horizontal">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblGender}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12 m-b-7" ng-disabled="true">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="" ng-checked="GenderId==1" value="1" ng-disabled="true" ng-readonly="true"> {{lblMale}}
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="" ng-checked="GenderId==2" value="2" ng-disabled="true" ng-readonly="true"> {{lblFemale}}
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <span class="txt_bold">{{selectedTime}} </span>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                        <div class="scheduleBox">
+                                            <span ng-repeat="doctorAvailableSlots in doctorsAvailableSlotsList | orderBy: 'StartTime'" ng-click="AppointmentClick(doctorAvailableSlots.StartTime,doctorAvailableSlots.EndTime,doctorAvailableSlots.SelectedAvailableSlot , doctorAvailableSlots.CountOfAvailableSlotButton)">
+                                                <button ng-class="active == doctorAvailableSlots.CountOfAvailableSlotButton ? 'scheduleTime setTime' : 'scheduleTime outTime'" ng-model="btnAppointment">{{doctorAvailableSlots.SelectedAvailableSlot}}</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <button class="btn btn-primary m-b-0" ng-click="LoadAppointmentTimeSlot()"> {{lblGetTimeSlot}}</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+            </div>
+
+            <!-- Reschedule for Register Patient-->
+            <div ng-hide="IsRegisterPatient">
+                <div class="table-responsive ">
+                    <table class="table GridTable">
+                        <tr class="AppointTdData">
+                            <td><span class="txt_bold Capitalize"> {{FirstName+' ' +LastName+'    '}} {{selectedPatientMRNo}}</span></td>
+                            <!--<td width="240"><span class="txt_bold">  </span></td>-->
+                            <td width="205"><span class="txt_bold"> {{Age}}  {{PatientGenderDescription}} </span></td>
+                            <td width="205"><span class="txt_bold"> {{lblSTime}} : {{selectedTime}} </span></td>
+
+                        </tr>
+                        <tr class="AppointTdData">
+                            <td><span class="txt_bold" style="margin-top: 5px; display: inline-block;"> {{PatientMobileConId}} {{PatientMobileNumber}} </span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="row form-horizontal">
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblDate}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div class="dropdown">
+                                            <a class="dropdown-toggle" id="rescheduledropdown" role="button" data-toggle="dropdown" data-target="" href="">
+                                                <div class="input-group">
+                                                    <input type="text" id="rescheduleDate" name="rescheduleDate" placeholder="{{lblcSelectDate}}" class="form-control" data-ng-model="vm.rescheduleDate">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                                <datetimepicker data-ng-model="rescheduleDate" data-on-set-time="vm.onRescheduleTimeSet(newDate, oldDate)" data-datetimepicker-config="{ dropdownSelector: '#rescheduledropdown', startView: 'day', minView: 'day' }"></datetimepicker>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblClinic}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control" ng-model="UnitID"
+                                                ng-options="item.UnitID as item.UnitName for item in CityAndClinicNameListToReschedule | orderBy:'UnitID'"
+                                                ng-change="vm.GetDepartmentByUnitIDForReschedule(UnitID)"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblDepartment}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+
+                                        <select class="form-control" ng-model="DeptID"
+                                                ng-options="item.DeptID as item.Description for item in DepartmentListForReschedule | orderBy:'DeptID'"
+                                                ng-change="vm.GetDoctorListByDeptIDForReschedule(DeptID);"></select>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblDoctor}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+
+                                        <select class="form-control Capitalize" ng-model="DOCID" ng-change="GetDoctorName(DOCID)"
+                                                ng-options="item.ID as item.DoctorName for item in DoctorCategoryListForReschedule | orderBy:'DOCID'"></select>
+
+                                        <!--<select class="form-control" id="DocCatID" ng-model="DOCID" ng-change="vm.PatientAppointmentOnChangeParam()">
+                                            <option value=""> {{lblDoctor}} </option>
+                                            <option ng-repeat="t in DoctorCategoryListForReschedule" value="{{t.ID}}">{{t.DoctorName}}</option>
+                                        </select>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{Reason}} </label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                        <select class="form-control" id="PatientVisitId"
+                                                ng-model="AppReasonID"
+                                                ng-options="item.VTID as item.Description for item in PatientVisitList"></select>
+                                        <!--<select class="form-control" id="PatientVisitId" ng-class="PatientVisitIdError == true ? 'invalid' : 'valid' " ng-init="PatientRegistration.PatientVisitId = PatientVisitList[0].VTID" ng-model="PatientRegistration.PatientVisitId" ng-options="item.VTID as item.Description for item in PatientVisitList" ng-change="HideErrorMessage('PatientVisitId',PatientRegistration.PatientVisitId);"></select>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">{{lblRemark}}</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <textarea type="text" ng-model="Remark" class="form-control" id="" placeholder=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <button class="btn btn-primary m-b-5" ng-click="LoadAppointmentTimeSlot()"> {{lblGetTimeSlot}}</button>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                <div class="scheduleBox">
+                                    <span ng-repeat="doctorAvailableSlots in doctorsAvailableSlotsList | orderBy: 'StartTime'" ng-click="AppointmentClick(doctorAvailableSlots.StartTime,doctorAvailableSlots.EndTime,doctorAvailableSlots.SelectedAvailableSlot , doctorAvailableSlots.CountOfAvailableSlotButton)">
+                                        <button ng-class="active == doctorAvailableSlots.CountOfAvailableSlotButton ? 'scheduleTime setTime' : 'scheduleTime outTime'" ng-model="btnAppointment">{{doctorAvailableSlots.SelectedAvailableSlot}}</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- /Reschedule appointment -->
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-md-8 text-left">
+                    <span class="text-Red">{{lblcPleasefillallmandatoryfieldss}}</span>
+                </div>
+                <!--<div class="col-md-8 text-right" data-ng-hide="rescheduleMessageAcknoledgement == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'" required>
+                    {{rescheduleMessageAcknoledgement}}
+                </div>-->
+                <div class="col-md-4 text-right">
+                    <button class="btn btn-primary" type="button" id="" data-ng-click="rescheduleAppointment(DOCID,UnitID,DeptID,AppID,AppReasonID)">{{btnSave}}</button>
+                    <button class="btn btn-default " type="button" id="" ng-click="CancelClicked()">{{btnCancel}}</button>
+                </div>
+            </div>
+        </div>
+        <!--<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>-->
+    </div>
+</div>

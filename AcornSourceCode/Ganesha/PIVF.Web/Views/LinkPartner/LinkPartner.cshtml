@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null;
+}
+<div ng-controller="ctrlLinkPartner" ng-init="LoadData()">
+    <div class="form_Content">
+        <div class="row m-t-10">
+            <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-12 col-lg-12 m-b-5">
+                        <div class="PatientInfoWrapper">
+                            <div class="BlueWrap">
+                                <div class="ProfileImgWrap" ng-hide="IsMale">
+                                    <img src="~/images/Female_default.jpg" class="profile">
+                                </div>
+                                <div class="ProfileImgWrap" ng-hide="IsFemale">
+                                    <img src="~/images/Male_default.jpg" class="profile">
+                                </div>
+                                <div class="ProfileInfoWrap">
+                                    <p class="m-b-0">
+                                        <div ng-hide="!IsFemale">
+                                            <span class="PatientName p-l-20">Mrs.</span>
+                                            <span class="PatientName">{{CoupleDetails.FemalePatient.FemalePatientName}}</span>
+                                            <span class="MRN-Green">
+                                                <span>{{CoupleDetails.FemalePatient.FemaleMRNO}}</span>
+                                            </span>
+                                        </div>
+                                        <div ng-hide="!IsMale">
+                                            <span class="PatientName p-l-10">Mr</span>
+                                            <span class="PatientName">{{CoupleDetails.MalePatient.MalePatientName}}</span>
+                                            <span class="MRN-Green">
+                                                <span>{{CoupleDetails.MalePatient.MaleMRNO}}</span>
+                                            </span>
+                                        </div>
+
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 form-horizontal">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="txtfullName" ng-blur="model=''" placeholder="Name/MRN" name="txtUsrName" ng-model="model" uib-typeahead="i as (i.PatientName) for i in getMatchingPatient($viewValue) | limitTo : 8" typeahead-on-select="onSelect(model)" typeahead-input-formatter="a" autofocus>
+                                <span class="input-group-addon glyphicon glyphicon-search btn" type="button"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-12 m-b-5" ng-hide="Partner.Select" ng-init="Partner.Select=true">
+                        <div class="PatientInfoWrapper">
+                            <div class="BlueWrap">
+                                <div class="ProfileImgWrap" ng-hide="!IsMale">
+                                    <img src="~/images/Female_default.jpg" class="profile">
+                                </div>
+                                <div class="ProfileImgWrap" ng-hide="!IsFemale">
+                                    <img src="~/images/Male_default.jpg" class="profile">
+                                </div>
+                                <div class="ProfileInfoWrap">
+                                    <p class="m-b-0">
+                                        <div>
+                                            <span ng-hide="!IsFemale" class="PatientName p-l-20">Mr.</span>
+                                            <span ng-hide="!IsMale" class="PatientName p-l-20">Mrs.</span>
+                                            <span class="PatientName">{{Partner.Name}}</span>
+                                            <span class="MRN-Green">
+                                                <span>{{Partner.MRNo}}</span>
+                                            </span>
+                                        </div>
+
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="button" class="form-control" id="txtfullName" value="Link Partner" ng-click="linkPartner()" />
+                           
+                        </div>
+                    </div>
+
+                  
+                </div>
+                </div>
+            </div>
+        </div>
+    
+</div>

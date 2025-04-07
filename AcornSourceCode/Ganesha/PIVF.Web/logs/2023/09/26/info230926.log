@@ -1,0 +1,404 @@
+2023-09-26 11:28:37.2272|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 11:28:37.2272|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 11:28:37.5433|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 11:28:37.5433|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 11:28:37.7792|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 11:28:37.7792|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 11:28:37.8810|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 11:28:37.8810|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 11:28:39.2781|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 11:28:39.2781|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 11:28:39.7611|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 11:28:39.7611|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 11:28:40.2704|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 11:28:40.2704|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 11:28:40.7792|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 11:28:40.7792|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 11:28:47.3444|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:28:47.3444|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:28:48.1173|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:28:48.1173|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:28:49.9330|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 11:28:49.9330|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 11:28:51.9163|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:28:51.9163|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:29:08.2670|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:29:08.2670|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:31:45.5423|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:POST,Method:SaveUpdate,User:multiply,UnitID:2
+2023-09-26 11:31:45.5423|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:POST,Method:SaveUpdate,User:multiply,UnitID:2
+2023-09-26 11:32:11.2449|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:32:11.2449|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:32:15.9795|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:32:15.9795|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:35:08.3251|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:POST,Method:SaveUpdate,User:multiply,UnitID:2
+2023-09-26 11:35:08.3251|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:POST,Method:SaveUpdate,User:multiply,UnitID:2
+2023-09-26 11:35:08.4795|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:35:08.4795|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:35:09.2091|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:35:09.2091|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:36:30.1909|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:36:30.1909|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:37:55.3351|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:POST,Method:SaveUpdate,User:multiply,UnitID:2
+2023-09-26 11:37:55.3351|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:POST,Method:SaveUpdate,User:multiply,UnitID:2
+2023-09-26 11:37:55.4844|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:37:55.4844|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:37:55.6092|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:37:55.6092|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenPrepController|Controller Name:SemenPrep,Action:GET,Method:GetSemenPreparationListForTC,User:multiply,UnitID:2
+2023-09-26 11:38:59.7866|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 11:38:59.7866|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 11:38:59.9152|ERROR|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|MaleComplaints/PreviousFollowUpNotes,MessageAmbiguous column name 'UnitID'.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.EMR.MaleHistory.MaleComplaintsDAL.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\EMR\MaleHistory\MaleComplaintsDAL.cs:line 96
+   at PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\EMR\MaleHistory\MaleComplaintsController.cs:line 38
+2023-09-26 11:39:01.7867|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 11:39:01.7867|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 11:39:31.3197|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:39:31.3197|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:39:32.4030|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:39:32.4030|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:39:33.5102|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 11:39:33.5102|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 11:39:35.0597|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:39:35.0597|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:39:37.8046|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:39:37.8046|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:39:43.6318|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 11:39:43.6318|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 11:39:44.1496|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 11:39:44.1496|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 11:39:44.2256|ERROR|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|MaleComplaints/PreviousFollowUpNotes,MessageAmbiguous column name 'UnitID'.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.EMR.MaleHistory.MaleComplaintsDAL.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\EMR\MaleHistory\MaleComplaintsDAL.cs:line 96
+   at PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\EMR\MaleHistory\MaleComplaintsController.cs:line 38
+2023-09-26 11:40:14.3188|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:40:14.3188|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:40:15.3652|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:40:15.3652|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:40:15.4412|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 11:40:15.4412|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 11:40:22.9307|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:40:22.9307|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:40:27.1832|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:40:27.1832|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:40:33.0672|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 11:40:33.0672|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 11:40:33.1141|ERROR|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|MaleComplaints/PreviousFollowUpNotes,MessageAmbiguous column name 'UnitID'.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.EMR.MaleHistory.MaleComplaintsDAL.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\EMR\MaleHistory\MaleComplaintsDAL.cs:line 96
+   at PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\EMR\MaleHistory\MaleComplaintsController.cs:line 38
+2023-09-26 11:40:33.5559|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 11:40:33.5559|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 11:41:59.9917|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 11:41:59.9917|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 11:42:01.0366|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 11:42:01.0366|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 11:42:01.5426|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 11:42:01.5426|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 11:42:02.0564|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 11:42:02.0564|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 11:42:08.9858|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:42:08.9858|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:42:09.0087|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:42:09.0087|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:42:09.5882|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 11:42:09.5882|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 11:42:12.8019|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:42:12.8019|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:42:22.4046|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:42:22.4046|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:42:30.2994|INFO|PIVF.Web.Api.EMR.FemaleHistoryController|Controller Name: FemaleHistory,Action: GET,Method: LoadSpecificFemaleHistory,User: multiply,UnitID:2
+2023-09-26 11:42:30.2994|INFO|PIVF.Web.Api.EMR.FemaleHistoryController|Controller Name: FemaleHistory,Action: GET,Method: LoadSpecificFemaleHistory,User: multiply,UnitID:2
+2023-09-26 11:43:23.3661|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:43:23.3661|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:43:23.9514|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:43:23.9514|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:43:24.8226|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 11:43:24.8226|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 11:43:26.5336|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:43:26.5336|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:45:54.5724|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:45:54.5724|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 11:45:58.5419|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 11:45:58.5419|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 11:45:58.5885|ERROR|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|MaleComplaints/PreviousFollowUpNotes,MessageAmbiguous column name 'UnitID'.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.EMR.MaleHistory.MaleComplaintsDAL.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\EMR\MaleHistory\MaleComplaintsDAL.cs:line 96
+   at PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\EMR\MaleHistory\MaleComplaintsController.cs:line 38
+2023-09-26 11:46:00.0486|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 11:46:00.0486|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 11:56:47.0715|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 11:56:47.0715|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 11:56:47.0915|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 11:56:47.0915|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 11:57:13.7128|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 11:57:13.7128|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 11:57:16.6600|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 11:57:16.6600|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 11:57:27.6886|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 11:57:27.6886|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 11:57:27.6994|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 11:57:27.6994|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 11:57:28.1982|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 11:57:28.1982|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 11:57:28.2142|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 11:57:28.2142|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 11:58:23.3906|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 11:58:23.3906|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 11:58:26.8926|INFO|PIVF.Web.Api.Master.Configuration.UserRoleController|Controller Name:UserRole,Action:GET,Method:RoleList,User:multiply,UnitID:2
+2023-09-26 11:58:26.8926|INFO|PIVF.Web.Api.Master.Configuration.UserRoleController|Controller Name:UserRole,Action:GET,Method:RoleList,User:multiply,UnitID:2
+2023-09-26 11:58:31.9257|INFO|PIVF.Web.Api.Master.Configuration.UserRoleController|Controller Name:UserRole,Action:GET,Method:MenuList,User:multiply,UnitID:2
+2023-09-26 11:58:31.9257|INFO|PIVF.Web.Api.Master.Configuration.UserRoleController|Controller Name:UserRole,Action:GET,Method:MenuList,User:multiply,UnitID:2
+2023-09-26 11:58:32.0222|INFO|PIVF.Web.Api.Master.Configuration.UserRoleController|Controller Name:UserRole,Action:GET,Method:RoleDetails,User:multiply,UnitID:2
+2023-09-26 11:58:32.0222|INFO|PIVF.Web.Api.Master.Configuration.UserRoleController|Controller Name:UserRole,Action:GET,Method:RoleDetails,User:multiply,UnitID:2
+2023-09-26 11:59:41.4994|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 11:59:41.4994|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 11:59:42.0250|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 11:59:42.0250|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 11:59:46.2621|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 11:59:46.2621|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:01:09.6893|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:01:09.6893|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:01:10.1591|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 12:01:10.1591|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 12:01:10.1840|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 12:01:10.1840|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 12:01:10.6707|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 12:01:10.6707|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 12:01:10.7026|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 12:01:10.7026|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 12:01:21.2101|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:01:21.2101|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:01:21.8105|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:01:21.8105|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:01:22.5944|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 12:01:22.5944|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 12:01:23.9657|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:01:23.9657|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:01:43.0316|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:01:43.0316|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:01:53.4683|INFO|PIVF.Web.Api.EMR.FemaleHistoryController|Controller Name: FemaleHistory,Action: GET,Method: LoadSpecificFemaleHistory,User: multiply,UnitID:2
+2023-09-26 12:01:53.4683|INFO|PIVF.Web.Api.EMR.FemaleHistoryController|Controller Name: FemaleHistory,Action: GET,Method: LoadSpecificFemaleHistory,User: multiply,UnitID:2
+2023-09-26 12:10:15.9844|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:10:15.9844|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:10:22.0147|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: multiply,UnitID:2
+2023-09-26 12:10:22.0147|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: multiply,UnitID:2
+2023-09-26 12:13:42.2988|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 12:13:42.2988|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 12:13:42.4225|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 12:13:42.4225|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 12:13:42.6808|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 12:13:42.6808|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 12:13:42.8024|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 12:13:42.8024|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 12:13:42.8344|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 12:13:42.8344|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 12:13:43.1465|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 12:13:43.1465|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 12:13:44.3154|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:13:44.3154|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:13:44.3513|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:13:44.3513|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:13:50.5558|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:13:50.5558|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:13:51.6135|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:13:51.6135|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:13:52.5243|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 12:13:52.5243|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 12:13:55.6254|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:13:55.6254|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:19:27.7256|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 12:19:27.7256|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 12:19:27.7870|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 12:19:27.7870|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 12:19:28.2966|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 12:19:28.2966|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 12:19:28.3365|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 12:19:28.3365|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 12:19:28.4343|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:19:28.4343|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:19:28.4811|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:19:28.4811|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:19:28.8272|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 12:19:28.8272|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 12:19:29.3269|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 12:19:29.3269|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 12:19:37.4637|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:19:37.4637|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:19:37.4807|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:19:37.4807|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:19:38.2267|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 12:19:38.2267|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 12:19:41.4004|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:19:41.4004|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:20:28.8481|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:20:28.8481|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:20:35.8200|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 12:20:35.8200|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 12:20:35.8818|ERROR|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|MaleComplaints/PreviousFollowUpNotes,MessageAmbiguous column name 'UnitID'.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.EMR.MaleHistory.MaleComplaintsDAL.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\EMR\MaleHistory\MaleComplaintsDAL.cs:line 96
+   at PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\EMR\MaleHistory\MaleComplaintsController.cs:line 38
+2023-09-26 12:20:37.8226|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 12:20:37.8226|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 12:24:05.5491|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:24:05.5491|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:24:10.7183|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: multiply,UnitID:2
+2023-09-26 12:24:10.7183|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: multiply,UnitID:2
+2023-09-26 12:24:12.3844|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 12:24:12.3844|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 12:24:20.1914|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 12:24:20.1914|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 12:25:09.9599|ERROR|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|MaleComplaints/PreviousFollowUpNotes,MessageAmbiguous column name 'UnitID'.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.EMR.MaleHistory.MaleComplaintsDAL.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\EMR\MaleHistory\MaleComplaintsDAL.cs:line 96
+   at PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\EMR\MaleHistory\MaleComplaintsController.cs:line 38
+2023-09-26 12:25:15.2111|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:25:15.2111|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:25:20.2431|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: multiply,UnitID:2
+2023-09-26 12:25:20.2431|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: multiply,UnitID:2
+2023-09-26 12:25:26.1873|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 12:25:26.1873|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name:MaleComplaints,Action:GET,Method:PreviousFollowUpNotes,User:multiply,UnitID:2
+2023-09-26 12:28:11.6034|ERROR|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|MaleComplaints/PreviousFollowUpNotes,MessageAmbiguous column name 'UnitID'.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.EMR.MaleHistory.MaleComplaintsDAL.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\EMR\MaleHistory\MaleComplaintsDAL.cs:line 96
+   at PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController.PreviousFollowUpNotes() in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\EMR\MaleHistory\MaleComplaintsController.cs:line 38
+2023-09-26 12:28:11.8776|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 12:28:11.8776|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleComplaintsController|Controller Name: MaleComplaints,Action: GET,Method: LoadSpecificMaleComplaints,User: multiply,UnitID:2
+2023-09-26 12:28:20.8142|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:28:20.8142|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:28:21.0197|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:28:21.0197|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:28:21.0965|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 12:28:21.0965|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 12:28:21.9013|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 12:28:21.9013|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 12:28:22.6010|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 12:28:22.6010|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 12:28:22.7546|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 12:28:22.7546|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 12:28:23.1844|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 12:28:23.1844|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 12:28:23.2393|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 12:28:23.2393|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 12:34:01.9904|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 12:34:01.9904|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:multiply,UnitID:2
+2023-09-26 12:34:02.2581|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 12:34:02.2581|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:multiply,UnitID:2
+2023-09-26 12:34:03.3803|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:34:03.3803|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:34:03.4038|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 12:34:03.4038|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:multiply,UnitID:2
+2023-09-26 12:34:03.8995|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 12:34:03.8995|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:multiply,UnitID:2
+2023-09-26 12:34:03.9244|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 12:34:03.9244|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:multiply,UnitID:2
+2023-09-26 12:34:03.9374|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:34:03.9374|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:multiply,UnitID:2
+2023-09-26 12:34:04.4122|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 12:34:04.4122|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:multiply,UnitID:2
+2023-09-26 12:34:16.2528|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:34:16.2528|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:34:17.4142|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:34:17.4142|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:34:17.6187|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 12:34:17.6187|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:multiply,UnitID:2
+2023-09-26 12:34:21.8009|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2
+2023-09-26 12:34:21.8009|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:multiply,UnitID:2

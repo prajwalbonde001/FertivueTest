@@ -1,0 +1,19 @@
+﻿
+<div class="breadcrumbContenair">
+    <ul id="breadcrumbs" class="breadcrumbs" ng-controller="crumbCtrl">
+        <li><a href="#EMRLandingPage">ART Dashboard</a></li>
+        <li class="current" ng-if="IsFemaleActive || IsCycleActive"> <a href="" title="Female">Female</a></li>
+        <li class="current" ng-if="IsMaleActive"> <a href="" title="Female">Male</a></li>
+        <li ng-repeat="breadcrumb in Breadcrum">
+            <a href="{{'#'+breadcrumb.Path}}">{{breadcrumb.Title}}</a>
+        </li>
+            <!--<li ng-repeat="breadcrumb in breadcrumbs.getAll()">
+            <ng-switch on="$last">
+                <span ng-switch-when="true">{{breadcrumb.name}}</span>
+                <span ng-switch-default>
+                    <a href="{{breadcrumb.path}}">{{breadcrumb.name}}</a>
+                </span>
+            </ng-switch>
+        </li>-->
+</ul>
+</div>

@@ -1,0 +1,890 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<style>
+    .semenProcessingTabNew {
+        padding: 20px;
+        border: 1px solid #EEEEF0;
+        border-radius: 16px;
+        background: #FFFFFF;
+        /*height: calc(100vh - 345px);*/
+        height: calc(100vh - 170px);
+        overflow: auto;
+        margin: -10px;
+    }
+
+
+
+    .verticalTab .tab-content {
+        border: none;
+        border-bottom: 1px solid #E2E3E5;
+        margin-bottom: 0px;
+    }
+
+
+
+    .semenProcessingTabNew .nav-tabs {
+        /*height: 665px;
+    min-height : 665px;*/
+        overflow: auto;
+        background: #FAFAFA;
+        padding: 20px;
+        border-radius: 20px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        height: calc(100vh - 480px) !important;
+    }
+
+
+
+
+
+        .semenProcessingTabNew .nav-tabs > li.active > a:after {
+            display: none;
+        }
+
+
+        .semenProcessingTabNew .nav-tabs > li.active > a {
+            color: #ffffff !important;
+            border: 1px solid #d06111 !important;
+            background: #df7d36;
+            box-shadow: 4px 4px 10px 0px #00000026;
+            border: 1px solid #5895A6 !important;
+            background: #ECF7F7;
+            border-radius: 8px;
+            color: #232323 !important;
+            font-weight: bold;
+        }
+
+
+
+
+        .semenProcessingTabNew .nav-tabs li a {
+            border-radius: 8px;
+            color: #232323;
+            font-size: 13px;
+            cursor: pointer;
+            background: #F4F4F4;
+            border: none !important;
+        }
+
+
+
+        .semenProcessingTabNew .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-tabs li a, .nav-tabs > li > a:hover {
+            font-weight: normal;
+            background: #DEEAED;
+            color: #232323 !important;
+        }
+</style>
+
+
+
+
+
+
+
+
+<div class="semenProcessingTab customMainContaint" id="">
+    @*tabHeightFourhundred*@
+    <form name="frmSemenPrep" novalidate autocomplete="off" ng-controller="SemenPrepController" ng-init="Load()">
+        @*<section class="list_form m-t-35">*@
+        <!-- Vertical Tab Start -->
+        <div class="row verticalTab semenProcessingTabNew" style="position: relative;
+        z-index: 11;">
+
+            <div class="row">
+
+                <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3 p-r-0">
+                    @* <div class="leftTabbg">*@
+                    <ul class="nav nav-tabs nav nav-pills nav-stacked">
+                        <li class="active"><a data-target="#PreliminaryDetails" data-toggle="tab"> @PIVF.LanguageResource.Resources.lblcPreliminaryDetails </a></li>
+                        <li><a data-target="#SemenPreparationDetails" data-toggle="tab"> @PIVF.LanguageResource.Resources.lblcSemenPreparationDetails </a></li>
+                        <li><a data-target="#PreparationAssisment" data-toggle="tab"> @PIVF.LanguageResource.Resources.lblcPreparationAssessment </a></li>
+                    </ul>
+                    @*</div>*@
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-9 col-lg-9 p-l-0 " style="padding-left:20px !important;">
+                    <div class="tab-content">
+                        @*Preliminary Details Start*@
+                        <div class="tab-pane active form-horizontal" id="PreliminaryDetails">
+                            <!-- Preliminary Details Start -->
+                            <div class="row form-horizontal">
+                                <section class="col-md-12 col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcPreliminaryDetails</h5></section>
+                                <div class="col-md-6 col-lg-5">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcPreparationDate</label>
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <div class="input-group date" ng-class="{'Invalid':frmSemenPrep.PrepDate.$invalid && frmSemenPrep.PrepDate.$dirty }">
+                                                <input type="text" class="form-control" ng-change="ChangeTimeAsDate(1)" id="PrepDate" name="PrepDate" placeholder="dd-Mmm-yyyy" ng-required="true" ng-model="SemenPrep.SprermFreezingDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="1">
+                                                <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcPreparationTime</label>
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <div uib-timepicker ng-model="SemenPrep.SprermFreezingTime" hour-step="1" class="timeCss" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false" tabindex="10"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-5">
+                                    <div class="form-group ">
+                                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcTypeofSperm</label>
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <select class="form-control " id="ddlTypeofSperm" name="ddlTypeofSperm" ng-class="{select:SemenPrep.SpermTypeID== 0 && frmSemenPrep.ddlTypeofSperm.$dirty}" ng-change="ChangeSpermType()" ng-model="SemenPrep.SpermTypeID" ng-options="item.ID as item.Description for item in SpermTypeList" tabindex="3"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Preliminary Details End -->
+                            <!-- Fresh Sample Details Start -->
+                            <div ng-hide="IsDisableTypeSpermDiv">
+                                <div class="row form-horizontal" ng-init="SemenPrep.SampleCollected=0" ng-hide="IsDisableFresh">
+                                    <section class="col-md-12 col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcFreshSample</h5></section>
+                                    <div class="col-md-6 col-lg-5">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcSampleCollectedAts</label>
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                <label class="radio-inline">
+                                                    <input type="radio" ng-disabled="IsDisableFresh" ng-model="SemenPrep.SampleCollected" id="inlineRadio" value=0> @PIVF.LanguageResource.Resources.lblcInhouse
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" ng-disabled="IsDisableFresh" name="inlineRadioOptions" ng-model="SemenPrep.SampleCollected" value=1> @PIVF.LanguageResource.Resources.lblcOutside
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div><div class="clear"></div>
+                                    <div class="col-md-6 col-sm-6 col-lg-5">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label p-r-0" for="">
+                                                <span class="text-Red">*</span>
+                                                @PIVF.LanguageResource.Resources.lblcCollectionDates
+                                            </label>
+                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                <div ng-disabled="IsDisableFresh" class="input-group date" ng-class="{'Invalid':frmSemenPrep.CollectionDate.$invalid && frmSemenPrep.CollectionDate.$dirty && SemenPrep.SpermTypeID == 1 }">
+                                                    <input type="text" ng-disabled="IsDisableFresh" class="form-control" id="CollectionDate" name="CollectionDate" ng-required="true" placeholder="dd-MMM-yyyy" ng-change="ChangeTimeAsDate(2)" ng-model="SemenPrep.CollectionDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="7">
+                                                    <span class="input-group-addon" ng-disabled="IsDisableFresh" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-6 ">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcCollectionTimes</label>
+                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                <div ng-disabled="IsDisableFresh" ng-class="{'Invalid':frmSemenPrep.CollectionTime.$invalid && frmSemenPrep.CollectionTime.$dirty && SemenPrep.SpermTypeID == 1 }" uib-timepicker id="CollectionTime" name="CollectionTime" ng-model="SemenPrep.CollectionTime" hour-step="1" class="timeCss" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false" tabindex="10"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-5">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label p-r-0" for="">
+                                                <span class="text-Red">*</span>
+                                                @PIVF.LanguageResource.Resources.lblcReceivingDates
+                                            </label>
+                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                <div class="input-group date" ng-class="{'Invalid':frmSemenPrep.ReceivingDate.$invalid && frmSemenPrep.ReceivingDate.$dirty &&SemenPrep.SpermTypeID == 1  }">
+                                                    <input ng-disabled="IsDisableFresh" type="text" class="form-control" id="ReceivingDate" name="ReceivingDate" ng-required="true" placeholder="dd-MMM-yyyy" ng-model="SemenPrep.TimeRecSampLab" ng-change="ChangeTimeAsDate(3)" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup3.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="7">
+                                                    <span ng-disabled="IsDisableFresh" class="input-group-addon" id="" ng-click="open3()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-6 ">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcReceivingTimes</label>
+                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                <div ng-disabled="IsDisableFresh" ng-class="{'Invalid':frmSemenPrep.ReceivingTime.$invalid && frmSemenPrep.ReceivingTime.$dirty && SemenPrep.SpermTypeID == 1 }" uib-timepicker ng-model="SemenPrep.ReceivingTime" id="ReceivingTime" name="ReceivingTime" hour-step="1" class="timeCss" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false" tabindex="10"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="form-group m-b-10">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcMethodofSemenCollections</label>
+                                            <div class="col-sm-6 col-md-6 col-lg-6 radiobtn">
+                                                <select ng-disabled="IsDisableFresh" class="form-control " id="ddlSemenCollection" name="ddlSemenCollection"
+                                                        ng-model="SemenPrep.MethodOfCollection" ng-change="CheckSergicalSelected()" ng-class="{select:frmSemenPrep.ddlSemenCollection.$dirty && SemenPrep.MethodOfCollection==0 &&SemenPrep.SpermTypeID==1}" ng-options="item.ID as item.Description for item in SemenCollectionList"
+                                                        tabindex="5"></select>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6 col-lg-6 radiobtn">
+                                                <select id="ddlPatientSourceOfReference" ng-disabled="IsSergicalOptionSelected ||IsDisableFresh"
+                                                        ng-model="SemenPrep.MethodSurgicalSRetrievalID"
+                                                        class="form-control"
+                                                        ng-options="item.ID as item.Description for item in MethodSurgicalSRetrievalList" tabindex="=6"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcAbstinenceDayss</label>
+                                            <div class="col-sm-12 col-md-12 col-lg-12 radiobtn">
+                                                <select class="form-control " ng-disabled="IsDisableFresh" id="ddlAbstinence" name="ddlAbstinence" ng-model="SemenPrep.Abstinence" ng-options="item.ID as item.Description for item in AbstinenceList" tabindex="11"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fresh Sample End -->
+                                <!-- Frozen Sample Start -->
+                                <div class="row form-horizontal" ng-hide="!IsDisableFresh" ng-init="SemenPrep.FrozenSampleCollected =0">
+                                    <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcListofFrozenSample</h5></section>
+                                    <div class="col-md-6 col-lg-5">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.SampleFrozenats</label>
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                <label class="radio-inline">
+                                                    <input type="radio" ng-disabled="!IsDisableFresh" ng-change="ChangeFrozenSampleCollected()" ng-model="SemenPrep.FrozenSampleCollected" id="inlineRadio1" value=0> @PIVF.LanguageResource.Resources.lblcInhouse
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" ng-disabled="!IsDisableFresh" name="inlineRadioOptions" ng-change="ChangeFrozenSampleCollected()" ng-model="SemenPrep.FrozenSampleCollected" value=1> @PIVF.LanguageResource.Resources.lblcOutside
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcCryoNo</label>
+                                            <div class="col-md-12 col-sm-12 col-lg-6 m-b-5">
+                                                <input type="text" ng-disabled="IsFrozenSampleCollectedInhouse || !IsDisableFresh" ng-model="SemenPrep.CryNo" maxlength="100" class="form-control" id="">
+                                            </div>
+
+                                            <div class="col-md-12 col-sm-12 col-lg-6">
+                                                <button class="btn btn-primary fileinput-button" ng-click="GetSemenPreparationList()" ng-disabled="!IsFrozenSampleCollectedInhouse || !IsDisableFresh" data-toggle="modal" data-target="#prePreparation" type="button" id="" value=""><span class="glyphicon glyphicon-paperclip"></span>Link</button>
+                                                <button class="btn btn-primary fileinput-button" data-target="#SemenThawingModel" ng-disabl">{{ViewBtnName}}</button>
+
+                                            </div>
+                                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                                <div class="attach-proff">
+                                                    <img ng-src="" clas="" class="effectfront">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                                <div class="attach-proff">
+                                                    <img ng-src="" clas="" class="effectfront">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                                <div class="attach-proff">
+                                                    <img ng-src="" clas="" class="effectfront">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                                <div class="attach-proff">
+                                                    <img ng-src="" clas="" class="effectfront">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                                <div class="attach-proff">
+                                                    <img ng-src="" clas="" class="effectfront">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-5">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                                @PIVF.LanguageResource.Resources.lblcThawDates
+                                            </label>
+                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                <div class="input-group date">
+                                                    @*ng-class="{'Invalid':frmSemenPrep.ThawDate.$invalid && frmSemenPrep.ThawDate.$dirty && SemenPrep.SpermTypeID == 2}"*@
+                                                    <input type="text" ng-disabled="IsFrozenSampleCollectedInhouse || !IsDisableFresh" class="form-control" id="ThawDate" name="ThawDate" placeholder="dd-MMM-yyyy" ng-required="IsFrozenSample" ng-model="SemenPrep.ThawDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup4.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="1">
+                                                    <span class="input-group-addon" ng-disabled="IsFrozenSampleCollectedInhouse || IsDisableFresh" id="" ng-click="open4()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-6">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcThawTimes</label>
+                                            @*<div class="col-md-12 col-sm-12 col-lg-12">
+                                                    <div uib-timepicker ng-disabled="IsFrozenSampleCollectedInhouse || !IsDisableFresh" class="timeCss" ng-model="SemenPrep.ThawTime" hour-step="1" minute-step="5" max="maxTime" show-meridian="false" show-spinners="false" show-seconds="false" tabindex="10"></div>
+                                                </div>*@  @*Commented by sujata*@
+                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                    <div @*added by sujata*@
+                                                         uib-timepicker
+                                                         ng-disabled="IsFrozenSampleCollectedInhouse || !IsDisableFresh "
+                                                         ng-model="SemenPrep.ThawTime"
+                                                         class="timeCss text-center"
+                                                         hour-step="1"
+                                                         minute-step="5"
+                                                         show-meridian="false"
+                                                         show-spinners="false"
+                                                         show-seconds="false">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Frozen Sample End -->
+                                </div>
+                            </div>
+                            @*Preliminary Details End*@
+                            @*Semen Preparation Details End*@
+                            <div class="tab-pane form-horizontal" id="SemenPreparationDetails">
+                                <!-- Semen Preparation Details Start -->
+                                <div class="row form-horizontal">
+                                    <section class="col-md-12 col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcSemenPreparationDetails</h5></section>
+                                    <div class="col-md-7 col-lg-6">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-10 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcSemenPreparationMethods</label>
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                <select class="form-control " id="ddlSemenPrepMethod" name="ddlSemenPrepMethod" ng-model="SemenPrep.IVFMOSPCode" ng-class="{select:frmSemenPrep.ddlSemenPrepMethod.$dirty && SemenPrep.IVFMOSPCode==0}" ng-options="item.ID as item.Description for item in SemenPrepMethodList" tabindex="11"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Semen Preparation Details End -->
+                                <div class="row form-horizontal">
+                                    <div class="col-md-12 col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcGradientMethod</h5></div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcGradientUseds</label>
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                <input type="text" ng-model="SemenPrep.GradientUsed" maxlength="100" tabindex="51" class="form-control" id="" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcGradientMiniGradients</label>
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                <input type="text" ng-model="SemenPrep.GradientMin" maxlength="100" tabindex="51" class="form-control" id="" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div><div class="clearfix"></div>
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcCentrifugedats</label>
+                                            <div class="col-sm-7 col-md-4 col-lg-4 p-r-0">
+                                                <input type="text" class="form-control" id="txtCentrifugedAt" name="txtCentrifugedAt" replace="[^0-9]" with="" maxlength="4" ng-model="SemenPrep.ContrifugedRpm" tabindex="16">
+                                            </div>
+                                            <label class="col-sm-4 col-md-2 col-lg-2 control-label" for="">@PIVF.LanguageResource.Resources.lblcrpm</label>
+                                            <div class="col-sm-7 col-md-4 col-lg-4 p-r-0">
+                                                <input type="text" class="form-control" id="txtRPM" name="txtRPM" replace="[^0-9]" with="" maxlength="2" ng-model="SemenPrep.ContrifugedMin" tabindex="16">
+                                            </div>
+                                            <label class="col-sm-4 col-md-2 col-lg-2 control-label" for="">@PIVF.LanguageResource.Resources.lblcmins</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="form-group SPTabRespDiv">
+                                            <label class="col-md-12 col-lg-12 control-label p-r-0" for="">@PIVF.LanguageResource.Resources.lblcWashMedias</label>
+                                            <div class="col-md-4 col-lg-3 p-r-0">
+                                                <input type="text" class="form-control" id="txtWashMedia" name="txtWashMedia" allow-decimal-numbers-with-precision-and-scale-restricted ng-model="SemenPrep.WashMediMl" tabindex="16">
+                                            </div>
+                                            <label class="col-md-2 col-lg-1 control-label p-l-4" for="">@PIVF.LanguageResource.Resources.lblcml</label>
+                                            <div class="col-md-4 col-lg-3 resp-p-r-0 p-l-0">
+                                                <input type="text" class="form-control" id="txtWashMedia" name="txtWashMedia" replace="[^0-9]" with="" maxlength="4" ng-model="SemenPrep.WashMediaRpm" tabindex="16">
+                                            </div>
+                                            <label class="col-md-2 col-lg-1 control-label p-l-0" for="">@PIVF.LanguageResource.Resources.lblcrpm</label>
+                                            <div class="col-md-4 col-lg-3 resp-p-r-0 resp-m-t-5 p-l-0">
+                                                <input type="text" class="form-control" id="txtWashMedia" name="txtWashMedia" replace="[^0-9]" with="" maxlength="2" ng-model="SemenPrep.WashMediaMin" tabindex="16">
+                                            </div>
+                                            <label class="col-md-2 col-lg-1 control-label p-l-0" for="">@PIVF.LanguageResource.Resources.lblcmins</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="form-group ">
+                                            <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcSwimups</label>
+                                            <div class="col-md-4 col-lg-4 p-r-0">
+                                                <input type="text" class="form-control" id="txtWashMedia" name="txtWashMedia" allow-decimal-numbers-with-precision-and-scale-restricted ng-model="SemenPrep.SwimUpMl " tabindex="16">
+                                            </div>
+                                            <label class="col-md-2 col-lg-2 control-label" for="">@PIVF.LanguageResource.Resources.lblcml</label>
+                                            <div class="col-sm-7 col-md-4 col-lg-4 p-r-0">
+                                                <input type="text" class="form-control" id="txtWashMedia" name="txtWashMedia" replace="[^0-9]" with="" maxlength="2" ng-model="SemenPrep.SwimUpMin" tabindex="16">
+                                            </div>
+                                            <label class="col-md-2 col-lg-2 control-label" for="">@PIVF.LanguageResource.Resources.lblcmins</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Advanced Total Progressive Motility End -->
+                                <!-- Morphology Assessment Start -->
+                                <div class="row form-horizontal">
+                                    <div class="col-md-12 col-lg-12 "><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcWashMethod</h5></div>
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="form-group SPTabRespDiv">
+                                            <label class="col-md-12 col-lg-12 control-label p-r-0" for="">@PIVF.LanguageResource.Resources.lblcWashMedias</label>
+                                            <div class="col-md-4 col-lg-3 p-r-0">
+                                                <input type="text" class="form-control" id="txtWashMedia" name="txtWashMedia" allow-decimal-numbers-with-precision-and-scale-restricted ng-model="SemenPrep.WMWashMediMl" tabindex="16">
+                                            </div>
+                                            <label class="col-md-2 col-lg-1 control-label p-l-4" for="">@PIVF.LanguageResource.Resources.lblcml</label>
+                                            <div class="col-md-4 col-lg-3 resp-p-r-0 p-l-0">
+                                                <input type="text" class="form-control" id="txtWashMedia" name="txtWashMedia" replace="[^0-9]" with="" maxlength="4" ng-model="SemenPrep.WMWashMediaRpm" tabindex="16">
+                                            </div>
+                                            <label class="col-md-2 col-lg-1 control-label p-l-0" for="">@PIVF.LanguageResource.Resources.lblcrpm</label>
+                                            <div class="col-md-4 col-lg-3 resp-p-r-0 resp-m-t-5 p-l-0">
+                                                <input type="text" class="form-control" id="txtWashMedia" name="txtWashMedia" replace="[^0-9]" with="" maxlength="2" ng-model="SemenPrep.WWashMediaMin" tabindex="16">
+                                            </div>
+                                            <label class="col-md-2 col-lg-1 control-label p-l-0" for="">@PIVF.LanguageResource.Resources.lblcmins</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="form-group ">
+                                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.String3</label>
+                                            <div class="col-sm-10 col-md-10 col-lg-10">
+                                                <textarea type="text" class="form-control" id="txtRemarks" name="txtRemarks" placeholder="" ng-model="SemenPrep.Remarks" maxlength="250" tabindex="28"></textarea>
+                                            </div>
+                                            <label class="col-sm-2 col-md-2 col-lg-2 lastLabel control-label" for="">{{250-SemenPrep.Remarks.length}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Morphology Assessment End -->
+                            </div>
+                            @*Semen Preparation Details End*@
+                            @*Preparation Assessment Details Start*@
+                            <div class="tab-pane form-horizontal" id="PreparationAssisment">
+                                <div class="row">
+                                    <!-- <section class="col-lg-12"><h5 class="subTitle">Sperm Freezing Details</h5></section> -->
+                                    <div class="col-md-12 col-lg-10">
+                                        <div class="table-responsive m-t-5">
+                                            <!-- style="max-height:300px; overflow:auto;" -->
+                                            <table class="table table-hover table-striped table-hover table-bordered" id="profile_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="50%">@PIVF.LanguageResource.Resources.lblcPreparationAssessment</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcPrePreparation</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcPostPreparation</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="">
+                                                        <td><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcVolumemls </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtVolume" ng-class="{select:frmSemenPrep.txtVolume.$dirty && (SemenPrep.Volume== null || SemenPrep.Volume== undefined)}" name="txtVolume" ng-required="true" allow-decimal-numbers ng-blur="CheckVolume()" ng-change="SemenPrep.SpermCount=SemenPrep.SpermConcentration*SemenPrep.Volume" ng-model="SemenPrep.Volume" tabindex="13">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtVolumePost" name="txtVolumePost" ng-class="{select:frmSemenPrep.txtVolumePost.$dirty && (SemenPrep.VolumePost== null || SemenPrep.VolumePost== undefined)}" ng-required="true" allow-decimal-numbers ng-blur="CheckVolumePost()" ng-change="SemenPrep.SpermCountPost=SemenPrep.SpermConcentrationPost*SemenPrep.VolumePost" ng-model="SemenPrep.VolumePost" tabindex="13">
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="">
+                                                        <td><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcSpermConcentrationmillmls</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtSpermConce" name="txtSpermConce" ng-class="{select:frmSemenPrep.txtSpermConce.$dirty && (SemenPrep.SpermConcentration== null || SemenPrep.SpermConcentration== undefined)}" ng-change="SemenPrep.SpermCount=SemenPrep.SpermConcentration*SemenPrep.Volume" ng-required="true" valid-numberwithoutdeciml ng-model="SemenPrep.SpermConcentration" maxlength="3" tabindex="14">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtSpermConcePost" name="txtSpermConcePost" ng-class="{select:frmSemenPrep.txtSpermConcePost.$dirty && (SemenPrep.SpermConcentrationPost== null || SemenPrep.SpermConcentrationPost== undefined)}" ng-change="SemenPrep.SpermCountPost=SemenPrep.SpermConcentrationPost*SemenPrep.VolumePost" ng-required="true" valid-numberwithoutdeciml ng-model="SemenPrep.SpermConcentrationPost" maxlength="3" tabindex="14">
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="">
+                                                        <td>@PIVF.LanguageResource.Resources.lblcTotalSpermCountmillion</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtSpermCount" name="txtSpermCount" placeholder="" ng-readonly="true" ng-model="SemenPrep.SpermCount" tabindex="15">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtSpermCountPost" name="txtSpermCountPost" placeholder="" ng-readonly="true" ng-model="SemenPrep.SpermCountPost" tabindex="15">
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="">
+                                                        <td>@PIVF.LanguageResource.Resources.lblcTotalMotility</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtMotility" name="txtMotility" ng-readonly="true" ng-change="OGradeC = SemenPrep.GradeC" ng-model="SemenPrep.Motility" tabindex="16">   @*19">*@
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtMotilityPost" name="txtMotilityPost" ng-readonly="true" ng-change="OGradeCPost = SemenPrep.GradeCPost" ng-model="SemenPrep.MotilityPost" tabindex="16">    @*19*@
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr class="">
+                                                        <td>@PIVF.LanguageResource.Resources.lblcTotalMotilityCount </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtMotilityCnt" name="txtMotilityCnt" ng-readonly="true" ng-change="OGradeC = SemenPrep.GradeC" ng-model="SemenPrep.MotilityCnt">      @*replace="[^0-9]"   commented by Nayan Kamble on 26/08/2019*@
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtMotilityCntPost" name="txtMotilityCntPost" ng-readonly="true" ng-change="OGradeCPost = SemenPrep.GradeCPost" ng-model="SemenPrep.MotilityCntPost">      @*replace="[^0-9]"   commented by Nayan Kamble on 26/08/2019*@
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr class="cursorPointer" data-toggle="collapse" data-target=".collapseExample">
+                                                        <td class="txtGreen"><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcProgressive</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtProgressive" name="txtProgressive" ng-class="{select:frmSemenPrep.txtProgressive.$dirty && (SemenPrep.GradeA== null || SemenPrep.GradeA== undefined)}" ng-focus="OGradeA = SemenPrep.GradeA" ng-required="true" valid-numberwithoutdeciml maxlength="2" ng-blur="CalculateMotilityAss()" ng-model="SemenPrep.GradeA" tabindex="17">     @*16*@
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtProgressivePost" name="txtProgressivePost" ng-class="{select:frmSemenPrep.txtProgressivePost.$dirty && (SemenPrep.GradeAPost== null || SemenPrep.GradeAPost== undefined)}" ng-focus="OGradeAPost = SemenPrep.GradeAPost" ng-required="true" valid-numberwithoutdeciml maxlength="2" ng-blur="CalculateMotilityAssPost()" ng-model="SemenPrep.GradeAPost" tabindex="17">     @*16*@
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="collapse collapseExample" ng-hide="1">
+                                                        <td><span class="glyphicon glyphicon-arrow-right"></span> @PIVF.LanguageResource.Resources.lblcRapidProgressive</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtRapidProgressive" name="txtRapidProgressive" ng-focus="ORapidProgressive = SemenPrep.RapidProgressive" ng-blur="(SemenPrep.RapidProgressive!=undefined ||SemenPrep.RapidProgressive!='')?CalcSlowProg():0" replace="[^0-9]" with="" maxlength="2" ng-required="IsMandatory" ng-model="SemenPrep.RapidProgressive" tabindex="21">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtRapidProgressivePost" name="txtRapidProgressivePost" ng-focus="ORapidProgressivePost = SemenPrep.RapidProgressivePost" ng-blur="(SemenPrep.RapidProgressivePost!=undefined ||SemenPrep.RapidProgressivePost!='')?CalcSlowProgPost():0" replace="[^0-9]" with="" maxlength="2" ng-required="IsMandatory" ng-model="SemenPrep.RapidProgressivePost" tabindex="21">
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="collapse collapseExample" ng-hide="1">
+                                                        <td><span class="glyphicon glyphicon-arrow-right"></span> @PIVF.LanguageResource.Resources.lblcSlowProgressive</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtSlowProgressive" name="txtSlowProgressive" ng-focus="OSlowProgressive = SemenPrep.SlowProgressive" ng-blur="CalcRapidProg()" replace="[^0-9]" with="" maxlength="2" ng-required="IsMandatory" ng-model="SemenPrep.SlowProgressive" tabindex="20">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtSlowProgressivePost" name="txtSlowProgressivePost" ng-focus="OSlowProgressivePost = SemenPrep.SlowProgressivePost" ng-blur="CalcRapidProgPost()" replace="[^0-9]" with="" maxlength="2" ng-required="IsMandatoryPost" ng-model="SemenPrep.SlowProgressivePost" tabindex="20">
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="">
+                                                        <td><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcNonProgressive</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtNonProgressive" ng-class="{select:frmSemenPrep.txtNonProgressive.$dirty && (SemenPrep.GradeB== null || SemenPrep.GradeB== undefined)}" name="txtNonProgressive" ng-focus="OGradeB = SemenPrep.GradeB" ng-required="true" ng-blur="CalculateMotilityAss()" replace="[^0-9]" with="" maxlength="2" ng-model="SemenPrep.GradeB" tabindex="18">       @*17*@
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtNonProgressivePost" name="txtNonProgressivePost" ng-class="{select:frmSemenPrep.txtNonProgressivePost.$dirty && (SemenPrep.GradeBPost== null || SemenPrep.GradeBPost== undefined)}" ng-focus="OGradeBPost = SemenPrep.GradeBPost" ng-required="true" ng-blur="CalculateMotilityAssPost()" replace="[^0-9]" with="" maxlength="2" ng-model="SemenPrep.GradeBPost" tabindex="18">    @*17*@
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="">
+                                                        <td><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcImmotile</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtImmotile" ng-class="{select:frmSemenPrep.txtImmotile.$dirty && (SemenPrep.GradeC== null || SemenPrep.GradeC== undefined)}" name="txtImmotile" ng-focus="OGradeC = SemenPrep.GradeC" ng-required="true" ng-blur="CalculateMotilityAss()" replace="[^0-9]" with="" maxlength="2" ng-readonly="true" ng-model="SemenPrep.GradeC" tabindex="19">   @*18*@
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" id="txtImmotilePost" ng-class="{select:frmSemenPrep.txtImmotilePost.$dirty && (SemenPrep.GradeCPost== null || SemenPrep.GradeCPost== undefined)}" name="txtImmotilePost" ng-readonly="true" ng-focus="OGradeCPost = SemenPrep.GradeCPost" ng-required="true" ng-blur="CalculateMotilityAssPost()" replace="[^0-9]" with="" maxlength="2" ng-model="SemenPrep.GradeCPost" tabindex="19">    @*18*@
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="">
+                                                        <td>WBC</td>
+                                                        <td>
+                                                            <input type="text" ng-model="SemenPrep.PreWBCCell" maxlength="20" tabindex="20" class="form-control" id="" placeholder="">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" ng-model="SemenPrep.PostWBCCell" maxlength="20" tabindex="20" class="form-control" id="" placeholder="">
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="">
+                                                        <td>@PIVF.LanguageResource.Resources.lblcPusCells</td>
+                                                        <td>
+                                                            <input type="text" ng-model="SemenPrep.PrePusCells" maxlength="20" tabindex="21" class="form-control" id="" placeholder="">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" ng-model="SemenPrep.PostPusCells" maxlength="20" tabindex="21" class="form-control" id="" placeholder="">
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="">
+                                                        <td>@PIVF.LanguageResource.Resources.lblcRBC</td>
+                                                        <td>
+                                                            <input type="text" ng-model="SemenPrep.PreRBCells" maxlength="20" tabindex="22" class="form-control" id="" placeholder="">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" ng-model="SemenPrep.PostRBCells" maxlength="20" tabindex="22" class="form-control" id="" placeholder="">
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="">
+                                                        <td>@PIVF.LanguageResource.Resources.lblcEpithelialCells</td>
+                                                        <td>
+                                                            <input type="text" ng-model="SemenPrep.PreEpithelialCells" maxlength="20" tabindex="23" class="form-control" id="" placeholder="">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" ng-model="SemenPrep.PostEpithelialCells" maxlength="20" tabindex="23" class="form-control" id="" placeholder="">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*Preparation Assessment Details End*@
+                        </div>
+                        <!-- Done by Start -->
+                        <div class="row form-horizontal" style="position: relative;
+        z-index: 11;">
+                            <!-- <section class="col-lg-12"><h5 class="underline"></h5></section> -->
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcDoneBys</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control " id="ddlDoneby" name="ddlDoneby" ng-class="{select:frmSemenPrep.ddlDoneby.$dirty && SemenPrep.CheckedByDoctorID==0}" ng-model="SemenPrep.CheckedByDoctorID" ng-options="item.ID as item.Description for item in DocList.EmbryologistAndrologist" tabindex="40"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcWitnessedBys</label>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <select class="form-control" id="ddlWitnessedby" name="ddlWitnessedby" ng-class="{select:frmSemenPrep.ddlWitnessedby.$dirty && SemenPrep.WitnessByID==0}" ng-model="SemenPrep.WitnessByID" ng-options="item.ID as item.Description for item in DocList.EmbryologistAndrologist" tabindex="41"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3">
+                                <div class="form-group ">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblRemark</label>
+                                    <div class="col-sm-10 col-md-11 col-lg-11 p-r-0">
+                                        <textarea type="text" class="form-control" id="txtRemarks" name="txtRemarks" placeholder="" ng-model="SemenPrep.Remark" maxlength="100" tabindex="28"></textarea>
+                                    </div>
+                                    <label class="col-md-1 col-sm-2 col-lg-1 lastLabel control-label" for="">{{100-SemenPrep.Remark.length}}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3" style="display: flex; gap: 20px; align-items: center; justify-content: end; margin-top: 25px;">
+                                <label class="checkbox-inline p-t-0"><input type="checkbox" id="inlineCheckbox1" ng-model="SemenPrep.IsFinalized" value="option1"> @PIVF.LanguageResource.Resources.lblFinalize</label>
+                                <button class="btn btn-primary" type="button" ng-click="SaveUpdate(SemenPrep)" id="btnSaveUpdate" ng-disabled="IsFinalized || IsVisitMarked" value="">{{btnSaveUpdate}}</button>
+                                <button class="btn btn-default" type="button" id="" ng-click="CancelMain()" value="">@PIVF.LanguageResource.Resources.btnCancel</button>
+                            </div>
+                        </div>
+                        <!-- Done by End -->
+                    </div>
+
+                </div>
+
+                <div class="form_Content m-b-5 m-t-0" id="" style="position: relative;
+        z-index: 11;">
+                    <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcPreparationDetails</h5>
+                    <div class="table-responsive fixed_header">
+                        <table class="table table-hover table-striped" style="min-width: 910px;min-height:150px;max-height:325px;">
+                            <thead>
+                                <tr>
+                                    <th st-ratio="3">&nbsp;</th>
+                                    <th st-ratio="18" ng-click="SortData1('SNo')">@PIVF.LanguageResource.Resources.lblS_No<div ng-class="sortClass1"></div></th>
+                                    <th st-ratio="11" ng-click="SortData1('CollectionDate')">@PIVF.LanguageResource.Resources.lblDate<div ng-class="sortClass1"></div></th>
+                                    <th st-ratio="12" ng-click="SortData1('SpermDescription')">@PIVF.LanguageResource.Resources.lblcTypeofSperm<div ng-class="sortClass1"></div></th>
+                                    <th st-ratio="22" ng-click="SortData1('MethodOfSpermPreparation')">@PIVF.LanguageResource.Resources.lblcSemenPreparationMethods<div ng-class="sortClass1"></div></th>
+                                    <th st-ratio="18" ng-click="SortData1('DoneBy')">@PIVF.LanguageResource.Resources.lblcDoneBys<div ng-class="sortClass1"></div></th>
+                                    <th st-ratio="19" ng-click="SortData1('WitnessedBy')">@PIVF.LanguageResource.Resources.lblcWitnessedBys<div ng-class="sortClass1"></div></th>
+                                    @*<th>Linked</th>*@
+                                    @*<th>Print</th>*@
+                                    @*<th>&nbsp;</th>*@
+                                </tr>
+                            </thead>
+                            <tbody style="min-height:150px;">
+                                <tr ng-repeat="item in SemenPrepListTC|orderBy:SortColumn1:reverseSort1">
+                                    <td st-ratio="3" class="cycle_actions">
+                                        <div class="dropdown">
+                                            <a href="" class="dropdown-toggle" id="cycleAction_1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span class="glyphicon glyphicon-cog"></span>
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="cycleAction_1" ng-show="item.IsFinalized">
+                                                <li><a href="" ng-click="SemenPreparationPrint(item)">@PIVF.LanguageResource.Resources.btnPrint</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td st-ratio="18"> <a class="txt_bold" ng-click="RedirectToSelf(item.SNo)">{{item.SNo}}</a></td>
+                                    <td st-ratio="11">{{item.CollectionDate | date :  "dd-MMM-yyyy"}}</td>
+                                    <td st-ratio="12">{{item.SpermDescription}}</td>
+                                    <td st-ratio="22">{{item.MethodOfSpermPreparation}}</td>
+                                    <td st-ratio="18">{{item.DoneBy}}</td>
+                                    <td st-ratio="19">{{item.WitnessedBy}}</td>
+                                    @*<td><a data-target="#SemenThawingModel" data-toggle="modal" ng-click="RedirectToThawing(item.STNo,'default');RedirectToThawing(item.STNo,'Freezing')" class="txt_bold">{{item.STNo}}</a></td>*@
+                                    @*<td><button type="submit" class="btn btn-default btn_print"><span class="glyphicon glyphicon-print"></span></button></td>*@
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- Vertical Tab End -->
+            <!-- Sperm Freezing Details End -->
+
+            <div class="modal fade" id="prePreparation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            @*<h4 class="modal-title">Modal title</h4>*@
+                            <h4 class="modal-title" id="myModalLabel">
+                                @PIVF.LanguageResource.Resources.lblcSemenThawing &nbsp;-
+                                <span class="femaleDetails"> {{selectedPatient.PatientName}}<small>({{selectedPatient.MRNo}})</small></span>
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Previous Treatment History Start -->
+                            <div class="row">
+                                <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcSemenThawingList</h5></section>
+                                <div class="col-lg-12">
+                                    <div id="FindPatientSearchContainer">
+                                        <div style="max-height:300px; overflow:auto;" class="table-responsive ">
+                                            <table class="table table-hover table-striped table-hover table-bordered normalLabel" id="">
+                                                <thead>
+                                                    <tr>
+                                                        <th>@PIVF.LanguageResource.Resources.lblSelect</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcSNos</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblDate</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcCryoNoss</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcVolumemlss</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcSpermConcentrationmillml</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcMotilityp</th>
+                                                        @*<th>Print</th>*@
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in SemenPrepList">
+                                                        <td class="text-center" ng-disabled="item.IsLinked">
+                                                            @*<input type="checkbox">*@
+                                                            <input ng-disabled="{{item.IsLinked}}" type="checkbox" ng-click="updateSelection($index, SemenPrepList)" ng-model="item.selected" value={{item.SpecimenDescription}} />
+
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group" ng-disabled="{{item.IsLinked}}">
+                                                                <a data-target="#SemenThawingModel" data-toggle="modal" ng-click="RedirectToThawing(item.FormNo,'default');RedirectToThawing(item.FormNo,'Freezing')" ng-disabled="{{item.IsLinked}}" class="txt_bold">{{item.FormNo}}</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div ng-disabled="{{item.IsLinked}}" class="form-group">
+                                                                <label class="" for="">{{item.ThawDate | date :  "dd-MMM-yyyy"}}</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div ng-disabled="{{item.IsLinked}}" class="form-group">
+                                                                <label class="" for="">{{item.SpermNo}}</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div ng-disabled="{{item.IsLinked}}" class="form-group">
+                                                                <label class="" for="">{{item.Volume}}</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div ng-disabled="{{item.IsLinked}}" class="form-group">
+                                                                <label class="" for="">{{item.SpermConcentration}}</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div ng-disabled="{{item.IsLinked}}" class="form-group">
+                                                                <label class="" for="">{{item.Motility}}</label>
+                                                            </div>
+                                                        </td>
+                                                        @*<td class="text-center">
+                                                                <button class="btn btn-primary show_collapse_button" type="button" id="" value=""><span class="glyphicon glyphicon-plus-sign"></span> Print</button>
+                                                            </td>*@
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Previous Treatment History End -->
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-dismiss="modal" ng-model="SemenPrep.SNo" ng-click="UpdateLinkFinalize()" type="button" id="" value="" tabindex="5"> @PIVF.LanguageResource.Resources.lblAdd</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*</section>*@
+
+            <div class="modal fade" id="SemenThawingModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog w95" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">@PIVF.LanguageResource.Resources.lblcSemenThawing</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcSemenFreezingSummary</h5></section>
+                                <div class="col-lg-12">
+                                    <div id="FindPatientSearchContainer">
+                                        <div class="table-responsive ">
+                                            <table class="table table-hover table-striped table-hover table-bordered" id="profile_table">
+                                                <thead>
+                                                    <tr>
+                                                        <!-- <th>Select</th> -->
+                                                        <th>@PIVF.LanguageResource.Resources.lblcFreezingDate</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcFreezingTime</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcTypeofSperm</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcVolume</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcSpermConcentration</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcTotalSpermCount</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcProgressivess</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcNonProgressivess</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcImmotiless</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcTotalMotilityss</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcCryoNo</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcTank</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblCanister</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcCane</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcVials</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblExpiryDate</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblRemarks</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item1 in SemenFreezingList">
+                                                        <td>{{item1.SpremFreezingDate | date :  "dd-MMM-yyyy"}}</td>
+                                                        <td>{{item1.SpremFreezingDate| date :  "dd-MMM-yyyy"}}</td>
+                                                        <td>{{item1.SpermType}}</td>
+                                                        <td>{{item1.Volume}}</td>
+                                                        <td>{{item1.SpermConcentration}}</td>
+                                                        <td>{{item1.SpermCount}}</td>
+                                                        <td>{{item1.GradeA}}</td>
+                                                        <td>{{item1.GradeB}}</td>
+                                                        <td>{{item1.GradeC}}</td>
+                                                        <td>{{item1.Motility}}</td>
+                                                        <td>{{item1.CryoNo}}</td>
+                                                        <td>{{item1.Tank}}</td>
+                                                        <td>{{item1.Canister}}</td>
+                                                        <td>{{item1.Cane}}</td>
+                                                        <td>{{item1.Straw}}</td>
+                                                        <td>{{item1.ExpiryDate| date :  "dd-MMM-yyyy"}} </td>
+                                                        <td>{{item1.Comments}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Semen Freezing Summary End -->
+                            <!-- Semen Thawing Start -->
+                            <div class="row">
+                                <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcSemenThawing</h5></section>
+                                <div class="col-lg-12">
+                                    <div id="FindPatientSearchContainer">
+                                        <div class="table-responsive ">
+                                            <table class="table table-hover table-striped table-hover table-bordered" id="profile_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcCryoNo</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcThawingDate</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcThawingTime</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcVolume</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcSpermConcentration</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcTotalSpermCount</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcProgressivess</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcNonProgressivess</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcImmotiless</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcTotalMotilityss</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcDoneBys</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblcWitnessedBys</th>
+                                                        <th>@PIVF.LanguageResource.Resources.lblRemarks</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in GetThawingDetailList">
+                                                        <td>{{item.CryoNo}}</td>
+                                                        <td>{{item.ThawingDate | date :  "dd-MMM-yyyy"}}</td>
+                                                        <td>{{item.ThawingTime | date :  "dd-MMM-yyyy"}}</td>
+                                                        <td>{{item.Volume}}</td>
+                                                        <td>{{item.SpermConcentration}}</td>
+                                                        <td>{{item.SpermCount}}</td>
+                                                        <td>{{item.GradeA}}</td>
+                                                        <td>{{item.GradeB}}</td>
+                                                        <td>{{item.GradeC}}</td>
+                                                        <td>{{item.Motility}}</td>
+                                                        <td>{{item.DoctorName}}</td>
+                                                        <td>{{item.WitnessName}}</td>
+                                                        <td>{{item.Comments}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- Thowing form Modal Start -->
+
+        </form>
+    </div>

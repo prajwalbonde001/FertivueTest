@@ -1,0 +1,509 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .red {
+        color: red;
+    }
+
+    .black {
+        color: black;
+    }
+
+    .DisplayNone {
+        display: none;
+    }
+
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+
+    .has-error input {
+        border: 1px solid red !important;
+    }
+</style>
+<form name="frmET" novalidate ng-controller="EmbryoTransferCtrl" ng-init="PageSetup()">
+    <!-- cycles links -->
+    <div class="cycleLinks" style="position: relative;
+        z-index: 14;">
+        <ul>
+            <li ng-click="Navigate('CycleOverview')">@PIVF.LanguageResource.Resources.lblSOverview</li>
+            <li ng-click="Navigate('StimulationChart')">@PIVF.LanguageResource.Resources.lblStimulationChart</li>
+            <li ng-click="Navigate('SemenDetails')" ng-show="configData.SemenDetail">@PIVF.LanguageResource.Resources.lblSSemenDetails</li>
+            <li ng-click="Navigate('IUI')" ng-show="configData.IUI">@PIVF.LanguageResource.Resources.lblSIUI</li>
+            <li ng-click="Navigate('OPU')" ng-show="configData.OPU">@PIVF.LanguageResource.Resources.lblSOpu</li>
+            <li ng-click="Navigate('Embrology')" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSEmbryology</li>
+            <li ng-click="Navigate('PGT');" ng-show="configData.Embryology">@PIVF.LanguageResource.Resources.lblSPgt</li>
+
+            <li class="subMenucryo" ng-show="configData.CryoPreservation">
+                <span class="menu-title">
+                    @PIVF.LanguageResource.Resources.lblCryobank
+                    <span class="arrow"></span> <!-- Arrow added -->
+                </span>
+                <ul>
+                    <li ng-click="Navigate('OocyteVitrification')" ng-show="configData.OocyteVitrification">@PIVF.LanguageResource.Resources.lblSOocyteVitrification</li>
+                    <li ng-click="Navigate('OocyteThowing')" ng-show="configData.OocyteThawing">@PIVF.LanguageResource.Resources.lblSOocyteThawing</li>
+                    <li ng-click="Navigate('EmbryoVitrification')" ng-show="configData.EmbryoVitrification">@PIVF.LanguageResource.Resources.lblSEmbryoVitrification</li>
+                    <li ng-click="Navigate('EmbryoThowing')" ng-show="configData.EmbryoThawing">@PIVF.LanguageResource.Resources.lblSEmbryoThawing</li>
+                </ul>
+            </li>
+            <li class="active" ng-click="Navigate('EmbryoTransfer')" ng-show="configData.EmbryoTransfer">@PIVF.LanguageResource.Resources.lblSEmbryoTransfer</li>
+            <li ng-click="Navigate('Outcome')" ng-show="configData.Outcome">@PIVF.LanguageResource.Resources.lblOutcome</li>
+        </ul>
+    </div>
+    <!-- /cycles links -->
+    @*<div class="div60"></div>*@
+
+    <div class="form_Content">
+
+        <div class="row form-horizontal" style="position: relative;
+        z-index: 11;">
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold" for="">@PIVF.LanguageResource.Resources.lblOocytesFertilized</label>
+                    <label class="control-label col-sm-12 normalLabel" for="">
+                        {{ET.EmbryosFertilized}}
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold" for="">@PIVF.LanguageResource.Resources.lblSEmbrycryo</label>
+                    <label class="control-label col-sm-12 normalLabel" for="">
+                        {{ET.EmbryosCryopreserved}}
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold" for="">@PIVF.LanguageResource.Resources.lblSFreshtransfer</label>
+                    <label class="control-label col-sm-12 normalLabel" for="">
+                        {{FreshTransfer}}
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold" for="">@PIVF.LanguageResource.Resources.lblSFrozentransfer</label>
+                    <label class="control-label col-sm-12 normalLabel" for="">
+                        {{FrozenTransfer}}
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 ">
+                <div class="form-group ">
+                    <div class="col-md-7 col-sm-7 col-lg-7">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                @PIVF.LanguageResource.Resources.lblDate
+                            </label>
+                            <div class="col-md-12 col-sm-12 col-lg-12 p-r-0">
+                                <div class="input-group date" ng-class="{'Invalid':frmET.ETDate.$invalid && frmET.ETDate.$dirty }">
+                                    <input type="text" class="form-control" id="ETDate" name="ETDate" ng-model="ET.Date" ng-disabled="ET.Finalize" ng-required="true" placeholder="dd-MMM-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats" ng-change="setAutoPregnancyDate(ET.Date)">
+                                    <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-lg-5">
+                        <div class="form-group">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblSTime</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'has-error':frmET.ETtime.$invalid && frmET.ETtime.$dirty  }">
+                                <div uib-timepicker ng-model="ET.Time" id="ETtime" name="ETtime"
+                                     ng-required="true"
+                                     class="timeCss" hour-step="1" minute-step="1"
+                                     show-meridian="false"
+                                     show-spinners="false" show-seconds="false" tabindex="2" ng-disabled="ET.Finalize"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSClinician
+                    </label>
+                    @*<div class="col-md-12 col-sm-12 col-lg-12">
+                            {{LoginInfo}}
+                        </div>*@
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select ng-model="ET.clinicianID"
+                                class="form-control"
+                                ng-options="item.ID as item.Description for item in Clinician" ng-disabled="ET.Finalize">
+                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblSEmbryologist</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select id="EmbryologistID" name="EmbryologistID"
+                                ng-model="ET.EmbryologistID"
+                                class="form-control"
+                                ng-class="{select:ET.EmbryologistID== 0 && frmET.EmbryologistID.$dirty}"
+                                ng-required="true"
+                                ng-options="item.ID as item.Description for item in EmbryologistAndrologist" ng-disabled="ET.Finalize">
+                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSWitnessembryologist
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select ng-model="ET.WitnessID"
+                                id="WitnessID"
+                                name="WitnessID"
+                                class="form-control"
+                                ng-class="{select:ET.WitnessID== 0 && frmET.WitnessID.$dirty}"
+                                ng-required="true"
+                                ng-options="item.ID as item.Description for item in EmbryologistAndrologist" ng-disabled="ET.Finalize">
+                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                        </select>
+                    </div>
+                </div>
+            </div><div class="clearfix"></div>
+            <div class="col-md-6 col-lg-3 ">
+                <div class="form-group m-t-10">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label">
+                        <input type="checkbox" ng-model="ET.PerformedunderAnesthesia" ng-disabled="ET.Finalize"> @PIVF.LanguageResource.Resources.lblSperformedunderanesthesia
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSAnesthesist
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select ng-model="ET.AnesthetistID" ng-disabled="!ET.PerformedunderAnesthesia || ET.Finalize"
+                                id="AnesthetistID"
+                                name="AnesthetistID"
+                                ng-class="{select:ET.AnesthetistID== 0 && frmET.AnesthetistID.$dirty}"
+                                ng-required="true"
+                                class="form-control"
+                                ng-options="item.ID as item.Description for item in Clinician">
+                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSAnesthesia
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select ng-model="ET.AnesthesiaID" ng-disabled="!ET.PerformedunderAnesthesia || ET.Finalize"
+                                id="AnesthesiaID"
+                                name="AnesthesiaID"
+                                ng-required="true"
+                                ng-class="{select:ET.AnesthesiaID== 0 && frmET.AnesthesiaID.$dirty}"
+                                class="form-control"
+                                ng-options="item.ID as item.Description for item in AnesthetiaTypeList">
+                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                        </select>
+                    </div>
+                </div>
+            </div><div class="clearfix"></div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label resp-p-l-8 p-r-0" for="">
+                        @PIVF.LanguageResource.Resources.lblSEndothickness  @* Endometrium Thickness(mm)*@  @*Modified on 11Mar2021 for Victory client request*@
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        @*<input type="text" class="form-control" ng-model="ET.EndometriumThickness" id="EndometriumThickness" name="EndometriumThickness"
+                            ng-keydown="valiadeEndometriumThick(ET.EndometriumThickness,$event)">*@
+
+                        <input type="text" class="form-control"
+                               ng-model="ET.EndometriumThickness" id="EndometriumThickness" name="EndometriumThickness"
+                               ng-keydown="valiadeEndometriumThick(ET.EndometriumThickness,$event)" replace="[^0-9-.]" with="" ng-disabled="ET.Finalize">
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSEndometriumpattern
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select ng-model="ET.EndometriumPatternID"
+                                class="form-control"
+                                ng-options="item.ID as item.Description for item in MasterData.EndometriumPattern" ng-disabled="ET.Finalize">
+                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblCatheter
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select ng-model="ET.CatheterID"
+                                class="form-control"
+                                ng-options="item.ID as item.Description for item in MasterData.Catheter" ng-disabled="ET.Finalize">
+                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSDistancefundus
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" ng-model="ET.DistanceFromfundus" id="DistanceFromfundus" name="DistanceFromfundus" ng-class="{'Invalid':frmET.DistanceFromfundus.$invalid && frmET.DistanceFromfundus.$dirty }"
+                               ng-keydown="valiadeForOneDigit(ET.DistanceFromfundus,$event)" ng-required="true" maxlength="4" replace="[^0-9\.]" with="" ng-disabled="ET.Finalize">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSlevelofdifficulty
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control"
+                                ng-model="ET.LevelOfDifficultyID"
+                                ng-options="item.ID as item.Description for item in MasterData.LevelOfDifficulty" ng-disabled="ET.Finalize">
+                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSNoofattempts
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control " id="" ng-model="ET.Noofattempts" ng-disabled="ET.Finalize">
+                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblSEmbryoresidue
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control " id="" ng-model="ET.Embryoresidue" ng-disabled="ET.Finalize">
+                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                            <option value="1">@PIVF.LanguageResource.Resources.btnYes</option>
+                            <option value="2">@PIVF.LanguageResource.Resources.btnNo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group m-t-15">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label">
+                        <input type="checkbox" ng-model="ET.UseofStylet" ng-disabled="ET.Finalize"> @PIVF.LanguageResource.Resources.lblSUseofstylet
+                    </label>
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label">
+                        <input type="checkbox" ng-model="ET.UseofTenaculum" ng-disabled="ET.Finalize"> @PIVF.LanguageResource.Resources.lblSUseoftenaculum
+                    </label>
+                </div>
+            </div><div class="clearfix"></div>
+        </div>
+        <div class="row" style="position: relative;
+        z-index: 11;">
+            <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblSEmbryodetails</h5></section>
+            <div class="col-lg-12 embryoTransfer">
+                <div class="table-responsive table-bordered fixed_header">
+                    <!-- min-height:355px;  -->
+                    <table class="table" id="profile_table" style="min-height:70px; max-height:220px;min-width:1380px;">
+                        <thead>
+                            <tr>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblSEmbryono</th>
+                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblSEmbryoday</th>
+                                <th st-ratio="20">@PIVF.LanguageResource.Resources.lblGrade</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblCellStage</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblStatus</th>
+                                <th st-ratio="20" class="text-center" ng-show="!IsFinalize">@PIVF.LanguageResource.Resources.lblSimageattachement</th>
+                                <th st-ratio="10">@PIVF.LanguageResource.Resources.lblView</th>
+                                <th st-ratio="10" ng-show="transferTo">@PIVF.LanguageResource.Resources.lblSTransferto</th> @*ng-show="transferTo"*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="" ng-repeat="item in ET.ETGrid">
+                                <td st-ratio="10">{{item.EmbNumber}}</td>
+                                <td st-ratio="20">{{item.EmbroDay}}</td>
+                                <td st-ratio="20">{{item.Grade}}</td>
+                                <td st-ratio="10">{{item.CellStage}}</td>
+                                <td st-ratio="10">
+                                    <span class="status_open"><span class="green_point"></span>{{item.ISfreshEmbro}}</span><br>
+                                    <span class="status_close"><span class=""></span>{{item.ISPGDPGS}}</span>
+                                </td>
+                                <td st-ratio="20" class="text-center" ng-show="!IsFinalize">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 img-attach ">
+                                        <file-uploadfortransfer class="btn_link cursorPointer"
+                                                                resize="true"
+                                                                max-width="100" max-height="100"
+                                                                ng-model="item.Img.model"
+                                                                multiple="true"
+                                                                callback-fn="ValidationMsg(arg1)"
+                                                                accept="image/*">
+                                            <i class="glyphicon glyphicon-paperclip"></i>
+                                        </file-uploadfortransfer>
+                                    </div>
+                                </td>
+                                <td st-ratio="10">
+                                    @*<button class="btn btn-primary btn_form btn_remove " ng-model="Item" type="button" id="" value=""><span class="glyphicon glyphicon-remove"></span></button>*@
+                                    <div class="attach-proff">
+                                        <button type="button" ng-click="PreviewImg(item)" class="btn btn-default btn-lg icon-search m-0"></button>
+                                    </div>
+                                </td>
+                                <td st-ratio="10" ng-show="transferTo">
+                                    @*ng-show="transferTo"*@
+                                    <select ng-model="item.TransferToID"
+                                            class="form-control"
+                                            ng-class="{select:ET.WitnessID== 0 && frmET.WitnessID.$dirty}"
+                                            ng-required="true"
+                                            ng-options="item.ID as item.Description for item in TransferToList" ng-disabled="ET.Finalize"></select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        @*Image PopBox*@
+        <div class="modal fade edit-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="ImgPreviewCancel()">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-3 p-b-5" ng-repeat="item in GetImg track by $index">
+                                <div class="popUpImgWrap">
+                                    <img ng-src="{{item.preview}}" width="100px" height="100px" />
+                                </div>
+                                <button ng-disabled="ET.Finalize" class="removeImg" ng-show="!item.rowdisable" type="button" ng-click="RemoveImg(item)"> <span class="glyphicon glyphicon-remove-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="page_actions">
+                            <button class="btn btn-primary" ng-click="ImgPreviewOk()" type="button">@PIVF.LanguageResource.Resources.lblOK</button>
+                            <button class="btn btn-default" type="button" ng-click="ImgPreviewCancel()"> @PIVF.LanguageResource.Resources.lblSCancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row form-horizontal" style="position: relative;
+        z-index: 11;">
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblComplications
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" ng-model="ET.Complications" maxlength="250" ng-disabled="ET.Finalize">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblRemarks
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <input type="text" class="form-control" ng-model="ET.Remarks" maxlength="250" ng-disabled="ET.Finalize">
+                    </div>
+                </div>
+            </div><div class="clearfix"></div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblSsetpregnancydate</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group date" ng-class="{'Invalid':frmET.dtPregnancyDate.$invalid && frmET.dtPregnancyDate.$dirty }">
+                            <input type="text" class="form-control" id="dtPregnancyDate" name="dtPregnancyDate" ng-model="ET.PregnancyDate" ng-required="true" placeholder="dd-MMM-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats" ng-disabled="ET.Finalize">
+                            <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                    @*<div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="input-group date" ng-class="{'Invalid':frmET.ETDate.$invalid && frmET.ETDate.$dirty }">
+                                <input type="text" class="form-control" id="ETDate" name="ETDate" ng-model="ET.Date" ng-required="true" placeholder="dd-MMM-yyyy" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptionsDOB" alt-input-formats="altInputFormats">
+                                <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label colorRed">
+                        <input type="checkbox" ng-model="ET.CancelCycleFlag" ng-init="ET.CancelCycleFlag=false" ng-click="CancelCycle()" ng-disabled="ET.Finalize"> @PIVF.LanguageResource.Resources.lblScancelcycle
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        @*change by mayur*@
+                        @*<select class="form-control " id="" ng-model="ET.CancelCycleRemark" ng-disabled="!ET.CancelCycleFlag" ng-change="selectedreson(ET.CancelCycleRemark)">
+                                <option value="">Select</option>
+                                <option value="1">Difficult Transfer</option>
+                                <option value="2">Progesterone not administered</option>
+                                <option value="3">Poor Grade Embryos</option>
+                            </select>*@
+
+                        <select ng-model="ET.CancelCycleRemark" id="Cnclcyclermrk" name="Cnclcyclermrk" ng-disabled="!ET.CancelCycleFlag || ET.Finalize"
+                                class="form-control"
+                                ng-required="true"
+                                ng-class="{select:ET.CancelCycleRemark==0 && frmET.Cnclcyclermrk.$dirty}"
+                                ng-options="item.ID as item.Description for item in MasterData.ETCancelReason">
+                            <option value="">@PIVF.LanguageResource.Resources.lblSelect</option>
+                        </select>
+                        @*<input type="text" class="form-control" placeholder="Reason" ng-disabled="!ET.CancelCycleFlag" ng-model="ET.CancelCycleRemark" maxlength="250"/>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-4 ">
+                <div class="form-group m-t-29">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label">
+                        <input type="checkbox" ng-model="ET.CloseCycle" ng-disabled="ET.Finalize"> @PIVF.LanguageResource.Resources.lblSClosecyclecancellation
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Save Cancle Buttons -->
+    <div class="row form-horizontal m-t-10 m-b-10" style="position: relative;
+        z-index: 11;">
+        <div class="col-lg-12 text-right">
+            <label class="checkbox-inline p-t-0"><input type="checkbox" id="inlineCheckbox1" ng-model="ET.Finalize" ng-disabled="ET.Finalize"> @PIVF.LanguageResource.Resources.lblFinalize</label>
+            <button class="btn btn-primary" type="button" ng-click="SaveET()" ng-disabled="IsFinalize">Save</button>
+            @*<button class="btn btn-primary" type="button" ng-click="PrintEmbryoTransferReport()">Print</button>*@
+        </div>
+    </div>
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+</form>
+
+

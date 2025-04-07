@@ -1,0 +1,364 @@
+2023-11-10 12:05:49.7964|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:05:49.7964|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:05:51.7681|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:05:51.7681|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:05:52.3526|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:05:52.3526|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:05:52.4343|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:05:52.4343|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:05:52.4752|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:05:52.4752|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:05:52.8570|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:05:52.8570|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:05:53.9830|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:05:53.9830|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:05:54.3550|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:05:54.3550|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:08:22.1217|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:08:22.1217|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:08:25.1726|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:08:25.1726|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:08:25.6832|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:08:25.6832|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:08:26.1849|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:08:26.1849|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:08:26.6975|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:08:26.6975|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:08:33.8203|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:08:33.8203|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:08:33.8552|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:08:33.8552|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:08:34.4267|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:08:34.4267|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:08:36.9107|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:08:36.9107|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:08:38.9920|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:08:38.9920|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:08:39.5367|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:08:39.5367|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:11:15.4474|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:11:15.4474|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:11:15.4903|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:11:15.4903|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:11:15.7566|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:11:15.7566|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:11:15.7785|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:11:15.7785|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:11:16.1835|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:11:16.1835|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:11:16.2642|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:11:16.2642|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:11:16.6981|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:11:16.6981|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:11:16.7889|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:11:16.7889|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:11:22.1462|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:11:22.1462|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:11:27.1814|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:11:27.1814|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:11:29.6002|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:11:29.6002|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:11:30.6095|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:11:30.6095|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:12:13.7429|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:12:13.7429|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:12:13.7639|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:12:13.7639|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:12:14.2216|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:12:14.2216|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:12:15.8978|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:12:15.8978|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:12:18.8308|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:12:18.8308|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:12:19.8591|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:12:19.8591|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:12:35.9325|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:12:35.9325|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:12:35.9764|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:12:35.9764|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:12:56.2278|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:12:56.2278|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:12:56.2537|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:12:56.2537|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:13:27.8019|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:13:27.8019|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:13:27.8228|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:13:27.8228|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:11.5671|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:15:11.5671|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:15:12.0907|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:12.0907|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:16.6047|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:16.6047|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:19.3534|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:19.3534|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:31.8572|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:15:31.8572|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:15:31.9340|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:31.9340|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:38.2635|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:38.2635|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:46.6682|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:15:46.6682|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:19:29.6718|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:19:29.6718|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:19:30.3092|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:19:30.3092|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:19:30.5127|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:19:30.5127|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:19:30.6603|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:19:30.6603|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:19:30.8184|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:19:30.8184|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:19:30.8951|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:19:30.8951|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:19:31.3219|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:19:31.3219|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:19:31.8505|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:19:31.8505|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:19:51.2677|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:19:51.2677|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:19:51.9419|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:19:51.9419|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:19:52.6450|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:19:52.6450|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:19:54.2108|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:19:54.2108|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:20:00.8281|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:20:00.8281|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:20:01.8430|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:20:01.8430|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:20:52.4373|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:20:52.4373|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:20:52.5859|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:20:52.5859|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:20:52.6088|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:20:52.6088|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:20:52.9375|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:20:52.9375|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:20:53.0926|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:20:53.0926|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:20:53.1205|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:20:53.1205|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:20:53.6033|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:20:53.6033|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:20:53.6402|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:20:53.6402|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:21:02.3737|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:21:02.3737|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:21:03.5516|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:21:03.5516|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:21:03.7451|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:21:03.7451|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:21:06.5047|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:21:06.5047|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:21:12.3979|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:21:12.3979|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:21:13.9428|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:21:13.9428|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:21:33.2981|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:MarkImportant,User:admin,UnitID:2
+2023-11-10 12:21:33.2981|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:MarkImportant,User:admin,UnitID:2
+2023-11-10 12:21:33.4407|ERROR|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|ReportUploadAPI/MarkImportant,MessageProcedure or function 'usp_UploadReport' expects parameter '@ImageID', which was not supplied.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.ARTMgmt.ReportUpload.ReportUploadDAL.MarkImportant(ReportUploadVO obj) in D:\Birla\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\ARTMgmt\ReportUpload\ReportUploadDAL.cs:line 101
+   at PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController.MarkImportant(ReportUploadVO obj) in D:\Birla\AcornSourceCode\Ganesha\PIVF.Web\Api\ARTMgmt\ReportUpload\ReportUploadAPIController.cs:line 88
+2023-11-10 12:21:35.2698|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:MarkImportant,User:admin,UnitID:2
+2023-11-10 12:21:35.2698|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:MarkImportant,User:admin,UnitID:2
+2023-11-10 12:21:35.3047|ERROR|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|ReportUploadAPI/MarkImportant,MessageProcedure or function 'usp_UploadReport' expects parameter '@ImageID', which was not supplied.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.ARTMgmt.ReportUpload.ReportUploadDAL.MarkImportant(ReportUploadVO obj) in D:\Birla\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\ARTMgmt\ReportUpload\ReportUploadDAL.cs:line 101
+   at PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController.MarkImportant(ReportUploadVO obj) in D:\Birla\AcornSourceCode\Ganesha\PIVF.Web\Api\ARTMgmt\ReportUpload\ReportUploadAPIController.cs:line 88
+2023-11-10 12:21:37.7123|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:MarkImportant,User:admin,UnitID:2
+2023-11-10 12:21:37.7123|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:MarkImportant,User:admin,UnitID:2
+2023-11-10 12:21:37.7611|ERROR|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|ReportUploadAPI/MarkImportant,MessageProcedure or function 'usp_UploadReport' expects parameter '@ImageID', which was not supplied.,StackTrace:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at PIVF.DataAccessLayer.ARTMgmt.ReportUpload.ReportUploadDAL.MarkImportant(ReportUploadVO obj) in D:\Birla\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\ARTMgmt\ReportUpload\ReportUploadDAL.cs:line 101
+   at PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController.MarkImportant(ReportUploadVO obj) in D:\Birla\AcornSourceCode\Ganesha\PIVF.Web\Api\ARTMgmt\ReportUpload\ReportUploadAPIController.cs:line 88
+2023-11-10 12:21:57.2133|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:21:57.2133|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:21:57.2661|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:21:57.2661|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:23:38.3641|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:23:38.3641|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:23:39.7541|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:23:39.7541|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:23:39.8021|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:23:39.8021|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:23:39.9268|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:23:39.9268|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:23:40.0626|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:23:40.0626|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:23:40.0986|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:23:40.0986|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:23:40.5739|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:23:40.5739|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:23:41.6452|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:23:41.6452|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:23:43.7118|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:23:43.7118|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:23:47.3055|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:23:47.3055|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:23:51.2053|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:23:51.2053|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:23:51.8715|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:23:51.8715|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:23:52.5587|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:23:52.5587|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:23:55.6295|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:23:55.6295|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:24:09.0297|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:24:09.0297|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:24:10.0469|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:24:10.0469|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:25:21.8707|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:25:21.8707|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:26:38.6767|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:26:38.6767|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:26:38.7435|ERROR|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|ReportUploadAPI/UploadReport,MessageCould not find a part of the path 'D:\NewReportUpload\27_2_Screenshot (2).png'.,StackTrace:   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController.UploadReport(ReportUploadVO obj) in D:\Birla\AcornSourceCode\Ganesha\PIVF.Web\Api\ARTMgmt\ReportUpload\ReportUploadAPIController.cs:line 57
+2023-11-10 12:26:49.0970|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:26:49.0970|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:26:49.1379|ERROR|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|ReportUploadAPI/UploadReport,MessageCould not find a part of the path 'D:\NewReportUpload\28_2_Screenshot (2).png'.,StackTrace:   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController.UploadReport(ReportUploadVO obj) in D:\Birla\AcornSourceCode\Ganesha\PIVF.Web\Api\ARTMgmt\ReportUpload\ReportUploadAPIController.cs:line 57
+2023-11-10 12:27:50.2419|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:27:50.2419|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-11-10 12:27:51.7849|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:27:51.7849|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-11-10 12:27:51.8497|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:27:51.8497|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-11-10 12:27:51.9227|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:27:51.9227|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-11-10 12:27:52.3282|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:27:52.3282|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:27:52.3701|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:27:52.3701|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-11-10 12:27:52.4175|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:27:52.4175|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-11-10 12:27:52.5052|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:27:52.5052|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-11-10 12:27:57.1379|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:27:57.1379|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:27:57.8554|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:27:57.8554|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 12:27:58.0968|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:27:58.0968|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-11-10 12:28:00.1710|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:28:00.1710|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-11-10 12:28:02.4399|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:28:02.4399|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:28:03.4567|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:28:03.4567|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:31:20.6932|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:31:20.6932|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:31:20.7311|ERROR|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|ReportUploadAPI/UploadReport,MessageCould not find a part of the path 'D:\NewReportUpload\29_2_Screenshot (2).png'.,StackTrace:   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController.UploadReport(ReportUploadVO obj) in D:\Birla\AcornSourceCode\Ganesha\PIVF.Web\Api\ARTMgmt\ReportUpload\ReportUploadAPIController.cs:line 57
+2023-11-10 12:33:04.0222|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:33:04.0222|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:33:04.1578|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:33:04.1578|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:33:31.6623|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:33:31.6623|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:35:19.8670|ERROR|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|ReportUploadAPI/UploadReport,MessageCould not find a part of the path 'D:\NewReportUpload\30_2_Screenshot (2).png'.,StackTrace:   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController.UploadReport(ReportUploadVO obj) in D:\Birla\AcornSourceCode\Ganesha\PIVF.Web\Api\ARTMgmt\ReportUpload\ReportUploadAPIController.cs:line 57
+2023-11-10 12:36:10.2082|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:36:10.2082|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:fillCatwiseServiceList,User:admin,UnitID:2
+2023-11-10 12:36:10.8405|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:36:10.8405|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:36:43.5814|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:36:43.5814|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:UploadReport,User:admin,UnitID:2
+2023-11-10 12:36:54.9395|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:36:54.9395|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:37:03.5622|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:37:03.5622|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 12:37:10.2685|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:37:10.2685|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:37:25.3765|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:37:25.3765|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:37:35.3701|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:37:35.3701|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:37:58.0622|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:37:58.0622|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:02.6772|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:02.6772|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:07.7891|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:07.7891|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:07.8679|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:07.8679|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:08.2460|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:08.2460|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:16.2191|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:16.2191|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:20.5227|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:20.5227|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:20.9565|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 12:38:20.9565|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:POST,Method:ViewReport,User:admin,UnitID:2
+2023-11-10 14:39:35.2058|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 14:39:35.2058|INFO|PIVF.Web.Api.ARTMgmt.ReportUpload.ReportUploadAPIController|Controller Name:ReportUploadAPI,Action:GET,Method:GetReportList,User:admin,UnitID:2
+2023-11-10 14:40:10.6527|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 14:40:10.6527|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 14:40:21.0843|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: admin,UnitID:2
+2023-11-10 14:40:21.0843|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: admin,UnitID:2
+2023-11-10 14:40:21.4822|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 14:40:21.4822|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-11-10 14:40:28.9141|INFO|PIVF.Web.Api.EMR.FemaleHistoryController|Controller Name: FemaleHistory,Action: GET,Method: LoadSpecificFemaleHistory,User: admin,UnitID:2
+2023-11-10 14:40:28.9141|INFO|PIVF.Web.Api.EMR.FemaleHistoryController|Controller Name: FemaleHistory,Action: GET,Method: LoadSpecificFemaleHistory,User: admin,UnitID:2

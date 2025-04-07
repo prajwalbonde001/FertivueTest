@@ -1,0 +1,114 @@
+﻿
+<script src="Scripts/app/controllers/Master/Appointment/AppointmentController.js"></script>
+
+<!-- cancel appointment -->
+<!--<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" ng-app="PIVF" ng-controller="AppointmentController" id="addNewAppointment" ng-init="initializeDeleteVariables()">
+    <div class="modal-dialog modal-sm">-->
+<div role="dialog" aria-labelledby="myLargeModalLabel" ng-app="PIVF" ng-controller="AppointmentController" id="addNewAppointment" ng-init="initializeDeleteVariables()">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="">{{lblCancelAppointment}}</h4>
+        </div>
+        <div class="modal-body form-horizontal p-t-5">
+            <div class="table-responsive ">
+                <table class="table ">
+                    <tr class="parent_row">
+                        <td><span class="txt_bold Capitalize">{{FirstName+' '+LastName+'   '}}</span> <span class="txt_bold"> {{selectedPatientMRNo}}  </span></td>
+                    </tr>
+                    <tr class="parent_row">
+                        <td width="250"><textarea type="text" class="form-control" id="" ng-model="ReasonForCancellation" placeholder="{{lblReasonForCancellation}}"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-right" data-ng-hide="deleteMessageAcknoledgement == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'" required>
+                        {{deleteMessageAcknoledgement}}
+                    </div>
+                </div>
+                <div class="col-md-12 text-right">
+                    <button class="btn btn btn-default modal-save" type="button" id="" ng-disabled="!(ReasonForCancellation)" data-ng-click="deleteAppointment(ReasonForCancellation)">{{btnSave}}</button>
+                    <button class="btn btn-primary" type="button" id="" ng-click="CancelClicked()">{{btnCancel}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--</div>
+</div>-->
+<!--<div class="row form-horizontal p-lr-20 m-t-10">
+
+    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+            <label class="col-sm-3 col-md-3 col-lg-3 control-label" for="">{{lblFirst}} Name</label>
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                <input class="form-control" id="" name="FirstName" type="text" ng-model="FirstName" placeholder="" ng-disabled="true">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+            <label class="col-sm-3 col-md-3 col-lg-3 control-label" for="">{{lblLastName}}</label>
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                <input class="form-control" name="LastName" id="" type="text" ng-model="LastName" placeholder="" ng-disabled="true">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group">
+            <label class="col-sm-3 col-md-3 col-lg-3 control-label" for="">{{lblGender}}</label>
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                <input class="form-control" name="Gender" id="" type="text" ng-model="PatientGenderDescription" placeholder="" ng-disabled="true">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group MobileContainer">
+            <label class="col-sm-3 col-md-3 col-lg-3 col-xs-12 control-label" for="">{{lblMobNo}}</label>
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                <input class="form-control alignRight" id="" type="text" ng-model="PatientMobileNumber" placeholder="" ng-disabled="true">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group MobileContainer">
+            <label class="col-sm-3 col-md-3 col-lg-3 col-xs-12 control-label" for="">{{lblAppointmentReason}}</label>
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                <input class="form-control" id="" type="text" ng-model="AppointmentReason" placeholder="" ng-disabled="true">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+        <div class="form-group MobileContainer">
+            <label class="col-sm-3 col-md-3 col-lg-3 col-xs-12 control-label" for="">{{lblReasonForCancellation}}</label>
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                <textarea type="text" class="form-control" id="" ng-model="ReasonForCancellation" placeholder=""></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tblFooter">
+    <div class="row">
+        <div class="col-sm-12 find_btn">
+
+            <div class="text-right">
+                <button class="btn btn btn-default modal-save" type="button" id="" data-ng-click="deleteAppointment(ReasonForCancellation)">{{btnSave}}</button>
+                <button class="btn btn-primary btn_shadow" type="button" id="" ng-click="CancelClicked()">{{btnCancel}}</button>
+            </div>
+
+            <div data-ng-hide="deleteMessageAcknoledgement == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'" required>
+                {{deleteMessageAcknoledgement}}
+            </div>
+
+        </div>
+    </div>
+</div>-->
+<!-- /cancel appointment -->

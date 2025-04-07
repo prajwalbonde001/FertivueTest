@@ -1,0 +1,3071 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04DC8D7D-4512-4D1C-87B2-B8360F497D0B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIVF.Web</RootNamespace>
+    <AssemblyName>PIVF.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>Reference dll\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Audit.NET, Version=4.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Audit.NET.4.6.2\lib\net45\Audit.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Audit.NET.SqlServer, Version=4.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Audit.NET.SqlServer.4.6.2\lib\net45\Audit.NET.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Audit.WebApi, Version=4.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Audit.WebApi.4.6.2\lib\net45\Audit.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.402.26\lib\net45\AWSSDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.S3.3.7.415.25\lib\net45\AWSSDK.S3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>Reference dll\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.OData.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.OData.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PIVF.LanguageResource, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>Reference dll\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.OData, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>Reference dll\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Mvc">
+      <HintPath>Reference dll\Microsoft.Practices.Unity.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.WebApi, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.Practices.Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>Reference dll\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>Reference dll\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="logs\2017\02\28\" />
+    <Folder Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\OocyteVitrification\" />
+    <Folder Include="Scripts\app\services\ARTMgmt\Cryo-Preservation\OocyteVitrification\" />
+    <Folder Include="Views\IndexCryoPreser\" />
+    <Folder Include="Views\InventoryMVC\" />
+    <Folder Include="Views\Management\" />
+    <Folder Include="Views\OocyteBank\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\ARTMgmt\Cryo-Preservation\CryoPreservationAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\Cryo-Preservation\EmbryoThowingAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\Cryo-Preservation\EmbryoVitrificationAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\Embrology\EmbrologyAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\EmbryoTransfer\EmbryoTransferAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\IUI\IUIAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\OPU\OPUAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\Outcome\OutcomeAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\Progenesis\ProgenesisApiController.cs" />
+    <Compile Include="Api\ARTMgmt\ReportUpload\ReportUploadAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\SemenDetails\SemenDetailsController.cs" />
+    <Compile Include="Api\ARTMgmt\StimulationChart\StimulationChartController.cs" />
+    <Compile Include="Api\Authentication\AuthenticationController.cs" />
+    <Compile Include="Api\Authentication\TicketsController.cs" />
+    <Compile Include="Api\AuthorizeEchoConnection.cs" />
+    <Compile Include="Api\Billing\BillingAPIController.cs" />
+    <Compile Include="Api\Billing\PatientAdvanceAPIController.cs" />
+    <Compile Include="Api\Billing\PatientAdvanceRefundAPIController.cs" />
+    <Compile Include="Api\Clinic\DoctorAppointmentsController.cs" />
+    <Compile Include="Api\Clinic\ScheduleController.cs" />
+    <Compile Include="Api\CommonAPIController.cs" />
+    <Compile Include="Api\Consent\ConsentAction\ConsentActionAPIController.cs" />
+    <Compile Include="Api\Consent\ConsentMaster\ConsentMasterAPIController.cs" />
+    <Compile Include="Api\CounterSale\CounterSaleAPIController.cs" />
+    <Compile Include="Api\CustomExceptionFilter.cs" />
+    <Compile Include="Api\Donor\DonorAPIController.cs" />
+    <Compile Include="Api\EMR\DesignEMR\DesignEMRAPIController.cs" />
+    <Compile Include="Api\EMR\DesignEMR\DesignEMRFileUploadAPIController.cs" />
+    <Compile Include="Api\EMR\Diagnosis\DiagnosisAPIController.cs" />
+    <Compile Include="Api\EMR\FemaleHistory\CorpusLeteumScanController.cs" />
+    <Compile Include="Api\EMR\FemaleHistory\FemaleComplaintsController.cs" />
+    <Compile Include="Api\EMR\FemaleHistory\FemaleHistoryController.cs" />
+    <Compile Include="Api\EMR\FemaleHistory\FollicularScanController.cs" />
+    <Compile Include="Api\EMR\Investigation\InvestigationAPIController.cs" />
+    <Compile Include="Api\EMR\LandingPage\EMRLandingPageAPIController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\MaleComplaintsController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\MaleHistoryController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\SemenAnalysisController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\SemenFreezController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\SemenPrepController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\SemenThawingController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\SurgicalSpermRetrievalController.cs" />
+    <Compile Include="Api\EMR\Prescription\PrescriptionAPIController.cs" />
+    <Compile Include="Api\EMR\Vitals\VitalsAPIController.cs" />
+    <Compile Include="Api\FertivueDashboard\FertivueDashboardController.cs" />
+    <Compile Include="Api\FileUplaodExtension\CustomMultipartFormDataStreamProvider.cs" />
+    <Compile Include="Api\FinancialKPIs\FinancialKPIsAPIController.cs" />
+    <Compile Include="Api\KPI\KPIController.cs" />
+    <Compile Include="Api\KPI\ManagementController.cs" />
+    <Compile Include="Api\Lab\NewLabEnteryAPIController.cs" />
+    <Compile Include="Api\LinkPartner\linkPartnerController.cs" />
+    <Compile Include="Api\Master\Clinic\ClinicController.cs" />
+    <Compile Include="Api\Master\Clinic\CountryController.cs" />
+    <Compile Include="Api\Master\Clinic\DepartmentController.cs" />
+    <Compile Include="Api\Master\Clinic\DoctorController.cs" />
+    <Compile Include="Api\Master\Clinic\StaffController.cs" />
+    <Compile Include="Api\Master\Clinic\StateController.cs" />
+    <Compile Include="Api\Master\Common\CommonController.cs" />
+    <Compile Include="Api\Master\Common\LanguageResourceController.cs" />
+    <Compile Include="Api\Master\Configuration\ConvertToDonorAPIController.cs" />
+    <Compile Include="Api\Master\Configuration\LinkConfigurationController.cs" />
+    <Compile Include="Api\Master\Configuration\UserAPIController.cs" />
+    <Compile Include="Api\Master\Configuration\UserRoleController.cs" />
+    <Compile Include="Api\Master\Inventory\StoreAPIController.cs" />
+    <Compile Include="Api\MaterialConsumptionEntry\MaterialConsumptionEntryAPIController.cs" />
+    <Compile Include="Api\MaterialConsumptionList\MaterialConsumptionListAPIController.cs" />
+    <Compile Include="Api\MediaConsumption\MediaConsumptionAPIController.cs" />
+    <Compile Include="Api\NewART\NewARTController.cs" />
+    <Compile Include="Api\NewRegistration\NewRegistrationAPIController.cs" />
+    <Compile Include="Api\PatientDashboard\PatientDashboardAPIController.cs" />
+    <Compile Include="Api\Patient\PatientVisitController.cs" />
+    <Compile Include="Api\Patient\RegistrationAPIController.cs" />
+    <Compile Include="Api\QualityControl\QualityControlAPIController.cs" />
+    <Compile Include="Api\QueueMgt\QueueMgtController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\ODataConfig.cs" />
+    <Compile Include="App_Start\PartialsBundle.cs" />
+    <Compile Include="App_Start\PartialsTransform.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="App_Start\UnityWebApiActivator.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Authentication\AddClientsAndRefreshTokenTables.cs" />
+    <Compile Include="Authentication\AuthContext.cs" />
+    <Compile Include="Authentication\AuthRepository.cs" />
+    <Compile Include="Authentication\ChallengeResult.cs" />
+    <Compile Include="Authentication\Client.cs" />
+    <Compile Include="Authentication\Configuration.cs" />
+    <Compile Include="Authentication\enum.cs" />
+    <Compile Include="Authentication\ExternalLoginModels.cs" />
+    <Compile Include="Authentication\FacebookAuthProvider.cs" />
+    <Compile Include="Authentication\GoogleAuthProvider.cs" />
+    <Compile Include="Authentication\Helper.cs" />
+    <Compile Include="Authentication\RefreshTokensController.cs" />
+    <Compile Include="Authentication\SimpleAuthorizationServerProvider.cs" />
+    <Compile Include="Authentication\SimpleRefreshTokenProvider.cs" />
+    <Compile Include="Authentication\StartUp.cs" />
+    <Compile Include="Authentication\StartUp1.cs" />
+    <Compile Include="Controllers\ARTMgmt\ARTCycleNavigation\ARTCycleNavigationMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\ARTCycle\ARTCycleController.cs" />
+    <Compile Include="Controllers\ARTMgmt\Cryo-Preservation\CryoPreservationMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\Embrology\EmbrologyMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\EmbryoTransfer\EmbryoTransferMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\IUI\IUIMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\OPU\OPUMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\Outcome\OutcomeMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\ReportUpload\ReportUploadMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\SemenDetails\SemenDetailsController.cs" />
+    <Compile Include="Controllers\Authentication\AuthenticationController.cs" />
+    <Compile Include="Controllers\Billing\BillingController.cs" />
+    <Compile Include="Controllers\Billing\PatientAdvanceController.cs" />
+    <Compile Include="Controllers\Billing\PatientAdvanceRefundController.cs" />
+    <Compile Include="Controllers\Clinic\AppointmentController.cs" />
+    <Compile Include="Controllers\Clinic\DoctorController.cs" />
+    <Compile Include="Controllers\Clinic\DoctorDailyApptController.cs" />
+    <Compile Include="Controllers\Consent\ConsentMaster\ConsentMasterMVCController.cs" />
+    <Compile Include="Controllers\CounterSale\CounterSaleController.cs" />
+    <Compile Include="Controllers\Cryobank\CryoBankController.cs" />
+    <Compile Include="Controllers\EMR\Donor\DonorMVCController.cs" />
+    <Compile Include="Controllers\EMR\EMRLandingPage\EMRLandingPageMVCController.cs" />
+    <Compile Include="Controllers\EMR\Design EMR\DesignEMRController.cs" />
+    <Compile Include="Controllers\EMR\Diagnosis\DiagnosisMVCController.cs" />
+    <Compile Include="Controllers\EMR\FemaleHistory\CorpusLeteumScanController.cs" />
+    <Compile Include="Controllers\EMR\FemaleHistory\FemaleComplaintsController.cs" />
+    <Compile Include="Controllers\EMR\FemaleHistory\FemaleHistoryController.cs" />
+    <Compile Include="Controllers\EMR\FemaleHistory\FollicularScanController.cs" />
+    <Compile Include="Controllers\EMR\Investigation\InvestigationMVCController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\MaleComplaintsController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\MaleHistoryController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\SemenAnalysisController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\SemenFreezController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\SemenPreparationController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\SemenThawingController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\SurgicalSpermRetrievalController.cs" />
+    <Compile Include="Controllers\EMR\Prescription\PrescriptionMVCController.cs" />
+    <Compile Include="Controllers\EMR\Vitals\VitalsMVCController.cs" />
+    <Compile Include="Controllers\FinancialKPIsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KPIs\KPIController.cs" />
+    <Compile Include="Controllers\Lab\LabController.cs" />
+    <Compile Include="Controllers\LinkPartner\LinkPartnerController.cs" />
+    <Compile Include="Controllers\Master\Clinic\ClinicController.cs" />
+    <Compile Include="Controllers\Master\Clinic\DepartmentController.cs" />
+    <Compile Include="Controllers\Master\Clinic\StaffController.cs" />
+    <Compile Include="Controllers\Master\Clinic\StateController.cs" />
+    <Compile Include="Controllers\Master\Configuration\ConvertToDonorMVCController.cs" />
+    <Compile Include="Controllers\Master\Configuration\UserController.cs" />
+    <Compile Include="Controllers\Master\Configuration\UserRoleController.cs" />
+    <Compile Include="Controllers\MaterialConsumptionEntry\MaterialConsumptionEntryController.cs" />
+    <Compile Include="Controllers\MaterialConsumptionList\MaterialConsumptionListController.cs" />
+    <Compile Include="Controllers\MISBill\MISBillController.cs" />
+    <Compile Include="Controllers\MIS\MISController.cs" />
+    <Compile Include="Controllers\New ART\NewARTController.cs" />
+    <Compile Include="Controllers\New Registration\NewRegistrationController.cs" />
+    <Compile Include="Controllers\PatientDashboard\DashboardMVCController.cs" />
+    <Compile Include="Controllers\Patient\PatientVisitController.cs" />
+    <Compile Include="Controllers\Patient\RegistrationController.cs" />
+    <Compile Include="Controllers\QualityControl\QualityControlMVCController.cs" />
+    <Compile Include="Controllers\QueueMgt\QueueMgtController.cs" />
+    <Compile Include="Controllers\Report\ReportViewController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Reports\Appointment\AppointmentDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Appointment\AppointmentListWF.aspx.cs">
+      <DependentUpon>AppointmentListWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Appointment\AppointmentListWF.aspx.designer.cs">
+      <DependentUpon>AppointmentListWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\ARTSummaryReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ARTSummaryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\ARTSummaryWF.aspx.cs">
+      <DependentUpon>ARTSummaryWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\ARTSummaryWF.aspx.designer.cs">
+      <DependentUpon>ARTSummaryWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\FET\ARTSummaryWF_FET.aspx.cs">
+      <DependentUpon>ARTSummaryWF_FET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\FET\ARTSummaryWF_FET.aspx.designer.cs">
+      <DependentUpon>ARTSummaryWF_FET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\FET\ARTSummary_FET.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ARTSummary_FET.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\FET\NewArtSummaryFET.aspx.cs">
+      <DependentUpon>NewArtSummaryFET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\FET\NewArtSummaryFET.aspx.designer.cs">
+      <DependentUpon>NewArtSummaryFET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\FET\NewArtSummary_FET.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewArtSummary_FET.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\FET\subrptFETEmbryoTransfer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptFETEmbryoTransfer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\NewArtSummary.aspx.cs">
+      <DependentUpon>NewArtSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\NewArtSummary.aspx.designer.cs">
+      <DependentUpon>NewArtSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\NewArtSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewArtSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\Separate_Embryology_Report\EmbryologyReport.aspx.cs">
+      <DependentUpon>EmbryologyReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\Separate_Embryology_Report\EmbryologyReport.aspx.designer.cs">
+      <DependentUpon>EmbryologyReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\Separate_Embryology_Report\EmbryologyReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\Separate_Embryology_Report\EmbryologyReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmbryologyReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\subRptCycleDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subRptCycleDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\subrptEmbryologyDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptEmbryologyDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\subrptEmbryoThawing.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptEmbryoThawing.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\subrptEmbryoTransferDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptEmbryoTransferDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\subrptEmbryoVitrification.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptEmbryoVitrification.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\subrptFollicularMonitoring.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptFollicularMonitoring.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\subrptOocyteThawing.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptOocyteThawing.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\subrptOocyteVitrification.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptOocyteVitrification.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\subrptOPUSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptOPUSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\subrptOutcomeDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptOutcomeDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\ARTSummary\subrptStimulationChartDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptStimulationChartDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\CorpusLeteum\CorpusLeteumScan.aspx.cs">
+      <DependentUpon>CorpusLeteumScan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\CorpusLeteum\CorpusLeteumScan.aspx.designer.cs">
+      <DependentUpon>CorpusLeteumScan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\CorpusLeteum\CorpusLeteumScan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\Cycle\EmbryoTransfer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\Cycle\EmbryoTransferDetailReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmbryoTransferDetailReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\Cycle\EmbryoTransferWF.aspx.cs">
+      <DependentUpon>EmbryoTransferWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\Cycle\EmbryoTransferWF.aspx.designer.cs">
+      <DependentUpon>EmbryoTransferWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\Cycle\StimulationChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\Cycle\StimulationChartDetailReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StimulationChartDetailReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\Cycle\StimulationChartWF.aspx.cs">
+      <DependentUpon>StimulationChartWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\Cycle\StimulationChartWF.aspx.designer.cs">
+      <DependentUpon>StimulationChartWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\Cycle\SubEmbryoTransfer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\Embrology\RP_Embrology1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RP_Embrology.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\Follicular\FollicularScan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FollicularScan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\Follicular\FollicularScanRecord.aspx.cs">
+      <DependentUpon>FollicularScanRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\Follicular\FollicularScanRecord.aspx.designer.cs">
+      <DependentUpon>FollicularScanRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\IUICycleReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IUICycleReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\IUICycleWF.aspx.cs">
+      <DependentUpon>IUICycleWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\IUICycleWF.aspx.designer.cs">
+      <DependentUpon>IUICycleWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\NewIUICycle.aspx.cs">
+      <DependentUpon>NewIUICycle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\NewIUICycle.aspx.designer.cs">
+      <DependentUpon>NewIUICycle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\NewIUICycleReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewIUICycleReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\subrptIUIFollicularMonitoring.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptIUIFollicularMonitoring.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\subrptIUIOutcome.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptIUIOutcome.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\subrptIUIStimulationChartDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptIUIStimulationChartDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\subrptIUISummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptIUISummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\subrptIUISummary_Partner.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptIUISummary_Partner.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\IUICycle\subrptPreparationAssessment.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptPreparationAssessment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\OocyteFreezingCycle\NewOocyteFreezingCycle.aspx.cs">
+      <DependentUpon>NewOocyteFreezingCycle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\OocyteFreezingCycle\NewOocyteFreezingCycle.aspx.designer.cs">
+      <DependentUpon>NewOocyteFreezingCycle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\OocyteFreezingCycle\NewOocyteFreezingCycle.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewOocyteFreezingCycle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\OocyteFreezingCycle\OocyteFreezingCycleReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OocyteFreezingCycleReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\OocyteFreezingCycle\OocyteFreezingCycleReportWF.aspx.cs">
+      <DependentUpon>OocyteFreezingCycleReportWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\OocyteFreezingCycle\OocyteFreezingCycleReportWF.aspx.designer.cs">
+      <DependentUpon>OocyteFreezingCycleReportWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ART\OocyteFreezingCycle\subrptOFEmbryology.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptOFEmbryology.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\OocyteFreezingCycle\subrptOFFollicularMonitoring.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptOFFollicularMonitoring.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\OocyteFreezingCycle\subrptOFOPUSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptOFOPUSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\OocyteFreezingCycle\subrptOFStimulationChartDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subrptOFStimulationChartDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\OPUDischargeSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OPUDischargeSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\OPUSummaryWF.aspx.cs">
+      <DependentUpon>OPUSummaryWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ART\OPUSummaryWF.aspx.designer.cs">
+      <DependentUpon>OPUSummaryWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\crReportAuthentication.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\DataSet\DataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EmbryoBank\EmbryoBankExpiryDetails.aspx.cs">
+      <DependentUpon>EmbryoBankExpiryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EmbryoBank\EmbryoBankExpiryDetails.aspx.designer.cs">
+      <DependentUpon>EmbryoBankExpiryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EmbryoBank\EmbryoBankExpiryDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\DonorSampleCR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <!--<Compile Include="Reports\EMR\DonorSampleCR1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DonorSampleCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>-->
+    <Compile Include="Reports\EMR\DonorSampleWF.aspx.cs">
+      <DependentUpon>DonorSampleWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\DonorSampleWF.aspx.designer.cs">
+      <DependentUpon>DonorSampleWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EMR\PriscriptionCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PriscriptionCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\InvestigationSrvCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvestigationSrvCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\InvestigationSrvWF.aspx.cs">
+      <DependentUpon>InvestigationSrvWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\InvestigationSrvWF.aspx.designer.cs">
+      <DependentUpon>InvestigationSrvWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EMR\PriscriptionWF.aspx.cs">
+      <DependentUpon>PriscriptionWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\PriscriptionWF.aspx.designer.cs">
+      <DependentUpon>PriscriptionWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EMR\RadiologyCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RadiologyCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\RadiologyWF.aspx.cs">
+      <DependentUpon>RadiologyWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\RadiologyWF.aspx.designer.cs">
+      <DependentUpon>RadiologyWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EMR\SemenAnalysisCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SemenAnalysisCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\SemenAnalysisWF.aspx.cs">
+      <DependentUpon>SemenAnalysisWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\SemenAnalysisWF.aspx.designer.cs">
+      <DependentUpon>SemenAnalysisWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EMR\SemenFreez.aspx.cs">
+      <DependentUpon>SemenFreez.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\SemenFreez.aspx.designer.cs">
+      <DependentUpon>SemenFreez.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EMR\SemenFreez1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SemenFreez.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\SemenPreparationPrint.aspx.cs">
+      <DependentUpon>SemenPreparationPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\SemenPreparationPrint.aspx.designer.cs">
+      <DependentUpon>SemenPreparationPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EMR\SemenProcessingReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SemenProcessingReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\Summary\SummaryCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SummaryCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\Summary\SummaryCRNew.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SummaryCRNew.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\Summary\SummaryWF.aspx.cs">
+      <DependentUpon>SummaryWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\Summary\SummaryWF.aspx.designer.cs">
+      <DependentUpon>SummaryWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EMR\SurgicalSpermRetrievalPrint.aspx.cs">
+      <DependentUpon>SurgicalSpermRetrievalPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\SurgicalSpermRetrievalPrint.aspx.designer.cs">
+      <DependentUpon>SurgicalSpermRetrievalPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EMR\SurgicalSpermRetrievalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SurgicalSpermRetrievalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\TemplateReports\AcupunctureFullCycle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <!--<Compile Include="Reports\EMR\TemplateReports\AcupunctureFullCycle1.cs">
+      <DependentUpon>AcupunctureFullCycle.rpt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>-->
+    <Compile Include="Reports\EMR\TemplateReports\AcupuncturePerSession.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <!--<Compile Include="Reports\EMR\TemplateReports\AcupuncturePerSession1.cs">
+      <DependentUpon>AcupuncturePerSession.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>-->
+    <Compile Include="Reports\EMR\TemplateReports\ENDOMETRIALBIOPSY.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <!--<Compile Include="Reports\EMR\TemplateReports\ENDOMETRIALBIOPSY1.cs">
+      <DependentUpon>ENDOMETRIALBIOPSY.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>-->
+    <!--<Compile Include="Reports\EMR\TemplateReports\FamaleExaminationCR1.cs">
+      <DependentUpon>FamaleExaminationCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>-->
+    <!--<Compile Include="Reports\EMR\TemplateReports\FamaleUltrasonographyCR1.cs">
+      <DependentUpon>FamaleUltrasonographyCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>-->
+    <!--<Compile Include="Reports\EMR\TemplateReports\HsgCR1.cs">
+      <DependentUpon>HsgCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>-->
+    <Compile Include="Reports\EMR\TemplateReports\HVSREPORT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <!--<Compile Include="Reports\EMR\TemplateReports\HVSREPORT1.cs">
+      <DependentUpon>HVSREPORT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>-->
+    <!--<Compile Include="Reports\EMR\TemplateReports\HystroscopyCR1.cs">
+      <DependentUpon>HystroscopyCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>-->
+    <Compile Include="Reports\EMR\TemplateReports\HystroscopyReport.aspx.cs">
+      <DependentUpon>HystroscopyReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\TemplateReports\HystroscopyReport.aspx.designer.cs">
+      <DependentUpon>HystroscopyReport.aspx</DependentUpon>
+    </Compile>
+    <!--<Compile Include="Reports\EMR\TemplateReports\LaproscopyCR1.cs">
+      <DependentUpon>LaproscopyCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>-->
+    <Compile Include="Reports\EMR\TemplateReports\PapSmearCR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <!--<Compile Include="Reports\EMR\TemplateReports\PapSmearCR1.cs">
+      <DependentUpon>PapSmearCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>-->
+    <Compile Include="Reports\EMR\TemplateReports\SonohysrogramReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <!--<Compile Include="Reports\EMR\TemplateReports\SonohysrogramReport1.cs">
+      <DependentUpon>SonohysrogramReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>-->
+    <Compile Include="Reports\History\Female History\FemaleHistory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FemaleHistory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\History\Female History\FemaleHistoryWF.aspx.cs">
+      <DependentUpon>FemaleHistoryWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\History\Female History\FemaleHistoryWF.aspx.designer.cs">
+      <DependentUpon>FemaleHistoryWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\History\Female History\FemaleHistory_Old.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FemaleHistory_Old.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <!--<Compile Include="Reports\History\Male History\MaleHistory1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaleHistory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>-->
+    <Compile Include="Reports\History\Male History\MaleHistoryWF.aspx.cs">
+      <DependentUpon>MaleHistoryWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\History\Male History\MaleHistoryWF.aspx.designer.cs">
+      <DependentUpon>MaleHistoryWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\History\Male History\MaleHistory_Old.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaleHistory_Old.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InventoryPharmacy\MaterialConsumption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InventoryPharmacy\MaterialConsumptionReport.aspx.cs">
+      <DependentUpon>MaterialConsumptionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\InventoryPharmacy\MaterialConsumptionReport.aspx.designer.cs">
+      <DependentUpon>MaterialConsumptionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Inventory\CounterSaleWF.aspx.cs">
+      <DependentUpon>CounterSaleWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Inventory\CounterSaleWF.aspx.designer.cs">
+      <DependentUpon>CounterSaleWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Inventory\CounterSale_Rpt_New.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\KPI\KPI.aspx.cs">
+      <DependentUpon>KPI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\KPI\KPI.aspx.designer.cs">
+      <DependentUpon>KPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\KPI\KPI.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KPI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Lab\PathologyResultEntryReport.aspx.cs">
+      <DependentUpon>PathologyResultEntryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Lab\PathologyResultEntryReport.aspx.designer.cs">
+      <DependentUpon>PathologyResultEntryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Lab\rptBSRPathoResultEntry.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Lab\rptPathoResultEntry.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Management\ClinicWise.aspx.cs">
+      <DependentUpon>ClinicWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Management\ClinicWise.aspx.designer.cs">
+      <DependentUpon>ClinicWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Management\ClinicWise1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicWise.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Management\CumulativeCase.aspx.cs">
+      <DependentUpon>CumulativeCase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Management\CumulativeCase.aspx.designer.cs">
+      <DependentUpon>CumulativeCase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Management\CumulativeCase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CumulativeCase.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Management\DoctorWise.aspx.cs">
+      <DependentUpon>DoctorWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Management\DoctorWise.aspx.designer.cs">
+      <DependentUpon>DoctorWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Management\DoctorWise.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoctorWise.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\CycleDetailsCR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\CycleDetailsReport.aspx.cs">
+      <DependentUpon>CycleDetailsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\CycleDetailsReport.aspx.designer.cs">
+      <DependentUpon>CycleDetailsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MIS\InvestigationDetailsCR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\InvestigationDetailsReport.aspx.cs">
+      <DependentUpon>InvestigationDetailsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\InvestigationDetailsReport.aspx.designer.cs">
+      <DependentUpon>InvestigationDetailsReport.aspx</DependentUpon>
+    </Compile>
+    <!--<Compile Include="Reports\MIS\PatientActivityCR1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientActivityCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>-->
+    <Compile Include="Reports\MIS\PatientActivityReport.aspx.cs">
+      <DependentUpon>PatientActivityReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\PatientActivityReport.aspx.designer.cs">
+      <DependentUpon>PatientActivityReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MIS\PatientARTReport.aspx.cs">
+      <DependentUpon>PatientARTReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\PatientARTReport.aspx.designer.cs">
+      <DependentUpon>PatientARTReport.aspx</DependentUpon>
+    </Compile>
+    <!--<Compile Include="Reports\MIS\PatientETdetails1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientETdetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>-->
+    <!--<Compile Include="Reports\MIS\PatientOPUdetails1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientOPUdetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>-->
+    <Compile Include="Reports\MIS\PrescriptionDetailsCR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\PrescriptionDetailsReport.aspx.cs">
+      <DependentUpon>PrescriptionDetailsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\PrescriptionDetailsReport.aspx.designer.cs">
+      <DependentUpon>PrescriptionDetailsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MIS\ProcedureCycleAdviceDetailsCR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\ProcedureCycleAdviceReport.aspx.cs">
+      <DependentUpon>ProcedureCycleAdviceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\ProcedureCycleAdviceReport.aspx.designer.cs">
+      <DependentUpon>ProcedureCycleAdviceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MIS\VisitDetailsCR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\VisitDetailsReport.aspx.cs">
+      <DependentUpon>VisitDetailsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MIS\VisitDetailsReport.aspx.designer.cs">
+      <DependentUpon>VisitDetailsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\NewRegistration\RegistrationReport.aspx.cs">
+      <DependentUpon>RegistrationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\NewRegistration\RegistrationReport.aspx.designer.cs">
+      <DependentUpon>RegistrationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\NewRegistration\RegistrationReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\NewRegistration\rptRegistration.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\DailyCollection\DailyCollection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\DailyCollection\DailyCollectionReportWF.aspx.cs">
+      <DependentUpon>DailyCollectionReportWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\DailyCollection\DailyCollectionReportWF.aspx.designer.cs">
+      <DependentUpon>DailyCollectionReportWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\DiscountRegisterReport\DiscountRegisterReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\DiscountRegisterReport\DiscountRegisterReportWF.aspx.cs">
+      <DependentUpon>DiscountRegisterReportWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\DiscountRegisterReport\DiscountRegisterReportWF.aspx.designer.cs">
+      <DependentUpon>DiscountRegisterReportWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\OutstandingReport\OutstandingReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\OutstandingReport\OutstandingReportWF.aspx.cs">
+      <DependentUpon>OutstandingReportWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\OutstandingReport\OutstandingReportWF.aspx.designer.cs">
+      <DependentUpon>OutstandingReportWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\ServiceWiseBillReport\ServiceWiseBilling.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\ServiceWiseBillReport\ServiceWiseBillReportWF.aspx.cs">
+      <DependentUpon>ServiceWiseBillReportWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\MIS Reports\ServiceWiseBillReport\ServiceWiseBillReportWF.aspx.designer.cs">
+      <DependentUpon>ServiceWiseBillReportWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\New_Billing\NewBilling.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\NewBillingWF.aspx.cs">
+      <DependentUpon>NewBillingWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\NewBillingWF.aspx.designer.cs">
+      <DependentUpon>NewBillingWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\New_Billing\SettleBillReport\RPSettleBill.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\SettleBillReport\SettleBillWF.aspx.cs">
+      <DependentUpon>SettleBillWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\SettleBillReport\SettleBillWF.aspx.designer.cs">
+      <DependentUpon>SettleBillWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\New_Billing\SettleBill\SettleBill.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\SettleBill\SettleBillWF.aspx.cs">
+      <DependentUpon>SettleBillWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\New_Billing\SettleBill\SettleBillWF.aspx.designer.cs">
+      <DependentUpon>SettleBillWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\OocyteBank\OocyteBankExpiryDetails.aspx.cs">
+      <DependentUpon>OocyteBankExpiryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\OocyteBank\OocyteBankExpiryDetails.aspx.designer.cs">
+      <DependentUpon>OocyteBankExpiryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\OocyteBank\OocyteBankExpiryDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Patient Common\PatientCommon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientCommon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientAdvanceRefund\PatientAdvanceRefund.aspx.cs">
+      <DependentUpon>PatientAdvanceRefund.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientAdvanceRefund\PatientAdvanceRefund.aspx.designer.cs">
+      <DependentUpon>PatientAdvanceRefund.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PatientAdvanceRefund\rpt_PatientAdvanceRefund.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientAdvance\PatientAdvance.aspx.cs">
+      <DependentUpon>PatientAdvance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientAdvance\PatientAdvance.aspx.designer.cs">
+      <DependentUpon>PatientAdvance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PatientAdvance\rpt_PatientAdvanceReceipt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientDashboard\PatientDashboardList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientDashboard\PatientList.aspx.cs">
+      <DependentUpon>PatientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientDashboard\PatientList.aspx.designer.cs">
+      <DependentUpon>PatientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SpermBank\SpermBankExpiryDetails.aspx.cs">
+      <DependentUpon>SpermBankExpiryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SpermBank\SpermBankExpiryDetails.aspx.designer.cs">
+      <DependentUpon>SpermBankExpiryDetails.aspx</DependentUpon>
+    </Compile>
+    <!--<Compile Include="Reports\SpermBank\SpermBankExpiryDetails1.cs">
+      <SubType>Component</SubType>
+    </Compile>-->
+    <Compile Include="Reports\UnitHeader\subRptPatientData_ART.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subRptPatientData_ART.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\UnitHeader\SubRptTherapyDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubRptTherapyDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\UnitHeader\UnitHeader.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitHeader.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddNewAppointment.html" />
+    <Content Include="Content\addon.css" />
+    <Content Include="Content\angular-moment-picker.css" />
+    <Content Include="Content\angular-moment-picker.min.css" />
+    <Content Include="Content\angular-toasty.min.css" />
+    <Content Include="Content\angular-ui-tree-theme.css" />
+    <Content Include="Content\angular-ui-tree.min.css" />
+    <Content Include="Content\angular-wizard.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dev.css" />
+    <Content Include="Content\dev_old.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\ie10-viewport-bug-workaround.css" />
+    <Content Include="Content\isteven-multi-select.css" />
+    <Content Include="Content\jquery.mCustomScrollbar.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\ng-img-crop.css" />
+    <Content Include="Content\ngDialog-Plain.css" />
+    <Content Include="Content\ngDialog-theme-default.min.css" />
+    <Content Include="Content\ngDialog.css" />
+    <Content Include="Content\ngPrint.min.css" />
+    <Content Include="Content\perfect-scrollbar.min.css" />
+    <Content Include="Content\schema-form-file.css" />
+    <Content Include="Content\scrollable-table.css" />
+    <Content Include="Content\select.css" />
+    <Content Include="Content\select.min.css" />
+    <Content Include="Content\select2-bootstrap.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\strap.min.css" />
+    <Content Include="Content\Style.css" />
+    <Content Include="Content\style_slide.css" />
+    <Content Include="Content\sweetalert.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="Content\ui-cropper.css" />
+    <Content Include="Content\ui-grid.css" />
+    <Compile Include="Api\IPD\IPDController.cs" />
+    <Content Include="DeleteAppointment.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\opensans-bold-webfont.svg" />
+    <Content Include="fonts\opensans-regular-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\Active.png" />
+    <Content Include="images\apple-touch-icon.png" />
+    <Content Include="images\appointment.jpg" />
+    <Content Include="images\appointment.svg" />
+    <Content Include="images\backgrounds\alt.png" />
+    <Content Include="images\backgrounds\body.jpg" />
+    <Content Include="images\backgrounds\breadcrumbs.png" />
+    <Content Include="images\backgrounds\contentTop.png" />
+    <Content Include="images\backgrounds\fertivueNewLoginPage.svg" />
+    <Content Include="images\backgrounds\LoginImgMobile.jpg" />
+    <Content Include="images\backgrounds\login_bg.jpg" />
+    <Content Include="images\backgrounds\Multiply Login screen-10.jpg" />
+    <Content Include="images\backgrounds\sidebar.jpg" />
+    <Content Include="images\backgrounds\subnav.jpg" />
+    <Content Include="images\backgrounds\top.jpg" />
+    <Content Include="images\bdr_sideNav.png" />
+    <Content Include="images\bg_header.png" />
+    <Content Include="images\BHCG.svg" />
+    <Content Include="images\billing.svg" />
+    <Content Include="images\BillingNS.svg" />
+    <Content Include="images\BillingS.svg" />
+    <Content Include="images\Blue\Find_Patient.png" />
+    <Content Include="images\Blue\Icon_Appoinment.png" />
+    <Content Include="images\Blue\Icon_ART-Dashboard.png" />
+    <Content Include="images\Blue\Icon_Billing.png" />
+    <Content Include="images\Blue\Icon_Cryo-Bank.png" />
+    <Content Include="images\Blue\Icon_Inventory.png" />
+    <Content Include="images\Blue\Icon_MIS.png" />
+    <Content Include="images\Blue\Icon_Queue-MGNT.png" />
+    <Content Include="images\Blue\Icon_System-Conf.png" />
+    <Content Include="images\calendarDelete.svg" />
+    <Content Include="images\calendarReschedule.svg" />
+    <Content Include="images\CollapseDown.png" />
+    <Content Include="images\CollapseDown_black.png" />
+    <Content Include="images\CollapseRight.png" />
+    <Content Include="images\CollapseRight_black.png" />
+    <Content Include="images\CollapseUp_black.png" />
+    <Content Include="images\communication.svg" />
+    <Content Include="images\CommunicationNS.svg" />
+    <Content Include="images\CommunicationS.svg" />
+    <Content Include="images\concent.svg" />
+    <Content Include="images\ConsentUploadNS.svg" />
+    <Content Include="images\cursors\cursor_arrow_left.cur" />
+    <Content Include="images\cursors\cursor_arrow_left.gif" />
+    <Content Include="images\cursors\cursor_arrow_left.png" />
+    <Content Include="images\cursors\cursor_arrow_right.cur" />
+    <Content Include="images\cursors\cursor_arrow_right.gif" />
+    <Content Include="images\cursors\cursor_arrow_right.png" />
+    <Content Include="images\dashboardDecreasePercentageF.svg" />
+    <Content Include="images\dashboardEye.svg" />
+    <Content Include="images\deactive.png" />
+    <Content Include="images\Default_user.png" />
+    <Content Include="images\Diagnosis.jpg" />
+    <Content Include="images\emrPrintSvg.svg" />
+    <Content Include="images\ET.svg" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\Female_default.jpg" />
+    <Content Include="images\followUp.svg" />
+    <Content Include="images\FollowUpsNS.svg" />
+    <Content Include="images\FollowUpsS.svg" />
+    <Content Include="images\footFall.svg" />
+    <Content Include="images\Gemino_logo.jpeg" />
+    <Content Include="images\Gemino_logo.png" />
+    <Content Include="images\icons\breadsArrow.png" />
+    <Content Include="images\icons\breadsHome.png" />
+    <Content Include="images\icons\Cross_Red_Icon.png" />
+    <Content Include="images\icons\edit_icon.png" />
+    <Content Include="images\icons\Embryology_Img1.png" />
+    <Content Include="images\icons\femalelTestsIcons.png" />
+    <Content Include="images\icons\icoImgComplaints.png" />
+    <Content Include="images\icons\icoImgDiagnosis.png" />
+    <Content Include="images\icons\icoImgFemalehistory.png" />
+    <Content Include="images\icons\icoImgInvestigations.png" />
+    <Content Include="images\icons\icoImgMalehistory.png" />
+    <Content Include="images\icons\icoImgPrescription.png" />
+    <Content Include="images\icons\Icon_Appoinment.png" />
+    <Content Include="images\icons\icon_appoint-list.png" />
+    <Content Include="images\icons\icon_art-cycle.png" />
+    <Content Include="images\icons\Icon_ART-Dashboard.png" />
+    <Content Include="images\icons\Icon_ART_DashBFemale.png" />
+    <Content Include="images\icons\Icon_ART_DashBMale.png" />
+    <Content Include="images\icons\Icon_Billing.png" />
+    <Content Include="images\icons\icon_cancel-appoint.png" />
+    <Content Include="images\icons\icon_consent.png" />
+    <Content Include="images\icons\Icon_Cryo-Bank.png" />
+    <Content Include="images\icons\icon_cryobank.png" />
+    <Content Include="images\icons\icon_embry-bank.png" />
+    <Content Include="images\icons\icon_female-clinic.png" />
+    <Content Include="images\icons\Icon_Find-Patient.png" />
+    <Content Include="images\icons\Icon_H-Appoinment.png" />
+    <Content Include="images\icons\Icon_H-ART-Dashboard.png" />
+    <Content Include="images\icons\Icon_H-Billing.png" />
+    <Content Include="images\icons\Icon_H-Cryo-Bank.png" />
+    <Content Include="images\icons\Icon_H-Find-Patient.png" />
+    <Content Include="images\icons\Icon_H-Inventory.png" />
+    <Content Include="images\icons\Icon_H-MIS.png" />
+    <Content Include="images\icons\Icon_H-Queue-MGNT.png" />
+    <Content Include="images\icons\Icon_H-System-Conf.png" />
+    <Content Include="images\icons\Icon_Inventory.png" />
+    <Content Include="images\icons\icon_male-clinic.png" />
+    <Content Include="images\icons\Icon_MIS.png" />
+    <Content Include="images\icons\icon_new-appoint.png" />
+    <Content Include="images\icons\icon_new-visit.png" />
+    <Content Include="images\icons\icon_new_pataint.png" />
+    <Content Include="images\icons\icon_oocyte-bank.png" />
+    <Content Include="images\icons\icon_pending-bill.png" />
+    <Content Include="images\icons\Icon_Queue-MGNT.png" />
+    <Content Include="images\icons\icon_resch-appoint.png" />
+    <Content Include="images\icons\icon_sperm-bank.png" />
+    <Content Include="images\icons\Icon_System-Conf.png" />
+    <Content Include="images\icons\icon_view-patient.png" />
+    <Content Include="images\icons\MalelTestsIcons.png" />
+    <Content Include="images\icons\Ok_Green_Icon.png" />
+    <Content Include="images\icons\register_icon.png" />
+    <Content Include="images\icons\subArrow.png" />
+    <Content Include="images\icons\tipsy.gif" />
+    <Content Include="images\icons\TopNavIconGreen.jpg" />
+    <Content Include="images\icons\TopNavIconGreen.png" />
+    <Content Include="images\icons\TopNavIconOrange.jpg" />
+    <Content Include="images\icons\TopNavIconOrange.png" />
+    <Content Include="images\ico_add.png" />
+    <Content Include="images\ico_delete.png" />
+    <Content Include="images\ico_info.png" />
+    <Content Include="images\ico_sprite_add-delete.png" />
+    <Content Include="images\ico_sprite_sys-conf.png" />
+    <Content Include="images\ico_today.png" />
+    <Content Include="images\img_idProof.jpg" />
+    <Content Include="images\img_oocyte-d0.png" />
+    <Content Include="images\Investigation.jpg" />
+    <Content Include="images\Leberaa_logo.png" />
+    <Content Include="images\left_nav_bg.jpg" />
+    <Content Include="images\left_nav_bg.png" />
+    <Content Include="images\Liberaa_logo.jpg" />
+    <Content Include="images\Liberaa_logo_pink.png" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\loading_dark.gif" />
+    <Content Include="images\lock.png" />
+    <Content Include="images\LoginImgMobile.jpeg" />
+    <Content Include="images\LoginImgMobile.jpg" />
+    <Content Include="images\LOGO Fertivue icon.svg" />
+    <Content Include="images\LOGO Fertivue.svg" />
+    <Content Include="images\LOGOFertivueNewUpdated.svg" />
+    <Content Include="images\LOGOWhiteFertivue.svg" />
+    <Content Include="images\logo_Palash_IVF.png" />
+    <Content Include="images\logo_PIVF.png" />
+    <Content Include="images\mainnav\bg_subNav.jpg" />
+    <Content Include="images\mainnav\ico_cycle.png" />
+    <Content Include="images\mainnav\ico_dashboard.png" />
+    <Content Include="images\mainnav\ico_emr.png" />
+    <Content Include="images\mainnav\ico_ivf-config.png" />
+    <Content Include="images\mainnav\img_female.jpg" />
+    <Content Include="images\mainnav\thumb_female.png" />
+    <Content Include="images\mainnav\thumb_male.png" />
+    <Content Include="images\Male_default.jpg" />
+    <Content Include="images\Multiply Login screen-10.jpg" />
+    <Content Include="images\Multiply-05.svg" />
+    <Content Include="images\newClinic.svg" />
+    <Content Include="images\newClinic1.svg" />
+    <Content Include="images\newFavoriteIcon.svg" />
+    <Content Include="images\NewFertivueLogo.svg" />
+    <Content Include="images\newInvestigationIcon.svg" />
+    <Content Include="images\newLock.svg" />
+    <Content Include="images\newLock1.svg" />
+    <Content Include="images\newProcedureIcon.svg" />
+    <Content Include="images\NewUsername.svg" />
+    <Content Include="images\NewUsername1.svg" />
+    <Content Include="images\OPU.svg" />
+    <Content Include="images\patientUnderStimulationActive.svg" />
+    <Content Include="images\percentStatusF.svg" />
+    <Content Include="images\percentStatusS.svg" />
+    <Content Include="images\PIVF-Logo-White.PNG" />
+    <Content Include="images\priscription.jpg" />
+    <Content Include="images\registration.svg" />
+    <Content Include="images\report.svg" />
+    <Content Include="images\ReportUploadNS.svg" />
+    <Content Include="images\ReportUploadS.svg" />
+    <Content Include="images\revenue.svg" />
+    <Content Include="images\scheduling.svg" />
+    <Content Include="images\SchedulingNS.svg" />
+    <Content Include="images\SchedulingS.svg" />
+    <Content Include="images\select2.png" />
+    <Content Include="images\sprites\ico-investigation.png" />
+    <Content Include="images\sprites\ico-nav_male-female.png" />
+    <Content Include="images\sprites\ico_4boxes.png" />
+    <Content Include="images\sprites\ico_delete.png" />
+    <Content Include="images\sprites\ico_edit.png" />
+    <Content Include="images\sprites\ico_history.png" />
+    <Content Include="images\sprites\ico_info.png" />
+    <Content Include="images\sprites\ico_like.png" />
+    <Content Include="images\sprites\ico_search.png" />
+    <Content Include="images\sprites\mCSB_buttons.png" />
+    <Content Include="images\sprites\smly_Fertilization.png" />
+    <Content Include="images\sprites\sprite_ico_nav.png" />
+    <Content Include="images\sprites\sprite_nav2.png" />
+    <Content Include="images\todoList.svg" />
+    <Content Include="images\Trigger.svg" />
+    <Content Include="images\Unlock.png" />
+    <Content Include="images\loginBg.jpg" />
+    <Content Include="images\nav.png" />
+    <Content Include="images\nav_arrow.png" />
+    <Content Include="images\PIVF_login_Logo.png" />
+    <Content Include="images\PIVF_Logo.png" />
+    <Content Include="images\SubCollapseDown.png" />
+    <Content Include="images\SubCollapseRight.png" />
+    <Content Include="images\Tab_Down_Arrow.png" />
+    <Content Include="images\Tab_Right_Arrow.png" />
+    <Content Include="images\USG.svg" />
+    <Content Include="images\Vidai-Design-01.png" />
+    <Content Include="images\Vidai_favicon.ico" />
+    <Content Include="images\White\Find_Patient.png" />
+    <Content Include="images\White\Icon_H-Appoinment.png" />
+    <Content Include="images\White\Icon_H-ART-Dashboard.png" />
+    <Content Include="images\White\Icon_H-Billing.png" />
+    <Content Include="images\White\Icon_H-Cryo-Bank.png" />
+    <Content Include="images\White\Icon_H-Inventory.png" />
+    <Content Include="images\White\Icon_H-MIS.png" />
+    <Content Include="images\White\Icon_H-Queue-MGNT.png" />
+    <Content Include="images\White\Icon_H-System-Conf.png" />
+    <Content Include="Reference dll\Antlr3.Runtime.dll" />
+    <Content Include="Reference dll\Audit.NET.dll" />
+    <Content Include="Reference dll\Audit.NET.SqlServer.dll" />
+    <Content Include="Reference dll\Audit.NET.SqlServer.xml" />
+    <Content Include="Reference dll\Audit.NET.xml" />
+    <Content Include="Reference dll\Audit.WebApi.dll" />
+    <Content Include="Reference dll\Audit.WebApi.xml" />
+    <Content Include="Reference dll\CommonServiceLocator.dll" />
+    <Content Include="Reference dll\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="Reference dll\CrystalDecisions.ReportSource.dll" />
+    <Content Include="Reference dll\CrystalDecisions.Shared.dll" />
+    <Content Include="Reference dll\CrystalDecisions.Web.dll" />
+    <Content Include="Reference dll\Dapper.dll" />
+    <Content Include="Reference dll\Dapper.xml" />
+    <Content Include="Reference dll\EntityFramework.dll" />
+    <Content Include="Reference dll\EntityFramework.SqlServer.dll" />
+    <Content Include="Reference dll\LinqKit.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Client.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Client.XML" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Core.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Core.xml" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Owin.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Owin.xml" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.SystemWeb.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.SystemWeb.XML" />
+    <Content Include="Reference dll\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="Reference dll\Microsoft.Data.Edm.dll" />
+    <Content Include="Reference dll\Microsoft.Data.Edm.xml" />
+    <Content Include="Reference dll\Microsoft.Data.OData.dll" />
+    <Content Include="Reference dll\Microsoft.Data.OData.xml" />
+    <Content Include="Reference dll\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="Reference dll\Microsoft.Extensions.DependencyInjection.Abstractions.xml" />
+    <Content Include="Reference dll\Microsoft.Extensions.DependencyInjection.dll" />
+    <Content Include="Reference dll\Microsoft.Extensions.DependencyInjection.xml" />
+    <Content Include="Reference dll\Microsoft.IdentityModel.dll" />
+    <Content Include="Reference dll\Microsoft.IdentityModel.Logging.dll" />
+    <Content Include="Reference dll\Microsoft.OData.Core.dll" />
+    <Content Include="Reference dll\Microsoft.OData.Core.xml" />
+    <Content Include="Reference dll\Microsoft.OData.Edm.dll" />
+    <Content Include="Reference dll\Microsoft.OData.Edm.xml" />
+    <Content Include="Reference dll\Microsoft.Owin.Cors.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Cors.XML" />
+    <Content Include="Reference dll\Microsoft.Owin.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Host.HttpListener.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="Reference dll\Microsoft.Owin.Hosting.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Facebook.XML" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Google.XML" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.OAuth.XML" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.XML" />
+    <Content Include="Reference dll\Microsoft.Owin.XML" />
+    <Content Include="Reference dll\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Reference dll\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Reference dll\Microsoft.Practices.ObjectBuilder.dll" />
+    <Content Include="Reference dll\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Reference dll\Microsoft.Practices.Unity.Configuration.dll" />
+    <Content Include="Reference dll\Microsoft.Practices.Unity.dll" />
+    <Content Include="Reference dll\Microsoft.Practices.Unity.Mvc.dll" />
+    <Content Include="Reference dll\Microsoft.Practices.Unity.RegistrationByConvention.dll" />
+    <Content Include="Reference dll\Microsoft.Practices.Unity.WebApi.dll" />
+    <Content Include="Reference dll\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="Reference dll\Microsoft.ReportViewer.DataVisualization.dll" />
+    <Content Include="Reference dll\Microsoft.ReportViewer.ProcessingObjectModel.DLL" />
+    <Content Include="Reference dll\Microsoft.ReportViewer.WebForms.DLL" />
+    <Content Include="Reference dll\Microsoft.Spatial.dll" />
+    <Content Include="Reference dll\Microsoft.Spatial.xml" />
+    <Content Include="Reference dll\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="Reference dll\Newtonsoft.Json.dll" />
+    <Content Include="Reference dll\NLog.dll" />
+    <Content Include="Reference dll\Owin.dll" />
+    <Content Include="Reference dll\System.IdentityModel.Tokens.Jwt.dll" />
+    <Content Include="Reference dll\System.Net.Http.dll" />
+    <Content Include="Reference dll\System.Net.Http.Extensions.dll" />
+    <Content Include="Reference dll\System.Net.Http.Formatting.dll" />
+    <Content Include="Reference dll\System.Net.Http.Primitives.dll" />
+    <Content Include="Reference dll\System.Net.Http.WebRequest.dll" />
+    <Content Include="Reference dll\System.Net.Http.WebRequest.xml" />
+    <Content Include="Reference dll\System.Net.Http.xml" />
+    <Content Include="Reference dll\System.Spatial.dll" />
+    <Content Include="Reference dll\System.Spatial.xml" />
+    <Content Include="Reference dll\System.Web.Cors.dll" />
+    <Content Include="Reference dll\System.Web.dll" />
+    <Content Include="Reference dll\System.Web.Helpers.dll" />
+    <Content Include="Reference dll\System.Web.Helpers.xml" />
+    <Content Include="Reference dll\System.Web.Http.dll" />
+    <Content Include="Reference dll\System.Web.Http.OData.dll" />
+    <Content Include="Reference dll\System.Web.Http.OData.xml" />
+    <Content Include="Reference dll\System.Web.Http.Owin.dll" />
+    <Content Include="Reference dll\System.Web.Http.WebHost.dll" />
+    <Content Include="Reference dll\System.Web.Http.WebHost.xml" />
+    <Content Include="Reference dll\System.Web.Http.xml" />
+    <Content Include="Reference dll\System.Web.Mvc.dll" />
+    <Content Include="Reference dll\System.Web.Mvc.xml" />
+    <Content Include="Reference dll\System.Web.OData.dll" />
+    <Content Include="Reference dll\System.Web.OData.xml" />
+    <Content Include="Reference dll\System.Web.Optimization.dll" />
+    <Content Include="Reference dll\system.web.optimization.xml" />
+    <Content Include="Reference dll\System.Web.Razor.dll" />
+    <Content Include="Reference dll\System.Web.Razor.xml" />
+    <Content Include="Reference dll\System.Web.WebPages.Deployment.dll" />
+    <Content Include="Reference dll\System.Web.WebPages.Deployment.xml" />
+    <Content Include="Reference dll\System.Web.WebPages.dll" />
+    <Content Include="Reference dll\System.Web.WebPages.Razor.dll" />
+    <Content Include="Reference dll\System.Web.WebPages.Razor.xml" />
+    <Content Include="Reference dll\System.Web.WebPages.xml" />
+    <Content Include="Reference dll\System.Web.xml" />
+    <Content Include="Reference dll\WebActivatorEx.dll" />
+    <Content Include="Reference dll\WebGrease.dll" />
+    <Content Include="Reports\Appointment\AppointmentListWF.aspx" />
+    <Content Include="Reports\ART\ARTSummary\ARTSummaryWF.aspx" />
+    <Content Include="Reports\ART\ARTSummary\FET\ARTSummaryWF_FET.aspx" />
+    <Content Include="Reports\ART\ARTSummary\FET\NewArtSummaryFET.aspx" />
+    <Content Include="Reports\ART\ARTSummary\NewArtSummary.aspx" />
+    <Content Include="Reports\ART\ARTSummary\Separate_Embryology_Report\EmbryologyReport.aspx" />
+    <Content Include="Reports\ART\CorpusLeteum\CorpusLeteumScan.aspx" />
+    <Content Include="Reports\ART\Cycle\EmbryoTransferWF.aspx" />
+    <Content Include="Reports\ART\Cycle\StimulationChartWF.aspx" />
+    <Content Include="Reports\ART\Follicular\FollicularScanRecord.aspx" />
+    <Content Include="Reports\ART\IUICycle\IUICycleWF.aspx" />
+    <Content Include="Reports\ART\IUICycle\NewIUICycle.aspx" />
+    <Content Include="Reports\ART\OocyteFreezingCycle\NewOocyteFreezingCycle.aspx" />
+    <Content Include="Reports\ART\OocyteFreezingCycle\OocyteFreezingCycleReportWF.aspx" />
+    <Content Include="Reports\ART\OPUSummaryWF.aspx" />
+    <Content Include="Reports\EmbryoBank\EmbryoBankExpiryDetails.aspx" />
+    <Content Include="Reports\EMR\DonorSampleWF.aspx" />
+    <Content Include="Reports\EMR\InvestigationSrvWF.aspx" />
+    <Content Include="Reports\EMR\PriscriptionWF.aspx" />
+    <Content Include="Reports\EMR\RadiologyWF.aspx" />
+    <Content Include="Reports\EMR\SemenAnalysisWF.aspx" />
+    <Content Include="Reports\EMR\SemenFreez.aspx" />
+    <Content Include="Reports\EMR\SemenPreparationPrint.aspx" />
+    <Content Include="Reports\EMR\Summary\SummaryWF.aspx" />
+    <Content Include="Reports\EMR\SurgicalSpermRetrievalPrint.aspx" />
+    <Content Include="Reports\EMR\TemplateReports\FamaleExaminationCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FamaleExaminationCR1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\EMR\TemplateReports\FamaleUltrasonographyCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FamaleUltrasonographyCR1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\EMR\TemplateReports\HsgCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HsgCR1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\EMR\TemplateReports\HystroscopyCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HystroscopyCR1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\EMR\TemplateReports\HystroscopyReport.aspx" />
+    <Content Include="Reports\EMR\TemplateReports\LaproscopyCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaproscopyCR1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\History\Female History\FemaleHistoryWF.aspx" />
+    <Content Include="Reports\History\Male History\MaleHistoryWF.aspx" />
+    <Content Include="Reports\InventoryPharmacy\MaterialConsumptionReport.aspx" />
+    <Content Include="Reports\Inventory\CounterSaleWF.aspx" />
+    <Content Include="Reports\KPI\KPI.aspx" />
+    <Content Include="Reports\Lab\PathologyResultEntryReport.aspx" />
+    <Content Include="Reports\Management\ClinicWise.aspx" />
+    <Content Include="Reports\Management\CumulativeCase.aspx" />
+    <Content Include="Reports\Management\DoctorWise.aspx" />
+    <Content Include="Reports\MIS\CycleDetailsReport.aspx" />
+    <Content Include="Reports\MIS\InvestigationDetailsReport.aspx" />
+    <Content Include="Reports\MIS\PatientActivityReport.aspx" />
+    <Content Include="Reports\MIS\PatientARTReport.aspx" />
+    <Content Include="Reports\MIS\PrescriptionDetailsReport.aspx" />
+    <Content Include="Reports\MIS\ProcedureCycleAdviceReport.aspx" />
+    <Content Include="Reports\MIS\VisitDetailsReport.aspx" />
+    <Content Include="Reports\NewRegistration\RegistrationReport.aspx" />
+    <Content Include="Reports\New_Billing\MIS Reports\DailyCollection\DailyCollectionReportWF.aspx" />
+    <Content Include="Reports\New_Billing\MIS Reports\DiscountRegisterReport\DiscountRegisterReportWF.aspx" />
+    <Content Include="Reports\New_Billing\MIS Reports\OutstandingReport\OutstandingReportWF.aspx" />
+    <Content Include="Reports\New_Billing\MIS Reports\ServiceWiseBillReport\ServiceWiseBillReportWF.aspx" />
+    <Content Include="Reports\New_Billing\NewBillingWF.aspx" />
+    <Content Include="Reports\New_Billing\SettleBillReport\SettleBillWF.aspx" />
+    <Content Include="Reports\New_Billing\SettleBill\SettleBillWF.aspx" />
+    <Content Include="Reports\OocyteBank\OocyteBankExpiryDetails.aspx" />
+    <Content Include="Reports\PatientAdvanceRefund\PatientAdvanceRefund.aspx" />
+    <Content Include="Reports\PatientAdvance\PatientAdvance.aspx" />
+    <Content Include="Reports\PatientDashboard\PatientList.aspx" />
+    <Content Include="Reports\SpermBank\SpermBankExpiryDetails.aspx" />
+    <Content Include="RescheduleAppointment.html" />
+    <Content Include="Scripts\AngularPackages\angu-fixed-header-table.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\dist\css\angular-bootstrap-calendar.css" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\dist\css\angular-bootstrap-calendar.min.css" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\dist\js\angular-bootstrap-calendar-tpls.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\dist\js\angular-bootstrap-calendar-tpls.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\dist\js\angular-bootstrap-calendar.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\dist\js\angular-bootstrap-calendar.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\templates\calendar.html" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\templates\calendarDayView.html" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\templates\calendarHourList.html" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\templates\calendarMonthCell.html" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\templates\calendarMonthCellEvents.html" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\templates\calendarMonthView.html" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\templates\calendarSlideBox.html" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\templates\calendarWeekView.html" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\templates\calendarYearView.html" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\demo-app.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\demo-controller.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\android-chrome-144x144.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\android-chrome-192x192.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\android-chrome-36x36.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\android-chrome-48x48.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\android-chrome-72x72.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\android-chrome-96x96.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\apple-touch-icon-114x114.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\apple-touch-icon-120x120.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\apple-touch-icon-144x144.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\apple-touch-icon-152x152.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\apple-touch-icon-180x180.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\apple-touch-icon-57x57.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\apple-touch-icon-60x60.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\apple-touch-icon-72x72.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\apple-touch-icon-76x76.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\apple-touch-icon-precomposed.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\apple-touch-icon.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\browserconfig.xml" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\favicon-16x16.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\favicon-32x32.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\favicon-96x96.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\favicon.ico" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\mstile-144x144.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\mstile-150x150.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\mstile-310x150.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\mstile-310x310.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\mstile-70x70.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\index.html" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\gulpfile.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\index.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\karma.conf.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\paths.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\screenshots\day.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\screenshots\hour.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\screenshots\minute.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\screenshots\month.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\screenshots\year.png" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\src\css\datetimepicker.css" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\src\js\datetimepicker.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\src\js\datetimepicker.templates.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\src\templates\datetimepicker.html" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\commonjs\browserify.test.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\configuration\beforeRender.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\configuration\configurationValidation.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\configuration\configureOn.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\configuration\datetimepickerConfig.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\configuration\dropdownSelector.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\configuration\minuteStep.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\configuration\minView.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\configuration\onSetTime.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\configuration\renderOn.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\configuration\startView.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\model\modelType.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\model\ngModelController.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\css.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\de\day.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\de\hour.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\de\minute.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\de\month.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\de\year.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\en\day.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\en\hour.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\en\minute.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\en\month.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\en\year.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\zh_cn\day.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\zh_cn\hour.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\zh_cn\minute.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\zh_cn\month.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\view\zh_cn\year.spec.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\webpack\app.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\webpack\karma.conf.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\webpack\webpack.conf.js" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\test\webpack\webpack.test.js" />
+    <Content Include="Scripts\AngularPackages\angular-chart.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-filter.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-fusioncharts.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-input-modified.js" />
+    <Content Include="Scripts\AngularPackages\angular-linq.js" />
+    <Content Include="Scripts\AngularPackages\angular-messages.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-moment-picker.js" />
+    <Content Include="Scripts\AngularPackages\angular-object-diff.js" />
+    <Content Include="Scripts\AngularPackages\angular-pdf.js" />
+    <Content Include="Scripts\AngularPackages\angular-perfect-scrollbar.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-sanitize.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-schema-form-base64-file-upload.js" />
+    <Content Include="Scripts\AngularPackages\angular-schema-form-dynamic-select.js" />
+    <Content Include="Scripts\AngularPackages\angular-spinner.js" />
+    <Content Include="Scripts\AngularPackages\angular-strap.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-strap.tpl.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-translate.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-ui-tree.min.js" />
+    <Content Include="Scripts\AngularPackages\angularjs-dropdown-multiselect.min.js" />
+    <Content Include="Scripts\AngularPackages\bootstrap-decorator.js" />
+    <Content Include="Scripts\AngularPackages\BreadCum.js" />
+    <Content Include="Scripts\AngularPackages\Chart.min.js" />
+    <Content Include="Scripts\AngularPackages\chartjs-plugin-datalabels.min.js" />
+    <Content Include="Scripts\AngularPackages\date.js" />
+    <Content Include="Scripts\AngularPackages\fusioncharts.charts.js" />
+    <Content Include="Scripts\AngularPackages\fusioncharts.js" />
+    <Content Include="Scripts\AngularPackages\fusioncharts.theme.fusion.js" />
+    <Content Include="Scripts\AngularPackages\html2canvas.min.js" />
+    <Content Include="Scripts\AngularPackages\JsBarcode.all.js" />
+    <Content Include="Scripts\AngularPackages\moment-with-locales.js" />
+    <Content Include="Scripts\AngularPackages\moment.js" />
+    <Content Include="Scripts\AngularPackages\ng-file-upload-all.min.js" />
+    <Content Include="Scripts\AngularPackages\ng-pattern-restrict.js" />
+    <Content Include="Scripts\AngularPackages\ngComboDatePicker.js" />
+    <Content Include="Scripts\AngularPackages\ngDialog.min.js" />
+    <Content Include="Scripts\AngularPackages\ngPrint.js" />
+    <Content Include="Scripts\AngularPackages\ObjectPath.js" />
+    <Content Include="Scripts\AngularPackages\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Scripts\AngularPackages\ocLazyLoad.min.js" />
+    <Content Include="Scripts\AngularPackages\pdf.js" />
+    <Content Include="Scripts\AngularPackages\pdf.worker.js" />
+    <Content Include="Scripts\AngularPackages\pdfmake.min.js" />
+    <Content Include="Scripts\AngularPackages\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Scripts\AngularPackages\scrollbars.min.js" />
+    <Content Include="Scripts\AngularPackages\schema-form-date-time-picker.min.js" />
+    <Content Include="Scripts\AngularPackages\schema-form-file.js" />
+    <Content Include="Scripts\AngularPackages\schema-form.js" />
+    <Content Include="Scripts\AngularPackages\select.min.js" />
+    <Content Include="Scripts\AngularPackages\Slick\angular-slick\ajax-loader.gif" />
+    <Content Include="Scripts\AngularPackages\Slick\angular-slick\dev_temp.css" />
+    <Content Include="Scripts\AngularPackages\Slick\angular-slick\slick.css" />
+    <Content Include="Scripts\AngularPackages\Slick\angular-slick\slick.js" />
+    <Content Include="Scripts\AngularPackages\Slick\angular-slick\slick.min.js" />
+    <Content Include="Scripts\AngularPackages\Slick\angular-slick\Style_temp.css" />
+    <Content Include="Scripts\AngularPackages\Slick\slick-carousel\ajax-loader.gif" />
+    <Content Include="Scripts\AngularPackages\Slick\slick-carousel\slick-theme.css" />
+    <Content Include="Scripts\AngularPackages\Slick\slick-carousel\slick.js" />
+    <Content Include="Scripts\AngularPackages\spin.js" />
+    <Content Include="Scripts\AngularPackages\SweetAlert.min.js" />
+    <Content Include="Scripts\AngularPackages\textAngular-rangy.min.js" />
+    <Content Include="Scripts\AngularPackages\textAngular-sanitize.min.js" />
+    <Content Include="Scripts\AngularPackages\textAngular.min.js" />
+    <Content Include="Scripts\AngularPackages\tv4.js" />
+    <Content Include="Scripts\AngularPackages\ui-grid.js" />
+    <Content Include="Scripts\AngularPackages\ui-sortable.js" />
+    <Content Include="Scripts\AngularPackages\underscore.js" />
+    <Content Include="Scripts\AngularUI\bootstrap.js" />
+    <Content Include="Scripts\AngularUI\bootstrap.min.js" />
+    <Content Include="Scripts\AngularUI\customize.min.js" />
+    <Content Include="Scripts\AngularUI\docs.min.js" />
+    <Content Include="Scripts\AngularUI\ie-emulation-modes-warning.js" />
+    <Content Include="Scripts\AngularUI\ie10-viewport-bug-workaround.js" />
+    <Content Include="Scripts\AngularUI\ie8-responsive-file-warning.js" />
+    <Content Include="Scripts\AngularUI\menu.js" />
+    <Content Include="Scripts\AngularUI\npm.js" />
+    <Content Include="Scripts\AngularUI\raw-files.min.js" />
+    <Content Include="Scripts\AngularUI\ui-bootstrap-csp.css" />
+    <Content Include="Scripts\AngularUI\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\AngularUI\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\AngularUI\ui-bootstrap.js" />
+    <Content Include="Scripts\AngularUI\ui-bootstrap.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-local-storage.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-route.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-toasty.min.js" />
+    <Content Include="Scripts\AngularPackages\angular.min.js" />
+    <Content Include="Scripts\AngularPackages\bootstrap.min.js" />
+    <Content Include="Content\main.less" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\opensans-bold-webfont.eot" />
+    <Content Include="fonts\opensans-bold-webfont.ttf" />
+    <Content Include="fonts\opensans-bold-webfont.woff" />
+    <Content Include="fonts\opensans-bold-webfont.woff2" />
+    <Content Include="fonts\opensans-regular-webfont.eot" />
+    <Content Include="fonts\opensans-regular-webfont.ttf" />
+    <Content Include="fonts\opensans-regular-webfont.woff" />
+    <Content Include="fonts\opensans-regular-webfont.woff2" />
+    <Content Include="Content\ui-grid.woff" />
+    <Content Include="Content\ui-grid.ttf" />
+    <None Include="Properties\PublishProfiles\Apollo.pubxml" />
+    <Content Include="Scripts\AngularPackages\crumble.js" />
+    <Content Include="Scripts\AngularPackages\custom.js" />
+    <Content Include="Scripts\AngularPackages\dev.js" />
+    <Content Include="Scripts\AngularPackages\isteven-multi-select.js" />
+    <Content Include="Scripts\AngularPackages\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\AngularPackages\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\AngularPackages\jquery.min.js" />
+    <Content Include="Scripts\AngularPackages\ng-file-upload-all.js" />
+    <Content Include="Scripts\AngularPackages\ng-img-crop.min.js" />
+    <Content Include="Scripts\AngularPackages\ng-sweet-alert.min.js" />
+    <None Include="Properties\PublishProfiles\Gunasheela.pubxml" />
+    <Content Include="Reports\DataSet\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\MultiplyIVF1.0.pubxml" />
+    <None Include="Properties\PublishProfiles\Yash.pubxml" />
+    <None Include="Reports\DataSet\DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Reports\DataSet\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Content>
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\.bower.json" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\.csscomb.json" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\.github\contributing.md" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\.github\issue_template.md" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\.github\pull_request_template.md" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\.jshintrc" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\.npmignore" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\.stylelintrc" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\.travis.yml" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\demo\favicons\manifest.json" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\LICENSE" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\package.json" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\README.md" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\src\css\datetimepicker.css.map" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\src\scss\datetimepicker.scss" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\src\scss\_core.scss" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-datetimepicker\src\scss\_variables.scss" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\.bower.json" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\bower.json" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\CHANGELOG.md" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\dist\css\angular-bootstrap-calendar.min.css.map" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\dist\js\angular-bootstrap-calendar-tpls.min.js.map" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\dist\js\angular-bootstrap-calendar.min.js.map" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\LICENSE" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\package.json" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\README.md" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\less\calendar.less" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\less\day.less" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\less\events.less" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\less\grid.less" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\less\month.less" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\less\theme.less" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\less\variables.less" />
+    <Content Include="Scripts\AngularPackages\angular-bootstrap-calendar\src\less\week.less" />
+    <Content Include="Scripts\AngularPackages\Slick\slick-carousel\fonts\slick.ttf" />
+    <Content Include="Scripts\AngularPackages\Slick\slick-carousel\fonts\slick.woff" />
+    <Content Include="Scripts\AngularPackages\Slick\slick-carousel\slick-theme.scss" />
+    <Content Include="Scripts\AngularPackages\Slick\slick-carousel\slick.scss" />
+    <None Include="Scripts\AngularPackages\_references.js" />
+    <Content Include="Scripts\AngularPackages\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\AngularPackages\ui-cropper.js" />
+    <Content Include="Scripts\AngularPackages\webcam.min.js" />
+    <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\ARTCycleNavigation\ARTCycleNavigationctr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\CryoPreservationCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\DonarOocyteCtrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\EmbryoThowingCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\EmbryoVitrificationCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\OocyteThowingCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\OocyteVitrificationCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day1Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day2Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day3Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day4Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day5Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day6Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day7Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\EmbrologyMainCtrl.js" />
+    <Content Include="Scripts\app\app_designemr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day0Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\EmbryoTransfer\EmbryoTransferCtrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\IUI\IUICtrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\ARTCycleNavigation\StimulationChartController.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\OPU\OPUCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Outcome\OutcomeCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\PGT\PgtCtrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\ReportUpload\PathalogyReportCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\ReportUpload\ReportUploadCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\SemenDetails\SemenDetailsController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\associateController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\DefaultPageCtlr.js" />
+    <Content Include="Scripts\app\controllers\Authentication\HomeCtlr.js" />
+    <Content Include="Scripts\app\controllers\Authentication\indexController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\LayOutController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\loginController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\refreshController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\signupController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\tokensManagerController.js" />
+    <Content Include="Scripts\app\controllers\Billing\BillingController.js" />
+    <Content Include="Scripts\app\controllers\Billing\ConsumptionCtrl.js" />
+    <Content Include="Scripts\app\controllers\Billing\ConsumptionModalController.js" />
+    <Content Include="Scripts\app\controllers\Billing\PatientAdvanceCtr.js" />
+    <Content Include="Scripts\app\controllers\Billing\PatientAdvanceRefundCtr.js" />
+    <Content Include="Scripts\app\controllers\Billing\PatientBillRefundCtrl.js" />
+    <Content Include="Scripts\app\controllers\Billing\PharmacySalesCtrl.js" />
+    <Content Include="Scripts\app\controllers\Billing\pharmacysalesdetailsmodalCtrl.js" />
+    <Content Include="Scripts\app\controllers\BreadCum\BreadCumCtrl.js" />
+    <Content Include="Scripts\app\controllers\Clinic\AppointmentController.js" />
+    <Content Include="Scripts\app\controllers\Clinic\AppointmentListCtrl.js" />
+    <Content Include="Scripts\app\controllers\Clinic\ClinicController.js" />
+    <Content Include="Scripts\app\controllers\Clinic\DoctorController.js" />
+    <Content Include="Scripts\app\controllers\Clinic\DoctorDailyApptController.js" />
+    <Content Include="Scripts\app\controllers\Clinic\DoctorScheduleLandingController.js" />
+    <Content Include="Scripts\app\controllers\Clinic\NewAppointmentController.js" />
+    <Content Include="Scripts\app\controllers\Consent\ConsentMaster\ConsentIndexCtr.js" />
+    <Content Include="Scripts\app\controllers\Consent\ConsentMaster\ConsentViewCtr.js" />
+    <Content Include="Scripts\app\controllers\CounterSale\CounterSaleCtrl.js" />
+    <Content Include="Scripts\app\controllers\CryoBank\CoupleBankCtr.js" />
+    <Content Include="Scripts\app\controllers\CryoBank\CoupleBankSubmenuCtr.js" />
+    <Content Include="Scripts\app\controllers\CryoBank\CryoBankOocyteCtr.js" />
+    <Content Include="Scripts\app\controllers\CryoBank\CryoBankOocyteSubmenuCtr.js" />
+    <Content Include="Scripts\app\controllers\CryoBank\CryobankSpermCtr.js" />
+    <Content Include="Scripts\app\controllers\CryoBank\CryoBankSpermSubmenuCtr.js" />
+    <Content Include="Scripts\app\controllers\CryoBank\EmbryoBankCtr.js" />
+    <Content Include="Scripts\app\controllers\CryoBank\EmbryoBankSubmenuCtr.js" />
+    <Content Include="Scripts\app\controllers\Donor\DonorCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\Design EMR\EMRTemplateCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\FemaleHistory\CorpusLeteumScanController.js" />
+    <Content Include="Scripts\app\controllers\EMR\Investigation\InvestigationCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\LandingPage\EMRLandingPageCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\Design EMR\DesignEMRCltr.js" />
+    <Content Include="Scripts\app\controllers\EMR\Design EMR\DesignEMRIndexCltr.js" />
+    <Content Include="Scripts\app\controllers\EMR\Diagnosis\DiagnosisCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\FemaleHistory\FemaleComplaintsController.js" />
+    <Content Include="Scripts\app\controllers\EMR\FemaleHistory\FemaleHistoryController.js" />
+    <Content Include="Scripts\app\controllers\EMR\FemaleHistory\FollicularScanController.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\ctlrSemenExtmn.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\ctrlSemenFreez.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\ctrlSemenThawing.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\MaleComplaintsController.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\MaleHistoryController.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\SemenAnalysisController.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\SemenPrepController.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\SurgicalSpermRetrievalController.js" />
+    <Content Include="Scripts\app\controllers\EMR\Prescription\PrescriptionCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\Vitals\VitalsCtrl.js" />
+    <Content Include="Scripts\app\controllers\FinancialKPIs\FinancialChartDisplayCtrl.js" />
+    <Content Include="Scripts\app\controllers\FinancialKPIs\FinancialKPIsCtrl.js" />
+    <Content Include="Scripts\app\controllers\homeController.js" />
+    <Content Include="Scripts\app\controllers\indexController.js" />
+    <Content Include="Scripts\app\controllers\KPI\KPICtr.js" />
+    <Content Include="Scripts\app\controllers\KPI\ManagementCtr.js" />
+    <Content Include="Scripts\app\controllers\Lab\LabTestListCtr.js" />
+    <Content Include="Scripts\app\controllers\Lab\NewLabEntryCtr.js" />
+    <Content Include="Scripts\app\controllers\LinkPartner\LinkPartnerCtrl.js" />
+    <Content Include="Scripts\app\controllers\Master\Clinic\ClinicController.js" />
+    <Content Include="Scripts\app\controllers\Master\Clinic\DepartmentController.js" />
+    <Content Include="Scripts\app\controllers\Master\Clinic\StaffController.js" />
+    <Content Include="Scripts\app\controllers\Master\Clinic\StateController.js" />
+    <Content Include="Scripts\app\controllers\Master\Configuration\ClinicConfigController.js" />
+    <Content Include="Scripts\app\controllers\Master\Configuration\ConvertToDonorCtrl.js" />
+    <Content Include="Scripts\app\controllers\Master\Configuration\UserController.js" />
+    <Content Include="Scripts\app\controllers\Master\Configuration\UserRoleController.js" />
+    <Content Include="Scripts\app\controllers\Master\Patient\PatientVisitController.js" />
+    <Content Include="Scripts\app\controllers\MaterialConsumptionEntry\MaterialConsumptionEntryCtrl.js" />
+    <Content Include="Scripts\app\controllers\MaterialConsumptionList\MaterialConsumptionListController.js" />
+    <Content Include="Scripts\app\controllers\MaterialConsumptionList\MaterialConsumptionListCtrl.js" />
+    <Content Include="Scripts\app\controllers\MISBill\MISBillCtr.js" />
+    <Content Include="Scripts\app\controllers\MISBill\PatientAdvanceReportCtrl.js" />
+    <Content Include="Scripts\app\controllers\MIS\MISCtr.js" />
+    <Content Include="Scripts\app\controllers\New ART\CycleTemplateCtr.js" />
+    <Content Include="Scripts\app\controllers\New ART\NewARTCtlr.js" />
+    <Content Include="Scripts\app\controllers\New ART\PACCtrl.js" />
+    <Content Include="Scripts\app\controllers\New ART\PACViewCtrl.js" />
+    <Content Include="Scripts\app\controllers\NewRegistration\NewRegistrationController.js" />
+    <Content Include="Scripts\app\controllers\PatientDashboard\clinicalDashboardCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientDashboard\customModalCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientDashboard\fertivueDashboardCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientDashboard\PatientDashboardCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientDashboard\PatientListCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientReport\DailyCollectionReportCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientReport\DailyOutstandingReportCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientReport\DailyRevenueReportCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientReport\DiscountRegisterReportCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientReport\PatientAdvanceReportCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientReport\PatientSummaryReportCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientReport\RefundReportCtrl.js" />
+    <Content Include="Scripts\app\controllers\PatientReport\ServiceWiseBillingReportCtrl.js" />
+    <Content Include="Scripts\app\controllers\Patient\RegistrationController.js" />
+    <Content Include="Scripts\app\controllers\QualityControl\QualityControlCtrl.js" />
+    <Content Include="Scripts\app\controllers\QueueMgt\QueueMgtctlr.js" />
+    <Content Include="Scripts\app\controllers\Report\ReportViewCtr.js" />
+    <Content Include="Scripts\app\CycleWisePagesConfig\cycleWisePageConfig.js" />
+    <Content Include="Scripts\app\directives.js" />
+    <Content Include="Scripts\app\filters.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\ARTCycleNavigation\ARTCycleNavigationSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Cryo-Preservation\CryoPreservationSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Cryo-Preservation\DonarOocyteSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Cryo-Preservation\EmbryoThowingSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Cryo-Preservation\EmbryoVitrificationSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Cryo-Preservation\OocyteThowSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayFiveSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayFourSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayOneSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DaySevenSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DaySixSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayThreeSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayTwoSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayZeroSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\EmbrologyMainSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\EmbryoTransfer\EmbryoTransferSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\IUI\IUISrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\ARTCycleNavigation\StimulationChartService.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\MediaConsumption\MediaConsumptionSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\OPU\OPUSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Outcome\OutcomeSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\PGT\PgtSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\ReportUpload\ReportUploadSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\SemenDetails\SemenDetailsService.js" />
+    <Content Include="Scripts\app\services\Authentication\authInterceptorService.js" />
+    <Content Include="Scripts\app\services\Authentication\authService.js" />
+    <Content Include="Scripts\app\services\Authentication\LogInService.js" />
+    <Content Include="Scripts\app\services\Authentication\tokensManagerService.js" />
+    <Content Include="Scripts\app\services\Billing\BillingService.js" />
+    <Content Include="Scripts\app\controllers\Billing\cancelbillmodalopopupctrl.js" />
+    <Content Include="Scripts\app\services\Billing\ConsumptionService.js" />
+    <Content Include="Scripts\app\services\Billing\PatientAdvanceRefundSrv.js" />
+    <Content Include="Scripts\app\services\Billing\PatientAdvanceSrv.js" />
+    <Content Include="Scripts\app\services\Billing\PatientBillRefundSrv.js" />
+    <Content Include="Scripts\app\services\Clinic\AppointmentService.js" />
+    <Content Include="Scripts\app\services\Clinic\DoctorService.js" />
+    <Content Include="Scripts\app\services\Clinic\ScheduleService.js" />
+    <Content Include="Scripts\app\services\Common\CommonService.js" />
+    <Content Include="Scripts\app\services\Consent\ConsentAction\ConsentActionSrv.js" />
+    <Content Include="Scripts\app\services\Consent\ConsentMaster\ConsentIndexSrv.js" />
+    <Content Include="Scripts\app\services\Consent\ConsentMaster\ConsentViewSrv.js" />
+    <Content Include="Scripts\app\services\CounterSale\CounterSaleSrv.js" />
+    <Content Include="Scripts\app\services\CryoBank\CryoBankOocyteSrv.js" />
+    <Content Include="Scripts\app\services\CryoBank\CryobankSpermSrv.js" />
+    <Content Include="Scripts\app\services\Donor\DonorSrv.js" />
+    <Content Include="Scripts\app\services\EMR\FemaleHistory\CorpusLeteumScanService.js" />
+    <Content Include="Scripts\app\services\EMR\Investigation\InvestigationSrv.js" />
+    <Content Include="Scripts\app\services\EMR\LandingPage\EMRLandingPageSrv.js" />
+    <Content Include="Scripts\app\services\EMR\Design EMR\DesignEMRSrv.js" />
+    <Content Include="Scripts\app\services\EMR\Diagnosis\DiagnosisSrv.js" />
+    <Content Include="Scripts\app\services\EMR\FemaleHistory\FemaleComplaintsService.js" />
+    <Content Include="Scripts\app\services\EMR\FemaleHistory\FemaleHistoryService.js" />
+    <Content Include="Scripts\app\services\EMR\FemaleHistory\FollicularScanService.js" />
+    <Content Include="Scripts\app\services\EMR\Design EMR\EMRTemplateSrv.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\MaleComplaintsService.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\MaleHistoryService.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\SemenAnalysisService.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\SemenPrepService.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\srvSemenExtmn.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\srvSemenFreez.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\srvSemenThawing.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\SurgicalSpermRetrievalService.js" />
+    <Content Include="Scripts\app\services\EMR\Prescription\PrescriptionSrv.js" />
+    <Content Include="Scripts\app\services\EMR\Vitals\VitalsSrv.js" />
+    <Content Include="Scripts\app\services\FinancialKPIs\FinancialKPIsSrv.js" />
+    <Content Include="Scripts\app\controllers\IPD\WardCtr.js" />
+    <Content Include="Scripts\app\services\IPD\IPDService.js" />
+    <Content Include="Scripts\app\services\KPI\kpisrv.js" />
+    <Content Include="Scripts\app\services\KPI\Managementsrv.js" />
+    <Content Include="Scripts\app\services\Lab\NewLabEnterySrv.js" />
+    <Content Include="Scripts\app\services\LinkPartner\LinkPartnerSrv.js" />
+    <Content Include="Scripts\app\services\Master\Clinic\ClinicService.js" />
+    <Content Include="Scripts\app\services\Master\Clinic\DepartmentService.js" />
+    <Content Include="Scripts\app\services\Master\Clinic\StaffService.js" />
+    <Content Include="Scripts\app\services\Master\Clinic\StateService.js" />
+    <Content Include="Scripts\app\services\Master\Configuration\ClinicConfigService.js" />
+    <Content Include="Scripts\app\services\Master\Configuration\ConvertToDonorSrv.js" />
+    <Content Include="Scripts\app\services\Master\Configuration\UserRoleService.js" />
+    <Content Include="Scripts\app\services\Master\Configuration\UserService.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="apiapp.json" />
+    <None Include="Properties\PublishProfiles\KendoAngularJS.pubxml" />
+    <None Include="Properties\PublishProfiles\longle - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\longle - Web Deploy.pubxml" />
+    <Content Include="Scripts\app\services\Common\srvCommon.js" />
+    <Content Include="Scripts\app\services\Master\Inventory\StoreService.js" />
+    <Content Include="Scripts\app\services\Master\Patient\PatientVisitService.js" />
+    <Content Include="Scripts\app\services\MaterialConsumptionEntry\MaterialConsumptionEntrySrv.js" />
+    <Content Include="Scripts\app\services\MaterialConsumptionList\MaterialConsumptionListSrv.js" />
+    <Content Include="Scripts\app\services\New ART\NewARTSrv.js" />
+    <Content Include="Scripts\app\services\NewRegistration\NewRegistrationService.js" />
+    <Content Include="Scripts\app\services\PatientDashboard\PatientDashboardSrv.js" />
+    <Content Include="Scripts\app\services\PatientReports\PatientReportsService.js" />
+    <Content Include="Scripts\app\services\Patient\RegistartionService.js" />
+    <Content Include="Scripts\app\services\QualityControl\QualityContolSrv.js" />
+    <Content Include="Scripts\app\services\QueueMgt\QueueMgtSrv.js" />
+    <Content Include="Scripts\app\services\Report\ReportViewSrv.js" />
+    <Content Include="Scripts\app\StoreDataFactory.js" />
+    <Content Include="Scripts\AngularPackages\jquery.signalR-2.2.1.min.js" />
+    <Content Include="Scripts\jquery.bxslider.js" />
+    <Content Include="Scripts\jquery.bxslider.min.js" />
+    <Content Include="Templates\BreadCrumb.html" />
+    <Content Include="Templates\Viewer.html" />
+    <Content Include="Views\DesignEMR\myModalContent.html" />
+    <Content Include="Views\DesignEMR\nodes_renderer.html" />
+    <Content Include="Views\DoctorDailyAppt\DoctorDailyAppt.cshtml" />
+    <Content Include="Views\DoctorDailyAppt\DoctorScheduleLanding.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\SpermPreparation\SpermPreparation.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Authentication\Login.cshtml" />
+    <Content Include="Views\Authentication\SignUp.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\FemaleHistory\FemaleHistory.cshtml" />
+    <Content Include="Views\UserRole\AddUserRole.cshtml" />
+    <Content Include="Views\UserRole\UserRoleList.cshtml" />
+    <Content Include="Views\User\NewUser.cshtml" />
+    <Content Include="Views\User\UserList.cshtml" />
+    <Content Include="Views\SemenFreez\NewSemenFreez.cshtml" />
+    <Content Include="Views\Home\DefaultPage.cshtml" />
+    <Content Include="Views\SemenThawing\SemenThawing.cshtml" />
+    <Content Include="Views\MaleHistory\MaleHistory.cshtml" />
+    <Content Include="Views\DesignEMR\ViewEMR.cshtml" />
+    <Content Include="Views\SurgicalSpermRetrieval\SurgicalSpermRetrieval.cshtml" />
+    <Content Include="Views\SemenExmtn\AddUpdateSemenExmtn.cshtml" />
+    <Content Include="Views\DesignEMR\Index.cshtml" />
+    <Content Include="Views\NewART\NewART.cshtml" />
+    <Content Include="Views\FemaleComplaints\FemaleComplaints.cshtml" />
+    <Content Include="Views\VitalsMVC\VitalsView.cshtml" />
+    <Content Include="Views\DiagnosisMVC\AddDignosis.cshtml" />
+    <Content Include="Views\QueueMgt\QueueList.cshtml" />
+    <Content Include="Views\PrescriptionMVC\Index.cshtml" />
+    <Content Include="Views\SemenPreparation\SemenPreparation.cshtml" />
+    <Content Include="Views\SemenAnalysis\SemenAnalysis.cshtml" />
+    <Content Include="Views\MaleComplaints\MaleComplaints.cshtml" />
+    <Content Include="Views\NewART\ARTCycle.cshtml" />
+    <Content Include="Views\OPUMVC\NewOPU.cshtml" />
+    <Content Include="Views\FollicularScan\FollicularScan.cshtml" />
+    <Content Include="Views\ARTCycleNavigationMVC\ARTCycleNavigation.cshtml" />
+    <Content Include="Views\ReportUploadMVC\UploadReport.cshtml" />
+    <Content Include="Views\IUIMVC\Index.cshtml" />
+    <Content Include="Views\ARTCycleNavigationMVC\StimulationChart.cshtml" />
+    <Content Include="Views\EMRLandingPageMVC\EMRLandingPage.cshtml" />
+    <Content Include="Views\DonorMVC\IndexDonor.cshtml" />
+    <Content Include="Views\DonorMVC\ViewDonor.cshtml" />
+    <Content Include="Views\DonorMVC\NewSample.cshtml" />
+    <Content Include="Views\NewART\CycleOverview.cshtml" />
+    <Content Include="Views\EmbrologyMVC\EmbrologyView.cshtml" />
+    <Content Include="Views\InvestigationMVC\Investigation.cshtml" />
+    <Content Include="Views\CryoPreservationMVC\Index.cshtml" />
+    <Content Include="Views\CryoPreservationMVC\OocyteVitrification.cshtml" />
+    <Content Include="Views\CryoPreservationMVC\EmbryoVitrification.cshtml" />
+    <Content Include="Views\CryoPreservationMVC\OocyteThowing.cshtml" />
+    <Content Include="Views\CryoPreservationMVC\EmbryoThowing.cshtml" />
+    <Content Include="Views\EmbryoTransferMVC\Index.cshtml" />
+    <Content Include="Views\CryoBank\CryobankSperm.cshtml" />
+    <Content Include="Views\SemenDetails\SemenDetails.cshtml" />
+    <Content Include="Views\OutcomeMVC\Outcome.cshtml" />
+    <Content Include="Views\EMRLandingPageMVC\EMRTemplateLandingPage.cshtml" />
+    <Content Include="Views\ARTCycle\ARTCycle.cshtml" />
+    <Content Include="Views\CryoBank\CryoBankOocyte.cshtml" />
+    <Content Include="Views\CryoBank\EmbryoBank.cshtml" />
+    <Content Include="Views\ConsentMasterMVC\LandingPage.cshtml" />
+    <Content Include="Views\ConsentMasterMVC\ViewConcent.cshtml" />
+    <Content Include="Views\ReportView\ViewReport.cshtml" />
+    <Content Include="Views\KPI\Index.cshtml" />
+    <Content Include="Views\ConvertToDonorMVC\Index.cshtml" />
+    <Content Include="Views\CryoBank\CoupleBank.cshtml" />
+    <Content Include="Views\LinkPartner\LinkPartner.cshtml" />
+    <Content Include="Views\MIS\Index.cshtml" />
+    <Content Include="Views\QualityControlMVC\QualityControl.cshtml" />
+    <Content Include="Views\UserRole\ClinicConfig.cshtml" />
+    <Content Include="Views\KPI\Management.cshtml" />
+    <Content Include="Views\Registration\Registration.cshtml" />
+    <Content Include="Views\PatientVisit\PatientVisit.cshtml" />
+    <Content Include="Views\Registration\PatientViewUpdate.cshtml" />
+    <Content Include="Views\Registration\PatientList.cshtml" />
+    <Content Include="Views\InvestigationMVC\OrderCycle.cshtml" />
+    <Content Include="Views\Clinic\Clinic.cshtml" />
+    <Content Include="Views\Clinic\EditClinic.cshtml" />
+    <Content Include="Views\Staff\NewStaff.cshtml" />
+    <Content Include="Views\Staff\StaffList.cshtml" />
+    <Content Include="Views\Doctor\AddDoctor.cshtml" />
+    <Content Include="Views\Doctor\DoctorList.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\CorpusLeteumScan\CorpusLeteumScan.cshtml" />
+    <Content Include="Views\NewRegistration\New_Registration.cshtml" />
+    <Content Include="Views\Appointment\Appointment.cshtml" />
+    <Content Include="Views\Appointment\AppointmentList.cshtml" />
+    <Content Include="Views\Appointment\NewAppointments.cshtml" />
+    <Content Include="Views\Billing\BillList.cshtml" />
+    <Content Include="Views\Billing\PatientBillList.cshtml" />
+    <Content Include="Views\Billing\PrescribedServices.cshtml" />
+    <Content Include="Views\CounterSale\CounterSale.cshtml" />
+    <Content Include="Views\DashboardMVC\PatientDashboard.cshtml" />
+    <Content Include="Views\DashboardMVC\PatientDashboardList.cshtml" />
+    <Content Include="Views\FinancialKPIs\FinancialKPIs.cshtml" />
+    <Content Include="Views\Lab\LabTestList.cshtml" />
+    <Content Include="Views\Lab\NewLabEntery.cshtml" />
+    <Content Include="Views\MaterialConsumptionEntry\MaterialConsumptionEntry.cshtml" />
+    <Content Include="Views\MaterialConsumptionList\MaterialConsumptionList.cshtml" />
+    <Content Include="Views\MISBill\MISBILL.cshtml" />
+    <Content Include="Views\PatientAdvance\Index.cshtml" />
+    <Content Include="Views\PatientAdvanceRefund\Index.cshtml" />
+    <Content Include="Views\NewRegistration\NewPatientList.cshtml" />
+    <Content Include="Views\NewRegistration\NewPatientViewUpdate.cshtml" />
+    <Content Include="Views\NewRegistration\PatientPersonalCharacteristics.cshtml" />
+    <Content Include="Views\NewRegistration\PatientAdditionalInfromation.cshtml" />
+    <Content Include="Views\ReportUploadMVC\PathalogyReport.cshtml" />
+    <Content Include="Views\Billing\PatientNewBilling.cshtml" />
+    <Content Include="Views\PatientAdvance\NewAdvance.cshtml" />
+    <Content Include="Views\DashboardMVC\fertivueDashboard.cshtml" />
+    <Content Include="Views\Billing\NewBilling.cshtml" />
+    <Content Include="Views\PatientAdvanceRefund\AdvanceRefundlist.cshtml" />
+    <Content Include="Views\PatientAdvanceRefund\PatientBillRefundList.cshtml" />
+    <Content Include="Views\PatientAdvanceRefund\NewPatientBillRefund.cshtml" />
+    <Content Include="Views\DashboardMVC\clinicalDashboard.cshtml" />
+    <Content Include="Views\Billing\cancelmodalpopup.cshtml" />
+    <Content Include="Views\MISBill\PatientAdvanceReport.cshtml" />
+    <Content Include="Views\MISBill\DailyCollectionReport.cshtml" />
+    <Content Include="Views\MISBill\DailyOutstandingReport.cshtml" />
+    <Content Include="Views\MISBill\DailyRevenueReport.cshtml" />
+    <Content Include="Views\MISBill\DiscountRegisterReport.cshtml" />
+    <Content Include="Views\MISBill\RefundReport.cshtml" />
+    <Content Include="Views\MISBill\ServiceWiseBillingReport.cshtml" />
+    <Content Include="Views\Billing\AddStock.cshtml" />
+    <Content Include="Views\Billing\Consumption.cshtml" />
+    <Content Include="Views\Billing\PharmacySale.cshtml" />
+    <Content Include="Views\Billing\SalesReturn.cshtml" />
+    <Content Include="Views\Billing\ConsumptionList.cshtml" />
+    <Content Include="Views\Billing\NewPharmacySale.cshtml" />
+    <Content Include="Views\CryoBank\CoupleBankSubMenu.cshtml" />
+    <Content Include="Views\CryoBank\CryoBankOocyteSubmenu.cshtml" />
+    <Content Include="Views\CryoBank\CryoBankSpermSubmenu.cshtml" />
+    <Content Include="Views\CryoBank\EmbryoBankSubmenu.cshtml" />
+    <Content Include="Views\MISBill\PatientSummaryReport.cshtml" />
+    <Content Include="Views\EmbrologyMVC\PGT.cshtml" />
+    <Content Include="Views\UserRole\Ward.cshtml" />
+    <Content Include="Views\UserRole\Bed.cshtml" />
+    <Content Include="Views\UserRole\IPDClass.cshtml" />
+    <Content Include="Views\UserRole\AdmissionList.cshtml" />
+    <Content Include="Views\UserRole\NewAdmission.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">
+      <Project>{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}</Project>
+      <Name>Repository.Pattern.Ef6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Repository.Pattern\Repository.Pattern.csproj">
+      <Project>{6E682A14-C872-4813-B620-76E108DEA683}</Project>
+      <Name>Repository.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Service.Pattern\Service.Pattern.csproj">
+      <Project>{86F86650-EE3C-4372-8FEC-40C2FE015022}</Project>
+      <Name>Service.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBaseConfiguration\DataBaseConfiguration.csproj">
+      <Project>{6a49b5f3-57f9-4216-9ff6-aca73d7c3e32}</Project>
+      <Name>DataBaseConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIVF.BusinessLayer\PIVF.BusinessLayer.csproj">
+      <Project>{d47d4df6-f3ef-4254-b125-db09f28721f8}</Project>
+      <Name>PIVF.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIVF.DataAccessLayer\PIVF.DataAccessLayer.csproj">
+      <Project>{d5a1475a-0199-418e-aa67-2211cc77bff1}</Project>
+      <Name>PIVF.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIVF.Entities\PIVF.Entities.csproj">
+      <Project>{94e81d48-74b2-42eb-b389-f25c8c23f9c4}</Project>
+      <Name>PIVF.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports\ART\ARTSummary\ARTSummaryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ARTSummaryReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\subRptCycleDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subRptCycleDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\subrptEmbryoThawing.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptEmbryoThawing.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\subrptEmbryoVitrification.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptEmbryoVitrification.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\subrptFollicularMonitoring.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptFollicularMonitoring.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\subrptOocyteThawing.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptOocyteThawing.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\subrptOocyteVitrification.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptOocyteVitrification.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\subrptOPUSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptOPUSummary.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\subrptOutcomeDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptOutcomeDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\subrptStimulationChartDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptStimulationChartDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\OPUDischargeSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OPUDischargeSummary.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\subrptEmbryologyDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptEmbryologyDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\subrptEmbryoTransferDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptEmbryoTransferDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\IUICycle\IUICycleReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IUICycleReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\FET\ARTSummary_FET.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ARTSummary_FET.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\FET\subrptFETEmbryoTransfer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptFETEmbryoTransfer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\IUICycle\subrptIUIFollicularMonitoring.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptIUIFollicularMonitoring.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\IUICycle\subrptIUIOutcome.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptIUIOutcome.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\IUICycle\subrptIUIStimulationChartDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptIUIStimulationChartDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\IUICycle\subrptIUISummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptIUISummary.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\IUICycle\subrptIUISummary_Partner.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptIUISummary_Partner.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\IUICycle\subrptPreparationAssessment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptPreparationAssessment.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\OocyteFreezingCycle\OocyteFreezingCycleReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OocyteFreezingCycleReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\OocyteFreezingCycle\subrptOFEmbryology.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptOFEmbryology.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\OocyteFreezingCycle\subrptOFFollicularMonitoring.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptOFFollicularMonitoring.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\OocyteFreezingCycle\subrptOFOPUSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptOFOPUSummary.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\OocyteFreezingCycle\subrptOFStimulationChartDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subrptOFStimulationChartDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\Cycle\EmbryoTransferDetailReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmbryoTransferDetailReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\Cycle\StimulationChartDetailReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StimulationChartDetailReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\Embrology\RP_Embrology.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RP_Embrology1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\FET\NewArtSummary_FET.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NewArtSummary_FET.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\ARTSummary\NewArtSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NewArtSummary.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\IUICycle\NewIUICycleReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NewIUICycleReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\ART\Follicular\FollicularScan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FollicularScan.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Reports\Appointment\AppointmentDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AppointmentDetails1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ART\ARTSummary\Separate_Embryology_Report\EmbryologyReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmbryologyReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ART\CorpusLeteum\CorpusLeteumScan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CorpusLeteumScan1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ART\OocyteFreezingCycle\NewOocyteFreezingCycle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NewOocyteFreezingCycle.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EmbryoBank\EmbryoBankExpiryDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmbryoBankExpiryDetails1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EmployeeList.rdlc" />
+    <EmbeddedResource Include="Reports\EmployeeReport.rdlc" />
+    <EmbeddedResource Include="Reports\EMR\DonorSampleCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DonorSampleCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EMR\PriscriptionCR.resx">
+      <DependentUpon>PriscriptionCR.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reports\EMR\PriscriptionCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PriscriptionCR.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\EMR\InvestigationSrvCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvestigationSrvCR.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Reports\EMR\PP.rdlc" />
+    <Content Include="Reports\EMR\RadiologyCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadiologyCR.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\EMR\SemenAnalysisCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SemenAnalysisCR.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\EMR\Summary\SummaryCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SummaryCR.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\EMR\SemenProcessingReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SemenProcessingReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\EMR\SurgicalSpermRetrievalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SurgicalSpermRetrievalReport.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\EMR\Summary\SummaryCRNew.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SummaryCRNew.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\EMR\SemenFreez.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SemenFreez1.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Reports\EMR\TemplateReports\AcupunctureFullCycle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AcupunctureFullCycle.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EMR\TemplateReports\AcupuncturePerSession.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AcupuncturePerSession.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EMR\TemplateReports\ENDOMETRIALBIOPSY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ENDOMETRIALBIOPSY.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EMR\TemplateReports\HVSREPORT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HVSREPORT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EMR\TemplateReports\PapSmearCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PapSmearCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EMR\TemplateReports\SonohysrogramReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SonohysrogramReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EMR\UnitDetails.rdlc" />
+    <Content Include="Reports\History\Female History\FemaleHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FemaleHistory.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\Patient Common\PatientCommon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientCommon.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\UnitHeader\subRptPatientData_ART.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subRptPatientData_ART.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\UnitHeader\SubRptTherapyDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SubRptTherapyDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\UnitHeader\UnitHeader.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UnitHeader.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Reports\History\Female History\FemaleHistory_Old.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FemaleHistory_Old.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Reports\History\Male History\MaleHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MaleHistory.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Reports\History\Male History\MaleHistory_Old.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MaleHistory_Old.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Reports\MIS\PatientActivityCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientActivityCR1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\MIS\PatientETdetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientETdetails1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\MIS\PatientOPUdetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientOPUdetails1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\KPI\KPI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>KPI.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\Management\CumulativeCase.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CumulativeCase.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\Management\ClinicWise.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClinicWise1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reports\Management\DoctorWise.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DoctorWise.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Reports\InventoryPharmacy\MaterialConsumption.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MaterialConsumption1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Inventory\CounterSale_Rpt_New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CounterSale_Rpt_New1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Lab\rptPathoResultEntry.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPathoResultEntry1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MIS\CycleDetailsCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CycleDetailsCR1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MIS\InvestigationDetailsCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvestigationDetailsCR1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MIS\PrescriptionDetailsCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrescriptionDetailsCR1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MIS\ProcedureCycleAdviceDetailsCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProcedureCycleAdviceDetailsCR1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MIS\VisitDetailsCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VisitDetailsCR1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\NewRegistration\RegistrationReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RegistrationReport3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\NewRegistration\rptRegistration.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRegistration2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\New_Billing\MIS Reports\DailyCollection\DailyCollection.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DailyCollection2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\New_Billing\MIS Reports\DiscountRegisterReport\DiscountRegisterReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DiscountRegisterReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\New_Billing\MIS Reports\OutstandingReport\OutstandingReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OutstandingReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\New_Billing\MIS Reports\ServiceWiseBillReport\ServiceWiseBilling.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ServiceWiseBilling1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\New_Billing\NewBilling.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NewBilling2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\New_Billing\SettleBillReport\RPSettleBill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPSettleBill2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\New_Billing\SettleBill\SettleBill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SettleBill2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\OocyteBank\OocyteBankExpiryDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OocyteBankExpiryDetails1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PatientAdvanceRefund\rpt_PatientAdvanceRefund.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PatientAdvanceRefund1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PatientAdvance\rpt_PatientAdvanceReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PatientAdvanceReceipt1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PatientDashboard\PatientDashboardList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientDashboardList1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SpermBank\SpermBankExpiryDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SpermBankExpiryDetails1.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.S3.3.7.415.25\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.S3.3.7.415.25\analyzers\dotnet\cs\SharedAnalysisCode.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12106</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5000/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,303 @@
+﻿
+@{
+    Layout = null;
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+<style>
+    #content {
+        padding: 2%;
+    }
+
+    .header {
+        text-align: center;
+    }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+    .report-info {
+        text-align: center;
+        margin: 20px;
+        font-size: 14px;
+    }
+
+    .custom-table-container {
+        /*max-height: 518px;*/
+        height: calc(100vh - 540px);
+        overflow-y: auto;
+        overflow-x: auto;
+        width: 100%;
+        position: relative;
+    }
+
+    .unique-table-class {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+        position: relative;
+    }
+
+        .unique-table-class th,
+        .unique-table-class td {
+            border: 1px solid #dcdbdb;
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+            white-space: nowrap; /* Prevent word breaking */
+        }
+
+        .unique-table-class th {
+            /*background-color: #f2f2f2;*/
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: #F6F9FB;
+            color: #5895A6;
+        }
+
+        .unique-table-class tfoot {
+            position: sticky;
+            bottom: 0;
+            z-index: 2;
+            /*background-color: #f2f2f2;*/
+            background: #F6F9FB;
+            color: #5895A6;
+        }
+
+            .unique-table-class tfoot td {
+                font-weight: bold;
+                /*background-color: #f2f2f2;*/
+                background: #F6F9FB;
+            }
+
+    .reportHeading {
+        color: #5895A6;
+        text-decoration: underline;
+        margin: 10px;
+    }
+
+    .reportHeadingBox {
+        border-bottom: 1px solid gray;
+        font-family: none;
+    }
+
+    .no-table-styles {
+        max-height: none !important;
+        overflow-y: visible !important;
+        overflow-x: visible !important;
+        border: none !important;
+    }
+</style>
+
+
+
+
+
+
+
+
+<div class="form_Content " ng-controller="RefundReportCtrl" ng-init="loadData()" style="min-height: 125px;">
+    <div class="row form-horizontal">
+        <div class="col-md-3 col-lg-3" ng-if="MIS.reportType!=5">
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblFromDate:</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="input-group date">
+                        <input type="text"
+                               class="form-control"
+                               id="fromDate"
+                               placeholder="dd-MMM-yyyy"
+                               ng-model="MIS.fromDate"
+                               uib-datepicker-popup="{{format}}"
+                               show-button-bar="false"
+                               is-open="month1.opened"
+                               datepicker-options="dateOptionsFrom"
+                               ng-focus="month1.opened=true"
+                               tabindex="">
+                        <span class="input-group-addon" ng-click="month1.opened=true">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-lg-3" ng-if="MIS.reportType!=5">
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblToDate:</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="input-group date">
+                        <input type="text"
+                               class="form-control"
+                               id="toDate"
+                               placeholder="dd-MMM-yyyy"
+                               ng-model="MIS.toDate"
+                               uib-datepicker-popup="{{format}}"
+                               show-button-bar="false"
+                               is-open="month2.opened"
+                               datepicker-options="dateOptionsTo"
+                               ng-focus="month2.opened=true"
+                               tabindex="">
+                        <span class="input-group-addon" ng-click="month2.opened=true">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-lg-3">
+            <div class="form-group">
+                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblClinic</label>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <select id="ddlChartList"
+                            class="form-control"
+                            name="ddlChartList"
+                            ng-model="MIS.clinicID"
+                            ng-options="item.UnitID as item.UnitName for item in ListClinic">
+                        <option value="" selected disabled>@PIVF.LanguageResource.Resources.msgSelClinic</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-lg-3 col-lg-offset-9 text-right">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <button class="btn btn-primary" type="button" id="" value="" ng-click="viewReport()">@PIVF.LanguageResource.Resources.lblView</button>
+                    <button class="btn btn-primary" type="button" id="" value="" ng-if="reportData.length" ng-click="downloadReportNewWithPreview()">@PIVF.LanguageResource.Resources.lblDownload</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    @* ------------------------------ *@
+
+
+    <div class="customReport" ng-if="reportData.length">
+        <div id="content">
+            <div class="header">
+
+                @*<h1>{{reportData[0].UnitName}}</h1>
+                    <p>{{reportData[0].Address}}</p>
+                    <p>Contact No.: {{reportData[0].ContactNO}}</p>
+                    <p>Email ID: {{reportData[0].Email}}</p>*@
+                <div class="reportHeadingBox">
+                    <h2 class="reportHeading">@PIVF.LanguageResource.Resources.lblRefundReport</h2>
+                </div>
+
+            </div>
+
+            <div class="report-info">
+                <p>@PIVF.LanguageResource.Resources.lblFromDate: {{CustomFdate}} &nbsp;&nbsp; @PIVF.LanguageResource.Resources.lblToDate: {{CustomTdate}}</p>
+            </div>
+
+            <div class="custom-table-container">
+
+                @*<table id="data-table" class="unique-table-class">
+                        <thead>
+                            <tr>
+                                <th>Sr. No.</th>
+                                <th>Refund Date</th>
+                                <th>Refund Receipt No.</th>
+                                <th>Patient Name</th>
+                                <th>lblAmount</th>
+                                <th>Mode Of Payment</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="data in reportData track by $index">
+                                <td>{{$index + 1}}</td>
+                                <td>{{ data.RefundDate | date:'dd-MMM-yyyy' }}</td>
+                                <td>{{ data.RefundReceiptNo }}</td>
+                                <td>{{ data.PatientName }}</td>
+                                <td>{{ data.Amount }}</td>
+                                <td>{{ data.ModeOfPaymentDetails }}</td>
+                                <td>{{ data.Remarks }}</td>
+                            </tr>
+                        </tbody>
+                    </table>*@
+
+                <table id="data-table" class="unique-table-class">
+                    <thead>
+                        <tr>
+                            <th>@PIVF.LanguageResource.Resources.lblSr_No</th>
+                            <th>@PIVF.LanguageResource.Resources.plblRefunddate</th>
+                            <th>@PIVF.LanguageResource.Resources.plblrefundreceiptno.</th>
+                            <th>@PIVF.LanguageResource.Resources.lblPatientName</th>
+                            <th>@PIVF.LanguageResource.Resources.lblAmount</th>
+                            <th>@PIVF.LanguageResource.Resources.plblmodeofpayment</th>
+                            <th>@PIVF.LanguageResource.Resources.plblremarks</th>
+                            <th>@PIVF.LanguageResource.Resources.plblrefundby</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="data in reportData track by $index">
+                            <td>{{$index + 1}}</td>
+                            <td>{{ data.RefundDate | date:'dd-MMM-yyyy' }}</td>
+                            <td>{{ data.RefundReceiptNo }}</td>
+                            <td>{{ data.PatientName }}</td>
+                            <td>{{ data.Amount }}</td>
+                            <td>{{ data.ModeOfPaymentDetails }}</td>
+                            <td>{{ data.Remarks }}</td>
+                            <td>{{ data.RefundBy }}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" style="text-align:right;">@PIVF.LanguageResource.Resources.plblTotalamount:</td>
+                            <td>{{ getTotalAmount() }}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+

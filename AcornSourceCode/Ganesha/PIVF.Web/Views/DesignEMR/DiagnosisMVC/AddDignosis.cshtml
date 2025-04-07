@@ -1,0 +1,364 @@
+﻿@{Layout = null;}
+<form ng-controller="DiagnosisCtr" name="frmDiagnosis">
+    <div ng-init="PageSetup()">
+        <!--Navigate-->
+        <div class="f-right">
+            <a class="link" href="" ng-click="btnClick()">{{btnText}}</a>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 col-md-5 TableSection">
+                <div class="row">
+                    <section class="col-lg-12"><h5 class="subTitle">Diagnosis</h5></section>
+                    <div class="col-lg-12">
+                        <div style="min-height:485px; overflow:auto;" class="table-responsive tblWhiteBg" ng-scrollbars ng-scrollbars-config="config">
+                            <table class="table" id="">
+                                <thead>
+                                    <tr>
+                                        <th width="120" ng-click="SortData1('TDate')">Date<div ng-class="sortClass1"></div></th>
+                                        <th width="120" ng-click="SortData1('Code')">Code<div ng-class="sortClass1"></div></th>
+                                        <th width="245" ng-click="SortData1('Diagnosis')">Diagnosis<div ng-class="sortClass1"></div></th>
+                                        <th width="245" ng-click="SortData1('DiagnosisType')">Diagnosis Type<div ng-class="sortClass1"></div></th>
+                                        <th width="245" ng-click="SortData1('AddedByUserName')">Doctor<div ng-class="sortClass1"></div></th>
+                                        <th width="100">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    <tr ng-repeat="item in ListPatientDiagnosis |orderBy:SortColumn1:reverseSort1">
+                                        @*|orderby:SortColumn:reverseSort*@
+                                        <td>{{item.TDate | date:"dd-MMM-yyyy" }}</td>
+                                        <td>{{item.Code}}</td>
+                                        <td>{{item.Diagnosis}}</td>
+                                        <td>{{item.DiagnosisType}}</td>
+                                        <td>{{item.AddedByUserName}}</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn_delete" data-toggle="modal" data-target=".DeletePatientDiagnosis" ng-click="objRgtDia.IsUpdate?SetPatientValue(item):0"></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 TabSection">
+                <div class="row horizontalTab">
+                    <div class="col-lg-12 col-md-12 m-t-10">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="" class="active"><a data-target="#icd" data-toggle="tab" aria-controls="home" ng-click="TabChange(1)">ICD</a></li>
+                            <li role=""><a data-target="#new" aria-controls="profile" role="tab" data-toggle="tab" ng-click="TabChange(2)">Other Diagnosis</a></li>
+                            <li role=""><a data-target="#favouriteDiagnosis" aria-controls="messages" role="tab" data-toggle="tab" ng-click="TabChange(3)">Favourite Diagnosis</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            @*Tab ICD Start*@
+                            <div role="tabpanel" class="tab-pane active" id="icd">
+                                <div class="row">
+                                    <div class="col-md-7 col-lg-5 m-b-10">
+                                        <div class="input-group cursorPointer">
+                                            <input type="text" class="form-control" id="exampleInputAmount" placeholder="" ng-model="Diagnosis">
+                                            <div class="btn input-group-addon"><span class="glyphicon glyphicon-search" ng-click="FillDiagnosis()"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="table-responsive fixed_header" >
+                                            <table class="table table-hover table-striped table-bordered" style="min-width: 670px;" >
+                                                <thead>
+                                                    <tr>
+                                                        <th st-ratio="15">Select</th>
+                                                        <th st-ratio="20" width="120" ng-click="SortData('Code')">Code<div ng-class="sortClass"></div></th>
+                                                        <th st-ratio="50" width="245" ng-click="SortData('Diagnosis')">Diagnosis<div ng-class="sortClass"></div></th>
+                                                        <th st-ratio="20" width="125">Type</th>
+                                                        <th st-ratio="10" width="50">&nbsp;</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="min-height:265px;max-height:265px;">
+                                                    <tr ng-repeat="item in ListDiagnosis |orderBy:SortColumn:reverseSort">
+                                                        <td st-ratio="15" class="text-center">
+                                                            <input type="checkbox" ng-model="item.IsSelected" class="" id="" placeholder="">  <!--ng-change="Checked(item,item.IsSelected)"-->
+                                                        </td>
+                                                        <td st-ratio="20">{{item.Code}}</td>
+                                                        <td st-ratio="50">{{item.Diagnosis}}</td>
+                                                        <td st-ratio="20">
+                                                            <select id="ddlDiagnosisType"
+                                                                    ng-model="item.DiagnosisTypeID"
+                                                                    ng-disabled="!item.IsSelected"
+                                                                    class="form-control"
+                                                                    ng-options="item.ID as item.Description for item in DiagnosisType"></select>
+                                                        </td>
+                                                        <td st-ratio="10" class="text-center">
+                                                            <div ng-if="item.IsFavourite">
+                                                                <span class="dislike" ng-click="objRgtDia.IsUpdate?SetFavourite(item,0):0"></span>
+                                                            </div>
+                                                            <div ng-if="!item.IsFavourite">
+                                                                <span class="like" ng-click="objRgtDia.IsUpdate?SetFavourite(item,1):0"></span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbodystyle="min-height:280px;max-height:335px;">
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Save Cancle Buttons -->
+                                <div class="row form-horizontal m-t-20">
+                                    <div class="col-md-12 col-lg-8">
+                                        <uib-pagination total-items="TotalItems" ng-model="CurrentPage" ng-change="PageChange()" max-size="5" class="m-t-0 pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="10" first-text="First" previous-text="Previous" next-text="Next" last-text="Last"></uib-pagination>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4 m-t-5 text-right">
+                                        <button class="btn btn-primary" type="button" ng-click="SavePatientDiagnosis(ListDiagnosis)" id="btnSaveDiagnosis" value="" ng-disabled="IsVisitMarked"> Save</button>
+                                        <button class="btn btn-default" type="button" id="" value="" ng-click="CancelMain()"> Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            @*Tab ICD End*@
+                            @*Other Diagnosis Start*@
+                            <div role="tabpanel" class="tab-pane " id="new">
+                                <div class="row">
+                                    <div class="col-md-7 col-lg-5 m-b-10">
+                                        <div class="input-group cursorPointer">
+                                            <input type="text" class="form-control" id="exampleInputAmount" placeholder="" ng-model="search.SearchColumns">
+                                            <div class="btn input-group-addon"><span class="glyphicon glyphicon-search" @*ng-click="FillOtherDiagnosis()"*@></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 text-right">
+                                        <button class="btn btn-txt-link m-b-0 m-t-7" data-toggle="modal" type="button" id="" value="New" data-target="#NewPopup" ng-click="AddNewOtherDiagnosis()">New</button>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="table-responsive fixed_header">
+                                            <table class="table table-hover table-striped table-bordered" id="" style="min-width:700px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th st-ratio="10">Select</th>
+                                                        <th st-ratio="10" ng-click="SortData('Code')">Code<div ng-class="sortClass"></div></th>
+                                                        <th st-ratio="35" ng-click="SortData('Diagnosis')">Diagnosis<div ng-class="sortClass"></div></th>
+                                                        <th st-ratio="20">Type</th>
+                                                        <th st-ratio="15" ng-click="SortData('AddedByUserName')">Added by<div ng-class="sortClass"></div></th>
+                                                        <th st-ratio="5">&nbsp;</th>
+                                                        <th st-ratio="5">&nbsp;</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="min-height:265px;max-height:265px;">
+                                                    <tr ng-repeat="item in ListOtherDiagnosis | filter:search |orderBy:SortColumn:reverseSort">
+                                                        <td st-ratio="10" class="text-center">
+                                                            <input type="checkbox" ng-model="item.IsSelected" class="" id="" placeholder="">
+                                                        </td>
+                                                        <td st-ratio="10">{{item.Code}}</td>
+                                                        <td st-ratio="35">{{item.Diagnosis}}</td>
+                                                        <td st-ratio="20">
+                                                            <select id="ddlDiagnosisType"
+                                                                    ng-model="item.DiagnosisTypeID"
+                                                                    class="form-control"
+                                                                    ng-disabled="!item.IsSelected"
+                                                                    ng-options="item.ID as item.Description for item in DiagnosisType"></select>
+                                                        </td>
+                                                        <td st-ratio="15">{{item.AddedByUserName}}</td>
+                                                        <td st-ratio="5" class="text-center">
+                                                            <div ng-if="item.IsFavourite">
+                                                                <span class="dislike" ng-click="objRgtDia.IsUpdate?SetFavourite(item,0):0"></span>
+                                                            </div>
+                                                            <div ng-if="!item.IsFavourite">
+                                                                <span class="like" ng-click="objRgtDia.IsUpdate?SetFavourite(item,1):0"></span>
+                                                            </div>
+                                                        </td>
+                                                        <td st-ratio="5" class="text-center">
+                                                            <button type="button" class="btn btn_delete" data-toggle="modal" ng-click="objRgtDia.IsUpdate?SetValue(item):0"></button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-horizontal m-t-20">
+                                    <div class="col-lg-12 text-right  m-t-5">
+                                        <div class="bottomBtn">
+                                            <button class="btn btn-primary" type="button" id="btnSaveOthrDiagnosis" value="" ng-click="SavePatientDiagnosis(ListOtherDiagnosis)" ng-disabled="IsVisitMarked"> Save</button>  @*ng-click="SavePatientOtherDiagnosis()"*@
+                                            <button class="btn btn-default" type="button" id="" value="" ng-click="CancelMain()">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*Other Diagnosis End*@
+                            @*Favourite Diagnosis Start*@
+                            <div role="tabpanel" class="tab-pane" id="favouriteDiagnosis">
+                                <div class="row">
+                                    <div class="col-md-7 col-lg-5 m-b-10">
+                                        <div class="input-group cursorPointer">
+                                            <input type="text" class="form-control" id="exampleInputAmount" placeholder="" ng-model="search1.SearchColumns">
+                                            <div class="btn input-group-addon"><span class="glyphicon glyphicon-search" @*ng-click="FillFavouriteDiagnosis()"*@></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="table-responsive fixed_header">
+                                            <table class="table table-hover table-striped table-bordered" id="">
+                                                <thead>
+                                                    <tr>
+                                                        <th st-ratio="15">Select</th>
+                                                        <th st-ratio="15" ng-click="SortData('Code')">Code<div ng-class="sortClass"></div></th>
+                                                        <th st-ratio="40" ng-click="SortData('Diagnosis')">Diagnosis<div ng-class="sortClass"></div></th>
+                                                        <th st-ratio="25">Type</th>
+                                                        <th st-ratio="5">&nbsp;</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="min-height:265px;max-height:265px;">
+                                                    <tr ng-repeat="item in ListFavouriteDiagnosis |filter:search1.SearchColumns  |orderBy:SortColumn:reverseSort">
+                                                        <td  st-ratio="15" class="text-center">
+                                                            <input type="checkbox" ng-model="item.IsSelected" class="" id="" placeholder="">
+                                                        </td>
+                                                        <td st-ratio="15" data-title="'Code'" sortable="'Code'">{{item.Code}}</td>
+                                                        <td st-ratio="40">{{item.Diagnosis}}</td>
+                                                        <td st-ratio="25">
+                                                            <select id="ddlDiagnosisType"
+                                                                    ng-disabled="!item.IsSelected"
+                                                                    ng-model="item.DiagnosisTypeID"
+                                                                    class="form-control"
+                                                                    ng-options="item.ID as item.Description for item in DiagnosisType"></select>
+                                                        </td>
+                                                        <td st-ratio="5" class="text-center">
+                                                            <button type="button" class="btn btn_delete" data-toggle="modal" data-target=".bs-example-modal-sm" ng-click="objRgtDia.IsUpdate?SetFavValue(item):0"></button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row form-horizontal m-t-20">
+                                <div class="col-lg-12 text-right  m-t-5">
+                                    <button class="btn btn-primary" type="button" id="btnSaveFavDiagnosis" value="" ng-click="SavePatientFavDiagnosis()" ng-disabled="IsVisitMarked"> Save</button>
+                                    <button class="btn btn-default" type="button" id="" value="" ng-click="CancelMain()"> Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                        @*Favourite Diagnosis End*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--trancsaction data  Delete option model -->
+    <div class="modal fade edit-modal" tabindex="-1" id="DeletePatient" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Reason</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 ">
+                            <div class="form-group ">
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <textarea class="form-control" rows="2" ng-model="PDataReason" id="PDataReason" name="PDataReason" ng-class="{select:frmDiagnosis.PDataReason.$invalid && frmDiagnosis.PDataReason.$dirty}" ng-required="true" maxlength="200"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="DeletePatientDiagnosis()">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelPatient()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delete option model -->
+    <div class="modal fade edit-modal" id="DeleteFavModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Reason</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 ">
+                            <div class="form-group ">
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <textarea class="form-control" rows="2" ng-model="Reason" name="Reason" id="Reason" ng-class="{select:frmDiagnosis.Reason.$invalid && frmDiagnosis.Reason.$dirty}" ng-required="true" maxlength="200"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="RemoveFavourite()">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelFav()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+    </div>
+    @*add new other popup*@
+    <div class="modal fade edit-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">New</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 ">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">Code</label>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <input type="text" class="form-control" id="Code" name="Code" placeholder="" ng-class="{select:frmDiagnosis.Code.$invalid && frmDiagnosis.Code.$dirty}" ng-model="OtherDiagnosis.Code" ng-required="true" maxlength="50">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 ">
+                            <div class="form-group ">
+                                <label class="col-md-12 col-sm-12 col-lg-12 control-label" for="">Description</label>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <textarea type="text" class="form-control" id="Diagnosis" name="Diagnosis" placeholder="" ng-class="{select:frmDiagnosis.Diagnosis.$invalid && frmDiagnosis.Diagnosis.$dirty}" ng-model="OtherDiagnosis.Diagnosis" ng-required="true" maxlength="100"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="SaveOtherDiagnosis()" ng-disabled="IsVisitMarked">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelNewOther()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--other diagnosis Delete option model -->
+    <div class="modal fade edit-modal" id="DeleteOtherDiagnosis1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"> Reason</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 ">
+                            <div class="form-group ">
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <textarea type="text" class="form-control" id="DeleteReason" name="DeleteReason" placeholder="" ng-model="DeleteReason" ng-class="{select:frmDiagnosis.DeleteReason.$invalid && frmDiagnosis.DeleteReason.$dirty}" ng-required="true" maxlength="200"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="DeleteOtherDiagnosis()">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelDeleteOther()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

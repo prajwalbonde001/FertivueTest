@@ -1,0 +1,169 @@
+﻿
+<div class="row page_cyclesLanding ARTCycle" ng-controller="ctrlNewART">
+    <div class="col-md-12 col-lg-12 col-sm-12" ng-init="GetARTCycleList();GetUserrights()">
+
+        <div class="btn_cycles m-t-10" style="position: relative;
+        z-index: 11;">
+            <button type="button" id="btnNewCycle" ng-click="OpenNewART()" ng-disabled="ArtbtnFlag" class="f-right btn-txt-link">@PIVF.LanguageResource.Resources.lblcNewCycle</button>
+
+            @*<button type="button">Dashboard</button>*@
+        </div>
+        <div class="clear"></div>
+
+        <div class="form_Content p-0">
+            <div class="table-responsive fixed_header ARTCycleGrid" style="position: relative;
+        z-index: 11;">
+                @*min-height:350px;max-height:540px*@
+                <table class="table" style="min-width:3000px;">
+                    <thead>
+                        <tr>
+                            <th st-ratio="3" style="text-align:center">@PIVF.LanguageResource.Resources.lblcSNo</th>
+                            <th st-ratio="1">&nbsp;</th>
+                            <th st-ratio="7" ng-click="SortData1('CycleCode')">@PIVF.LanguageResource.Resources.lblCycleCode<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="5" ng-click="SortData1('LMP')">@PIVF.LanguageResource.Resources.lblLMP<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="4" ng-click="SortData1('ARTType')">@PIVF.LanguageResource.Resources.lblART<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="6" ng-click="SortData1('Protocol')">@PIVF.LanguageResource.Resources.lblProtocol<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="8" ng-click="SortData1('Indication')">@PIVF.LanguageResource.Resources.lblIndication<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="8" ng-click="SortData1('SourceOfSperm')">@PIVF.LanguageResource.Resources.lblcSemenSource<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="4" ng-click="SortData1('Follicles')">#@PIVF.LanguageResource.Resources.lblcFollicles<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="6" ng-click="SortData1('OPUDate')">@PIVF.LanguageResource.Resources.lblcOPU<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="4" ng-click="SortData1('Oocytes')">#@PIVF.LanguageResource.Resources.lblcOocytes<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="5" ng-click="SortData1('Fertilized')">#@PIVF.LanguageResource.Resources.lblcFertilized<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="5" ng-click="SortData1('Cleaved')">#@PIVF.LanguageResource.Resources.lblcCleaved<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="4" ng-click="SortData1('OocyteCryo')">#@PIVF.LanguageResource.Resources.lblcCryo<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="7" ng-click="SortData1('TransferDate')">@PIVF.LanguageResource.Resources.lblcEmbryoTransfer<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="5" ng-click="SortData1('BHCG')">@PIVF.LanguageResource.Resources.lblcBHCGUPT<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="9" ng-click="SortData1('PregConfDate')">@PIVF.LanguageResource.Resources.lblcPregnancyConfirmation<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="5" ng-click="SortData1('Remainingembryo')">@PIVF.LanguageResource.Resources.lblcRemainingEmbryos<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="4" ng-click="SortData1('Status')">@PIVF.LanguageResource.Resources.lblcCycleStatus<div ng-class="sortClass1"></div></th>
+                            <th st-ratio="5" ng-click="SortData1('CancelCycleReason')">@PIVF.LanguageResource.Resources.lblcCancelRemark<div ng-class="sortClass1"></div></th>
+                        </tr>
+                    </thead>
+                    <tbody style="min-height: 350px; height: calc(100vh - 320px);">
+                        @*style="height:500px"*@
+                        <tr ng-repeat="item in ARTCycleList|orderBy:SortColumn1:reverseSort1"
+                            ng-class="{'open_trBg':   item.IsCancel == 0 && item.Status == 1
+                                     , 'close_trBg':  (item.IsCancel == 0 && item.Status == 0)
+                                     , 'cancel_trBg': item.IsCancel == 1 } ">
+                            <td st-ratio="3" align="center">{{$index+1}}</td>
+                            <td st-ratio="1" class="cycle_actions" align="center">
+                                <div class="dropdown">
+                                    <a href="" class="dropdown-toggle" id="cycleAction_1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        <span class="glyphicon glyphicon-cog"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="cycleAction_1">
+                                        <li><a class="cursorPointer" data-toggle="modal" ng-click="CycleIDs.ID=item.ID;CycleIDs.UnitID=item.UnitID;CycleIDs.OcyteRetrived=item.OcyteRetrived;CycleIDs.RemainingOcytes=item.RemainingOcytes;CycleIDs.RemainingEmbriyo=item.RemainingEmbriyo" data-target=".closeCycleModal">@PIVF.LanguageResource.Resources.lblcCloseCycle</a></li>
+                                        <li><a href="" ng-click="PrintSummary(item.ID,item.UnitID,item.ArtTypeID, item.ArtSubTypeID)">@PIVF.LanguageResource.Resources.lblcSummaryReport</a></li>
+                                        <li ng-hide="item.ArtTypeID==2"><a href="" ng-click="PrintEmbryologySummary(item.ID,item.UnitID,item.ArtTypeID, item.ArtSubTypeID)">@PIVF.LanguageResource.Resources.lblcEmbryologySummary</a></li>
+                                        @*<li><a href="">Investigations/Procedures</a></li>
+                                            <li><a href="">Ultrasonography</a></li>
+                                            <li><a href="">Stimulation Chart</a></li>
+                                            <li><a href="">OPU</a></li>
+                                            <li><a href="">Embryology</a></li>
+                                            <li><a href="">Embryo Transfer</a></li>
+                                            <li><a href="">Outcome</a></li>*@
+                                    </ul>
+                                </div>
+                            </td>
+                            <td st-ratio="7"><a href="" ng-click="CycleNavigate(item)" class="txt_bold">{{item.CycleCode}}</a></td>
+                            <td st-ratio="5">{{item.LMP|date:'dd-MMM-yyyy'}}</td>
+                            <td st-ratio="4">{{item.ARTType}}<br> <b>{{item.ARTSubType}}</b></td>
+                            <td st-ratio="6">{{item.Protocol}}</td>
+                            <td st-ratio="8">{{item.Indication}}</td>
+                            @*<td class="toolTip">
+                                    <span class="tooltip-top" ng-class="{tooltiptext:item.Indication!=''}">
+                                        <span class="tooltiptext tooltip-top">{{item.Indication}}</span>
+                                        <span class="txt_ellipsis">{{item.Indication}}</span>
+                                    </span>
+                                </td>*@
+                            <td st-ratio="8">
+                                <div ng-if="item.SourceOfSpermID==3">{{item.SourceOfSperm}}<br> <b>{{item.PartnrSpCollMethod}} + {{item.DonorSpCollMethod}}</b></div>
+                                <div ng-if="item.SourceOfSpermID!=3">{{item.SourceOfSperm}}<br> <b>{{item.PartnrSpCollMethod}}</b></div>
+                            </td>
+                            <td st-ratio="4">{{item.Follicles}}</td>
+                            <td st-ratio="6">
+                                <div ng-if="item.ARTType=='OPU'">{{item.OPUDate | date : 'dd-MMM-yyyy'}} <br> <span class="opu_status txt_red"><span ng-class="{'red_point': !item.IsOPUFinalize , 'green_point': item.IsOPUFinalize }"></span> {{ !item.IsOPUFinalize?'Pending':'Complete'}}</span></div>
+                                <div ng-if="item.ARTType!='OPU'">-</div>
+                            </td>
+                            <td st-ratio="4" ng-if="item.ARTType=='OI'">-</td>
+                            <td st-ratio="5" ng-if="item.ARTType!='OI'">{{item.Oocytes}}</td>
+                            <td st-ratio="5" ng-if="item.ARTType=='OI'">-</td>
+                            <td st-ratio="5" ng-if="item.ARTType!='OI'">{{item.Fertilized}}</td>
+                            <td st-ratio="5" ng-if="item.ARTType=='OI'">-</td>
+                            <td st-ratio="5" ng-if="item.ARTType!='OI'">{{item.Cleaved}}</td>
+                            <td st-ratio="4" ng-if="item.ARTType=='OI'"></td>
+                            <td st-ratio="4" ng-if="item.ARTType!='OI'">{{item.OocyteCryo}} O <br> {{item.EmbCryo}} E</td>
+                            <td st-ratio="7" ng-if="item.ARTType!='OI'">
+                                {{item.TransferDate| date : 'dd-MMM-yyyy'}} <br>
+                                <span class="fresh"><span class="green_point"></span>{{item.FreshEmb}}</span>
+                                <span class="frozen"><span class="orange_point"></span>{{item.FrozenEmb}}</span>
+                            </td>
+                            <td st-ratio="7" ng-if="item.ARTType=='OI'">-</td>
+                            <td st-ratio="5" class="toolTip">
+                                <span class="tooltip-top" ng-class="{tooltiptext:item.BHCG!=''}">
+                                    <!--tooltip-top-->
+                                    <p class="" ng-repeat="i in item.BHCG.split(',')">
+                                        {{i.substr(0, i.lastIndexOf('/'))}} <span class="positive" ng-if="i.substr(i.lastIndexOf('/')+1,8)==='Positive'"><span class="green_point"></span>@PIVF.LanguageResource.Resources.lblcPositive</span>
+                                        <span class="negative" ng-if="i.substr(i.lastIndexOf('/')+1,8)==='Negative'"><span class="red_point"></span>@PIVF.LanguageResource.Resources.lblcNegative</span>
+                                    </p>
+                                </span>
+                                {{item.BHCG.split(',')[0].substr(item.BHCG.split(',')[0].indexOf('/')+1,11)}}<br> <b>{{item.BHCG.split(',')[0].substring(0,item.BHCG.split(',')[0].indexOf('/')+1)}}{{item.BHCG.split(',')[0].substr(item.BHCG.split(',')[0].lastIndexOf('/')+1,8)}}</b>
+                            </td>
+                            <td st-ratio="9">{{item.PregConfDate| date : 'dd-MMM-yyyy'}} <br> <b>{{item.PregType}}</b></td>
+                            <td st-ratio="5"> {{item.Remainingembryo}} </td>
+                            <td st-ratio="4">
+                                <span class="status_open" ng-if="item.Status"><span class="green_point"></span>@PIVF.LanguageResource.Resources.lblcOpen</span> <br>
+                                <span class="status_close" ng-if="!item.Status"><span class="red_point"></span>@PIVF.LanguageResource.Resources.lblcClosed</span>
+                            </td>
+                            <td st-ratio="5"> {{item.CancelCycleReason}} </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row" style="position: relative;
+        z-index: 11; padding:12px;">
+                <div class="col-md-12 col-lg-12" style="display: flex; align-items: center;">
+                    <label class="checkbox-inline" style="cursor: auto; display: flex; align-items: center; gap: 10px;">
+                        <span class="open_Box glyphicon glyphicon-stop "></span> @PIVF.LanguageResource.Resources.lblcOpen
+                    </label>
+                    <label class="checkbox-inline" style="cursor: auto; display: flex; align-items: center; gap: 10px;">
+                        <span class="cancel_Box glyphicon glyphicon-stop "></span> @PIVF.LanguageResource.Resources.btnCancel
+                    </label>
+                    <label class="checkbox-inline" style="cursor: auto; display: flex; align-items: center; gap: 10px;">
+                        <span class="close_Box glyphicon glyphicon-stop "></span>@PIVF.LanguageResource.Resources.btnClose
+                    </label>
+                </div>
+            </div>
+
+            <!-- Modal Start-->
+            <div class="modal fade closeCycleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="mdlCloseCycle">
+                <div class="modal-dialog modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="msgTxt">@PIVF.LanguageResource.Resources.lblcDoyouwanttoclosetheCycle</div>
+                            <div class="msgTxt"><b>@PIVF.LanguageResource.Resources.lblOocyteRetrived   :{{CycleIDs.OcyteRetrived}}</b></div>
+                            <div class="msgTxt"><b>@PIVF.LanguageResource.Resources.lblRemainingOocytes :{{CycleIDs.RemainingOcytes}}</b></div>
+                            <div class="msgTxt"><b>@PIVF.LanguageResource.Resources.lblRemainingEmbryo  :{{CycleIDs.RemainingEmbriyo}}</b></div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="col-sm-12 text-right">
+                                <button class="btn btn-primary" type="button" id="" ng-click="CloseCycle()">@PIVF.LanguageResource.Resources.btnYes</button>
+                                <button class="btn btn-default" data-dismiss="modal" type="button" id="">@PIVF.LanguageResource.Resources.btnNo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal End -->
+        </div>
+
+        <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+    </div>
+</div>
+

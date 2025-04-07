@@ -1,0 +1,1199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04DC8D7D-4512-4D1C-87B2-B8360F497D0B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIVF.Web</RootNamespace>
+    <AssemblyName>PIVF.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Audit.NET, Version=4.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Audit.NET.4.6.2\lib\net45\Audit.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Audit.NET.SqlServer, Version=4.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Audit.NET.SqlServer.4.6.2\lib\net45\Audit.NET.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Audit.WebApi, Version=4.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Audit.WebApi.4.6.2\lib\net45\Audit.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>..\packages\LinqKit.1.1.1\lib\net45\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.AppService.ApiApps.Service, Version=0.9.16.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.AppService.ApiApps.Service.0.9.16\lib\net45\Microsoft.Azure.AppService.ApiApps.Service.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.OData.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.OData.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PIVF.LanguageResource, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PIVF.LanguageResource\bin\Debug\PIVF.LanguageResource.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.0.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PalashIVF_21112016Login\PalashIVF\Ganesha\PIVF.Web\bin\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.OData, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference dll\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Mvc">
+      <HintPath>..\packages\Unity.Mvc.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.WebApi, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.AspNet.WebApi.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.5\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="logs\2017\02\28\" />
+    <Folder Include="pdf\" />
+    <Folder Include="Reports\UnitMaster\" />
+    <Folder Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\OocyteVitrification\" />
+    <Folder Include="Scripts\app\services\ARTMgmt\Cryo-Preservation\OocyteVitrification\" />
+    <Folder Include="Views\IndexCryoPreser\" />
+    <Folder Include="Views\OocyteBank\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\ARTMgmt\Cryo-Preservation\CryoPreservationAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\Cryo-Preservation\EmbryoThowingAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\Cryo-Preservation\EmbryoVitrificationAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\Embrology\EmbrologyAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\EmbryoTransfer\EmbryoTransferAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\IUI\IUIAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\OPU\OPUAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\Outcome\OutcomeAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\ReportUpload\ReportUploadAPIController.cs" />
+    <Compile Include="Api\ARTMgmt\SemenDetails\SemenDetailsController.cs" />
+    <Compile Include="Api\ARTMgmt\StimulationChart\StimulationChartController.cs" />
+    <Compile Include="Api\Authentication\AuthenticationController.cs" />
+    <Compile Include="Api\Authentication\TicketsController.cs" />
+    <Compile Include="Api\AuthorizeEchoConnection.cs" />
+    <Compile Include="Api\CommonAPIController.cs" />
+    <Compile Include="Api\Consent\ConsentAction\ConsentActionAPIController.cs" />
+    <Compile Include="Api\Consent\ConsentMaster\ConsentMasterAPIController.cs" />
+    <Compile Include="Api\Donor\DonorAPIController.cs" />
+    <Compile Include="Api\EMR\DesignEMR\DesignEMRAPIController.cs" />
+    <Compile Include="Api\EMR\DesignEMR\DesignEMRFileUploadAPIController.cs" />
+    <Compile Include="Api\EMR\Diagnosis\DiagnosisAPIController.cs" />
+    <Compile Include="Api\EMR\FemaleHistory\FemaleComplaintsController.cs" />
+    <Compile Include="Api\EMR\FemaleHistory\FemaleHistoryController.cs" />
+    <Compile Include="Api\EMR\FemaleHistory\FollicularScanController.cs" />
+    <Compile Include="Api\EMR\Investigation\InvestigationAPIController.cs" />
+    <Compile Include="Api\EMR\LandingPage\EMRLandingPageAPIController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\MaleComplaintsController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\MaleHistoryController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\SemenAnalysisController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\SemenFreezController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\SemenPrepController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\SemenThawingController.cs" />
+    <Compile Include="Api\EMR\MaleHistory\SurgicalSpermRetrievalController.cs" />
+    <Compile Include="Api\EMR\Prescription\PrescriptionAPIController.cs" />
+    <Compile Include="Api\EMR\Vitals\VitalsAPIController.cs" />
+    <Compile Include="Api\FileUplaodExtension\CustomMultipartFormDataStreamProvider.cs" />
+    <Compile Include="Api\Master\Common\CommonController.cs" />
+    <Compile Include="Api\Master\Common\LanguageResourceController.cs" />
+    <Compile Include="Api\Master\Configuration\UserAPIController.cs" />
+    <Compile Include="Api\Master\Configuration\UserRoleController.cs" />
+    <Compile Include="Api\MediaConsumption\MediaConsumptionAPIController.cs" />
+    <Compile Include="Api\NewART\NewARTController.cs" />
+    <Compile Include="Api\QueueMgt\QueueMgtController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\ODataConfig.cs" />
+    <Compile Include="App_Start\PartialsBundle.cs" />
+    <Compile Include="App_Start\PartialsTransform.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="App_Start\UnityWebApiActivator.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Authentication\AddClientsAndRefreshTokenTables.cs" />
+    <Compile Include="Authentication\AuthContext.cs" />
+    <Compile Include="Authentication\AuthRepository.cs" />
+    <Compile Include="Authentication\ChallengeResult.cs" />
+    <Compile Include="Authentication\Client.cs" />
+    <Compile Include="Authentication\Configuration.cs" />
+    <Compile Include="Authentication\enum.cs" />
+    <Compile Include="Authentication\ExternalLoginModels.cs" />
+    <Compile Include="Authentication\FacebookAuthProvider.cs" />
+    <Compile Include="Authentication\GoogleAuthProvider.cs" />
+    <Compile Include="Authentication\Helper.cs" />
+    <Compile Include="Authentication\RefreshTokensController.cs" />
+    <Compile Include="Authentication\SimpleAuthorizationServerProvider.cs" />
+    <Compile Include="Authentication\SimpleRefreshTokenProvider.cs" />
+    <Compile Include="Authentication\StartUp.cs" />
+    <Compile Include="Authentication\StartUp1.cs" />
+    <Compile Include="Controllers\ARTMgmt\ARTCycleNavigation\ARTCycleNavigationMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\ARTCycle\ARTCycleController.cs" />
+    <Compile Include="Controllers\ARTMgmt\Cryo-Preservation\CryoPreservationMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\Embrology\EmbrologyMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\EmbryoTransfer\EmbryoTransferMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\IUI\IUIMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\OPU\OPUMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\Outcome\OutcomeMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\ReportUpload\ReportUploadMVCController.cs" />
+    <Compile Include="Controllers\ARTMgmt\SemenDetails\SemenDetailsController.cs" />
+    <Compile Include="Controllers\Authentication\AuthenticationController.cs" />
+    <Compile Include="Controllers\Consent\ConsentMaster\ConsentMasterMVCController.cs" />
+    <Compile Include="Controllers\Cryobank\CryoBankController.cs" />
+    <Compile Include="Controllers\Donor\DonorMVCController.cs" />
+    <Compile Include="Controllers\EMR\EMRLandingPage\EMRLandingPageMVCController.cs" />
+    <Compile Include="Controllers\EMR\Design EMR\DesignEMRController.cs" />
+    <Compile Include="Controllers\EMR\Diagnosis\DiagnosisMVCController.cs" />
+    <Compile Include="Controllers\EMR\FemaleHistory\FemaleComplaintsController.cs" />
+    <Compile Include="Controllers\EMR\FemaleHistory\FemaleHistoryController.cs" />
+    <Compile Include="Controllers\EMR\FemaleHistory\FollicularScanController.cs" />
+    <Compile Include="Controllers\EMR\Investigation\InvestigationMVCController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\MaleComplaintsController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\MaleHistoryController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\SemenAnalysisController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\SemenFreezController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\SemenPreparationController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\SemenThawingController.cs" />
+    <Compile Include="Controllers\EMR\MaleHistory\SurgicalSpermRetrievalController.cs" />
+    <Compile Include="Controllers\EMR\Prescription\PrescriptionMVCController.cs" />
+    <Compile Include="Controllers\EMR\Vitals\VitalsMVCController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Master\Configuration\UserController.cs" />
+    <Compile Include="Controllers\Master\Configuration\UserRoleController.cs" />
+    <Compile Include="Controllers\New ART\NewARTController.cs" />
+    <Compile Include="Controllers\QueueMgt\QueueMgtController.cs" />
+    <Compile Include="Controllers\Report\ReportViewController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Reports\crReportAuthentication.cs" />
+    <Compile Include="Reports\DataSet\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\EMR\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EMR\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UnitHeader\UnitHeader.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitHeader.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\addon.css" />
+    <Content Include="Content\angular-toasty.min.css" />
+    <Content Include="Content\angular-ui-tree-theme.css" />
+    <Content Include="Content\angular-ui-tree.min.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dev.css" />
+    <Content Include="Content\dev_old.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\ie10-viewport-bug-workaround.css" />
+    <Content Include="Content\isteven-multi-select.css" />
+    <Content Include="Content\jquery.mCustomScrollbar.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\ng-img-crop.css" />
+    <Content Include="Content\schema-form-file.css" />
+    <Content Include="Content\scrollable-table.css" />
+    <Content Include="Content\select.min.css" />
+    <Content Include="Content\strap.min.css" />
+    <Content Include="Content\Style.css" />
+    <Content Include="Content\style_slide.css" />
+    <Content Include="Content\sweetalert.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="Content\ui-cropper.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\opensans-bold-webfont.svg" />
+    <Content Include="fonts\opensans-regular-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\Active.png" />
+    <Content Include="images\apple-touch-icon.png" />
+    <Content Include="images\appointment.jpg" />
+    <Content Include="images\backgrounds\alt.png" />
+    <Content Include="images\backgrounds\body.jpg" />
+    <Content Include="images\backgrounds\breadcrumbs.png" />
+    <Content Include="images\backgrounds\contentTop.png" />
+    <Content Include="images\backgrounds\login_bg.jpg" />
+    <Content Include="images\backgrounds\sidebar.jpg" />
+    <Content Include="images\backgrounds\subnav.jpg" />
+    <Content Include="images\backgrounds\top.jpg" />
+    <Content Include="images\bdr_sideNav.png" />
+    <Content Include="images\bg_header.png" />
+    <Content Include="images\Blue\Find_Patient.png" />
+    <Content Include="images\Blue\Icon_Appoinment.png" />
+    <Content Include="images\Blue\Icon_ART-Dashboard.png" />
+    <Content Include="images\Blue\Icon_Billing.png" />
+    <Content Include="images\Blue\Icon_Cryo-Bank.png" />
+    <Content Include="images\Blue\Icon_Inventory.png" />
+    <Content Include="images\Blue\Icon_MIS.png" />
+    <Content Include="images\Blue\Icon_Queue-MGNT.png" />
+    <Content Include="images\Blue\Icon_System-Conf.png" />
+    <Content Include="images\CollapseDown.png" />
+    <Content Include="images\CollapseRight.png" />
+    <Content Include="images\cursors\cursor_arrow_left.cur" />
+    <Content Include="images\cursors\cursor_arrow_left.gif" />
+    <Content Include="images\cursors\cursor_arrow_left.png" />
+    <Content Include="images\cursors\cursor_arrow_right.cur" />
+    <Content Include="images\cursors\cursor_arrow_right.gif" />
+    <Content Include="images\cursors\cursor_arrow_right.png" />
+    <Content Include="images\deactive.png" />
+    <Content Include="images\Default_user.png" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\Female_default.jpg" />
+    <Content Include="images\icons\breadsArrow.png" />
+    <Content Include="images\icons\breadsHome.png" />
+    <Content Include="images\icons\Cross_Red_Icon.png" />
+    <Content Include="images\icons\edit_icon.png" />
+    <Content Include="images\icons\Embryology_Img1.png" />
+    <Content Include="images\icons\femalelTestsIcons.png" />
+    <Content Include="images\icons\icoImgDiagnosis.png" />
+    <Content Include="images\icons\icoImgInvestigations.png" />
+    <Content Include="images\icons\icoImgPrescription.png" />
+    <Content Include="images\icons\Icon_Appoinment.png" />
+    <Content Include="images\icons\icon_appoint-list.png" />
+    <Content Include="images\icons\icon_art-cycle.png" />
+    <Content Include="images\icons\Icon_ART-Dashboard.png" />
+    <Content Include="images\icons\Icon_ART_DashBFemale.png" />
+    <Content Include="images\icons\Icon_ART_DashBMale.png" />
+    <Content Include="images\icons\Icon_Billing.png" />
+    <Content Include="images\icons\icon_cancel-appoint.png" />
+    <Content Include="images\icons\icon_consent.png" />
+    <Content Include="images\icons\Icon_Cryo-Bank.png" />
+    <Content Include="images\icons\icon_cryobank.png" />
+    <Content Include="images\icons\icon_embry-bank.png" />
+    <Content Include="images\icons\icon_female-clinic.png" />
+    <Content Include="images\icons\Icon_Find-Patient.png" />
+    <Content Include="images\icons\Icon_H-Appoinment.png" />
+    <Content Include="images\icons\Icon_H-ART-Dashboard.png" />
+    <Content Include="images\icons\Icon_H-Billing.png" />
+    <Content Include="images\icons\Icon_H-Cryo-Bank.png" />
+    <Content Include="images\icons\Icon_H-Find-Patient.png" />
+    <Content Include="images\icons\Icon_H-Inventory.png" />
+    <Content Include="images\icons\Icon_H-MIS.png" />
+    <Content Include="images\icons\Icon_H-Queue-MGNT.png" />
+    <Content Include="images\icons\Icon_H-System-Conf.png" />
+    <Content Include="images\icons\Icon_Inventory.png" />
+    <Content Include="images\icons\icon_male-clinic.png" />
+    <Content Include="images\icons\Icon_MIS.png" />
+    <Content Include="images\icons\icon_new-appoint.png" />
+    <Content Include="images\icons\icon_new-visit.png" />
+    <Content Include="images\icons\icon_new_pataint.png" />
+    <Content Include="images\icons\icon_oocyte-bank.png" />
+    <Content Include="images\icons\icon_pending-bill.png" />
+    <Content Include="images\icons\Icon_Queue-MGNT.png" />
+    <Content Include="images\icons\icon_resch-appoint.png" />
+    <Content Include="images\icons\icon_sperm-bank.png" />
+    <Content Include="images\icons\Icon_System-Conf.png" />
+    <Content Include="images\icons\icon_view-patient.png" />
+    <Content Include="images\icons\MalelTestsIcons.png" />
+    <Content Include="images\icons\Ok_Green_Icon.png" />
+    <Content Include="images\icons\register_icon.png" />
+    <Content Include="images\icons\subArrow.png" />
+    <Content Include="images\icons\tipsy.gif" />
+    <Content Include="images\icons\TopNavIconGreen.jpg" />
+    <Content Include="images\icons\TopNavIconGreen.png" />
+    <Content Include="images\icons\TopNavIconOrange.jpg" />
+    <Content Include="images\icons\TopNavIconOrange.png" />
+    <Content Include="images\ico_add.png" />
+    <Content Include="images\ico_delete.png" />
+    <Content Include="images\ico_info.png" />
+    <Content Include="images\ico_sprite_add-delete.png" />
+    <Content Include="images\ico_sprite_sys-conf.png" />
+    <Content Include="images\ico_today.png" />
+    <Content Include="images\img_oocyte-d0.png" />
+    <Content Include="images\left_nav_bg.jpg" />
+    <Content Include="images\left_nav_bg.png" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\loading_dark.gif" />
+    <Content Include="images\lock.png" />
+    <Content Include="images\logo_Palash_IVF.png" />
+    <Content Include="images\logo_PIVF.png" />
+    <Content Include="images\mainnav\bg_subNav.jpg" />
+    <Content Include="images\mainnav\ico_cycle.png" />
+    <Content Include="images\mainnav\ico_dashboard.png" />
+    <Content Include="images\mainnav\ico_emr.png" />
+    <Content Include="images\mainnav\ico_ivf-config.png" />
+    <Content Include="images\mainnav\img_female.jpg" />
+    <Content Include="images\mainnav\thumb_female.png" />
+    <Content Include="images\mainnav\thumb_male.png" />
+    <Content Include="images\Male_default.jpg" />
+    <Content Include="images\PIVF-Logo-White.PNG" />
+    <Content Include="images\sprites\ico-investigation.png" />
+    <Content Include="images\sprites\ico-nav_male-female.png" />
+    <Content Include="images\sprites\ico_4boxes.png" />
+    <Content Include="images\sprites\ico_delete.png" />
+    <Content Include="images\sprites\ico_edit.png" />
+    <Content Include="images\sprites\ico_history.png" />
+    <Content Include="images\sprites\ico_info.png" />
+    <Content Include="images\sprites\ico_like.png" />
+    <Content Include="images\sprites\ico_search.png" />
+    <Content Include="images\sprites\mCSB_buttons.png" />
+    <Content Include="images\sprites\smly_Fertilization.png" />
+    <Content Include="images\sprites\sprite_ico_nav.png" />
+    <Content Include="images\sprites\sprite_nav2.png" />
+    <Content Include="images\Unlock.png" />
+    <Content Include="images\loginBg.jpg" />
+    <Content Include="images\nav.png" />
+    <Content Include="images\nav_arrow.png" />
+    <Content Include="images\PIVF_login_Logo.png" />
+    <Content Include="images\PIVF_Logo.png" />
+    <Content Include="images\SubCollapseDown.png" />
+    <Content Include="images\SubCollapseRight.png" />
+    <Content Include="images\Tab_Down_Arrow.png" />
+    <Content Include="images\Tab_Right_Arrow.png" />
+    <Content Include="images\White\Find_Patient.png" />
+    <Content Include="images\White\Icon_H-Appoinment.png" />
+    <Content Include="images\White\Icon_H-ART-Dashboard.png" />
+    <Content Include="images\White\Icon_H-Billing.png" />
+    <Content Include="images\White\Icon_H-Cryo-Bank.png" />
+    <Content Include="images\White\Icon_H-Inventory.png" />
+    <Content Include="images\White\Icon_H-MIS.png" />
+    <Content Include="images\White\Icon_H-Queue-MGNT.png" />
+    <Content Include="images\White\Icon_H-System-Conf.png" />
+    <Content Include="Reference dll\Audit.NET.dll" />
+    <Content Include="Reference dll\Audit.NET.SqlServer.dll" />
+    <Content Include="Reference dll\Audit.NET.SqlServer.xml" />
+    <Content Include="Reference dll\Audit.NET.xml" />
+    <Content Include="Reference dll\Audit.WebApi.dll" />
+    <Content Include="Reference dll\Audit.WebApi.xml" />
+    <Content Include="Reference dll\Dapper.dll" />
+    <Content Include="Reference dll\Dapper.xml" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Client.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Client.XML" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Core.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Core.xml" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Owin.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.Owin.xml" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.SystemWeb.dll" />
+    <Content Include="Reference dll\Microsoft.AspNet.SignalR.SystemWeb.XML" />
+    <Content Include="Reference dll\Microsoft.Data.Edm.dll" />
+    <Content Include="Reference dll\Microsoft.Data.Edm.xml" />
+    <Content Include="Reference dll\Microsoft.Data.OData.dll" />
+    <Content Include="Reference dll\Microsoft.Data.OData.xml" />
+    <Content Include="Reference dll\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="Reference dll\Microsoft.Extensions.DependencyInjection.Abstractions.xml" />
+    <Content Include="Reference dll\Microsoft.Extensions.DependencyInjection.dll" />
+    <Content Include="Reference dll\Microsoft.Extensions.DependencyInjection.xml" />
+    <Content Include="Reference dll\Microsoft.IdentityModel.dll" />
+    <Content Include="Reference dll\Microsoft.IdentityModel.Logging.dll" />
+    <Content Include="Reference dll\Microsoft.OData.Core.dll" />
+    <Content Include="Reference dll\Microsoft.OData.Core.xml" />
+    <Content Include="Reference dll\Microsoft.OData.Edm.dll" />
+    <Content Include="Reference dll\Microsoft.OData.Edm.xml" />
+    <Content Include="Reference dll\Microsoft.Owin.Cors.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Cors.XML" />
+    <Content Include="Reference dll\Microsoft.Owin.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Facebook.XML" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.Google.XML" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.OAuth.XML" />
+    <Content Include="Reference dll\Microsoft.Owin.Security.XML" />
+    <Content Include="Reference dll\Microsoft.Owin.XML" />
+    <Content Include="Reference dll\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="Reference dll\Microsoft.ReportViewer.DataVisualization.dll" />
+    <Content Include="Reference dll\Microsoft.ReportViewer.ProcessingObjectModel.DLL" />
+    <Content Include="Reference dll\Microsoft.ReportViewer.WebForms.DLL" />
+    <Content Include="Reference dll\Microsoft.Spatial.dll" />
+    <Content Include="Reference dll\Microsoft.Spatial.xml" />
+    <Content Include="Reference dll\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="Reference dll\Newtonsoft.Json.dll" />
+    <Content Include="Reference dll\NLog.dll" />
+    <Content Include="Reference dll\Owin.dll" />
+    <Content Include="Reference dll\System.Net.Http.dll" />
+    <Content Include="Reference dll\System.Net.Http.Extensions.dll" />
+    <Content Include="Reference dll\System.Net.Http.Formatting.dll" />
+    <Content Include="Reference dll\System.Net.Http.Primitives.dll" />
+    <Content Include="Reference dll\System.Net.Http.WebRequest.dll" />
+    <Content Include="Reference dll\System.Net.Http.WebRequest.xml" />
+    <Content Include="Reference dll\System.Net.Http.xml" />
+    <Content Include="Reference dll\System.Spatial.dll" />
+    <Content Include="Reference dll\System.Spatial.xml" />
+    <Content Include="Reference dll\System.Web.Cors.dll" />
+    <Content Include="Reference dll\System.Web.dll" />
+    <Content Include="Reference dll\System.Web.Helpers.dll" />
+    <Content Include="Reference dll\System.Web.Helpers.xml" />
+    <Content Include="Reference dll\System.Web.Http.dll" />
+    <Content Include="Reference dll\System.Web.Http.OData.dll" />
+    <Content Include="Reference dll\System.Web.Http.OData.xml" />
+    <Content Include="Reference dll\System.Web.Http.Owin.dll" />
+    <Content Include="Reference dll\System.Web.Http.WebHost.dll" />
+    <Content Include="Reference dll\System.Web.Http.WebHost.xml" />
+    <Content Include="Reference dll\System.Web.Http.xml" />
+    <Content Include="Reference dll\System.Web.Mvc.dll" />
+    <Content Include="Reference dll\System.Web.Mvc.xml" />
+    <Content Include="Reference dll\System.Web.OData.dll" />
+    <Content Include="Reference dll\System.Web.OData.xml" />
+    <Content Include="Reference dll\System.Web.Optimization.dll" />
+    <Content Include="Reference dll\system.web.optimization.xml" />
+    <Content Include="Reference dll\System.Web.Razor.dll" />
+    <Content Include="Reference dll\System.Web.Razor.xml" />
+    <Content Include="Reference dll\System.Web.WebPages.Deployment.dll" />
+    <Content Include="Reference dll\System.Web.WebPages.Deployment.xml" />
+    <Content Include="Reference dll\System.Web.WebPages.dll" />
+    <Content Include="Reference dll\System.Web.WebPages.Razor.dll" />
+    <Content Include="Reference dll\System.Web.WebPages.Razor.xml" />
+    <Content Include="Reference dll\System.Web.WebPages.xml" />
+    <Content Include="Reference dll\System.Web.xml" />
+    <Content Include="Reports\EMR\WebForm1.aspx" />
+    <Content Include="Scripts\AngularPackages\angu-fixed-header-table.js" />
+    <Content Include="Scripts\AngularPackages\angular-linq.js" />
+    <Content Include="Scripts\AngularPackages\angular-messages.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-pdf.js" />
+    <Content Include="Scripts\AngularPackages\angular-sanitize.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-schema-form-base64-file-upload.js" />
+    <Content Include="Scripts\AngularPackages\angular-schema-form-dynamic-select.js" />
+    <Content Include="Scripts\AngularPackages\angular-strap.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-strap.tpl.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-translate.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-ui-tree.min.js" />
+    <Content Include="Scripts\AngularPackages\bootstrap-decorator.js" />
+    <Content Include="Scripts\AngularPackages\BreadCum.js" />
+    <Content Include="Scripts\AngularPackages\date.js" />
+    <Content Include="Scripts\AngularPackages\html2canvas.min.js" />
+    <Content Include="Scripts\AngularPackages\ng-file-upload-all.min.js" />
+    <Content Include="Scripts\AngularPackages\ObjectPath.js" />
+    <Content Include="Scripts\AngularPackages\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Scripts\AngularPackages\ocLazyLoad.min.js" />
+    <Content Include="Scripts\AngularPackages\pdf.js" />
+    <Content Include="Scripts\AngularPackages\pdf.worker.js" />
+    <Content Include="Scripts\AngularPackages\pdfmake.min.js" />
+    <Content Include="Scripts\AngularPackages\scrollbars.min.js" />
+    <Content Include="Scripts\AngularPackages\schema-form-date-time-picker.min.js" />
+    <Content Include="Scripts\AngularPackages\schema-form-file.js" />
+    <Content Include="Scripts\AngularPackages\schema-form.js" />
+    <Content Include="Scripts\AngularPackages\select.min.js" />
+    <Content Include="Scripts\AngularPackages\SweetAlert.min.js" />
+    <Content Include="Scripts\AngularPackages\textAngular-rangy.min.js" />
+    <Content Include="Scripts\AngularPackages\textAngular-sanitize.min.js" />
+    <Content Include="Scripts\AngularPackages\textAngular.min.js" />
+    <Content Include="Scripts\AngularPackages\tv4.js" />
+    <Content Include="Scripts\AngularPackages\ui-sortable.js" />
+    <Content Include="Scripts\AngularPackages\underscore.js" />
+    <Content Include="Scripts\AngularUI\bootstrap.js" />
+    <Content Include="Scripts\AngularUI\bootstrap.min.js" />
+    <Content Include="Scripts\AngularUI\customize.min.js" />
+    <Content Include="Scripts\AngularUI\docs.min.js" />
+    <Content Include="Scripts\AngularUI\ie-emulation-modes-warning.js" />
+    <Content Include="Scripts\AngularUI\ie10-viewport-bug-workaround.js" />
+    <Content Include="Scripts\AngularUI\ie8-responsive-file-warning.js" />
+    <Content Include="Scripts\AngularUI\menu.js" />
+    <Content Include="Scripts\AngularUI\npm.js" />
+    <Content Include="Scripts\AngularUI\raw-files.min.js" />
+    <Content Include="Scripts\AngularUI\ui-bootstrap-csp.css" />
+    <Content Include="Scripts\AngularUI\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\AngularUI\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\AngularUI\ui-bootstrap.js" />
+    <Content Include="Scripts\AngularUI\ui-bootstrap.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-local-storage.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-route.min.js" />
+    <Content Include="Scripts\AngularPackages\angular-toasty.min.js" />
+    <Content Include="Scripts\AngularPackages\angular.min.js" />
+    <Content Include="Scripts\AngularPackages\bootstrap.min.js" />
+    <Content Include="Content\main.less" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\opensans-bold-webfont.eot" />
+    <Content Include="fonts\opensans-bold-webfont.ttf" />
+    <Content Include="fonts\opensans-bold-webfont.woff" />
+    <Content Include="fonts\opensans-bold-webfont.woff2" />
+    <Content Include="fonts\opensans-regular-webfont.eot" />
+    <Content Include="fonts\opensans-regular-webfont.ttf" />
+    <Content Include="fonts\opensans-regular-webfont.woff" />
+    <Content Include="fonts\opensans-regular-webfont.woff2" />
+    <Content Include="Reports\DataSet\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\DataSet\DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Reports\DataSet\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\GaneshaPublish.pubxml" />
+    <Content Include="Scripts\AngularPackages\crumble.js" />
+    <Content Include="Scripts\AngularPackages\custom.js" />
+    <Content Include="Scripts\AngularPackages\dev.js" />
+    <Content Include="Scripts\AngularPackages\isteven-multi-select.js" />
+    <Content Include="Scripts\AngularPackages\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\AngularPackages\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\AngularPackages\jquery.min.js" />
+    <Content Include="Scripts\AngularPackages\ng-file-upload-all.js" />
+    <Content Include="Scripts\AngularPackages\ng-img-crop.min.js" />
+    <Content Include="Scripts\AngularPackages\ng-sweet-alert.min.js" />
+    <None Include="Properties\PublishProfiles\Gunasheela.pubxml" />
+    <None Include="Scripts\AngularPackages\_references.js" />
+    <Content Include="Scripts\AngularPackages\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\AngularPackages\ui-cropper.js" />
+    <Content Include="Scripts\AngularPackages\webcam.min.js" />
+    <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\ARTCycleNavigation\ARTCycleNavigationctr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\CryoPreservationCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\DonarOocyteCtrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\EmbryoThowingCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\EmbryoVitrificationCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\OocyteThowingCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Cryo-Preservation\OocyteVitrificationCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day1Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day2Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day3Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day4Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day5Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day6Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\EmbrologyMainCtrl.js" />
+    <Content Include="Scripts\app\app_designemr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Embrology\day0Ctrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\EmbryoTransfer\EmbryoTransferCtrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\IUI\IUICtrl.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\ARTCycleNavigation\StimulationChartController.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\OPU\OPUCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\Outcome\OutcomeCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\ReportUpload\ReportUploadCtr.js" />
+    <Content Include="Scripts\app\controllers\ARTMgmt\SemenDetails\SemenDetailsController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\associateController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\DefaultPageCtlr.js" />
+    <Content Include="Scripts\app\controllers\Authentication\HomeCtlr.js" />
+    <Content Include="Scripts\app\controllers\Authentication\indexController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\LayOutController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\loginController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\refreshController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\signupController.js" />
+    <Content Include="Scripts\app\controllers\Authentication\tokensManagerController.js" />
+    <Content Include="Scripts\app\controllers\BreadCum\BreadCumCtrl.js" />
+    <Content Include="Scripts\app\controllers\Consent\ConsentMaster\ConsentIndexCtr.js" />
+    <Content Include="Scripts\app\controllers\Consent\ConsentMaster\ConsentViewCtr.js" />
+    <Content Include="Scripts\app\controllers\CryoBank\CryoBankOocyteCtr.js" />
+    <Content Include="Scripts\app\controllers\CryoBank\CryobankSpermCtr.js" />
+    <Content Include="Scripts\app\controllers\CryoBank\EmbryoBankCtr.js" />
+    <Content Include="Scripts\app\controllers\Donor\DonorCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\Design EMR\EMRTemplateCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\Investigation\InvestigationCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\LandingPage\EMRLandingPageCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\Design EMR\DesignEMRCltr.js" />
+    <Content Include="Scripts\app\controllers\EMR\Design EMR\DesignEMRIndexCltr.js" />
+    <Content Include="Scripts\app\controllers\EMR\Diagnosis\DiagnosisCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\FemaleHistory\FemaleComplaintsController.js" />
+    <Content Include="Scripts\app\controllers\EMR\FemaleHistory\FemaleHistoryController.js" />
+    <Content Include="Scripts\app\controllers\EMR\FemaleHistory\FollicularScanController.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\ctlrSemenExtmn.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\ctrlSemenFreez.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\ctrlSemenThawing.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\MaleComplaintsController.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\MaleHistoryController.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\SemenAnalysisController.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\SemenPrepController.js" />
+    <Content Include="Scripts\app\controllers\EMR\MaleHistory\SurgicalSpermRetrievalController.js" />
+    <Content Include="Scripts\app\controllers\EMR\Prescription\PrescriptionCtr.js" />
+    <Content Include="Scripts\app\controllers\EMR\Vitals\VitalsCtrl.js" />
+    <Content Include="Scripts\app\controllers\homeController.js" />
+    <Content Include="Scripts\app\controllers\indexController.js" />
+    <Content Include="Scripts\app\controllers\Master\Configuration\UserController.js" />
+    <Content Include="Scripts\app\controllers\Master\Configuration\UserRoleController.js" />
+    <Content Include="Scripts\app\controllers\New ART\NewARTCtlr.js" />
+    <Content Include="Scripts\app\controllers\QueueMgt\QueueMgtctlr.js" />
+    <Content Include="Scripts\app\CycleWisePagesConfig\cycleWisePageConfig.js" />
+    <Content Include="Scripts\app\directives.js" />
+    <Content Include="Scripts\app\filters.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\ARTCycleNavigation\ARTCycleNavigationSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Cryo-Preservation\CryoPreservationSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Cryo-Preservation\DonarOocyteSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Cryo-Preservation\EmbryoThowingSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Cryo-Preservation\EmbryoVitrificationSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayFiveSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayFourSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayOneSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DaySixSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayThreeSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayTwoSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\DayZeroSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Embrology\EmbrologyMainSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\EmbryoTransfer\EmbryoTransferSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\IUI\IUISrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\ARTCycleNavigation\StimulationChartService.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\MediaConsumption\MediaConsumptionSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\OPU\OPUSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\Outcome\OutcomeSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\ReportUpload\ReportUploadSrv.js" />
+    <Content Include="Scripts\app\services\ARTMgmt\SemenDetails\SemenDetailsService.js" />
+    <Content Include="Scripts\app\services\Authentication\authInterceptorService.js" />
+    <Content Include="Scripts\app\services\Authentication\authService.js" />
+    <Content Include="Scripts\app\services\Authentication\LogInService.js" />
+    <Content Include="Scripts\app\services\Authentication\tokensManagerService.js" />
+    <Content Include="Scripts\app\services\Common\CommonService.js" />
+    <Content Include="Scripts\app\services\Consent\ConsentAction\ConsentActionSrv.js" />
+    <Content Include="Scripts\app\services\Consent\ConsentMaster\ConsentIndexSrv.js" />
+    <Content Include="Scripts\app\services\Consent\ConsentMaster\ConsentViewSrv.js" />
+    <Content Include="Scripts\app\services\CryoBank\CryoBankOocyteSrv.js" />
+    <Content Include="Scripts\app\services\CryoBank\CryobankSpermSrv.js" />
+    <Content Include="Scripts\app\services\Donor\DonorSrv.js" />
+    <Content Include="Scripts\app\services\EMR\Investigation\InvestigationSrv.js" />
+    <Content Include="Scripts\app\services\EMR\LandingPage\EMRLandingPageSrv.js" />
+    <Content Include="Scripts\app\services\EMR\Design EMR\DesignEMRSrv.js" />
+    <Content Include="Scripts\app\services\EMR\Diagnosis\DiagnosisSrv.js" />
+    <Content Include="Scripts\app\services\EMR\FemaleHistory\FemaleComplaintsService.js" />
+    <Content Include="Scripts\app\services\EMR\FemaleHistory\FemaleHistoryService.js" />
+    <Content Include="Scripts\app\services\EMR\FemaleHistory\FollicularScanService.js" />
+    <Content Include="Scripts\app\services\EMR\Design EMR\EMRTemplateSrv.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\MaleComplaintsService.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\MaleHistoryService.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\SemenAnalysisService.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\SemenPrepService.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\srvSemenExtmn.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\srvSemenFreez.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\srvSemenThawing.js" />
+    <Content Include="Scripts\app\services\EMR\MaleHistory\SurgicalSpermRetrievalService.js" />
+    <Content Include="Scripts\app\services\EMR\Prescription\PrescriptionSrv.js" />
+    <Content Include="Scripts\app\services\EMR\Vitals\VitalsSrv.js" />
+    <Content Include="Scripts\app\services\Master\Configuration\UserRoleService.js" />
+    <Content Include="Scripts\app\services\Master\Configuration\UserService.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="apiapp.json" />
+    <None Include="Properties\PublishProfiles\KendoAngularJS.pubxml" />
+    <None Include="Properties\PublishProfiles\longle - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\longle - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\northwind1.pubxml" />
+    <Content Include="Scripts\app\services\Common\srvCommon.js" />
+    <Content Include="Scripts\app\services\New ART\NewARTSrv.js" />
+    <Content Include="Scripts\app\services\QueueMgt\QueueMgtSrv.js" />
+    <Content Include="Scripts\app\services\Report\ReportViewSrv.js" />
+    <Content Include="Scripts\app\StoreDataFactory.js" />
+    <Content Include="Scripts\AngularPackages\jquery.signalR-2.2.1.min.js" />
+    <Content Include="Templates\BreadCrumb.html" />
+    <Content Include="Templates\Viewer.html" />
+    <Content Include="Views\DesignEMR\myModalContent.html" />
+    <Content Include="Views\DesignEMR\nodes_renderer.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\SpermPreparation\SpermPreparation.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Authentication\Login.cshtml" />
+    <Content Include="Views\Authentication\SignUp.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\FemaleHistory\FemaleHistory.cshtml" />
+    <Content Include="Views\UserRole\AddUserRole.cshtml" />
+    <Content Include="Views\UserRole\UserRoleList.cshtml" />
+    <Content Include="Views\User\NewUser.cshtml" />
+    <Content Include="Views\User\UserList.cshtml" />
+    <Content Include="Views\SemenFreez\NewSemenFreez.cshtml" />
+    <Content Include="Views\Home\DefaultPage.cshtml" />
+    <Content Include="Views\SemenThawing\SemenThawing.cshtml" />
+    <Content Include="Views\MaleHistory\MaleHistory.cshtml" />
+    <Content Include="Views\DesignEMR\ViewEMR.cshtml" />
+    <Content Include="Views\SurgicalSpermRetrieval\SurgicalSpermRetrieval.cshtml" />
+    <Content Include="Views\SemenExmtn\AddUpdateSemenExmtn.cshtml" />
+    <Content Include="Views\DesignEMR\Index.cshtml" />
+    <Content Include="Views\NewART\NewART.cshtml" />
+    <Content Include="Views\FemaleComplaints\FemaleComplaints.cshtml" />
+    <Content Include="Views\VitalsMVC\VitalsView.cshtml" />
+    <Content Include="Views\DiagnosisMVC\AddDignosis.cshtml" />
+    <Content Include="Views\QueueMgt\QueueList.cshtml" />
+    <Content Include="Views\PrescriptionMVC\Index.cshtml" />
+    <Content Include="Views\SemenPreparation\SemenPreparation.cshtml" />
+    <Content Include="Views\SemenAnalysis\SemenAnalysis.cshtml" />
+    <Content Include="Views\MaleComplaints\MaleComplaints.cshtml" />
+    <Content Include="Views\NewART\ARTCycle.cshtml" />
+    <Content Include="Views\OPUMVC\NewOPU.cshtml" />
+    <Content Include="Views\FollicularScan\FollicularScan.cshtml" />
+    <Content Include="Views\ARTCycleNavigationMVC\ARTCycleNavigation.cshtml" />
+    <Content Include="Views\ReportUploadMVC\UploadReport.cshtml" />
+    <Content Include="Views\IUIMVC\Index.cshtml" />
+    <Content Include="Views\ARTCycleNavigationMVC\StimulationChart.cshtml" />
+    <Content Include="Views\EMRLandingPageMVC\EMRLandingPage.cshtml" />
+    <Content Include="Views\DonorMVC\IndexDonor.cshtml" />
+    <Content Include="Views\DonorMVC\ViewDonor.cshtml" />
+    <Content Include="Views\DonorMVC\NewSample.cshtml" />
+    <Content Include="Views\NewART\CycleOverview.cshtml" />
+    <Content Include="Views\EmbrologyMVC\EmbrologyView.cshtml" />
+    <Content Include="Views\InvestigationMVC\Investigation.cshtml" />
+    <Content Include="Views\CryoPreservationMVC\Index.cshtml" />
+    <Content Include="Views\CryoPreservationMVC\OocyteVitrification.cshtml" />
+    <Content Include="Views\CryoPreservationMVC\EmbryoVitrification.cshtml" />
+    <Content Include="Views\CryoPreservationMVC\OocyteThowing.cshtml" />
+    <Content Include="Views\CryoPreservationMVC\EmbryoThowing.cshtml" />
+    <Content Include="Views\EmbryoTransferMVC\Index.cshtml" />
+    <Content Include="Views\CryoBank\CryobankSperm.cshtml" />
+    <Content Include="Views\SemenDetails\SemenDetails.cshtml" />
+    <Content Include="Views\OutcomeMVC\Outcome.cshtml" />
+    <Content Include="Views\EMRLandingPageMVC\EMRTemplateLandingPage.cshtml" />
+    <Content Include="Views\ARTCycle\ARTCycle.cshtml" />
+    <Content Include="Views\CryoBank\CryoBankOocyte.cshtml" />
+    <Content Include="Views\CryoBank\EmbryoBank.cshtml" />
+    <Content Include="Views\ConsentMasterMVC\LandingPage.cshtml" />
+    <Content Include="Views\ConsentMasterMVC\ViewConcent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">
+      <Project>{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}</Project>
+      <Name>Repository.Pattern.Ef6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Repository.Pattern\Repository.Pattern.csproj">
+      <Project>{6E682A14-C872-4813-B620-76E108DEA683}</Project>
+      <Name>Repository.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Service.Pattern\Service.Pattern.csproj">
+      <Project>{86F86650-EE3C-4372-8FEC-40C2FE015022}</Project>
+      <Name>Service.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBaseConfiguration\DataBaseConfiguration.csproj">
+      <Project>{6A49B5F3-57F9-4216-9FF6-ACA73D7C3E32}</Project>
+      <Name>DataBaseConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIVF.BusinessLayer\PIVF.BusinessLayer.csproj">
+      <Project>{d47d4df6-f3ef-4254-b125-db09f28721f8}</Project>
+      <Name>PIVF.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIVF.DataAccessLayer\PIVF.DataAccessLayer.csproj">
+      <Project>{d5a1475a-0199-418e-aa67-2211cc77bff1}</Project>
+      <Name>PIVF.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PIVF.Entities\PIVF.Entities.csproj">
+      <Project>{94e81d48-74b2-42eb-b389-f25c8c23f9c4}</Project>
+      <Name>PIVF.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\EmployeeReport.rdlc" />
+    <EmbeddedResource Include="Reports\EmployeeList.rdlc" />
+    <EmbeddedResource Include="Reports\EMR\CrystalReport1.resx">
+      <DependentUpon>CrystalReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EMR\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EMR\PP.rdlc" />
+    <EmbeddedResource Include="Reports\EMR\UnitDetails.rdlc" />
+    <EmbeddedResource Include="Reports\UnitHeader\UnitHeader.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UnitHeader.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12106</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4000/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

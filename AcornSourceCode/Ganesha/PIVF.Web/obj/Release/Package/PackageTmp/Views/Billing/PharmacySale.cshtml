@@ -1,0 +1,383 @@
+﻿
+@{
+    Layout = null;
+
+
+}
+<style>
+    .is-invalid {
+        border: 1px solid red;
+        /*background-color: #ffe6e6;*/
+    }
+
+    .custom-xl-modal .modal-dialog {
+        width: 70%; /* Set the initial width to 95% */
+        max-width: none; /* Remove the max-width restriction */
+    }
+
+
+    .customError {
+        height: -webkit-fill-available;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: larger;
+    }
+
+
+    .customErrorDate {
+        font-style: italic;
+        color: #7d7dff;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+
+
+    /*.unique-table-class {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+    }
+
+        .unique-table-class th,
+        .unique-table-class td {
+            border: 1px solid #d9d9d9;
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .unique-table-class th {
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            white-space: nowrap;
+        }*/
+
+
+
+
+    .custom-table-container {
+        /*max-height: 518px;*/
+        overflow-y: auto;
+        overflow-x: auto;
+        width: 100%;
+        height: calc(100vh - 565px);
+    }
+
+    .unique-table-class {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+    }
+
+
+
+
+
+        .unique-table-class th,
+        .unique-table-class td {
+            /*border: 1px solid gray;*/
+            padding: 8px;
+            /*text-align: center;*/
+            font-size: 12px;
+            white-space: nowrap; /* Prevent word breaking */
+        }
+
+        .unique-table-class th {
+            /*background-color: #f2f2f2;*/
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            white-space: nowrap; /* Prevent word breaking */
+            border: none !important;
+        }
+
+
+        .unique-table-class > thead > tr {
+            background: #F6F9FB;
+            color: #5895a6;
+            border: none !important;
+            border-radius: 12px !important;
+            position: sticky;
+            top: 2px;
+            z-index: 1;
+            white-space: nowrap;
+        }
+
+
+        .unique-table-class > tbody > tr > td {
+            background: #FFFFFF !important;
+            border-bottom: 1px solid #F4F4F5 !important;
+            color: #353535 !important;
+            border-top: none !important;
+            white-space: nowrap;
+        }
+</style>
+<div ng-controller="PharmacySalesCtrl">
+    <div class="form_Content form-horizontal" style="min-height: 195px; padding-bottom: 60px;">
+        <div class="row" ng-init="pageLoad()">
+
+            <div class="col-md-3 col-lg-3" ng-if="MIS.reportType!=5">
+                <div class="form-group">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblFromDate:</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group date">
+                            <input type="text"
+                                   class="form-control"
+                                   id="fromDate"
+                                   placeholder="@PIVF.LanguageResource.Resources.tlblddMmmyyyy"
+                                   ng-model="MIS.fromDate"
+                                   uib-datepicker-popup="{{format}}"
+                                   show-button-bar="false"
+                                   is-open="month1.opened"
+                                   datepicker-options="dateOptionsFrom"
+                                   ng-focus="month1.opened=true"
+                                   tabindex="">
+                            <span class="input-group-addon" ng-click="month1.opened=true">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3" ng-if="MIS.reportType!=5">
+                <div class="form-group">
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label">@PIVF.LanguageResource.Resources.lblToDate:</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="input-group date">
+                            <input type="text"
+                                   class="form-control"
+                                   id="toDate"
+                                   placeholder="@PIVF.LanguageResource.Resources.tlblddMmmyyyy"
+                                   ng-model="MIS.toDate"
+                                   uib-datepicker-popup="{{format}}"
+                                   show-button-bar="false"
+                                   is-open="month2.opened"
+                                   datepicker-options="dateOptionsTo"
+                                   ng-focus="month2.opened=true"
+                                   tabindex="">
+                            <span class="input-group-addon" ng-click="month2.opened=true">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblFirstName</label>@*First Name :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control Capitalize" id="" ng-model="MIS.FirstName" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblLastName</label>@*Last Name :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control Capitalize" id="" ng-model="MIS.LastName" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblMRN</label>@*MRN :: Modified by swatih for localization 29/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control" id="" ng-model="MIS.MRNO" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblBillNo.</label>@*Bill No ::Modified by swatih for localization 30/7/2020*@
+                    <div class="col-md-12 col-lg-12">
+                        <input type="text" class="form-control" id="" ng-model="MIS.BillNO" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-12" style="display: flex; justify-content: flex-end;">
+                <!-- Search Button -->
+                <button id="SearchAd"
+                        type="button"
+                        class="btn btn-primary"
+                        style="position: relative; top: -40px; margin-right: 35%;"
+                        ng-click="viewReport()">
+                    @PIVF.LanguageResource.Resources.btnSearch
+                </button>
+
+                <!-- New Bill Button -->
+                <button id="newBillButton"
+                        type="button"
+                        ng-click="goToNewPharmacysale()"
+                        class="btn"
+                        style="color: orange; background: none; border: none; margin-left: 20px;">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> @PIVF.LanguageResource.Resources.btnNew
+                </button>
+            </div>
+
+
+
+        </div>
+
+        <div class="form_Content p-t-10">
+            <div class="row">
+                <div class="find_title">
+                    <div class="col-md-6">
+                        <span class="count_title">@PIVF.LanguageResource.Resources.Total_Count :</span>
+                        <span class="total_count">{{ BilledPatientListForPharmacy.length || 0}}</span>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div ng-show="BilledPatientListForPharmacy.length" style="height: calc(100vh - 520px);">
+                        <table class="table table-hover table-striped unique-table-class">
+                            <thead style="position: sticky; top: 0;">
+                                <tr>
+                                    <th>@PIVF.LanguageResource.Resources.lblDate</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblPatientName</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblGender</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblAge</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblMRN</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblBillNo.</th>
+                                    <th>@PIVF.LanguageResource.Resources.tlblTotalAmt.</th>
+                                    <th>@PIVF.LanguageResource.Resources.tlblConcessionAmt.</th>
+                                    <th>@PIVF.LanguageResource.Resources.tlblNetAmt.</th>
+                                    <th>@PIVF.LanguageResource.Resources.tlblPaidAmt.</th>
+                                    <th>@PIVF.LanguageResource.Resources.tlblBalanceAmt.</th>
+                                    <th>@PIVF.LanguageResource.Resources.tlblSalesDetails</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="PharmaDetails in PagedVisitList">
+                                    <td>{{PharmaDetails.Date | date:'dd-MMM-yyyy'}}</td>
+                                    <td>{{PharmaDetails.PatientName }}</td>
+                                    <td>{{PharmaDetails.Gender }}</td>
+                                    <td>{{PharmaDetails.Age }}</td>
+                                    <td>{{PharmaDetails.MRNo }}</td>
+                                    <td>{{PharmaDetails.BillNo }}</td>
+                                    <td>{{PharmaDetails.TotalAmt }}</td>
+                                    <td>{{PharmaDetails.ConcessionAmt }}</td>
+                                    <td>{{PharmaDetails.NetAmt }}</td>
+                                    <td>{{PharmaDetails.PaidAmt }}</td>
+                                    <td>{{PharmaDetails.BalanceAmt }}</td>
+                                    <td st-ratio="10">
+                                        <a ng-click="openPharmacySalesDetailsModalPopup(PharmaDetails)" style="cursor: pointer; font-weight: bold; color: #3366cc; text-decoration: underline;">@PIVF.LanguageResource.Resources.tlblDetails</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="BilledPatientListContainer" ng-show="!BilledPatientListForPharmacy.length" style="height: calc(100vh - 520px);">
+
+                        <label class="col-md-12 col-sm-12 col-lg-12 control-label customError">@PIVF.LanguageResource.Resources.tmsgSorrywecouldntfindanyrecordsforthedates <span class="customErrorDate"> {{CustomFromDate}} </span> @PIVF.LanguageResource.Resources.tlblto <span class="customErrorDate"> {{CustomToDate}} </span>.</label>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-sm-12" style="display: flex; justify-content: end;">
+            <uib-pagination total-items="BilledPatientListForPharmacy.length || 0" ng-model="CurrentPage" ng-change="PharmacySalesPageChange()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" items-per-page="ItemsPerPage" first-text="@PIVF.LanguageResource.Resources.lblFirst" previous-text="@PIVF.LanguageResource.Resources.lblPrevious" next-text="@PIVF.LanguageResource.Resources.lblNext" last-text="@PIVF.LanguageResource.Resources.lblLast"></uib-pagination>
+            <!-- Button group row -->
+        </div>
+
+
+    </div>
+
+
+
+
+
+    @* --------------------------------- Details Popup---------------------------------------- *@
+
+
+
+
+    <script type="text/ng-template" id="pharmacysalesdetailsmodalpopup">
+
+        <div ng-init="loadData()" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@PIVF.LanguageResource.Resources.tlblPharmacySalesDetails</h5>
+                <button type="button" class="close" aria-label="@PIVF.LanguageResource.Resources.btnClose" ng-click="$dismiss('close')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="col-md-12" style="overflow: auto; padding: 20px 0; max-height:500px;">
+                <div ng-show="BillDetails.length">
+                    <table class="table table-hover table-striped unique-table-class">
+                        <thead style="position: sticky; top: 0;">
+                            <tr>
+                                <th>@PIVF.LanguageResource.Resources.lblItemCode</th>
+                                <th>@PIVF.LanguageResource.Resources.lblItemName</th>
+                                <th>@PIVF.LanguageResource.Resources.lblBatchCode</th>
+                                <th>@PIVF.LanguageResource.Resources.lblQuantity</th>
+                                <th>@PIVF.LanguageResource.Resources.tlblNetAmt.</th>
+                                <th>@PIVF.LanguageResource.Resources.lblConcession (%)</th>
+                                <th>@PIVF.LanguageResource.Resources.tlblConcessionAmt.</th>
+                                <th>@PIVF.LanguageResource.Resources.tlblCGST (%)</th>
+                                <th>@PIVF.LanguageResource.Resources.tlblCGSTAmt.</th>
+                                <th>@PIVF.LanguageResource.Resources.tlblSGST (%)</th>
+                                <th>@PIVF.LanguageResource.Resources.tlblSGSTAmt.</th>
+                                <th>@PIVF.LanguageResource.Resources.tlblTotalAmt.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="PharmaDetails in BillDetails">
+                                <td>{{PharmaDetails.ItemCode }}</td>
+                                <td>{{PharmaDetails.ItemName }}</td>
+                                <td>{{PharmaDetails.BatchCode }}</td>
+                                <td>{{PharmaDetails.Quantity }}</td>
+                                <td>{{PharmaDetails.NetAmount }}</td>
+                                <td>{{PharmaDetails.ConcessionPercentage }}</td>
+                                <td>{{PharmaDetails.ConcessionAmount }}</td>
+                                <td>{{PharmaDetails.CGSTPercentage }}</td>
+                                <td>{{PharmaDetails.CGSTAmount }}</td>
+                                <td>{{PharmaDetails.SGSTPercentage }}</td>
+                                <td>{{PharmaDetails.SGSTAmount }}</td>
+                                <td>{{PharmaDetails.TotalAmount }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div class="BilledPatientListContainer" ng-show="!BillDetails.length">
+
+                    <label class="col-md-12 col-sm-12 col-lg-12 control-label customError">@PIVF.LanguageResource.Resources.tmsgSorrywecouldntfindanyrecordsagaints<span class="customErrorDate"> {{PharmaDetails.BillNo }} </span> @PIVF.LanguageResource.Resources.tlblbill.</label>
+
+                </div>
+
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" ng-click="cancel()">
+                    @PIVF.LanguageResource.Resources.btnClose
+                </button>
+
+            </div>
+        </div>
+    </script>
+
+</div>

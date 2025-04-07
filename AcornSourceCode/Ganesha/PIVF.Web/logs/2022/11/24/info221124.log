@@ -1,0 +1,16 @@
+2022-11-24 12:59:02.8373|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:02.8373|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:05.4859|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:alka.bhide,UnitID:2
+2022-11-24 12:59:05.4859|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:alka.bhide,UnitID:2
+2022-11-24 12:59:07.2374|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:07.2374|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:07.2654|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:07.2654|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:07.7243|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:07.7243|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:08.2382|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:08.2382|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:09.2717|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:09.2717|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:09.7536|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:alka.bhide,UnitID:2
+2022-11-24 12:59:09.7536|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:alka.bhide,UnitID:2

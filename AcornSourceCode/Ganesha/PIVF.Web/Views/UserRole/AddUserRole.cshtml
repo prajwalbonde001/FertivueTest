@@ -1,0 +1,187 @@
+﻿@{
+    Layout = null;
+}
+<form name="frmAddRole" novalidate role="form" ng-controller="UserRoleController">
+    <div class="form_Content m-t-20">
+
+        <!-- Page Content Start -->
+        <!-- Fixed Link Start -->
+        @*<div class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblUserRoleDetails</h5></div>*@
+        <section id="" class="" ng-init="GetMenuList();">
+            <!-- Form Content Start -->
+            <div class="row m-t-10 m-b-5">
+                <div class="col-md-4 col-lg-3 form-horizontal">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-4 col-lg-3 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.Code</label>
+                        <div class="col-sm-6 col-md-6 col-lg-8" ng-class="{'Invalid':frmAddRole.Code.$invalid && frmAddRole.Code.$dirty }">
+                            <input type="text" class="form-control" id="Code" name="Code" placeholder="" ng-model="Role.Code" ng-change="CheckExists();" ng-required="true" maxlength="10" multi-validation="AlphaNumericArrowBkSpDelSpDCFSlash">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 form-horizontal">
+                    <div class="form-group ">
+                        <label class="col-sm-4 col-md-4 col-lg-3 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.Description</label>
+                        <div class="col-sm-6 col-md-6 col-lg-6" ng-class="{'Invalid':frmAddRole.Description.$invalid && frmAddRole.Description.$dirty }">
+                            <input type="text" class="form-control" id="Description" name="Description" placeholder="" ng-model="Role.Description" ng-change="CheckExists();" ng-required="true" maxlength="50" multi-validation='AlphaArrowBkSpDelSpDCFSlash'>@*multi-validation="AlphaArrowBkSpDelSpDCFSlash"*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+            <div class="row " style="height: calc(100vh - 320px); overflow: auto;">
+                <div class="col-md-12 form-horizontal">
+                    <div class="UserRoleCollapseWrap">
+                        <div class="row">
+                            <!-- Column 1 First Main Collapse Start -->
+                            <div class="col-md-6">
+                                <div class="panel-group User-Role-Collapse" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <!-- Administration Collapse Start -->
+                                    <div class="panel panel-default" ng-repeat="item in MenuList">
+                                        <div class="panel-heading" role="tab" id="">
+                                            <h3 class="title"><a role="button" id="headingSeven" class="collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#{{item.Id}}" aria-expanded="false" aria-controls="{{item.Id}}"><span class="CollapseTabArrowIcon"></span> {{item.Title}}</a></h3>
+                                        </div>
+                                        <div id="{{item.Id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                                            <div class="panel-body">
+                                                <div class="PanelSubContentWrapper">
+                                                    <div class="panel-heading panel-subheading">
+                                                        <div class="form-group">
+                                                            <label class="col-md-offset-6 col-md-1 col-lg-offset-6 col-lg-1 control-label">@PIVF.LanguageResource.Resources.lblAll</label>
+                                                            <label class="col-md-1 col-lg-1 control-label">@PIVF.LanguageResource.Resources.lblAdd</label>
+                                                            <label class="col-md-1 col-lg-1 control-label">@PIVF.LanguageResource.Resources.btnEdit</label>
+                                                            <label class="col-md-1 col-lg-1 control-label">@PIVF.LanguageResource.Resources.lblView</label>
+                                                            <label class="col-md-1 col-lg-1 control-label">@PIVF.LanguageResource.Resources.lblPrint</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Sub Patient Configuration Start -->
+                                                    <div class="form-group sub-collapse-form-group">
+                                                        <!-- Sub accordion Start -->
+                                                        <div class="panel-group User-Role-Collapse subCollapse" id="accordion1" role="tablist" aria-multiselectable="true">
+                                                            <div class="panel panel-default" ng-repeat="i in item.lstMenu">
+                                                                <div class="panel-heading panel-sub-mini-heading" role="tab" id="">
+                                                                    <label class="col-md-6 col-lg-6">
+                                                                        <h3 class="Subtitle"><a role="button" id="headingOne1" class="collapsed" data-toggle="collapse" data-parent="#accordion1" data-target="#{{i.Id}}" aria-expanded="true" aria-controls="{{i.Id}}"><span ng-class="{'CollapseTabArrowIcon SubCollapseTabArrowIcon':item.lstInnerMenu.length>0}"></span>{{i.Title}}</a></h3>
+                                                                    </label>
+                                                                    <label class="col-md-1 col-lg-1 control-label " id="text-left"><input type="checkbox" name="{{'IsAll_'+i.Title}}" ng-model="i.IsAll" ng-change="toggleAll(item.MenuId,i,$index,true);"></label>
+                                                                    <label class="col-md-1 col-lg-1 control-label " id="text-left"><input type="checkbox" name="{{'IsCreate_'+i.Title}}" ng-model="i.IsCreate" ng-change="ToggleIs(i.IsCreate,i.MenuId,1,true,item.MenuId,i.ParentId,$index);"></label>
+                                                                    <label class="col-md-1 col-lg-1 control-label " id="text-left"><input type="checkbox" name="{{'IsUpdate_'+i.Title}}" ng-model="i.IsUpdate" ng-change="ToggleIs(i.IsUpdate,i.MenuId,2,true,item.MenuId,i.ParentId,$index);"></label>
+                                                                    <label class="col-md-1 col-lg-1 control-label " id="text-left"><input type="checkbox" name="{{'IsRead_'+i.Title}}" ng-model="i.IsRead" ng-change="ToggleIs(i.IsRead,i.MenuId,3,true,item.MenuId,i.ParentId,$index);"></label>
+                                                                    <label class="col-md-1 col-lg-1 control-label m-b-16" id="text-left"><input type="checkbox" name="{{'IsPrint_'+i.Title}}" ng-model="i.IsPrint" ng-change="ToggleIs(i.IsPrint,i.MenuId,4,true,item.MenuId,i.ParentId,$index);"></label>
+
+                                                                </div>
+                                                                <div id="{{i.Id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                                    <div class="panel-body" ng-repeat="j in item.lstInnerMenu">
+                                                                        <div class="PanelSubContentWrapper1" ng-if="i.MenuId==j.ParentId">
+                                                                            <div class="labelWrap">
+                                                                                <div class="form-group m-b-5">
+                                                                                    <span class="col-md-6 col-lg-6 control-label p-l-45">{{j.Title}}</span>
+                                                                                    <label class="col-md-1 col-lg-1 control-label"><input type="checkbox" name="{{'IsAll_'+j.Title}}" ng-model="j.IsAll" ng-change="toggleAll(item.MenuId,j,$index,false);"></label>
+                                                                                    <label class="col-md-1 col-lg-1 control-label"><input type="checkbox" name="{{'IsCreate_'+j.Title}}" ng-model="j.IsCreate" ng-change="ToggleIs(j.IsCreate,j.MenuId,1,false,item.MenuId,j.ParentId,$index);"></label>
+                                                                                    <label class="col-md-1 col-lg-1 control-label"><input type="checkbox" name="{{'IsUpdate_'+j.Title}}" ng-model="j.IsUpdate" ng-change="ToggleIs(j.IsUpdate,j.MenuId,2,false,item.MenuId,j.ParentId,$index);"></label>
+                                                                                    <label class="col-md-1 col-lg-1 control-label"><input type="checkbox" name="{{'IsRead_'+j.Title}}" ng-model="j.IsRead" ng-change="ToggleIs(j.IsRead,j.MenuId,3,false,item.MenuId,j.ParentId,$index);"></label>
+                                                                                    <label class="col-md-1 col-lg-1 control-label"><input type="checkbox" name="{{'IsPrint_'+j.Title}}" ng-model="j.IsPrint" ng-change="ToggleIs(j.IsPrint,j.MenuId,4,false,item.MenuId,j.ParentId,$index);"></label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Sub accordion End -->
+                                                    </div>
+                                                    <!-- Sub Patient Configuration End -->
+                                                </div>
+                                                <div class="m-t-5 text-right">
+                                                    <button class="btn btn-primary m-b-0" type="button" id="btnSave" ng-click="CheckAlreadyExists(Role)" @*ng-disabled="frmAddRole.$invalid"*@>@PIVF.LanguageResource.Resources.btnSave</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Administration Collapse End -->
+                                </div>
+                            </div>
+                            <!-- Column 1 First Main Collapse End /////////////////////-->
+                            <!-- Column 2 Second Main Collapse Start -->
+                            <div class="col-md-6">
+                                <div class="panel-group User-Role-Collapse" id="accordion2" role="tablist" aria-multiselectable="true">
+                                    <!-- Administration Collapse Start -->
+                                    <div class="panel panel-default" ng-repeat="item in MenuList1">
+                                        <div class="panel-heading" role="tab" id="">
+                                            <h3 class="title"><a role="button" id="headingSeven" class="collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#{{item.Id}}" aria-expanded="false" aria-controls="{{item.Id}}"><span class="CollapseTabArrowIcon"></span> {{item.Title}}</a></h3>
+                                        </div>
+                                        <div id="{{item.Id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                                            <div class="panel-body">
+                                                <div class="PanelSubContentWrapper">
+                                                    <div class="panel-heading panel-subheading">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-offset-6 col-sm-1 control-label">@PIVF.LanguageResource.Resources.lblAll</label>@*All ::Modified by swatih for localization 29/7/2020*@
+                                                            <label class="col-sm-1 control-label">@PIVF.LanguageResource.Resources.lblAdd</label>@*Add ::Modified by swatih for localization 29/7/2020*@
+                                                            <label class="col-sm-1 control-label">@PIVF.LanguageResource.Resources.lblEdit</label>@*Edit ::Modified by swatih for localization 29/7/2020*@
+                                                            <label class="col-sm-1 control-label">@PIVF.LanguageResource.Resources.lblView</label>@*View ::Modified by swatih for localization 29/7/2020*@
+                                                            <label class="col-sm-1 control-label">@PIVF.LanguageResource.Resources.lblPrint</label>@*Print ::Modified by swatih for localization 29/7/2020*@
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Sub Patient Configuration Start -->
+                                                    <div class="form-group sub-collapse-form-group">
+                                                        <!-- Sub accordion1 Start -->
+                                                        <div class="panel-group User-Role-Collapse subCollapse" id="accordion3" role="tablist" aria-multiselectable="true">
+                                                            <div class="panel panel-default" ng-repeat="i in item.lstMenu">
+                                                                <div class="panel-heading panel-sub-mini-heading" role="tab" id="">
+
+                                                                    <label class="col-sm-6 p-l-10">
+                                                                        <h3 class="Subtitle"><a role="button" id="headingOne2" class="collapsed" data-toggle="collapse" data-parent="#accordion3" data-target="#{{i.Id}}" aria-expanded="true" aria-controls="{{i.Id}}"><span ng-class="{'CollapseTabArrowIcon SubCollapseTabArrowIcon':item.lstInnerMenu.length>0}"></span>{{i.Title}}</a></h3>
+                                                                    </label>
+                                                                    <label class="col-sm-1 control-label r-p-5"><input type="checkbox" name="{{'IsAll_'+i.Title}}" ng-model="i.IsAll" ng-change="toggleAll1(item.MenuId,i,$index,true);"></label>
+                                                                    <label class="col-sm-1 control-label p-r-10 r-p-3"><input type="checkbox" name="{{'IsCreate_'+i.Title}}" ng-model="i.IsCreate" ng-change="ToggleIs1(i.IsCreate,i.MenuId,1,true,item.MenuId,i.ParentId,$index);"></label>
+                                                                    <label class="col-sm-1 control-label p-r-8 r-r-0"><input type="checkbox" name="{{'IsUpdate_'+i.Title}}" ng-model="i.IsUpdate" ng-change="ToggleIs1(i.IsUpdate,i.MenuId,2,true,item.MenuId,i.ParentId,$index);"></label>
+                                                                    <label class="col-sm-1 control-label p-r-6 r-r-0"><input type="checkbox" name="{{'IsRead_'+i.Title}}" ng-model="i.IsRead" ng-change="ToggleIs1(i.IsRead,i.MenuId,3,true,item.MenuId,i.ParentId,$index);"></label>
+                                                                    <label class="col-sm-1 control-label p-r-4 r-l-34 m-b-16"><input type="checkbox" name="{{'IsPrint_'+i.Title}}" ng-model="i.IsPrint" ng-change="ToggleIs1(i.IsPrint,i.MenuId,4,true,item.MenuId,i.ParentId,$index);"></label>
+
+                                                                </div>
+                                                                <div id="{{i.Id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                                    <div class="panel-body" ng-repeat="j in item.lstInnerMenu" style="border:none;">
+                                                                        <div class="PanelSubContentWrapper1" ng-if="i.MenuId==j.ParentId">
+                                                                            <div class="labelWrap">
+                                                                                <div class="form-group m-b-5">
+                                                                                    <span class="col-sm-6 control-label p-l-45">{{j.Title}}</span>
+                                                                                    <label class="col-sm-1 control-label"><input type="checkbox" name="{{'IsAll_'+j.Title}}" ng-model="j.IsAll" ng-change="toggleAll1(item.MenuId,j,$index,false);"></label>
+                                                                                    <label class="col-sm-1 control-label"><input type="checkbox" name="{{'IsCreate_'+j.Title}}" ng-model="j.IsCreate" ng-change="ToggleIs1(j.IsCreate,j.MenuId,1,false,item.MenuId,j.ParentId,$index);"></label>
+                                                                                    <label class="col-sm-1 control-label"><input type="checkbox" name="{{'IsUpdate_'+j.Title}}" ng-model="j.IsUpdate" ng-change="ToggleIs1(j.IsUpdate,j.MenuId,2,false,item.MenuId,j.ParentId,$index);"></label>
+                                                                                    <label class="col-sm-1 control-label"><input type="checkbox" name="{{'IsRead_'+j.Title}}" ng-model="j.IsRead" ng-change="ToggleIs1(j.IsRead,j.MenuId,3,false,item.MenuId,j.ParentId,$index);"></label>
+                                                                                    <label class="col-sm-1 control-label"><input type="checkbox" name="{{'IsPrint_'+j.Title}}" ng-model="j.IsPrint" ng-change="ToggleIs1(j.IsPrint,j.MenuId,4,false,item.MenuId,j.ParentId,$index);"></label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Sub accordion1 End -->
+                                                    </div>
+                                                    <!-- Sub Patient Configuration End -->
+                                                </div>
+                                                <div class="m-t-5 text-right">
+                                                    <button class="btn btn-primary m-b-0" type="button" id="btnSave" ng-click="CheckAlreadyExists(Role)" @*ng-disabled="frmAddRole.$invalid"*@>@PIVF.LanguageResource.Resources.btnSave</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Administration Collapse End -->
+                                </div>
+                            </div>
+                            <!-- Column 2 Second Main Collapse End /////////////////////-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Content End -->
+        <div class="row " style="border-top: 1px solid #E2E3E5;">
+            <div class="col-sm-12 text-right m-t-10">
+                <button class="btn btn-primary" type="button" id="" ng-click="Back();">@PIVF.LanguageResource.Resources.btnBack</button>
+            </div>
+        </div>
+    </div>
+
+</form>

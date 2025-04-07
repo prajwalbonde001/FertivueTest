@@ -1,0 +1,36 @@
+2023-10-12 19:00:47.0640|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-12 19:00:47.0640|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-12 19:00:47.3552|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-12 19:00:47.3552|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-12 19:00:51.0980|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-12 19:00:51.0980|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-12 19:00:51.1478|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-12 19:00:51.1478|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-12 19:00:51.2536|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-12 19:00:51.2536|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-12 19:00:51.4062|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-12 19:00:51.4062|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-12 19:00:52.1339|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-12 19:00:52.1339|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-12 19:00:52.6304|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-12 19:00:52.6304|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-12 19:00:59.6177|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-12 19:00:59.6177|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-12 19:01:00.8996|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-12 19:01:00.8996|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-12 19:01:03.7350|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-10-12 19:01:03.7350|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-10-12 19:01:04.4836|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-10-12 19:01:04.4836|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:POST,Method:PutSelectedvisitByPatient,User:admin,UnitID:2
+2023-10-12 19:01:07.7800|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-12 19:01:07.7800|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-12 19:01:12.3769|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: admin,UnitID:2
+2023-10-12 19:01:12.3769|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: admin,UnitID:2
+2023-10-12 19:04:18.6747|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:newCyclebtnFlag,User:admin,UnitID:2
+2023-10-12 19:04:18.6747|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:newCyclebtnFlag,User:admin,UnitID:2
+2023-10-12 19:04:20.1937|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetARTCycleList,User:admin,UnitID:2
+2023-10-12 19:04:20.1937|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetARTCycleList,User:admin,UnitID:2
+2023-10-12 19:04:25.2364|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-12 19:04:25.2364|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-12 19:04:32.5539|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: admin,UnitID:2
+2023-10-12 19:04:32.5539|INFO|PIVF.Web.Api.EMR.MaleHistory.MaleHistoryController|Controller Name: MaleHistory,Action: GET,Method: SetAllControls,User: admin,UnitID:2

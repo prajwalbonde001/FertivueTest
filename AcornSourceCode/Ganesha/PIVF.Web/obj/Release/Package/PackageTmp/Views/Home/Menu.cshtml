@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+<style>
+    .new-row {
+  clear: left;
+}
+</style>
+@*---------------------------------------page start Here ------------------------------------------------*@
+@*<h4 class="formTitle">{{Title}}</h4>
+<hr>*@
+@*<link href="~/Content/style_slide.css" rel="stylesheet" />*@
+<div class="sysConfig container-fluid">
+    <h4 class="formTitle">{{Title}}</h4>
+    <div id="{{DivTitle}}" class="sidenav" ng-style="{'width':width}">
+        <span href="javascript:void(0)" class="closebtn" ng-click="CloseChild()">&times;</span>
+        <div ng-class="{'new-row': startNewRow($index,3) }">
+            <a href="{{'#/'+ j.Path}}" ng-repeat="j in ChildList">{{j.Title}}</a>
+        </div>
+    </div>
+    <div class="container_sysConfig" ng-init="BindParentList()">
+        <div ng-class="{'new-row': startNewRow($index,4) }" ng-repeat="i in ParentList">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mb35">
+                <a href="javascript:void(0)" ng-click="BindChildList(i.MenuId,i.Title)">
+                    <span class="ico_sysConfig {{i.ImagePath}}"></span>
+                    <span>{{i.Title}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

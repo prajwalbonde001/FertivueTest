@@ -1,0 +1,279 @@
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll.config
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll.config
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll.config
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csproj.AssemblyReference.cache
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csproj.CopyComplete
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+C:\Users\User\Downloads\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Gauri\GIT\Multiply_IVF_AUG\multiply_ivf\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+D:\Gauri\GIT\Multiply_IVF\multiply_ivf_10\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+D:\Virtusoft\multiply_ivf_10-main\multiply_ivf_10-main\src\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+D:\MULTIPLY_IVF_ACORN\Acorn Source Code\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+D:\MultiplyIVF_TFS\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+D:\Multiply IVF\CodeAcorn\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+D:\02 06 2023\code\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+D:\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+C:\birla\Birla\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+C:\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+C:\Clone\fertivue_regit_clone_for_new\Fertivue_Changes\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+C:\Users\Admin\Desktop\New_Fertivue\local\Fertivue_Changes_latest\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Newtonsoft.Json.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Newtonsoft.Json.xml
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+C:\Fertivue_Changes_V2\AcornSourceCode_local_19-03-2025_09-58\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Newtonsoft.Json.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Newtonsoft.Json.xml
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.Core.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.S3.dll
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.Core.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.Core.xml
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.S3.pdb
+C:\Fertivue_Changes_V2\Fertivue_Changes_latest_19_03_2025_12_19-PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.S3.xml
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\DataBaseConfiguration.pdb
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.Core.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.S3.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Newtonsoft.Json.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\EntityFramework.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\LinqKit.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\PIVF.Entities.pdb
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.Core.pdb
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.Core.xml
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.S3.pdb
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\AWSSDK.S3.xml
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Newtonsoft.Json.xml
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.Ef6.pdb
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\bin\Debug\Repository.Pattern.pdb
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.csprojResolveAssemblyReference.cache
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.dll
+C:\Angular\Fertivue\AcornSourceCode_01_04_2025_10_38_PM\AcornSourceCode\Ganesha\DataBaseConfiguration\obj\Debug\DataBaseConfiguration.pdb

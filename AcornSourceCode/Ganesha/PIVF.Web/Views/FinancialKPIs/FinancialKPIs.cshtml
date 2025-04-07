@@ -1,0 +1,452 @@
+﻿
+@{
+    Layout = null;
+    
+}
+
+@*<head>
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <script src="https://rawgit.com/fusioncharts/angularjs-fusioncharts/master/dist/angular-fusioncharts.min.js"></script>
+</head>*@
+
+<div class="row form-horizontal" ng-controller="FinancialKPIsCtrl" ng-init="loadData()">
+    <div class="row">
+        <div class="col-lg-12">
+            <button id="KPI_btn" type="button" class="btn btn-primary" ng-click="ViewKPI()">View KPI</button>
+        </div>
+    </div>
+
+
+    <div class="KPI_Wrap" style="display:none;">
+        <div class="row">
+            <div class="col-sm-12 KPI_Box form-horizontal">
+                <div class="form-group" ng-hide="true">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold">Chart Type</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        @*<select class="form-control">
+                            <option>option 1</option>
+                            <option>option 1</option>
+                            <option>option 1</option>
+                        </select>*@
+                        <select class="form-control" id="ddlChartList" ng-change="ChangeChart()" name="ddlChartList" ng-model="FinancialKPI.chartType" ng-options="item.ID as item.Description for item in ListChartType"></select>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold">From Date</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" ng-model="FinancialKPI.fromDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="month1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                            <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold">To Date</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="Date" placeholder="dd-MMM-yyyy" ng-model="FinancialKPI.toDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="month2.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="">
+                            <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold" for="">KPI</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <select class="form-control" id="ddlChartList" ng-change="ChangeChart()" name="ddlChartList" ng-model="FinancialKPI.reportType" ng-options="item.ID as item.Description for item in ListReportType"></select>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold">Clinic</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <select id="ddlChartList" class="form-control" ng-change="ChangeReport()" name="ddlChartList" ng-model="FinancialKPI.clinicID" ng-options="item.ID as item.Description for item in ListClinic"></select>
+                    </div>
+                </div>
+                <!-- <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold" for="">Female Age</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 " for="">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label labelBold" for="">Between</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 " for="">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>-->
+                <div class="form-group text-center">
+                    <button class="btn btn-primary" ng-click="GetKPIData(FinancialKPI)">View KPI</button>
+                    <button class="btn btn-primary">Print</button>
+                    <button id="CloseDiv" class="btn btn-primary">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form_Content p-t-10">
+        <div class="row">
+            <!-- Graph One Start -->
+            <div class="col-lg-6 ">
+                <div class="GraphWrap m-b-10">
+                    <h4 class="title">Patient Wise Count</h4>
+
+                    <div class="table-responsive " id="tableToExport" style="min-height:100px;max-height:100px">
+                        <!--fixed_header-->
+                        <table class="table table-hover table-striped">
+                            <!--style="min-width:1500px;height:380px;"-->
+                            <thead>
+                                <tr>
+                                    <th st-ratio="">New Registration</th>
+                                    <th st-ratio="">New OP Visits</th>
+                                    <th st-ratio="">FollowUps Visit</th>
+                                    <th st-ratio="">New Admissions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    @*ng-repeat="item in PatientCountList"*@
+                                    <td st-ratio="">{{NewRegistration}}</td>
+                                    <td st-ratio="">{{NewOpVisits}}</td>
+                                    <td st-ratio="">{{FollowUpVisits}}</td>
+                                    <td st-ratio="">{{NewAdmission}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;">
+                            <canvas id="pie"
+                                    height="25"
+                                    width="25"
+                                    class="chart chart-pie"
+                                    chart-data="data"
+                                    chart-labels="labels"
+                                    chart-click="onClickSlice"
+                                    chart-options="options"
+                                    chart-colours="chartColor"
+                                    style="border: 1px solid #ddd;"></canvas>
+                        @*<canvas id="bar" 
+                                height="25"
+                                width="25"
+                                class="chart chart-bar" 
+                                chart-data="data"
+                                chart-labels="labels"                                
+                                chart-options="options"
+                                chart-click="onClick" 
+                                chart-colors="chartColor" 
+                                style="border: 1px solid #ddd;"></canvas>*@
+                    </div>
+                    @*<div ng-show ="showPieChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="pie3d"                        
+                         dataSource="{{myDataSource}}">
+                </div>
+                    <div ng-show="showBarChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="column2d"
+                         dataSource="{{myDataSource}}">
+                    </div>*@
+                </div>
+            </div>
+            <!-- Graph One End -->
+            <!-- Graph Two Start -->
+            <div class="col-lg-6 p-l-0">
+                <div class="GraphWrap m-b-10">
+                    <h4 class="title">Today's Collection</h4>
+                    <div class="table-responsive " id="tableToExport" style="min-height:100px;max-height:100px">
+                        <!--fixed_header-->
+                        <table class="table table-hover table-striped">
+                            <!--style="min-width:1500px;height:380px;"-->
+                            <thead>
+                                <tr>
+                                    <th st-ratio="">Service Collection</th>
+                                    <th st-ratio="">Pharmacy Collection</th>
+                                    <th st-ratio="">Advance Collection</th>
+                                    <th st-ratio="">Refunds</th>
+                                    <th st-ratio="">Total Collection</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td st-ratio="">{{ServiceCollection}}</td>
+                                    <td st-ratio="">{{PharmacyCollection}}</td>
+                                    <td st-ratio="">{{AdvanceCollection}}</td>
+                                    <td st-ratio="">{{Refunds}}</td>
+                                    <td st-ratio="">{{TotalCollection}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;">
+                        <canvas id="pie"
+                                height="25"
+                                width="25"
+                                class="chart chart-pie"
+                                chart-data="data2"
+                                chart-labels="labels2"
+                                chart-click="onClickSlice"
+                                chart-options="options2"
+                                chart-colours="chartColor"
+                                style="border: 1px solid #ddd;"></canvas>
+                    </div>
+                    @*<div ng-show="showPieChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="pie3d"
+                         dataSource="{{myDataSource}}">
+                    </div>
+                    <div ng-show="showBarChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="column2d"
+                         dataSource="{{myDataSource}}">
+                    </div>*@
+                </div>
+            </div>
+            <!-- Graph Two End -->
+            <!-- Graph Three Start -->
+            <div class="col-lg-6 ">
+                <div class="GraphWrap m-b-10">
+                    <h4 class="title">Payment Mode Wise Collection</h4>
+                    <div class="table-responsive " id="tableToExport" style="min-height:100px;max-height:100px">
+                        <!--fixed_header-->
+                        <table class="table table-hover table-striped">
+                            <!--style="min-width:1500px;height:380px;"-->
+                            <thead>
+                                <tr>
+                                    <th st-ratio="">Card</th>
+                                    <th st-ratio="">Cash</th>
+                                    <th st-ratio="">Cheque</th>
+                                    <th st-ratio="">Online</th>
+                                    <th st-ratio="">UPI/Wallet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td st-ratio="">{{Card}}</td>
+                                    <td st-ratio="">{{Cash}}</td>
+                                    <td st-ratio="">{{Cheque}}</td>
+                                    <td st-ratio="">{{Online}}</td>
+                                    <td st-ratio="">{{UPIWallet}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;">
+                        <canvas id="pie"
+                                height="25"
+                                width="25"
+                                class="chart chart-pie"
+                                chart-data="data1"
+                                chart-labels="labels1"
+                                chart-click="onClickSlice"
+                                chart-options="options1"
+                                chart-colours="chartColor"
+                                style="border: 1px solid #ddd;"></canvas>
+                    </div>
+                    @*<div ng-show="showPieChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="pie3d"
+                         dataSource="{{myDataSource}}">
+                    </div>
+                    <div ng-show="showBarChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="column2d"
+                         dataSource="{{myDataSource}}">
+                    </div>*@
+                </div>
+            </div>
+            <!-- Graph Three End -->
+            <!-- Graph Four Start -->
+            <div class="col-lg-6 p-l-0">
+                <div class="GraphWrap m-b-10">
+                    <h4 class="title">Services Outstanding</h4>
+                    <div class="table-responsive " id="tableToExport" style="min-height:100px;max-height:100px">
+                        <!--fixed_header-->
+                        <table class="table table-hover table-striped">
+                            <!--style="min-width:1500px;height:380px;"-->
+                            <thead>
+                                <tr>
+                                    <th st-ratio="">Today's</th>
+                                    <th st-ratio=""> <30 Days </th>
+                                    <th st-ratio=""> <60 Days </th>
+                                    <th st-ratio=""> <90 Days </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td st-ratio="">{{SOTodays}}</td>
+                                    <td st-ratio="">{{SODays30}}</td>
+                                    <td st-ratio="">{{SODays60}}</td>
+                                    <td st-ratio="">{{SODays90}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;">
+                        <canvas id="pie"
+                                height="25"
+                                width="25"
+                                class="chart chart-pie"
+                                chart-data="data3"
+                                chart-labels="labels3"
+                                chart-click="onClickSlice"
+                                chart-options="options3"
+                                chart-colours="chartColor"
+                                style="border: 1px solid #ddd;"></canvas>
+                    </div>
+                    @*<div ng-show="showPieChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="pie3d"
+                         dataSource="{{myDataSource}}">
+                    </div>
+                    <div ng-show="showBarChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="column2d"
+                         dataSource="{{myDataSource}}">
+                    </div>*@
+                </div>
+            </div>
+            <!-- Graph Four End -->
+            <!-- Graph Five Start -->
+            <div class="col-lg-6">
+                <div class="GraphWrap">
+                    <h4 class="title">Pharmacy Outstanding</h4>
+                    <div class="table-responsive " id="tableToExport" style="min-height:100px;max-height:100px">
+                        <!--fixed_header-->
+                        <table class="table table-hover table-striped">
+                            <!--style="min-width:1500px;height:380px;"-->
+                            <thead>
+                                <tr>
+                                    <th st-ratio="">Today's</th>
+                                    <th st-ratio=""> <30 Days </th>
+                                    <th st-ratio=""> <60 Days </th>
+                                    <th st-ratio=""> <90 Days </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td st-ratio="">{{POTodays}}</td>
+                                    <td st-ratio="">{{PODays30}}</td>
+                                    <td st-ratio="">{{PODays60}}</td>
+                                    <td st-ratio="">{{PODays90}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    @*<div ng-show="showPieChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="pie3d"
+                         dataSource="{{myDataSource}}">
+                    </div>
+                    <div ng-show="showBarChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="column2d"
+                         dataSource="{{myDataSource}}">
+                    </div>*@
+                    <div class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;">
+                        <canvas id="pie"
+                                height="25"
+                                width="25"
+                                class="chart chart-pie"
+                                chart-data="data4"
+                                chart-labels="labels4"
+                                chart-click="onClickSlice"
+                                chart-options="options4"
+                                chart-colours="chartColor"
+                                style="border: 1px solid #ddd;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!-- Graph Five End -->
+            <!-- Graph Six Start -->
+            <div class="col-lg-6 p-l-0">
+                <div class="GraphWrap">
+                    <h4 class="title">Speciality Wise Revenue</h4>
+                    <div class="table-responsive " id="tableToExport" style="min-height:100px;max-height:100px">
+                        <!--fixed_header-->
+                        <table class="table table-hover table-striped">
+                            <!--style="min-width:1500px;height:380px;"-->
+                            <thead>
+                                <tr>
+                                    <th st-ratio="">Consultation</th>
+                                    <th st-ratio="">Reproductive Medicine</th>
+                                    <th st-ratio="">Pathology</th>
+                                    <th st-ratio="">Radiology</th>                                 
+                                    <th st-ratio="">Others</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td st-ratio="">{{Consultation}}</td>
+                                    <td st-ratio="">{{ReproductiveMedicine}}</td>
+                                    <td st-ratio="">{{Pathalogy}}</td>
+                                    <td st-ratio="">{{Radiology}}</td>
+                                    <td st-ratio="">{{Others}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    @*<div ng-show="showPieChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="pie3d"
+                         dataSource="{{myDataSource}}">
+                    </div>
+                    <div ng-show="showBarChart" class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;"
+                         fusioncharts
+                         width="600"
+                         height="300"
+                         type="column2d"
+                         dataSource="{{myDataSource}}">
+                    </div>*@
+                    <div class="col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1 col-sm-12" style="min-height:270px;">
+                        <canvas id="pie"
+                                height="25"
+                                width="25"
+                                class="chart chart-pie"
+                                chart-data="data5"
+                                chart-labels="labels5"
+                                chart-click="onClickSlice"
+                                chart-options="options5"
+                                chart-colours="chartColor"
+                                style="border: 1px solid #ddd;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!-- Graph Six End -->
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#KPI_btn").click(function () {
+            //alert("in kpi");
+            $(".KPI_Wrap").toggle();
+        });
+        $("#CloseDiv").click(function () {
+            //alert("in kpi");
+            $(".KPI_Wrap").hide();
+        });
+    });
+    </script>
+</div>
+

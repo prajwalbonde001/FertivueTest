@@ -1,0 +1,321 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+
+    .has-error input {
+        border: 1px solid red !important;
+    }
+</style>
+<div ng-controller="FemaleComplaintsController" class="customMainContaint" style="position: relative; z-index: 11;">
+    <form name="frmFemaleComplaints" novalidate>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 text-right m-b-5">
+                @*<button class="btn btn-primary btn_form" type="button" id="" value="" ng-click="GotoMaleComplaints()">Male Complaints</button>*@
+                <a class="link" href="" ng-hide="CoupleDetails.FemalePatient.PatientCategoryID==8 || CoupleDetails.FemalePatient.PatientCategoryID==11" ng-click="GotoMaleComplaints()">@PIVF.LanguageResource.Resources.lblMaleComplaints</a>@*Male Complaints::Modified by swatih for localization 16/7/2020*@
+            </div>
+        </div>
+        <div class="form_Content" ng-init="FemaleComplaintsInitilization()">
+            <div class="row form-horizontal">
+                <div class="col-md-12 col-lg-12 "><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblComplaints_Follow_Up</h5></div>@*Complaints / Follow-Up ::Modified by swatih for localization 16/7/2020*@
+                <div class="col-md-4 col-lg-3">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-lg-12 control-label" for=""><span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblLMP</label> @*<span class="text-Red">*</span>*@ @*LMP ::Modified by swatih for localization 16/7/2020*@
+                        <div class="col-md-12 col-lg-12">
+                            <div class="input-group date" ng-class="{'invalid':frmFemaleComplaints.LMPDate.$invalid && frmFemaleComplaints.LMPDate.$dirty  }">
+                                <input type="text" class="form-control" id="LMPDate" name="LMPDate" placeholder="dd-MMM-yyyy" ng-model="FemaleComplaints.LMPDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="" ng-required="true">
+                                <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                    <div class="form-group ">
+                        <label class="col-md-12 col-lg-12 control-label" for="">
+                            <span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblPresentingComplaints
+                        </label>@*Presenting Complaints ::Modified by swatih for localization 16/7/2020*@
+                        <div class="col-md-12 col-lg-12 m-b-7">
+                            <div isteven-multi-select input-model="PresentingComplaintsList"
+                                 output-model="FemaleComplaints.PresentingComplaintsSelected"
+                                 id="PresentingComplaintsSelected" name="PresentingComplaintsSelected"
+                                 button-label="Description"
+                                 class="resultDataSelect"
+                                 ng-required="true"
+                                 item-label="Description"
+                                 tick-property="ticked"
+                                 tabindex="19"
+                                 output-properties="ID"
+                                 max-height="300px"
+                                 max-labels="2"
+                                 on-item-click="fClick(data)"
+                                 on-reset="fReset()"
+                                 on-select-all="fSelectAll()"
+                                 on-select-none="fSelectNone()">
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-md-12 col-lg-6 ">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                               Other Complaints
+                            </label>
+                            <div class="col-md-11 col-sm-11 col-lg-11 p-r-0 areaHeight">
+                                <textarea type="text" id="OtherComplaints" name="OtherComplaints" class="form-control" for="" ng-model="FemaleComplaints.OtherComplaints" maxlength="250"></textarea>
+                            </div>
+                            <label class="col-md-1 col-sm-1 col-lg-1 bigTxtareaCountLbl control-label" for="">{{250-FemaleComplaints.OtherComplaints.length}}</label>
+                        </div>
+                    </div>*@@*<div class="clearfix"></div>*@
+                    <div class="col-md-12 col-lg-12">
+                        <div class="table-responsive table-bordered fixed_header ">
+                            <table class="table table-hover table-striped" style="min-width:570px;max-height: 150px;">
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="2"></th>
+                                        <th st-ratio="6" class="text-center">@PIVF.LanguageResource.Resources.lblSno</th>@*SNo :: Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="25">@PIVF.LanguageResource.Resources.lblPresentingComplaint</th>@*PresentingComplaint :: Modified by swatih for localization 16/7/2020*@ 
+                                        <th st-ratio="17">@PIVF.LanguageResource.Resources.lblOnset</th>@*Onset :: Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="30">@PIVF.LanguageResource.Resources.lblDuration &nbsp;&nbsp;&nbsp;@PIVF.LanguageResource.Resources.lblDay_Month_Year</th>@*Duration/(Day/Month/Year) :: Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="20">@PIVF.LanguageResource.Resources.lblModality</th>@*Modality :: Modified by swatih for localization 16/7/2020*@
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="j in lstCompDetails">
+                                        <td st-ratio="2"><span class="btn_delete" data-toggle="modal" ng-click="DeleteCompDetail(j,$index)"></span></td>
+                                        <td st-ratio="6" class="text-center">{{$index+1}}</td>
+                                        <td st-ratio="25">
+                                            <span>{{j.PreComplaints}}</span>
+                                        </td>
+                                        <td st-ratio="17">
+                                            <select type="text" ng-model="j.Onset" ng-options="i.ID as i.Description for i in j.lstOnset" class="form-control"></select>
+                                        </td>
+                                        <td st-ratio="30" class="selectDMY">
+                                            <div class="col-md-4 p-l-0">
+                                                <select class="form-control" ng-model="j.Day" ng-options="i.ID as i.Description for i in j.lstDay"></select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <select class="form-control" ng-model="j.Month" ng-options="i.ID as i.Description for i in j.lstMonth"></select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <select class="form-control" ng-model="j.Year" ng-options="i.ID as i.Description for i in j.lstYear"></select>
+                                            </div>
+                                        </td>
+                                        <td st-ratio="20">
+                                            <select class="form-control" ng-model="j.ModID" ng-options="i.ID as i.Description for i in j.lstModality"></select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    @*<div class="col-md-12 col-lg-12">
+                            <div class="text-right">
+                                <button class="btn-link link" ng-click="AddRow()">Add Rows</button>
+                            </div>
+                            <div class="table-responsive table-bordered fixed_header">
+                                <table class="table table-hover table-striped" style="min-width:570px;max-height: 150px;">
+                                    <thead>
+                                        <tr>
+                                            <th st-ratio="2"></th>
+                                            <th st-ratio="6" class="text-center">SNo</th>
+                                            <th st-ratio="25">Other Complaints</th>
+                                            <th st-ratio="17">Onset</th>
+                                            <th st-ratio="30">Duration</th>
+                                            <th st-ratio="20">Modality</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="j in lstOthrCompDetails">
+                                            <td st-ratio="2"><span class="btn_delete" data-toggle="modal" ng-click="DeleteCompDetail(j,$index)"></span></td>
+                                            <td st-ratio="6" class="text-center">{{$index+1}}</td>
+                                            <td st-ratio="25"><input type="text" ng-model="j.OtherComplaints" class="form-control" /></td>
+                                            <td st-ratio="17"><select type="text" ng-model="j.Onset" ng-options="i.ID as i.Description for i in j.lstOnset" class="form-control"></select></td>
+                                            <td st-ratio="30">
+                                                <select class="" ng-model="j.Day" ng-options="i.ID as i.Description for i in j.lstDay"></select>
+                                                <select class="" ng-model="j.Month" ng-options="i.ID as i.Description for i in j.lstMonth"></select>
+                                                <select class="" ng-model="j.Year" ng-options="i.ID as i.Description for i in j.lstYear"></select>
+                                            </td>
+                                            <td st-ratio="20">
+                                                <select class="form-control" ng-model="j.ModID" ng-options="i.ID as i.Description for i in j.lstModality"></select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>*@
+
+                    <div class="col-md-12 col-lg-6 ">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                              @PIVF.LanguageResource.Resources.lblCaseSummary
+                            </label>@*Case Summary ::Modified by swatih for localization 16/7/2020*@
+                            <div class="col-md-11 col-sm-11 col-lg-11 p-r-0 ">
+                                <textarea type="text" id="CaseSummary" name="CaseSummary" class="form-control" for="" ng-model="FemaleComplaints.CaseSummary" maxlength="1000" ></textarea>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-6 ">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                @PIVF.LanguageResource.Resources.lblFollowUpNotes
+                            </label>@*Follow Up Notes ::Modified by swatih for localization 16/7/2020*@
+                            <div class="col-md-11 col-sm-11 col-lg-11 p-r-0 ">
+                                <textarea type="text" id="FollowUpNotes" name="FollowUpNotes" class="form-control" for="" ng-model="FemaleComplaints.FollowUpNotes" maxlength="250" ng-class="{select:frmFemaleComplaints.FollowUpNotes.$invalid && frmFemaleComplaints.FollowUpNotes.$dirty}" ng-required="true"></textarea>
+                            </div>
+                            <label class="col-md-1 col-sm-1 col-lg-1 lastLabel control-label" for="">{{250-FemaleComplaints.FollowUpNotes.length}}</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                @PIVF.LanguageResource.Resources.lblFollowUpReason
+                            </label>@* Follow Up Reason ::Modified by swatih for localization 16/7/2020*@
+                            <div class="col-sm-10 col-md-10 col-lg-11 p-r-0">
+                                <textarea class="form-control" id="Reason" name="Reason" placeholder="" ng-model="FemaleComplaints.Reason" maxlength="250" ng-class="{select:frmFemaleComplaints.Reason.$invalid && frmFemaleComplaints.Reason.$dirty}" ng-required="true"></textarea>
+                            </div>
+                            <label class="col-md-2 col-sm-2 col-lg-1 lastLabel control-label" for="">{{250-FemaleComplaints.Reason.length}}</label>
+                        </div>
+                    </div>
+                    @*<div class="clearfix"></div>*@
+                    <div class="col-md-4 col-lg-3 ">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                <span class="text-Red">* </span>@PIVF.LanguageResource.Resources.lblNextFollowUp
+                            </label>@*NextFollowUp ::Modified by swatih for localization 16/7/2020*@
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="input-group date" ng-class="{'invalid':frmFemaleComplaints.NFUpDate.$invalid && frmFemaleComplaints.NFUpDate.$dirty  }">
+                                    <input type="text" class="form-control" id="NFUpDate" name="NFUpDate" placeholder="dd-MMM-yyyy" ng-model="FemaleComplaints.NFUpDate" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup2.opened" datepicker-options="dateOptions2" alt-input-formats="altInputFormats" tabindex="" ng-required="true">
+                                    <span class="input-group-addon" id="" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Save Cancle Buttons -->
+            <div class="row form-horizontal m-t-10">
+                <div class="col-lg-12 text-right">
+                    <button class="btn btn-primary" type="button" id="btnSaveComplaint" value="" ng-disabled="IsVisitMarked" ng-click="SaveOrUpdateFemaleComplaints()">{{FemaleComplaints.FCID > 0 ? 'Update':'Save'}}</button>
+                    <button class="btn btn-default" type="button" id="" value="" ng-click="FemaleComplaintCancel()">@PIVF.LanguageResource.Resources.btnCancel</button>@*cancel ::Modified by swatih for localization 16/7/2020*@
+                </div>
+            </div>
+        </div>
+
+        <div class="form_Content m-b-5">
+                @*<div class="col-md-5 col-lg-5 ">*@
+                <section class=""><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblPreviousFollow_UpNotes</h5></section>@*Previou Follow Up Notes ::Modified by swatih for localization 16/7/2020*@
+                @*<div class="scrollHeight" style="max-height: 410px; min-height: 150px; overflow: auto;">*@
+             <div class="scrollHeight" style="height: calc(100vh - 841px); overflow: auto;">
+                <div class="m-b-10" ng-repeat="item in PreviousFollowUpNotesData track by $index">
+                    <a class="btn-primary collapseAnchor" role="button" data-toggle="collapse" data-target="#collapseExample{{$index}}" aria-expanded="false" aria-controls="collapseExample">
+                        <span class="pull-left displayInlineBlock">{{item.FCDate | date : 'dd-MMM-yyyy hh:mm'}}</span>
+                        <span class="pull-right displayInlineBlock">@PIVF.LanguageResource.Resources.lblCaptured_by_Dr {{item.UserName}}</span>@*Captured by : Dr. ::Modified by swatih for localization 16/7/2020*@
+                    </a>
+                    <div class="collapse" id="collapseExample{{$index}}">
+                        <div class="well">
+                            @*<span ng-hide="item.PresentingComplaints==null"><b>Presenting Complaints : </b>{{item.PresentingComplaints}}</span></br>
+                        <span ng-hide="item.OtherComplaints==null"><b>Other Complaints : </b>{{item.OtherComplaints}}</span></br>*@
+                            <span class="displayBlock" ng-hide="item.LMPDate==null"><b>@PIVF.LanguageResource.Resources.lblLMP : </b>{{item.LMPDate | date : 'dd-MMM-yyyy'}}</span>@*LMP ::Modified by swatih for localization 16/7/2020*@
+                            <span class="displayBlock" ng-hide="item.FollowUpNotes==null || item.FollowUpNotes=='' "><b>@PIVF.LanguageResource.Resources.lblFollowUpNotes : </b>{{item.FollowUpNotes}}</span>@*Follow Up Notes ::Modified by swatih for localization 16/7/2020*@
+                            <span class="displayBlock" ng-hide="item.Reason==null || item.Reason=='' "><b>@PIVF.LanguageResource.Resources.lblFollowUpReason : </b>{{item.Reason}}</span>     @*Added by Nayan Kamble on 26/12/2019 as per Mangesh Sir*@ @*Follow Up Reason ::Modified by swatih for localization 16/7/2020*@
+                            <span ng-hide="item.NFUpDate==null"><b>@PIVF.LanguageResource.Resources.lblNextFollowUpon : </b>{{item.NFUpDate | date : 'dd-MMM-yyyy'}}</span>       @*<span> for </span><span>{{item.Reason}}</span> commented by Nayan Kamble on 26/12/2019 as per Mangesh Sir*@ @*Next Follow Up on ::Modified by swatih for localization 16/7/2020*@
+                            <span ng-hide="item.CaseSummary==null || item.CaseSummary=='' "><b>@PIVF.LanguageResource.Resources.lblCaseSummary : </b>{{item.CaseSummary}}</span>@*Case Summary ::Modified by swatih for localization 16/7/2020*@      @*Added by Nayan Kamble on 31/12/2019*@
+                        </div>
+                        <div class="table-responsive table-bordered fixed_header " ng-show="item.lstPreCompDetails.length>0">
+                            <table class="table table-hover table-striped" style="min-width:600px;max-height: 150px;">
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="8">@PIVF.LanguageResource.Resources.lblSno</th>@*SNo ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="30">@PIVF.LanguageResource.Resources.lblPresentingComplaint</th>@*Presenting Complaint ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="17">@PIVF.LanguageResource.Resources.lblOnset</th>@*Onset ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="30">@PIVF.LanguageResource.Resources.lblDuration</th>@*Duration ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="15">@PIVF.LanguageResource.Resources.lblModality</th>@*Modality ::Modified by swatih for localization 16/7/2020*@
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="i in item.lstPreCompDetails">
+                                        <td st-ratio="8">{{$index+1}}</td>
+                                        <td st-ratio="30">{{i.PreComplaints}}</td>
+                                        <td st-ratio="17">{{i.OnsetDesc}}</td>
+                                        <td st-ratio="30" class="">{{i.Day}} D {{i.Month}} M {{i.Year}} Y</td>
+                                        <td st-ratio="15">{{i.Modality}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-responsive table-bordered fixed_header" ng-show="item.lstPreOthrCompDetails.length>0">
+                            <table class="table table-hover table-striped" style="min-width:600px;max-height: 150px;">
+                                <thead>
+                                    <tr>
+                                        <th st-ratio="8">@PIVF.LanguageResource.Resources.lblSno</th>@*SNo ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="30">@PIVF.LanguageResource.Resources.lblOtherComplaints</th>@*Other Complaints ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="17">@PIVF.LanguageResource.Resources.lblOnset</th>@*Onset ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="30">@PIVF.LanguageResource.Resources.lblDuration</th>@*Duration ::Modified by swatih for localization 16/7/2020*@
+                                        <th st-ratio="15">@PIVF.LanguageResource.Resources.lblModality</th>@*Modality ::Modified by swatih for localization 16/7/2020*@
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="j in item.lstPreOthrCompDetails">
+                                        <td st-ratio="8">{{$index+1}}</td>
+                                        <td st-ratio="30">{{j.OtherComplaints}}</td>
+                                        <td st-ratio="17">{{j.OnsetDesc}}</td>
+                                        <td st-ratio="30">{{j.Day}} D {{j.Month}} M {{j.Year}} Y</td>
+                                        <td st-ratio="15">{{j.Modality}} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                @*</div>*@
+            </div>
+        </form>
+    </div>
+    @*Visit Select Model box*@
+    <script type="text/ng-template" id="visitmodel">
+        <div class="table-responsive fixed_header">
+            <table class="table table-hover table-striped selectPatient_item" id="" style="min-width:595px;max-height:325px;min-width: 595px;
+    max-height: 410px;">
+                <thead>
+                    <tr>
+                        <th st-ratio="10">@PIVF.LanguageResource.Resources.lblSelect</th>@*Select ::Modified by swatih for localization 16/7/2020*@
+                        <th st-ratio="18">@PIVF.LanguageResource.Resources.lblDate</th>@*Date ::Modified by swatih for localization 16/7/2020*@
+                        <th st-ratio="18">@PIVF.LanguageResource.Resources.lblTime</th>@*Time ::Modified by swatih for localization 16/7/2020*@
+                        <th st-ratio="24">@PIVF.LanguageResource.Resources.lblOPDNo </th>@*OPD NO ::Modified by swatih for localization 16/7/2020*@
+                        <th st-ratio="30">@PIVF.LanguageResource.Resources.lblDoctor</th>@*Doctor ::Modified by swatih for localization 16/7/2020*@
+                         
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="Item in visitInformation">
+                        <td st-ratio="10">
+                            @*<div class="inputChkbx inputNone">
+                                <input type="checkbox" name="" ng-click="SelectPatient(Item)" id="{{$index}}">
+                                <label for="{{$index}}"><span class="checkbox"></span></label>
+                            </div>*@
+
+                            <div>
+                                <input type="radio" name="selectedPatient" ng-click="SelectPatient(Item)" id="{{$index}}">
+                                <label for="{{$index}}"><span class="checkbox"></span></label>
+                            </div>
+                        </td>
+                        <td st-ratio="18">{{Item.Date | date:"dd-MM-y"}}</td>
+                        <td st-ratio="18">{{Item.Date | date:"h:mm a"}} </td>
+                        <td st-ratio="24">{{Item.OPDNO}}</td>
+                        <td st-ratio="30">{{Item.DocName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </script>

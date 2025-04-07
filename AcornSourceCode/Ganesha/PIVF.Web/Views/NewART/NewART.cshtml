@@ -1,0 +1,203 @@
+﻿@{
+    Layout = null;
+}
+<form name="frmNewART" novalidate ng-controller="ctrlNewART" ng-init="LoadData()">
+    <div class="col-md-12 col-lg-12" style="position: relative;
+        z-index: 11;">
+        <div class="form-group ">
+            <label class="control-label labelBold subTitle" for=""><b>@PIVF.LanguageResource.Resources.lblcMedicalWarnings</b></label>
+            <label class="control-label normalLabel" for="">{{NewART.MedicalHistory}}</label>
+        </div>
+    </div>
+
+    <div class="clear" style="position: relative;
+        z-index: 11;"></div>
+
+    <div class="form_Content" style="position: relative;
+        z-index: 11;">
+        <div class="row form-horizontal">
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblLMP</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12" ng-class="{'Invalid':errLMP==true}">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" id="LMPDate" name="LMPDate" placeholder="dd-Mmm-yyyy" ng-required="true" ng-model="NewART.LMP" aria-describedby="" uib-datepicker-popup="{{format}}" show-button-bar="false" is-open="popup1.opened" datepicker-options="dateOptions" alt-input-formats="altInputFormats" tabindex="1">
+                            <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblARTType</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlArttype" name="ddlArttype" ng-disabled="true" ng-model="NewART.ArtTypeID" ng-change="GetArtSubTypeList()" ng-options="item.ID as item.Description for item in ARTTypeList" ng-class="{select:NewART.ArtTypeID== 0 && frmNewART.ddlArttype.$dirty}" ng-required="true" tabindex="2"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-group m-t-29">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlArtSubType" name="ddlArtSubType" ng-change="ShowHideControls(NewART.ArtTypeID,NewART.ArtSubTypeID)" ng-model="NewART.ArtSubTypeID" ng-options="item.ID as item.Description for item in ARTSubTypeList" tabindex="3"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 ">
+                <div class="form-group p-b-5">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        <span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblProtocol
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlProtocol" name="ddlProtocol" ng-model="NewART.ProtocolID" ng-options="item.ID as item.Description for item in ProtocolList" ng-class="{select:NewART.ProtocolID== 0 && frmNewART.ddlProtocol.$dirty}" tabindex="4"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 " ng-hide="hideSOfSperm">
+                <div class="form-group">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcSourceofSperm</label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlSourceOfSperm" name="ddlSourceOfSperm" ng-model="NewART.SourceOfSpermID" ng-disabled="disableSOfSperm" ng-options="item.ID as item.Description for item in SourceOfSpermList" ng-class="{select:NewART.SourceOfSpermID== 0 && frmNewART.ddlSourceOfSperm.$dirty}" ng-change="Drpsetting()" tabindex="5"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 " ng-hide="NewART.SourceOfSpermID ==2 " ng-show="NewART.SourceOfSpermID != 2">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label p-r-0" for="">
+                        @PIVF.LanguageResource.Resources.lblcMethodofSemenCollections
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select ng-disabled="NewART.ArtSubTypeID==1" class="form-control" id="ddlPartnrSpermCollMethod" name="ddlPartnrSpermCollMethod" ng-model="NewART.PartnrSpermCollMethodID" ng-options="item.ID as item.Description for item in SpermCollMethodList" tabindex="6"></select>
+                    </div>
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label small_label" for="">
+                        @PIVF.LanguageResource.Resources.lblcPartner
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3" ng-hide="NewART.SourceOfSpermID ==1 || NewART.SourceOfSpermID ==0" ng-show="NewART.SourceOfSpermID != 1 || NewART.SourceOfSpermID != 0">
+                <div class="form-group m-t-29">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <select class="form-control" id="ddlDonorSpermCollMethod" name="ddlDonorSpermCollMethod" ng-model="NewART.DonorSpermCollMethodID" ng-class="{select:NewART.SourceOfSpermID==3 && NewART.DonorSpermCollMethodID== 0 && frmNewART.ddlDonorSpermCollMethod.$dirty}" ng-options="item.ID as item.Description for item in DonorSpermCollMethodList" tabindex="7" ng-disabled="true"></select>
+                    </div>
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label small_label" for="">
+                        @PIVF.LanguageResource.Resources.lblDonor
+                    </label>
+                </div>
+            </div><div class="clearfix"></div>
+            @*<div class="col-md-3 col-lg-3 ">
+                    <div class="form-group ">
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                            Method of Semen Collection
+                        </label>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select ng-hide="NewART.SourceOfSpermID != 1 && NewART.SourceOfSpermID != 3" ng-show="NewART.SourceOfSpermID == 1 || NewART.SourceOfSpermID == 3 || NewART.SourceOfSpermID == 0" class="form-control" id="ddlPartnrSpermCollMethod" name="ddlPartnrSpermCollMethod" ng-model="NewART.PartnrSpermCollMethodID" ng-options="item.ID as item.Description for item in SpermCollMethodList" ng-disabled="NewART.SourceOfSpermID == 2" tabindex="6"></select>
+                            <select ng-hide="NewART.SourceOfSpermID != 2" ng-show="NewART.SourceOfSpermID == 2" class="form-control" id="ddlDonorSpermCollMethod" name="ddlDonorSpermCollMethod" ng-model="NewART.DonorSpermCollMethodID" ng-options="item.ID as item.Description for item in DonorSpermCollMethodList" ng-disabled="true" tabindex="7"></select>
+                        </div>
+                        <label ng-hide="NewART.SourceOfSpermID != 1 && NewART.SourceOfSpermID != 3" ng-show="NewART.SourceOfSpermID == 1 || NewART.SourceOfSpermID == 3" class="col-sm-12 col-md-12 col-lg-12 control-label small_label txt_bottom" for="">
+                            partner
+                        </label>
+                        <label ng-hide="NewART.SourceOfSpermID != 2" ng-show="NewART.SourceOfSpermID == 2" class="col-sm-12 col-md-12 col-lg-12 control-label small_label txt_bottom" for="">
+                            Donor
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3" ng-hide="NewART.SourceOfSpermID != 3" ng-show="NewART.SourceOfSpermID == 3">
+                    <div class="form-group m-t-29">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <select class="form-control" id="ddlDonorSpermCollMethod" name="ddlDonorSpermCollMethod" ng-model="NewART.DonorSpermCollMethodID" ng-options="item.ID as item.Description for item in DonorSpermCollMethodList" ng-disabled="true" tabindex="7"></select>
+                        </div>
+                        <label class="col-sm-12 col-md-12 col-lg-12 control-label small_label txt_bottom" for="">
+                            Donor
+                        </label>
+                    </div>
+                </div>*@
+            <div class="col-md-12 col-lg-12 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        <span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblIndication
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        @*<select class="form-control" id="ddlIndication" name="ddlIndication" ng-model="NewART.IndicationID" ng-options="item.ID as item.Description for item in IndicationList" ng-class="{select:NewART.IndicationID== 0 && frmNewART.ddlIndication.$dirty}" ng-required="true" tabindex=""></select>*@
+                        <!-- Add AngularJs MultiSelect /start -->
+                        <div isteven-multi-select input-model="IndicationList"
+                             output-model="NewART.SelectedIndication" id="ddlIndication" name="ddlIndication"
+                             button-label="Description" ng-class="{'select':IsValidIndication}" @*ng-class="{select:NewART.IndicationID== 0 && frmNewART.ddlIndication.$dirty}"*@
+                             item-label="Description"
+                             tick-property="ticked"
+                             output-properties="ID"
+                             tabindex="8"
+                             max-height="250px"
+                             max-labels="0">
+                        </div>
+                        <br />
+                        <table>
+                            <tr ng-repeat="Item in IndicationList | filter: { ticked: true } ">
+                                <td>{{Item.Description}}</td>
+                            </tr>
+                        </table>
+                        <!-- Add AngularJs MultiSelect /end -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-12 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblcStimulationDrug
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        @* <select class="form-control" id="ddlStimlnDrug" name="ddlStimlnDrug" ng-model="NewART.StimlnDrugID" ng-options="item.ID as item.Description for item in StimlnDrugList" ng-class="{select:SemenThaw.WitnessedBy== 0 && frmNewART.ddlWitnessedBy.$dirty}" ng-required="true" tabindex=""></select>*@
+                        <!-- Add AngularJs MultiSelect /start -->
+                        <div isteven-multi-select input-model="StimlnDrugList"
+                             output-model="NewART.SelectedDrugs" id="ddlStimlnDrug" name="ddlStimlnDrug"
+                             button-label="Description"
+                             item-label="Description"
+                             tick-property="ticked"
+                             output-properties="ID"
+                             tabindex="9"
+                             on-item-click="fClick(data)"
+                             max-height="250px"
+                             max-labels="0" helper-elements="filter"   <!--on-select-all="funcSelectAll(data)"-->
+
+                        </div>
+                        <br />
+                        <table>
+                            <tr ng-repeat="Item in StimlnDrugList | filter: { ticked: true } ">
+                                <td>{{Item.Description}}</td>
+                            </tr>
+                        </table>
+                        <!-- Add AngularJs MultiSelect /end -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6 ">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblcCycleWarnings
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <textarea type="text" class="form-control" ng-model="NewART.CycleWarning" id="txtCyWarning" name="txtCyWarning" maxlength="250"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="form-group ">
+                    <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                        @PIVF.LanguageResource.Resources.lblRemarks
+                    </label>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <textarea type="text" class="form-control" ng-model="NewART.Remark" id="txtRemark" name="txtRemark" maxlength="250"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save Cancle Buttons -->
+    <div class="row form-horizontal m-t-20" style="position: relative;
+        z-index: 11;">
+        <div class="col-lg-12 text-right">
+            <button class="btn btn-primary" type="button" id="" value="" ng-click="SaveUpdate(NewART)" ng-disabled="disableClickART">@PIVF.LanguageResource.Resources.btnSave</button>
+            <button class="btn btn-default" type="button" id="" value="" ng-click="Cancel()">@PIVF.LanguageResource.Resources.btnCancel</button>
+        </div>
+    </div>
+</form>

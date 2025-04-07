@@ -1,0 +1,300 @@
+2023-10-07 16:08:26.4657|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 16:08:26.4657|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 16:08:27.1519|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 16:08:27.1519|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 16:08:29.5770|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:08:29.5770|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:08:29.7535|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:08:29.7535|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:08:29.8781|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:08:29.8781|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:08:30.5184|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:08:30.5184|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:08:30.6072|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:08:30.6072|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:08:31.0959|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:08:31.0959|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:08:59.9725|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:admin,UnitID2
+2023-10-07 16:08:59.9725|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:admin,UnitID2
+2023-10-07 16:09:01.4882|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:admin,UnitID2
+2023-10-07 16:09:01.4882|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:admin,UnitID2
+2023-10-07 16:09:02.5237|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2023-10-07 16:09:02.5237|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2023-10-07 16:09:02.5827|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:admin,UnitID2
+2023-10-07 16:09:02.5827|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:admin,UnitID2
+2023-10-07 16:11:28.9546|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 16:11:28.9546|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 16:11:29.4677|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 16:11:29.4677|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 16:11:29.6083|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:11:29.6083|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:11:30.6300|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:11:30.6300|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:11:31.1392|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:11:31.1392|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:11:31.6764|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:11:31.6764|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:11:32.2054|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:11:32.2054|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:11:32.2784|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:11:32.2784|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:11:47.6532|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:11:47.6532|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:11:48.6920|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2023-10-07 16:11:48.6920|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2023-10-07 16:13:07.5218|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:13:07.5218|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:13:07.5367|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:13:07.5367|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:13:07.5527|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:13:07.5527|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:13:08.0284|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:13:08.0284|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:13:08.1860|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 16:13:08.1860|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 16:13:08.5470|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:13:08.5470|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:13:08.5799|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:13:08.5799|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:13:08.7096|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 16:13:08.7096|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 16:13:14.5060|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:admin,UnitID2
+2023-10-07 16:13:14.5060|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:admin,UnitID2
+2023-10-07 16:13:14.5887|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2023-10-07 16:13:14.5887|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2023-10-07 16:13:14.6755|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:admin,UnitID2
+2023-10-07 16:13:14.6755|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:admin,UnitID2
+2023-10-07 16:13:15.0705|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:admin,UnitID2
+2023-10-07 16:13:15.0705|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:admin,UnitID2
+2023-10-07 16:13:29.5179|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:admin,UnitID2
+2023-10-07 16:13:29.5179|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:admin,UnitID2
+2023-10-07 16:15:31.1085|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 16:15:31.1085|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 16:15:31.7226|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2023-10-07 16:17:00.2235|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:admin,UnitID2
+2023-10-07 16:17:00.2235|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetCityAndClinicNames,User:admin,UnitID2
+2023-10-07 16:17:00.2963|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2023-10-07 16:17:00.2963|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2023-10-07 16:17:00.3771|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:admin,UnitID2
+2023-10-07 16:17:00.3771|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetDoctorAppointment,User:admin,UnitID2
+2023-10-07 16:17:01.7450|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:admin,UnitID2
+2023-10-07 16:17:01.7450|INFO|PIVF.Web.Api.Clinic.DoctorAppointmentsController|Controller Name:DoctorAppointmentsController,Action:HttpGet,Method:GetPatientVisitList,User:admin,UnitID2
+2023-10-07 16:33:26.7919|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 16:33:26.7919|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 16:33:26.9654|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2023-10-07 16:35:36.9474|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:35:36.9474|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:35:36.9614|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:35:36.9614|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:35:37.4589|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:35:37.4589|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:35:37.9725|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:35:37.9725|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:35:49.8405|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:newCyclebtnFlag,User:admin,UnitID:2
+2023-10-07 16:35:49.8405|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:newCyclebtnFlag,User:admin,UnitID:2
+2023-10-07 16:35:49.8873|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetARTCycleList,User:admin,UnitID:2
+2023-10-07 16:35:49.8873|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetARTCycleList,User:admin,UnitID:2
+2023-10-07 16:35:52.8303|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetCycleOverview,User:admin,UnitID:2
+2023-10-07 16:35:52.8303|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetCycleOverview,User:admin,UnitID:2
+2023-10-07 16:35:53.5723|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetMedicalHistory,User:admin,UnitID:2
+2023-10-07 16:35:53.5723|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetMedicalHistory,User:admin,UnitID:2
+2023-10-07 16:35:55.5477|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetDetails,User:admin,UnitID:2
+2023-10-07 16:35:55.5477|INFO|PIVF.Web.Api.New_ART.NewARTController|Controller Name:NewART,Action:GET,Method:GetDetails,User:admin,UnitID:2
+2023-10-07 16:36:00.1657|INFO|PIVF.Web.Api.ARTMgmt.IUI.IUIAPIController|Controller Name:IUIAPI,Action:GET,Method:GetIUIDetails,User:admin,UnitID:2
+2023-10-07 16:36:00.1657|INFO|PIVF.Web.Api.ARTMgmt.IUI.IUIAPIController|Controller Name:IUIAPI,Action:GET,Method:GetIUIDetails,User:admin,UnitID:2
+2023-10-07 16:37:41.6960|INFO|PIVF.Web.Api.ARTMgmt.IUI.IUIAPIController|Controller Name:IUIAPI,Action:GET,Method:GetDonorFrozenSamples,User:admin,UnitID:2
+2023-10-07 16:37:41.6960|INFO|PIVF.Web.Api.ARTMgmt.IUI.IUIAPIController|Controller Name:IUIAPI,Action:GET,Method:GetDonorFrozenSamples,User:admin,UnitID:2
+2023-10-07 16:38:01.6947|INFO|PIVF.Web.Api.ARTMgmt.IUI.IUIAPIController|Controller Name:IUIAPI,Action:GET,Method:GetDonorFrozenSamples,User:admin,UnitID:2
+2023-10-07 16:38:01.6947|INFO|PIVF.Web.Api.ARTMgmt.IUI.IUIAPIController|Controller Name:IUIAPI,Action:GET,Method:GetDonorFrozenSamples,User:admin,UnitID:2
+2023-10-07 16:38:11.3488|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenThawingController|Controller Name:SemenThawing,Action:POST,Method:SaveUpdate,User:admin,UnitID:2
+2023-10-07 16:38:11.3488|INFO|PIVF.Web.Api.EMR.MaleHistory.SemenThawingController|Controller Name:SemenThawing,Action:POST,Method:SaveUpdate,User:admin,UnitID:2
+2023-10-07 16:38:49.9016|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 16:38:49.9016|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 16:38:50.0662|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2023-10-07 16:39:56.0567|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:39:56.0567|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:39:56.0756|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:39:56.0756|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:39:56.1674|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:39:56.1674|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:39:56.2223|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:39:56.2223|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:39:56.4467|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 16:39:56.4467|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 16:39:56.5663|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:39:56.5663|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:39:56.9648|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 16:39:56.9648|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 16:39:57.0785|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:39:57.0785|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:40:13.5981|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 16:40:13.5981|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 16:40:13.8764|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2023-10-07 16:43:07.9196|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 16:43:07.9196|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 16:43:08.4302|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 16:43:08.4302|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 16:43:18.5489|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:43:18.5489|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:43:22.0652|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:43:22.0652|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 16:45:36.0736|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:45:36.0736|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 16:45:36.0886|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:45:36.0886|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 16:45:36.5872|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:45:36.5872|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 16:45:37.0999|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:45:37.0999|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 16:58:28.2962|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 16:58:28.2962|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 16:58:28.4630|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2023-10-07 17:01:11.3277|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 17:01:11.3277|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 17:01:12.8483|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 17:01:12.8483|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 17:01:18.6876|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 17:01:18.6876|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 17:01:24.1840|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 17:01:24.1840|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 17:02:21.0911|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 17:02:21.0911|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 17:02:21.1121|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 17:02:21.1121|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 17:02:21.6032|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 17:02:21.6032|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 17:02:21.6156|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 17:02:21.6156|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 17:13:26.8526|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-10-07 17:13:26.8526|INFO|PIVF.Web.Api.EMR.LandingPage.EMRLandingPageAPIController|Controller Name:EMRLandingPageAPI,Action:GET,Method:GetEMRLandingPageData,User:admin,UnitID:2
+2023-10-07 17:14:19.5650|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-07 17:14:19.5650|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-07 17:14:59.0659|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-07 17:14:59.0659|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-07 17:15:29.7079|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-07 17:15:29.7079|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-07 17:18:38.4635|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-07 17:18:38.4635|INFO|PIVF.Web.Api.Master.Common.CommonController|Controller Name:Common,Action:GET,Method:GetActiveVisitByPatient,User:admin,UnitID:2
+2023-10-07 17:48:52.5364|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 17:48:52.5364|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 18:16:45.9515|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 18:16:45.9515|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 18:16:47.4798|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 18:16:47.4798|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 18:16:51.5521|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:16:51.5521|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:16:55.2293|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:16:55.2293|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:17:01.1367|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 18:17:01.1367|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 18:17:01.1517|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 18:17:01.1517|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 18:17:01.1856|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 18:17:01.1856|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 18:17:01.6741|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 18:17:01.6741|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 18:17:07.1294|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 18:17:07.1294|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 18:17:07.7189|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2023-10-07 18:20:56.5789|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 18:20:56.5789|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 18:20:57.4301|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 18:20:57.4301|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 18:20:57.4923|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 18:20:57.4923|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 18:20:57.8734|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 18:20:57.8734|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 18:20:58.8951|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 18:20:58.8951|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 18:20:59.1338|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:20:59.1338|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:20:59.1724|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:20:59.1724|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:20:59.4065|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 18:20:59.4065|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 18:21:03.6962|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 18:21:03.6962|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 18:21:04.1415|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2023-10-07 18:23:39.7754|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 18:23:39.7754|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 18:23:39.8432|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 18:23:39.8432|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 18:23:40.5762|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 18:23:40.5762|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 18:23:40.6771|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 18:23:40.6771|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 18:23:41.0575|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 18:23:41.0575|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 18:23:41.6496|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 18:23:41.6496|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 18:23:42.2487|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:23:42.2487|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:23:42.3805|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:23:42.3805|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:23:46.3662|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 18:23:46.3662|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 18:23:46.8143|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2023-10-07 18:28:00.7935|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 18:28:00.7935|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 18:28:02.2185|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 18:28:02.2185|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 18:28:02.5283|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 18:28:02.5283|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 18:28:02.6640|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:28:02.6640|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:28:02.7844|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:28:02.7844|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:28:02.8806|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 18:28:02.8806|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 18:28:03.0396|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 18:28:03.0396|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 18:28:03.5534|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 18:28:03.5534|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 18:28:18.6598|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 18:28:18.6598|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2023-10-07 18:28:18.8913|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:28:18.8913|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:28:19.3237|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 18:28:19.3237|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2023-10-07 18:28:19.4450|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 18:28:19.4450|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 18:28:19.4979|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 18:28:19.4979|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2023-10-07 18:28:19.7355|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 18:28:19.7355|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2023-10-07 18:28:20.1391|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 18:28:20.1391|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2023-10-07 18:28:20.1774|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:28:20.1774|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2023-10-07 18:28:31.8305|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 18:28:31.8305|INFO|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|Controller Name:NewRegistrationAPI,Action:POST,Method:getPatientByID,User:admin,UnitID:2
+2023-10-07 18:28:32.0293|ERROR|PIVF.Web.Api.NewRegistration.NewRegistrationAPIController|NewRegistrationAPI/getPatientByID,MessageObject reference not set to an instance of an object.,StackTrace:   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.<>c__DisplayClass6_0.<getPatientByID>b__1(NewPatient x) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at PIVF.DataAccessLayer.NewRegistration.NewRegistrationDAL.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.DataAccessLayer\NewRegistration\NewRegistrationDAL.cs:line 339
+   at PIVF.Web.Api.NewRegistration.NewRegistrationAPIController.getPatientByID(NewPatient obj) in D:\02 06 2023\code\AcornSourceCode\Ganesha\PIVF.Web\Api\NewRegistration\NewRegistrationAPIController.cs:line 182
+2023-10-07 18:28:33.8422|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2023-10-07 18:28:33.8422|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2

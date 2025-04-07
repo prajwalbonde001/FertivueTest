@@ -1,0 +1,452 @@
+2024-11-15 14:35:27.1484|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 14:35:27.1484|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 14:35:27.5801|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:35:27.5801|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:35:27.6276|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 14:35:27.6276|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 14:35:27.9792|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 14:35:27.9792|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 14:35:28.0682|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 14:35:28.0682|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 14:35:28.9851|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 14:35:28.9851|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 14:35:30.1779|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:35:30.1779|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:35:30.1882|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:35:30.1882|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:35:32.8746|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:35:32.8746|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:35:41.0029|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDGenderList,User:admin,UnitID:2
+2024-11-15 14:35:41.0029|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDGenderList,User:admin,UnitID:2
+2024-11-15 14:35:41.1064|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDDoctorCategoryList,User:admin,UnitID:2
+2024-11-15 14:35:41.1064|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDDoctorCategoryList,User:admin,UnitID:2
+2024-11-15 14:35:41.1209|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDSpecializationList,User:admin,UnitID:2
+2024-11-15 14:35:41.1209|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDSpecializationList,User:admin,UnitID:2
+2024-11-15 14:35:41.1384|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetSubSpecBySID,User:admin,UnitID:2
+2024-11-15 14:35:41.1384|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetSubSpecBySID,User:admin,UnitID:2
+2024-11-15 14:35:41.1576|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDClassificationList,User:admin,UnitID:2
+2024-11-15 14:35:41.1576|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDClassificationList,User:admin,UnitID:2
+2024-11-15 14:35:41.1720|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDClassificationList,User:admin,UnitID:2
+2024-11-15 14:35:41.1720|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDClassificationList,User:admin,UnitID:2
+2024-11-15 14:35:41.1908|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetCountryCode,User:admin,UnitID:2
+2024-11-15 14:35:41.1908|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetCountryCode,User:admin,UnitID:2
+2024-11-15 14:35:41.2133|INFO|PIVF.Web.Api.Master.Clinic.StaffController|PatientRegistrationController, Get Filter= CountryId=0
+2024-11-15 14:35:41.2133|INFO|PIVF.Web.Api.Master.Clinic.StaffController|PatientRegistrationController, Get Filter= CountryId=0
+2024-11-15 14:35:41.2308|INFO|PIVF.Web.Api.Master.Clinic.StaffController|PatientRegistrationController, Get Filter= StateID=0
+2024-11-15 14:35:41.2308|INFO|PIVF.Web.Api.Master.Clinic.StaffController|PatientRegistrationController, Get Filter= StateID=0
+2024-11-15 14:35:41.2453|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetSubSpecBySID,User:admin,UnitID:2
+2024-11-15 14:35:41.2453|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetSubSpecBySID,User:admin,UnitID:2
+2024-11-15 14:35:41.2453|INFO|PIVF.Web.Api.Master.Clinic.StaffController|PatientRegistrationController, Get Filter= CountryId=0
+2024-11-15 14:35:41.2453|INFO|PIVF.Web.Api.Master.Clinic.StaffController|PatientRegistrationController, Get Filter= CountryId=0
+2024-11-15 14:35:41.2615|INFO|PIVF.Web.Api.Master.Clinic.StaffController|PatientRegistrationController, Get Filter= StateID=0
+2024-11-15 14:35:41.2615|INFO|PIVF.Web.Api.Master.Clinic.StaffController|PatientRegistrationController, Get Filter= StateID=0
+2024-11-15 14:35:41.5202|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDoctor,User:admin,UnitID:2
+2024-11-15 14:35:41.5202|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDoctor,User:admin,UnitID:2
+2024-11-15 14:35:42.0232|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDDoctorTypeList,User:admin,UnitID:2
+2024-11-15 14:35:42.0232|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDDoctorTypeList,User:admin,UnitID:2
+2024-11-15 14:35:42.5393|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDMaritalStatusList,User:admin,UnitID:2
+2024-11-15 14:35:42.5393|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDMaritalStatusList,User:admin,UnitID:2
+2024-11-15 14:35:43.0492|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 14:35:43.0492|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 14:35:46.5497|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:35:46.5497|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:35:53.2005|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:35:53.2005|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:35:57.8803|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:2
+2024-11-15 14:35:57.8803|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:2
+2024-11-15 14:35:58.3837|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 14:35:58.3837|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 14:35:58.8959|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 14:35:58.8959|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 14:35:59.4094|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:35:59.4094|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:36:04.4906|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:36:04.4906|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:36:05.0100|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:2
+2024-11-15 14:36:05.0100|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:2
+2024-11-15 14:36:05.5404|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:2
+2024-11-15 14:36:05.5404|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:2
+2024-11-15 14:36:06.0329|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 14:36:06.0329|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 14:36:09.8711|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:09.8711|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:11.7957|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:11.7957|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:12.4515|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:12.4515|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:14.4526|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 14:36:14.4526|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 14:36:34.8475|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 14:36:34.8475|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 14:36:34.8591|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 14:36:34.8591|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 14:36:34.8591|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:36:34.8591|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:36:34.8739|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 14:36:34.8739|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 14:36:36.3404|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 14:36:36.3404|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 14:36:36.4181|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:36:36.4181|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:36:36.4181|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:36:36.4181|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:36:36.8533|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 14:36:36.8533|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 14:36:39.3225|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:36:39.3225|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:36:39.3284|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:36:39.3284|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:36:40.7691|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:36:40.7691|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 14:36:43.5643|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:36:43.5643|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:36:44.0689|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 14:36:44.0689|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 14:36:44.5840|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 14:36:44.5840|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 14:36:45.0944|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:2
+2024-11-15 14:36:45.0944|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:2
+2024-11-15 14:36:48.8132|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:2
+2024-11-15 14:36:48.8132|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:2
+2024-11-15 14:36:49.3337|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:36:49.3337|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 14:36:49.8463|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 14:36:49.8463|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 14:36:50.3479|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:2
+2024-11-15 14:36:50.3479|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:2
+2024-11-15 14:36:50.4020|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:50.4020|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:51.7137|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:51.7137|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:53.4571|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:53.4571|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:53.7138|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:53.7138|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 14:36:55.7828|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 14:36:55.7828|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 14:36:56.8211|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 14:36:56.8211|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 14:37:20.0272|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:1
+2024-11-15 14:37:20.0272|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:1
+2024-11-15 14:37:20.5819|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:1
+2024-11-15 14:37:20.5819|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:1
+2024-11-15 14:37:21.0358|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:1
+2024-11-15 14:37:21.0358|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:1
+2024-11-15 14:37:21.0514|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:1
+2024-11-15 14:37:21.0514|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:1
+2024-11-15 14:37:21.0593|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:1
+2024-11-15 14:37:21.0593|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:1
+2024-11-15 14:37:21.0829|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:1
+2024-11-15 14:37:21.0829|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:1
+2024-11-15 14:37:21.5951|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:1
+2024-11-15 14:37:21.5951|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:1
+2024-11-15 14:37:22.1083|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:1
+2024-11-15 14:37:22.1083|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:1
+2024-11-15 14:37:22.6477|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:1
+2024-11-15 14:37:22.6477|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:1
+2024-11-15 14:37:26.1668|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:1
+2024-11-15 14:37:26.1668|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:1
+2024-11-15 14:37:26.6836|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:1
+2024-11-15 14:37:26.6836|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:1
+2024-11-15 14:37:27.2013|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:1
+2024-11-15 14:37:27.2013|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:1
+2024-11-15 14:37:27.7044|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:1
+2024-11-15 14:37:27.7044|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:1
+2024-11-15 14:37:32.1654|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:1
+2024-11-15 14:37:32.1654|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:1
+2024-11-15 14:37:32.6701|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:1
+2024-11-15 14:37:32.6701|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:1
+2024-11-15 14:37:33.1863|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:1
+2024-11-15 14:37:33.1863|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:1
+2024-11-15 14:37:33.6896|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:1
+2024-11-15 14:37:33.6896|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:1
+2024-11-15 14:37:34.3054|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:1
+2024-11-15 14:37:34.3054|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:1
+2024-11-15 14:37:34.5675|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:1
+2024-11-15 14:37:34.5675|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:1
+2024-11-15 14:37:35.2499|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:1
+2024-11-15 14:37:35.2499|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:1
+2024-11-15 14:37:35.4726|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:1
+2024-11-15 14:37:35.4726|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:1
+2024-11-15 14:37:38.2362|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:1
+2024-11-15 14:37:38.2362|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:1
+2024-11-15 14:37:38.7631|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:1
+2024-11-15 14:37:38.7631|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:1
+2024-11-15 15:40:37.0112|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 15:40:37.0112|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 15:40:37.4522|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 15:40:37.4522|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 15:40:38.6154|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:40:38.6154|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:40:38.6241|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:40:38.6241|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:40:39.0272|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 15:40:39.0272|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 15:40:40.0448|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 15:40:40.0448|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 15:40:40.5554|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 15:40:40.5554|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 15:40:41.0545|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 15:40:41.0545|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 15:40:42.0430|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:40:42.0430|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:40:42.8921|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:40:42.8921|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:40:43.4191|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:40:43.4191|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:40:45.5023|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 15:40:45.5023|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 15:40:46.0246|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 15:40:46.0246|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 15:40:46.5315|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 15:40:46.5315|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 15:40:47.0457|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:2
+2024-11-15 15:40:47.0457|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:2
+2024-11-15 15:41:22.7946|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 15:41:22.7946|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 15:41:23.3091|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:2
+2024-11-15 15:41:23.3091|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:2
+2024-11-15 15:41:23.8241|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 15:41:23.8241|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 15:41:24.3311|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:2
+2024-11-15 15:41:24.3311|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:2
+2024-11-15 15:43:46.2977|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:43:46.2977|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 15:43:48.6837|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:2
+2024-11-15 15:43:48.6837|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:2
+2024-11-15 15:43:49.2145|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 15:43:49.2145|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 15:43:49.7260|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 15:43:49.7260|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 15:43:50.2335|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 15:43:50.2335|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 15:43:51.9578|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:2
+2024-11-15 15:43:51.9578|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:2
+2024-11-15 15:43:52.9666|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 15:43:52.9666|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 15:43:53.4739|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 15:43:53.4739|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 15:43:53.9848|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:2
+2024-11-15 15:43:53.9848|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:2
+2024-11-15 15:43:55.1617|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:43:55.1617|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:43:56.0649|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:43:56.0649|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:43:56.2901|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:43:56.2901|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:43:56.4821|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:43:56.4821|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:43:56.6399|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:43:56.6399|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:00.0823|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 15:44:00.0823|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 15:44:00.6176|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 15:44:00.6176|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 15:44:15.5958|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:15.5958|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:17.5671|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:17.5671|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:18.1150|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:18.1150|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:18.4319|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:18.4319|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:18.6091|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:18.6091|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:19.0488|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:19.0488|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:44:48.3491|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 15:44:48.3491|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 15:45:34.9587|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 15:45:34.9587|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 15:58:27.4279|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:27.4279|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:27.6974|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:27.6974|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:27.8564|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:27.8564|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:28.1603|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:28.1603|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:28.3422|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:28.3422|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:28.5108|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:28.5108|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 15:58:30.6259|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 15:58:30.6259|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 15:58:31.1487|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 15:58:31.1487|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 16:02:53.7591|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:53.7591|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:54.0891|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:54.0891|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:54.2800|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:54.2800|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:54.4338|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:54.4338|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:55.1716|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:55.1716|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:55.4601|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:55.4601|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:02:57.3217|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 16:02:57.3217|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 16:02:57.8487|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 16:02:57.8487|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 16:24:38.7675|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:38.7675|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.1451|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.1451|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.2400|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.2400|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.4263|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.4263|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.6840|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.6840|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.7952|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.7952|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.9234|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:24:39.9234|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:02.2855|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 16:25:02.2855|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 16:25:02.8141|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 16:25:02.8141|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 16:25:28.2749|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:28.2749|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:29.0725|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:29.0725|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:29.2484|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:29.2484|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:29.4868|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:29.4868|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:29.7102|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:29.7102|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:32.6557|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:25:32.6557|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:36:31.1513|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 16:36:31.1513|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 16:36:31.1929|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 16:36:31.1929|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 16:44:24.6011|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 16:44:24.6011|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 16:44:24.7102|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 16:44:24.7102|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 16:44:25.0758|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 16:44:25.0758|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 16:44:25.1122|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 16:44:25.1122|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 16:44:25.4628|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 16:44:25.4628|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 16:44:26.9722|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 16:44:26.9722|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 16:44:28.8089|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 16:44:28.8089|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 16:44:39.0353|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 16:44:39.0353|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetParentList,User:admin,UnitID:2
+2024-11-15 16:44:42.0364|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 16:44:42.0364|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 16:44:43.0623|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:2
+2024-11-15 16:44:43.0623|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListLanding,User: admin,UnitID:2
+2024-11-15 16:44:43.5689|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 16:44:43.5689|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 16:44:44.0813|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 16:44:44.0813|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDDUnitList,User:admin,UnitID:2
+2024-11-15 16:44:49.6159|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 16:44:49.6159|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 16:44:50.1266|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 16:44:50.1266|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name:Doctor,Action:GET,Method:GetDepartmentListForDoc,User:admin,UnitID:2
+2024-11-15 16:44:50.6383|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:2
+2024-11-15 16:44:50.6383|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetSlotMaster,User: admin,UnitID:2
+2024-11-15 16:44:51.1502|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:2
+2024-11-15 16:44:51.1502|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDayMaster,User: admin,UnitID:2
+2024-11-15 16:44:51.5102|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:44:51.5102|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:44:51.7707|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:44:51.7707|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:44:51.9383|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:44:51.9383|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:44:52.4016|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:44:52.4016|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:44:56.6279|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 16:44:56.6279|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 16:44:57.1766|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 16:44:57.1766|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 16:45:23.3759|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:23.3759|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:23.6440|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:23.6440|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:23.7801|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:23.7801|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:23.9685|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:23.9685|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:23.9822|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:23.9822|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:24.8037|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:24.8037|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:25.0118|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:25.0118|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:25.8290|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:25.8290|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:26.2263|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:26.2263|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:26.3834|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:26.3834|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetAllDoctorNames,User: admin,UnitID:2
+2024-11-15 16:45:28.3460|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 16:45:28.3460|INFO|PIVF.Web.Api.Master.Clinic.DoctorController|Controller Name: Doctor,Action: GET,Method: GetDoctDetailByName,User: admin,UnitID:2
+2024-11-15 16:45:28.8663|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 16:45:28.8663|INFO|PIVF.Web.Api.Clinic.ScheduleController|Controller Name: Schedule,Action: GET,Method: GetScheduleListByDoctorID,User: admin,UnitID:2
+2024-11-15 17:09:14.8497|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 17:09:14.8497|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 17:09:15.8660|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 17:09:15.8660|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 17:09:16.4256|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 17:09:16.4256|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 17:09:16.9270|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:09:16.9270|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:09:17.4390|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 17:09:17.4390|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 17:09:17.9484|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:09:17.9484|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:09:18.6652|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:09:18.6652|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:09:18.6683|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:09:18.6683|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:57:24.0745|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 17:57:24.0745|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 17:57:25.6758|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 17:57:25.6758|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 17:57:26.0039|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:57:26.0039|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:57:26.0262|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 17:57:26.0262|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 17:57:26.1642|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:57:26.1642|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:57:27.7169|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 17:57:27.7169|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 17:57:38.3543|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 17:57:38.3543|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 17:57:38.3543|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:57:38.3543|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:57:38.8644|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:57:38.8644|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:57:46.9970|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 17:57:46.9970|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 17:57:47.0471|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 17:57:47.0471|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 17:57:47.3627|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:57:47.3627|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:57:47.3906|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:57:47.3906|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:57:47.9652|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 17:57:47.9652|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 17:57:48.4739|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 17:57:48.4739|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 17:58:19.7721|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 17:58:19.7721|INFO|PIVF.Web.Api.QueueMgt.QueueMgtController|Controller Name:QueueMgt,Action:HttpPost,Method:GetQueueList,User:admin,UnitID:2
+2024-11-15 17:58:19.8140|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 17:58:19.8140|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDepartmentList,User:admin,UnitID:2
+2024-11-15 17:58:19.8317|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:58:19.8317|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetDoctorsList,User:admin,UnitID:2
+2024-11-15 17:58:19.8532|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:58:19.8532|INFO|PIVF.Web.Api.Master.Common.CommonController|1_Controller Name:CommonController,Action:HttpGet,Method:GetSpeclRegTypeList,User:admin,UnitID:2
+2024-11-15 17:58:20.1213|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 17:58:20.1213|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetGrandParentList,User:admin,UnitID:2
+2024-11-15 17:58:21.1410|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2
+2024-11-15 17:58:21.1410|INFO|PIVF.Web.Api.Master.Configuration.UserAPIController|Controller Name:UserAPI,Action:HttpGet,Method:GetUserRoleRights,User:admin,UnitID:2

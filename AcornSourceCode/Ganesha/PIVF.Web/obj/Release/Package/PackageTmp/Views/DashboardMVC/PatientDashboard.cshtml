@@ -1,0 +1,1111 @@
+﻿
+@{
+    Layout = null;
+}
+@*<link rel="stylesheet" href="/angular-chart.js/dist/angular-chart.css" />*@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+
+
+<style>
+        .card-body {
+            border: 1px solid gray;
+            border-radius: 10px;
+            margin: 2%;
+        }
+
+        .headB {
+            border-bottom: 1px solid gray;
+            margin: 20px;
+        }
+
+
+        .surgery-dashboard {
+            font-family: Montserrat;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 21.94px;
+            text-align: left;
+            color: #232323;
+            padding-left: 20px;
+        }
+
+        .surgery-row {
+            background-color: #E5E5E5;
+            border-radius: 15px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+            cursor: pointer;
+            /*border:1px solid gray;*/
+        }
+
+        .text-number {
+            font-family: Montserrat;
+            /* font-size: 2rem; */
+            font-weight: 700;
+            line-height: 24.38px;
+            text-align: left;
+        }
+
+        .char-number {
+            font-family: Montserrat;
+            font-size: 0.7rem;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19.5px;
+            text-align: left;
+        }
+
+
+        .surgery-images img {
+            width: 100%;
+            max-width: 50px;
+        }
+
+        .sergery_contains_two {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+
+
+        .form_Content1 {
+            border: 1px solid #c3c3c3;
+            padding: 0px 10px 20px 10px;
+            margin-top: 10px;
+            background: #ffffff;
+            border-radius: 4px;
+            position: relative;
+            height: auto;
+        }
+
+
+
+
+
+        .headB {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .headBox {
+            display: flex;
+            gap: 10px;
+        }
+
+
+
+
+
+
+
+
+        .nav-tabs {
+            display: flex;
+            justify-content: flex-end; /* Align tabs to the right */
+            border: none !important;
+        }
+
+
+            .nav-tabs .active a {
+                /*color: #fff !important;
+        background-color: #df7d36 !important;*/
+                background: #EFF5F7 !important;
+                color: #5895A6 !important;
+                border-radius: 12px !important;
+                border: 1px solid #E4EEF1 !important;
+                font-weight: bold;
+                padding: 10px 30px !important;
+            }
+
+
+            .nav-tabs li a {
+                /*color: #000 !important;
+        background-color: #f8f9fa !important;
+        border-radius: 5px;*/
+                background: #FFFFFF !important;
+                color: #232323 !important;
+                border-radius: 12px !important;
+                text-decoration: none;
+                border: 1px solid #E4EEF1 !important;
+                padding: 10px 30px !important;
+            }
+
+
+
+
+        .tabDiv {
+            /*padding-right:2%;
+          padding-left: 2%;*/
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .modal-content {
+            max-width: 500px !important;
+        }
+
+        /* Modal Container */
+        .custom-modal-content {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Modal Header */
+        .custom-modal-header {
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .custom-modal-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            text-align: center;
+        }
+
+        /* Labels */
+        .custom-label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555555;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Input Group */
+        .custom-input-group {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #f9f9f9;
+        }
+
+        .custom-input {
+            flex: 1;
+            border: none;
+            padding: 10px 12px;
+            font-size: 14px;
+            color: #333333;
+            background-color: transparent;
+            outline: none;
+        }
+
+            .custom-input::placeholder {
+                color: #999999;
+            }
+
+        .custom-calendar-btn {
+            background-color: #eeeeee;
+            border: none;
+            padding: 10px 12px;
+            cursor: pointer;
+            color: #555555;
+            font-size: 16px;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+
+            .custom-calendar-btn:hover {
+                background-color: #dddddd;
+            }
+
+        /* Modal Footer */
+        .custom-modal-footer {
+            border-top: 1px solid #f0f0f0;
+            margin-top: 20px;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .custom-btn-primary {
+            background-color: #0a9c92;
+            border: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .custom-btn-primary:hover {
+                background-color: #df7d36;
+            }
+
+
+
+
+        .custom-date-display {
+            font-weight: bolder;
+            font-style: italic;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        .dayTabs .nav-tabs {
+            display: flex;
+            justify-content: flex-end; /* Align tabs to the right */
+            border: none !important;
+        }
+
+            .dayTabs .nav-tabs .active a {
+                background: #EFF5F7 !important;
+                color: #5895A6 !important;
+                border-radius: 10px !important;
+                border: 1px solid #5895A6 !important;
+                font-weight: bold;
+                padding: 8px 16px !important;
+                box-shadow: 4px 4px 8px 0px #5895A60F;
+            }
+
+            .dayTabs .nav-tabs li a {
+                color: #9E9E9E !important;
+                border-radius: 10px !important;
+                text-decoration: none;
+                padding: 8px 16px !important;
+                border: 1px solid #E2E3E5 !important;
+                background: #FAFAFA !important;
+            }
+
+
+
+
+
+
+
+
+
+        .custom-table-container {
+            /*max-height: 518px;*/
+            overflow-y: auto;
+            overflow-x: auto;
+            width: 100%;
+            height: calc(100vh - 565px);
+        }
+
+
+
+
+
+        .embroDays-custom-table-container {
+            /*max-height: 518px;*/
+            overflow-y: auto;
+            overflow-x: auto;
+            width: 100%;
+            height: calc(100vh - 612px);
+        }
+
+        .unique-table-class {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+
+
+
+
+
+            .unique-table-class th,
+            .unique-table-class td {
+                /*border: 1px solid gray;*/
+                padding: 8px;
+                /*text-align: center;*/
+                font-size: 12px;
+                white-space: nowrap; /* Prevent word breaking */
+            }
+
+            .unique-table-class th {
+                /*background-color: #f2f2f2;*/
+                font-weight: bold;
+                position: sticky;
+                top: 0;
+                z-index: 1;
+                white-space: nowrap; /* Prevent word breaking */
+                border: none !important;
+            }
+
+
+            .unique-table-class > thead > tr {
+                background: #F6F9FB;
+                color: #5895a6;
+                border: none !important;
+                border-radius: 12px !important;
+                position: sticky;
+                top: 2px;
+                z-index: 1;
+                white-space: nowrap;
+            }
+
+
+            .unique-table-class > tbody > tr > td {
+                background: #FFFFFF !important;
+                border-bottom: 1px solid #F4F4F5 !important;
+                color: #353535 !important;
+                border-top: none !important;
+                white-space: nowrap;
+            }
+
+
+
+        .no-table-styles {
+            max-height: none !important;
+            overflow-y: visible !important;
+            overflow-x: visible !important;
+            border: none !important;
+        }
+
+
+
+        /*.hide-in-pdf img[alt="dashboardEye"] {
+        display: none !important;
+       }*/
+
+
+
+
+        /*for hide all days*/
+        .hide-in-pdf .dayTabs {
+            display: none !important;
+        }
+
+
+
+        /* for show active day only*/
+
+
+        /* Hide all tabs and content when generating PDF */
+        /*.hide-in-pdf .nav-tabs li {
+        display: none !important;
+    }
+
+    .hide-in-pdf .nav-tabs li.active {
+        display: block !important;
+    }
+
+    .hide-in-pdf .tab-content > div {
+        display: none !important;
+    }
+
+    .hide-in-pdf .tab-content > div.ng-show {
+        display: block !important;
+    }
+
+
+    .hide-in-pdf .dayTabs {
+        display: none !important;
+    }
+
+    .hide-in-pdf .dayTabs.ng-show {
+        display: block !important;
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .hide-in-pdf th:last-child,
+        .hide-in-pdf td:last-child {
+            display: none !important;
+        }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="form_content" ng-controller="PatientDashboardCtrl" ng-init="FormLoad()">
+
+
+    <div class="tabDiv">
+        <h3 class="card-title">@PIVF.LanguageResource.Resources.lblDashboardOverview</h3>
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-tabs">
+            <li ng-class="{ active: selectedTab === 'year' }">
+                <a ng-click="showTab('year')">@PIVF.LanguageResource.Resources.lblYear</a>
+            </li>
+            <li ng-class="{ active: selectedTab === 'month' }">
+                <a ng-click="showTab('month')">@PIVF.LanguageResource.Resources.lblMonth</a>
+            </li>
+            <li ng-class="{ active: selectedTab === 'day' }">
+                <a ng-click="showTab('day')">@PIVF.LanguageResource.Resources.lblDay</a>
+            </li>
+            <li ng-class="{ active: selectedTab === 'custom' }">
+                <a ng-click="showTab('custom')">
+                    @PIVF.LanguageResource.Resources.lblCustom
+                    <span class="custom-date-display" ng-if="chartCustomFdate && chartCustomTdate">
+                        {{chartCustomFdate}} - {{chartCustomTdate}}
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-12 col-lg-12 col-sm-12" id="cycle">
+
+
+            @* ------------------------------New UI--------------------------- *@
+
+            <div class="row g-3" style="margin-top: 20px;">
+
+
+
+
+                <!-- Repeatable Card -->
+                <div class="col-md-2 col-sm-6" ng-repeat="item in PatientUnderStimulation" ng-click="changeSelectedTab('PatientUnderStimulation' , item.TotalPatient)">
+                    <div class="d-flex align-items-center" ng-class="{'dashboard-card': selectedDashboardTab !== 'PatientUnderStimulation' , 'dashboard-cardActive': selectedDashboardTab === 'PatientUnderStimulation'}">
+                        <div class="icon-box me-3">
+                            <img ng-show="selectedDashboardTab === 'PatientUnderStimulation'" src="../images/SchedulingS.svg" alt="SchedulingS">
+                            <img ng-show="selectedDashboardTab !== 'PatientUnderStimulation'" src="../images/SchedulingNS.svg" alt="SchedulingNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== 'PatientUnderStimulation' , 'cardSActive': selectedDashboardTab === 'PatientUnderStimulation'}">{{item.TotalPatient}}</h3>
+                            <h6 class="cardH">@PIVF.LanguageResource.Resources.lblPatientUnderStimulation</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-6" ng-repeat="item in PatientTrigger" ng-click="changeSelectedTab('Trigger' , item.TotalTrigger)">
+                    <div class="d-flex align-items-center" ng-class="{'dashboard-card': selectedDashboardTab !== 'Trigger' , 'dashboard-cardActive': selectedDashboardTab === 'Trigger'}">
+                        <div class="icon-box me-3">
+                            <img ng-show="selectedDashboardTab === 'Trigger'" src="../images/SchedulingS.svg" alt="SchedulingS">
+                            <img ng-show="selectedDashboardTab !== 'Trigger'" src="../images/SchedulingNS.svg" alt="SchedulingNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== 'Trigger' , 'cardSActive': selectedDashboardTab === 'Trigger'}">{{item.TotalTrigger}}</h3>
+                            <h6 class="cardH">@PIVF.LanguageResource.Resources.lblTriggerHCGgiven</h6>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-2 col-sm-6" ng-click="changeSelectedTab('EmbryologyDay' , GetAllDayPatientList[0].TotalCount || 0 )">
+                    <div class="d-flex align-items-center" ng-class="{'dashboard-card': selectedDashboardTab !== 'EmbryologyDay' , 'dashboard-cardActive': selectedDashboardTab === 'EmbryologyDay'}">
+                        <div class="icon-box me-3">
+                            <img ng-show="selectedDashboardTab === 'EmbryologyDay'" src="../images/SchedulingS.svg" alt="SchedulingS">
+                            <img ng-show="selectedDashboardTab !== 'EmbryologyDay'" src="../images/SchedulingNS.svg" alt="SchedulingNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== 'EmbryologyDay' , 'cardSActive': selectedDashboardTab === 'EmbryologyDay'}">{{GetAllDayPatientList[0].TotalCount || 0 }}</h3>
+                            <h6 class="cardH">@PIVF.LanguageResource.Resources.lblEmbryologyDay</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-6" ng-repeat="item in PregnancyTest" ng-click="changeSelectedTab('PregnancyTest' , item.PregnancyTest)">
+                    <div class="d-flex align-items-center" ng-class="{'dashboard-card': selectedDashboardTab !== 'PregnancyTest' , 'dashboard-cardActive': selectedDashboardTab === 'PregnancyTest'}">
+                        <div class="icon-box me-3">
+                            <img ng-show="selectedDashboardTab === 'PregnancyTest'" src="../images/SchedulingS.svg" alt="SchedulingS">
+                            <img ng-show="selectedDashboardTab !== 'PregnancyTest'" src="../images/SchedulingNS.svg" alt="SchedulingNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== 'PregnancyTest' , 'cardSActive': selectedDashboardTab === 'PregnancyTest'}">{{item.PregnancyTest}}</h3>
+                            <h6 class="cardH">@PIVF.LanguageResource.Resources.lblPregnancyTest</h6>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-2 col-sm-6" ng-repeat="item in PregnancyUltrasound" ng-click="changeSelectedTab('PregnancyUltrasound' , item.PregnancyUltrasound)">
+                    <div class="d-flex align-items-center" ng-class="{'dashboard-card': selectedDashboardTab !== 'PregnancyUltrasound' , 'dashboard-cardActive': selectedDashboardTab === 'PregnancyUltrasound'}">
+                        <div class="icon-box me-3">
+                            <img ng-show="selectedDashboardTab === 'PregnancyUltrasound'" src="../images/SchedulingS.svg" alt="SchedulingS">
+                            <img ng-show="selectedDashboardTab !== 'PregnancyUltrasound'" src="../images/SchedulingNS.svg" alt="SchedulingNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== ' PregnancyUltrasound' , 'cardSActive': selectedDashboardTab === 'PregnancyUltrasound'}">{{item.PregnancyUltrasound}}</h3>
+                            <h6 class="cardH">@PIVF.LanguageResource.Resources.lblvPregnancyUltrasound</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-6" ng-repeat="item in PregnancyOutcome" ng-click="changeSelectedTab('PregnancyOutcome' , item.PregnancyOutcome)">
+                    <div class="d-flex align-items-center" ng-class="{'dashboard-card': selectedDashboardTab !== 'PregnancyOutcome' , 'dashboard-cardActive': selectedDashboardTab === 'PregnancyOutcome'}">
+                        <div class="icon-box me-3">
+                            <img ng-show="selectedDashboardTab === 'PregnancyOutcome'" src="../images/SchedulingS.svg" alt="SchedulingS">
+                            <img ng-show="selectedDashboardTab !== 'PregnancyOutcome'" src="../images/SchedulingNS.svg" alt="SchedulingNS">
+                        </div>
+                        <div class="text-box">
+                            <h3 ng-class="{'cardS': selectedDashboardTab !== 'PregnancyOutcome' , 'cardSActive': selectedDashboardTab === 'PregnancyOutcome'}">{{item.PregnancyOutcome}}</h3>
+                            <h6 class="cardH">@PIVF.LanguageResource.Resources.lblvPregnancyOutcome</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End of Repeatable Card -->
+            </div>
+
+
+
+            <div class="DashboardTableContainer">
+
+                <div id="content" class="col-md-12" style="display:flex; flex-direction:column; gap : 18px;">
+                    <h3 class="cardS"> {{selectedDashboardTabShowOnDashboard}} @PIVF.LanguageResource.Resources.lblvPatientList ( {{selectedDashboardTabValue}} )</h3>
+
+                    <div class="tabDiv dayTabs" ng-show="selectedDashboardTab === 'EmbryologyDay'">
+                        <!-- Tabs Navigation -->
+                        <ul class="nav nav-tabs">
+                            <li ng-class="{ active: selectedDayTab === 'AllDays' }">
+                                <a href="" ng-click="showDayTab('AllDays')">@PIVF.LanguageResource.Resources.lblvAllDays ({{GetAllDayPatientList[0].TotalCount || 0}})</a>
+                            </li>
+                            <li ng-class="{ active: selectedDayTab === 'Day0' }">
+                                <a href="" ng-click="showDayTab('Day0')">@PIVF.LanguageResource.Resources.lblDay 0 ({{Day0Patient[0].Day0}})</a>
+                            </li>
+                            <li ng-class="{ active: selectedDayTab === 'Day1' }">
+                                <a href="" ng-click="showDayTab('Day1')">@PIVF.LanguageResource.Resources.lblDay 1 ({{Day1Patient[0].Day1}})</a>
+                            </li>
+                            <li ng-class="{ active: selectedDayTab === 'Day2' }">
+                                <a href="" ng-click="showDayTab('Day2')">@PIVF.LanguageResource.Resources.lblDay 2 ({{Day2Patient[0].Day2}})</a>
+                            </li>
+                            <li ng-class="{ active: selectedDayTab === 'Day3' }">
+                                <a href="" ng-click="showDayTab('Day3')">@PIVF.LanguageResource.Resources.lblDay 3 ({{Day3Patient[0].Day3}})</a>
+                            </li>
+                            <li ng-class="{ active: selectedDayTab === 'Day4' }">
+                                <a href="" ng-click="showDayTab('Day4')">@PIVF.LanguageResource.Resources.lblDay 4 ({{Day4Patient[0].Day4}})</a>
+                            </li>
+                            <li ng-class="{ active: selectedDayTab === 'Day5' }">
+                                <a href="" ng-click="showDayTab('Day5')">@PIVF.LanguageResource.Resources.lblDay 5 ({{Day5Patient[0].Day5}})</a>
+                            </li>
+                            <li ng-class="{ active: selectedDayTab === 'Day6' }">
+                                <a href="" ng-click="showDayTab('Day6')">@PIVF.LanguageResource.Resources.lblDay 6 ({{Day6Patient[0].Day6}})</a>
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+                    @*<div class="table-responsive fixed_header" id="tableToExport">
+                        <table class="table table-hover table-striped custom-table-container">*@
+                    <div id="tableToExport" ng-class="{'custom-table-container': selectedDashboardTab !== 'EmbryologyDay' , 'embroDays-custom-table-container': selectedDashboardTab === 'EmbryologyDay'}">
+                        <table id="data-table" class="table table-hover table-striped  unique-table-class">
+                            <thead>
+                                <tr>
+                                    <th>@PIVF.LanguageResource.Resources.lblMRNO .</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblPatientName</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblvAGE</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblGender</th>
+                                    <th>@PIVF.LanguageResource.Resources.lblPartnerName</th>
+                                    @* <th>Cycle code</th>*@
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="Item in PatientList">
+                                    <td>{{Item.MRNo  && Item.MRNo != 0 ? Item.MRNo : '-' }}</td>
+                                    <td>{{Item.PatientName  && Item.PatientName != 0 ? Item.PatientName : '-' }}</td>
+                                    <td>{{ Item.Age && Item.Age != 0 ? Item.Age : '-' }}</td>
+                                    <td>{{ Item.Gender && Item.Gender != 0 ? Item.Gender : '-' }}</td>
+                                    <td>{{ Item.PartnerName && Item.PartnerName != 0 ? Item.PartnerName : '-' }}</td>
+                                    @*<td>{{ Item.ContactNo1 && Item.ContactNo1 != 0 ? Item.ContactNo1 : '-' }}</td>*@
+                                    <td style="display:flex; justify-content: flex-end; padding-right:20px"><img src="../images/dashboardEye.svg" style="cursor:pointer;" ng-click="EditPatient(Item)" alt="dashboardEye"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-md-12 text-right m-t-10" style="padding: 12px; border-top: 1px solid #E2E3E5;" ng-show="PatientList.length">
+                    <button type="button" class="btn btn-primary" ng-click="downloadReportWithPreview()">@PIVF.LanguageResource.Resources.btnPrint</button>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            @*-----------------------------------------------------------------------*@
+            <div class="clear"></div>
+            @*<div class="row">
+                    <div class="col-md-2 col-lg-2 col-sm-12">
+                        <div class="bg_whiteTrns2" data-ng-init="btnId='Stimulation';">
+                            <a href="" data-ng-attr-id="btnId" class="button button-light"
+                               data-ng-click="StimulationPatientList(btnId)">
+                                <span class="blue blue countBox" ng-repeat="item in PatientUnderStimulation">
+                                    {{item.TotalPatient}}
+                                </span>
+                            </a>
+                            Patient Under Stimulation
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-sm-12">
+                        <div class="bg_whiteTrns2" data-ng-init="btnId1='Trigger';">
+                            <a href="" data-ng-attr-id="btnId1" class="button button-light"
+                               data-ng-click="TriggerPatientList(btnId1)">
+                                <span class="grey countBox" ng-repeat="item in PatientTrigger">
+                                    {{item.TotalTrigger}}
+                                </span>
+                            </a>
+                            Trigger/HCG given
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-sm-12">
+                        <div class="bg_whiteTrns2" data-ng-init="btnId17='RemainingOPUList';">
+                            <a href="" data-ng-attr-id="btnId17" class="button button-light"
+                               data-ng-click="GetRemainingOPUPatientList(btnId17)">
+                                <span class="org countBox">
+                                    {{RemainingOPU || 0}}
+                                </span>
+
+                            </a>
+                            Pre OPU Day
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-sm-12">
+                        <div class="bg_whiteTrns2" data-ng-init="btnId9='PregnancyTest';">
+                            <a href="" data-ng-attr-id="btnId9" class="button button-light"
+                               data-ng-click="GetPregnancyTestPatientList(btnId9)">
+                                <span class="green countBox" ng-repeat="item in PregnancyTest">
+                                    {{item.PregnancyTest}}
+                                </span>
+                            </a>
+                            Pregnancy Test
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-sm-12">
+                        <div class="bg_whiteTrns2" data-ng-init="btnId10='PregnancyUltrasound';">
+                            <a href="" data-ng-attr-id="btnId10" class="button button-light"
+                               data-ng-click="GetPregnancyUltrasoundPatientList(btnId10)">
+                                <span class="cyne countBox" ng-repeat="item in PregnancyUltrasound">
+                                    {{item.PregnancyUltrasound}}
+
+                                </span>
+                            </a>
+                            Pregnancy Ultrasound
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-sm-12">
+                        <div class="bg_whiteTrns2" data-ng-init="btnId11='PregnancyOutcome';">
+                            <a href="" data-ng-attr-id="btnId11" class="button button-light"
+                               data-ng-click="GetPregnancyOutcomePatientList(btnId11)">
+                                <span class="volite countBox" ng-repeat="item in PregnancyOutcome">
+                                    {{item.PregnancyOutcome}}
+                                </span>
+                            </a>
+                            Pregnancy Outcome
+                        </div>
+                    </div>
+                </div>*@
+
+
+            @*<div class="col-md-6 col-lg-6 col-sm-12">
+
+
+                    <div class="col-md-12 col-lg-12 col-sm-6">
+                        <div class="bg_whiteTrns2">
+                            <span class="opuCountBox">Embrology Days</span>
+                            <div class="clear"></div>
+                            <div class="col-md-6 col-lg-4 col-sm-6">
+                                <div class="opuDay" data-ng-init="btnId2='Day0';">
+                                    <a href="" data-ng-attr-id="btnId2" class="button button-light"
+                                       data-ng-click="GetDay0PatientList(btnId2)">
+                                        <span class="dayStatus" ng-repeat="item in Day0Patient">
+                                            {{item.Day0}}
+                                        </span>
+                                    </a>
+                                    Day 0
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-sm-6">
+                                <div class="opuDay" data-ng-init="btnId3='Day1';">
+                                    <a href="" data-ng-attr-id="btnId3" class="button button-light"
+                                       data-ng-click="GetDay1PatientList(btnId3)">
+                                        <span class="dayStatus" ng-repeat="item in Day1Patient">
+                                            {{item.Day1}}
+                                        </span>
+                                    </a>
+                                    Day 1
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-sm-6">
+                                <div class="opuDay" data-ng-init="btnId4='Day2';">
+                                    <a href="" data-ng-attr-id="btnId4" class="button button-light"
+                                       data-ng-click="GetDay2PatientList(btnId4)">
+                                        <span class="dayStatus" ng-repeat="item in Day2Patient">
+                                            {{item.Day2}}
+                                        </span>
+                                    </a>
+                                    Day 2
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-sm-6">
+                                <div class="opuDay" data-ng-init="btnId5='Day3';">
+                                    <a href="" data-ng-attr-id="btnId5" class="button button-light"
+                                       data-ng-click="GetDay3PatientList(btnId5)">
+                                        <span class="dayStatus" ng-repeat="item in Day3Patient">
+                                            {{item.Day3}}
+                                        </span>
+                                    </a>
+                                    Day 3
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-sm-6">
+                                <div class="opuDay" data-ng-init="btnId6='Day4';">
+                                    <a href="" data-ng-attr-id="btnId6" class="button button-light"
+                                       data-ng-click="GetDay4PatientList(btnId6)">
+                                        <span class="dayStatus" ng-repeat="item in Day4Patient">
+                                            {{item.Day4}}
+                                        </span>
+                                    </a>
+                                    Day 4
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-sm-6">
+                                <div class="opuDay" data-ng-init="btnId7='Day5';">
+                                    <a href="" data-ng-attr-id="btnId7" class="button button-light"
+                                       data-ng-click="GetDay5PatientList(btnId7)">
+                                        <span class="dayStatus" ng-repeat="item in Day5Patient">
+                                            {{item.Day5}}
+                                        </span>
+                                    </a>
+                                    Day 5
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-sm-6">
+                                <div class="opuDay" data-ng-init="btnId8='Day6';">
+                                    <a href="" data-ng-attr-id="btnId8" class="button button-light"
+                                       data-ng-click="GetDay6PatientList(btnId8)">
+                                        <span class="dayStatus" ng-repeat="item in Day6Patient">
+                                            {{item.Day6}}
+                                        </span>
+                                    </a>
+                                    Day 6
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>*@
+
+
+
+            @* ----------------------------------------------------------------------- *@
+
+            @*<div class="col-md-6 col-lg-6 col-sm-12">
+
+                        <div class="bg_whiteTrns2 col-md-12 col-sm-12 col-12 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <div>
+                                        <div class="headB py-2">
+                                            <div class="headBox">
+                                                <img src="../images/todoList.svg" alt="">
+                                                <h2 class="card-title" style="font-style:italic">{{dashHeading}}</h2>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="div_sergery_center">
+                                            <div class="justify-content-around w-100 col-12 sergery_contains_two">
+
+
+                                                <div class="col-md-3 d-flex surgery-row"
+                                                     ng-repeat="item in TriggerList"
+                                                     ng-click="GetTriggerPatientList('TotalTrigger')"
+                                                     style="cursor: pointer;">
+
+
+                                                    <div class="col-md-6 surgery-images">
+                                                        <img src="../images/Trigger.svg" alt="Scheduling Icon" class="img-fluid">
+                                                    </div>
+
+
+                                                    <div class="col-md-6 margin-5">
+                                                        <div class="col-md-12 d-flex class-text">
+                                                            <span class="d-block mb-1 text-number">{{item.Total}}</span>
+                                                        </div>
+                                                        <span class="d-block mb-1 char-number">Trigger</span>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+                                                <div class="col-md-3 d-flex surgery-row"
+                                                     ng-repeat="item in OPUList"
+                                                     ng-click="GetOPUPatientList('TotalOPU')"
+                                                     style="cursor: pointer;">
+
+
+                                                    <div class="col-md-6 surgery-images">
+                                                        <img src="../images/OPU.svg" alt="Communication Icon" class="img-fluid">
+                                                    </div>
+
+
+                                                    <div class="col-md-6 margin-5">
+                                                        <div class="col-md-12 d-flex class-text">
+                                                            <span class="d-block mb-1 text-number">{{item.TotalOPU}}</span>
+                                                        </div>
+                                                        <span class="d-block mb-1 char-number">OPU</span>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <div class="col-md-3 d-flex surgery-row"
+                                                     ng-repeat="item in ETList"
+                                                     ng-click="GetETPatientList('TotalEmbryo')"
+                                                     style="cursor: pointer;">
+
+
+                                                    <div class="col-md-6 surgery-images">
+                                                        <img src="../images/ET.svg" alt="Billing Icon" class="img-fluid">
+                                                    </div>
+
+
+                                                    <div class="col-md-6 margin-5">
+                                                        <div class="col-md-12 d-flex class-text">
+                                                            <span class="d-block mb-1 text-number">{{item.TotalEmbryo}}</span>
+                                                        </div>
+                                                        <span class="d-block mb-1 char-number">ET</span>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="justify-content-around w-100 sergery_contains_two">
+
+
+                                                <div class="col-md-3 d-flex surgery-row"
+                                                     ng-repeat="item in BHCGPatient"
+                                                     ng-click="GetBHCGPatientList('BHCG')"
+                                                     style="cursor: pointer;">
+
+
+                                                    <div class="col-md-6 surgery-images">
+                                                        <img src="../images/BHCG.svg" alt="Follow-Up Icon" class="img-fluid">
+                                                    </div>
+
+
+                                                    <div class="col-md-6 margin-5">
+                                                        <div class="col-md-12 d-flex class-text">
+                                                            <span class="d-block mb-1 text-number">{{item.BHCG}}</span>
+                                                        </div>
+                                                        <span class="d-block mb-1 char-number">BHCG</span>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+
+
+                                                <div class="col-md-3 d-flex surgery-row"
+                                                     ng-repeat="item in HCGPatient"
+                                                     ng-click="GetUSGPatientList('USG')"
+                                                     style="cursor: pointer;">
+
+
+                                                    <div class="col-md-6 surgery-images">
+                                                        <img src="../images/USG.svg" alt="Report Icon" class="img-fluid">
+                                                    </div>
+
+
+                                                    <div class="col-md-6 margin-5">
+                                                        <div class="col-md-12 d-flex class-text">
+                                                            <span class="d-block mb-1 text-number">{{item.USG}}</span>
+                                                        </div>
+                                                        <span class="d-block mb-1 char-number">USG</span>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>*@
+
+
+
+
+
+            @* ----------------------------------------- *@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+        </div>
+    </div>
+</section>
+
+
+
+<script type="text/ng-template" id="exampleModal">
+    <div class="custom-modal-content">
+        <div class="custom-modal-header">
+            <h5 class="custom-modal-title">@PIVF.LanguageResource.Resources.lblvSelectDates</h5>
+        </div>
+
+        <div class="custom-modal-body">
+            <div class="form-group">
+                <label for="fromDate" class="custom-label">@PIVF.LanguageResource.Resources.lblFromDate : </label>
+                <div class="custom-input-group">
+                    <input type="text"
+                           id="fromDate"
+                           class="custom-input"
+                           placeholder="@PIVF.LanguageResource.Resources.msgSelectfromdate"
+                           uib-datepicker-popup="{{format}}"
+                           ng-model="FromDate"
+                           is-open="isFromDatePickerOpen"
+                           datepicker-options="FromDateOptions"
+                           ng-focus="isFromDatePickerOpen=true" />
+                    <button class="custom-calendar-btn" type="button" ng-click="isFromDatePickerOpen=true">
+                        <i class="fa fa-calendar"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="toDate" class="custom-label">@PIVF.LanguageResource.Resources.lblToDate : </label>
+                <div class="custom-input-group">
+                    <input type="text"
+                           id="toDate"
+                           class="custom-input"
+                           placeholder="@PIVF.LanguageResource.Resources.msgSelecttodate"
+                           uib-datepicker-popup="{{format}}"
+                           ng-model="ToDate"
+                           is-open="isToDatePickerOpen"
+                           datepicker-options="ToDateOptions"
+                           ng-focus="isToDatePickerOpen=true" />
+                    <button class="custom-calendar-btn" type="button" ng-click="isToDatePickerOpen=true">
+                        <i class="fa fa-calendar"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-modal-footer">
+            <button class="custom-btn-primary" ng-click="close()">@PIVF.LanguageResource.Resources.lblvSubmit</button>
+        </div>
+    </div>
+</script>

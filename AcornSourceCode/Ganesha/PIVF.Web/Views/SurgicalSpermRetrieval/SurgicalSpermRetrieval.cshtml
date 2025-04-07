@@ -1,0 +1,1161 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .effectfront {
+        border: none;
+        margin: 0 auto;
+        width: 24px;
+        height: 24px;
+    }
+
+        .effectfront:hover {
+            -webkit-transform: scale(5);
+            -moz-transform: scale(5);
+            -o-transform: scale(5);
+            transform: scale(5);
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            z-index: 66666;
+            position: absolute;
+        }
+
+    .valid {
+        border: 1px solid none;
+        color: #635f5f;
+    }
+
+    .invalid {
+        box-shadow: none;
+        border: 1px solid red;
+    }
+
+    .has-error input {
+        border: 1px solid red !important;
+    }
+</style>
+<div ng-controller="SurgicalSpermRetrievalController" class="customMainContaint" style="position: relative;
+        z-index: 11;">
+    @*ng-init="SurgicalSpermRetrievalInitilization()"*@
+    <div class="clear"></div>
+    <div class="form_Content p-t-0 p-b-10">
+        <form name="frmSSR" novalidate autocomplete="off">
+            <div class="" ng-init="SurgicalSpermRetrievalInitilization()">
+                <!-- Preliminary Details Start -->
+                <div class="row form-horizontal">
+                    @*<div class="col-md-3 col-lg-3">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>Date</label>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <div class="input-group date" ng-class="{'Invalid':frmSSR.SSRDate.$invalid && frmSSR.SSRDate.$dirty  }">
+                                        <input type="text" class="form-control timeCss"
+                                               id="SSRDate"
+                                               name="SSRDate"
+                                               placeholder="dd-MMM-yyyy"
+                                               ng-model="SurgicalSpermRetrieval.SSRDate"
+                                               aria-describedby=""
+                                               uib-datepicker-popup="{{format}}"
+                                               show-button-bar="false"
+                                               is-open="popup1.opened"
+                                               datepicker-options="dateOptions"
+                                               alt-input-formats="altInputFormats"
+                                               min-date="minDate"
+                                               max-date="maxDate"
+                                               tabindex="1">
+                                        <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+
+                    <div class="col-md-4 col-lg-3 ">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblDate</label>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="input-group date" ng-class="{'Invalid':frmSSR.SSRDate.$invalid && frmSSR.SSRDate.$dirty  }">
+                                    <input type="text" class="form-control"
+                                           id="SSRDate"
+                                           name="SSRDate"
+                                           min-date="minDate"
+                                           max-date="maxDate"
+                                           placeholder="dd-Mmm-yyyy"
+                                           ng-model="SurgicalSpermRetrieval.SSRDate"
+                                           aria-describedby=""
+                                           uib-datepicker-popup="{{format}}"
+                                           show-button-bar="false"
+                                           is-open="popup1.opened"
+                                           datepicker-options="dateOptions"
+                                           alt-input-formats="altInputFormats" ng-required="true"
+                                           tabindex="1">
+                                    <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-md-3 col-lg-3 ">
+                            <div class="form-group ">
+                                <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">Date</label>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <div class="input-group date" ng-class="{'Invalid':frmSSR.SSRDate.$invalid && frmSSR.SSRDate.$dirty  }">
+                                        <input type="text" class="form-control"
+                                               id="SSRDate"
+                                               name="SSRDate"
+                                               min-date="minDate"
+                                               max-date="maxDate"
+                                               placeholder="dd-Mmm-yyyy"
+                                               ng-model="SurgicalSpermRetrieval.SSRDate"
+                                               aria-describedby=""
+                                               uib-datepicker-popup="{{format}}"
+                                               show-button-bar="false"
+                                               is-open="popup1.opened"
+                                               datepicker-options="dateOptions"
+                                               alt-input-formats="altInputFormats"
+                                               tabindex="1">
+                                        <span class="input-group-addon" id="" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+
+                    <div class="col-md-4 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblTime</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <div uib-timepicker ng-model="SurgicalSpermRetrieval.SSRTime"
+                                     id="SSRTime"
+                                     class="timeCss"
+                                     name="SSRTime"
+                                     ng-required="true"
+                                     hour-step="1"
+                                     minute-step="1"
+                                     max="maxTime"
+                                     min="SurgicalSpermRetrieval.minTime"
+                                     show-meridian="false"
+                                     show-spinners="false"
+                                     show-seconds="false"
+                                     tabindex="2"></div>
+                            </div>
+                            @*<div class="col-sm-12 col-md-12 col-lg-12 ">
+                                                                        <div uib-timepicker id="SSRTime"
+                                                                             ng-model="SurgicalSpermRetrieval.SSRTime"
+                                                                             ng-class="{'has-error':frmSSR.SSRTime.$invalid && frmSSR.SSRTime.$dirty  }"
+                                                                             ng-required="true"
+                                                                             name="SSRTime"
+                                                                             max="maxTime"
+                                                                             min="SurgicalSpermRetrieval.minTime"
+
+                                <a href="~/Views/SurgicalSpermRetrieval/SurgicalSpermRetrieval.cshtml">~/Views/SurgicalSpermRetrieval/SurgicalSpermRetrieval.cshtml</a>               class="timeCss"
+                                                                             hour-step="1"
+                                                                             minute-step="5"
+                                                                             show-meridian="false"
+                                                                             show-spinners="false"
+                                                                             show-seconds="false"
+                                                                             tabindex="2">
+                                                                        </div>
+                                                                    </div>*@
+                        </div>
+                    </div><div class="clearfix visible-md"></div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblIndication</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select id="ddlIndication"
+                                        name="ddlIndication"
+                                        ng-model="SurgicalSpermRetrieval.IndicationID"
+                                        class="form-control"
+                                        ng-class="{select:SurgicalSpermRetrieval.IndicationID== 0 && frmSSR.ddlIndication.$dirty}"
+                                        ng-required="true"
+                                        tabindex="3"
+                                        ng-options="item.ID as item.Description for item in IndicationList"
+                                        ng-change="IndicationChanged()"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 m-b-8">
+                        <div class="form-group p-t-30">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select id="ddlPatientSourceOfReference"
+                                        ng-model="SurgicalSpermRetrieval.IndicationObstructiveID"
+                                        class="form-control"
+                                        tabindex="4" ng-disabled="IsDisableIndication"
+                                        ng-options="item.ID as item.Description for item in IndicationObstructiveList"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcSpecimenType</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select id="ddlSpecimenType"
+                                        name="ddlSpecimenType"
+                                        ng-model="SurgicalSpermRetrieval.SpecimenTypeID"
+                                        class="form-control"
+                                        ng-class="{select:SurgicalSpermRetrieval.SpecimenTypeID== 0 && frmSSR.ddlSpecimenType.$dirty}"
+                                        ng-required="true"
+                                        tabindex="5"
+                                        ng-options="item.ID as item.Description for item in SpecimenTypeList"></select>
+                            </div>
+                        </div>
+                        <div class="visible-md m-b-15"></div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">
+                                <span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcMethodofSurgicalSpermRetrieval
+                            </label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select id="ddlMOfSSR"
+                                        name="ddlMOfSSR"
+                                        ng-model="SurgicalSpermRetrieval.MethodOfSurgicalSpermRetrivalID"
+                                        class="form-control"
+                                        ng-class="{select:SurgicalSpermRetrieval.MethodOfSurgicalSpermRetrivalID== 0 && frmSSR.ddlMOfSSR.$dirty}"
+                                        ng-required="true"
+                                        tabindex="6"
+                                        ng-options="item.ID as item.Description for item in MethodSurgicalSRetrievalList"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcSurgeon</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select id="ddlSurgeon"
+                                        name="ddlSurgeon"
+                                        ng-model="SurgicalSpermRetrieval.SurgonID"
+                                        class="form-control"
+                                        ng-class="{select:SurgicalSpermRetrieval.SurgonID== 0 && frmSSR.ddlSurgeon.$dirty}"
+                                        ng-required="true"
+                                        tabindex="7"
+                                        ng-options="item.ID as item.Description for item in SurgeonList"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcAnesthetist</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select id="ddlAnesthetist"
+                                        name="ddlAnesthetist"
+                                        ng-model="SurgicalSpermRetrieval.AnesthetistID"
+                                        class="form-control"
+                                        ng-class="{select:SurgicalSpermRetrieval.AnesthetistID== 0 && frmSSR.ddlAnesthetist.$dirty}"
+                                        ng-required="true"
+                                        tabindex="8"
+                                        ng-options="item.ID as item.Description for item in AnesthetistList"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcAnesthesia</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select id="ddlAnesthesia"
+                                        name="ddlAnesthesia"
+                                        ng-model="SurgicalSpermRetrieval.AnesthesiaID"
+                                        class="form-control"
+                                        ng-class="{select:SurgicalSpermRetrieval.AnesthesiaID== 0 && frmSSR.ddlAnesthesia.$dirty}"
+                                        ng-required="true"
+                                        tabindex="9"
+                                        ng-options="item.ID as item.Description for item in AnesthesiaList"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcEmbryologist</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select id="ddlPatientSourceOfReference"
+                                        ng-model="SurgicalSpermRetrieval.EmbroylogistID"
+                                        class="form-control"
+                                        tabindex="10"
+                                        ng-options="item.ID as item.Description for item in EmbryologistList"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcWitnessEmbryologist</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select id="ddlPatientSourceOfReference"
+                                        ng-model="SurgicalSpermRetrieval.WitnessEmbroylogistID"
+                                        class="form-control"
+                                        tabindex="11"
+                                        ng-options="item.ID as item.Description for item in EmbryologistList"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for=""><span class="text-Red">*</span>@PIVF.LanguageResource.Resources.lblcSite</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <select id="ddlSite"
+                                        name="ddlSite"
+                                        ng-model="SurgicalSpermRetrieval.SiteID"
+                                        class="form-control"
+                                        ng-class="{select:SurgicalSpermRetrieval.SiteID== 0 && frmSSR.ddlSite.$dirty}"
+                                        ng-required="true"
+                                        tabindex="12"
+                                        ng-options="item.ID as item.Description for item in SitesList"
+                                        ng-change="SiteChangedEvent()"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="table-responsive ">
+                            <table class="table table-hover table-striped table-hover table-bordered" id="profile_table">
+                                <thead>
+                                    <tr>
+                                        <th>@PIVF.LanguageResource.Resources.lblcSite</th>
+                                        <th>@PIVF.LanguageResource.Resources.lblcSpermCount</th>
+                                        <th>@PIVF.LanguageResource.Resources.lblMotility</th>
+                                        <th>@PIVF.LanguageResource.Resources.lblRemarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="" ng-show="RightVisible">
+                                        <td>
+                                            @PIVF.LanguageResource.Resources.lblcRight
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" tabindex="13" class="form-control" id="" placeholder="" ng-model="SurgicalSpermRetrieval.RightSpermCount" restrict-to="[a-zA-Z0-9]" ng-class="IsValidRightSpermCount == true ? 'invalid' : 'valid' " ng-change="RightSpermCountChanged()" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" tabindex="14" class="form-control" id="" placeholder="" ng-model="SurgicalSpermRetrieval.RightMotility" replace="[^0-9]" with="" maxlength="2" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" tabindex="15" class="form-control" id="" placeholder="" maxlength="100" ng-model="SurgicalSpermRetrieval.RightRemark" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="" ng-show="LeftVisible">
+                                        <td>
+                                            @PIVF.LanguageResource.Resources.lblcLeft
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" tabindex="16" class="form-control" id="" placeholder="" ng-model="SurgicalSpermRetrieval.LeftSpermCount" restrict-to="[a-zA-Z0-9]" ng-class="IsValidLeftSpermCount == true ? 'invalid' : 'valid' " ng-change="LeftSpermCountChanged()" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" tabindex="17" class="form-control" id="" placeholder="" ng-model="SurgicalSpermRetrieval.LeftMotility" replace="[^0-9]" with="" maxlength="2" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" tabindex="18" class="form-control" id="" placeholder="" maxlength="100" ng-model="SurgicalSpermRetrieval.LeftRemark" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-horizontal">
+                    <div class="col-md-4 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcComplication</label>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div isteven-multi-select input-model="ComplicationList"
+                                     output-model="SurgicalSpermRetrieval.ComplicationSelected"
+                                     id="Disease" name="ddlClass"
+                                     button-label="Description"
+                                     item-label="Description"
+                                     tick-property="ticked"
+                                     tabindex="19"
+                                     output-properties="ID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblRemarks</label>
+                            <div class="col-md-11 col-sm-10 col-lg-11 p-r-0">
+                                <textarea type="text"
+                                          class="form-control"
+                                          id="" placeholder=""
+                                          ng-model="SurgicalSpermRetrieval.ComplicationRemark"
+                                          tabindex="20"
+                                          maxlength="250"></textarea>
+
+                            </div>
+                            <label class="col-md-1 col-sm-2 col-lg-1 lastLabel control-label" for="">{{250-SurgicalSpermRetrieval.ComplicationRemark.length}}</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                        <div class="form-group ">
+                            <label class="col-sm-12 col-md-12 col-lg-12 control-label" for="">@PIVF.LanguageResource.Resources.lblcImages</label>
+                            <div class="col-sm-6 col-md-4 col-lg-4 img-attach ">
+                                <file-upload1 class="btn btn-primary fileinput-button"
+                                              name="userFile" resize="true"
+                                              max-width="100" max-height="100"
+                                              ng-model="SurgicalSpermRetrieval.foo.model"
+                                              multiple="true"
+                                              tabindex="21"
+                                              callback-fn="ValidationMsg(arg1)"
+                                              @*uri="/upload/upload"*@
+                                              accept="image/*">
+                                    <i class="glyphicon glyphicon-paperclip"></i>
+                                    <span>Link</span>
+                                </file-upload1>
+                            </div>
+                            @*<div class="col-md-6 col-sm-6 col-lg-6">
+                                    <button class="btn btn-primary btn_form" data-toggle="modal" data-target="#semenAnalysismodal" type="button" id=""
+                                            value="">
+                                        View
+                                    </button>
+                                </div>*@
+                            <div class="col-md-2 col-sm-2 col-lg-1" ng-repeat="file in SurgicalSpermRetrieval.foo.model">
+                                <div class="attach-proff">
+                                    <img ng-src="{{file.preview}}" class="effectfront">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-md-3 col-lg-3">
+                            <button class="btn btn-primary btn_form" type="button" id="" ng-click="RedirectToSemenFreez('GS/2/2017/SF/0012')" value="" data-toggle="modal" data-target="{{dataTarget}}"> View Semen Freez</button>
+                        </div>*@
+                </div>
+                <!-- Preliminary Details End -->
+            </div>
+        </form>
+        <div class="row form-horizontal m-t-10">
+            <div class="col-md-12 col-lg-12" style="display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+">
+                <label class="checkbox-inline"><input type="checkbox" id="inlineCheckbox1" value="option1" ng-model="SurgicalSpermRetrieval.IsFinalize" tabindex="22"> @PIVF.LanguageResource.Resources.lblFinalize</label>
+                <button class="btn btn-primary" type="button" id="btnSaveUpdate" value="" ng-click="InsertSurgicalSpermRetrival()" ng-disabled="IsFinalize || IsVisitMarked" tabindex="23">{{btnSaveUpdate}}</button>
+                <button class="btn btn-primary" type="button" id="" value="" ng-click="CancelSSR()" tabindex="24">@PIVF.LanguageResource.Resources.btnCancel</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form_Content m-b-5">
+        <h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcRetrievalDetails</h5>
+        <div class="table-responsive fixed_header">
+            @*<table class="table table-hover table-striped" style="min-width: 1220px;min-height:150px;max-height:325px;">*@
+            <table class="table table-hover table-striped" style="min-width: 1220px;">
+                <thead>
+                    <tr>
+                        <th st-ratio="3">&nbsp;</th>
+                        <th st-ratio="13" ng-click="SortData1('SNo')">@PIVF.LanguageResource.Resources.lblcSNo<div ng-class="sortClass1"></div></th>
+                        <th st-ratio="10" ng-click="SortData1('SSRDate')">@PIVF.LanguageResource.Resources.lblDate<div ng-class="sortClass1"></div></th>
+                        <th st-ratio="14" ng-click="SortData1('IndicationDescription')">@PIVF.LanguageResource.Resources.lblIndication<div ng-class="sortClass1"></div></th>
+                        <th st-ratio="12" ng-click="SortData1('SpecimenDescription')">@PIVF.LanguageResource.Resources.lblcSpecimenType<div ng-class="sortClass1"></div></th>
+                        <th st-ratio="14" ng-click="SortData1('MOSSRetrivalDescription')">@PIVF.LanguageResource.Resources.lblcMethodofSSR<div ng-class="sortClass1"></div></th>
+                        <th st-ratio="17" ng-click="SortData1('SurgonDescription')">@PIVF.LanguageResource.Resources.lblcSurgeon<div ng-class="sortClass1"></div></th>
+                        <th st-ratio="17" ng-click="SortData1('EmbroylogistDescription')">@PIVF.LanguageResource.Resources.lblcEmbryologist<div ng-class="sortClass1"></div></th>
+                        @*<th st-ratio="12">Linked</th>*@
+                        @*<th st-ratio="3">&nbsp;</th>*@
+                        @*<th>Print</th>*@
+                    </tr>
+                </thead>
+                <tbody style="min-height:150px; height: calc(100vh - 850px);">
+                    <tr ng-repeat="item in SurgicalSpermRetrievalList | orderBy:SortColumn1:reverseSort1">
+                        <td st-ratio="3" class="cycle_actions">
+                            <div class="dropdown">
+                                <a href="" class="dropdown-toggle" id="cycleAction_1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="cycleAction_1" ng-show="item.IsFinalize">
+                                    <li><a href="" ng-click="SurgicalSpermRetrievalPrint(item)">@PIVF.LanguageResource.Resources.btnPrint</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td st-ratio="13"><a ng-click="RedirectToSelf(item);" class="txt_bold"> {{item.SNo}}</a></td>
+                        <td st-ratio="10">{{item.SSRDate | date :  "dd-MMM-yyyy"}}</td>
+                        <td st-ratio="14">{{item.IndicationDescription}}</td>
+                        <td st-ratio="12">{{item.SpecimenDescription}}</td>
+                        <td st-ratio="14">{{item.MOSSRetrivalDescription}}</td>
+                        <td st-ratio="17">{{item.SurgonDescription}}</td>
+                        <td st-ratio="17">{{item.EmbroylogistDescription}}</td>
+                        @*<td st-ratio="12"><a data-toggle="modal" data-target="{{dataTarget}}" ng-click="RedirectToLinkedForm(item.SANo)" class="txt_bold">{{item.SANo}}</a></td>*@
+                        @*<td st-ratio="3"><button type="submit" class="btn btn_print"><span class="glyphicon glyphicon-print"></span></button></td>*@
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Semen Freezing model -->
+    <div class="modal fade" id="semenFreezingmodal" tabindex="-1" role="dialog" aria-labelledby="semenAnalysismodal">
+        <div class="modal-dialog w50" role="document" id="semenAnalysis">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@PIVF.LanguageResource.Resources.lblcSemenFreezing</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- form body Start -->
+                    <!-- Details Start -->
+                    <div class="row form-horizontal">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcDates</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.SpremFreezingDate | date : "dd-MMM-yyyy"}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcTimes</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.SpremFreezingTime | date :  "h:mm a"}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Details End -->
+                    <!-- Pre Freezing Details Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcPreFreezingDetails</h5></section>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcTypeofSperms</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.SpermDescription}}</label>
+                            </div>
+                        </div><div class="clearfix hidden-lg"></div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcCollectionDate</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.CollectionDate | date : "dd-MMM-yyyy"}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcCollectionTime</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.CollectionTime | date :  "h:mm a"}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcReceivingDate</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.ReceivingDate | date : "dd-MMM-yyyy"}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcReceivingTime</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.ReceivingTime | date :  "h:mm a"}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcAbstinencedays</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.AbstinenceDescription}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcViscositys</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.IVDescription}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcVolumes</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.Volume}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold p-l-0 p-r-0" for="">@PIVF.LanguageResource.Resources.lblcSpermConcentrations</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.SpermConcentration}} Mill/ml</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold p-l-0" for="">@PIVF.LanguageResource.Resources.lblcTotalSpermCounts</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.SpermCount}} @PIVF.LanguageResource.Resources.lblcmillions</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pre Freezing Details Start -->
+                    <!-- Motility Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblMotility</h5></section>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcProgressives</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.GradeA}}%</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcNonProgressivesss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.GradeB}}%</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcImmotilesss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.GradeC}}%</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcTotalMotilitysss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.Motility}}%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Motility End -->
+                    <!-- Advanced Total Progressive Motility Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcAdvancedTotalProgressiveMotility</h5></section>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcSlowProgressivesss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.SlowProgressive}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-7">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-5 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcRapidProgressivesss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-7 control-label" for="">{{SemenFreez.RapidProgressive}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Advanced Total Progressive Motility End -->
+                    <!-- Morphology Assessment Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcMorphologyAssessment</h5></section>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcNormalFormss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.NormalForms}}%</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcAbnormalFormss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.AbnormalForms}}%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Morphology Assessment End -->
+                    <!-- Other Parameters Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcOtherParameters</h5></section>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcWBC :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.WBC}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcPusCells :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.PusCells}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcRBC :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.RBC}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcEpithelialCells :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.EpithelialCells}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcRemarkss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.Comments}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Other Parameters End -->
+                    <!-- Sperm Freezing Details Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcSpermFreezingDetails</h5></section>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcNoofVialss :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.NoOfVials}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sperm Freezing Details End -->
+                    <!-- Done by Start -->
+                    <div class="row form-horizontal">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                @*ng-scrollbars ng-scrollbars-config="config">*@
+                                <table style="max-height:300px; overflow:auto;" class="table table-hover table-striped table-bordered" id="profile_table">
+                                    <thead>
+                                        <tr>
+                                            <th width="90px">@PIVF.LanguageResource.Resources.lblcCryoNo</th>
+                                            <th width="20px">@PIVF.LanguageResource.Resources.lblcTank</th>
+                                            <th width="60px">@PIVF.LanguageResource.Resources.lblCanister</th>
+                                            <th width="60px">@PIVF.LanguageResource.Resources.lblcCane</th>
+                                            <th width="65px">@PIVF.LanguageResource.Resources.lblcVials</th>
+                                            <th width="55px">@PIVF.LanguageResource.Resources.lblcVolume</th>
+                                            <th width="75px">@PIVF.LanguageResource.Resources.lblExpiryDate</th>
+                                            <th width="60px">@PIVF.LanguageResource.Resources.lblRemarks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in ListItem">
+                                            <td>{{item.CryoNo}}</td>
+                                            <td>{{item.TankId}}</td>
+                                            <td>{{item.CanisterID}}</td>
+                                            <td>{{item.CanID}}</td>
+                                            <td>{{item.StrawId}}</td>
+                                            <td>{{item.VolumeDetail}}</td>
+                                            <td>{{item.ExpiryDate | date : "dd-MMM-yyyy" }}</td>
+                                            <td>{{item.Remark}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcDoneBy</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.DoctorName}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcWitnessedBy</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenFreez.WitnessName}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Done by End -->
+                    <!-- form body end -->
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Semen Freezing model End  -->
+    <!-- Semen Analysis model -->
+    <div class="modal fade" id="semenAnalysismodal" tabindex="-1" role="dialog" aria-labelledby="semenAnalysismodal">
+        <div class="modal-dialog w50" role="document" id="semenAnalysis">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    @*<h4 class="modal-title" id="myModalLabel">Semen Analysis</h4>*@
+                    <h4 class="modal-title" id="myModalLabel">
+                        @PIVF.LanguageResource.Resources.lblSemenAnalysis &nbsp;-
+                        <span class="femaleDetails"> {{selectedPatient.PatientName}}<small>({{selectedPatient.MRNo}})</small></span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <!-- form body Start -->
+                    <!-- Preliminary Details Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcSemenCollectionDetails</h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcCollectionDate</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.CollectionDate | date : "dd-MMM-yyyy"}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcCollectionTime</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.CollectionDate | date : "dd-MMM-yyyy"}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcReceivingDate</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.ReceivingDate | date : "dd-MMM-yyyy"}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcReceivingTime</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.ReceivingDate | date : "dd-MMM-yyyy"}}</label>
+                            </div>
+                        </div>@*<div class="clear"></div>*@
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcAbstinencess :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.AbsDescription}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-lg-11">
+                            <div class="form-group ">
+                                <label class="col-md-4 col-sm-3 col-lg-4 control-label boldLable" id="text-center" for="">@PIVF.LanguageResource.Resources.lblcMethodofSemenCollection</label>
+                                <label class="col-sm-4 col-md-6 col-lg-4 control-label" for="">{{SemenAnalysis.MCollectionDecription }}</label>
+                                <label class="col-sm-4 col-md-6 col-lg-4 control-label" for="">{{SemenAnalysis.MOSSRetrivalDescription}}</label>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Preliminary Details End -->
+                    <!-- Physical Examination Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcPhysicalExamination</h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcVolumes</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Volume}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcColor :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Color}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcAppearance :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Appearance}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcpH</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.PH}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcLiquefactionTimes</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.LiquificationTime}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcViscositys</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.PH}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcOdours</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.PH}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Physical Examination Start -->
+                    <!-- Microscopic Examination Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcMicroscopicExamination</h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcSpermConcentrations</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.SpermConcentration}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold " for="">@PIVF.LanguageResource.Resources.lblcTotalSpermCounts</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.TotalSpermCount}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Microscopic Examination End -->
+                    <!-- Motility Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblMotility</h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcProgressives</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Progressive}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcNonProgressivesss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.NonProgressive}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcImmotilesss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Immotile}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcTotalMotilitysss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Motility}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Motility End -->
+                    <!-- Advanced Total Progressive Motility Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcAdvancedTotalProgressiveMotility</h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcSlowProgressivesss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.SlowProgressive}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcRapidProgressivesss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.RapidProgressive}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcViabilitys</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label fontWeight" for="">{{SemenAnalysis.Viability}}%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Advanced Total Progressive Motility End -->
+                    <!-- Viability Start -->
+                    <!-- Viability End -->
+                    <!-- Morphology Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="subTitle">@PIVF.LanguageResource.Resources.lblcMorphology</h5></section>
+                        <section class="col-lg-12"><h5 class="underline">@PIVF.LanguageResource.Resources.lblcHeadDefects</h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcSmall :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Small}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcLarge :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Large}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcTapered :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Tapered}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcRound :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Round}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcAmorphous :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Amorphous}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcVacuolated:</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Vacuolated}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcPyriform :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Pyriform}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Morphology End -->
+                    <!-- Neck & Midpiece Defects Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="underline">@PIVF.LanguageResource.Resources.lblcNeckMidpieceDefects</h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcBent :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Bent}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcThin :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Thin}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcThick :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Thick}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcAsymmetricalInsertion :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">@PIVF.LanguageResource.Resources.lblcAsymmetricalInsertion</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcVacuoles :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Vacuoles}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Neck & Midpiece Defects End -->
+                    <!-- Tail Defects Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="underline">@PIVF.LanguageResource.Resources.lblcTailDefects</h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcShort :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Short}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcCoiled :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Coiled}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcDouble :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Double}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tail Defects End -->
+                    <!-- Cytoplasmic Droplet Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class=""></h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcCytoplasmicDroplet :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.CytoplasmicDroplet}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcTotals</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Total}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cytoplasmic Droplet End -->
+                    <!-- Agglutination Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="underline">@PIVF.LanguageResource.Resources.lblcAgglutination</h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcHeadtoHead :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.HeadToHead}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcTailtoTail :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.TailToTail}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcHeadtoTail :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.HeadToTail}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcSpermtoother :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.SpermToOther}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Agglutination End -->
+                    <!-- Other Parameters Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="underline">@PIVF.LanguageResource.Resources.lblcOtherParameters</h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcWBC :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label " for="">{{SemenAnalysis.WBC}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcPusCells :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.PusCells}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcRBC :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.RBC}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcEpithelialCells :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.EpithelialCells}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcFructose :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Fructose}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcRemarksss</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label" for="">{{SemenAnalysis.Remarks}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Other Parameters End -->
+                    <!-- Interpretation Start -->
+                    <div class="row form-horizontal">
+                        <section class="col-lg-12"><h5 class="underline"></h5></section>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblInterpretation :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label " for="">{{SemenAnalysis.SemenAIDescription}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-7 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcComments :</label>
+                                <label class="col-sm-8 col-md-6 col-lg-5 control-label " for="">{{SemenAnalysis.Comment}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Interpretation End -->
+                    <!-- Done by Start -->
+                    <div class="row form-horizontal">
+                        <!-- <section class="col-lg-12"><h5 class="underline"></h5></section> -->
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-5 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcDoneBy</label>
+                                <label class="col-sm-8 col-md-6 col-lg-7 control-label" for="">{{SemenAnalysis.DoneByDocName}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="form-group ">
+                                <label class="col-sm-4 col-md-6 col-lg-5 control-label txt_bold" for="">@PIVF.LanguageResource.Resources.lblcWitnessedBy</label>
+                                <label class="col-sm-8 col-md-6 col-lg-7 control-label" for="">{{SemenAnalysis.WitnessByDocName}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Done by End -->
+                    <!-- form body end -->
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Semen Analysis model End  -->
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="GridSpinner" spinner-start-active="true"></span>
+</div>
+
