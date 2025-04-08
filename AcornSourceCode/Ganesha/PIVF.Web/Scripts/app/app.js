@@ -25,7 +25,7 @@ PIVF.constant('API', {
 PIVF.constant('PatientInfo', {
     IsSingle: false
 });
-
+//git checking by Tejas
 PIVF.config(function ($routeProvider, $ocLazyLoadProvider, ScrollBarsProvider, $provide) {
     ScrollBarsProvider.defaults = {
         scrollButtons: {
@@ -2628,6 +2628,11 @@ PIVF.directive('validNumberwithdecimal', function () {
     };
 });
 
+
+
+
+
+
 //Fix Header
 PIVF.directive('stRatio', function () {
     return {
@@ -2640,6 +2645,30 @@ PIVF.directive('stRatio', function () {
     };
 });
 
+
+////Fix Header
+//PIVF.directive('stRatio', function () {
+//    return {
+//        link: function (scope, element, attr) {
+//            var ratio = +(attr.stRatio);
+
+//            element.css('width', ratio + '%');
+
+//        }
+//    };
+//});
+
+////Fix Header
+//PIVF.directive('stRatio', function () {
+//    return {
+//        link: function (scope, element, attr) {
+//            var ratio = +(attr.stRatio);
+
+//            element.css('width', ratio + '%');
+
+//        }
+//    };
+//});
 
 
 
