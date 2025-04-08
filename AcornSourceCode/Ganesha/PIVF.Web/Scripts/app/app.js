@@ -25,7 +25,7 @@ PIVF.constant('API', {
 PIVF.constant('PatientInfo', {
     IsSingle: false
 });
-
+//git checking by Tejas
 PIVF.config(function ($routeProvider, $ocLazyLoadProvider, ScrollBarsProvider, $provide) {
     ScrollBarsProvider.defaults = {
         scrollButtons: {
